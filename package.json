@@ -1,8 +1,19 @@
 {
   "name": "@getstation/sdk",
   "version": "0.0.1",
+  "author": "joel@getstation.com",
+  "license": "ISC",
+  "description": "Station SDK",
   "main": "./lib/index",
   "types": "./lib/index",
+  "bugs": {
+    "url": "https://github.com/getstation/sdk/issues"
+  },
+  "homepage": "https://github.com/getstation/sdk#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getstation/sdk.git"
+  },
   "scripts": {
     "build": "tsc -p ."
   },
