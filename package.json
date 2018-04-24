@@ -1,6 +1,6 @@
 {
   "name": "@getstation/sdk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "joel@getstation.com",
   "license": "ISC",
   "description": "Station SDK",

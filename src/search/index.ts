@@ -23,9 +23,17 @@ export namespace search {
     loading?: boolean,
   }
 
+  export interface SearchConsumerRegistration {
+    namespace: 'search',
+    register?: SearchConsumer,
+    unregister?: SearchConsumer,
+  }
+
   export const BXSDK_SEARCH_DEFAULT_NAME = 'default';
 
   export class SearchConsumer extends Consumer {
+
+    public readonly namespace = 'search';
 
     public query: Subject<string>;
     public results: BehaviorSubject<SearchResultWrapperConsumer>;
