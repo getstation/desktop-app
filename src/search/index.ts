@@ -1,16 +1,24 @@
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import * as Rx from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { Consumer } from '../common';
 
 export namespace search {
+
+  export interface SearchConsumer extends Consumer {
+    readonly query: Subject<string>;
+    readonly results: BehaviorSubject<search.SearchResultWrapperConsumer>;
+    name: string;
+
+    getResultsObservableForProvider(): Observable<search.SearchResultWrapper>;
+  }
+
   export interface SearchResultWrapper extends SearchResultWrapperConsumer {
     name: string,
   }
 
   export type SearchResultItem = {
     id: string,
-    category: string,
     additionalSearchString?: string,
     serviceId?: string,
     label: string,
@@ -23,33 +31,7 @@ export namespace search {
     loading?: boolean,
   }
 
-  export interface SearchConsumerRegistration {
-    namespace: 'search',
-    register?: SearchConsumer,
-    unregister?: SearchConsumer,
-  }
-
   export const BXSDK_SEARCH_DEFAULT_NAME = 'default';
-
-  export class SearchConsumer extends Consumer {
-
-    public readonly namespace = 'search';
-
-    public query: Subject<string>;
-    public results: BehaviorSubject<SearchResultWrapperConsumer>;
-    public resultsForProvider: BehaviorSubject<SearchResultWrapper>;
-    public name: string;
-
-    constructor(name: string) {
-      super();
-      this.name = name;
-      this.query = new Rx.Subject();
-      this.results = new BehaviorSubject({});
-      this.resultsForProvider = new BehaviorSubject({ name });
-      this.results
-        .map(x => ({ ...x, name }))
-        .subscribe(this.resultsForProvider);
-    }
-
-  }
 }
+
+

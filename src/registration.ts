@@ -1,21 +1,28 @@
 import * as Rx from 'rxjs/Rx';
-import { search } from './search';
+import { SearchConsumer } from './search/consumer';
+import { StorageConsumer } from './storage/consumer';
 
-export type ConsumerRegistration = search.SearchConsumerRegistration;
-export type Consumers = search.SearchConsumer;
+export type Consumers = SearchConsumer | StorageConsumer;
+export interface ConsumerRegistration<C extends Consumers> {
+  namespace: C['namespace'],
+  register?: C,
+  unregister?: C,
+}
 
-export const consumersObservable = new Rx.Subject<ConsumerRegistration>();
+export const consumersObservable = new Rx.Subject<ConsumerRegistration<Consumers>>();
 
-export function register(consumer: Consumers) {
+export function register<C extends Consumers>(consumer: C): C {
   consumersObservable.next({
     namespace: consumer.namespace,
     register: consumer,
   });
+  return consumer;
 }
 
-export function unregister(consumer: Consumers) {
+export function unregister<C extends Consumers>(consumer: C): C {
   consumersObservable.next({
     namespace: consumer.namespace,
     unregister: consumer,
   });
+  return consumer;
 }
