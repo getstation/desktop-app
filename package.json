@@ -1,6 +1,6 @@
 {
   "name": "@getstation/sdk",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "joel@getstation.com",
   "license": "ISC",
   "description": "Station SDK",
@@ -15,7 +15,8 @@
     "url": "git+https://github.com/getstation/sdk.git"
   },
   "scripts": {
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "prepublishOnly": "yarn run build"
   },
   "dependencies": {
     "rxjs": "^5.5.10",
