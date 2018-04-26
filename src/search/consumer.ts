@@ -1,6 +1,6 @@
+import * as Rx from 'rxjs';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Subject } from 'rxjs/Subject';
-import * as Rx from '../../node_modules/rxjs';
 import { Consumer } from '../common';
 import { search } from './index';
 
