@@ -19,7 +19,7 @@ export interface SDK {
 }
 
 export default function sdk(options: SDKOptions): SDK {
-  const search = new SearchConsumer(options.name);
+  const search = new SearchConsumer();
   const storage = new StorageConsumer(options.id);
   const bxsdk = {
     search: register(search),

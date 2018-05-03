@@ -1,5 +1,4 @@
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { Consumer } from '../common';
 
@@ -7,18 +6,12 @@ export namespace search {
 
   export interface SearchConsumer extends Consumer {
     readonly query: Subject<string>;
-    readonly results: BehaviorSubject<search.SearchResultWrapperConsumer>;
-    name: string;
-
-    getResultsObservableForProvider(): Observable<search.SearchResultWrapper>;
-  }
-
-  export interface SearchResultWrapper extends SearchResultWrapperConsumer {
-    name: string,
+    readonly results: BehaviorSubject<search.SearchResultWrapper>;
   }
 
   export type SearchResultItem = {
     id: string,
+    category: string,
     additionalSearchString?: string,
     serviceId?: string,
     label: string,
@@ -26,12 +19,10 @@ export namespace search {
     imgUrl: string,
   };
 
-  export interface SearchResultWrapperConsumer {
+  export interface SearchResultWrapper {
     results?: SearchResultItem[],
-    loading?: boolean,
+    loading?: string,
   }
-
-  export const BXSDK_SEARCH_DEFAULT_NAME = 'default';
 }
 
 
