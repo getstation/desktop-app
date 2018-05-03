@@ -5,7 +5,35 @@ import { Consumer } from '../common';
 export namespace search {
 
   export interface SearchConsumer extends Consumer {
+    /**
+     * Receive query string updates
+     * @example
+     * sdk.search.query.subscribe(query => {
+     *   // Query external provider
+     *   fetch(`https://api.example.com/search/${encodeURIComponent(query)}`)
+     *    .then(response => response.json())
+     *    .then(data => console.log(data));
+     * });
+     */
     readonly query: Subject<string>;
+
+    /**
+     * Push search results
+     * @example
+     * sdk.search.results.next({
+     *   loading: 'My Category',
+     *   results: [
+     *    {
+     *     id: 'search-result-1',
+     *     category: 'My Category',
+     *     label: 'Pizza list',
+     *     url: 'https://my.example.com/pizza',
+     *     imgUrl: 'https://my.example.com/pizza.png',
+     *    },
+     *    ...,
+     *   ],
+     * });
+     */
     readonly results: BehaviorSubject<search.SearchResultWrapper>;
   }
 
