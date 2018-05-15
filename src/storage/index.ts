@@ -7,7 +7,7 @@ export namespace storage {
 
     getItem<R=any>(key: string): R;
     setItem(key: string, value: any): void;
-    setProviderInterface(providerInterface: storage.StorageProviderInterface): void
+    setProviderInterface(providerInterface: storage.StorageProviderInterface): void;
   }
 
   export interface StorageProviderInterface {
