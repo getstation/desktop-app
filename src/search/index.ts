@@ -45,6 +45,7 @@ export namespace search {
     label: string,
     url: string,
     imgUrl: string,
+    onSelect?: () => void,
   };
 
   export interface SearchResultWrapper {
