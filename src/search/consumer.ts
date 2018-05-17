@@ -6,12 +6,12 @@ export class SearchConsumer extends Consumer implements search.SearchConsumer {
 
   public readonly namespace = 'search';
 
-  public query: BehaviorSubject<string>;
+  public query: BehaviorSubject<search.SearchQuery>;
   public results: BehaviorSubject<search.SearchResultWrapper>;
 
   constructor() {
     super();
-    this.query = new BehaviorSubject('');
+    this.query = new BehaviorSubject({ value: '' });
     this.results = new BehaviorSubject({});
   }
 

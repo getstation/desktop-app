@@ -10,12 +10,12 @@ export namespace search {
      * @example
      * sdk.search.query.subscribe(query => {
      *   // Query external provider
-     *   fetch(`https://api.example.com/search/${encodeURIComponent(query)}`)
+     *   fetch(`https://api.example.com/search/${encodeURIComponent(query.value)}`)
      *    .then(response => response.json())
      *    .then(data => console.log(data));
      * });
      */
-    readonly query: Subject<string>;
+    readonly query: Subject<search.SearchQuery>;
 
     /**
      * Push search results
@@ -51,6 +51,10 @@ export namespace search {
   export interface SearchResultWrapper {
     results?: SearchResultItem[],
     loading?: string,
+  }
+
+  export interface SearchQuery {
+    value: string,
   }
 }
 
