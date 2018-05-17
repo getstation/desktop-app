@@ -19,8 +19,6 @@
     "prepublishOnly": "yarn run build"
   },
   "dependencies": {
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
     "rxjs": "^5.5.10",
     "tslib": "^1.9.0"
   },
