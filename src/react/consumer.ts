@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ComponentClass } from 'react';
 import { Consumer } from '../common';
 import { react } from './index';
 
@@ -8,7 +8,7 @@ export class ReactConsumer extends Consumer implements react.ReactConsumer {
 
   public readonly namespace = 'react';
 
-  createPortal(children: ReactNode, id: react.ValidPortalIds) {
+  createPortal(children: ComponentClass, id: react.ValidPortalIds) {
     protectedProvidersWeakMap.get(this)!.createPortal(children, id);
   }
 
