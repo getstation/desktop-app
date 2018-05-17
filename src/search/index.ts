@@ -60,7 +60,7 @@ export namespace search {
     additionalSearchString?: string,
     serviceId?: string,
     label: string,
-    url: string,
+    url?: string,
     imgUrl: string,
     onSelect?: () => void,
   };
