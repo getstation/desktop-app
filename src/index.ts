@@ -2,11 +2,13 @@ import { ReactConsumer } from './react/consumer';
 import { register, unregister } from './registration';
 import { SearchConsumer } from './search/consumer';
 import { StorageConsumer } from './storage/consumer';
+import { TabsConsumer } from './tabs/consumer';
 
 export * from './common';
 export * from './registration';
 export * from './search';
 export * from './storage';
+export * from './tabs';
 export * from './react';
 
 export interface SDKOptions {
@@ -17,6 +19,7 @@ export interface SDKOptions {
 export interface SDK {
   readonly search: SearchConsumer,
   readonly storage: StorageConsumer,
+  readonly tabs: TabsConsumer,
   readonly react: ReactConsumer,
   close(): void,
 }
@@ -24,16 +27,19 @@ export interface SDK {
 export default function sdk(options: SDKOptions): SDK {
   const search = new SearchConsumer();
   const storage = new StorageConsumer(options.id);
+  const tabs = new TabsConsumer(options.id);
   const react = new ReactConsumer();
   const bxsdk = {
     search: register(search),
     storage: register(storage),
+    tabs: register(tabs),
     react: register(react),
     close() {
       unregister(search);
       unregister(storage);
+      unregister(tabs);
       unregister(react);
-    }
+    },
   };
   Object.freeze(bxsdk);
   return bxsdk;
