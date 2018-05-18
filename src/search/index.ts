@@ -30,6 +30,23 @@ export namespace search {
      *     url: 'https://my.example.com/pizza',
      *     imgUrl: 'https://my.example.com/pizza.png',
      *    },
+     *    {
+     *     id: 'search-result-2',
+     *     category: 'My Other Category',
+     *     label: 'Message Georges',
+     *     imgUrl: 'https://my.example.com/pizza.png',
+     *     onSelect: async () => {
+     *       const tabId = this.sdk.tabs.getTabs()[0].tabId;
+     *       const code = `
+     *         var state = { page: '/messages/${id}' };
+     *         history.pushState(state, '', '${this.teamDomain}/messages/${id}');
+     *         var popStateEvent = new PopStateEvent('popstate', { state: state });
+     *         dispatchEvent(popStateEvent);
+     *       `;
+     *       this.sdk.tabs.executeJavaScript(tabId, code);
+     *       await this.sdk.tabs.navToTab(tabId);
+     *     }
+     *    },
      *    ...,
      *   ],
      * });
@@ -43,8 +60,9 @@ export namespace search {
     additionalSearchString?: string,
     serviceId?: string,
     label: string,
-    url: string,
+    url?: string,
     imgUrl: string,
+    onSelect?: () => void,
   };
 
   export interface SearchResultWrapper {

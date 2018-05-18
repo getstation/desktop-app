@@ -1,6 +1,6 @@
 {
   "name": "@getstation/sdk",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": "joel@getstation.com",
   "license": "ISC",
   "description": "Station SDK",
@@ -16,13 +16,16 @@
   },
   "scripts": {
     "build": "tsc -p .",
-    "prepublishOnly": "yarn run build"
+    "prepublishOnly": "yarn run build",
+    "lint": "tslint -p ."
   },
   "dependencies": {
     "rxjs": "^5.5.10",
     "tslib": "^1.9.0"
   },
   "devDependencies": {
+    "tslint": "^5.10.0",
+    "tslint-config-airbnb": "^5.8.0",
     "typescript": "^2.8.3"
   }
 }

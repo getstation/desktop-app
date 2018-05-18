@@ -1,8 +1,9 @@
 import * as Rx from 'rxjs/Rx';
 import { SearchConsumer } from './search/consumer';
 import { StorageConsumer } from './storage/consumer';
+import { TabsConsumer } from './tabs/consumer';
 
-export type Consumers = SearchConsumer | StorageConsumer;
+export type Consumers = SearchConsumer | StorageConsumer | TabsConsumer;
 export interface ConsumerRegistration<C extends Consumers> {
   namespace: C['namespace'],
   register?: C,
