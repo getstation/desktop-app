@@ -1,5 +1,5 @@
 import { ReactConsumer } from './react/consumer';
-import { register, unregister } from './registration';
+import { Consumers, register, unregister } from './registration';
 import { SearchConsumer } from './search/consumer';
 import { StorageConsumer } from './storage/consumer';
 import { TabsConsumer } from './tabs/consumer';
@@ -24,23 +24,48 @@ export interface SDK {
   close(): void,
 }
 
-export default function sdk(options: SDKOptions): SDK {
+export interface Provider {
+  register(consumer: Consumers): void;
+  unregister(consumer: Consumers): void;
+}
+
+export default function sdk(options: SDKOptions, provider?: Provider): SDK {
   const search = new SearchConsumer();
   const storage = new StorageConsumer(options.id);
   const tabs = new TabsConsumer(options.id);
   const react = new ReactConsumer();
-  const bxsdk = {
-    search: register(search),
-    storage: register(storage),
-    tabs: register(tabs),
-    react: register(react),
-    close() {
-      unregister(search);
-      unregister(storage);
-      unregister(tabs);
-      unregister(react);
-    },
-  };
+  let bxsdk!: SDK;
+  if (provider) {
+    provider.register(search);
+    provider.register(storage);
+    provider.register(tabs);
+    provider.register(react);
+    bxsdk = {
+      search: search,
+      storage: storage,
+      tabs: tabs,
+      react: react,
+      close() {
+        provider.unregister(search);
+        provider.unregister(storage);
+        provider.unregister(tabs);
+        provider.unregister(react);
+      },
+    };
+  } else {
+    bxsdk = {
+      search: register(search),
+      storage: register(storage),
+      tabs: register(tabs),
+      react: register(react),
+      close() {
+        unregister(search);
+        unregister(storage);
+        unregister(tabs);
+        unregister(react);
+      },
+    };
+  }
   Object.freeze(bxsdk);
   return bxsdk;
 }

@@ -15,7 +15,7 @@ export interface ConsumerRegistration<C extends Consumers> {
   unregister?: C,
 }
 
-export const consumersObservable = new Rx.Subject<ConsumerRegistration<Consumers>>();
+export const consumersObservable = new Rx.ReplaySubject<ConsumerRegistration<Consumers>>(100);
 
 export function register<C extends Consumers>(consumer: C): C {
   consumersObservable.next({
