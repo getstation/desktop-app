@@ -21,8 +21,8 @@ export class TabsConsumer extends Consumer implements tabs.TabsConsumer {
     return protectedProvidersWeakMap.get(this)!.navToTab(tabId);
   }
 
-  async executeJavaScript(tabId: string, code: string) {
-    return await protectedProvidersWeakMap.get(this)!.executeJavaScript(tabId, code);
+  executeJavaScript(tabId: string, code: string) {
+    return protectedProvidersWeakMap.get(this)!.executeJavaScript(tabId, code);
   }
 
   setProviderInterface(providerInterface: tabs.TabsProviderInterface) {
