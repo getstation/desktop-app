@@ -49,5 +49,5 @@ export namespace tabs {
     tabId: string,
     title: string,
     url: string,
-  }
+  };
 }

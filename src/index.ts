@@ -33,7 +33,7 @@ export default function sdk(options: SDKOptions): SDK {
       unregister(search);
       unregister(storage);
       unregister(tabs);
-    }
+    },
   };
   Object.freeze(bxsdk);
   return bxsdk;

@@ -1,0 +1,8 @@
+version: "2"
+checks:
+  return-statements:
+    enabled: false
+plugins:
+  tslint:
+    enabled: true
+    config: tslint.json

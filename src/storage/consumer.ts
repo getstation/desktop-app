@@ -13,7 +13,7 @@ export class StorageConsumer extends Consumer implements storage.StorageConsumer
     this.id = id;
   }
 
-  getItem<R=any>(key: string) {
+  getItem<R = any>(key: string) {
     return protectedProvidersWeakMap.get(this)!.getItem<R>(this.id, key);
   }
 
