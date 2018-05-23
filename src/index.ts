@@ -1,3 +1,4 @@
+import 'rxjs/Rx';
 import { ReactConsumer } from './react/consumer';
 import { SearchConsumer } from './search/consumer';
 import { StorageConsumer } from './storage/consumer';
