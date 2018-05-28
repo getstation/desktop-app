@@ -1,3 +1,4 @@
+import 'rxjs/Rx';
 import { SearchConsumer } from './search/consumer';
 import { StorageConsumer } from './storage/consumer';
 import { TabsConsumer } from './tabs/consumer';
