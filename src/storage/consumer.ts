@@ -1,4 +1,5 @@
 import { Consumer } from '../common';
+import { StorageEvent } from './event';
 import { storage } from './index';
 
 const protectedProvidersWeakMap = new WeakMap<StorageConsumer, storage.StorageProviderInterface>();
@@ -7,10 +8,12 @@ export class StorageConsumer extends Consumer implements storage.StorageConsumer
 
   public readonly namespace = 'storage';
   public id: string;
+  public onChanged: StorageEvent;
 
   constructor(id: string) {
     super();
     this.id = id;
+    this.onChanged = new StorageEvent();
   }
 
   getItem<R = any>(key: string) {
