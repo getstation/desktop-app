@@ -16,8 +16,6 @@ export type Consumers =
   TabsConsumer |
   ReactConsumer;
 
-export type Consumers = SearchConsumer | StorageConsumer | TabsConsumer;
-
 export interface SDKOptions {
   id: string,
   name: string,
