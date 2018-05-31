@@ -7,6 +7,7 @@ export * from './common';
 export * from './search';
 export * from './storage';
 export * from './tabs';
+export * from './ipc';
 
 export type Consumers = SearchConsumer | StorageConsumer | TabsConsumer;
 
