@@ -28,7 +28,7 @@ export interface Provider {
 }
 
 export default function sdk(options: SDKOptions, provider: Provider): SDK {
-  const search = new SearchConsumer();
+  const search = new SearchConsumer(options.id);
   const storage = new StorageConsumer(options.id);
   const tabs = new TabsConsumer(options.id);
   provider.register(search);
