@@ -8,12 +8,20 @@ export class IpcConsumer extends Consumer implements ipc.IpcConsumer {
 
   public readonly namespace = 'ipc';
   public observable: Observable<any>;
-  public id: string;
 
-  constructor(id: string) {
-    super();
-    this.id = id;
+  /*
+  TODO see how we want to use it
+  bus(channel: string) {
+    return this.observable.filter(m => m.channel === channel);
   }
+
+  publish(channel: string, ...args: any[]) {
+    this.send({
+      channel,
+      args
+    });
+  }
+  */
 
   send(args: any) {
     protectedProvidersWeakMap.get(this)!.pluginToBxChannel.next(args);
@@ -21,6 +29,6 @@ export class IpcConsumer extends Consumer implements ipc.IpcConsumer {
 
   setProviderInterface(providerInterface: ipc.IpcProviderInterface) {
     protectedProvidersWeakMap.set(this, providerInterface);
-    this.observable = providerInterface.bxToPluginChannel.asObservable();
+    this.observable = providerInterface.bxToPluginChannel.asObservable().share();
   }
 }
