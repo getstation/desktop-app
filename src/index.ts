@@ -1,8 +1,8 @@
 import 'rxjs/Rx';
+import { IpcConsumer } from './ipc/consumer';
 import { SearchConsumer } from './search/consumer';
 import { StorageConsumer } from './storage/consumer';
 import { TabsConsumer } from './tabs/consumer';
-import { IpcConsumer } from './ipc/consumer';
 
 export * from './common';
 export * from './search';

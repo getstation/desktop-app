@@ -1,8 +1,8 @@
-export abstract class Consumer {
-  public abstract readonly namespace: string;
+export class Consumer {
+  public readonly namespace: string;
   public readonly id: string;
 
-  protected constructor(id: string) {
+  constructor(id: string) {
     this.id = id;
   }
 }
