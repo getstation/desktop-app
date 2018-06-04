@@ -12,7 +12,7 @@ export namespace ipc {
    *   console.log(message.message); // hello world
    * });
    *
-   * sdk.ipc.send({ message: 'hello world' });
+   * sdk.ipc.publish({ message: 'hello world' });
    */
   export interface IpcConsumer extends Consumer, Subscribable<any> {
     readonly id: string;
@@ -24,7 +24,7 @@ export namespace ipc {
      * Sends a message to all other processes of the plugin
      * @param args
      */
-    send(args: any): void;
+    publish(args: any): void;
 
     /**
      * Internal usage - Set the provider for this consumer

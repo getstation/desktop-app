@@ -14,7 +14,7 @@ export class IpcConsumer extends Consumer implements ipc.IpcConsumer {
     return protectedProvidersWeakMap.get(this)!.bxToPluginChannel;
   }
 
-  send(args: any) {
+  publish(args: any) {
     protectedProvidersWeakMap.get(this)!.pluginToBxChannel.next(args);
   }
 
