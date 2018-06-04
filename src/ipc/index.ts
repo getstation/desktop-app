@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/Observable';
+import { Observable, Subscribable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { observable as Symbol_Observable } from 'rxjs/symbol/observable';
 import { Consumer } from '../common';
@@ -14,7 +14,7 @@ export namespace ipc {
    *
    * sdk.ipc.send({ message: 'hello world' });
    */
-  export interface IpcConsumer extends Consumer {
+  export interface IpcConsumer extends Consumer, Subscribable<any> {
     readonly id: string;
 
     // @ts-ignore: Typescript limitation until Symbol.observable is considered native
