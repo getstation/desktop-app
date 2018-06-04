@@ -5,13 +5,32 @@ import { Consumer } from '../common';
 
 export namespace ipc {
 
+  /**
+   * Communicate with other processes of the current plugin
+   * @example
+   * Observable.from(sdk.ipc).subscribe((message) => {
+   *   console.log(message.message); // hello world
+   * });
+   *
+   * sdk.ipc.send({ message: 'hello world' });
+   */
   export interface IpcConsumer extends Consumer {
     readonly id: string;
 
-    // @ts-ignore: Typescript limitation until Symbol.observable is
-    // considered native
+    // @ts-ignore: Typescript limitation until Symbol.observable is considered native
     [Symbol_Observable](): Observable<any>;
+
+    /**
+     * Sends a message to all other processes of the plugin
+     * @param args
+     */
     send(args: any): void;
+
+    /**
+     * Internal usage - Set the provider for this consumer
+     * @protected
+     * @param {ipc.IpcProviderInterface} providerInterface
+     */
     setProviderInterface(providerInterface: IpcProviderInterface): void;
   }
 
