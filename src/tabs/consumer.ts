@@ -6,12 +6,6 @@ const protectedProvidersWeakMap = new WeakMap<TabsConsumer, tabs.TabsProviderInt
 export class TabsConsumer extends Consumer implements tabs.TabsConsumer {
 
   public readonly namespace = 'tabs';
-  public id: string;
-
-  constructor(id: string) {
-    super();
-    this.id = id;
-  }
 
   getTabs() {
     return protectedProvidersWeakMap.get(this)!.getTabs(this.id);
