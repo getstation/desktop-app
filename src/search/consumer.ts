@@ -9,8 +9,8 @@ export class SearchConsumer extends Consumer implements search.SearchConsumer {
   public query: BehaviorSubject<search.SearchQuery>;
   public results: BehaviorSubject<search.SearchResultWrapper>;
 
-  constructor() {
-    super();
+  constructor(id: string) {
+    super(id);
     this.query = new BehaviorSubject({ value: '' });
     this.results = new BehaviorSubject({});
   }

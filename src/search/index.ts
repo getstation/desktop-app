@@ -5,6 +5,8 @@ import { Consumer } from '../common';
 export namespace search {
 
   export interface SearchConsumer extends Consumer {
+    readonly id: string;
+
     /**
      * Receive query string updates
      * @example

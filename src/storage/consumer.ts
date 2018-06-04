@@ -7,12 +7,10 @@ const protectedProvidersWeakMap = new WeakMap<StorageConsumer, storage.StoragePr
 export class StorageConsumer extends Consumer implements storage.StorageConsumer {
 
   public readonly namespace = 'storage';
-  public id: string;
   public onChanged: StorageEvent;
 
   constructor(id: string) {
-    super();
-    this.id = id;
+    super(id);
     this.onChanged = new StorageEvent();
   }
 
