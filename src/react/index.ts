@@ -9,7 +9,7 @@ export namespace react {
      * @param {React.ComponentClass} children
      * @param {react.ValidPortalIds} id
      * @example
-     * sdk.react.createPortal(MyReactComponent, 'portal-quickswitch');
+     * sdk.react.createPortal(MyReactComponent, 'quickswitch');
      */
     createPortal(children: ComponentClass, id: react.ValidPortalIds): void;
     setProviderInterface(providerInterface: react.ReactProviderInterface): void;
@@ -19,6 +19,6 @@ export namespace react {
     createPortal(children: ComponentClass, id: react.ValidPortalIds): void;
   }
 
-  export type ValidPortalIds = 'portal-quickswitch';
+  export type ValidPortalIds = 'quickswitch';
 
 }
