@@ -62,6 +62,7 @@ export namespace search {
     additionalSearchString?: string,
     serviceId?: string,
     label: string,
+    context?: string,
     url?: string,
     imgUrl: string,
     onSelect?: () => void,
@@ -76,5 +77,3 @@ export namespace search {
     value: string,
   }
 }
-
-

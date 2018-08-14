@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [UNRELEASED]
 ### Added
 - IPC Consumer
+- Add context field in SearchResultItem
 
 ## [0.2.1] - 2018-05-31
 ### Fixed
