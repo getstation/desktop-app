@@ -57,7 +57,7 @@ export namespace search {
   }
 
   export type SearchResultItem = {
-    id: string,
+    resourceId: string,
     category: string,
     additionalSearchString?: string,
     serviceId?: string,
