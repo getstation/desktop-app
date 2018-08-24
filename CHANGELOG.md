@@ -5,6 +5,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [UNRELEASED]
+## [0.5.0] - 2018-08-24
+### Added
+- Activity API
+
+## [0.4.1] - 2018-08-16
+### Added
+- Add context field to search result items
+
+## [0.4.0] - 2018-06-07
+### Added
+- Multiple GDrive accounts support
+
+## [0.3.0] - 2018-06-04
 ### Added
 - IPC Consumer
 - Add context field in SearchResultItem
