@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [UNRELEASED]
+## [0.6.1] - 2018-08-27
+### Added
+- Tabs API can now be observed
+- Tabs API nav Observable
+
 ## [0.6.0] - 2018-08-27
 ### Added
 - Session API
