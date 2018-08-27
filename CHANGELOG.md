@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [UNRELEASED]
+## [0.6.0] - 2018-08-27
+### Added
+- Session API
+
 ## [0.5.0] - 2018-08-24
 ### Added
 - Activity API
