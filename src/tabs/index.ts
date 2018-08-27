@@ -16,7 +16,19 @@ export namespace tabs {
      * @example
      * sdk.tabs.navToTab('mysaas-XXXXXXXXX/XXXXXXXXX');
      */
-    navToTab(tabId: string): Promise<void>
+    navToTab(tabId: string): void
+    /**
+     * Dispatch URL to given tabId
+     * @example
+     * sdk.tabs.dispatchUrlInTab('mysaas-XXXXXXXXX/XXXXXXXXX', 'https://mysaas.com/xxxx');
+     */
+    dispatchUrlInTab(tabId: string, url: string): void
+    /**
+     * Get tab webContents state
+     * @example
+     * sdk.tabs.getTabWebContentsState('mysaas-XXXXXXXXX/XXXXXXXXX');
+     */
+    getTabWebContentsState(tabId: string): TabWebContentsState
     /**
      * Execute javascript code in web view for given tabId
      * @example
@@ -28,14 +40,16 @@ export namespace tabs {
      *  `;
      * sdk.tabs.executeJavaScript('mysaas-XXXXXXXXX/XXXXXXXXX', code);
      */
-    executeJavaScript(tabId: string, code: string): Promise<void>;
+    executeJavaScript(tabId: string, code: string): Promise<any>;
     setProviderInterface(providerInterface: tabs.TabsProviderInterface): void
   }
 
   export interface TabsProviderInterface {
     getTabs(id: string): Tab[];
-    navToTab(tabId: string): Promise<void>
-    executeJavaScript(tabId: string, code: string): Promise<void>;
+    navToTab(tabId: string): void
+    dispatchUrlInTab(tabId: string, url: string): void
+    getTabWebContentsState(tabId: string): TabWebContentsState
+    executeJavaScript(tabId: string, code: string): Promise<any>
   }
 
   export type Tab = {
@@ -50,4 +64,12 @@ export namespace tabs {
     title: string,
     url: string,
   };
+
+  export enum TabWebContentsState {
+    notMounted,
+    waitingToAttach,
+    detaching,
+    mounted,
+    crashed,
+  }
 }

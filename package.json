@@ -24,10 +24,10 @@
     "tslib": "^1.9.0"
   },
   "devDependencies": {
-    "tslint": "^5.10.0",
-    "tslint-config-airbnb": "^5.8.0",
     "@types/react": "^16.3.14",
     "@types/react-dom": "^16.0.5",
+    "tslint": "^5.10.0",
+    "tslint-config-airbnb": "^5.8.0",
     "typescript": "^2.8.3"
   }
 }
