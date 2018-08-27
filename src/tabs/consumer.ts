@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs/Observable';
 import { Consumer } from '../common';
 import { tabs } from './index';
 
@@ -11,8 +12,16 @@ export class TabsConsumer extends Consumer implements tabs.TabsConsumer {
     return protectedProvidersWeakMap.get(this)!.getTabs(this.id);
   }
 
+  getTabsObservable(): Observable<tabs.Tab[]> {
+    return protectedProvidersWeakMap.get(this)!.getTabsObservable(this.id);
+  }
+
   navToTab(tabId: string) {
     return protectedProvidersWeakMap.get(this)!.navToTab(tabId);
+  }
+
+  nav() {
+    return protectedProvidersWeakMap.get(this)!.nav();
   }
 
   dispatchUrlInTab(tabId: string, url: string) {

@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs/Observable';
 import { Consumer } from '../common';
 
 export namespace tabs {
@@ -11,6 +12,20 @@ export namespace tabs {
      * const serviceTabs = sdk.tabs.getTabs();
      */
     getTabs(): Tab[];
+    /**
+     * Receive tabs updates
+     * @example
+     * sdk.tabs.getTabsObservable().subscribe(tabs => {
+     *  ...
+     * });
+     */
+    getTabsObservable(id: string): Observable<tabs.Tab[]>;
+    /**
+     * Receive nav updates
+     * @example
+     * const nav = sdk.tabs.nav();
+     */
+    nav(): Observable<tabs.Nav>;
     /**
      * Navigate to given tabId
      * @example
@@ -46,6 +61,10 @@ export namespace tabs {
 
   export interface TabsProviderInterface {
     getTabs(id: string): Tab[];
+    getTabsObservable(id: string): Observable<tabs.Tab[]>;
+    nav(): Observable<tabs.Nav>;
+    navToTab(tabId: string): Promise<void>
+    executeJavaScript(tabId: string, code: string): Promise<void>;
     navToTab(tabId: string): void
     dispatchUrlInTab(tabId: string, url: string): void
     getTabWebContentsState(tabId: string): TabWebContentsState
@@ -63,6 +82,11 @@ export namespace tabs {
     tabId: string,
     title: string,
     url: string,
+  };
+
+  export type Nav = {
+    tabApplicationId: string,
+    previousTabApplicationId: string,
   };
 
   export enum TabWebContentsState {
