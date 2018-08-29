@@ -85,8 +85,8 @@ export namespace tabs {
   };
 
   export type Nav = {
-    tabApplicationId: string,
-    previousTabApplicationId: string,
+    tabId: string,
+    previousTabId: string,
   };
 
   export enum TabWebContentsState {
