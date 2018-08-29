@@ -13,13 +13,13 @@ export namespace tabs {
      */
     getTabs(): Tab[];
     /**
-     * Receive tabs updates
+     * Receive tab updates
      * @example
-     * sdk.tabs.getTabsObservable().subscribe(tabs => {
+     * sdk.tabs.getTab('mysaas-XXXXXXXXX/XXXXXXXXX').subscribe(tab => {
      *  ...
      * });
      */
-    getTabsObservable(id: string): Observable<tabs.Tab[]>;
+    getTab(id: string): Observable<tabs.Tab>;
     /**
      * Receive nav updates
      * @example
@@ -61,7 +61,7 @@ export namespace tabs {
 
   export interface TabsProviderInterface {
     getTabs(id: string): Tab[];
-    getTabsObservable(id: string): Observable<tabs.Tab[]>;
+    getTab(tabId: string): Observable<tabs.Tab>;
     nav(): Observable<tabs.Nav>;
     navToTab(tabId: string): Promise<void>
     executeJavaScript(tabId: string, code: string): Promise<void>;
