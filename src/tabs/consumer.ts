@@ -12,8 +12,8 @@ export class TabsConsumer extends Consumer implements tabs.TabsConsumer {
     return protectedProvidersWeakMap.get(this)!.getTabs(this.id);
   }
 
-  getTabsObservable(): Observable<tabs.Tab[]> {
-    return protectedProvidersWeakMap.get(this)!.getTabsObservable(this.id);
+  getTab(tabId: string): Observable<tabs.Tab> {
+    return protectedProvidersWeakMap.get(this)!.getTab(tabId);
   }
 
   navToTab(tabId: string) {
