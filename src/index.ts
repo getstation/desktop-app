@@ -1,6 +1,7 @@
 import 'rxjs/Rx';
 
 import { ActivityConsumer } from './activity/consumer';
+import { HistoryConsumer } from './history/consumer';
 import { IpcConsumer } from './ipc/consumer';
 import { ReactConsumer } from './react/consumer';
 import { SearchConsumer } from './search/consumer';
@@ -16,6 +17,7 @@ export * from './session';
 export * from './ipc';
 export * from './react';
 export * from './activity';
+export * from './history';
 
 export type Consumers =
   SearchConsumer |
@@ -24,7 +26,10 @@ export type Consumers =
   SessionConsumer |
   IpcConsumer |
   ReactConsumer |
-  ActivityConsumer;
+  ActivityConsumer |
+  HistoryConsumer;
+
+export type ConsumersNamespaces = Pick<Consumers, 'namespace'>;
 
 export interface SDKOptions {
   id: string,
@@ -39,6 +44,9 @@ export interface SDK {
   readonly ipc: IpcConsumer,
   readonly react: ReactConsumer,
   readonly activity: ActivityConsumer,
+  readonly history: HistoryConsumer,
+  register(consumer: Consumers): void,
+  unregister(consumer: Consumers): void,
   close(): void,
 }
 
@@ -70,6 +78,16 @@ export default function sdk(options: SDKOptions, provider: Provider): SDK {
     ipc,
     react,
     activity,
+    register(consumer: Consumers) {
+      provider.register(consumer);
+      // tslint:disable-next-line:no-invalid-this
+      this[consumer.namespace] = consumer;
+    },
+    unregister(consumer: Consumers) {
+      provider.unregister(consumer);
+      // tslint:disable-next-line:no-invalid-this
+      delete this[consumer.namespace];
+    },
     close() {
       provider.unregister(search);
       provider.unregister(storage);
@@ -80,6 +98,6 @@ export default function sdk(options: SDKOptions, provider: Provider): SDK {
       provider.unregister(activity);
     },
   };
-  Object.freeze(bxsdk);
+  // @ts-ignore
   return bxsdk;
 }

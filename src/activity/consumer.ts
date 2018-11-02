@@ -1,4 +1,3 @@
-import { flatMap } from 'rxjs/operators';
 import { Observable } from 'rxjs/Rx';
 import { Consumer } from '../common';
 import { activity } from './index';
@@ -11,11 +10,12 @@ const protectedProvidersWeakMap = new WeakMap<activity.ActivityConsumer, activit
 export class ActivityConsumer extends Consumer implements activity.ActivityConsumer {
   public readonly namespace = 'activity';
 
-  push(resourceId: string, extraData?: object, type?: string): Promise<{ activityEntryId: string }> {
+  push(resourceId: string, extraData?: object, type?: string, serviceId?: string): Promise<{ activityEntryId: string }> {
     return protectedProvidersWeakMap.get(this)!.push({
       type: type || '',
       createdAt: Date.now(),
       resourceId,
+      serviceId: serviceId || this.id,
       extraData,
     });
   }
@@ -26,14 +26,25 @@ export class ActivityConsumer extends Consumer implements activity.ActivityConsu
       orderBy: 'createdAt',
       ascending: false,
       limit: 1,
-      resourceId: null,
-      type: null,
-      global: true,
+      global: false,
+      where: {
+        resourceIds: null,
+        serviceIds: null,
+        types: null,
+      },
+      whereNot: {
+        resourceIds: null,
+        serviceIds: null,
+        types: null,
+      },
       ...userQueryArgs,
     };
+
     const consumer = protectedProvidersWeakMap.get(this)!;
-    const obs: Observable<Observable<ActivityEntry[]>> = Observable.from(consumer.query(queryArgs));
-    return obs.pipe(flatMap(x => x)); // flatten observable
+
+    return Observable
+      .from(consumer.query(queryArgs))
+      .flatMap(c => c);
   }
 
 
