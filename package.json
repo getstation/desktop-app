@@ -20,7 +20,7 @@
     "lint": "tslint -p ."
   },
   "dependencies": {
-    "rxjs": "^5.5.11",
+    "rxjs": "^5.5.10",
     "tslib": "^1.9.0"
   },
   "devDependencies": {
