@@ -33,12 +33,6 @@ export namespace tabs {
      */
     navToTab(tabId: string): void
     /**
-     * Dispatch URL to given tabId
-     * @example
-     * sdk.tabs.dispatchUrlInTab('mysaas-XXXXXXXXX/XXXXXXXXX', 'https://mysaas.com/xxxx');
-     */
-    dispatchUrlInTab(tabId: string, url: string): void
-    /**
      * Get tab webContents state
      * @example
      * sdk.tabs.getTabWebContentsState('mysaas-XXXXXXXXX/XXXXXXXXX');

@@ -24,10 +24,6 @@ export class TabsConsumer extends Consumer implements tabs.TabsConsumer {
     return protectedProvidersWeakMap.get(this)!.nav();
   }
 
-  dispatchUrlInTab(tabId: string, url: string) {
-    return protectedProvidersWeakMap.get(this)!.dispatchUrlInTab(tabId, url);
-  }
-
   getTabWebContentsState(tabId: string) {
     return protectedProvidersWeakMap.get(this)!.getTabWebContentsState(tabId);
   }
