@@ -72,7 +72,6 @@ export namespace tabs {
     navToTab(tabId: string): Promise<void>
     executeJavaScript(tabId: string, code: string): Promise<void>;
     navToTab(tabId: string): void
-    dispatchUrlInTab(tabId: string, url: string): void
     getTabWebContentsState(tabId: string): TabWebContentsState
     executeJavaScript(tabId: string, code: string): Promise<any>
   }
