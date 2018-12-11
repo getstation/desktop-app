@@ -89,7 +89,9 @@ export namespace tabs {
     url: string,
   };
 
-  export type TabUpdate = Pick<Tab, 'url'>;
+  export type TabUpdate = {
+    url?: string,
+  };
 
   export type Nav = {
     tabId: string,
