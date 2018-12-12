@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [UNRELEASED]
+## [0.8.0] - 2018-12-12
 ### Added
 - Added silent option for `tabs.navToTab` method
 - Added `sdk.tabs.updateTab`
