@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [UNRELEASED]
+### Added
+- Added `sdk.tabs.updateTab`
+### Removed
+- Removed `sdk.tabs.dispatchURLInTab` which was misleading and not used
+
 ## [0.6.1] - 2018-08-27
 ### Added
 - Tabs API can now be observed
