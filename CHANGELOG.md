@@ -6,7 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [UNRELEASED]
 ### Added
-- Add silent option for `tabs.navToTab` method
+- Added silent option for `tabs.navToTab` method
+- Added `sdk.tabs.updateTab`
+### Removed
+- Removed `sdk.tabs.dispatchURLInTab` which was misleading and not used
 
 ## [0.6.1] - 2018-08-27
 ### Added

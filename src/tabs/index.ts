@@ -20,6 +20,17 @@ export namespace tabs {
      * });
      */
     getTab(id: string): Observable<tabs.Tab>;
+
+    /**
+     * Modifies the properties of a tab.
+     *
+     * Properties that are not specified in updatedTab are not modified.
+     *
+     * Modifying the url will trigger a navigation.
+     * @example
+     * sdk.tabs.updateTab('mysaas-XXXXXXXXX/XXXXXXXXX', { url: 'https://google.com' }).
+     */
+    updateTab(tabId: string, updatedTab: TabUpdate): void;
     /**
      * Receive nav updates
      * @example
@@ -35,12 +46,6 @@ export namespace tabs {
      * sdk.tabs.navToTab('mysaas-XXXXXXXXX/XXXXXXXXX');
      */
     navToTab(tabId: string, options?: NavToTabOptions): void
-    /**
-     * Dispatch URL to given tabId
-     * @example
-     * sdk.tabs.dispatchUrlInTab('mysaas-XXXXXXXXX/XXXXXXXXX', 'https://mysaas.com/xxxx');
-     */
-    dispatchUrlInTab(tabId: string, url: string): void
     /**
      * Get tab webContents state
      * @example
@@ -66,9 +71,9 @@ export namespace tabs {
     getTabs(id: string): Tab[];
     getTab(tabId: string): Observable<tabs.Tab>;
     nav(): Observable<tabs.Nav>;
+    updateTab(tabId: string, updatedTab: TabUpdate): void;
     navToTab(tabId: string, options: NavToTabOptions): Promise<void>
     executeJavaScript(tabId: string, code: string): Promise<void>;
-    dispatchUrlInTab(tabId: string, url: string): void
     getTabWebContentsState(tabId: string): TabWebContentsState
   }
 
@@ -87,6 +92,10 @@ export namespace tabs {
     tabId: string,
     title: string,
     url: string,
+  };
+
+  export type TabUpdate = {
+    url?: string,
   };
 
   export type Nav = {
