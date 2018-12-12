@@ -38,11 +38,14 @@ export namespace tabs {
      */
     nav(): Observable<tabs.Nav>;
     /**
-     * Navigate to given tabId
+     * Navigate to given tabId.
+     * Silent option will notify activity api to allow
+     * plugins history recording to ignore automatic
+     * navigation (not triggered by the end user)
      * @example
      * sdk.tabs.navToTab('mysaas-XXXXXXXXX/XXXXXXXXX');
      */
-    navToTab(tabId: string): void
+    navToTab(tabId: string, options?: NavToTabOptions): void
     /**
      * Get tab webContents state
      * @example
@@ -69,12 +72,14 @@ export namespace tabs {
     getTab(tabId: string): Observable<tabs.Tab>;
     nav(): Observable<tabs.Nav>;
     updateTab(tabId: string, updatedTab: TabUpdate): void;
-    navToTab(tabId: string): Promise<void>
+    navToTab(tabId: string, options: NavToTabOptions): Promise<void>
     executeJavaScript(tabId: string, code: string): Promise<void>;
-    navToTab(tabId: string): void
     getTabWebContentsState(tabId: string): TabWebContentsState
-    executeJavaScript(tabId: string, code: string): Promise<any>
   }
+
+  export type NavToTabOptions = {
+    silent: boolean,
+  };
 
   export type Tab = {
     applicationId: string,
