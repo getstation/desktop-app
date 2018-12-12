@@ -16,8 +16,8 @@ export class TabsConsumer extends Consumer implements tabs.TabsConsumer {
     return protectedProvidersWeakMap.get(this)!.getTab(tabId);
   }
 
-  navToTab(tabId: string, auto: boolean = false) {
-    return protectedProvidersWeakMap.get(this)!.navToTab(tabId, auto);
+  navToTab(tabId: string, options: tabs.NavToTabOptions = { silent: false }) {
+    return protectedProvidersWeakMap.get(this)!.navToTab(tabId, options);
   }
 
   nav() {
