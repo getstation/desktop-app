@@ -1,12 +1,10 @@
 import { Observable } from 'rxjs/Observable';
 import { Consumer } from '../common';
 import { tabs } from './index';
-import CreateOptions = tabs.CreateOptions;
 
 const protectedProvidersWeakMap = new WeakMap<TabsConsumer, tabs.TabsProviderInterface>();
 
 export class TabsConsumer extends Consumer implements tabs.TabsConsumer {
-
   public readonly namespace = 'tabs';
 
   getTabs() {
@@ -29,7 +27,7 @@ export class TabsConsumer extends Consumer implements tabs.TabsConsumer {
     return protectedProvidersWeakMap.get(this)!.nav();
   }
 
-  create(options: CreateOptions) {
+  create(options: tabs.CreateOptions) {
     return protectedProvidersWeakMap.get(this)!.create(options);
   }
 
