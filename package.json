@@ -16,7 +16,7 @@
   },
   "scripts": {
     "build": "tsc -p .",
-    "prepublishOnly": "yarn run build",
+    "prepublishOnly": "yarn run lint && yarn run build",
     "lint": "tslint -p ."
   },
   "dependencies": {
