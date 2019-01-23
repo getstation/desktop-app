@@ -1,6 +1,6 @@
 {
   "name": "@getstation/sdk",
-  "version": "0.8.0",
+  "version": "0.9.0-rc0",
   "author": "joel@getstation.com",
   "license": "ISC",
   "description": "Station SDK",
@@ -16,7 +16,7 @@
   },
   "scripts": {
     "build": "tsc -p .",
-    "prepublishOnly": "yarn run build",
+    "prepublishOnly": "yarn run lint && yarn run build",
     "lint": "tslint -p ."
   },
   "dependencies": {

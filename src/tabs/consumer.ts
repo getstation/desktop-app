@@ -5,7 +5,6 @@ import { tabs } from './index';
 const protectedProvidersWeakMap = new WeakMap<TabsConsumer, tabs.TabsProviderInterface>();
 
 export class TabsConsumer extends Consumer implements tabs.TabsConsumer {
-
   public readonly namespace = 'tabs';
 
   getTabs() {
@@ -26,6 +25,10 @@ export class TabsConsumer extends Consumer implements tabs.TabsConsumer {
 
   nav() {
     return protectedProvidersWeakMap.get(this)!.nav();
+  }
+
+  create(options: tabs.CreateOptions) {
+    return protectedProvidersWeakMap.get(this)!.create(options);
   }
 
   getTabWebContentsState(tabId: string) {

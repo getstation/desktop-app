@@ -38,6 +38,12 @@ export namespace tabs {
      */
     nav(): Observable<tabs.Nav>;
     /**
+     * Create a tab for given application and navigate to the given url
+     * @example`
+     * sdk.tabs.create({ applicationId: 'slack', url: 'https://google.fr' });
+    */
+    create(options: CreateOptions): void;
+    /**
      * Navigate to given tabId.
      * Silent option will notify activity api to allow
      * plugins history recording to ignore automatic
@@ -71,6 +77,7 @@ export namespace tabs {
     getTabs(id: string): Tab[];
     getTab(tabId: string): Observable<tabs.Tab>;
     nav(): Observable<tabs.Nav>;
+    create(options: CreateOptions): void;
     updateTab(tabId: string, updatedTab: TabUpdate): void;
     navToTab(tabId: string, options: NavToTabOptions): Promise<void>
     executeJavaScript(tabId: string, code: string): Promise<void>;
@@ -80,6 +87,11 @@ export namespace tabs {
   export type NavToTabOptions = {
     silent: boolean,
   };
+
+  export interface CreateOptions {
+    applicationId: string,
+    url: string,
+  }
 
   export type Tab = {
     applicationId: string,
