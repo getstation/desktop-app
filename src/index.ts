@@ -1,5 +1,5 @@
 // tslint:disable-next-line:no-import-side-effect
-import 'rxjs/Rx';
+import 'rxjs';
 
 import { ActivityConsumer } from './activity/consumer';
 import { HistoryConsumer } from './history/consumer';

@@ -1,6 +1,6 @@
-import { Observable } from 'rxjs/Observable';
-import { Consumer } from '../common';
+import { Observable } from 'rxjs';
 
+import { Consumer } from '../common';
 
 export namespace activity {
   export interface ActivityConsumer extends Consumer {

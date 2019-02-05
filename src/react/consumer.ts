@@ -1,5 +1,7 @@
 import { ComponentClass } from 'react';
+
 import { Consumer } from '../common';
+
 import { react } from './index';
 
 const protectedProvidersWeakMap = new WeakMap<react.ReactConsumer, react.ReactProviderInterface>();

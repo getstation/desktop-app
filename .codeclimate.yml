@@ -1,4 +1,8 @@
 version: "2"
+prepare:
+  fetch:
+  - url: 'https://raw.githubusercontent.com/getstation/tslint-config-station/master/tslint.json'
+    path: 'tslint.json'
 checks:
   return-statements:
     enabled: false

@@ -1,5 +1,8 @@
-import { Observable } from 'rxjs/Rx';
+import { from, Observable } from 'rxjs';
+import { flatMap } from 'rxjs/operators';
+
 import { Consumer } from '../common';
+
 import { activity } from './index';
 
 import QueryArgs = activity.QueryArgs;
@@ -19,7 +22,6 @@ export class ActivityConsumer extends Consumer implements activity.ActivityConsu
       extraData,
     });
   }
-
 
   query(userQueryArgs: Partial<QueryArgs> = {}): Observable<ActivityEntry[]> {
     const queryArgs: QueryArgs = {
@@ -42,11 +44,9 @@ export class ActivityConsumer extends Consumer implements activity.ActivityConsu
 
     const consumer = protectedProvidersWeakMap.get(this)!;
 
-    return Observable
-      .from(consumer.query(queryArgs))
-      .flatMap(c => c);
+    return from(consumer.query(queryArgs))
+      .pipe(flatMap(c => c));
   }
-
 
   setProviderInterface(providerInterface: activity.ActivityProviderInterface) {
     protectedProvidersWeakMap.set(this, providerInterface);

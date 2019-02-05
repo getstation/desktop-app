@@ -1,4 +1,5 @@
 import { Consumer } from '../common';
+
 import { session } from './index';
 
 const protectedProvidersWeakMap = new WeakMap<SessionConsumer, session.SessionProviderInterface>();

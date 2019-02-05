@@ -1,5 +1,7 @@
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { BehaviorSubject } from 'rxjs';
+
 import { Consumer } from '../common';
+
 import { search } from './index';
 
 export class SearchConsumer extends Consumer implements search.SearchConsumer {

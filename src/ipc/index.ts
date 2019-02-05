@@ -1,6 +1,5 @@
-import { Observable, Subscribable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
-import { observable as Symbol_Observable } from 'rxjs/symbol/observable';
+import { Observable, observable as Symbol_observable, Subject, Subscribable } from 'rxjs';
+
 import { Consumer } from '../common';
 
 export namespace ipc {
@@ -20,7 +19,7 @@ export namespace ipc {
     readonly id: string;
 
     // @ts-ignore: Typescript limitation until Symbol.observable is considered native
-    [Symbol_Observable](): Observable<any>;
+    [Symbol_observable](): Observable<any>;
 
     /**
      * Sends a message to all other processes of the plugin

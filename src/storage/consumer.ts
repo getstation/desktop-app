@@ -1,4 +1,5 @@
 import { Consumer } from '../common';
+
 import { StorageEvent } from './event';
 import { storage } from './index';
 

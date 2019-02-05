@@ -1,4 +1,5 @@
 import { ComponentClass } from 'react';
+
 import { Consumer } from '../common';
 
 export namespace react {

@@ -1,5 +1,7 @@
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
+
 import { Consumer } from '../common';
+
 import { tabs } from './index';
 
 const protectedProvidersWeakMap = new WeakMap<TabsConsumer, tabs.TabsProviderInterface>();

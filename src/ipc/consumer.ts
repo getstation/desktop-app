@@ -1,6 +1,7 @@
-import { Subscribable } from 'rxjs/Observable';
-import { observable as SymbolObservable } from 'rxjs/symbol/observable';
+import { Observable, observable as Symbol_observable, Subscribable } from 'rxjs';
+
 import { Consumer } from '../common';
+
 import { ipc } from './index';
 
 const protectedProvidersWeakMap = new WeakMap<IpcConsumer, ipc.IpcProviderInterface>();
@@ -11,7 +12,7 @@ export class IpcConsumer extends Consumer implements ipc.IpcConsumer {
   public subscribe: Subscribable<any>['subscribe'];
 
   // tslint:disable-next-line
-  [SymbolObservable]() {
+  [Symbol_observable](): Observable<any> {
     return protectedProvidersWeakMap.get(this)!.bxToPluginChannel;
   }
 

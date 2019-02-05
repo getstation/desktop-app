@@ -1,4 +1,5 @@
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
+
 import { Consumer } from '../common';
 
 export namespace tabs {
