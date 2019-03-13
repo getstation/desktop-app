@@ -34,7 +34,7 @@ export namespace activity {
 
   export interface ActivityEntry {
     resourceId: string, // the id of the SearchResultItem this activity corresponds to
-    serviceId: string, // the service id corresponding to the resource id
+    manifestURL?: string, // the service id corresponding to the resource id
     type: string, // type of activity entry
     extraData?: any, // a set of key-value that can be used for anything
     createdAt: number, // timestamp at which the activity was made. By default, at the time the function is called
@@ -44,7 +44,7 @@ export namespace activity {
 
   export type QueryArgsScope = {
     resourceIds: ScopeFilter,
-    serviceIds: ScopeFilter,
+    manifestURLs: ScopeFilter,
     types: ScopeFilter,
   };
 

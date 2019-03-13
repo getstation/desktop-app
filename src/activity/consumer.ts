@@ -13,12 +13,12 @@ const protectedProvidersWeakMap = new WeakMap<activity.ActivityConsumer, activit
 export class ActivityConsumer extends Consumer implements activity.ActivityConsumer {
   public readonly namespace = 'activity';
 
-  push(resourceId: string, extraData?: object, type?: string, serviceId?: string): Promise<{ activityEntryId: string }> {
+  push(resourceId: string, extraData?: object, type?: string, manifestURL?: string): Promise<{ activityEntryId: string }> {
     return protectedProvidersWeakMap.get(this)!.push({
       type: type || '',
       createdAt: Date.now(),
       resourceId,
-      serviceId: serviceId || this.id,
+      manifestURL: manifestURL,
       extraData,
     });
   }
@@ -31,12 +31,12 @@ export class ActivityConsumer extends Consumer implements activity.ActivityConsu
       global: false,
       where: {
         resourceIds: null,
-        serviceIds: null,
+        manifestURLs: null,
         types: null,
       },
       whereNot: {
         resourceIds: null,
-        serviceIds: null,
+        manifestURLs: null,
         types: null,
       },
       ...userQueryArgs,
