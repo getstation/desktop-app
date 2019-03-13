@@ -1,4 +1,4 @@
-import { Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Consumer } from '../common';
 
 export namespace config {
@@ -27,7 +27,7 @@ export namespace config {
   }
 
   export interface ConfigProviderInterface {
-    configData: Subject<config.ConfigData[]>;
+    configData: Observable<config.ConfigData[]>;
     setIcon(applicationId: string, url: string): void;
   }
 
