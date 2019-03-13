@@ -14,7 +14,7 @@ export namespace config {
      *      // ... configData.subdomain
      *    });
      */
-    readonly configData: Observable<config.ConfigData>;
+    readonly configData: Observable<config.ConfigData[]>;
 
     /**
      * Update Dock icon for current application with given URL
@@ -27,11 +27,12 @@ export namespace config {
   }
 
   export interface ConfigProviderInterface {
-    configData: Subject<config.ConfigData>;
+    configData: Subject<config.ConfigData[]>;
     setIcon(url: string): void;
   }
 
   export type ConfigData = {
+    applicationId: string,
     subdomain?: string,
   };
 }
