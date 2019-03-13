@@ -21,14 +21,14 @@ export namespace config {
      * @example
      *  sdk.config.setIcon('https://domain.tld/myicon.png');
      */
-    setIcon(url: string): void;
+    setIcon(applicationId: string, url: string): void;
 
     setProviderInterface(providerInterface: config.ConfigProviderInterface): void;
   }
 
   export interface ConfigProviderInterface {
     configData: Subject<config.ConfigData[]>;
-    setIcon(url: string): void;
+    setIcon(applicationId: string, url: string): void;
   }
 
   export type ConfigData = {

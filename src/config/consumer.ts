@@ -14,7 +14,7 @@ export class ConfigConsumer extends Consumer implements config.ConfigConsumer {
     protectedProvidersWeakMap.set(this, providerInterface);
   }
 
-  setIcon(url: string): void {
-    return protectedProvidersWeakMap.get(this)!.setIcon(url);
+  setIcon(applicationId: string, url: string): void {
+    return protectedProvidersWeakMap.get(this)!.setIcon(applicationId, url);
   }
 }
