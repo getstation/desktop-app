@@ -7,7 +7,7 @@ export class ConfigConsumer extends Consumer implements config.ConfigConsumer {
   public readonly namespace = 'config';
 
   get configData() {
-    return protectedProvidersWeakMap.get(this)!.configData.asObservable();
+    return protectedProvidersWeakMap.get(this)!.configData;
   }
 
   setProviderInterface(providerInterface: config.ConfigProviderInterface) {
