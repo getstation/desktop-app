@@ -2,6 +2,7 @@
 import 'rxjs';
 
 import { ActivityConsumer } from './activity/consumer';
+import { ConfigConsumer } from './config/consumer';
 import { HistoryConsumer } from './history/consumer';
 import { IpcConsumer } from './ipc/consumer';
 import { ReactConsumer } from './react/consumer';
@@ -19,6 +20,7 @@ export * from './ipc';
 export * from './react';
 export * from './activity';
 export * from './history';
+export * from './config';
 
 export type Consumers =
   SearchConsumer |
@@ -28,7 +30,8 @@ export type Consumers =
   IpcConsumer |
   ReactConsumer |
   ActivityConsumer |
-  HistoryConsumer;
+  HistoryConsumer |
+  ConfigConsumer;
 
 export type ConsumersNamespaces = Pick<Consumers, 'namespace'>;
 
@@ -46,6 +49,7 @@ export interface SDK {
   readonly react: ReactConsumer,
   readonly activity: ActivityConsumer,
   readonly history: HistoryConsumer,
+  readonly config: ConfigConsumer,
   register(consumer: Consumers): void,
   unregister(consumer: Consumers): void,
   close(): void,
@@ -64,6 +68,7 @@ export default function sdk(options: SDKOptions, provider: Provider): SDK {
   const ipc = new IpcConsumer(options.id);
   const react = new ReactConsumer(options.id);
   const activity = new ActivityConsumer(options.id);
+  const config = new ConfigConsumer(options.id);
   provider.register(search);
   provider.register(storage);
   provider.register(tabs);
@@ -71,6 +76,7 @@ export default function sdk(options: SDKOptions, provider: Provider): SDK {
   provider.register(ipc);
   provider.register(react);
   provider.register(activity);
+  provider.register(config);
   const bxsdk = {
     search,
     storage,
@@ -79,6 +85,7 @@ export default function sdk(options: SDKOptions, provider: Provider): SDK {
     ipc,
     react,
     activity,
+    config,
     register(consumer: Consumers) {
       provider.register(consumer);
       // tslint:disable-next-line:no-invalid-this
@@ -97,6 +104,7 @@ export default function sdk(options: SDKOptions, provider: Provider): SDK {
       provider.unregister(ipc);
       provider.unregister(react);
       provider.unregister(activity);
+      provider.unregister(config);
     },
   };
   // @ts-ignore
