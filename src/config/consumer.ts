@@ -1,4 +1,5 @@
 import { Consumer } from '../common';
+
 import { config } from './index';
 
 const protectedProvidersWeakMap = new WeakMap<ConfigConsumer, config.ConfigProviderInterface>();
