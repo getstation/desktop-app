@@ -60,7 +60,7 @@ export namespace search {
     resourceId: string,
     category: string,
     additionalSearchString?: string,
-    serviceId?: string,
+    manifestURL?: string,
     label: string,
     context?: string,
     url?: string,

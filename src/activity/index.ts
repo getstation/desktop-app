@@ -8,12 +8,12 @@ export namespace activity {
      * Will push an activity entry for the given search result item.
      *
      * @param resourceId the id of the SearchResultItem this activity corresponds to
-     * @param serviceId the service id corresponding to the resource id
+     * @param manifestURL the manifestURL corresponding to the resource id
      * @param extraData a set of key-value that can be used for anything
      * @param type of activity
      * @returns a promise with the activityEntryId (which represents the id in sqlite db)
      */
-    push(resourceId: string, extraData?: any, type?: string, serviceId?: string): Promise<{ activityEntryId: string }>;
+    push(resourceId: string, extraData?: any, type?: string, manifestURL?: string): Promise<{ activityEntryId: string }>;
 
     /**
      * Query the last **n** activity logs of the plugin.
