@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [UNRELEASED]
 ### Added
 - Added `tabs.create` method
+- Added ServicesConsumer
 
 ## [0.8.0] - 2018-12-12
 ### Added

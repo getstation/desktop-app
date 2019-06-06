@@ -10,6 +10,7 @@ import { SearchConsumer } from './search/consumer';
 import { SessionConsumer } from './session/consumer';
 import { StorageConsumer } from './storage/consumer';
 import { TabsConsumer } from './tabs/consumer';
+import { ResourcesConsumer } from './resources/consumer';
 
 export * from './common';
 export * from './search';
@@ -21,6 +22,7 @@ export * from './react';
 export * from './activity';
 export * from './history';
 export * from './config';
+export * from './resources';
 
 export type Consumers =
   SearchConsumer |
@@ -31,7 +33,8 @@ export type Consumers =
   ReactConsumer |
   ActivityConsumer |
   HistoryConsumer |
-  ConfigConsumer;
+  ConfigConsumer |
+  ResourcesConsumer;
 
 export type ConsumersNamespaces = Pick<Consumers, 'namespace'>;
 
@@ -50,6 +53,7 @@ export interface SDK {
   readonly activity: ActivityConsumer,
   readonly history: HistoryConsumer,
   readonly config: ConfigConsumer,
+  readonly resources: ResourcesConsumer,
   register(consumer: Consumers): void,
   unregister(consumer: Consumers): void,
   close(): void,
@@ -69,6 +73,7 @@ export default function sdk(options: SDKOptions, provider: Provider): SDK {
   const react = new ReactConsumer(options.id);
   const activity = new ActivityConsumer(options.id);
   const config = new ConfigConsumer(options.id);
+  const resources = new ResourcesConsumer(options.id);
   provider.register(search);
   provider.register(storage);
   provider.register(tabs);
@@ -77,6 +82,7 @@ export default function sdk(options: SDKOptions, provider: Provider): SDK {
   provider.register(react);
   provider.register(activity);
   provider.register(config);
+  provider.register(resources);
   const bxsdk = {
     search,
     storage,
@@ -86,6 +92,7 @@ export default function sdk(options: SDKOptions, provider: Provider): SDK {
     react,
     activity,
     config,
+    resources,
     register(consumer: Consumers) {
       provider.register(consumer);
       // tslint:disable-next-line:no-invalid-this
@@ -105,6 +112,7 @@ export default function sdk(options: SDKOptions, provider: Provider): SDK {
       provider.unregister(react);
       provider.unregister(activity);
       provider.unregister(config);
+      provider.unregister(resources);
     },
   };
   // @ts-ignore
