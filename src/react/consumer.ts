@@ -1,10 +1,10 @@
 import { ComponentClass } from 'react';
 
-import { Consumer } from '../common';
+import { Consumer, DefaultWeakMap } from '../common';
 
 import { react } from './index';
 
-const protectedProvidersWeakMap = new WeakMap<react.ReactConsumer, react.ReactProviderInterface>();
+const protectedProvidersWeakMap = new DefaultWeakMap<react.ReactConsumer, react.ReactProviderInterface>();
 
 export class ReactConsumer extends Consumer implements react.ReactConsumer {
 

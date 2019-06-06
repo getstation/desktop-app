@@ -1,9 +1,9 @@
-import { Consumer } from '../common';
+import { Consumer, DefaultWeakMap } from '../common';
 
 import { StorageEvent } from './event';
 import { storage } from './index';
 
-const protectedProvidersWeakMap = new WeakMap<StorageConsumer, storage.StorageProviderInterface>();
+const protectedProvidersWeakMap = new DefaultWeakMap<StorageConsumer, storage.StorageProviderInterface>();
 
 export class StorageConsumer extends Consumer implements storage.StorageConsumer {
 

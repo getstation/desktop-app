@@ -1,8 +1,8 @@
-import { Consumer } from '../common';
+import { Consumer, DefaultWeakMap } from '../common';
 
 import { resources } from '.';
 
-const protectedProvidersWeakMap = new WeakMap<ResourcesConsumer, resources.ResourcesProviderInterface>();
+const protectedProvidersWeakMap = new DefaultWeakMap<ResourcesConsumer, resources.ResourcesProviderInterface>();
 
 export class ResourcesConsumer extends Consumer implements resources.ResourcesConsumer {
   public readonly namespace = 'resources';

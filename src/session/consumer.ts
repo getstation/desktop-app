@@ -1,8 +1,8 @@
-import { Consumer } from '../common';
+import { Consumer, DefaultWeakMap } from '../common';
 
 import { session } from './index';
 
-const protectedProvidersWeakMap = new WeakMap<SessionConsumer, session.SessionProviderInterface>();
+const protectedProvidersWeakMap = new DefaultWeakMap<SessionConsumer, session.SessionProviderInterface>();
 
 export class SessionConsumer extends Consumer implements session.SessionConsumer {
 

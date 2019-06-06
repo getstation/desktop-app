@@ -1,10 +1,10 @@
 import { Observable, observable as Symbol_observable, Subscribable } from 'rxjs';
 
-import { Consumer } from '../common';
+import { Consumer, DefaultWeakMap } from '../common';
 
 import { ipc } from './index';
 
-const protectedProvidersWeakMap = new WeakMap<IpcConsumer, ipc.IpcProviderInterface>();
+const protectedProvidersWeakMap = new DefaultWeakMap<IpcConsumer, ipc.IpcProviderInterface>();
 
 export class IpcConsumer extends Consumer implements ipc.IpcConsumer {
 

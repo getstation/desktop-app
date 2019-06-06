@@ -1,8 +1,8 @@
-import { Consumer } from '../common';
+import { Consumer, DefaultWeakMap } from '../common';
 
 import { config } from './index';
 
-const protectedProvidersWeakMap = new WeakMap<ConfigConsumer, config.ConfigProviderInterface>();
+const protectedProvidersWeakMap = new DefaultWeakMap<ConfigConsumer, config.ConfigProviderInterface>();
 
 export class ConfigConsumer extends Consumer implements config.ConfigConsumer {
   public readonly namespace = 'config';

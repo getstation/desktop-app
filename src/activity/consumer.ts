@@ -1,14 +1,14 @@
 import { from, Observable } from 'rxjs';
 import { flatMap } from 'rxjs/operators';
 
-import { Consumer } from '../common';
+import { Consumer, DefaultWeakMap } from '../common';
 
 import { activity } from './index';
 
 import QueryArgs = activity.QueryArgs;
 import ActivityEntry = activity.ActivityEntry;
 
-const protectedProvidersWeakMap = new WeakMap<activity.ActivityConsumer, activity.ActivityProviderInterface>();
+const protectedProvidersWeakMap = new DefaultWeakMap<activity.ActivityConsumer, activity.ActivityProviderInterface>();
 
 export class ActivityConsumer extends Consumer implements activity.ActivityConsumer {
   public readonly namespace = 'activity';

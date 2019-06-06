@@ -1,10 +1,10 @@
 import { Observable } from 'rxjs';
 
-import { Consumer } from '../common';
+import { Consumer, DefaultWeakMap } from '../common';
 
 import { tabs } from './index';
 
-const protectedProvidersWeakMap = new WeakMap<TabsConsumer, tabs.TabsProviderInterface>();
+const protectedProvidersWeakMap = new DefaultWeakMap<TabsConsumer, tabs.TabsProviderInterface>();
 
 export class TabsConsumer extends Consumer implements tabs.TabsConsumer {
   public readonly namespace = 'tabs';
