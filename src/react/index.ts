@@ -12,12 +12,12 @@ export namespace react {
      * @example
      * sdk.react.createPortal(MyReactComponent, 'quickswitch');
      */
-    createPortal(children: ComponentClass, id: react.ValidPortalIds): void;
+    createPortal(children: ComponentClass, id: react.ValidPortalIds, position?: number): void;
     setProviderInterface(providerInterface: react.ReactProviderInterface): void;
   }
 
   export interface ReactProviderInterface {
-    createPortal(children: ComponentClass, id: react.ValidPortalIds): void;
+    createPortal(children: ComponentClass, id: react.ValidPortalIds, position?: number): void;
   }
 
   export type ValidPortalIds = 'quickswitch';

@@ -10,8 +10,8 @@ export class ReactConsumer extends Consumer implements react.ReactConsumer {
 
   public readonly namespace = 'react';
 
-  createPortal(children: ComponentClass, id: react.ValidPortalIds) {
-    protectedProvidersWeakMap.get(this)!.createPortal(children, id);
+  createPortal(children: ComponentClass, id: react.ValidPortalIds, position?: number) {
+    protectedProvidersWeakMap.get(this)!.createPortal(children, id, position);
   }
 
   setProviderInterface(providerInterface: react.ReactProviderInterface) {
