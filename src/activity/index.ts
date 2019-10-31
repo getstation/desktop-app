@@ -52,6 +52,7 @@ export namespace activity {
     orderBy: 'createdAt', // get the last n results or the first n results
     ascending: boolean, // ascending or descending (default to false)
     limit: number, // limit to the n first result (default to 1)
+    limitByDate?: number // timestamp in ms, limit only newer activity form thid date
     global: boolean, // global or plugin activity (default to false)
     where: Partial<QueryArgsScope>,
     whereNot: Partial<QueryArgsScope>,
