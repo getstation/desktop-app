@@ -1,7 +1,6 @@
 ### What is this PR
 <!--
-    Explain what this PR is doing.
-    You can link directly to product SPEC.
+    Explain what is the purpose of this PR.
     If bug fix, explain the cause of the bug.
 -->
 
