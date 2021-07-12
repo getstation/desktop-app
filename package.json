@@ -5,13 +5,12 @@
   "version": "2.0.2",
   "description": "Station",
   "homepage": "https://getstation.com",
-  "contributors": [
-    {
-      "name": "Joël Charles",
-      "email": "joel.charles91@gmail.com",
-      "url": "https://github.com/magne4000"
-    }
-  ],
+  "author": {
+    "name": "Joël Charles",
+    "email": "joel.charles91@gmail.com",
+    "url": "https://github.com/magne4000"
+  },
+  "contributors": [],
   "license": "Apache License 2.0",
   "updateServerHost": "dl.getstation.com",
   "main": "dist/main.js",
