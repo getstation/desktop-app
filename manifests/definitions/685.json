@@ -1,0 +1,17 @@
+{
+  "name": "Music for Programming",
+  "category": "Miscellaneous",
+  "start_url": "https://musicforprogramming.net/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/mP8bAkb3TDuqSrtMTtV4"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/HbABEkekS22ZcXoQoKAx",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#ec961c",
+  "scope": "https://musicforprogramming.net",
+  "bx_legacy_service_id": "music-for-programming"
+}

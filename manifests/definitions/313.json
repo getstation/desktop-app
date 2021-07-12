@@ -1,0 +1,14 @@
+{
+  "name": "GetSiteControl",
+  "category": "Blogging & Content Creation",
+  "start_url": "https://app.getsitecontrol.com/#/sign-in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/JpX3YpojTTaQ9jbYLxbi",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#363D4D",
+  "scope": "https://app.getsitecontrol.com",
+  "bx_legacy_service_id": "getsitecontrol"
+}

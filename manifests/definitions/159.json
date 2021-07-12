@@ -1,0 +1,14 @@
+{
+  "name": "Elevio",
+  "category": "User Support & Survey",
+  "start_url": "https://app.elev.io/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/8JMPMQjWRKCxE1WaV4mo",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00769F",
+  "scope": "https://app.elev.io",
+  "bx_legacy_service_id": "elevio"
+}

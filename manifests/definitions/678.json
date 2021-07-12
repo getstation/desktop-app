@@ -1,0 +1,17 @@
+{
+  "name": "RocketLink",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.rocketlink.io/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/nOEdWqSDKVnHoYXqDqug"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/R5VFRjtMQleu3w9jiuEG",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#fc5454",
+  "scope": "https://app.rocketlink.io",
+  "bx_legacy_service_id": "rocket-link"
+}

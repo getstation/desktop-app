@@ -1,0 +1,14 @@
+{
+  "name": "Devdocs",
+  "category": "Developer Tools",
+  "start_url": "https://devdocs.io/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/b2E0xohTTCmxbyizsYTk",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#000000",
+  "scope": "https://devdocs.io",
+  "bx_legacy_service_id": "devdocs"
+}

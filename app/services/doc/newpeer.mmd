@@ -1,0 +1,18 @@
+sequenceDiagram
+
+participant ServiceNode
+participant NodePeer
+participant Channel
+participant ImplPeer
+participant ServiceImpl
+
+ServiceImpl-xImplPeer: create peer 'uuid1'
+Note over ImplPeer: Peer created
+ImplPeer->>+Channel: connect
+ServiceImpl-xImplPeer: setHandlers
+ServiceNode-xNodePeer: create peer  'uuid1'
+Note over NodePeer: Peer created
+NodePeer->>+Channel: connect
+Channel-->>-NodePeer: connected
+Channel-->>-ImplPeer: connected
+Note over NodePeer,ImplPeer: 1-1 link between the 2 peers

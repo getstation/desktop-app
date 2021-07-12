@@ -1,0 +1,14 @@
+{
+  "name": "Poeditor",
+  "category": "Blogging & Content Creation",
+  "start_url": "https://poeditor.com/login/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/UuRB2kKTBuCpwtimGIWa",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3DD0AD",
+  "scope": "https://poeditor.com",
+  "bx_legacy_service_id": "poeditor"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Cluvio",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.cluvio.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/hEkAVlLFR6Cw03aWXbGd",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3080DA",
+  "scope": "https://app.cluvio.com",
+  "bx_legacy_service_id": "cluvio"
+}

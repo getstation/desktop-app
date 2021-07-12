@@ -1,0 +1,17 @@
+{
+  "name": "ProdPad",
+  "category": "Task & Project Management",
+  "start_url": "https://app.prodpad.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/IfZNl8OiSn50nqwowig7",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#53D33B",
+  "scope": "https://app.prodpad.com",
+  "bx_legacy_service_id": "prodpad",
+  "extended_scopes": [
+    "https://app.propad.com"
+  ]
+}

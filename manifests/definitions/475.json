@@ -1,0 +1,17 @@
+{
+  "name": "Daily.co",
+  "category": "Communication & Collaboration",
+  "start_url": "https://dashboard.daily.co/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/5zOv5wEBQj6tJRGOa3Cf"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/2V9fCFFJTquvZU8WtNpo",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#71bf24",
+  "scope": "https://dashboard.daily.co",
+  "bx_legacy_service_id": "dailyco"
+}

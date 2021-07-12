@@ -1,0 +1,21 @@
+{
+  "name": "Wire",
+  "category": "Communication & Collaboration",
+  "start_url": "https://app.wire.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/3bTHSyZ5TF2GsfCqoGsw"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/dIPPUgNTe604ohT0POPL",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#000000",
+  "scope": "https://app.wire.com",
+  "bx_legacy_service_id": "wire",
+  "extended_scopes": [
+    "https://app.wire.com",
+    "https://wire.com"
+  ]
+}

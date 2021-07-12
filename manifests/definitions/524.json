@@ -1,0 +1,17 @@
+{
+  "name": "Groove",
+  "category": "Sales & CRM",
+  "start_url": "https://app.grooveapp.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/cTjTFkaQuqo4oExOq8SA"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/FzPSAJT4RSVMw4RUCDg7",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#03A3BB",
+  "scope": "https://app.grooveapp.com",
+  "bx_legacy_service_id": "groove"
+}

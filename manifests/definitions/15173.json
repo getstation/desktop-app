@@ -1,0 +1,13 @@
+{
+  "name": "CharlieHR",
+  "category": "HR & Legal",
+  "start_url": "https://www.charliehr.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/egx8Kh3aShGPVVH6Ee4C",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2B9FE2",
+  "scope": "https://www.charliehr.com/"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Postman",
+  "category": "Developer Tools",
+  "start_url": "https://identity.getpostman.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/PMf6myGQ7XHxz0zhB1XQ"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/54EJBbqQA29DtwDzFjDD",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FF6C37",
+  "scope": "https://www.getpostman.com/"
+}

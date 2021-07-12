@@ -1,0 +1,15 @@
+{
+  "name": "Twitter",
+  "category": "Social Media & Advertising",
+  "start_url": "https://twitter.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/d8JTzPSSvS3cVL6yO62A",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1DA1F2",
+  "scope": "https://twitter.com",
+  "bx_legacy_service_id": "twitter",
+  "recommendedPosition": "9"
+}

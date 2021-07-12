@@ -1,0 +1,17 @@
+{
+  "name": "Dialpad",
+  "category": "Communication & Collaboration",
+  "start_url": "https://dialpad.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Ze8DyZORZqXxWJs8wAAa"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/ZIJF7SdTDeHpt1uuhHEw",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#26387c",
+  "scope": "https://dialpad.com",
+  "bx_legacy_service_id": "dialpad"
+}

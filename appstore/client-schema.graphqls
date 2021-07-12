@@ -1,0 +1,84 @@
+### Helpers ###
+
+type WrappedStringValue {
+  value: String!
+}
+
+type WrappedBooleanValue {
+  value: Boolean!
+}
+
+type ModalStatus {
+  isAppModalStatus: Boolean!
+}
+
+type SearchStringVariables {
+  searchString: String!,
+  searchStringAfterEnterPress: String,
+  isEnterPressed: Boolean,
+}
+
+type CustomAppRequestStatus {
+  appRequestIsOpen: Boolean!
+  currentMode: String!
+}
+
+type ApplicationCategory {
+  name: String!
+}
+
+input ApplicationCategoryInput {
+  name: String!
+}
+
+type CustomApp {
+  "An URL do the BxApp manifest of this application"
+  bxAppManifestURL: String!
+  "The category of the application"
+  category: ApplicationCategory
+  "An URL to icon represenrting the app"
+  iconURL: String
+  id: ID!
+  "true if this application is a chrome extension"
+  isChromeExtension: Boolean
+  "Manifest"
+  name: String!
+  "If the app is recommanded, the position in the list of recommanded apps"
+  themeColor: String
+  startURL: String
+}
+
+input CustomAppInput {
+  bxAppManifestURL: String!
+  category: ApplicationCategoryInput
+  iconURL: String
+  id: ID!
+  isChromeExtension: Boolean
+  name: String!
+  themeColor: String
+  startURL: String
+}
+
+type SelectedCustomApp {
+  app: CustomApp!
+}
+
+### Queries ###
+type Query {
+  activeScreenName: WrappedStringValue!
+  appModalStatus: ModalStatus!
+  isBurgerOpen: WrappedBooleanValue!
+  appRequestMode: CustomAppRequestStatus!
+  search: SearchStringVariables!
+  selectedCustomApp: SelectedCustomApp
+}
+
+### Mutations ###
+type Mutation {
+  setActiveScreenName(activeScreenName: String!): String!
+  setAppModalStatus(isAppModalOpen: Boolean!): String!
+  setBurgerStatus(isBurgerOpen: Boolean!): Boolean!
+  setCustomAppRequestMode(appRequestIsOpen: Boolean!, currentMode: String!): CustomAppRequestStatus!
+  setSearchString(searchString: String!, searchStringAfterEnterPress: String, isEnterPressed: Boolean): SearchStringVariables!
+  setSelectedCustomApp(app: CustomAppInput!): SelectedCustomApp!
+}

@@ -1,0 +1,55 @@
+@import "../common/variables";
+@import "../base/mixins";
+@import "../common/typography";
+// OS Bar
+// —————————————————————————————————
+
+.l-osbar {
+  align-items: center;
+  flex: 0 0 $osbar-height;
+  display: flex;
+
+  // enable window dragging
+  -webkit-app-region: drag;
+}
+
+.l-osbar--title {
+  flex: 1;
+  text-align: center;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  opacity: .6;
+  margin-top: -1px;
+}
+
+.l-osbar__btn {
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(#fff, 0.3);
+  border-radius: $border-radius;
+  flex: 0 0 auto;
+  height: 24px;
+  opacity: 0.8;
+
+  //== States
+  &:hover {
+    opacity: 1;
+    background-color: rgba(#fff, 0.1);
+    border-color: #fff;
+  }
+
+  //== Variants
+  & + .l-subdock__btn { margin-left: $gutter }
+  &.l-osbar__btn--square {
+    padding: 0;
+    width: 24px;
+  }
+  &.l-osbar__btn--txt {
+    background-position: 4px center;
+    color: #fff;
+    line-height: 22px;
+    padding: 0 10px 0 16px;
+    @include font(14px, 600)
+  }
+}

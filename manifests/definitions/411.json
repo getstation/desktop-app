@@ -1,0 +1,17 @@
+{
+  "name": "Codeship",
+  "category": "Developer Tools",
+  "start_url": "https://app.codeship.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/THYOOnK0SWGOZ7FC6D4k"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/mRJxNBMbRiiuuoVUX8Oi",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2b333c",
+  "scope": "https://app.codeship.com",
+  "bx_legacy_service_id": "codeship"
+}

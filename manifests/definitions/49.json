@@ -1,0 +1,18 @@
+{
+  "name": "Aircall",
+  "category": "Communication & Collaboration",
+  "start_url": "https://phone.aircall.io/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/enGXBoc8SIC3Ovtex3C2"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/IPxtNWmATUG4yBCHHtL8",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#52CC52",
+  "scope": "https://phone.aircall.io",
+  "bx_keep_always_loaded": true,
+  "bx_legacy_service_id": "aircall-phone"
+}

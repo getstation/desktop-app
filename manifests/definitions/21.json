@@ -1,0 +1,35 @@
+{
+  "name": "Slack",
+  "category": "Communication & Collaboration",
+  "start_url": "https://{{subdomain}}.slack.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/GE79qebmQ0yN0Ybuylt7"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/3xFWEVkgSEmQzEUIxGiv",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#42C299",
+  "scope": "https://*.slack.com",
+  "bx_keep_always_loaded": true,
+  "bx_single_page": true,
+  "bx_legacy_service_id": "slack",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain",
+      "on-premise"
+    ],
+    "instance_wording": "team",
+    "instance_label_tpl": "{{subdomain}}.slack.com",
+    "start_url_tpl": "https://{{subdomain}}.slack.com",
+    "subdomain_title": "Slack domain",
+    "subdomain_ui_help": "Enter your team's Slack domain.",
+    "subdomain_ui_suffix": ".slack.com"
+  },
+  "main": "slack/main",
+  "renderer": "slack/renderer",
+  "recommendedPosition": "5"
+}

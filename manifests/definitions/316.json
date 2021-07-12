@@ -1,0 +1,14 @@
+{
+  "name": "Linkedin Sales Navigator",
+  "category": "Sales & CRM",
+  "start_url": "https://www.linkedin.com/sales",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/HDfdpi4jT6b9Cd7ScuKg",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0071A1",
+  "scope": "https://www.linkedin.com",
+  "bx_legacy_service_id": "linkedIn-sales"
+}

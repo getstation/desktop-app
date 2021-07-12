@@ -1,0 +1,26 @@
+{
+  "name": "Freshteam",
+  "category": "HR & Legal",
+  "start_url": "https://{{subdomain}}.freshteam.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/GXKXqwn0QNe58pBNOM3M",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FF5969",
+  "scope": "https://*.freshteam.com",
+  "bx_legacy_service_id": "freshteam",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_wording": "team",
+    "instance_label_tpl": "{{subdomain}}.freshteam.com",
+    "start_url_tpl": "https://{{subdomain}}.freshteam.com",
+    "subdomain_title": "Freshteam domain",
+    "subdomain_ui_help": "Enter your team's Freshteam domain.",
+    "subdomain_ui_suffix": ".freshteam.com"
+  }
+}

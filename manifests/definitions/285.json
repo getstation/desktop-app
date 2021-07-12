@@ -1,0 +1,14 @@
+{
+  "name": "MRR.io",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.mrr.io/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/b4e9lJ9zSyyRu7weUmP2",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00B4CC",
+  "scope": "https://app.mrr.io",
+  "bx_legacy_service_id": "mrrio"
+}

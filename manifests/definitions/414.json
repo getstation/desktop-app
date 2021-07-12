@@ -1,0 +1,17 @@
+{
+  "name": "Lever",
+  "category": "HR & Legal",
+  "start_url": "https://hire.lever.co",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/oBybHxloTumflryWePdN"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/mwNqStsSQGoG2C9VR8ki",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#a6a5a6",
+  "scope": "https://hire.lever.co",
+  "bx_legacy_service_id": "lever"
+}

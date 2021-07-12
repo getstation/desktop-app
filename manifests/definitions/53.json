@@ -1,0 +1,14 @@
+{
+  "name": "Close.io",
+  "category": "Sales & CRM",
+  "start_url": "https://app.close.io",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/WE7PnvAcTlaH9I0oV3r4",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3FB87A",
+  "scope": "https://app.close.io",
+  "bx_legacy_service_id": "closeio"
+}

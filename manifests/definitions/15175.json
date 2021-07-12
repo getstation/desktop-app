@@ -1,0 +1,13 @@
+{
+  "name": "Udacity",
+  "category": "Miscellaneous",
+  "start_url": "https://auth.udacity.com/sign-in?next=https://classroom.udacity.com/authenticated",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/495X7G5ERVuRN3jBQ6Nm",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#02B3E4",
+  "scope": "https://udacity.com/"
+}

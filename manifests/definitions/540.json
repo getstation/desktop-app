@@ -1,0 +1,21 @@
+{
+  "name": "StaffMe",
+  "category": "HR & Legal",
+  "start_url": "https://account.staffme.fr",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ZW5KvxvSTegSW5lrofJz"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/SjI2BP82QNuNt3reEKWA",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#ec4c3c",
+  "scope": "https://account.staffme.fr",
+  "bx_legacy_service_id": "staffme",
+  "extended_scopes": [
+    "https://account.staffme.fr",
+    "https://staffme.fr"
+  ]
+}

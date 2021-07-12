@@ -1,0 +1,17 @@
+{
+  "name": "15Five",
+  "category": "HR & Legal",
+  "start_url": "https://my.15five.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/TxYErDdTCiu37y8gOYVw"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/kvJgH2OHTJCgHGgDyrTh",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#fc6c34",
+  "scope": "https://my.15five.com",
+  "bx_legacy_service_id": "15five"
+}

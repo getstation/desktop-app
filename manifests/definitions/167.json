@@ -1,0 +1,14 @@
+{
+  "name": "Databox",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.databox.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/1rbYgMknQnWzmU51UolJ",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#E50D18",
+  "scope": "https://app.databox.com",
+  "bx_legacy_service_id": "databox"
+}

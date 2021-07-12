@@ -1,0 +1,20 @@
+{
+  "name": "Sprout Social",
+  "category": "Social Media & Advertising",
+  "start_url": "https://app.sproutsocial.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/EHmKF9kcQ5EKIKzUUfwg"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/DiSxUJiRoW0KDEAqhzg7",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0cac4c",
+  "scope": "https://app.sproutsocial.com",
+  "bx_legacy_service_id": "sprout social",
+  "extended_scopes": [
+    "https://sproutsocial.com"
+  ]
+}

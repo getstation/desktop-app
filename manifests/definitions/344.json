@@ -1,0 +1,14 @@
+{
+  "name": "Better Proposals",
+  "category": "Sales & CRM",
+  "start_url": "https://betterproposals.io/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/pWAkOOb2S1OPhZymVpvB",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#5ED9AA",
+  "scope": "https://betterproposals.io",
+  "bx_legacy_service_id": "better-proposals"
+}

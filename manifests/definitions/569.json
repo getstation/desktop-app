@@ -1,0 +1,17 @@
+{
+  "name": "Stencil",
+  "category": "Design & Creativity",
+  "start_url": "https://getstencil.com/app",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/AksgCRoTuax843VJ5JMH"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/Yozcf45ZRc6uKpNUZRHM",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#449cd4",
+  "scope": "https://getstencil.com",
+  "bx_legacy_service_id": "stencil"
+}

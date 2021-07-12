@@ -1,0 +1,17 @@
+{
+  "name": "iPaidThat",
+  "category": "Accounting & Finance",
+  "start_url": "https://ipaidthat.io/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/y6TCG9HQREiWKlsaUW7G"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/3BBzWfS2RUyiGFnZm5kP",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#f45344",
+  "scope": "https://ipaidthat.io",
+  "bx_legacy_service_id": "ipaidthat"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Viral Loops",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.viral-loops.com/#/access/signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/btMnwl4YTomdqtiO5MBx",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2F2BAD",
+  "scope": "https://app.viral-loops.com",
+  "bx_legacy_service_id": "viralloops"
+}

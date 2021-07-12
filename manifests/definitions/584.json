@@ -1,0 +1,20 @@
+{
+  "name": "Meetup",
+  "category": "Social Media & Advertising",
+  "start_url": "https://secure.meetup.com/login/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ViWkt7tT4OMGKPkhFhS6"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/3PbpZSkQ4adrAI8FoxtV",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#ec1c44",
+  "scope": "https://secure.meetup.com",
+  "bx_legacy_service_id": "meetup",
+  "extended_scopes": [
+    "https://meetup.com"
+  ]
+}

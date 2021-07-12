@@ -1,0 +1,13 @@
+@import "../common/variables";
+@import "../base/mixins";
+@import "../common/typography";
+
+// Dialogs
+// —————————————————————————————————
+
+.dialog-toaster__wrapper {
+  position: fixed;
+  width: 100%;
+  bottom: 20px;
+  z-index: $zindex-ultime;
+}

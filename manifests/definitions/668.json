@@ -1,0 +1,17 @@
+{
+  "name": "Factorial",
+  "category": "HR & Legal",
+  "start_url": "https://factorialhr.es",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ifxU57vWSKisI62IPBEL"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/xstdwVCTTQaxY7BDvHNB",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#7484e4",
+  "scope": "https://factorialhr.es",
+  "bx_legacy_service_id": "factorial"
+}

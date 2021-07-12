@@ -1,0 +1,26 @@
+{
+  "name": "Domo",
+  "category": "Marketing & Analytics",
+  "start_url": "https://{{subdomain}}.domo.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Evc0SKPSDGz4OzpONPAR",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#99CCEE",
+  "scope": "https://*.domo.com",
+  "bx_legacy_service_id": "domo",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_wording": "organization",
+    "instance_label_tpl": "{{subdomain}}.domo.com",
+    "start_url_tpl": "https://{{subdomain}}.domo.com",
+    "subdomain_title": "Domo domain",
+    "subdomain_ui_help": "Enter your organization's Domo domain.",
+    "subdomain_ui_suffix": ".domo.com"
+  }
+}

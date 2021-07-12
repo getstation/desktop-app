@@ -1,0 +1,20 @@
+{
+  "name": "Databricks",
+  "category": "Marketing & Analytics",
+  "start_url": "https://accounts.cloud.databricks.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/6N6eN9GvQF6pwwrxbFmQ"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/IDK4qF3sR1qsZGwnI0KG",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F0562C",
+  "scope": "https://accounts.cloud.databricks.com",
+  "bx_legacy_service_id": "databricks",
+  "extended_scopes": [
+    "https://cloud.databricks.com"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Bonsai",
+  "category": "Accounting & Finance",
+  "start_url": "https://app.hellobonsai.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/vXdULIfRkSzbIV3PrKIC"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/9KjMtiFQQiiNSVrkfvUA",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#04b48b",
+  "scope": "https://app.hellobonsai.com",
+  "bx_legacy_service_id": "bonsai"
+}

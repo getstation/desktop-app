@@ -1,0 +1,17 @@
+{
+  "name": "SendWithUs",
+  "category": "Developer Tools",
+  "start_url": "https://app.sendwithus.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/gLHXtan0RLOu1GPd0odx"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/Kq1R8fLJRHFQsX0YZmGB",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#f4941c",
+  "scope": "https://app.sendwithus.com",
+  "bx_legacy_service_id": "sendwithus"
+}

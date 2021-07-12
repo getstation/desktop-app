@@ -1,0 +1,19 @@
+{
+  "name": "New Relic",
+  "category": "Marketing & Analytics",
+  "start_url": "https://login.newrelic.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/qSdxKFkDTDa8Brqdx8cS",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#72CCD2",
+  "scope": "https://login.newrelic.com",
+  "bx_legacy_service_id": "newrelic",
+  "bx_multi_instance_config": {
+    "presets": [
+      "on-premise"
+    ]
+  }
+}

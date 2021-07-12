@@ -1,0 +1,14 @@
+{
+  "name": "Tribe",
+  "category": "Communication & Collaboration",
+  "start_url": "https://tribe.pm/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/FHXoZDNwSBGhMnrS11fT",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3CE8DA",
+  "scope": "https://tribe.pm",
+  "bx_legacy_service_id": "tribe"
+}

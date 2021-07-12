@@ -1,0 +1,15 @@
+{
+  "name": "Google Webmaster",
+  "category": "Admin & Back-office",
+  "start_url": "https://www.google.com/webmasters/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/G0SURHVZTEOtLk7dMgiB",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#4089F8",
+  "scope": "https://www.google.com/webmasters",
+  "bx_legacy_service_id": "google-webmaster",
+  "bx_override_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36 Edge/80.0.361.62"
+}

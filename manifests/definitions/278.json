@@ -1,0 +1,17 @@
+{
+  "name": "Miro",
+  "category": "Communication & Collaboration",
+  "start_url": "https://miro.com/login/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/N0rW0JvS76cAZ59RHNrd"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/EkihCwPTRziXXtkrpziZ",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FFD000",
+  "scope": "https://miro.com/",
+  "bx_legacy_service_id": "/(realtimeboard.com)/"
+}

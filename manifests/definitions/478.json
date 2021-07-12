@@ -1,0 +1,17 @@
+{
+  "name": "Amazon",
+  "category": "Curation & Sourcing",
+  "start_url": "https://amazon.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/n9KWIQF6TmqoUiJ8xwlL"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/OKnXQQEfTCS82Ae83Guc",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#fc9c04",
+  "scope": "https://amazon.com",
+  "bx_legacy_service_id": "amazon"
+}

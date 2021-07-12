@@ -1,0 +1,28 @@
+{
+  "name": "Zulip",
+  "category": "Communication & Collaboration",
+  "start_url": "https://{{subdomain}}.zulipchat.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/GdVdNkhsQ5yaPLpr1jXo"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/c2L0HKjRfGqeK0kwBdtA",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1c8954",
+  "scope": "https://*.zulipchat.com",
+  "bx_legacy_service_id": "zulip",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_label_tpl": "{{subdomain}}.zulipchat.com",
+    "start_url_tpl": "https://{{subdomain}}.zulipchat.com/",
+    "subdomain_title": "Zulip domain",
+    "subdomain_ui_help": "Enter your Zulip domain",
+    "subdomain_ui_suffix": ".zulipchat.com"
+  }
+}

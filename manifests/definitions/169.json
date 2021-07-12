@@ -1,0 +1,14 @@
+{
+  "name": "HelpScout",
+  "category": "User Support & Survey",
+  "start_url": "https://secure.helpscout.net/dashboard",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/2qAfAhvQOSMp7y4WdatA",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2896D5",
+  "scope": "https://secure.helpscout.net",
+  "bx_legacy_service_id": "helpscout"
+}

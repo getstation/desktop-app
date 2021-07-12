@@ -1,0 +1,17 @@
+{
+  "name": "LaunchDarkly",
+  "category": "Developer Tools",
+  "start_url": "https://app.launchdarkly.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/pGNR6EAcR12yrrcLXQHR"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/Nzyef15FQYq07hiNm3qi",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#8295b6",
+  "scope": "https://app.launchdarkly.com",
+  "bx_legacy_service_id": "launchdarkly"
+}

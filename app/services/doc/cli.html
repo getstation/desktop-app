@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <script src="../../../node_modules/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<script>
+  const { remote } = require('electron');
+  const fs = require('fs');
+
+  mermaid.initialize({
+    theme: 'default',
+  });
+
+  const mmds = remote.getGlobal('sharedObject').mmds;
+  const container = document.querySelector("#container");
+
+  const generateSVG = (input) => {
+    const output = input.split('.').slice(0, -1).join('.') + '.svg';
+
+    container.innerHTML = fs.readFileSync(input, 'utf-8');
+    container.removeAttribute('data-processed');
+    window.mermaid.init(undefined, container);
+    fs.writeFileSync(output, container.innerHTML);
+  };
+
+  document.addEventListener(
+    'DOMContentLoaded', () => {
+      mmds.forEach(generateSVG);
+      remote.app.exit();
+    },
+    false
+  );
+</script>
+</body>
+</html>

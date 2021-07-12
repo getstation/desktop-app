@@ -1,0 +1,14 @@
+{
+  "name": "Chatfuel",
+  "category": "Social Media & Advertising",
+  "start_url": "https://dashboard.chatfuel.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/wohQq2meTqSQl87JCY3a",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#448AF1",
+  "scope": "https://dashboard.chatfuel.com",
+  "bx_legacy_service_id": "chatfuel"
+}

@@ -1,0 +1,35 @@
+@import "../common/variables";
+@import "../base/mixins";
+@import "../common/typography";
+
+.c-toaster__wrapper {
+  bottom: $gutter;
+  position: fixed;
+  right: $gutter;
+  z-index: 999;
+}
+.c-toaster {
+  //== Children
+  p {
+    color: rgba(#000, 0.8);
+    line-height: 1.4em;
+    @include font(11px)
+  }
+  p a {
+    @include font(11px, 600);
+  }
+}
+.c-toaster__btn {
+  background-color: rgba(#000, 0.05);
+  border: none;
+  border-top: 1px solid rgba(#000, 0.1);
+  color: rgba(#000, 0.6);
+  display: block;
+  flex: 0 0 50%;
+  line-height: 1.1em;
+  outline: none;
+  padding: $gutter;
+  text-align: center;
+  cursor: pointer;
+  @include font(11px, 600);
+}

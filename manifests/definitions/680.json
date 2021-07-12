@@ -1,0 +1,17 @@
+{
+  "name": "SendinBlue",
+  "category": "Marketing & Analytics",
+  "start_url": "https://sendinblue.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/JM8TTJSSbWNKOSg0SPcx"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/CGwOgA3BQFimeDAJdfr5",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3494d4",
+  "scope": "https://sendinblue.com",
+  "bx_legacy_service_id": "sendinblue"
+}

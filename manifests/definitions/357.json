@@ -1,0 +1,14 @@
+{
+  "name": "Okta",
+  "category": "Admin & Back-office",
+  "start_url": "https://login.okta.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Rpw0y9odTGaaUjGDsuig",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#007EC7",
+  "scope": "https://login.okta.com",
+  "bx_legacy_service_id": "okta"
+}

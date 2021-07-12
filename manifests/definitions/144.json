@@ -1,0 +1,14 @@
+{
+  "name": "Creme de la creme",
+  "category": "HR & Legal",
+  "start_url": "https://cremedelacreme.io/#/signin/company",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/cV9kjXmRceUrpTsUH9kJ",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#272E3A",
+  "scope": "https://cremedelacreme.io",
+  "bx_legacy_service_id": "creme-de-la-creme"
+}

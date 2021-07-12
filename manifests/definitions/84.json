@@ -1,0 +1,14 @@
+{
+  "name": "Xactly",
+  "category": "Sales & CRM",
+  "start_url": "https://login.xactlycorp.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/gZ7W0lhiSGCsMrzUc33D",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F99100",
+  "scope": "https://login.xactlycorp.com",
+  "bx_legacy_service_id": "xactly"
+}

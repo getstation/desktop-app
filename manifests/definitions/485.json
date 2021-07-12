@@ -1,0 +1,17 @@
+{
+  "name": " Newton Software",
+  "category": "HR & Legal",
+  "start_url": "https://newton.newtonsoftware.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/B0MGgcfTuOSfnTkpRygm"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/du4EZHRQ3S7p2yJY27zx",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#f64266",
+  "scope": "https://newton.newtonsoftware.com",
+  "bx_legacy_service_id": "newton-software"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Salesforce",
+  "category": "Sales & CRM",
+  "start_url": "https://login.salesforce.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/qwJ6L2SvQIOry3P2ZCxs",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00A1E0",
+  "scope": "https://login.salesforce.com",
+  "bx_legacy_service_id": "salesforce",
+  "extended_scopes": [
+    "https://salesforce.com"
+  ]
+}

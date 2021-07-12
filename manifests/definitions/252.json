@@ -1,0 +1,14 @@
+{
+  "name": "Mind Meister",
+  "category": "Task & Project Management",
+  "start_url": "https://www.mindmeister.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Ku9cMyoQS2m7bozWEFl7",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F2488F",
+  "scope": "https://www.mindmeister.com",
+  "bx_legacy_service_id": "mind-meister"
+}

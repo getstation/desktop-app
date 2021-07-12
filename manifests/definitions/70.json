@@ -1,0 +1,14 @@
+{
+  "name": "Bugsnag",
+  "category": "Developer Tools",
+  "start_url": "https://app.bugsnag.com/user/sign_in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/OtyYJjBTQuy1EGMZeNuN",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3676A1",
+  "scope": "https://app.bugsnag.com",
+  "bx_legacy_service_id": "bugsnag"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Google Tag Manager",
+  "category": "Marketing & Analytics",
+  "start_url": "https://tagmanager.google.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/NoaY6clnQqKuWsDHdvRS",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#5072AA",
+  "scope": "https://tagmanager.google.com",
+  "bx_legacy_service_id": "google-tag-manager",
+  "bx_override_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36 Edge/80.0.361.62"
+}

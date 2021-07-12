@@ -1,0 +1,14 @@
+{
+  "name": "Wordpress",
+  "category": "Blogging & Content Creation",
+  "start_url": "https://wordpress.com/wp-login.php",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/nBmsLYHeQrK1j1Gj3qRT",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0087BE",
+  "scope": "https://wordpress.com",
+  "bx_legacy_service_id": "wordpress"
+}

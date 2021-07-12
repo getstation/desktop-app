@@ -1,0 +1,14 @@
+{
+  "name": "Netlify",
+  "category": "Developer Tools",
+  "start_url": "https://app.netlify.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/SsVNs51tT7uWMjNz6dNF",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#24B5BB",
+  "scope": "https://app.netlify.com",
+  "bx_legacy_service_id": "netlify"
+}

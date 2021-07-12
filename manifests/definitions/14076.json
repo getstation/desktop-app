@@ -1,0 +1,14 @@
+{
+  "name": "Google Play Console",
+  "category": "Developer Tools",
+  "start_url": "https://play.google.com/apps/publish/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/MVYzS4W6S2ublDOrzRKt",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#7DA1B3",
+  "scope": "https://play.google.com/apps/",
+  "bx_override_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36 Edge/80.0.361.62"
+}

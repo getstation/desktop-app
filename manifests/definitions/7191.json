@@ -1,0 +1,16 @@
+{
+  "name": "Cloze",
+  "category": "Sales & CRM",
+  "start_url": "https://www.cloze.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/JqcKUiIQWm91N6AxrrOg"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/wLJcPhlQcG952x6BXftU",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#A62B4E",
+  "scope": "https://www.cloze.com"
+}

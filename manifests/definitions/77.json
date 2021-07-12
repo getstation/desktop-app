@@ -1,0 +1,14 @@
+{
+  "name": "Netsuite",
+  "category": "Accounting & Finance",
+  "start_url": "https://system.netsuite.com/pages/customerlogin.jsp",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/svxts4d7R3a8Uqr7maht",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#214A6C",
+  "scope": "https://system.netsuite.com",
+  "bx_legacy_service_id": "netsuite"
+}

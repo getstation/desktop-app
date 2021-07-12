@@ -1,0 +1,14 @@
+{
+  "name": "SalesforceIQ",
+  "category": "Sales & CRM",
+  "start_url": "https://app.salesforceiq.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/EADzO48uTle4U7FlwR06",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2EB7C5",
+  "scope": "https://app.salesforceiq.com",
+  "bx_legacy_service_id": "salesforceiq"
+}

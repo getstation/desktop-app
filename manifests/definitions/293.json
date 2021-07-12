@@ -1,0 +1,14 @@
+{
+  "name": "Simple Note",
+  "category": "Communication & Collaboration",
+  "start_url": "https://app.simplenote.com/signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/2MK2IrrITHCUo2DXOZgD",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#448AC9",
+  "scope": "https://app.simplenote.com",
+  "bx_legacy_service_id": "simple-note"
+}

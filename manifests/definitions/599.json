@@ -1,0 +1,17 @@
+{
+  "name": "And Co",
+  "category": "Accounting & Finance",
+  "start_url": "https://app.and.co",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/KMeLGE8RzOMbRjVNdzxQ"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/Qf3jIMvCS6enDTiHJYnj",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#fc343b",
+  "scope": "https://app.and.co",
+  "bx_legacy_service_id": "and-co"
+}

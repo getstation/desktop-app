@@ -1,0 +1,20 @@
+{
+  "name": "Duolingo",
+  "category": "Miscellaneous",
+  "start_url": "https://www.duolingo.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/eCefHyFyQCeT9M1T7GTQ"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/uH9mgHgHTwKk23toTqxa",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#7ccb04",
+  "scope": "https://www.duolingo.com",
+  "bx_legacy_service_id": "duolingo",
+  "extended_scopes": [
+    "https://duolingo.com"
+  ]
+}

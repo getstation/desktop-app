@@ -1,0 +1,16 @@
+{
+  "name": "OmniFocus Web",
+  "category": "Task & Project Management",
+  "start_url": "https://web.omnifocus.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/QLklcEPSR8mC540M7Ago"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/twywMTLRMG3z75yDm9hV",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#B478EE",
+  "scope": "https://www.omnifocus.com/"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Lightspeed OnSite",
+  "category": "Admin & Back-office",
+  "start_url": "https://onsite-support.lightspeedhq.com/hc/en-us/signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/rPl2vUaRW8fVYhVaftsQ"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/OF1CuOSrSAqd0J89usH8",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#e43839",
+  "scope": "https://onsite-support.lightspeedhq.com",
+  "bx_legacy_service_id": "lightspeed-onsite"
+}

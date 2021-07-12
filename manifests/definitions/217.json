@@ -1,0 +1,14 @@
+{
+  "name": "PowerBI",
+  "category": "Marketing & Analytics",
+  "start_url": "https://powerbi.microsoft.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/08OLyOsRnO7Mr1vSkB2x",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F2C811",
+  "scope": "https://powerbi.microsoft.com",
+  "bx_legacy_service_id": "powerbi"
+}

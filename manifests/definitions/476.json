@@ -1,0 +1,17 @@
+{
+  "name": "Ahrefs",
+  "category": "Marketing & Analytics",
+  "start_url": "https://ahrefs.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/e8kc2g6QQPJDkLIkAwVP"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/JLPRiIBcTby7rfSWS4Hm",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#045c9c",
+  "scope": "https://ahrefs.com",
+  "bx_legacy_service_id": "ahrefs"
+}

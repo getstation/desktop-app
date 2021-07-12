@@ -1,0 +1,17 @@
+{
+  "name": "Side",
+  "category": "HR & Legal",
+  "start_url": "https://www.side.co/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/yOaWBywaTfyJcbLIS1R5"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/fxo4uJB7QOSsDR39T3t2",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3484ec",
+  "scope": "https://www.side.co",
+  "bx_legacy_service_id": "side"
+}

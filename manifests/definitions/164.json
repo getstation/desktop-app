@@ -1,0 +1,14 @@
+{
+  "name": "Tweetdeck",
+  "category": "Social Media & Advertising",
+  "start_url": "https://tweetdeck.twitter.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/FxpwfbHIQbK8UcMwZOuP",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00ABF1",
+  "scope": "https://tweetdeck.twitter.com",
+  "bx_legacy_service_id": "tweetdeck"
+}

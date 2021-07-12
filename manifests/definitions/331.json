@@ -1,0 +1,17 @@
+{
+  "name": "Drip",
+  "category": "Marketing & Analytics",
+  "start_url": "https://www.getdrip.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/cGhLdeRQm0aZ5Kb0EzAw",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#4477BD",
+  "scope": "https://www.getdrip.com",
+  "bx_legacy_service_id": "drip",
+  "extended_scopes": [
+    "https://getdrip.com"
+  ]
+}

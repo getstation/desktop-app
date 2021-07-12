@@ -1,0 +1,14 @@
+{
+  "name": "Sumo",
+  "category": "Marketing & Analytics",
+  "start_url": "https://sumo.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/zW0hggSCmcE8QK8tiMwu",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#066FE8",
+  "scope": "https://sumo.com",
+  "bx_legacy_service_id": "sumo"
+}

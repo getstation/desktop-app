@@ -1,0 +1,14 @@
+{
+  "name": "Pushbullet",
+  "category": "Communication & Collaboration",
+  "start_url": "https://www.pushbullet.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/DXNIoHPQSIaBdLRNbY9S",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#49B366",
+  "scope": "https://www.pushbullet.com/",
+  "bx_single_page": true
+}

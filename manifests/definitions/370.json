@@ -1,0 +1,26 @@
+{
+  "name": "Kanban Tool",
+  "category": "Task & Project Management",
+  "start_url": "https://{{subdomain}}.kanbantool.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/8xuDzTLrTyOfpWUE1Rih",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1A6FCD",
+  "scope": "https://*.kanbantool.com",
+  "bx_legacy_service_id": "kanban-tool",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_wording": "company account",
+    "instance_label_tpl": "{{subdomain}}.kanbantool.com",
+    "start_url_tpl": "https://{{subdomain}}.kanbantool.com",
+    "subdomain_title": "Kanban Tool company account",
+    "subdomain_ui_help": "Enter your Kanban Tool company account.",
+    "subdomain_ui_suffix": ".kanbantool.com"
+  }
+}

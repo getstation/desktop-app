@@ -1,0 +1,14 @@
+{
+  "name": "ZenyPass",
+  "category": "Admin & Back-office",
+  "start_url": "https://zenyway.com/zenypass/app/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/OL50GRWiSuCwgvphbQJs",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#21A0B7",
+  "scope": "https://zenyway.com",
+  "bx_legacy_service_id": "zenypass"
+}

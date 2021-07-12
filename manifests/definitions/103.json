@@ -1,0 +1,14 @@
+{
+  "name": "Mention",
+  "category": "Social Media & Advertising",
+  "start_url": "https://mention.com/en/login/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/4n1Rri1Qi2ASvt7YqdH9",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00A0DE",
+  "scope": "https://mention.com",
+  "bx_legacy_service_id": "mention"
+}

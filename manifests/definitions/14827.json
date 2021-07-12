@@ -1,0 +1,13 @@
+{
+  "name": "Klaviyo",
+  "category": "Marketing & Analytics",
+  "start_url": "https://www.klaviyo.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/2R3jzWTJT4OdJ6LKidE2",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#22AD69",
+  "scope": "https://www.klaviyo.com/"
+}

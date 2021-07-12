@@ -1,0 +1,14 @@
+{
+  "name": "Raindrop",
+  "category": "Accounting & Finance",
+  "start_url": "https://raindrop.io/app/#/account/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/UJWjVhRcQcWmVH2o9PaD",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#516AEB",
+  "scope": "https://raindrop.io",
+  "bx_legacy_service_id": "raindrop"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Instagram",
+  "category": "Social Media & Advertising",
+  "start_url": "https://www.instagram.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/JCcCOcsXSwKWHKnTMsnS"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/1Ob9MEgzSMqVSZZF6wY0",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#E43966",
+  "scope": "https://www.instagram.com",
+  "bx_legacy_service_id": "instagram",
+  "recommendedPosition": "11"
+}

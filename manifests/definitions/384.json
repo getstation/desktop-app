@@ -1,0 +1,14 @@
+{
+  "name": "Plutio",
+  "category": "Task & Project Management",
+  "start_url": "https://app.plutio.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/J0HrOweBQ8W7xg3cGdsm",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#4E42C3",
+  "scope": "https://app.plutio.com",
+  "bx_legacy_service_id": "plutio"
+}

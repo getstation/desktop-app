@@ -1,0 +1,16 @@
+{
+  "name": "Prezi",
+  "category": "Communication & Collaboration",
+  "start_url": "https://prezi.com/login/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/4jXHYd7PQiVwAQPz0IjL"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/R9EW4lHkQOCRmztfqMBs",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1767CC",
+  "scope": "https://prezi.com/"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Zoom",
+  "category": "Communication & Collaboration",
+  "start_url": "https://zoom.us/signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/f8cBB3XlTRCkjJAtL6F7",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2D8CFF",
+  "scope": "https://zoom.us",
+  "bx_keep_always_loaded": true,
+  "bx_legacy_service_id": "zoom-us",
+  "recommendedPosition": "27"
+}

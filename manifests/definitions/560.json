@@ -1,0 +1,20 @@
+{
+  "name": "Remember the Milk",
+  "category": "Task & Project Management",
+  "start_url": "https://www.rememberthemilk.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/0IPzkQUWSQa2GDO3LymK"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/481zwOiVQGqg6uhi4n9K",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#045cbb",
+  "scope": "https://www.rememberthemilk.com",
+  "bx_legacy_service_id": "remember-the-milk",
+  "extended_scopes": [
+    "https://rememberthemilk.com"
+  ]
+}

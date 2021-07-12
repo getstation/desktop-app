@@ -1,0 +1,14 @@
+{
+  "name": "Facebook Business Manager",
+  "category": "Social Media & Advertising",
+  "start_url": "https://business.facebook.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/wWpYNsbR2KBM8PELDjAx",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3C5A9A",
+  "scope": "https://business.facebook.com",
+  "bx_legacy_service_id": "facebook-bm"
+}

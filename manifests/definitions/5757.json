@@ -1,0 +1,17 @@
+{
+  "name": "Tailwind",
+  "category": "Social Media & Advertising",
+  "start_url": "https://www.tailwindapp.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/kCfUY03SQEyeWBz84UJL"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/DClbQ9R8RkaLJJdexr82",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0092CC",
+  "scope": "https://www.tailwindapp.com/login",
+  "bx_single_page": true
+}

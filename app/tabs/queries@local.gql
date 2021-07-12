@@ -1,0 +1,7 @@
+mutation ReorderTabMutation($tabId: String!, $newPosition: Int!) @live @local {
+  reorderTab(tabId: $tabId, newPosition: $newPosition)
+}
+
+mutation ReorderFavoriteMutation($favoriteId: String!, $newPosition: Int!) @live @local {
+  reorderFavorite(favoriteId: $favoriteId, newPosition: $newPosition)
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Podio",
+  "category": "Task & Project Management",
+  "start_url": "https://podio.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/YdanLtpERfW8zlhMXxT8",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#5088AC",
+  "scope": "https://podio.com",
+  "bx_legacy_service_id": "podio"
+}

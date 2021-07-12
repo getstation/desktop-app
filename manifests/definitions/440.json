@@ -1,0 +1,17 @@
+{
+  "name": "Mailgun",
+  "category": "Developer Tools",
+  "start_url": "https://app.mailgun.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/QOmKLWxSlekIIYWPrwVt"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/ojOoGNihTN6bk1oP9m9b",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#c4141c",
+  "scope": "https://app.mailgun.com",
+  "bx_legacy_service_id": "mailgun"
+}

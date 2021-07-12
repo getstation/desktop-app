@@ -1,0 +1,23 @@
+{
+  "name": "Office 365",
+  "category": "Communication & Collaboration",
+  "start_url": "https://login.microsoftonline.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/sRnQbfbSlOee4OlIQfqt",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#C75B12",
+  "scope": "https://login.microsoftonline.com",
+  "bx_legacy_service_id": "office-365",
+  "extended_scopes": [
+    "https://office.live.com",
+    "https://people.live.com",
+    "https://www.onenote.com",
+    "https://calendar.live.com",
+    "https://outlook.live.com",
+    "https://onedrive.live.com"
+  ],
+  "recommendedPosition": "28"
+}

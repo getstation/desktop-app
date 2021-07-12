@@ -1,0 +1,14 @@
+{
+  "name": "Appcues",
+  "category": "User Support & Survey",
+  "start_url": "https://my.appcues.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/PRLcNoPTeKNpydlz8pVq",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#35AAE6",
+  "scope": "https://my.appcues.com",
+  "bx_legacy_service_id": "appcues"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Hellosign",
+  "category": "HR & Legal",
+  "start_url": "https://app.hellosign.com/account/logIn",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/dkU5Vo1zTNyw1oKV66KO",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00B1E5",
+  "scope": "https://app.hellosign.com",
+  "bx_legacy_service_id": "hellosign"
+}

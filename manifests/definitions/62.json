@@ -1,0 +1,29 @@
+{
+  "name": "Zendesk",
+  "category": "User Support & Survey",
+  "start_url": "https://{{subdomain}}.zendesk.com/agent",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/bhdHUbarSoSoC75ieViz",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00363E",
+  "scope": "https://*.zendesk.com",
+  "bx_legacy_service_id": "zendesk2",
+  "extended_scopes": [
+    "https://zendesk.com"
+  ],
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_wording": "company",
+    "instance_label_tpl": "{{subdomain}}.zendesk.com",
+    "start_url_tpl": "https://{{subdomain}}.zendesk.com/agent",
+    "subdomain_title": "Zendesk domain",
+    "subdomain_ui_help": "Enter your company's Zendesk subdomain.",
+    "subdomain_ui_suffix": ".zendesk.com"
+  }
+}

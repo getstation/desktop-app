@@ -1,0 +1,16 @@
+sequenceDiagram
+
+participant ServiceNode
+participant NodePeer
+participant Channel
+participant ImplPeer
+participant ServiceImpl
+
+ServiceImpl-xImplPeer: setHandler: 'getName'
+Note over NodePeer,ImplPeer: assumption: 1-1 link between the 2 peers
+ServiceNode->>+NodePeer: service.getName(someParams)
+NodePeer->>+Channel: peer.request('getName', serialize(someParams))
+Channel->>+ImplPeer: unserialize then call handler for 'getName'
+ImplPeer-->>-Channel: serialize
+Channel-->>-NodePeer: unserialize
+NodePeer-->>-ServiceNode: result: 'name'

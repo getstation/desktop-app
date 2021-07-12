@@ -1,0 +1,17 @@
+{
+  "name": "Paypal",
+  "category": "Accounting & Finance",
+  "start_url": "https://www.paypal.com/signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/lKsCQ9HwRqm13OmZKqp3"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/W7vLMuZ6SRmCuVuD3bT5",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#149cd4",
+  "scope": "https://www.paypal.com",
+  "bx_legacy_service_id": "paypal"
+}

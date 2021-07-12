@@ -1,0 +1,14 @@
+{
+  "name": "Pocket",
+  "category": "Curation & Sourcing",
+  "start_url": "https://getpocket.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/eQVu7AD7SFmCaWU54i8O",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#EF4056",
+  "scope": "https://getpocket.com",
+  "bx_legacy_service_id": "pocket"
+}

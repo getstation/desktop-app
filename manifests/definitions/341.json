@@ -1,0 +1,14 @@
+{
+  "name": "Refind",
+  "category": "Curation & Sourcing",
+  "start_url": "https://refind.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/5uDXWwySay2xrAzL8BWw",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0090F2",
+  "scope": "https://refind.com",
+  "bx_legacy_service_id": "refind"
+}

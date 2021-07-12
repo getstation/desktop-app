@@ -1,0 +1,26 @@
+{
+  "name": "Facebook Workplace",
+  "category": "Communication & Collaboration",
+  "start_url": "https://{{subdomain}}.facebook.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/P0MEIe0OQE2vcRheBFpP",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#373F4D",
+  "scope": "https://*.facebook.com",
+  "bx_legacy_service_id": "fb-workplace",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_wording": "organization",
+    "instance_label_tpl": "{{subdomain}}.facebook.com",
+    "start_url_tpl": "https://{{subdomain}}.facebook.com",
+    "subdomain_title": "Facebook workplace domain",
+    "subdomain_ui_help": "Enter your organization's Workplace domain.",
+    "subdomain_ui_suffix": ".facebook.com"
+  }
+}

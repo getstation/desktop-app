@@ -1,0 +1,14 @@
+{
+  "name": "Ludus",
+  "category": "Communication & Collaboration",
+  "start_url": "https://app.ludus.one/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/sLjJFUgBSjCctQED15x9",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#4E56FF",
+  "scope": "https://app.ludus.one",
+  "bx_legacy_service_id": "ludus"
+}

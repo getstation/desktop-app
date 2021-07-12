@@ -1,0 +1,17 @@
+{
+  "name": "Zenploy",
+  "category": "HR & Legal",
+  "start_url": "https://www.zenploy.io/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/OHkFPdRS5Cpit5wae43e",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3E82F7",
+  "scope": "https://www.zenploy.io",
+  "bx_legacy_service_id": "zenploy",
+  "extended_scopes": [
+    "https://zenploy.io"
+  ]
+}

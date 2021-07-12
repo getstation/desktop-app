@@ -1,0 +1,20 @@
+{
+  "name": "Coursera",
+  "category": "Curation & Sourcing",
+  "start_url": "https://www.coursera.org/?authMode=login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/muNDOdeZRnFsnqVhId0A"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/cKj5xKW0R4aShzgErxR9",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#448cc4",
+  "scope": "https://www.coursera.org",
+  "bx_legacy_service_id": "coursera",
+  "extended_scopes": [
+    "https://coursera.org"
+  ]
+}

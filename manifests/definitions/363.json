@@ -1,0 +1,14 @@
+{
+  "name": "Campaign Monitor",
+  "category": "Marketing & Analytics",
+  "start_url": "https://www.campaignmonitor.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/jMWHLKPVQcyCxD707MN5",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#509CF6",
+  "scope": "https://www.campaignmonitor.com",
+  "bx_legacy_service_id": "campaign-monitor"
+}

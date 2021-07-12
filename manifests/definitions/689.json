@@ -1,0 +1,17 @@
+{
+  "name": "Buxfer",
+  "category": "Accounting & Finance",
+  "start_url": "https://www.buxfer.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/bPAFHty3Td6ukcpvTuIu"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/JDEpD9fMSaEWXbCkyKUK",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#4cbafb",
+  "scope": "https://www.buxfer.com",
+  "bx_legacy_service_id": "buxfer"
+}

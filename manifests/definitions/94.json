@@ -1,0 +1,14 @@
+{
+  "name": "Dribbble",
+  "category": "Design & Creativity",
+  "start_url": "https://dribbble.com/session/new",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/0Mr0rCB1TbWP8ARR9g5R",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#EA4988",
+  "scope": "https://dribbble.com",
+  "bx_legacy_service_id": "dribbble"
+}

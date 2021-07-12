@@ -1,0 +1,16 @@
+{
+  "name": "KanbanFlow",
+  "category": "Task & Project Management",
+  "start_url": "https://kanbanflow.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Nycf9amQw6cwBfl3eT3M"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/2YYMJoHeTQGFW4M7QJZj",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#ff7c03",
+  "scope": "https://kanbanflow.com"
+}

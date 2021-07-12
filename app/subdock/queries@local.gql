@@ -1,0 +1,80 @@
+# QUERIES
+
+query GetApplicationForSubdock($applicationId: String!) @live @local {
+  application: getApplicationById(applicationId: $applicationId) {
+    id,
+    appstoreApplicationId,
+    iconURL,
+    manifestURL,
+    onboardeeApplicationAssignment,
+    forceShowDescription,
+    manifestData {
+      name,
+      start_url,
+      interpretedIconURL,
+      theme_color,
+      bx_single_page,
+      bx_multi_instance_config {
+        instance_wording,
+      },
+    },
+    isSnoozed,
+    fullDomain,
+    passwordManagerLogin,
+    identity {
+      profileData {
+        email
+      }
+    },
+    tabApplicationHome {
+      tabId,
+      applicationId,
+      title,
+      url,
+      isApplicationHome,
+      isDetached,
+      associatedBxResource {
+        bxResourceId,
+      }
+    },
+    orderedFavoritesForSubdock {
+      favoriteId,
+      applicationId,
+      title,
+      url,
+    },
+    orderedTabsForSubdock {
+      tabId,
+      applicationId,
+      title,
+      url,
+      isApplicationHome,
+      isDetached,
+      associatedBxResource {
+        bxResourceId,
+      },
+      specificIconId,
+    },
+    associatedBxResource {
+      bxResourceId,
+    }
+  },
+}
+
+# MUTATIONS
+
+mutation selectFavorite($id: ID!) @local {
+  selectFavorite(id: $id)
+}
+
+mutation closeFavorite($id: ID!) @local {
+  closeFavorite(id: $id)
+}
+
+mutation detachFavorite($id: ID!) @local {
+  detachFavorite(id: $id)
+}
+
+mutation unpinFavorite($id: ID!) @local {
+  unpinFavorite(id: $id)
+}

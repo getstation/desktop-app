@@ -1,0 +1,13 @@
+{
+  "name": "Astro",
+  "category": "Miscellaneous",
+  "start_url": "https://login.astro.com.my/ssowebnx/login.aspx?pid=acm&returnUrl=https%3A%2F%2Fwww.astro.com.my%2Fnetworkstrip%2Fjs%2Fmenu%2FLoginHandler.ashx%3FcurUrl%3Dhttps%253A%252F%252Fwww.astro.com.my%252F",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/pv9726ZNQ8uABpar68ql",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#EC008C",
+  "scope": "https://www.astro.com.my/"
+}

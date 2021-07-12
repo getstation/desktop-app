@@ -1,0 +1,17 @@
+{
+  "name": "DigitalOcean",
+  "category": "Developer Tools",
+  "start_url": "https://cloud.digitalocean.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/2GJ3cryrRz29WMaVsr8A"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/ZnOXiqYTR0KJoYLKQfU0",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1484fc",
+  "scope": "https://cloud.digitalocean.com",
+  "bx_legacy_service_id": "digitalocean"
+}

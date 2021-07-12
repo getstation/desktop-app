@@ -1,0 +1,16 @@
+{
+  "name": "HubStaff",
+  "category": "Task & Project Management",
+  "start_url": "https://account.hubstaff.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/mMOEqXLTIqwtnb2hP48g"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/sWZEFX82TBzftififZt9",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0655e8",
+  "scope": "https://hubstaff.com/"
+}

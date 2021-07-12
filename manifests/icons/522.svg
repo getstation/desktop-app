@@ -1,0 +1,7 @@
+<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+    <rect fill="transparent" x="0" y="0" width="60" height="60" rx="4.8"></rect>
+
+    <g width="30" height="30" viewBox="0 0 30 30" transform="translate(15, 15)" fill="#FFFFFF">
+        <path d="M 96 240 L 96 384 143.990 384 L 191.981 384 192.240 336.250 L 192.500 288.500 240.240 288.240 L 287.981 287.981 288.240 240.240 L 288.500 192.500 336.250 192.240 L 384 191.981 384 143.990 L 384 96 240 96 L 96 96 96 240 " stroke="none" fill="white" fill-rule="evenodd" transform="scale(0.0625) translate(0 0)"></path>
+    </g>
+</svg>

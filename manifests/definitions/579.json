@@ -1,0 +1,20 @@
+{
+  "name": "Infusionsoft",
+  "category": "Sales & CRM",
+  "start_url": "https://signin.infusionsoft.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/xWFQ0NJQbOP30kJ73emQ"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/uM2MGgK1S4mcm0UCUJn0",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#4c5cc4",
+  "scope": "https://signin.infusionsoft.com",
+  "bx_legacy_service_id": "infusionsoft",
+  "extended_scopes": [
+    "https://infusionsoft.com"
+  ]
+}

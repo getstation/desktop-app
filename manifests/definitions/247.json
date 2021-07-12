@@ -1,0 +1,14 @@
+{
+  "name": "Growbots",
+  "category": "Marketing & Analytics",
+  "start_url": "https://dashboard.growbots.com/s/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/pj5X86tGR6aUp3DhVeXk",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2D6EF0",
+  "scope": "https://dashboard.growbots.com",
+  "bx_legacy_service_id": "growbots"
+}

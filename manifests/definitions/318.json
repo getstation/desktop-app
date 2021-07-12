@@ -1,0 +1,17 @@
+{
+  "name": "Calendly",
+  "category": "Communication & Collaboration",
+  "start_url": "https://calendly.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/5FM9WQfsQGiMQVdpDUQK"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/55oV9E64R4W4eIKKNriA",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00BFFF",
+  "scope": "https://calendly.com",
+  "bx_legacy_service_id": "calendly"
+}

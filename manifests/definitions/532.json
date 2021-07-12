@@ -1,0 +1,17 @@
+{
+  "name": "Codepen",
+  "category": "Developer Tools",
+  "start_url": "https://codepen.io/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/n2nEsdQgTMiqD9PitpiH"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/qnf4h944Rt6HtJhiD84y",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1A1919",
+  "scope": "https://codepen.io",
+  "bx_legacy_service_id": "codepen"
+}

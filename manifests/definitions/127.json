@@ -1,0 +1,14 @@
+{
+  "name": "ProductBoard",
+  "category": "Task & Project Management",
+  "start_url": "https://app.productboard.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/7kNfUjiaRHCLOuuts4wq",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#4DA6FF",
+  "scope": "https://app.productboard.com",
+  "bx_legacy_service_id": "productboard"
+}

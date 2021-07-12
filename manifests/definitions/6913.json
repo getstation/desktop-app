@@ -1,0 +1,14 @@
+{
+  "name": "Robinhood",
+  "category": "Accounting & Finance",
+  "start_url": "https://robinhood.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/XMsCehe8QBCAo8QM23Ah",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#20CE98",
+  "scope": "https://robinhood.com",
+  "bx_single_page": true
+}

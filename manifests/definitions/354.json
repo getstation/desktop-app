@@ -1,0 +1,14 @@
+{
+  "name": "The HQ",
+  "category": "Task & Project Management",
+  "start_url": "https://www.hellohq.io",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/e8ZEGg79QS6TohvGp38B",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#ff4155",
+  "scope": "https://www.hellohq.io",
+  "bx_legacy_service_id": "the-hq"
+}

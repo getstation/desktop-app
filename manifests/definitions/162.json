@@ -1,0 +1,14 @@
+{
+  "name": "Airtable",
+  "category": "Task & Project Management",
+  "start_url": "https://airtable.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/hydFt5TTS2ekpdk6Q0Xx",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F02B42",
+  "scope": "https://airtable.com",
+  "bx_legacy_service_id": "airtable"
+}

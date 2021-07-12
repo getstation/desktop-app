@@ -1,0 +1,26 @@
+{
+  "name": "Freshcaller",
+  "category": "Communication & Collaboration",
+  "start_url": "https://{{subdomain}}.freshcaller.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/k5Fzp7bdRkaNZGm3HRsW",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#CC4783",
+  "scope": "https://*.freshcaller.com",
+  "bx_legacy_service_id": "freshcaller",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_wording": "team",
+    "instance_label_tpl": "{{subdomain}}.freshcaller.com",
+    "start_url_tpl": "https://{{subdomain}}.freshcaller.com",
+    "subdomain_title": "Freshcaller domain",
+    "subdomain_ui_help": "Enter your team's Freshcaller domain.",
+    "subdomain_ui_suffix": ".freshcaller.com"
+  }
+}

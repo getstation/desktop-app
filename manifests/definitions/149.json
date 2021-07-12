@@ -1,0 +1,14 @@
+{
+  "name": "Travis CI",
+  "category": "Developer Tools",
+  "start_url": "https://travis-ci.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/JFPIxztPScyrMJJiG5He",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#39AA56",
+  "scope": "https://travis-ci.com",
+  "bx_legacy_service_id": "travis-ci"
+}

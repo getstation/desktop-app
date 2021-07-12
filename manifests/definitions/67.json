@@ -1,0 +1,14 @@
+{
+  "name": "Twilio",
+  "category": "Communication & Collaboration",
+  "start_url": "https://www.twilio.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/hTBLlMpuRVaTo98kBCcN",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#CF272D",
+  "scope": "https://www.twilio.com",
+  "bx_legacy_service_id": "twilio"
+}

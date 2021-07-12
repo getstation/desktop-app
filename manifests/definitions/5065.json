@@ -1,0 +1,13 @@
+{
+  "name": "Tinder",
+  "category": "Miscellaneous",
+  "start_url": "https://tinder.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/L0MBIoabRIyZWDPpWSyn",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#fe8386",
+  "scope": "https://tinder.com"
+}

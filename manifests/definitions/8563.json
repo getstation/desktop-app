@@ -1,0 +1,14 @@
+{
+  "name": "Chromium Code Search",
+  "category": "Developer Tools",
+  "start_url": "https://cs.chromium.org/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/UB1jYphTTWqzVOlNOjLE",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#bcf",
+  "scope": "https://cs.chromium.org",
+  "bx_override_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36 Edge/80.0.361.62"
+}

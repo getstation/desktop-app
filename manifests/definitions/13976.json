@@ -1,0 +1,13 @@
+{
+  "name": "Olark",
+  "category": "Sales & CRM",
+  "start_url": "https://www.olark.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/kpq7R0KS1uUqNvMKMEAA",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": null,
+  "scope": "https://www.olark.com/"
+}

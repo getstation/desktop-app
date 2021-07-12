@@ -1,0 +1,17 @@
+{
+  "name": "Productive",
+  "category": "Task & Project Management",
+  "start_url": "https://app.productive.io",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/hy9g9o7hSp6P9DUvZhSn"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/Pkt7TUWSTrCxP8xpRl4e",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#349454",
+  "scope": "https://app.productive.io",
+  "bx_legacy_service_id": "productive"
+}

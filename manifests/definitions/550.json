@@ -1,0 +1,22 @@
+{
+  "name": "Proton Mail",
+  "category": "Communication & Collaboration",
+  "start_url": "https://mail.protonmail.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ekRf8BPoRdemQsR2UZMA"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/kMqInOmTOuMJwO1VqlBA",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1E213F",
+  "scope": "https://mail.protonmail.com",
+  "bx_keep_always_loaded": true,
+  "bx_legacy_service_id": "protonmail",
+  "extended_scopes": [
+    "https://mail.protonmail.com",
+    "https://protonmail.com"
+  ]
+}

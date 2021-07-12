@@ -1,0 +1,17 @@
+{
+  "name": "Greenhouse",
+  "category": "HR & Legal",
+  "start_url": "https://app.greenhouse.io",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/b1ACqZ2S7DfUTOXR8Oqw"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/nk0SpbdJSzW6VTB4aE3C",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3cb4a4",
+  "scope": "https://app.greenhouse.io",
+  "bx_legacy_service_id": "greenhouse"
+}

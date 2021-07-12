@@ -1,0 +1,31 @@
+{
+  "name": "Atlassian (Jira, Confluence..)",
+  "category": "Task & Project Management",
+  "start_url": "https://{{subdomain}}.atlassian.net/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Ch2raiH5Q0W7Dx6RD32p",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#264970",
+  "scope": "https://*.atlassian.net",
+  "bx_legacy_service_id": "atlassian",
+  "extended_scopes": [
+    "https://atlassian.net"
+  ],
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain",
+      "on-premise"
+    ],
+    "instance_wording": "account",
+    "instance_label_tpl": "{{subdomain}}.atlassian.net",
+    "start_url_tpl": "https://{{subdomain}}.atlassian.net/login",
+    "subdomain_title": "Atlassian domain",
+    "subdomain_ui_help": "Enter your account's  domain.",
+    "subdomain_ui_suffix": ".atlassian.net"
+  },
+  "recommendedPosition": "23"
+}

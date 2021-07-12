@@ -1,0 +1,14 @@
+{
+  "name": "Figma",
+  "category": "Design & Creativity",
+  "start_url": "https://www.figma.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/vBlcTIPJSKO7fk4L7BNh",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#000000",
+  "scope": "https://www.figma.com",
+  "bx_legacy_service_id": "figma"
+}

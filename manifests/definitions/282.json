@@ -1,0 +1,14 @@
+{
+  "name": "Wishpond",
+  "category": "Marketing & Analytics",
+  "start_url": "https://www.wishpond.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/DGA3mwCRF6EUBdAnwRUx",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#01A3E2",
+  "scope": "https://www.wishpond.com",
+  "bx_legacy_service_id": "wishpond"
+}

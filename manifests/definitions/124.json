@@ -1,0 +1,30 @@
+{
+  "name": "Gitlab (custom)",
+  "category": "Developer Tools",
+  "start_url": "https://{{subdomain}}.gitlab.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/J6XzgXHpRTCKcEazYf9x",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#E24329",
+  "scope": "https://*.gitlab.com",
+  "bx_legacy_service_id": "gitlab-custom",
+  "extended_scopes": [
+    "https://gitlab.com"
+  ],
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "on-premise",
+      "subdomain"
+    ],
+    "instance_wording": "team",
+    "instance_label_tpl": "{{subdomain}}.gitlab.com",
+    "start_url_tpl": "https://{{subdomain}}.gitlab.com",
+    "subdomain_title": "Gitlab domain",
+    "subdomain_ui_help": "Enter your team's Gitlab domain.",
+    "subdomain_ui_suffix": ".gitlab.com"
+  }
+}

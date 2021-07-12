@@ -1,0 +1,17 @@
+{
+  "name": "Lightspeed Retail",
+  "category": "Admin & Back-office",
+  "start_url": "https://cloud.lightspeedapp.com/login.html",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/phAHn7boSwWceyJ52QPa"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/Anc89aT86OmVVZetOogg",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#e43839",
+  "scope": "https://cloud.lightspeedapp.com",
+  "bx_legacy_service_id": "lightspeed-retail"
+}

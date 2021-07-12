@@ -1,0 +1,17 @@
+{
+  "name": "Sunsama",
+  "category": "Task & Project Management",
+  "start_url": "https://sunsama.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/EzwNU2tUTWK4aPSjMAmS"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/SUmgKs9vTsuDgPUsCzOh",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#f4794c",
+  "scope": "https://sunsama.com",
+  "bx_legacy_service_id": "sunsama"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "Teachbase (custom)",
+  "category": "Miscellaneous",
+  "start_url": "https://{{subdomain}}.teachbase.ru",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/4Z8S42UxQISUu9dtixt7"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/oDywG0w3Ry2mat1XtUIA",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#24943c",
+  "scope": "https://*.teachbase.ru",
+  "bx_legacy_service_id": "teachbase-subdomain",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_wording": "team",
+    "instance_label_tpl": "{{subdomain}}.teachbase.ru",
+    "start_url_tpl": "https://{{subdomain}}.teachbase.ru",
+    "subdomain_title": "Teachbase domain",
+    "subdomain_ui_help": "Enter your team's Teachbase domain.",
+    "subdomain_ui_suffix": ".teachbase.ru"
+  }
+}

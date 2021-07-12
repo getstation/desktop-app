@@ -1,0 +1,37 @@
+[
+  {
+    "id": "15462",
+    "name": "slack",
+    "iconURL": "https://cdn.filestackcontent.com/3xFWEVkgSEmQzEUIxGiv",
+    "computedApplicationURL": "stationworld",
+    "description": "Onboarder already wrote a description of this applications 😎",
+    "themeColor": "#42C299"
+  },
+  {
+    "id": "22355454",
+    "name": "facebook",
+    "iconURL": "https://cdn.filestackcontent.com/Mx7YEqznSJ2OkCO7novG",
+    "themeColor": "rgb(48,112,194)"
+  },
+  {
+    "id": "4815",
+    "name": "slack",
+    "iconURL": "https://cdn.filestackcontent.com/3xFWEVkgSEmQzEUIxGiv",
+    "computedApplicationURL": "stationhq",
+    "themeColor": "#42C299"
+  },
+  {
+    "id": "481516",
+    "name": "github",
+    "iconURL": "https://cdn.filestackcontent.com/ML2wP9JLS7WwJE4nOf3w",
+    "computedApplicationURL": "world.station.github.com",
+    "themeColor": "#221E1B"
+  },
+  {
+    "id": "122211136",
+    "name": "skype",
+    "iconURL": "https://cdn.filestackcontent.com/3oVsMqx0TT2klDcIBv3k",
+    "computedApplicationURL": "skype.com",
+    "themeColor": "#00AFF0"
+  }
+]

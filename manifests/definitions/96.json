@@ -1,0 +1,14 @@
+{
+  "name": "Mandrill",
+  "category": "Marketing & Analytics",
+  "start_url": "https://mandrillapp.com/login/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/8K0tiOfDRCyMSbudXkUk",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#C02439",
+  "scope": "https://mandrillapp.com",
+  "bx_legacy_service_id": "mandrill"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Awario",
+  "category": "Social Media & Advertising",
+  "start_url": "https://awario.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/cIQswZQKTGzacuGxW0zA"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/NBSH72dSHeVh73c6xpPt",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0cb4fc",
+  "scope": "https://awario.com",
+  "bx_legacy_service_id": "awario"
+}

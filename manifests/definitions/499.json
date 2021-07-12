@@ -1,0 +1,17 @@
+{
+  "name": "iZettle",
+  "category": "Admin & Back-office",
+  "start_url": "https://my.izettle.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/GspbYaH4SmGRnhKxhDHJ"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/o2J7mGSXiTSGzN8NXu2w",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#34446e",
+  "scope": "https://my.izettle.com",
+  "bx_legacy_service_id": "izettle"
+}

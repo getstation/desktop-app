@@ -1,0 +1,17 @@
+{
+  "name": "Avora",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.avora.io/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/y6BiRqdTQWy7GmLsepqc"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/s0RexMNpQpe3bVnC2iiT",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#fc1444",
+  "scope": "https://app.avora.io",
+  "bx_legacy_service_id": "avora"
+}

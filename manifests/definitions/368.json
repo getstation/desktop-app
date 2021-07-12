@@ -1,0 +1,14 @@
+{
+  "name": "AppNexus",
+  "category": "Social Media & Advertising",
+  "start_url": "https://console.appnexus.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/R8P9NpMKSq6AvE8Rlbli",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FF8700",
+  "scope": "https://console.appnexus.com",
+  "bx_legacy_service_id": "appnexus"
+}

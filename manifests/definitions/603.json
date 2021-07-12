@@ -1,0 +1,17 @@
+{
+  "name": "Planning Center",
+  "category": "Miscellaneous",
+  "start_url": "https://planningcenteronline.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/227lH2B9S4WHPTq48aG1"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/cE2ae8SkRnWfHCJfbDcg",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1c5ce3",
+  "scope": "https://planningcenteronline.com",
+  "bx_legacy_service_id": "planning-center"
+}

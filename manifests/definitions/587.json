@@ -1,0 +1,17 @@
+{
+  "name": "Notejoy",
+  "category": "Communication & Collaboration",
+  "start_url": "https://notejoy.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/mgo1adQ8S9yvbgjmb3Yo"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/HcrroQhDTTaW2AFAAQpd",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#cc343c",
+  "scope": "https://notejoy.com",
+  "bx_legacy_service_id": "notejoy"
+}

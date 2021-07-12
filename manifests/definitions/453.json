@@ -1,0 +1,17 @@
+{
+  "name": "Sketch Cloud",
+  "category": "Design & Creativity",
+  "start_url": "https://sketch.cloud/signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Z53ne3LJSlGYpPlsPeAV"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/muTkI4TDQCi642pSQGAC",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#fcaa04",
+  "scope": "https://sketch.cloud",
+  "bx_legacy_service_id": "sketchcloud"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Aha!",
+  "category": "Task & Project Management",
+  "start_url": "https://secure.aha.io",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/klWmIE59TwiA8ro4cRuW"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/szA8ohAmREib8H9h4q4o",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0474cc",
+  "scope": "https://secure.aha.io",
+  "bx_legacy_service_id": "aha"
+}

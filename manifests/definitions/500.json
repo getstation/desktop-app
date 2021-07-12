@@ -1,0 +1,17 @@
+{
+  "name": "Booking Admin",
+  "category": "Admin & Back-office",
+  "start_url": "https://admin.booking.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/hjw7hMYhSriY70gdh36x"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/ue8vpb7YTB2zuebNj5qa",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#049ce3",
+  "scope": "https://admin.booking.com",
+  "bx_legacy_service_id": "booking-admin"
+}

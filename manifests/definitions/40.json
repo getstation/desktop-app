@@ -1,0 +1,17 @@
+{
+  "name": "Mailchimp",
+  "category": "Marketing & Analytics",
+  "start_url": "https://admin.mailchimp.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/cQkId0KrQ5GPUxcGDodG"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/3YblQVApTatFB87Dfa5M",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FFCA00",
+  "scope": "https://admin.mailchimp.com",
+  "bx_legacy_service_id": "mailchimp"
+}

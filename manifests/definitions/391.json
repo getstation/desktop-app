@@ -1,0 +1,17 @@
+{
+  "name": "iCloud",
+  "category": "Storage & File-sharing",
+  "start_url": "https://www.icloud.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/4RGMB1I1SAeNcdDMULOr"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/pn92JMsJTmmyKMvTLhYZ",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3a9df4",
+  "scope": "https://www.icloud.com",
+  "bx_legacy_service_id": "icloud"
+}

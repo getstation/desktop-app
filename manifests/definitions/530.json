@@ -1,0 +1,17 @@
+{
+  "name": "teamgantt",
+  "category": "Task & Project Management",
+  "start_url": "https://app.teamgantt.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/UXcKKzV9Tq6hDxqmnYuP"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/c3TzryfUSMOJMVwmPdzj",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#64bcd4",
+  "scope": "https://app.teamgantt.com",
+  "bx_legacy_service_id": "teamgantt"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "What3words Map",
+  "category": "Miscellaneous",
+  "start_url": "https://map.what3words.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/zBQedurdT0m7rrwaOgxF"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/jybFnJeORwAjfeN1sk3Z",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#dc1c24",
+  "scope": "https://map.what3words.com",
+  "bx_legacy_service_id": "what3words",
+  "extended_scopes": [
+    "https://what3words.com",
+    "https://map.what3words.com",
+    "https://accounts.what3words.com"
+  ]
+}

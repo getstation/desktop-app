@@ -1,0 +1,14 @@
+{
+  "name": "N26",
+  "category": "Accounting & Finance",
+  "start_url": "https://my.n26.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/GbZDKIk4Q7eu6CrnB6kn",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00D3D8",
+  "scope": "https://my.n26.com",
+  "bx_legacy_service_id": "n26"
+}

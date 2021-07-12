@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="provider-svg-near" transform="translate(15.000000, 15.000000)">
+                <g id="Group">
+                    <path d="M15,0 C23.2842712,-1.52179594e-15 30,6.71572875 30,15 C30,23.2842712 23.2842712,30 15,30 C6.71572875,30 1.01453062e-15,23.2842712 0,15 C-1.01453062e-15,6.71572875 6.71572875,1.52179594e-15 15,0 Z M15,4.5 C9.20101012,4.5 4.5,9.20101013 4.5,15 C4.5,20.7989899 9.20101012,25.5 15,25.5 C20.7989899,25.5 25.5,20.7989899 25.5,15 C25.5,9.20101013 20.7989899,4.5 15,4.5 Z" id="Shape"></path>
+                    <path d="M22.5,15 C22.5,19.1421356 19.1421356,22.5 15,22.5 C10.8578644,22.5 7.5,19.1421356 7.5,15 L22.5,15 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

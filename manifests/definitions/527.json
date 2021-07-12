@@ -1,0 +1,17 @@
+{
+  "name": "Freedcamp",
+  "category": "Task & Project Management",
+  "start_url": "https://freedcamp.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/EoUGH4x7T2GYv69Hi1D3"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/3EuJknwSYqzFvo1SC7Jg",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#000000",
+  "scope": "https://freedcamp.com",
+  "bx_legacy_service_id": "freedcamp"
+}

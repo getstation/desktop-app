@@ -1,0 +1,95 @@
+@import "../base/mixins";
+@import "../common/variables";
+@import "../common/typography";
+// Webview
+// —————————————————————————————————
+
+
+//== Variables
+
+.l-webview {
+  flex: 1 1 auto;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.l-webview__loader {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: $zindex-ultime;
+  opacity: 0;
+  transition: 700ms ease-in-out all;
+}
+
+.l-webview__loader-active {
+  opacity: 1;
+  animation: 3s loading;
+  transition: none;
+}
+
+@keyframes loading {
+  from { width: 0 }
+  to { width: 90% }
+}
+
+.l-webview__wrap,
+.l-webview__tab {
+  overflow: hidden;
+  z-index: 2;
+  @include coverer();
+}
+
+.l-webview__tab--visible {
+  background-color: #fff;
+  z-index: $zindex-ultra;
+  @include scrolling();
+}
+
+.l-webview__tab > div,
+.l-webview__tab > div > div:not(.l-webview__loader),
+.l-webview__tab webview {
+  height: 100%;
+
+  code {
+    margin: 0 4px;
+    padding-top: 1px;
+  }
+}
+
+.l-webview__tab webview {
+  background-color: #fff
+}
+
+.l-webview__no-app {
+  color: rgba(#fff, 0.6);
+  display: flex;
+  line-height: 1.6em;
+  text-align: center;
+  z-index: 1;
+  @include coverer();
+  @include font(14px);
+
+  span {
+    margin: auto
+  }
+
+  a {
+    color: #fff;
+    @include font(14px, 600);
+  }
+}
+
+.l-webview__hidden {
+  display: flex;
+
+  webview {
+  	flex: 0 1;
+  	width: 0px !important;
+  	height: 0px !important;
+  }
+}

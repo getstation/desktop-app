@@ -1,0 +1,14 @@
+{
+  "name": "Agora Pulse",
+  "category": "Social Media & Advertising",
+  "start_url": "https://app.agorapulse.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/qo6gsREwSmQptyAttDP9",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#E74810",
+  "scope": "https://app.agorapulse.com",
+  "bx_legacy_service_id": "agora-pulse"
+}

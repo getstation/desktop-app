@@ -1,0 +1,15 @@
+{
+  "name": "Google Adsense",
+  "category": "Social Media & Advertising",
+  "start_url": "https://www.google.com/adsense/signup",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/SkzwaCUS8qIlVsCo3df6",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#437DE6",
+  "scope": "https://www.google.com/adsense",
+  "bx_legacy_service_id": "google-adsense",
+  "bx_override_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36"
+}

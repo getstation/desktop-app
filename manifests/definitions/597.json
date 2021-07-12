@@ -1,0 +1,17 @@
+{
+  "name": "Quire",
+  "category": "Design & Creativity",
+  "start_url": "https://quire.io",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/IBRMfYiRRt2K3qV2i4xC"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/3duqRwv0TryP6X7OweJL",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#94c453",
+  "scope": "https://quire.io",
+  "bx_legacy_service_id": "quire"
+}

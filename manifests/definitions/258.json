@@ -1,0 +1,14 @@
+{
+  "name": "Sendgrid",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.sendgrid.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/TBRjD4k8TuiXG5L2qzve",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#239FD7",
+  "scope": "https://app.sendgrid.com",
+  "bx_legacy_service_id": "sendgrid"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Promo Republic",
+  "category": "Social Media & Advertising",
+  "start_url": "https://app.promorepublic.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/tiY2GypTHykXytBBP0VK",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#AB2123",
+  "scope": "https://app.promorepublic.com",
+  "bx_legacy_service_id": "promo-republic"
+}

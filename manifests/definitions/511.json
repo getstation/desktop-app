@@ -1,0 +1,17 @@
+{
+  "name": "Redbooth",
+  "category": "Task & Project Management",
+  "start_url": "https://redbooth.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/iH57qLHRFSj0tvN9F1k6"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/TPAgCrRLRPC9BKWDdIYt",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#ec3c4c",
+  "scope": "https://redbooth.com",
+  "bx_legacy_service_id": "redbooth"
+}

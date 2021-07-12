@@ -1,0 +1,14 @@
+{
+  "name": "Missive",
+  "category": "Marketing & Analytics",
+  "start_url": "https://mail.missiveapp.com/#login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/KcL8zRPROy0uNOh97SvF",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#000000",
+  "scope": "https://mail.missiveapp.com",
+  "bx_legacy_service_id": "missive"
+}

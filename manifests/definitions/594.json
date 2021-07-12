@@ -1,0 +1,17 @@
+{
+  "name": "DocSend",
+  "category": "Storage & File-sharing",
+  "start_url": "https://docsend.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/CPlg22pCSGKrWsZvfHmp"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/4NKbkw5gSBWGZdde7Hwy",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#04a4ec",
+  "scope": "https://docsend.com",
+  "bx_legacy_service_id": "docsend"
+}

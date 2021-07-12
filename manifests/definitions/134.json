@@ -1,0 +1,14 @@
+{
+  "name": "Toggl",
+  "category": "HR & Legal",
+  "start_url": "https://toggl.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/2bBLLqqTUeBQ1arzX50S",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#E41317",
+  "scope": "https://toggl.com",
+  "bx_legacy_service_id": "toggl"
+}

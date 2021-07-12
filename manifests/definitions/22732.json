@@ -1,0 +1,16 @@
+{
+  "name": "CucumberStudio",
+  "category": "Task & Project Management",
+  "start_url": "https://studio.cucumber.io/users/sign_in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/m4ldFQs7Scm0gozWr988"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/i0KXvz3pTK6varOK9WN2",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#23D96C",
+  "scope": "https://studio.cucumber.io/"
+}

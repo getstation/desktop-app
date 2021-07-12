@@ -1,0 +1,14 @@
+{
+  "name": "Microsoft ToDo",
+  "category": "Task & Project Management",
+  "start_url": "https://todo.microsoft.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/CohGM9YaTJSBdE7IsLcK",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#4B7CF2",
+  "scope": "https://todo.microsoft.com",
+  "bx_legacy_service_id": "microsoft-todo"
+}

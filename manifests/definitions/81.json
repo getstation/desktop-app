@@ -1,0 +1,14 @@
+{
+  "name": "Adaptive Insights",
+  "category": "Accounting & Finance",
+  "start_url": "https://login.adaptiveinsights.com/app",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/OBokT9vtR3e4X3j3HS1E",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#E65400",
+  "scope": "https://login.adaptiveinsights.com",
+  "bx_legacy_service_id": "adaptiveinsights"
+}

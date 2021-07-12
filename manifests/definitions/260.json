@@ -1,0 +1,14 @@
+{
+  "name": "Talent.io",
+  "category": "HR & Legal",
+  "start_url": "https://www.talent.io/users/sign_in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/tkZiukqRcK1UN14P705m",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#6AA5CB",
+  "scope": "https://www.talent.io",
+  "bx_legacy_service_id": "talent-io"
+}

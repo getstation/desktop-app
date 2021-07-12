@@ -1,0 +1,20 @@
+{
+  "name": "Everhour",
+  "category": "Task & Project Management",
+  "start_url": "https://app.everhour.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/uczx4FfVSSMKzGLLZZwn"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/Jr2NGD1iR4qeM6T2p5YL",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#000000",
+  "scope": "https://app.everhour.com",
+  "bx_legacy_service_id": "everhour",
+  "extended_scopes": [
+    "https://everhour.com"
+  ]
+}

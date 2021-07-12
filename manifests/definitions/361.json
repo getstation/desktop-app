@@ -1,0 +1,14 @@
+{
+  "name": "Complice",
+  "category": "Task & Project Management",
+  "start_url": "https://complice.co",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/5FI9MuSAT7qwzfjYT1JM",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#A738FF",
+  "scope": "https://complice.co",
+  "bx_legacy_service_id": "complice"
+}

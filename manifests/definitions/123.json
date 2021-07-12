@@ -1,0 +1,19 @@
+{
+  "name": "Gitlab",
+  "category": "Developer Tools",
+  "start_url": "https://gitlab.com/users/sign_in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/hMPbjRpcRleMWdplfmfK",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#E24329",
+  "scope": "https://gitlab.com",
+  "bx_legacy_service_id": "gitlab",
+  "bx_multi_instance_config": {
+    "presets": [
+      "on-premise"
+    ]
+  }
+}

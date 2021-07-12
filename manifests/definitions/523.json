@@ -1,0 +1,17 @@
+{
+  "name": "Aptly",
+  "category": "User Support & Survey",
+  "start_url": "https://app.getaptly.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/RgEVX1ZFTJmm6dz2l5sw"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/Pf7eV11UTM6tpXKJKynx",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#04acec",
+  "scope": "https://app.getaptly.com",
+  "bx_legacy_service_id": "aptly"
+}

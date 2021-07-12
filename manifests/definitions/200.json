@@ -1,0 +1,14 @@
+{
+  "name": "Meistertask",
+  "category": "Task & Project Management",
+  "start_url": "https://meistertask.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/gPjuvaHS8KZGNfslUArN",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#07BCF8",
+  "scope": "https://meistertask.com",
+  "bx_legacy_service_id": "meistertask"
+}

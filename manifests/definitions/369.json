@@ -1,0 +1,14 @@
+{
+  "name": "TickTick",
+  "category": "Task & Project Management",
+  "start_url": "https://ticktick.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/cZwyqF9gQ8mkpPEZdt8H",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#65D656",
+  "scope": "https://ticktick.com",
+  "bx_legacy_service_id": "ticktick"
+}

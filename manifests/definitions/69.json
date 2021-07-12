@@ -1,0 +1,18 @@
+{
+  "name": "Dropbox",
+  "category": "Storage & File-sharing",
+  "start_url": "https://www.dropbox.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/zwo14IIeT1yAZdQwgwuG",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#007EE5",
+  "scope": "https://www.dropbox.com",
+  "bx_legacy_service_id": "dropbox",
+  "extended_scopes": [
+    "https://dropbox.com"
+  ],
+  "recommendedPosition": "21"
+}

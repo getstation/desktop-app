@@ -1,0 +1,14 @@
+{
+  "name": "Adobe Analytics",
+  "category": "Marketing & Analytics",
+  "start_url": "https://sc3.omniture.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/olAHMmeQQjKQmEB9OAU9",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#79BB43",
+  "scope": "https://sc3.omniture.com",
+  "bx_legacy_service_id": "adobe-analytics"
+}

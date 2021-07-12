@@ -1,0 +1,14 @@
+{
+  "name": "Algolia",
+  "category": "Developer Tools",
+  "start_url": "https://www.algolia.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/1vMUL7muS4ycTF9WfrJS",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#42AFDA",
+  "scope": "https://www.algolia.com",
+  "bx_legacy_service_id": "algolia"
+}

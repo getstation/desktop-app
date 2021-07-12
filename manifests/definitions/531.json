@@ -1,0 +1,17 @@
+{
+  "name": "MightyText",
+  "category": "Curation & Sourcing",
+  "start_url": "https://mightytext.net/web8/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/jMJ5HwhSci0QO5sENN8Q"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/3OY8IExREGvkOkxzDdAd",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3c94ac",
+  "scope": "https://mightytext.net",
+  "bx_legacy_service_id": "mightytext"
+}

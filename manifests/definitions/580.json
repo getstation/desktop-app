@@ -1,0 +1,26 @@
+{
+  "name": "Bitrix24",
+  "category": "Sales & CRM",
+  "start_url": "https://www.bitrix24.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/dmT0nDfGTfSUCmmEQDq3"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/3feKzoUkTFwkqxRuPLte",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2ec4f4",
+  "scope": "https://www.bitrix24.com",
+  "bx_legacy_service_id": "bitrix24",
+  "extended_scopes": [
+    "https://bitrix24.com",
+    "https://bitrix24.eu"
+  ],
+  "bx_multi_instance_config": {
+    "presets": [
+      "on-premise"
+    ]
+  }
+}

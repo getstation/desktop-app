@@ -1,0 +1,14 @@
+{
+  "name": "Satismeter",
+  "category": "Sales & CRM",
+  "start_url": "https://app.satismeter.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/fLPO0dtDSPukOUtuDvgQ",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#4B70BE",
+  "scope": "https://app.satismeter.com",
+  "bx_legacy_service_id": "satismeter"
+}

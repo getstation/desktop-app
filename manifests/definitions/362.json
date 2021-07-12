@@ -1,0 +1,14 @@
+{
+  "name": "Habitica",
+  "category": "Task & Project Management",
+  "start_url": "https://habitica.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/0bgfUyccTHKFn0raJrGx",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#49207B",
+  "scope": "https://habitica.com",
+  "bx_legacy_service_id": "habitica"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Gleam",
+  "category": "Marketing & Analytics",
+  "start_url": "https://gleam.io/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/CL0J96bRTl680wA1T3R8"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/GyQz8AszSwOMDjkCkfHv",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#f46c24",
+  "scope": "https://gleam.io",
+  "bx_legacy_service_id": "gleam"
+}

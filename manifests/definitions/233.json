@@ -1,0 +1,14 @@
+{
+  "name": "OnePageCRM",
+  "category": "Sales & CRM",
+  "start_url": "https://app.onepagecrm.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/KlVhpj16STy8aAQ6NXfi",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FF9300",
+  "scope": "https://app.onepagecrm.com",
+  "bx_legacy_service_id": "onepagecrm"
+}

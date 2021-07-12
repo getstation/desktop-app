@@ -1,0 +1,14 @@
+{
+  "name": "Upwork",
+  "category": "HR & Legal",
+  "start_url": "https://www.upwork.com/ab/account-security/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/UXv9vtpSYOI74HiA6Zod",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#6FDA44",
+  "scope": "https://www.upwork.com",
+  "bx_legacy_service_id": "upwork"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Manychat",
+  "category": "Developer Tools",
+  "start_url": "https://manychat.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/tcO55BgxQXKQG5CJSYon"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/HUHIW7XERoCDvNe81KhB",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2464ec",
+  "scope": "https://manychat.com",
+  "bx_legacy_service_id": "manychat"
+}

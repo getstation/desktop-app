@@ -1,0 +1,14 @@
+{
+  "name": "Vyte",
+  "category": "Communication & Collaboration",
+  "start_url": "https://www.vyte.in/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/XN7XSPbES6GpFXWZErnM",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#008FF8",
+  "scope": "https://www.vyte.in",
+  "bx_legacy_service_id": "vyte"
+}

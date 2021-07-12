@@ -1,0 +1,20 @@
+{
+  "name": "FreeAgent",
+  "category": "Accounting & Finance",
+  "start_url": "https://login.freeagent.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/yy4oEYX6TuK52GbsHuGA"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/WMLjLRVrR72EiYz9lI4L",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#047cbc",
+  "scope": "https://login.freeagent.com",
+  "bx_legacy_service_id": "freeagent",
+  "extended_scopes": [
+    "https://freeagent.com"
+  ]
+}

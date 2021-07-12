@@ -1,0 +1,17 @@
+{
+  "name": "Temi",
+  "category": "Blogging & Content Creation",
+  "start_url": "https://www.temi.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/UmSJGKFQSicRQ0oVWAGm"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/mmp8wBqWQCWNca4pf7km",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2cacbc",
+  "scope": "https://www.temi.com",
+  "bx_legacy_service_id": "temi"
+}

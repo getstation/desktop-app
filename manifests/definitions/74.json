@@ -1,0 +1,14 @@
+{
+  "name": "Concur",
+  "category": "Accounting & Finance",
+  "start_url": "https://www.concursolutions.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/sApsjywySH2MwWB81zUA",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#006CA7",
+  "scope": "https://www.concursolutions.com",
+  "bx_legacy_service_id": "concur"
+}

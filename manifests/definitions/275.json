@@ -1,0 +1,14 @@
+{
+  "name": "Opteo",
+  "category": "Social Media & Advertising",
+  "start_url": "https://app.opteo.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/zUqlOmkbRlqgwhPe65P5",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1056EA",
+  "scope": "https://app.opteo.com",
+  "bx_legacy_service_id": "opteo"
+}

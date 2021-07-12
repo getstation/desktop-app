@@ -1,0 +1,14 @@
+{
+  "name": "1Password",
+  "category": "Admin & Back-office",
+  "start_url": "https://my.1password.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/X7bGS8xQG2Da3brzvsgo",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2175FF",
+  "scope": "https://my.1password.com",
+  "bx_legacy_service_id": "1password-backoffice"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Teamwork",
+  "category": "Task & Project Management",
+  "start_url": "https://www.teamwork.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/vqxYdmlPROaMz69yIWAR",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#65D656",
+  "scope": "https://www.teamwork.com",
+  "bx_legacy_service_id": "teamwork"
+}

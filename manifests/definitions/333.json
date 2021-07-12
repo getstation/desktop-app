@@ -1,0 +1,14 @@
+{
+  "name": "Attribution",
+  "category": "Marketing & Analytics",
+  "start_url": "https://dashboard.attributionapp.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/KKAgaM0rQjCVk7D8Adrw",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#13C685",
+  "scope": "https://dashboard.attributionapp.com",
+  "bx_legacy_service_id": "attribution"
+}

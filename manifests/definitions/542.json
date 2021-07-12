@@ -1,0 +1,33 @@
+{
+  "name": "Fresh Service",
+  "category": "User Support & Survey",
+  "start_url": "https://{{subdomain}}.freshservice.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/zxtM1BWKQqSh22MpM8Mb"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/fIu1AouT9yVbYflig70v",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0cc4fc",
+  "scope": "https://*.freshservice.com",
+  "bx_keep_always_loaded": true,
+  "bx_legacy_service_id": "freshservice",
+  "extended_scopes": [
+    "https://freshservice.com"
+  ],
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_wording": "organization",
+    "instance_label_tpl": "{{subdomain}}.freshservice.com",
+    "start_url_tpl": "https://{{subdomain}}.freshservice.com",
+    "subdomain_title": "Freshservice domain",
+    "subdomain_ui_help": "Enter your organization's Freshservice domain.",
+    "subdomain_ui_suffix": ".freshservice.com"
+  }
+}

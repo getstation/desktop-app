@@ -1,0 +1,17 @@
+{
+  "name": "Typeform",
+  "category": "User Support & Survey",
+  "start_url": "https://admin.typeform.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/N3LPQtNQQrR3wgbCVlSz"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/yGcDdn1ZQFKszasLiApx",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#89C6BE",
+  "scope": "https://admin.typeform.com",
+  "bx_legacy_service_id": "typeform"
+}

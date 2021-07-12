@@ -1,0 +1,20 @@
+{
+  "name": "GitHub",
+  "category": "Developer Tools",
+  "start_url": "https://github.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ML2wP9JLS7WwJE4nOf3w",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#221E1B",
+  "scope": "https://github.com",
+  "bx_legacy_service_id": "github",
+  "bx_multi_instance_config": {
+    "presets": [
+      "on-premise"
+    ]
+  },
+  "recommendedPosition": "19"
+}

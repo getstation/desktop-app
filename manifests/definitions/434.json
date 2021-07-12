@@ -1,0 +1,17 @@
+{
+  "name": "Seekube",
+  "category": "HR & Legal",
+  "start_url": "https://www.seekube.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/q2jaH3MPTj2137xVfXk2"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/jZaHFR27ToCVm0CoxbDA",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3ca4d4",
+  "scope": "https://www.seekube.com",
+  "bx_legacy_service_id": "seekube"
+}

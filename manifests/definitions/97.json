@@ -1,0 +1,14 @@
+{
+  "name": "Baremetrics",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.baremetrics.com/users/sign_in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/aCHsYqZSTSY6KO5KD3WA",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0077B8",
+  "scope": "https://app.baremetrics.com",
+  "bx_legacy_service_id": "baremetrics"
+}

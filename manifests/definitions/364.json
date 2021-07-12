@@ -1,0 +1,14 @@
+{
+  "name": "ProfitWell",
+  "category": "Accounting & Finance",
+  "start_url": "https://www2.profitwell.com/acc",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/4aNHvB0XT6SUE1cwC17m",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00BB9F",
+  "scope": "https://www2.profitwell.com",
+  "bx_legacy_service_id": "profitwell"
+}

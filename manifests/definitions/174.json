@@ -1,0 +1,17 @@
+{
+  "name": "Medium",
+  "category": "Blogging & Content Creation",
+  "start_url": "https://medium.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/NYmFilLEQ28fWRMY26eA"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/75sz1Yk9T2KexCyQ7lgX",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#000000",
+  "scope": "https://medium.com",
+  "bx_legacy_service_id": "medium"
+}

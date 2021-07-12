@@ -1,0 +1,17 @@
+{
+  "name": "Any.do",
+  "category": "Task & Project Management",
+  "start_url": "https://web.any.do/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/bfEqDMbKSUmTx8YWgSut"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/Wtanv7rSw2C9VoBW3oXy",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#04a4f4",
+  "scope": "https://web.any.do",
+  "bx_legacy_service_id": "any-do"
+}

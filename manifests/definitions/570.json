@@ -1,0 +1,21 @@
+{
+  "name": "ContentStudio",
+  "category": "Blogging & Content Creation",
+  "start_url": "https://app.contentstudio.io",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/tkLgbAlSSNGWcJqD2Hct"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/aubPp7zISiCczmQUG68G",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0494f4",
+  "scope": "https://app.contentstudio.io",
+  "bx_legacy_service_id": "contentstudio",
+  "extended_scopes": [
+    "https://app.contentstudio.io",
+    "https://contentstudio.io"
+  ]
+}

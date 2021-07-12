@@ -1,0 +1,14 @@
+{
+  "name": "Fabric.io",
+  "category": "Developer Tools",
+  "start_url": "https://fabric.io/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/BN2WNUD4QzWbYxoFZ20A",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#008BF3",
+  "scope": "https://fabric.io",
+  "bx_legacy_service_id": "fabric-io"
+}

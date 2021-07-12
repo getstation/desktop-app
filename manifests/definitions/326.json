@@ -1,0 +1,14 @@
+{
+  "name": "Lucid Chart",
+  "category": "Communication & Collaboration",
+  "start_url": "https://www.lucidchart.com/users/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/FLjMhCrR9WINBhM2UnT3",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F78D1E",
+  "scope": "https://www.lucidchart.com",
+  "bx_legacy_service_id": "lucidcharts"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Workable",
+  "category": "HR & Legal",
+  "start_url": "https://www.workable.com/signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/dcq0t4eiTgag61q7j7wB",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#33B6CB",
+  "scope": "https://www.workable.com",
+  "bx_legacy_service_id": "workable",
+  "extended_scopes": [
+    "https://workable.com"
+  ]
+}

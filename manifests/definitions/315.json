@@ -1,0 +1,14 @@
+{
+  "name": "Twitter Ads",
+  "category": "Social Media & Advertising",
+  "start_url": "https://ads.twitter.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/HHh3gnZS5KimnRmfGDCf",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1DA1F2",
+  "scope": "https://ads.twitter.com",
+  "bx_legacy_service_id": "twitter-ads"
+}

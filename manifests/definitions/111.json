@@ -1,0 +1,17 @@
+{
+  "name": "Payfit",
+  "category": "HR & Legal",
+  "start_url": "https://app.payfit.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/UadIQghRRaRcOvZXRFTN"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/CJ6GY7xdS96BHrxMA63J",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2B71B1",
+  "scope": "https://app.payfit.com",
+  "bx_legacy_service_id": "payfit"
+}

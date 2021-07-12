@@ -1,0 +1,28 @@
+{
+  "name": "Kanbanize",
+  "category": "Task & Project Management",
+  "start_url": "https://{{subdomain}}.kanbanize.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/1nTuGMWrRky8JsEKEi5i"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/DahKhTR5yuJ4XSX7JkAA",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#f48524",
+  "scope": "https://*.kanbanize.com",
+  "bx_legacy_service_id": "kanbanize",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_label_tpl": "{{subdomain}}.kanbanize.com",
+    "start_url_tpl": "https://{{subdomain}}.kanbanize.com/",
+    "subdomain_title": "Kanbanize domain",
+    "subdomain_ui_help": "Enter your Kanbanize domain",
+    "subdomain_ui_suffix": ".kanbanize.com"
+  }
+}

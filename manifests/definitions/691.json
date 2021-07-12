@@ -1,0 +1,17 @@
+{
+  "name": "Steam Chat",
+  "category": "Communication & Collaboration",
+  "start_url": "https://steamcommunity.com/chat/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/duKdyuYyRZUMPvOhFOiB"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/yhd8kP5pQVa0acW9ATk9",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1578a9",
+  "scope": "https://steamcommunity.com",
+  "bx_legacy_service_id": "steam-chat"
+}

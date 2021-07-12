@@ -1,0 +1,17 @@
+{
+  "name": "Paymo",
+  "category": "Task & Project Management",
+  "start_url": "https://app.paymoapp.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/TU8fx1dnRumykmfnxx7E"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/goQZDjuxTuSVf5HZRUOp",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#4cac2c",
+  "scope": "https://app.paymoapp.com",
+  "bx_legacy_service_id": "paymo"
+}

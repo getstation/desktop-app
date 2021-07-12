@@ -1,0 +1,20 @@
+{
+  "name": "Polymail",
+  "category": "Communication & Collaboration",
+  "start_url": "https://app.polymail.io/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/LMWBzrcBTNuP2KEcKcbL"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/ZdLyl534RkOUbeDZBQbZ",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#fc3d5b",
+  "scope": "https://app.polymail.io",
+  "bx_legacy_service_id": "polymail",
+  "extended_scopes": [
+    "https://polymail.io"
+  ]
+}

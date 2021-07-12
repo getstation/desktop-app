@@ -1,0 +1,14 @@
+{
+  "name": "AB Tasty",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.abtasty.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/YDXPweWvSoqcXbtWYIf9",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#529DF5",
+  "scope": "https://app.abtasty.com",
+  "bx_legacy_service_id": "abtasty"
+}

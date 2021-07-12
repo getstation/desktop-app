@@ -1,0 +1,21 @@
+{
+  "name": "Nozbe",
+  "category": "Task & Project Management",
+  "start_url": "https://app.nozbe.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ry7jPU5gRyitIVMlmwqz"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/bO27H1tSQMuKViGc48ne",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2ce474",
+  "scope": "https://app.nozbe.com",
+  "bx_legacy_service_id": "nozbe",
+  "extended_scopes": [
+    "https://app.nozbe.com",
+    "https://nozbe.com"
+  ]
+}

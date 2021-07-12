@@ -1,0 +1,14 @@
+{
+  "name": "Azure Portal",
+  "category": "Miscellaneous",
+  "start_url": "https://portal.azure.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/2f06NchvQPymja4l87AY",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#008CDB",
+  "scope": "https://portal.azure.com",
+  "bx_legacy_service_id": "azureportal"
+}

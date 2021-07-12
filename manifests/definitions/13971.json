@@ -1,0 +1,13 @@
+{
+  "name": "Scrapbox",
+  "category": "Communication & Collaboration",
+  "start_url": "https://scrapbox.io/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/IzeS6aOnTq61NjMlbYuJ",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#5CD8A4",
+  "scope": "https://scrapbox.io/"
+}

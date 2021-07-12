@@ -1,0 +1,14 @@
+{
+  "name": "Papertrail",
+  "category": "Developer Tools",
+  "start_url": "https://papertrailapp.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/cKh3FiT1RomL0xap0TGy",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FB9E00",
+  "scope": "https://papertrailapp.com",
+  "bx_legacy_service_id": "papertrail"
+}

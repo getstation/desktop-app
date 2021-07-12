@@ -1,0 +1,17 @@
+{
+  "name": "Draw.io",
+  "category": "Communication & Collaboration",
+  "start_url": "https://www.draw.io/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/iK3J7JRyQfiKlyOa1hD2"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/k2dghL1TneYwqJxM4kMJ",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#f48c04",
+  "scope": "https://www.draw.io",
+  "bx_legacy_service_id": "draw-io"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Lendix",
+  "category": "Accounting & Finance",
+  "start_url": "https://app.lendix.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/gQ8QWLG3S6WFJdAiQvWu",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#363D4D",
+  "scope": "https://app.lendix.com",
+  "bx_legacy_service_id": "lendix"
+}

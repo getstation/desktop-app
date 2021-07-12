@@ -1,0 +1,22 @@
+{
+  "name": "Boomerang",
+  "category": "Sales & CRM",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Anq8Zxi0Qxq7x1jraSpg"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/GkU5gEL0SPW9Bfnp3ZQL",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#4a4a4a",
+  "bx_no_dock": true,
+  "bx_legacy_service_id": "boomerang",
+  "import": [
+    {
+      "platform": "chrome",
+      "id": "mdanidgdpmkimeiiojknlnekblgmpdll"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Landscape",
+  "category": "Design & Creativity",
+  "start_url": "https://sproutsocial.com/landscape",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/c6u0dsSfRnCRVm44njeN",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#374242",
+  "scope": "https://sproutsocial.com",
+  "bx_legacy_service_id": "landscape"
+}

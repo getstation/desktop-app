@@ -1,0 +1,14 @@
+{
+  "name": "Mixpanel",
+  "category": "Marketing & Analytics",
+  "start_url": "https://mixpanel.com/login/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/6T8RG7mhREiRaCc9uFcA",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#094B74",
+  "scope": "https://mixpanel.com",
+  "bx_legacy_service_id": "mixpanel"
+}

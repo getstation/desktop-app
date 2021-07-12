@@ -1,0 +1,18 @@
+{
+  "name": "Yandex Mail",
+  "category": "Communication & Collaboration",
+  "start_url": "https://mail.yandex.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ybJdKjIQwSHyxA2qHU2g"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/TItAVdlTH6VMaPk958LR",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#dc0404",
+  "scope": "https://mail.yandex.com",
+  "bx_keep_always_loaded": true,
+  "bx_legacy_service_id": "yandex-mail"
+}

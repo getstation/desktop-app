@@ -1,0 +1,19 @@
+{
+  "name": "Bitbucket",
+  "category": "Developer Tools",
+  "start_url": "https://bitbucket.org/account/signin/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/voTjczRZR6G3aTi6Nb60",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#172B4D",
+  "scope": "https://bitbucket.org",
+  "bx_legacy_service_id": "bitbucket",
+  "bx_multi_instance_config": {
+    "presets": [
+      "on-premise"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Folk",
+  "category": "Sales & CRM",
+  "start_url": "https://{{subdomain}}.folk.io",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/SfCSZuhMSKST9A0x86qQ",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#45A3E6",
+  "scope": "https://*.folk.io",
+  "bx_legacy_service_id": "near",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_wording": "team",
+    "instance_label_tpl": "{{subdomain}}.nearcrm.com",
+    "start_url_tpl": "https://{{subdomain}}.folk.io",
+    "subdomain_title": "Near subdomain",
+    "subdomain_ui_help": "Enter your team's Near domain.",
+    "subdomain_ui_suffix": ".nearcrm.com"
+  }
+}

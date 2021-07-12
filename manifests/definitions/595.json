@@ -1,0 +1,33 @@
+{
+  "name": "Backlog",
+  "category": "Task & Project Management",
+  "start_url": "https://{{subdomain}}.backlog.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/CMdx45TzQXWU8FfomNhg"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/L9hpfddHQMqDgomTHOoi",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#4ccca4",
+  "scope": "https://*.backlog.com",
+  "bx_legacy_service_id": "backlog",
+  "extended_scopes": [
+    "https://backlog.com",
+    "https://backlogtool.com"
+  ],
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_wording": "space",
+    "instance_label_tpl": "{{subdomain}}.backlog.com",
+    "start_url_tpl": "https://{{subdomain}}.backlog.com",
+    "subdomain_title": "Space ID",
+    "subdomain_ui_help": "Enter your Space ID.",
+    "subdomain_ui_suffix": ".backlog.com"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "AngelList",
+  "category": "HR & Legal",
+  "start_url": "https://angel.co/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/cvG0s4deQGOth8RJjcwF",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#000000",
+  "scope": "https://angel.co",
+  "bx_legacy_service_id": "angel-list"
+}

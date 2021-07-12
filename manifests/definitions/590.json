@@ -1,0 +1,17 @@
+{
+  "name": "CoSchedule",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.coschedule.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/kYf4ItksRBKm3YPZ0uIt"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/Ayl8wUGNQumExsVNytJI",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#d4745c",
+  "scope": "https://app.coschedule.com",
+  "bx_legacy_service_id": "coschedule"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Wrike",
+  "category": "Task & Project Management",
+  "start_url": "https://www.wrike.com/login/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/b7Cl8ENSvyUpQmT9GuWg",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00A651",
+  "scope": "https://www.wrike.com",
+  "bx_legacy_service_id": "wrike"
+}

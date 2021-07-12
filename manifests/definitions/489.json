@@ -1,0 +1,29 @@
+{
+  "name": "FareHarbor",
+  "category": "Admin & Back-office",
+  "start_url": "https://fareharbor.com/{{subdomain}}/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/dvc3JoyRdGy92fWgGIsN"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/8eVCs6nRRuIChilpup8o",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0c6ccc",
+  "scope": "https://fareharbor.com",
+  "bx_legacy_service_id": "fareharbor",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_wording": "team",
+    "instance_label_tpl": "{{subdomain}}.fareharbor.com",
+    "start_url_tpl": "https://fareharbor.com/{{subdomain}}/login",
+    "subdomain_title": "FareHarbor domain",
+    "subdomain_ui_help": "Enter your team's FareHarbor domain.",
+    "subdomain_ui_suffix": ".fareharbor.com"
+  }
+}

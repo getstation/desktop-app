@@ -1,0 +1,15 @@
+{
+  "name": "Google Contact",
+  "category": "Sales & CRM",
+  "start_url": "https://contacts.google.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/rO1qr1SOyxaJtNUaSaQL",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3054BC",
+  "scope": "https://contacts.google.com",
+  "bx_legacy_service_id": "google-contact",
+  "bx_override_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36 Edge/80.0.361.62"
+}

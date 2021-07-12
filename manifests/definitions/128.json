@@ -1,0 +1,14 @@
+{
+  "name": "Hopwork",
+  "category": "HR & Legal",
+  "start_url": "https://www.hopwork.fr/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/lJuNQ2XeSQ68Jkj545FK",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F64542",
+  "scope": "https://www.hopwork.fr",
+  "bx_legacy_service_id": "hopwork"
+}

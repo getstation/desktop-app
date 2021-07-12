@@ -1,0 +1,28 @@
+{
+  "name": "Planfix",
+  "category": "Task & Project Management",
+  "start_url": "https://{{subdomain}}.planfix.ru",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/v8swYACjQZu5UeuDMTAl"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/tDjd4mOQM2uIqtScHIDA",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#6cac2c",
+  "scope": "https://*.planfix.ru",
+  "bx_legacy_service_id": "planfix-ru",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_label_tpl": "{{subdomain}}.planfix.ru",
+    "start_url_tpl": "https://{{subdomain}}.planfix.ru",
+    "subdomain_title": "Planfix domain",
+    "subdomain_ui_help": "Enter your Planfix domain",
+    "subdomain_ui_suffix": ".planfix.ru"
+  }
+}

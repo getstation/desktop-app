@@ -1,0 +1,17 @@
+{
+  "name": "ConvertFox",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.convertfox.com/users/sign_in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/2DeTNOg3TLWIw15oHk6Q"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/uCM3IZhkRQqaLuh5lglw",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#fc6c04",
+  "scope": "https://app.convertfox.com",
+  "bx_legacy_service_id": "convertfox"
+}

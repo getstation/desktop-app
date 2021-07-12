@@ -1,0 +1,14 @@
+{
+  "name": "Freshchat",
+  "category": "Communication & Collaboration",
+  "start_url": "https://web.freshchat.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/LYBbROkSKyoEPUvcbkkw",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#45A4EC",
+  "scope": "https://web.freshchat.com",
+  "bx_legacy_service_id": "freshchat"
+}

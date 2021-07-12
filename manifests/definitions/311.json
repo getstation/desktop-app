@@ -1,0 +1,14 @@
+{
+  "name": "Instant Magazine",
+  "category": "Marketing & Analytics",
+  "start_url": "https://my.instantmagazine.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/SkGOBPBgSn6XQQpcjkBa",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#09F",
+  "scope": "https://my.instantmagazine.com",
+  "bx_legacy_service_id": "instant-magazine"
+}

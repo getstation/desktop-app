@@ -1,0 +1,14 @@
+{
+  "name": "Runscope",
+  "category": "Developer Tools",
+  "start_url": "https://www.runscope.com/signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/yncztRZQSIOlpiBMFuSV",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3E64A0",
+  "scope": "https://www.runscope.com",
+  "bx_legacy_service_id": "runscope"
+}

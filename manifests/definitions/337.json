@@ -1,0 +1,14 @@
+{
+  "name": " Smartsheet",
+  "category": "Communication & Collaboration",
+  "start_url": "https://app.smartsheet.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ELaYS1RrQnSkju4VDBDb",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#295277",
+  "scope": "https://app.smartsheet.com",
+  "bx_legacy_service_id": "smartsheet"
+}

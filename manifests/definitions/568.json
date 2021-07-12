@@ -1,0 +1,20 @@
+{
+  "name": "pCloud",
+  "category": "Storage & File-sharing",
+  "start_url": "https://www.pcloud.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/cZ8KPZ4nRtGcQDkvp0sJ"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/KvcIUKztQDW3khscJ1W2",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1cc4cc",
+  "scope": "https://www.pcloud.com",
+  "bx_legacy_service_id": "pcloud",
+  "extended_scopes": [
+    "https://pcloud.com"
+  ]
+}

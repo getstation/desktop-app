@@ -1,0 +1,13 @@
+{
+  "name": "Amazon Kindle",
+  "category": "Miscellaneous",
+  "start_url": "https://read.amazon.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/EECGyf8BRoGPqrJFQLmd",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F78A1A",
+  "scope": "https://read.amazon.com"
+}

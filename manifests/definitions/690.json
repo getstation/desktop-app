@@ -1,0 +1,17 @@
+{
+  "name": "Namely",
+  "category": "HR & Legal",
+  "start_url": "https://namely.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/LqsAC4hkQ8etQg13nrwx"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/VjsFoTZSvidvWVnvYUvA",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#048cc4",
+  "scope": "https://namely.com",
+  "bx_legacy_service_id": "namely"
+}

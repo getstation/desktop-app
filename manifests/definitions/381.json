@@ -1,0 +1,14 @@
+{
+  "name": "Zenkit",
+  "category": "Task & Project Management",
+  "start_url": "https://zenkit.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/zQX6oZm6TdqTwTstN09A",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#E371A9",
+  "scope": "https://zenkit.com",
+  "bx_legacy_service_id": "zenkit"
+}

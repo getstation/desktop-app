@@ -1,0 +1,14 @@
+{
+  "name": "UXpin",
+  "category": "Design & Creativity",
+  "start_url": "https://app.uxpin.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/u8XhIQYRYGFjZ2uE2RKG",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2C97DE",
+  "scope": "https://app.uxpin.com",
+  "bx_legacy_service_id": "uxpin"
+}

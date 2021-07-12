@@ -1,0 +1,155 @@
+@import "../common/variables";
+@import "../base/mixins";
+@import "../common/typography";
+
+// Dock
+// —————————————————————————————————
+
+
+//== Variables
+$dock-size: $app-size;
+$app-dot-size: 18px;
+
+.l-dock {
+}
+
+
+//== Loading
+.l-dock__loading {
+  &:before,
+  &:after {
+    content: "";
+    left: 19px;
+    position: absolute;
+    top: 4px;
+    @include avatar(16px);
+  }
+  &:before {
+    background-color: #fff;
+    transform-origin: center center;
+    z-index: 8;
+    @include animation(loader 1s infinite alternate linear);
+  }
+  &:after { z-index: 7 }
+}
+
+
+//== Scrolling area
+.l-dock__scroll {
+  flex: 1 1 auto;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  width: calc(100%);
+  @include scrolling();
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+//== Children
+.l-dock__scroll__item { margin-top: calc( ( #{$dock-size} - #{$app-size} ) / 2 ) }
+
+
+//== Applications
+.l-dock__app {
+  display: block;
+  height: $app-size;
+  position: relative;
+}
+.l-dock__app__icon {
+  cursor: pointer;
+  position: relative;
+  @include avatar($app-size, 0);
+
+  //== Children
+  .isvg { transform: scale(0.8) translate3d(1px, 1px, 0) }
+  .l-dock__app__bkg { opacity: 0 }
+  .isvg path { opacity: 0.3 }
+
+  //== States
+  .l-dock__app:not(.l-dock__app--active):hover & .isvg path { opacity: 0.6 }
+  .l-dock__app--active & .isvg path,
+  .l-dock__app--active & .l-dock__app__bkg { opacity: 1 }
+
+  //== Variants
+  &.l-dock__app__icon--user {
+    height: auto;
+    opacity: 0.3;
+    width: auto;
+  }
+  &.l-dock__app__icon--user--active { opacity: 1 }
+}
+
+
+//== Has subdock
+.l-dock__app__subdock {
+  bottom: 5px;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+
+  //== Children
+  span {
+    background-color: rgba(#fff, 0.4);
+    flex: 0 0 auto;
+    @include avatar(3px);
+  }
+  span.active { background-color: #fff }
+  span + span { margin-left: 3px }
+}
+
+
+//== Notifications and accounts
+.l-dock__app__account,
+.l-dock__app__notification {
+  color: #fff;
+  line-height: 14px;
+  position: absolute;
+  bottom: -2px;
+  right: -3px;
+  text-align: center;
+  z-index: 5;
+  @include avatar(12px);
+  @include font(9px, 600);
+
+  //== Children
+  span {
+    background-size: cover;
+    border-radius: 10px;
+    @include coverer();
+  }
+}
+.l-dock__app__notification {
+  background-color: #FF5E57;
+  top: 5px;
+  z-index: 6;
+  @include avatar(8px);
+}
+.l-dock__notification {
+  .l-dock__notification__default,
+  &.l-dock__notification--on .l-dock__notification__snoozed { display: block }
+  &.l-dock__notification--on .l-dock__notification__default,
+  .l-dock__notification__snoozed { display: none }
+}
+
+.l-dock__divider {
+  border-width: 1px;
+  border-color: rgba(#fff, 0.1);
+}
+
+//== Quick search
+.l-dock__app--add {
+  position: relative;
+
+  //== Variants
+  &.active { background-color: #3254e7 }
+  &.active .isvg path,
+  &.active:hover .isvg path { opacity: 1 !important }
+}
+.l-dock__quick-search {
+  position: relative;
+}

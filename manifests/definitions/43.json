@@ -1,0 +1,14 @@
+{
+  "name": "Litmus",
+  "category": "Developer Tools",
+  "start_url": "https://litmus.com/sessions/new",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Xdm71Ty4TGONBM0OCHVn",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#51B371",
+  "scope": "https://litmus.com",
+  "bx_legacy_service_id": "litmus"
+}

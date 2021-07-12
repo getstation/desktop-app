@@ -1,0 +1,15 @@
+{
+  "name": "Microsoft Teams",
+  "category": "Communication & Collaboration",
+  "start_url": "https://teams.microsoft.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/5sZEOL6RZesRsLdCozwv",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#5559AE",
+  "scope": "https://teams.microsoft.com",
+  "bx_legacy_service_id": "microsoft-teams",
+  "recommendedPosition": "25"
+}

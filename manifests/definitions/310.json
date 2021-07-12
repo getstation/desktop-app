@@ -1,0 +1,17 @@
+{
+  "name": "Facebook Messenger",
+  "category": "Communication & Collaboration",
+  "start_url": "https://www.messenger.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Mx7YEqznSJ2OkCO7novG",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#09F",
+  "scope": "https://www.messenger.com",
+  "bx_keep_always_loaded": true,
+  "bx_use_native_window_open_on_host": true,
+  "bx_legacy_service_id": "facebook-messenger",
+  "recommendedPosition": "6"
+}

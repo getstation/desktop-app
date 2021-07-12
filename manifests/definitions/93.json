@@ -1,0 +1,14 @@
+{
+  "name": "Shopify Admin",
+  "category": "Admin & Back-office",
+  "start_url": "https://www.shopify.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/YsJZNP30SsmIEAwEJClp",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#95BF46",
+  "scope": "https://www.shopify.com",
+  "bx_legacy_service_id": "shopify"
+}

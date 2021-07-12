@@ -1,0 +1,14 @@
+{
+  "name": "Blockspring",
+  "category": "Miscellaneous",
+  "start_url": "https://open.blockspring.com/users/sign_in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/olMkWYCQQ22MOBEknggi",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00BD58",
+  "scope": "https://open.blockspring.com",
+  "bx_legacy_service_id": "blockspring"
+}

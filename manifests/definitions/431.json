@@ -1,0 +1,17 @@
+{
+  "name": "SEMrush",
+  "category": "Social Media & Advertising",
+  "start_url": "https://www.semrush.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/BcJyjO2XSmaP6MbQFzsL"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/dIYN3WnMQWqXYEGynUsE",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#bc4c2c",
+  "scope": "https://www.semrush.com",
+  "bx_legacy_service_id": "semrush"
+}

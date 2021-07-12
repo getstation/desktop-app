@@ -1,0 +1,14 @@
+{
+  "name": "Auto pilot",
+  "category": "Marketing & Analytics",
+  "start_url": "https://login.autopilothq.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/IPKK3GDSdifsWiuaoxl3",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#292A28",
+  "scope": "https://login.autopilothq.com",
+  "bx_legacy_service_id": "autopilot"
+}

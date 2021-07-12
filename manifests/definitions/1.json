@@ -1,0 +1,10 @@
+{
+  "name": "App Store",
+  "category": "Admin & Back-office",
+  "start_url": "station://appstore/",
+  "icons": [],
+  "theme_color": "#2440FF",
+  "scope": "station://appstore",
+  "bx_no_dock": true,
+  "bx_legacy_service_id": "appstore"
+}

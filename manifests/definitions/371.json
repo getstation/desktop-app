@@ -1,0 +1,25 @@
+{
+  "name": "Freshbooks",
+  "category": "Accounting & Finance",
+  "start_url": "https://{{subdomain}}.freshbooks.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/DvbgslXQBU13gHTeUQAg",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#86C61F",
+  "scope": "https://*.freshbooks.com",
+  "bx_legacy_service_id": "freshbooks",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_label_tpl": "{{subdomain}}.freshbooks.com",
+    "start_url_tpl": "https://{{subdomain}}.freshbooks.com",
+    "subdomain_title": "Freshbooks domain",
+    "subdomain_ui_help": "Enter your business Freshbooks domain.",
+    "subdomain_ui_suffix": ".freshbooks.com"
+  }
+}

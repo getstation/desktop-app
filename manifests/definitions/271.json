@@ -1,0 +1,14 @@
+{
+  "name": "Debitoor",
+  "category": "Accounting & Finance",
+  "start_url": "https://app.debitoor.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/oBYIS7jRICGPf4DJWXpQ",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#23B3FF",
+  "scope": "https://app.debitoor.com",
+  "bx_legacy_service_id": "debitoor"
+}

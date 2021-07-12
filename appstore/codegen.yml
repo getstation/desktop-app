@@ -1,0 +1,22 @@
+# This is the configuration for code-generation
+# for both **distant**  and **local** GraphQL API
+
+schema:
+  - ./api-schema.graphqls
+  - ./client-schema.graphqls
+overwrite: true
+documents: "./src/**/*.gql"
+generates:
+  ./src/types.generated.ts:
+    - typescript
+  ./src/:
+    preset: near-operation-file
+    presetConfig:
+      extension: .gql.generated.tsx
+      baseTypesPath: types.generated.ts
+    plugins:
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      withHooks: true
+      reactApolloVersion: 3

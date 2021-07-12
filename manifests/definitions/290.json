@@ -1,0 +1,14 @@
+{
+  "name": "BrowserStack",
+  "category": "Developer Tools",
+  "start_url": "https://www.browserstack.com/users/sign_in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/EtcSd5zQvShHdLKDl1Ow",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#142433",
+  "scope": "https://www.browserstack.com",
+  "bx_legacy_service_id": "browserstack"
+}

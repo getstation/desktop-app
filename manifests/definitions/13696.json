@@ -1,0 +1,13 @@
+{
+  "name": "Muzli Collections",
+  "category": "Design & Creativity",
+  "start_url": "https://search.muz.li/inspiration/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/aBAdCcumSr6u185qZX58",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F82A75",
+  "scope": "https://search.muz.li/"
+}

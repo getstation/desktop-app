@@ -1,0 +1,14 @@
+{
+  "name": "Customer.io",
+  "category": "Marketing & Analytics",
+  "start_url": "https://fly.customer.io",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/PvYC6IjQWaeAxvH9xFab",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00ACAB",
+  "scope": "https://fly.customer.io",
+  "bx_legacy_service_id": "customerio"
+}

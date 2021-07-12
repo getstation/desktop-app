@@ -1,0 +1,17 @@
+{
+  "name": "Dynalist",
+  "category": "Task & Project Management",
+  "start_url": "https://dynalist.io/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/hlpxL8LZSMObH1w8NRK7"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/FQJImv8ETb2jQsLOqK3e",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0484f7",
+  "scope": "https://dynalist.io",
+  "bx_legacy_service_id": "dynalist"
+}

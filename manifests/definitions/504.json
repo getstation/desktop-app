@@ -1,0 +1,21 @@
+{
+  "name": "Lunchr",
+  "category": "Miscellaneous",
+  "start_url": "https://app.lunchr.co/signin/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/wSTJnCxaTOOZj7vYF20Q"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/Qpc2JLmlSjCWxd4QX37J",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#192532",
+  "scope": "https://app.lunchr.co",
+  "bx_legacy_service_id": "lunchr",
+  "extended_scopes": [
+    "https://lunchr.co",
+    "https://www.lunchr.co"
+  ]
+}

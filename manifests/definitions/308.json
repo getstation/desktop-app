@@ -1,0 +1,14 @@
+{
+  "name": "Start.me",
+  "category": "Task & Project Management",
+  "start_url": "https://start.me/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/2FG5uyTGTlm3KF8uab6g",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#006BB6",
+  "scope": "https://start.me",
+  "bx_legacy_service_id": "start-me"
+}

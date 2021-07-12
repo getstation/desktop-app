@@ -1,0 +1,14 @@
+{
+  "name": "Leadberry",
+  "category": "Sales & CRM",
+  "start_url": "https://app.leadberry.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/wPwl84VfTDuRFjnqzmEw",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#E22F1B",
+  "scope": "https://app.leadberry.com",
+  "bx_legacy_service_id": "leadberry"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Auth0",
+  "category": "Admin & Back-office",
+  "start_url": "https://manage.auth0.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/RJ4gyK9KRouZXwihBDlA",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#EB5424",
+  "scope": "https://manage.auth0.com/"
+}

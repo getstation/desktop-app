@@ -1,0 +1,20 @@
+{
+  "name": "Humanity",
+  "category": "HR & Legal",
+  "start_url": "https://www.humanity.com/app/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/9Q8tMzdQQU2ZwyV9OBDU"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/rbS5su3wTyeBvOOiSCnK",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#44a4cc",
+  "scope": "https://www.humanity.com",
+  "bx_legacy_service_id": "humanity",
+  "extended_scopes": [
+    "https://humanity.com"
+  ]
+}

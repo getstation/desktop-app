@@ -1,0 +1,17 @@
+{
+  "name": "Uservoice",
+  "category": "User Support & Survey",
+  "start_url": "http://app.uservoice.com/signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/5E1RMxvRNCy0gvBty6vE",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#D74119",
+  "scope": "http://app.uservoice.com",
+  "bx_legacy_service_id": "uservoice",
+  "extended_scopes": [
+    "https://app.uservoice.com"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Box",
+  "category": "Storage & File-sharing",
+  "start_url": "https://account.box.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/6cr3gowdQ2qKmjwsNGbl",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0075C9",
+  "scope": "https://account.box.com",
+  "bx_legacy_service_id": "box"
+}

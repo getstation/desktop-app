@@ -1,0 +1,14 @@
+{
+  "name": "Javelo",
+  "category": "HR & Legal",
+  "start_url": "https://app.javelo.io/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/2OGJUi9SQCyxP8IsG2WY",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FFB137",
+  "scope": "https://app.javelo.io",
+  "bx_legacy_service_id": "javelo"
+}

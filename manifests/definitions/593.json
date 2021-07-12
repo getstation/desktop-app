@@ -1,0 +1,17 @@
+{
+  "name": "Square",
+  "category": "Admin & Back-office",
+  "start_url": "https://squareup.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/tV07MNSBRdiwOVhmVJ52"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/2maXip6Rz2QqisNPATyv",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#000000",
+  "scope": "https://squareup.com",
+  "bx_legacy_service_id": "square"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Netflix",
+  "category": "Miscellaneous",
+  "start_url": "https://www.netflix.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/662ddKh0RNuym2Q5PPS6"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/5uPPvtvPRRWmTAXS9BPx",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#E50914",
+  "scope": "https://www.netflix.com",
+  "bx_single_page": true
+}

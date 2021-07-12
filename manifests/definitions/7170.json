@@ -1,0 +1,13 @@
+{
+  "name": "Fiverr",
+  "category": "HR & Legal",
+  "start_url": "https://www.fiverr.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/1TD7B52wSZmVCmXLTpuy",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1EBF73",
+  "scope": "https://www.fiverr.com"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "LastPass",
+  "category": "Admin & Back-office",
+  "start_url": "https://lastpass.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/00WZFx6wRV6G4JxoBhQN"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/BYh9zilbQUqfSppkLBxC",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#d42c24",
+  "scope": "https://lastpass.com",
+  "bx_legacy_service_id": "lastpasss"
+}

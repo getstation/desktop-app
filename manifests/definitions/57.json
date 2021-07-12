@@ -1,0 +1,14 @@
+{
+  "name": "FullStory",
+  "category": "Marketing & Analytics",
+  "start_url": "https://www.fullstory.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/yGowNuv7TqKMxvEY5DVD",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#448FE1",
+  "scope": "https://www.fullstory.com",
+  "bx_legacy_service_id": "fullstory"
+}

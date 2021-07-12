@@ -1,0 +1,14 @@
+{
+  "name": "Bubble",
+  "category": "Developer Tools",
+  "start_url": "https://bubble.is/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/QztymvS0S0am2Uu69PaO",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#52ADE0",
+  "scope": "https://bubble.is",
+  "bx_legacy_service_id": "bubble"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Trello",
+  "category": "Task & Project Management",
+  "start_url": "https://trello.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/hihkW53ARiyuRQ7yZq7o",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0085D3",
+  "scope": "https://trello.com",
+  "bx_legacy_service_id": "trello",
+  "recommendedPosition": "7"
+}

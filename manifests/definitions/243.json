@@ -1,0 +1,14 @@
+{
+  "name": "Drift",
+  "category": "User Support & Survey",
+  "start_url": "https://app.drift.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/yDLFSB5rQ0OsY2AOROyg",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#333333",
+  "scope": "https://app.drift.com",
+  "bx_legacy_service_id": "drift"
+}

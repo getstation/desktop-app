@@ -1,0 +1,28 @@
+{
+  "name": "Jandi",
+  "category": "Communication & Collaboration",
+  "start_url": "https://{{subdomain}}.jandi.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/i8aXawzpQmm54xOMYNsi"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/SK53yRkyQx2jFZ0BWX2p",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#04ace4",
+  "scope": "https://*.jandi.com",
+  "bx_legacy_service_id": "jandi",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_label_tpl": "{{subdomain}}.jandi.com",
+    "start_url_tpl": "https://{{subdomain}}.jandi.com",
+    "subdomain_title": "Jandi domain",
+    "subdomain_ui_help": "Enter your Jandi domain",
+    "subdomain_ui_suffix": ".jandi.com"
+  }
+}

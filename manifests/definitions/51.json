@@ -1,0 +1,14 @@
+{
+  "name": "Buffer",
+  "category": "Social Media & Advertising",
+  "start_url": "https://buffer.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Sk3I08KXTeWxgnWUr2fR",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#000000",
+  "scope": "https://buffer.com",
+  "bx_legacy_service_id": "bufferapp"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Visible",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.visible.vc/sign-in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/WBxTibHES3yAWhgxLyRt",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#17AAD4",
+  "scope": "https://app.visible.vc",
+  "bx_legacy_service_id": "visible"
+}

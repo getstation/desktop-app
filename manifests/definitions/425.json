@@ -1,0 +1,17 @@
+{
+  "name": "Coda",
+  "category": "Communication & Collaboration",
+  "start_url": "https://coda.io/signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/OQS6k7G0SPy1xg9CPVF1"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/5nIu3xfDT5C7qmPFPqGJ",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#f46c5c",
+  "scope": "https://coda.io",
+  "bx_legacy_service_id": "coda"
+}

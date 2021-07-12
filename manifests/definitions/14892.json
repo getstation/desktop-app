@@ -1,0 +1,13 @@
+{
+  "name": "Blogger",
+  "category": "Blogging & Content Creation",
+  "start_url": "https://www.blogger.com/go/signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/gVnYUmJRQSrUK62ckQiw",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F4943F",
+  "scope": "https://www.blogger.com/"
+}

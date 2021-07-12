@@ -1,0 +1,14 @@
+{
+  "name": "OneSignal",
+  "category": "Developer Tools",
+  "start_url": "https://onesignal.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Lay6JbXtSVuXbSX2JXpx",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#E44A49",
+  "scope": "https://onesignal.com",
+  "bx_legacy_service_id": "onesignal"
+}

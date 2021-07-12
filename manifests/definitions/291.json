@@ -1,0 +1,29 @@
+{
+  "name": "Chargebee",
+  "category": "Accounting & Finance",
+  "start_url": "https://{{subdomain}}.chargebee.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/wMb9UGcQFa3ICQ4Rrsyg",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FF6C36",
+  "scope": "https://*.chargebee.com",
+  "bx_legacy_service_id": "chargebee",
+  "extended_scopes": [
+    "https://chargebee.com",
+    "https://app.chargebee.com"
+  ],
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_label_tpl": "{{subdomain}}.chargebee.com",
+    "start_url_tpl": "https://{{subdomain}}.chargebee.com",
+    "subdomain_title": "Chargebee domain",
+    "subdomain_ui_help": "Enter your team's Chargebee domain.",
+    "subdomain_ui_suffix": ".chargebee.com"
+  }
+}

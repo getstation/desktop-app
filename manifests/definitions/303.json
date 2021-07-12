@@ -1,0 +1,14 @@
+{
+  "name": "Zeplin",
+  "category": "Design & Creativity",
+  "start_url": "https://app.zeplin.io/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/0pxvMMXQt6j5uYDLDfRw",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F89920",
+  "scope": "https://app.zeplin.io",
+  "bx_legacy_service_id": "zeplin"
+}

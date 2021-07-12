@@ -1,0 +1,14 @@
+{
+  "name": "Salesflare",
+  "category": "Sales & CRM",
+  "start_url": "https://app.salesflare.com/#/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/nPEJVMuDS6Y7bEkhDLLU",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#5BB2DF",
+  "scope": "https://app.salesflare.com",
+  "bx_legacy_service_id": "salesflare"
+}

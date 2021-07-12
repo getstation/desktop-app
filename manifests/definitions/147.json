@@ -1,0 +1,17 @@
+{
+  "name": "App Store Connect",
+  "category": "Curation & Sourcing",
+  "start_url": "https://appstoreconnect.apple.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/xXRKmQYKRk6Hn6r7ILKw",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#DB4ADB",
+  "scope": "https://appstoreconnect.apple.com",
+  "bx_legacy_service_id": "itunes-connect",
+  "extended_scopes": [
+    "https://itunesconnect.apple.com"
+  ]
+}

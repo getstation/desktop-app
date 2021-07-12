@@ -1,0 +1,14 @@
+{
+  "name": "Synology",
+  "category": "Storage & File-sharing",
+  "start_url": "https://account.synology.com/en-us",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/niHAcUF7SceWrk6MnfBK",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#262626",
+  "scope": "https://account.synology.com",
+  "bx_legacy_service_id": "synology"
+}

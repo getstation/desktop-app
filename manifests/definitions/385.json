@@ -1,0 +1,26 @@
+{
+  "name": "Monday",
+  "category": "Task & Project Management",
+  "start_url": "https://{{subdomain}}.monday.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/3ow8MIvBSvK7n6ysLDRg",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F91B50",
+  "scope": "https://*.monday.com",
+  "bx_legacy_service_id": "monday",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_wording": "team",
+    "instance_label_tpl": "{{subdomain}}.monday.com",
+    "start_url_tpl": "https://{{subdomain}}.monday.com",
+    "subdomain_title": "Monday domain",
+    "subdomain_ui_help": "Enter your team's Monday domain.",
+    "subdomain_ui_suffix": ".monday.com"
+  }
+}

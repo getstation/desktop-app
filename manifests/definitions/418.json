@@ -1,0 +1,17 @@
+{
+  "name": "Klipfolio",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.klipfolio.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ZJ0qDc4dTcmP3g7jzDzq"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/dNbq66y8QcO7zsiqze4C",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#ec3424",
+  "scope": "https://app.klipfolio.com",
+  "bx_legacy_service_id": "klipfolio"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Hubspot",
+  "category": "Sales & CRM",
+  "start_url": "https://app.hubspot.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/HDBMMXgT96KAXw5if2RJ",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#DF662B",
+  "scope": "https://app.hubspot.com",
+  "bx_legacy_service_id": "hubspot"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Nuage App",
+  "category": "Admin & Back-office",
+  "start_url": "https://dashboard.nuageapp.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/gGyQMAhXTbKRXWvXiJPi",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#33AFFF",
+  "scope": "https://dashboard.nuageapp.com",
+  "bx_legacy_service_id": "nuage"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Feedly",
+  "category": "Curation & Sourcing",
+  "start_url": "https://feedly.com/i/welcome",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/7aWg3kCYSVuLNZfX6n9z",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#6CC655",
+  "scope": "https://feedly.com",
+  "bx_legacy_service_id": "feedly"
+}

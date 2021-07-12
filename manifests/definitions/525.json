@@ -1,0 +1,20 @@
+{
+  "name": "Cloud App",
+  "category": "Communication & Collaboration",
+  "start_url": "https://www.getcloudapp.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/gO2OVcKETvuXai4OjP3i"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/ItvlQpfwRHGxcQA0XsZr",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#000000",
+  "scope": "https://www.getcloudapp.com",
+  "bx_legacy_service_id": "cloud-app",
+  "extended_scopes": [
+    "https://getcloudapp.com"
+  ]
+}

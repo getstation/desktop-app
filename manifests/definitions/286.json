@@ -1,0 +1,24 @@
+{
+  "name": "Clearbit Connect",
+  "category": "Sales & CRM",
+  "start_url": "https://dashboard.clearbit.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/eGTaLz6Q6OT5zJ4gHCkU",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#499AFF",
+  "scope": "https://clearbit.com",
+  "bx_use_native_window_open_on_host": true,
+  "bx_legacy_service_id": "clearbit-connect",
+  "extended_scopes": [
+    "https://*.clearbit.com"
+  ],
+  "import": [
+    {
+      "platform": "chrome",
+      "id": "pmnhcgfcafcnkbengdcanjablaabjplo"
+    }
+  ]
+}

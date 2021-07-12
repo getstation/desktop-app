@@ -1,0 +1,14 @@
+{
+  "name": "Digidom",
+  "category": "HR & Legal",
+  "start_url": "https://www.digidom.pro/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/k0LCoUfpSoiOSiZeLVNm",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FF893B",
+  "scope": "https://www.digidom.pro",
+  "bx_legacy_service_id": "digidom"
+}

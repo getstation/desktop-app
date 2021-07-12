@@ -1,0 +1,28 @@
+{
+  "name": "Odoo",
+  "category": "Storage & File-sharing",
+  "start_url": "https://{{subdomain}}.odoo.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/nUcWUxeUTyic2baoFl89"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/IIs3xDRWS5maHSB6zgwM",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#a44c8c",
+  "scope": "https://*.odoo.com",
+  "bx_legacy_service_id": "odoo",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_label_tpl": "{{subdomain}}.odoo.com",
+    "start_url_tpl": "https://{{subdomain}}.odoo.com",
+    "subdomain_title": "Odoo domain",
+    "subdomain_ui_help": "Enter your Odoo domain",
+    "subdomain_ui_suffix": ".odoo.com"
+  }
+}

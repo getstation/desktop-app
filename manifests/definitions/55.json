@@ -1,0 +1,14 @@
+{
+  "name": "Getemail",
+  "category": "Marketing & Analytics",
+  "start_url": "https://getemail.io/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/4gh4Gh2Q9iNPTo1kOxax",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#179D82",
+  "scope": "https://getemail.io",
+  "bx_legacy_service_id": "getemail"
+}

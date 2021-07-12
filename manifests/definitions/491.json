@@ -1,0 +1,17 @@
+{
+  "name": "TravelClick",
+  "category": "Admin & Back-office",
+  "start_url": "https://portal.travelclick.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/IQUU3qkIStWEAi2a1jwP"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/SubXDaU4QEO5SJb2kiOE",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#489ad4",
+  "scope": "https://portal.travelclick.com",
+  "bx_legacy_service_id": "travelclick"
+}

@@ -1,0 +1,184 @@
+@import "../common/variables";
+@import "../base/mixins";
+@import "../common/typography";
+
+// Subdock
+// —————————————————————————————————
+
+
+//== Variables
+$subdock-size: 280px;
+$avatar-size: 40px;
+$elm-height: 50px;
+$favicon-size: 16px;
+
+.l-subdock {
+  border-left: 2px solid transparent;
+  display: none;
+  flex-direction: column;
+  left: $app-size;
+  overflow: hidden;
+  width: $subdock-size;
+  z-index: $zindex-huge;
+
+  //== Variants
+  &.l-subdock--visible { display: flex }
+}
+.l-subdock__head {
+  align-items: center;
+  background-color: rgba(#fff, .05);
+  border-bottom: 1px solid rgba(#fff, .1);
+  display: flex;
+  flex: 0 0 auto;
+  min-height: 69px;
+  padding: 17px ($gutter * 2) 18px;
+  position: relative;
+
+  //== Children
+  strong {
+    color: #fff;
+    flex: 1 0 100%;
+    display: block;
+    line-height: 1.1em;
+    @include font(14px, 500);
+  }
+  small {
+    color: rgba(#fff, 0.6);
+    display: block;
+    flex: 1 0 100%;
+    @include font(11px);
+  }
+  strong + small { margin-top: 5px }
+
+  //== Variants
+  &.l-subdock__head--active {
+    strong { @include font(14px, 600) }
+  }
+  .l-subdock--notification & {
+    align-items: center;
+    display: flex;
+  }
+}
+
+.l-subdock__head-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 25px;
+  border-radius: 100%;
+  border: 2px solid white;
+}
+
+.l-subdock__titles {
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  // cursor: pointer;
+}
+.l-subdock__actions {
+  display: flex;
+  flex: 0 0 auto;
+  margin-left: $gutter;
+}
+.l-subdock__actions--active {
+  opacity: .3 !important;
+}
+.l-subdock__btn {
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(#fff, 0.3);
+  border-radius: $border-radius;
+  flex: 0 0 auto;
+  height: 24px;
+
+  //== States
+  &:hover {
+    background-color: rgba(#fff, 0.1);
+    border-color: #fff;
+  }
+
+  //== Variants
+  & + .l-subdock__btn { margin-left: $gutter }
+  &.l-subdock__btn--square {
+    padding: 0;
+    width: 24px;
+  }
+  &.l-subdock__btn--txt {
+    background-position: 6px center;
+    color: #fff;
+    line-height: 22px;
+    padding: 0 10px 0 28px;
+    @include font(11px, 600)
+  }
+}
+.l-subdock__panels {
+  flex: 1 1 auto;
+  overflow: hidden;
+  position: relative;
+}
+.l-subdock__panel {
+  opacity: 0;
+  transform: translate3d(-50%, 0, 0);
+  z-index: 1;
+  transition: all 250ms ease-out;
+
+  //== States
+  &.l-subdock__panel--active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    z-index: 2;
+  }
+}
+.l-subdock__content {
+  flex: 1 1 auto;
+  padding: 0 0 0 ($gutter * 2);
+  width: 100%;
+  height: calc(100% - 60px);
+  @include scrolling();
+}
+.l-subdock__subtitle {
+  align-items: center;
+  background-color: rgba(#000, 0.4);
+  display: flex;
+  height: 40px;
+  line-height: 40px;
+  margin-left: -($gutter * 2);
+  padding: 0 ($gutter * 2);
+
+  //== Children
+  img {
+    flex: 0 0 auto;
+    margin-right: $gutter;
+    @include avatar(20px, 2px);
+  }
+  div {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: space-between;
+  }
+  strong {
+    color: #fff;
+    @include font(11px, 600);
+  }
+  small {
+    color: rgba(#fff, 0.4);
+    @include font(11px);
+  }
+}
+
+.l-subdock--notification { display: none }
+.l-subdock__head__label {
+  flex: 1;
+}
+.l-subdock__head__detach {
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 16px;
+  flex: 0 0 auto;
+  opacity: 0.4;
+  margin-right: $gutter;
+  width: 16px;
+
+  &:hover { opacity: 1 }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Feedier",
+  "category": "User Support & Survey",
+  "start_url": "https://dashboard.feedier.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/3i2UbxeESSOaqJGyoEq9"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/lDPiSHgwQ6eojBLyt64f",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#000000",
+  "scope": "https://dashboard.feedier.com",
+  "bx_legacy_service_id": "feedier"
+}

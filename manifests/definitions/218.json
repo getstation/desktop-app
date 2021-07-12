@@ -1,0 +1,14 @@
+{
+  "name": "Xero",
+  "category": "Accounting & Finance",
+  "start_url": "https://login.xero.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/TBxTYWYQCOyISNM5SL7Q",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#13B5EA",
+  "scope": "https://login.xero.com",
+  "bx_legacy_service_id": "xero"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Flipboard",
+  "category": "Design & Creativity",
+  "start_url": "https://flipboard.com/signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Z6wcHkxeRLqsBM3KHn4r"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/UzVPcROKRwisv93xgrLC",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#f42424",
+  "scope": "https://flipboard.com",
+  "bx_legacy_service_id": "flipboard"
+}

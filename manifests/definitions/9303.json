@@ -1,0 +1,22 @@
+{
+  "name": "Grammarly",
+  "category": "Miscellaneous",
+  "start_url": "https://www.grammarly.com/signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/6Zxg7DmpSCGOpUxXTNOr"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/7SD0RO5dS4mCWZvbKkZD",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#15c39a",
+  "scope": "https://app.grammarly.com",
+  "import": [
+    {
+      "platform": "chrome",
+      "id": "kbfnbcaeplbcioakkpcpgfkobkghlhen"
+    }
+  ]
+}

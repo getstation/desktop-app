@@ -1,0 +1,17 @@
+{
+  "name": "Moqups",
+  "category": "Design & Creativity",
+  "start_url": "https://my.moqups.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/KbpRC4alRFOeGNhj6Tyr",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#116EE2",
+  "scope": "https://my.moqups.com",
+  "bx_legacy_service_id": "moqups",
+  "extended_scopes": [
+    "https://app.moqups.com"
+  ]
+}

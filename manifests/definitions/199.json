@@ -1,0 +1,14 @@
+{
+  "name": "Pivotal Tracker",
+  "category": "Task & Project Management",
+  "start_url": "https://www.pivotaltracker.com/signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/BNGXjp8iQjGjJu7vvUJm",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#ED7D1A",
+  "scope": "https://www.pivotaltracker.com",
+  "bx_legacy_service_id": "pivotal-tracker"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Pulse SMS",
+  "category": "Communication & Collaboration",
+  "start_url": "https://pulsesms.app/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/seWpCzWQ3msRylsrqjDQ",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1569BC",
+  "scope": "https://pulsesms.app",
+  "bx_keep_always_loaded": true,
+  "bx_single_page": true
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Unsplash",
+  "category": "Design & Creativity",
+  "start_url": "https://unsplash.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/uFaePWkRuSQLf4wn7a6X"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/t61I7miATe25IIyroqsQ",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#000000",
+  "scope": "https://unsplash.com",
+  "bx_legacy_service_id": "unsplash"
+}

@@ -1,0 +1,16 @@
+{
+  "presets": ["@babel/env", "@babel/react"],
+  "plugins": [
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    "@babel/plugin-syntax-dynamic-import",
+    "dynamic-import-node",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-transform-runtime"
+  ],
+  "env": {
+    "production": {
+    },
+    "development": {
+    }
+  }
+}

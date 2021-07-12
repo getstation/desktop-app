@@ -1,0 +1,14 @@
+{
+  "name": "Constant Contact",
+  "category": "Marketing & Analytics",
+  "start_url": "https://login.constantcontact.com/login/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/9grZWWnOR7WbTp8CCp2p",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#164889",
+  "scope": "https://login.constantcontact.com",
+  "bx_legacy_service_id": "constantcontact"
+}

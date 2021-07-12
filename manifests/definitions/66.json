@@ -1,0 +1,14 @@
+{
+  "name": "AWS Root Console",
+  "category": "Developer Tools",
+  "start_url": "https://console.aws.amazon.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Xh2i9uf7SMK2l4e0Zqm1",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F68D11",
+  "scope": "https://console.aws.amazon.com",
+  "bx_legacy_service_id": "aws"
+}

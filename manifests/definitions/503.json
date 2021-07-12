@@ -1,0 +1,32 @@
+{
+  "name": "CapsuleCRM",
+  "category": "Sales & CRM",
+  "start_url": "https://{{subdomain}}.capsulecrm.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/WFhh60JWQH8lS9k7uA3R"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/fyoXrKqoRISxyLGuL68m",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#e3247c",
+  "scope": "https://*.capsulecrm.com",
+  "bx_legacy_service_id": "capsulecrm",
+  "extended_scopes": [
+    "https://capsulecrm.com"
+  ],
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_wording": "team",
+    "instance_label_tpl": "{{subdomain}}.capsulecrm.com",
+    "start_url_tpl": "https://{{subdomain}}.capsulecrm.com/login",
+    "subdomain_title": "CapsuleCRM domain",
+    "subdomain_ui_help": "Enter your team's CapsuleCRM domain.",
+    "subdomain_ui_suffix": ".capsulecrm.com"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Yesware",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.yesware.com/users/sign_in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/EZGD2UjGQBOBCwZOOhlO",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#8EC23D",
+  "scope": "https://www.yesware.com/"
+}

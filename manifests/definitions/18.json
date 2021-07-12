@@ -1,0 +1,31 @@
+{
+  "name": "Google Calendar",
+  "category": "Communication & Collaboration",
+  "start_url": "https://calendar.google.com/calendar/{{#if moreThanOneIdentity}}b/{{userIdentity.profileData.email}}{{/if}}",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/SoMG9urFTpGgqP2GVsdv",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3A82F5",
+  "scope": "https://calendar.google.com",
+  "bx_keep_always_loaded": true,
+  "bx_single_page": true,
+  "bx_legacy_service_id": "gcalendar-mu",
+  "extended_scopes": [
+    "https://calendar.google.com",
+    "https://google.com"
+  ],
+  "bx_multi_instance_config": {
+    "preset": "google-account",
+    "presets": [
+      "google-account"
+    ],
+    "instance_wording": "account",
+    "instance_label_tpl": "{{email}}",
+    "start_url_tpl": "https://accounts.google.com/AddSession?passive=true&Email={{userIdentity.profileData.email}}&continue=https://calendar.google.com/calendar/{{#if moreThanOneIdentity}}b/{{userIdentity.profileData.email}}{{/if}}"
+  },
+  "bx_override_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36 Edge/80.0.361.62",
+  "recommendedPosition": "2"
+}

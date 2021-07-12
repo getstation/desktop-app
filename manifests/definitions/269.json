@@ -1,0 +1,14 @@
+{
+  "name": "Azendoo",
+  "category": "Task & Project Management",
+  "start_url": "https://app.azendoo.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/FVPQ6asXSYy7wapIJZii",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#42AFE3",
+  "scope": "https://app.azendoo.com",
+  "bx_legacy_service_id": "azendoo"
+}

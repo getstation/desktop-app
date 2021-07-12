@@ -1,0 +1,14 @@
+{
+  "name": "StatusPage",
+  "category": "Developer Tools",
+  "start_url": "https://manage.statuspage.io",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/DcXoOmZ7SE6MIb4ccsZn",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#82BC00",
+  "scope": "https://manage.statuspage.io",
+  "bx_legacy_service_id": "statuspage"
+}

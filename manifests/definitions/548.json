@@ -1,0 +1,20 @@
+{
+  "name": "Inoreader",
+  "category": "Curation & Sourcing",
+  "start_url": "https://www.inoreader.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ENEFQys5Rb27NRy7k7Sy"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/8HLTHgETTiHA681QvPrT",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2c6ccc",
+  "scope": "https://www.inoreader.com",
+  "bx_legacy_service_id": "inoreader",
+  "extended_scopes": [
+    "https://inoreader.com"
+  ]
+}

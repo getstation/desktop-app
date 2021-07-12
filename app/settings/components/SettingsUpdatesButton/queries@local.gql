@@ -1,0 +1,16 @@
+query GetAutoUpdateStatus @live @local {
+  autoUpdateStatus {
+    isDownloadingUpdate,
+    isCheckingUpdate,
+    isUpdateAvailable,
+    releaseName,
+  }
+}
+
+mutation CheckForUpdatesMutation @local {
+  checkForUpdates,
+}
+
+mutation QuitAndInstallMutation @local {
+  quitAndInstall,
+}

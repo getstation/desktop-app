@@ -1,0 +1,20 @@
+{
+  "name": "Twitch",
+  "category": "Miscellaneous",
+  "start_url": "https://www.twitch.tv/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/TxJyXVRaRU2PFYxutTrN"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/0eXzjHh5QXe0RUbkyhTY",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#6444a4",
+  "scope": "https://www.twitch.tv",
+  "bx_legacy_service_id": "twitch",
+  "extended_scopes": [
+    "https://twitch.tv"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Tumblr",
+  "category": "Blogging & Content Creation",
+  "start_url": "https://www.tumblr.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/c2t1mAxzR02hdjBErQ2W"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/184wlZ7Quu59msxVX0Z0",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2F4357",
+  "scope": "https://www.tumblr.com",
+  "bx_use_native_window_open_on_host": true,
+  "bx_legacy_service_id": "tumblr",
+  "extended_scopes": [
+    "https://tumblr.com"
+  ]
+}

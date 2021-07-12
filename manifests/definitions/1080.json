@@ -1,0 +1,20 @@
+{
+  "name": "iceScrum",
+  "category": "Task & Project Management",
+  "start_url": "https://www.icescrum.com/my-account/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/6ux8vgcESKKxh56RvCiE"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/gALM0Js6SU9mADUdv1gn",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#fcc40b",
+  "scope": "https://www.icescrum.com",
+  "bx_legacy_service_id": "icescrum",
+  "extended_scopes": [
+    "https://icescrum.com"
+  ]
+}

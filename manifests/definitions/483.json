@@ -1,0 +1,29 @@
+{
+  "name": "Databricks (custom)",
+  "category": "Admin & Back-office",
+  "start_url": "https://{{subdomain}}.databricks.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/oeYy6BvuS4SImkqFE5xO"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/PNQ4ocNtSLWGp8rEKf3H",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F0562C",
+  "scope": "https://*.databricks.com",
+  "bx_legacy_service_id": "databricks-custom",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_wording": "team",
+    "instance_label_tpl": "{{subdomain}}.databricks.com",
+    "start_url_tpl": "https://{{subdomain}}.databricks.com/",
+    "subdomain_title": "Databricks domain",
+    "subdomain_ui_help": "Enter your team's Databricks domain.",
+    "subdomain_ui_suffix": ".databricks.com"
+  }
+}

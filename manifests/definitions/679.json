@@ -1,0 +1,17 @@
+{
+  "name": "Sympli",
+  "category": "Developer Tools",
+  "start_url": "https://app.sympli.io/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/lPCt1IcRGukRtrvUKnpQ"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/H2vaIXDR7mEbijtqJZDd",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#dc4633",
+  "scope": "https://app.sympli.io",
+  "bx_legacy_service_id": "sympli"
+}

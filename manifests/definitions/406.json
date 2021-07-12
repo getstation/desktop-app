@@ -1,0 +1,17 @@
+{
+  "name": "Coinbase",
+  "category": "Accounting & Finance",
+  "start_url": "https://www.coinbase.com/signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/0zLHKPIPTyiCXzqy5DxA"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/ABEhLBwtQ927HMNAVPqC",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#045cb8",
+  "scope": "https://www.coinbase.com",
+  "bx_legacy_service_id": "coinbase"
+}

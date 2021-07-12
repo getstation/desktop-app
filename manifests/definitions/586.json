@@ -1,0 +1,17 @@
+{
+  "name": "Doodle",
+  "category": "Communication & Collaboration",
+  "start_url": "https://doodle.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/GMXnXUFqRgSnQd2C5XTy"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/SpGvybktQMysMnqNmiBD",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#349cd4",
+  "scope": "https://doodle.com",
+  "bx_legacy_service_id": "doodle"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Goodreads",
+  "category": "Curation & Sourcing",
+  "start_url": "https://www.goodreads.com/user/sign_in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/hKp5NkaTQCmzekUUJQ85",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#59461B",
+  "scope": "https://www.goodreads.com/"
+}

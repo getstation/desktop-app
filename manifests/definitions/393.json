@@ -1,0 +1,17 @@
+{
+  "name": "Groupme",
+  "category": "Communication & Collaboration",
+  "start_url": "https://web.groupme.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/fonxbcNpR26xY7V7G7eq"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/zat6bFRUSdyGhYqruL8d",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#04acec",
+  "scope": "https://web.groupme.com",
+  "bx_legacy_service_id": "groupme"
+}

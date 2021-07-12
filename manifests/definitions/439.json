@@ -1,0 +1,20 @@
+{
+  "name": "Approval Donkey",
+  "category": "Accounting & Finance",
+  "start_url": "https://www.app.approvaldonkey.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/igYcYPN4QYCWvXzIZqjN"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/q8sipk1kQp1aQta251tW",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2c74b4",
+  "scope": "https://www.app.approvaldonkey.com",
+  "bx_legacy_service_id": "approval-donkey",
+  "extended_scopes": [
+    "https://app.approvaldonkey.com"
+  ]
+}

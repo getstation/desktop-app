@@ -1,0 +1,30 @@
+
+
+.l-empty {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  @include scrolling();
+}
+.l-empty__content {
+  margin: auto;
+  padding: 0 ($gutter * 2);
+  text-align: center;
+
+  //== Children
+  strong {
+    color: #fff;
+    display: block;
+    margin-bottom: 5px;
+    @include font(13px, 600);
+  }
+  p {
+    color: rgba(#fff, 0.4);
+    line-height: 1.5em;
+    @include font(12px);
+  }
+}

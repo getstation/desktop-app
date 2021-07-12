@@ -1,0 +1,17 @@
+{
+  "name": "IFTTT",
+  "category": "Miscellaneous",
+  "start_url": "https://ifttt.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/vvCEXthxSOaSoHKE1k60"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/7O3ROZ3RKmhbcJUAOp47",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#049cfc",
+  "scope": "https://ifttt.com",
+  "bx_legacy_service_id": "ifttt"
+}

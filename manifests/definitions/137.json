@@ -1,0 +1,14 @@
+{
+  "name": "Teamleader",
+  "category": "Communication & Collaboration",
+  "start_url": "https://app.teamleader.eu/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/zJSQg9FRdiS8m7GtAIUa",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#20B1A9",
+  "scope": "https://app.teamleader.eu",
+  "bx_legacy_service_id": "teamleader"
+}

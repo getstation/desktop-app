@@ -1,0 +1,14 @@
+{
+  "name": "Sellsy",
+  "category": "Sales & CRM",
+  "start_url": "https://www.sellsy.fr/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/q7it5nfhRIa2qGuHQGdm",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#26C6D0",
+  "scope": "https://www.sellsy.fr",
+  "bx_legacy_service_id": "sellsy"
+}

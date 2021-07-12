@@ -1,0 +1,14 @@
+{
+  "name": "Pinterest",
+  "category": "Social Media & Advertising",
+  "start_url": "https://www.pinterest.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ifQQVCfPTFm25hf8msaC",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#BD081C",
+  "scope": "https://www.pinterest.com",
+  "bx_legacy_service_id": "pinterest"
+}

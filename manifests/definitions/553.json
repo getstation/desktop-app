@@ -1,0 +1,32 @@
+{
+  "name": "Ryver",
+  "category": "Communication & Collaboration",
+  "start_url": "https://{{subdomain}}.ryver.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/VqN0BK2wRoeiWN037PjP"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/iTlhavIzRpyeziaeRCNL",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#04c4fc",
+  "scope": "https://*.ryver.com",
+  "bx_legacy_service_id": "ryver",
+  "extended_scopes": [
+    "https://ryver.com"
+  ],
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_wording": "organization",
+    "instance_label_tpl": "{{subdomain}}.ryver.com",
+    "start_url_tpl": "https://{{subdomain}}.ryver.com",
+    "subdomain_title": "Ryver domain",
+    "subdomain_ui_help": "Enter your organization's Ryver domain.",
+    "subdomain_ui_suffix": ".ryver.com"
+  }
+}

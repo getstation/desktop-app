@@ -1,0 +1,18 @@
+{
+  "name": "Noisli",
+  "category": "Miscellaneous",
+  "start_url": "https://www.noisli.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/PuSru3sUS9ePprgNyeZj",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#87DDB2",
+  "scope": "https://www.noisli.com",
+  "bx_keep_always_loaded": true,
+  "bx_legacy_service_id": "noisli",
+  "extended_scopes": [
+    "https://noisli.com"
+  ]
+}

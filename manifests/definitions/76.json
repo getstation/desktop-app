@@ -1,0 +1,14 @@
+{
+  "name": "Workday",
+  "category": "HR & Legal",
+  "start_url": "https://www.workday.com/en-us/signin.html",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/XJChfJPiQUifhpUuRFwC",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#EA9A30",
+  "scope": "https://www.workday.com",
+  "bx_legacy_service_id": "workday"
+}

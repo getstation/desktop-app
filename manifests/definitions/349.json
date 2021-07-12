@@ -1,0 +1,14 @@
+{
+  "name": "Shuuka",
+  "category": "Social Media & Advertising",
+  "start_url": "https://www.shuuka.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/XMa0wEkSimCqSDDmZYlR",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#09F",
+  "scope": "https://www.shuuka.com",
+  "bx_legacy_service_id": "shuuka"
+}

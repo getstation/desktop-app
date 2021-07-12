@@ -1,0 +1,20 @@
+{
+  "name": "Yammer",
+  "category": "Communication & Collaboration",
+  "start_url": "https://www.yammer.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/vghyc9pTkCW4PXv1MaRg"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/57KbK52jSOisGmocubPR",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#245494",
+  "scope": "https://www.yammer.com",
+  "bx_legacy_service_id": "yammer",
+  "extended_scopes": [
+    "https://yammer.com"
+  ]
+}

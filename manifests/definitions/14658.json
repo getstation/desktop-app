@@ -1,0 +1,13 @@
+{
+  "name": "Outlook Calendar",
+  "category": "Communication & Collaboration",
+  "start_url": "https://outlook.office365.com/calendar/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/7XA7crEyT5awT59ziTd1",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0470C7",
+  "scope": "https://outlook.office365.com/"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Totango",
+  "category": "User Support & Survey",
+  "start_url": "https://app.totango.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/HSrZPxaSeq95eokpArMx",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#65D45B",
+  "scope": "https://app.totango.com",
+  "bx_legacy_service_id": "totango"
+}

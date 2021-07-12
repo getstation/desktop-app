@@ -1,0 +1,31 @@
+{
+  "name": "Google Drive",
+  "category": "Storage & File-sharing",
+  "start_url": "https://accounts.google.com/AddSession?passive=true&Email={{userIdentity.profileData.email}}&continue=https://drive.google.com/drive/{{#if moreThanOneIdentity}}u/{{userIdentity.profileData.email}}{{/if}}",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/J4MAUo7LRZm2fhyp6X0f",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FCCD48",
+  "scope": "https://drive.google.com",
+  "bx_use_native_window_open_on_host": true,
+  "bx_legacy_service_id": "gdrive-mu",
+  "extended_scopes": [
+    "https://docs.google.com",
+    "https://drive.google.com"
+  ],
+  "bx_multi_instance_config": {
+    "preset": "google-account",
+    "presets": [
+      "google-account"
+    ],
+    "instance_wording": "account",
+    "instance_label_tpl": "{{email}}",
+    "start_url_tpl": "https://accounts.google.com/AddSession?passive=true&Email={{userIdentity.profileData.email}}&continue=https://drive.google.com/drive/{{#if moreThanOneIdentity}}u/{{userIdentity.profileData.email}}{{/if}}",
+    "new_page_url_tpl": "https://drive.google.com/drive/{{#if moreThanOneIdentity}}u/{{userIdentity.profileData.email}}{{/if}}"
+  },
+  "bx_override_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36 Edge/80.0.361.62",
+  "recommendedPosition": "3"
+}

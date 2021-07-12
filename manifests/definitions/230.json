@@ -1,0 +1,25 @@
+{
+  "name": "Lucca",
+  "category": "HR & Legal",
+  "start_url": "https://{{subdomain}}.ilucca.net/login/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/JH5y8urQP6dUqZyVMLGS",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F27020",
+  "scope": "https://*.ilucca.net",
+  "bx_legacy_service_id": "lucca",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_label_tpl": "{{subdomain}}.ilucca.net",
+    "start_url_tpl": "https://{{subdomain}}.ilucca.net/login/",
+    "subdomain_title": "Lucca domain",
+    "subdomain_ui_help": "Enter your company Lucca domain.",
+    "subdomain_ui_suffix": ".ilucca.net"
+  }
+}

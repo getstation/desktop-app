@@ -1,0 +1,20 @@
+{
+  "name": "Uberconference",
+  "category": "Communication & Collaboration",
+  "start_url": "https://www.uberconference.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/yb5qBHAHS4m20w94RoFK"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/YrsZhk7ZTJK2SMVTTGuF",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#44acd4",
+  "scope": "https://www.uberconference.com",
+  "bx_legacy_service_id": "uberconference",
+  "extended_scopes": [
+    "https://uberconference.com"
+  ]
+}

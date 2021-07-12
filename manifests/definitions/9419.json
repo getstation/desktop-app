@@ -1,0 +1,13 @@
+{
+  "name": "Recruitee",
+  "category": "HR & Legal",
+  "start_url": "https://auth.recruitee.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/szxqRLwvSCqPMyixOfsi",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1999E4",
+  "scope": "https://app.recruitee.com"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Front",
+  "category": "User Support & Survey",
+  "start_url": "https://app.frontapp.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/uHod0eiTaclOPGHYiQNw",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F35B5F",
+  "scope": "https://app.frontapp.com",
+  "bx_legacy_service_id": "frontapp"
+}

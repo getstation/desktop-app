@@ -1,0 +1,26 @@
+{
+  "name": "Desk",
+  "category": "User Support & Survey",
+  "start_url": "https://{{subdomain}}.desk.com/agent",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/mFC8QLtYTsSDNb50LDTx",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#239EDA",
+  "scope": "https://*.desk.com",
+  "bx_legacy_service_id": "desk",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_wording": "account",
+    "instance_label_tpl": "{{subdomain}}.desk.com",
+    "start_url_tpl": "https://{{subdomain}}.desk.com/agent",
+    "subdomain_title": "Desk domain",
+    "subdomain_ui_help": "Enter your Desk account's domain.",
+    "subdomain_ui_suffix": ".desk.com"
+  }
+}

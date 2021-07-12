@@ -1,0 +1,15 @@
+{
+  "name": "WeChat",
+  "category": "Communication & Collaboration",
+  "start_url": "https://web.wechat.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/I3Y4l7hoSNmJZFxlKh0R",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2DC100",
+  "scope": "https://web.wechat.com",
+  "bx_keep_always_loaded": true,
+  "bx_legacy_service_id": "wechat"
+}

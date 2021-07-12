@@ -1,0 +1,108 @@
+@import "../common/variables";
+@import "../base/mixins";
+@import "../common/typography";
+// Subview
+// —————————————————————————————————
+
+
+//== Variables
+$title-height: 36px;
+$favicon-size: 20px;
+
+.l-subview {
+  bottom: 0;
+  left: $app-size + ($gutter * 3);
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform-origin: center bottom;
+  @include animation(fadeIn 300ms 1 ease-in-out);
+
+  //== Children
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  //== Variants
+  &.l-subview--show { z-index: $zindex-huge }
+  &.l-subview--fullscreen {
+    bottom: 30px;
+    top: 30px;
+  }
+}
+
+
+.l-subview__title {
+  color: rgba(#fff, 0.8);
+  flex: 0 0 $title-height;
+  line-height: $title-height;
+  position: relative;
+  text-align: center;
+  z-index: $zindex-medium;
+  @include font(12px, 600);
+}
+.l-subview__title__favicon {
+  background-size: cover;
+  display: inline-block;
+  margin-right: ($gutter / 2);
+  position: relative;
+  top: 6px;
+  @include avatar($favicon-size);
+}
+.l-subview__content {
+  background-color: #fff;
+  // nope don't do that on webview
+  //border-radius: $border-radius $border-radius 0 0;
+  flex: 1 1 auto;
+  position: relative;
+  z-index: $zindex-medium;
+  @include animation(showSubViewContent 800ms 1 cubic-bezier(0.19, 1, 0.22, 1));
+  @include scrolling();
+
+  //== Children
+  & > div,
+  webview {height: calc(100vh - #{$title-height}) }
+  webview {
+    position: relative;
+    z-index: 2;
+    @include animation(fadeIn 1500ms 1 linear 800ms);
+  }
+}
+.l-subview__overlay {
+  background-color: rgba(#000, 0.8);
+  z-index: $zindex-small;
+  @include coverer();
+}
+.l-subview__reduce,
+.l-subview__copy_link,
+.l-subview__open {
+  cursor: pointer;
+  margin-top: -($favicon-size / 2);
+  position: absolute;
+  top: 50%;
+  @include avatar($favicon-size, 0);
+}
+.l-subview__reduce { right: $gutter }
+.l-subview__open { right: $gutter + $favicon-size + $gutter }
+.l-subview__copy_link { right: $gutter + $favicon-size + $gutter + $favicon-size + $gutter }
+.l-subview__reduce__border {
+  opacity: 0.3;
+
+  //== States
+  .l-subview__reduce:hover &,
+  .l-subview__copy_link:hover &,
+  .l-subview__open:hover & { opacity: 1 }
+}
+.l-subview__loading {
+  display: flex;
+  z-index: 1;
+  @include coverer();
+
+  //== Children
+  span {
+    color: rgba(#000, 0.5);
+    margin: auto;
+    @include font(16px, 600);
+  }
+}

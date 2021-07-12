@@ -1,0 +1,14 @@
+{
+  "name": "Marvel",
+  "category": "Design & Creativity",
+  "start_url": "https://marvelapp.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/KtnH2SIoQWechTkjreNy",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1FB6FF",
+  "scope": "https://marvelapp.com",
+  "bx_legacy_service_id": "marvelapp"
+}

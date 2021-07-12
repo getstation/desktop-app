@@ -1,0 +1,18 @@
+{
+  "name": "Intercom",
+  "category": "Sales & CRM",
+  "start_url": "https://app.intercom.io",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Y6GmxbvTQCHxRC6jhsKA",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1F8DED",
+  "scope": "https://app.intercom.io",
+  "bx_legacy_service_id": "intercom",
+  "extended_scopes": [
+    "https://app.intercom.com",
+    "https://app.intercom.io"
+  ]
+}

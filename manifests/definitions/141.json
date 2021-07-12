@@ -1,0 +1,14 @@
+{
+  "name": "Quickbooks",
+  "category": "Accounting & Finance",
+  "start_url": "https://qbo.intuit.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ijvJ4Uc3T0iwPKYnoh7h",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#24A106",
+  "scope": "https://qbo.intuit.com",
+  "bx_legacy_service_id": "intuit-qb"
+}

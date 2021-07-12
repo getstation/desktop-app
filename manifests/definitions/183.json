@@ -1,0 +1,14 @@
+{
+  "name": "Smartkeyword",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.smartkeyword.io/connexion",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/mFkB3GxATy2H7sfGFiZ1",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#67C68F",
+  "scope": "https://app.smartkeyword.io",
+  "bx_legacy_service_id": "smartkeyword"
+}

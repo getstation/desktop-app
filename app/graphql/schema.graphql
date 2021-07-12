@@ -1,0 +1,366 @@
+type Query {
+  """Is launch at startup enabled or not."""
+  autoLaunchEnabled: Boolean,
+
+  promptDownloadEnabled: Boolean,
+
+  stationStatus: StationStatus,
+
+  autoUpdateStatus: AutoUpdateStatus,
+
+  getApplicationById(applicationId: String!): Application!,
+
+  abstractApplication(manifestURL: String): AbstractApplication,
+
+  activity(query: String): [ActivityEntry],
+
+  getTabWebContent(tabId: String): TabWebContent,
+
+  """ Resources queries """
+  getBxResource(bxResourceId: String!): BxResource!,
+
+  ## Subscriptions
+  ## -------------
+  # These queries are replacement for GraphQL Subscriptions that is not
+  # supported by `reactive-graphql` (https://github.com/mesosphere/reactive-graphql/issues/27).
+  # It should be used to handle event subscription kind of situations.
+  # WARNING: add a timestamp for publish same payload since it's deduplicated by default in reactive graphql
+
+  """
+  Emitted when an application is installed.
+  """
+  onApplicationInstalled: ApplicationInstalledEvent!
+
+  """
+  List applications
+  """
+  listApplications: [MinimalApplicationManifest!]!
+}
+
+type Mutation {
+  """
+  Will set the value of auto-launch.
+  """
+  setAutoLaunch(
+    """
+    True if autolaunch should be enabled
+    """
+    enabled: Boolean!
+  ): Boolean,
+
+  setPromptDownload(
+    enabled: Boolean!
+  ):Boolean
+
+  """Trigger an action to check for updates"""
+  checkForUpdates: Boolean,
+  """Trigger an action to quit browserX and restart with the new version"""
+  quitAndInstall: Boolean,
+
+  checkForUpdatesApplication(manifestURL: String!): Boolean,
+
+  """ Will reorder a tab in the Subdock """
+  reorderTab(
+    """ ID of the tab to reorder """
+    tabId: String!
+    """ Integer representing the new position of the tab in its list """
+    newPosition: Int!
+  ): Boolean,
+
+  # Subdock Favorites
+
+  selectFavorite(id: ID!): Boolean,
+  closeFavorite(id: ID!): Boolean,
+  detachFavorite(id: ID!): Boolean,
+  unpinFavorite(id: ID!): Boolean,
+
+  """ Will reorder a favorite in the Subdock """
+  reorderFavorite(
+    """ ID of the favorite to reorder """
+    favoriteId: String!
+    """ Integer representing the new position of the favorite in its list """
+    newPosition: Int!
+  ): Boolean,
+
+  """ Resources mutations """
+  navigateBxResource(bxResourceId: String!): Boolean!
+
+  """ install application """
+  installApplication(input: InstallApplicationInput!): InstallApplicationReturn!
+
+  """ Onboarding """
+  onboardingDone(nbInstalledApps: Int!, onboardeeId: ID): Boolean!
+
+  """ UI mutations """
+  setApplicationForceShowDescription(applicationId: ID!, forceShowDescription: Boolean!): Boolean!
+}
+
+type MinimalApplicationManifest {
+  id: String!,
+  name: String!,
+  bxAppManifestURL: String!,
+  iconURL: String!,
+  themeColor: String!,
+}
+
+""" BX resources """
+
+type BxResource {
+  bxResourceId: String!,
+  manifestURL: String!,
+  iconURL: String!,
+  themeColor: String,
+  title: String!,
+  secondaryTitle: String,
+}
+
+""" install applications """
+
+input InstallApplicationConfiguration {
+	subdomain: String,
+	customURL: String,
+}
+
+enum Platform {
+  PLATFORM_APPSTORE
+}
+
+input InstallApplicationContext {
+	id: String!,
+	platform: Platform!,
+	onboardeeApplicationAssignment: ID,
+}
+
+type InstallApplicationReturn {
+	applicationId: String,
+}
+
+input InstallApplicationInput {
+  manifestURL: String!,
+	configuration: InstallApplicationConfiguration
+	context: InstallApplicationContext!,
+}
+
+"""
+Represents the installtion of an application
+via the app-store.
+"""
+type ApplicationInstalledEvent {
+  """
+  The `applicationId` of the installed Application.
+  """
+  applicationId: String!,
+  """
+  True if the application was added in background, ie without
+  navigation to the installed application.
+  """
+  inBackground: Boolean,
+}
+
+type StationStatus {
+  name: String,
+  isLoggedIn: Boolean,
+  isOnline: Boolean,
+  focus: Int,
+}
+
+type AutoUpdateStatus {
+  """Is browserX downloading update or not"""
+  isDownloadingUpdate: Boolean,
+  """Is browserX checking update or not"""
+  isCheckingUpdate: Boolean,
+  """Is browserX update available or not"""
+  isUpdateAvailable: Boolean,
+  """Name of the new browserX update available"""
+  releaseName: String,
+}
+
+type Application {
+  id: ID!,
+  name: String,
+  appstoreApplicationId: String,
+  iconURL: String,
+  manifestURL: String!,
+  manifestData: ManifestData!,
+  isSnoozed: Boolean,
+  fullDomain: String,
+  passwordManagerLogin: String,
+  identity: StationUserIdentity,
+  tabApplicationHome: Tab,
+  orderedFavoritesForSubdock: [Favorite!]!,
+  orderedTabsForSubdock: [Tab!]!,
+  associatedBxResource: BxResource,
+  customURL: String,
+  onboardeeApplicationAssignment: ID,
+  forceShowDescription: Boolean!,
+}
+
+type AbstractApplication {
+  manifestURL: String,
+  manifestCheckedAt: String,
+  manifest: ManifestData,
+  settings: Settings,
+  instances: [Instance],
+  extensions: [Extension],
+}
+
+# todo: `Extension` should be replaced by the usage of `AbstractApplication` directly
+type Extension {
+  id: ID,
+  manifestURL: ID,
+  name: String,
+  iconUrl: String,
+  added: Boolean,
+}
+
+# todo: `Instance` should be replaced by the usage of `Application` directly
+type Instance {
+  id: ID
+  name: String
+  logoUrl: String
+  needConfiguration: Boolean
+  passwordManagerLink: PasswordManagerLink
+}
+
+type Tab {
+  id: String,
+  tabId: String,
+  applicationId: String,
+  title: String,
+  url: String,
+  isApplicationHome: Boolean,
+  isDetached: Boolean,
+  canGoForward: Boolean,
+  canGoBack: Boolean,
+  associatedBxResource: BxResource,
+  """
+  The `iconId` (Icon component) to be used to represent this tab.
+
+  Some applications (like GDrive), add a specific icon (sheet, presentation)
+  depending on the URL loaded in tab.
+  """
+  specificIconId: String,
+}
+
+type Favorite {
+  favoriteId: String,
+  applicationId: String,
+  title: String,
+  url: String,
+}
+
+type TabWebContent {
+  id: Int,
+  tabId: String,
+  mountState: String,
+}
+
+type PasswordManagerLink {
+  instanceId: ID
+  providerId: ID
+}
+
+type ManifestData {
+ """Application Name"""
+ name: String,
+ """Application Start URL"""
+ start_url: String,
+ """
+ The icon URL to be used.
+
+ Derived from icons member.
+ """
+ interpretedIconURL: String,
+ """Application Theme Colors"""
+ theme_color: String,
+ """Is Application always loaded"""
+ bx_keep_always_loaded: Boolean,
+ """Is Application a Single Page"""
+ bx_single_page: Boolean,
+ """Application Multi Instance Configuration"""
+ bx_multi_instance_config: BxMultiInstanceConfig,
+ """Application Legacy Service ID"""
+ bx_legacy_service_id: String,
+ """Native window on host"""
+ bx_not_use_native_window_open_on_host: Boolean,
+ """Application Chrome Extension ID"""
+ cxExtensionId: ID,
+}
+
+type Settings {
+  manifestURL: String,
+  alwaysLoaded: Boolean,
+  doNotInstall: Boolean,
+  instanceLogoInDock: Boolean,
+}
+
+type StationUserIdentity {
+  identityId: String,
+  provider: String,
+  profileData: StationUserIdentityProfileData,
+  userId: String,
+  accessToken: String,
+  refreshToken: String,
+}
+
+type StationUserIdentityProfileData {
+  displayName: String,
+  email: String,
+  imageURL: String,
+  firstName: String,
+  lastName: String,
+}
+
+type BxMultiInstanceConfig {
+  instance_wording: String,
+}
+
+"""
+Activity + History + Search
+
+Activity — cold and immutable collection of user actions in Station
+History — hot and updated collection of activities
+Search — hot and updated version of queried History + queried 3rd party APIs
+"""
+
+type ActivityEntry {
+  resourceId: ID!,
+  uniqId: ID!,
+  applicationId: ID!,
+  manifestURL: String,
+  url: String,
+  onSelect: Boolean!,
+  label: String!,
+  imgUrl: String,
+  category: String!,
+  context: String,
+  additionalSearchString: String,
+  sectionKind: SectionKind!,
+  type: SearchPaneItemSelectedItem!,
+  themeColor: String,
+  date: Int,
+  associatedBxResource: BxResource,
+}
+
+enum SectionKind {
+  TOP_HITS
+  APPS
+  APP_SPECIFIC
+}
+
+enum SearchPaneItemSelectedItem {
+  FAVORITE
+  TAB
+  STATION_APP
+  INTEGRATION_RESULT
+}
+
+type User {
+  id: String,
+  email: String,
+  name: String,
+  firstName: String,
+  lastName: String,
+  picture: String,
+  identities: [StationUserIdentity!]!
+}

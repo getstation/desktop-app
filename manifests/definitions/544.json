@@ -1,0 +1,17 @@
+{
+  "name": "Dovetail",
+  "category": "User Support & Survey",
+  "start_url": "https://dovetailapp.com/users/sign_up",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/9yBNsrd6SiCHk2dqKcNF"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/WEYzfZmdSTuDnwZ9Vqww",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#5434a4",
+  "scope": "https://dovetailapp.com",
+  "bx_legacy_service_id": "dovetail"
+}

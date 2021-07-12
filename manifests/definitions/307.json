@@ -1,0 +1,20 @@
+{
+  "name": "Outlook Pro",
+  "category": "Communication & Collaboration",
+  "start_url": "https://outlook.office.com/owa/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/w0CgoQDKTmegZKpP1eYr",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0072CD",
+  "scope": "https://outlook.office.com",
+  "bx_use_native_window_open_on_host": true,
+  "bx_legacy_service_id": "outlook-pro",
+  "bx_multi_instance_config": {
+    "presets": [
+      "on-premise"
+    ]
+  }
+}

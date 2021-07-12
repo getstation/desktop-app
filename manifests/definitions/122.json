@@ -1,0 +1,17 @@
+{
+  "name": "Whatsapp",
+  "category": "Communication & Collaboration",
+  "start_url": "https://web.whatsapp.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/34oofXYQG6nVG9oXXxPI",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#25D366",
+  "scope": "https://web.whatsapp.com",
+  "bx_override_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36",
+  "bx_keep_always_loaded": true,
+  "bx_legacy_service_id": "whatsapp",
+  "recommendedPosition": "4"
+}

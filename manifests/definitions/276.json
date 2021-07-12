@@ -1,0 +1,14 @@
+{
+  "name": "Periscope Data",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.periscopedata.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Le67NpjR3aycI9O9w8rt",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#9F3BF2",
+  "scope": "https://app.periscopedata.com",
+  "bx_legacy_service_id": "periscopedata"
+}

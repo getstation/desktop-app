@@ -1,0 +1,14 @@
+{
+  "name": "Circleci",
+  "category": "Developer Tools",
+  "start_url": "https://circleci.com/vcs-authorize/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/gfQN2PHrSZynGCYlhW8k",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#000000",
+  "scope": "https://circleci.com",
+  "bx_legacy_service_id": "circleci"
+}

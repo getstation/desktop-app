@@ -1,0 +1,27 @@
+{
+  "name": "Amazon AWS",
+  "category": "Developer Tools",
+  "start_url": "https://{{subdomain}}.signin.aws.amazon.com/console",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/A76IE80oQuyj0CtOWtOl",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F68D11",
+  "scope": "https://*.signin.aws.amazon.com",
+  "bx_legacy_service_id": "aws-account",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain",
+      "on-premise"
+    ],
+    "instance_wording": "account",
+    "instance_label_tpl": "{{subdomain}} AWS",
+    "start_url_tpl": "https://{{subdomain}}.signin.aws.amazon.com/console",
+    "subdomain_title": "AWS domain",
+    "subdomain_ui_help": "Enter your account's  domain.",
+    "subdomain_ui_suffix": ".signin.aws.amazon.com"
+  }
+}

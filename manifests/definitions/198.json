@@ -1,0 +1,14 @@
+{
+  "name": "Gliffy",
+  "category": "Communication & Collaboration",
+  "start_url": "https://www.gliffy.com/go/auth/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/VfusLRF4TdyDeXykD4fM",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#225594",
+  "scope": "https://www.gliffy.com",
+  "bx_legacy_service_id": "gliffy"
+}

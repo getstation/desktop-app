@@ -1,0 +1,17 @@
+{
+  "name": "7geese",
+  "category": "HR & Legal",
+  "start_url": "https://app.7geese.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/A4aXU10TvivmQszxUzvs"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/Wz0Jf9ARH20mNhBHxJuh",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#384663",
+  "scope": "https://app.7geese.com",
+  "bx_legacy_service_id": "7geese"
+}

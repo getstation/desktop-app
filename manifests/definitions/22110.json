@@ -1,0 +1,13 @@
+{
+  "name": "Mytitle",
+  "category": "Storage & File-sharing",
+  "start_url": "https://mytitle.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/MlmUYeATea98sy8tgi5w",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00A1D1",
+  "scope": "https://mytitle.com/"
+}

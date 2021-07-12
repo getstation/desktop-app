@@ -1,0 +1,17 @@
+{
+  "name": "Mega",
+  "category": "Storage & File-sharing",
+  "start_url": "https://mega.nz/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/VjLTART5mCvjYROSJdTg"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/pvaEwEWMSlerkEwIUvGx",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#dc0404",
+  "scope": "https://mega.nz",
+  "bx_legacy_service_id": "mega"
+}

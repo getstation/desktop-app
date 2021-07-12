@@ -1,0 +1,17 @@
+{
+  "name": "Crystal",
+  "category": "Developer Tools",
+  "start_url": "https://crystal.ai/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Smr5DGwIQr2rrQQYqISn"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/uK6hKcqzShi9gJe6eDcz",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2a91fc",
+  "scope": "https://crystal.ai",
+  "bx_legacy_service_id": "crystal"
+}

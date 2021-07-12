@@ -1,0 +1,16 @@
+{
+  "name": "Insightly",
+  "category": "Sales & CRM",
+  "start_url": "https://login.insightly.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/xIlNgs9eSl2Fd6ncBNvp"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/Deo9UkbaQZSIpxDlVLM0",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FF4A01",
+  "scope": "https://www.insightly.com/"
+}

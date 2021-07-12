@@ -1,0 +1,14 @@
+{
+  "name": "Wistia",
+  "category": "Storage & File-sharing",
+  "start_url": "https://secure.wistia.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/lRDxAskQAeS9FaoKKZIT",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#53B9FF",
+  "scope": "https://secure.wistia.com",
+  "bx_legacy_service_id": "wistia"
+}

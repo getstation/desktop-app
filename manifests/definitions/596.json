@@ -1,0 +1,17 @@
+{
+  "name": "Absence.io",
+  "category": "Accounting & Finance",
+  "start_url": "https://app.absence.io",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/7mBlNpWXSoyfABpECrHq"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/72SzEh4XT4q3a9JAcz1u",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#23e494",
+  "scope": "https://app.absence.io",
+  "bx_legacy_service_id": "absence-io"
+}

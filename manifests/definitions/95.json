@@ -1,0 +1,14 @@
+{
+  "name": "Chartmogul",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.chartmogul.com/users/sign_in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/exTBJajRs2ny1JFmSTDD",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F34B4B",
+  "scope": "https://app.chartmogul.com",
+  "bx_legacy_service_id": "chartmogul"
+}

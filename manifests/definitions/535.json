@@ -1,0 +1,20 @@
+{
+  "name": "Eventbrite",
+  "category": "Marketing & Analytics",
+  "start_url": "http://www.eventbrite.com/signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/frGznI41TyaCQA5MV7i7"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/hflqWpzTgO47Tf7Edb65",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#fc8f26",
+  "scope": "http://www.eventbrite.com",
+  "bx_legacy_service_id": "eventbrite",
+  "extended_scopes": [
+    "https://eventbrite.com"
+  ]
+}

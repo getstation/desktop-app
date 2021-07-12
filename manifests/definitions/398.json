@@ -1,0 +1,18 @@
+{
+  "name": "Gitter",
+  "category": "Communication & Collaboration",
+  "start_url": "https://gitter.im/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/XW9WfPOTQOUpZaV3T0wa"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/IZwd5ncaQM60whc7FLN1",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#ea2769",
+  "scope": "https://gitter.im",
+  "bx_keep_always_loaded": true,
+  "bx_legacy_service_id": "gitter"
+}

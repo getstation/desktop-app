@@ -1,0 +1,14 @@
+{
+  "name": "Camscanner",
+  "category": "Communication & Collaboration",
+  "start_url": "https://www.camscanner.com/user/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/hq6ttfq6RuqNAyQOzMLi",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00C8A1",
+  "scope": "https://www.camscanner.com",
+  "bx_legacy_service_id": "camscanner"
+}

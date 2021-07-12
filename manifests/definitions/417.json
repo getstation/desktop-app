@@ -1,0 +1,17 @@
+{
+  "name": "YNAB",
+  "category": "Accounting & Finance",
+  "start_url": "https://app.youneedabudget.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/5l5XCEpGQi6P25S9bT98"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/avrMJYYmSnKLus2Yjncg",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#74c4e4",
+  "scope": "https://app.youneedabudget.com",
+  "bx_legacy_service_id": "ynab"
+}

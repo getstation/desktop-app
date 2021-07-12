@@ -1,0 +1,20 @@
+{
+  "name": "Toodledo",
+  "category": "Task & Project Management",
+  "start_url": "https://www.toodledo.com/signin.php",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/5vv9RlEmQSedVJ6R0xtC"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/TTIzg5P7Q3qOAnk749vv",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#ec9c2b",
+  "scope": "https://www.toodledo.com",
+  "bx_legacy_service_id": "toodledo",
+  "extended_scopes": [
+    "https://toodledo.com"
+  ]
+}

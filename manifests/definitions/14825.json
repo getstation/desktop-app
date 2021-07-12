@@ -1,0 +1,13 @@
+{
+  "name": "Taiga",
+  "category": "Task & Project Management",
+  "start_url": "https://tree.taiga.io/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/4kCTRnETpyK4poPiLC7A",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#9BCB34",
+  "scope": "https://taiga.io/"
+}

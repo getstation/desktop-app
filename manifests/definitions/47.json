@@ -1,0 +1,14 @@
+{
+  "name": "HackerOne",
+  "category": "Developer Tools",
+  "start_url": "https://hackerone.com/users/sign_in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/zlN8rV6TjmO8Gz3K0w8Q",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#090908",
+  "scope": "https://hackerone.com",
+  "bx_legacy_service_id": "hackerone"
+}

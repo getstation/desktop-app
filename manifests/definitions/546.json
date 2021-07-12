@@ -1,0 +1,21 @@
+{
+  "name": "Amazing Marvin",
+  "category": "Task & Project Management",
+  "start_url": "https://app.amazingmarvin.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ykFjT77QSzCp54p9T9Ma"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/veAFIgD7RBGAbKSnKGZp",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#5cbcbc",
+  "scope": "https://app.amazingmarvin.com",
+  "bx_legacy_service_id": "amazing-marvin",
+  "extended_scopes": [
+    "https://app.amazingmarvin.com",
+    "https://amazingmarvin.com"
+  ]
+}

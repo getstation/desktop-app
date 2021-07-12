@@ -1,0 +1,31 @@
+{
+  "name": "Kayako",
+  "category": "User Support & Survey",
+  "start_url": "https://{{subdomain}}.kayako.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/PxR0GfkRqSrfew2YkXOb"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/lyb6OSu4Rlakyly1I9WO",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#40364D",
+  "scope": "https://*.kayako.com",
+  "bx_legacy_service_id": "kayako",
+  "extended_scopes": [
+    "https://kayako.com"
+  ],
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_label_tpl": "{{subdomain}}.kayako.com",
+    "start_url_tpl": "https://{{subdomain}}.kayako.com/login",
+    "subdomain_title": "Kayako domain",
+    "subdomain_ui_help": "Enter your team's Kayako domain.",
+    "subdomain_ui_suffix": ".kayako.com"
+  }
+}

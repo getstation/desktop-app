@@ -1,0 +1,17 @@
+{
+  "name": "Bottle",
+  "category": "Marketing & Analytics",
+  "start_url": "https://sendbottles.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/R8RsNAhbRLSvGuLUMs82"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/0HTkH7NST7myhEm3xUie",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1c94d4",
+  "scope": "https://sendbottles.com",
+  "bx_legacy_service_id": "bottle"
+}

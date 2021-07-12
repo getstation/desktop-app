@@ -1,0 +1,16 @@
+{
+  "name": "HireSweet",
+  "category": "HR & Legal",
+  "start_url": "https://app.hiresweet.com/signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/n1MXcwf9RWCnKFI7eKY2"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/pry0V41yQUWrDMAZFie5",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#002449",
+  "scope": "https://app.hiresweet.com"
+}

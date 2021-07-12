@@ -1,0 +1,21 @@
+{
+  "name": "Planable",
+  "category": "Blogging & Content Creation",
+  "start_url": "https://app.planable.io",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/jt7uuAQ6SdOAvKe86Glh"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/xAKNKx7EQQ2gaTSPJ1SN",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#24cc7c",
+  "scope": "https://app.planable.io",
+  "bx_legacy_service_id": "planable",
+  "extended_scopes": [
+    "https://app.planable.io",
+    "https://planable.io"
+  ]
+}

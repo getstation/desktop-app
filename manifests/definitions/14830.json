@@ -1,0 +1,14 @@
+{
+  "name": "Youtube Music",
+  "category": "Miscellaneous",
+  "start_url": "https://music.youtube.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/rM8TQGkfRZyHT6AsBb6q",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FF0000",
+  "scope": "https://music.youtube.com",
+  "bx_override_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36 Edge/80.0.361.62"
+}

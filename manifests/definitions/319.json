@@ -1,0 +1,14 @@
+{
+  "name": "Pandadoc",
+  "category": "Storage & File-sharing",
+  "start_url": "https://app.pandadoc.com/login/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/EgH7mSWgSsm36p3kypFZ",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00BD6A",
+  "scope": "https://app.pandadoc.com",
+  "bx_legacy_service_id": "pandadoc"
+}

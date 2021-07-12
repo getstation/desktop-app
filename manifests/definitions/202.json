@@ -1,0 +1,14 @@
+{
+  "name": "Peakon",
+  "category": "HR & Legal",
+  "start_url": "https://app.peakon.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/a2CRGnbyTSuWSPEf9EOw",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#38BE7F",
+  "scope": "https://app.peakon.com",
+  "bx_legacy_service_id": "peakon"
+}

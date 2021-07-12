@@ -1,0 +1,14 @@
+{
+  "name": "Sales Machine",
+  "category": "Sales & CRM",
+  "start_url": "https://my.salesmachine.io",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Ex8gRv2tTWW7hv03iONA",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#4485D1",
+  "scope": "https://my.salesmachine.io",
+  "bx_legacy_service_id": "salesmachine"
+}

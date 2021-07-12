@@ -1,0 +1,13 @@
+{
+  "schemaPath": "schema.json",
+  "extensions": {
+    "endpoints": {
+      "Default (http://localhost:4001/graphql)": {
+        "url": "https://api.getstation.com/graphql",
+        "headers": {
+          "user-agent": "JS GraphQL"
+        }
+      }
+    }
+  }
+}

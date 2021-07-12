@@ -1,0 +1,17 @@
+{
+  "name": " SocialReport",
+  "category": "Social Media & Advertising",
+  "start_url": "https://www.socialreport.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/4RPucDARJ2rQphq3Zagx"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/kzW3r241Sb2DuWceJ1fh",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#e47404",
+  "scope": "https://www.socialreport.com",
+  "bx_legacy_service_id": "socialreport"
+}

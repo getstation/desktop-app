@@ -1,0 +1,17 @@
+{
+  "name": "Dubsado",
+  "category": "Accounting & Finance",
+  "start_url": "https://hello.dubsado.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ZWkwYEyNRdWTGGBn9qvn"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/HBzhx5JQRqYRq2hGBgGw",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#29b1b6",
+  "scope": "https://hello.dubsado.com",
+  "bx_legacy_service_id": "dubsado"
+}

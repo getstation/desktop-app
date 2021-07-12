@@ -1,0 +1,17 @@
+{
+  "name": "Vimeo",
+  "category": "Marketing & Analytics",
+  "start_url": "https://vimeo.com/log_in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/lUsG5uOjTqm5rRewkXjR"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/JqZhoEYTnSAkRVrKHH3g",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#04acec",
+  "scope": "https://vimeo.com",
+  "bx_legacy_service_id": "vimeo"
+}

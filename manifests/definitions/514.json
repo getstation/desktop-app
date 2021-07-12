@@ -1,0 +1,17 @@
+{
+  "name": "Twist",
+  "category": "Communication & Collaboration",
+  "start_url": "https://twistapp.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/DtBF3E2LTXisQPOLmQsP"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/ggALM8X2TTmbFiPkVxL6",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#346cec",
+  "scope": "https://twistapp.com",
+  "bx_legacy_service_id": "twist"
+}

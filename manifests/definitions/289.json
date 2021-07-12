@@ -1,0 +1,14 @@
+{
+  "name": "Bit.ly",
+  "category": "Marketing & Analytics",
+  "start_url": "https://bitly.com/a/sign_in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/8t1XxnHKQ0yclakDeas4",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#EE4F1E",
+  "scope": "https://bitly.com",
+  "bx_legacy_service_id": "bitly"
+}

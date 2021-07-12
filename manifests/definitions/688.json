@@ -1,0 +1,17 @@
+{
+  "name": "Spotify Artist Analytics",
+  "category": "Marketing & Analytics",
+  "start_url": "https://artists.spotify.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/SpCVWWxTduvHiU0iZXlg"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/YUplnkNpSICXynmOYBwL",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1cd464",
+  "scope": "https://artists.spotify.com",
+  "bx_legacy_service_id": "spotify-artist-analytics"
+}

@@ -1,0 +1,22 @@
+query getActivity($query: String) @live @local {
+  activity(query: $query) {
+    resourceId,
+    uniqId,
+    applicationId,
+    manifestURL,
+    url,
+    onSelect,
+    label,
+    imgUrl,
+    category,
+    context,
+    additionalSearchString,
+    sectionKind,
+    type,
+    themeColor,
+    date,
+    associatedBxResource {
+      bxResourceId
+    }
+  }
+}

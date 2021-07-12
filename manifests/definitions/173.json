@@ -1,0 +1,14 @@
+{
+  "name": "Gusto",
+  "category": "HR & Legal",
+  "start_url": "https://app.gusto.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/MlTLCcimQEqO6KEBhhrS",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FF0137",
+  "scope": "https://app.gusto.com",
+  "bx_legacy_service_id": "gusto"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "WeekDone",
+  "category": "Task & Project Management",
+  "start_url": "https://weekdone.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/x9Z8gx58RYSaEddOEh0f",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FF6C24",
+  "scope": "https://weekdone.com"
+}

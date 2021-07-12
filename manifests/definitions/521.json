@@ -1,0 +1,20 @@
+{
+  "name": "Wix",
+  "category": "Design & Creativity",
+  "start_url": "https://users.wix.com/signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/qGRECCdrQta7Rp7vYql9"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/5UHdZxLjRDGUfM29ltDh",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#fcac4a",
+  "scope": "https://users.wix.com",
+  "bx_legacy_service_id": "wix",
+  "extended_scopes": [
+    "https://wix.com"
+  ]
+}

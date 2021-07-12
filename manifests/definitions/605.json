@@ -1,0 +1,20 @@
+{
+  "name": "Overleaf",
+  "category": "Blogging & Content Creation",
+  "start_url": "https://www.overleaf.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/lHFgOhEbSrmZYAgzPVi7"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/svVVaW1mShGVEUXaZ2F0",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#4cac3c",
+  "scope": "https://www.overleaf.com",
+  "bx_legacy_service_id": "overleaf",
+  "extended_scopes": [
+    "https://overleaf.com"
+  ]
+}

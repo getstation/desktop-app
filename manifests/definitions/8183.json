@@ -1,0 +1,17 @@
+{
+  "name": "Facebook",
+  "category": "Social Media & Advertising",
+  "start_url": "https://www.facebook.com/login/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/1nRjL839TkOSxeBjJaI4"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/adtciJfBQoq4A5D98f3L",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#4267b2",
+  "scope": "https://www.facebook.com",
+  "recommendedPosition": "13"
+}

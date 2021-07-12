@@ -1,0 +1,14 @@
+{
+  "name": "Mailshake",
+  "category": "Marketing & Analytics",
+  "start_url": "https://mailshake.com/app/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/pRMn8ePDQCa9FQGlKIhN",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3F4D9C",
+  "scope": "https://mailshake.com",
+  "bx_legacy_service_id": "mailshake"
+}

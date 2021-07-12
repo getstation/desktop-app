@@ -1,0 +1,14 @@
+{
+  "name": "Pingdom",
+  "category": "Developer Tools",
+  "start_url": "https://my.pingdom.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/fKIY68DUQNCqlUx1IMtz",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F7EC4A",
+  "scope": "https://my.pingdom.com",
+  "bx_legacy_service_id": "pingdom"
+}

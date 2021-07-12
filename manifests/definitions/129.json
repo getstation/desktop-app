@@ -1,0 +1,20 @@
+{
+  "name": "Notion",
+  "category": "Communication & Collaboration",
+  "start_url": "https://www.notion.so/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/XgoXh71VSfqLfdIAuf61",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#EB5757",
+  "scope": "https://www.notion.so",
+  "bx_legacy_service_id": "notion",
+  "extended_scopes": [
+    "https://notion.so"
+  ],
+  "main": "notion/main",
+  "renderer": "notion/renderer",
+  "recommendedPosition": "17"
+}

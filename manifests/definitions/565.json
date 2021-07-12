@@ -1,0 +1,17 @@
+{
+  "name": "Favro",
+  "category": "Task & Project Management",
+  "start_url": "https://favro.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/LcSbxwhvQK6tFe8bGOpP"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/ecWp40kTTz6MwUwMSL2L",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#542cac",
+  "scope": "https://favro.com",
+  "bx_legacy_service_id": "favro"
+}

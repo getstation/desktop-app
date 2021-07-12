@@ -1,0 +1,14 @@
+{
+  "name": "Kin.today",
+  "category": "Communication & Collaboration",
+  "start_url": "https://calendar.kin.today",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/89r1QxW2TMmNBFUVvled",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F54843",
+  "scope": "https://calendar.kin.today",
+  "bx_legacy_service_id": "kin-today"
+}

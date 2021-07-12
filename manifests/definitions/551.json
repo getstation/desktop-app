@@ -1,0 +1,21 @@
+{
+  "name": "Timely",
+  "category": "Task & Project Management",
+  "start_url": "https://app.timelyapp.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/KIXU6YtZTFScNbIjbRBH"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/WXKa0dG8TBqt1ikKxxkw",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#324554",
+  "scope": "https://app.timelyapp.com",
+  "bx_legacy_service_id": "timely",
+  "extended_scopes": [
+    "https://app.timelyapp.com",
+    "https://timelyapp.com"
+  ]
+}

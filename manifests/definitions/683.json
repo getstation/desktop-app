@@ -1,0 +1,17 @@
+{
+  "name": "Zoho Email",
+  "category": "Communication & Collaboration",
+  "start_url": "https://mail.zoho.com/zm/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/CVWUDpqjTTG7W2w1Ypk1"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/SS37IJZIR6iUVQsurMX6",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#f4443e",
+  "scope": "https://mail.zoho.com",
+  "bx_legacy_service_id": "zoho-email"
+}

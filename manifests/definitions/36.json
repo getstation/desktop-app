@@ -1,0 +1,14 @@
+{
+  "name": "Amplitude",
+  "category": "Marketing & Analytics",
+  "start_url": "https://analytics.amplitude.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ScHlH8UTXmkA1JqqNe8l",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00A7CF",
+  "scope": "https://analytics.amplitude.com",
+  "bx_legacy_service_id": "amplitude"
+}

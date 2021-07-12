@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="28" viewBox="0 0 88 28">
+    <g fill="none" fill-rule="evenodd">
+        <rect width="88" height="28" fill="#3A5997" rx="6"/>
+        <path fill="#FFF" d="M16.193 22v-6.842h2.358l.354-2.667h-2.712V10.79c0-.772.22-1.298 1.357-1.298H19V7.104A19.903 19.903 0 0 0 16.887 7c-2.09 0-3.522 1.243-3.522 3.525v1.966H11v2.667h2.365V22h2.828z"/>
+        <text fill="#FFF" font-size="13" font-weight="bold">
+            <tspan x="40" y="19">Share</tspan>
+        </text>
+        <path stroke="#FFF" stroke-linecap="square" d="M29.5.5v27" opacity=".326"/>
+    </g>
+</svg>
+
+

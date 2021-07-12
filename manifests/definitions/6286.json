@@ -1,0 +1,16 @@
+{
+  "name": "Mastodon",
+  "category": "Social Media & Advertising",
+  "start_url": "https://mastodon.social/auth/sign_in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/fVw6gWi6TzYkGfV8vVKg"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/srAqRpM0T0OsTldEzmWs",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2b90d9",
+  "scope": "https://mastodon.social"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Bitwarden",
+  "category": "Admin & Back-office",
+  "start_url": "https://vault.bitwarden.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/O2nJTGiZQEVUfE5bWYCs",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3D8DBC",
+  "scope": "https://bitwarden.com/",
+  "bx_multi_instance_config": {
+    "presets": [
+      "on-premise"
+    ]
+  }
+}

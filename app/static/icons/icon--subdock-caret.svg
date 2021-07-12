@@ -1,0 +1,4 @@
+<svg class="l-subdock__head__caret" xmlns="http://www.w3.org/2000/svg" width="8" height="16" viewBox="0 0 8 16">
+  <path class="caret-base" fill-rule="evenodd" d="M189,314 L189,330 L182.411824,323.411824 C181.632095,322.632095 181.627747,321.372253 182.411824,320.588176 L189,314 Z" transform="translate(-181 -314)"/>
+  <path class="caret-darken" fill-rule="evenodd" d="M189,314 L189,330 L182.411824,323.411824 C181.632095,322.632095 181.627747,321.372253 182.411824,320.588176 L189,314 Z" transform="translate(-181 -314)"/>
+</svg>

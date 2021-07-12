@@ -1,0 +1,14 @@
+{
+  "name": "Qonto",
+  "category": "Accounting & Finance",
+  "start_url": "https://app.qonto.eu/signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/p3ECkzb9QCcqi7SIya7w",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#5040B2",
+  "scope": "https://app.qonto.eu",
+  "bx_legacy_service_id": "qonto"
+}

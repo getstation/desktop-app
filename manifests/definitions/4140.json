@@ -1,0 +1,16 @@
+{
+  "name": "Flow-e",
+  "category": "Task & Project Management",
+  "start_url": "https://identity.flow-e.com/account/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/0DO9TDqUQ1CNDfCvav2o"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/hdzwTMr3R7QjfTAYZcak",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1992ef",
+  "scope": "https://flow-e.com"
+}

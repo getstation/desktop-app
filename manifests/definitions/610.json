@@ -1,0 +1,20 @@
+{
+  "name": "Nirvana",
+  "category": "Task & Project Management",
+  "start_url": "https://www.nirvanahq.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/F4DyNJEwT4Sf3fQtroVA"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/xgV5pztS0Sn5D0FJ3RQA",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2c7cf5",
+  "scope": "https://www.nirvanahq.com",
+  "bx_legacy_service_id": "nirvana",
+  "extended_scopes": [
+    "https://nirvanahq.com"
+  ]
+}

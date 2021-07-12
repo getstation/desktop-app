@@ -1,0 +1,15 @@
+{
+  "name": "Google Cloud",
+  "category": "Storage & File-sharing",
+  "start_url": "https://cloud.google.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Km37NR2mSe21rTGvaCHC",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#EA4335",
+  "scope": "https://cloud.google.com",
+  "bx_legacy_service_id": "google-cloud",
+  "bx_override_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36"
+}

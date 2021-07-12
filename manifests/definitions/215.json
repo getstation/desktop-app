@@ -1,0 +1,14 @@
+{
+  "name": "Optimizely",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.optimizely.com/signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/JFzKLuTRRai9UZsprTjI",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1A64B2",
+  "scope": "https://app.optimizely.com",
+  "bx_legacy_service_id": "optimizely"
+}

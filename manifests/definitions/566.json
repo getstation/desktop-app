@@ -1,0 +1,32 @@
+{
+  "name": "Agile CRM",
+  "category": "Sales & CRM",
+  "start_url": "https://{{subdomain}}.agilecrm.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/HJ8gOePQY68Xyir2d6NK"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/xqC4K8ZnTEaE5OQlzvgf",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#449ce4",
+  "scope": "https://*.agilecrm.com",
+  "bx_legacy_service_id": "agile-crm",
+  "extended_scopes": [
+    "https://agilecrm.com"
+  ],
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_wording": "organization",
+    "instance_label_tpl": "{{subdomain}}.agilecrm.com",
+    "start_url_tpl": "https://{{subdomain}}.agilecrm.com",
+    "subdomain_title": "Agile CRM domain",
+    "subdomain_ui_help": "Enter your organization's Agile CRM domain.",
+    "subdomain_ui_suffix": ".agilecrm.com"
+  }
+}

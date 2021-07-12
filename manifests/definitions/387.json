@@ -1,0 +1,17 @@
+{
+  "name": "Abstract",
+  "category": "Design & Creativity",
+  "start_url": "https://app.goabstract.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/IlZr7UtStht58gMHw4QJ"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/fmM1VfjQ95vYIM3tNDAR",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#000000",
+  "scope": "https://app.goabstract.com",
+  "bx_legacy_service_id": "abastract"
+}

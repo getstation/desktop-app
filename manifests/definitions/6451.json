@@ -1,0 +1,13 @@
+{
+  "name": "Bitrise",
+  "category": "Developer Tools",
+  "start_url": "https://app.bitrise.io/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/pIPS42S0QBmJujpWdFkv",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#760EC2",
+  "scope": "https://www.bitrise.io/"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Stripe",
+  "category": "Accounting & Finance",
+  "start_url": "https://dashboard.stripe.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Ka0dYZbNSmGKmRMa2CQ4",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00A0DE",
+  "scope": "https://dashboard.stripe.com",
+  "bx_legacy_service_id": "stripe"
+}

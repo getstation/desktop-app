@@ -1,0 +1,14 @@
+{
+  "name": "ShipStation",
+  "category": "Task & Project Management",
+  "start_url": "https://ss.shipstation.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/cx94kVM4RR6P7xNxWqVU",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#9FC848",
+  "scope": "https://ss.shipstation.com",
+  "bx_legacy_service_id": "shipstation"
+}

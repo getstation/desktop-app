@@ -1,0 +1,16 @@
+{
+  "name": "SalesLoft",
+  "category": "Sales & CRM",
+  "start_url": "https://accounts.salesloft.com/sign_in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/WI3R2q7QRweOJLOvR23U",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2E94CF",
+  "scope": "https://salesloft.com/",
+  "extended_scopes": [
+    "https://app.salesloft.com"
+  ]
+}

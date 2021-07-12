@@ -1,0 +1,14 @@
+{
+  "name": "Status.io",
+  "category": "Developer Tools",
+  "start_url": "https://app.status.io/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/1EJSTv2qQTTCABbZfn6B",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#EF5555",
+  "scope": "https://app.status.io",
+  "bx_legacy_service_id": "statusio"
+}

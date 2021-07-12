@@ -1,0 +1,13 @@
+{
+  "name": "Muzli Search",
+  "category": "Design & Creativity",
+  "start_url": "https://search.muz.li/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/BL2yCKL7SD6XfXmPA0Ug",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F82A75",
+  "scope": "https://search.muz.li/"
+}

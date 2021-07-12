@@ -1,0 +1,20 @@
+{
+  "name": "ManageWP",
+  "category": "Developer Tools",
+  "start_url": "https://orion.managewp.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/X3NchFKJSneBCUUU8HpM"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/xY61aBfUQceIamAiqGaB",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#249cbc",
+  "scope": "https://orion.managewp.com",
+  "bx_legacy_service_id": "managewp",
+  "extended_scopes": [
+    "https://managewp.com"
+  ]
+}

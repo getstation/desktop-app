@@ -1,0 +1,18 @@
+{
+  "name": "Forest",
+  "category": "Admin & Back-office",
+  "start_url": "http://app.forestadmin.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/1mYYVzDeQIG5jc4dVWlR",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#35C276",
+  "scope": "http://app.forestadmin.com",
+  "bx_use_native_window_open_on_host": true,
+  "bx_legacy_service_id": "forest",
+  "extended_scopes": [
+    "https://app.forestadmin.com"
+  ]
+}

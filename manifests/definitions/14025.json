@@ -1,0 +1,13 @@
+{
+  "name": "GoToMeeting",
+  "category": "Communication & Collaboration",
+  "start_url": "https://global.gotomeeting.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/URgdGpWLRei0qQKM7VZd",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FF9800",
+  "scope": "https:/gotomeeting.com/"
+}

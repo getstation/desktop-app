@@ -1,0 +1,14 @@
+{
+  "name": "Kaggle",
+  "category": "Developer Tools",
+  "start_url": "https://www.kaggle.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/p4x2RC5ITeiF7DHdExiC",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#20BEFF",
+  "scope": "https://www.kaggle.com",
+  "bx_legacy_service_id": "kaggle"
+}

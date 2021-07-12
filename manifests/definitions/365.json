@@ -1,0 +1,14 @@
+{
+  "name": "GoSquared",
+  "category": "Sales & CRM",
+  "start_url": "https://www.gosquared.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/qkhFsXexRBOIyhmFtJeO",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0056DC",
+  "scope": "https://www.gosquared.com",
+  "bx_legacy_service_id": "gosquared"
+}

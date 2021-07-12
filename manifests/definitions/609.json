@@ -1,0 +1,17 @@
+{
+  "name": "Unbounce",
+  "category": "Developer Tools",
+  "start_url": "https://app.unbounce.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/fPGTizr9RNaJCNfWO5th"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/vCElbjoIQhaqA39oXr6a",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#049cdc",
+  "scope": "https://app.unbounce.com",
+  "bx_legacy_service_id": "unbounce"
+}

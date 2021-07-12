@@ -1,0 +1,14 @@
+{
+  "name": "Zenefits",
+  "category": "HR & Legal",
+  "start_url": "https://secure.zenefits.com/accounts/login/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/yuktjRPNThKJPZ1dz47r",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FAAE42",
+  "scope": "https://secure.zenefits.com",
+  "bx_legacy_service_id": "zenefits"
+}

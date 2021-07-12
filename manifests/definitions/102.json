@@ -1,0 +1,14 @@
+{
+  "name": "Snapengage",
+  "category": "User Support & Survey",
+  "start_url": "https://snapengage.com/signin/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/euu0Aj7TC6hBN4LzOrBJ",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#38AEFF",
+  "scope": "https://snapengage.com",
+  "bx_legacy_service_id": "snapengage"
+}

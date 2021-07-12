@@ -1,0 +1,17 @@
+{
+  "name": "PicThrive",
+  "category": "Blogging & Content Creation",
+  "start_url": "https://workspace.picthrive.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Vl2vPIetR0KbcFduzmmm"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/p3cW5vJPTy6nFcQrrdGz",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#04aa54",
+  "scope": "https://workspace.picthrive.com",
+  "bx_legacy_service_id": "picthrive"
+}

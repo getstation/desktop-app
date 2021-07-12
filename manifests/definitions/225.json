@@ -1,0 +1,14 @@
+{
+  "name": "Datadog",
+  "category": "Developer Tools",
+  "start_url": "https://app.datadoghq.com/account/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ydod7qNSMimA7yKYGZpj",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#774B9E",
+  "scope": "https://app.datadoghq.com",
+  "bx_legacy_service_id": "datadog"
+}

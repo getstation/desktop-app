@@ -1,0 +1,14 @@
+{
+  "name": "Onboard IQ",
+  "category": "HR & Legal",
+  "start_url": "https://onboardiq.com/users/sign_in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/UsYWEXz0SkmxXDGshgbM",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#000000",
+  "scope": "https://onboardiq.com",
+  "bx_legacy_service_id": "onboard-iq"
+}

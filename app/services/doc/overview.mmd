@@ -1,0 +1,30 @@
+graph LR
+SN1[ServiceNode1] -->|request| LP1[peer1]
+SN2[ServiceNode2] -->|request| LP2[peer2]
+SN3[ServiceNode3] -->|request| LP3[peer3]
+
+LP1 --> LC1[channel1]
+LP2 --> LC1
+LP3 --> LC2[channel2]
+
+LC1 --> LD1(duplex1)
+LC2 --> LD2(duplex2)
+
+LD1 --> electron-ipc(electron-ipc)
+LD2 --> electron-ipc(electron-ipc)
+
+style electron-ipc fill:white,stroke:#666,stroke-width:1px,stroke-dasharray: 5, 5
+
+electron-ipc --> RD1(duplex1)
+electron-ipc --> RD2(duplex2)
+
+RD1 --> RC1[channel1]
+RD2 --> RC2[channel2]
+
+RC1 --> RP1[peer1]
+RC1 --> RP2[peer2]
+RC2 --> RP3[peer3]
+
+ServiceImpl -->|setHandlers| RP1
+ServiceImpl -->|setHandlers| RP2
+ServiceImpl -->|setHandlers| RP3

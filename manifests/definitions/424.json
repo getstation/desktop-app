@@ -1,0 +1,17 @@
+{
+  "name": "BetterUp",
+  "category": "Communication & Collaboration",
+  "start_url": "https://app.betterup.co/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/bQoQqYFR6u2V9AjY4gya"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/8OxlBFdHT0ulYts80nJ8",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#fc6c4c",
+  "scope": "https://app.betterup.co",
+  "bx_legacy_service_id": "better-up"
+}

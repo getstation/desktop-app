@@ -1,0 +1,14 @@
+{
+  "name": "Acuity Scheduling",
+  "category": "Communication & Collaboration",
+  "start_url": "https://secure.acuityscheduling.com/login.php",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/36vQKq5LR1mdUDbT3Iek",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#63B1AE",
+  "scope": "https://secure.acuityscheduling.com",
+  "bx_legacy_service_id": "acuity-scheduling"
+}

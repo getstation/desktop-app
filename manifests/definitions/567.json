@@ -1,0 +1,21 @@
+{
+  "name": "Nuclino",
+  "category": "Communication & Collaboration",
+  "start_url": "https://app.nuclino.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/dfRoxCuRNaoTerVNdmCC"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/rimDRYQyGJpSkrjS1wpW",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#fc5464",
+  "scope": "https://app.nuclino.com",
+  "bx_legacy_service_id": "nuclino",
+  "extended_scopes": [
+    "https://app.nuclino.com",
+    "https://nuclino.com"
+  ]
+}

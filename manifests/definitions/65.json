@@ -1,0 +1,14 @@
+{
+  "name": "Hootsuite",
+  "category": "Sales & CRM",
+  "start_url": "https://hootsuite.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/EmroHQjoRhWnfn0vhW9c",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FFBC12",
+  "scope": "https://hootsuite.com",
+  "bx_legacy_service_id": "hootsuite"
+}

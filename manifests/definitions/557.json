@@ -1,0 +1,33 @@
+{
+  "name": "Rocket.Chat",
+  "category": "Communication & Collaboration",
+  "start_url": "https://{{subdomain}}.rocket.chat",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/iY5CP10hT9mIEMMgLpzf"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/oC9OBsRcSzmpWzn706Ud",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#c4242c",
+  "scope": "https://*.rocket.chat",
+  "bx_legacy_service_id": "rocket-chat",
+  "extended_scopes": [
+    "https://cloud.rocket.chat",
+    "https://rocket.chat"
+  ],
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain",
+      "on-premise"
+    ],
+    "instance_label_tpl": "{{subdomain}}.rocket.chat",
+    "start_url_tpl": "https://{{subdomain}}.rocket.chat",
+    "subdomain_title": "Rocket.Chat domain",
+    "subdomain_ui_help": "Enter your organization's Rocket.Chat domain.",
+    "subdomain_ui_suffix": ".rocket.chat"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Moo.do",
+  "category": "Task & Project Management",
+  "start_url": "https://www.moo.do/web/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/s6W4tp1LQ2We44rYFesj",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2582FD",
+  "scope": "https://www.moo.do",
+  "bx_use_native_window_open_on_host": true,
+  "bx_legacy_service_id": "moodo"
+}

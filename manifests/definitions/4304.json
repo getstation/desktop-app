@@ -1,0 +1,13 @@
+{
+  "name": "GitBook",
+  "category": "Blogging & Content Creation",
+  "start_url": "https://app.gitbook.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/IRnsHaqQQjmMDpInXtPD",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3784FF",
+  "scope": "https://app.gitbook.com"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Airstory",
+  "category": "Design & Creativity",
+  "start_url": "https://app.airstory.co/auth",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/vU38Z8ROWb6fTj8E6dxQ"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/rkPVG8OcQgqqwjDquFM5",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#6869AE",
+  "scope": "https://app.airstory.co",
+  "bx_legacy_service_id": "airstory"
+}

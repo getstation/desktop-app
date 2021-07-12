@@ -1,0 +1,14 @@
+{
+  "name": "Jive Software",
+  "category": "Communication & Collaboration",
+  "start_url": "https://www.jivesoftware.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/5AD7A0caTSGgaf2odHec",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#142345",
+  "scope": "https://www.jivesoftware.com",
+  "bx_legacy_service_id": "jive-software"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Meet",
+  "category": "Communication & Collaboration",
+  "start_url": "https://meet.google.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/3WaVDBFxRPWKJy1iGRPO",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#009585",
+  "scope": "https://meet.google.com",
+  "bx_keep_always_loaded": true,
+  "bx_use_native_window_open_on_host": true,
+  "bx_legacy_service_id": "meet",
+  "bx_override_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36"
+}

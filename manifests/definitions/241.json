@@ -1,0 +1,14 @@
+{
+  "name": "Codecov",
+  "category": "Developer Tools",
+  "start_url": "https://codecov.io/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/FIlC3RDSJ6ZD0o0vHoh6",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#E03997",
+  "scope": "https://codecov.io",
+  "bx_legacy_service_id": "codecov"
+}

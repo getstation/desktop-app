@@ -1,0 +1,14 @@
+{
+  "name": "Hotjar",
+  "category": "Marketing & Analytics",
+  "start_url": "https://insights.hotjar.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/71FrJNtPQ7uXvoHMBcpm",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#DF2338",
+  "scope": "https://insights.hotjar.com",
+  "bx_legacy_service_id": "hotjar"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Sentry",
+  "category": "Developer Tools",
+  "start_url": "https://sentry.io/auth/login/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/TFCEkyrVS0u3dU6qzFkY",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#E54628",
+  "scope": "https://sentry.io",
+  "bx_legacy_service_id": "sentry",
+  "bx_multi_instance_config": {
+    "presets": [
+      "on-premise"
+    ]
+  }
+}

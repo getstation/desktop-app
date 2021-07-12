@@ -1,0 +1,17 @@
+{
+  "name": "Udemy",
+  "category": "Miscellaneous",
+  "start_url": "https://www.udemy.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/HRoWDaRoyeqBcjoCJ6A5"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/Sklz24ovQlq6D7ugQpJV",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#ec5454",
+  "scope": "https://www.udemy.com",
+  "bx_legacy_service_id": "udemy"
+}

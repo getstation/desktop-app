@@ -1,0 +1,14 @@
+{
+  "name": "Balsamiq",
+  "category": "Design & Creativity",
+  "start_url": "https://balsamiq.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/xkEdIZu1TWq5Qhsi3RJq",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#C00",
+  "scope": "https://balsamiq.com",
+  "bx_legacy_service_id": "balsamiq"
+}

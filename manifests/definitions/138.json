@@ -1,0 +1,16 @@
+{
+  "name": "Skype",
+  "category": "Communication & Collaboration",
+  "start_url": "https://web.skype.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/3oVsMqx0TT2klDcIBv3k",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00AFF0",
+  "scope": "https://web.skype.com",
+  "bx_keep_always_loaded": true,
+  "bx_legacy_service_id": "skype",
+  "recommendedPosition": "20"
+}

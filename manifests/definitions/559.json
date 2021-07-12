@@ -1,0 +1,21 @@
+{
+  "name": "Dropmark",
+  "category": "Curation & Sourcing",
+  "start_url": "https://app.dropmark.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/p3KQWVJQOO2SLGTDY3bw"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/MozEh3m5S0WoOjC444tg",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3cdcdc",
+  "scope": "https://app.dropmark.com",
+  "bx_legacy_service_id": "dropmark",
+  "extended_scopes": [
+    "https://app.dropmark.com",
+    "https://dropmark.com"
+  ]
+}

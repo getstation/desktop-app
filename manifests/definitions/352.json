@@ -1,0 +1,14 @@
+{
+  "name": "TrustPilot",
+  "category": "Curation & Sourcing",
+  "start_url": "https://www.trustpilot.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/759K8UEWTTG5OSlZIyab",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FFA902",
+  "scope": "https://www.trustpilot.com",
+  "bx_legacy_service_id": "trustpilot"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Esa",
+  "category": "Communication & Collaboration",
+  "start_url": "https://esa.io/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/re0vWYRJQLKDphLecpOi"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/Pob78uUZRhCE2GUfvuyS",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0A9B94",
+  "scope": "https://esa.io"
+}

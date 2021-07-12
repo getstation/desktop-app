@@ -1,0 +1,64 @@
+// Global reset
+// —————————————————————————————————
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+
+//== Body reset
+html {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  // text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+//== Links
+a {
+  text-decoration: none;
+  outline: none;
+  color: inherit;
+
+  &:hover,
+  &:focus,
+  &.active {
+    outline: none;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 {
+  font-weight: normal;
+}
+
+input,
+textarea,
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  resize: none
+}

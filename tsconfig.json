@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "experimentalDecorators": true,
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noImplicitThis": true,
+    "noUnusedParameters": true,
+    "sourceMap": true,
+    "importHelpers": true,
+    "noEmitHelpers": true,
+    "module": "commonjs",
+    "target": "es2016",
+    "jsx": "react",
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "tslib": ["node_modules/tslib"],
+      "@src/*": ["appstore/src/*"]
+    },
+    "lib": ["es2017", "dom"]
+  },
+  "include": [
+    "appstore/**/*.ts",
+    "appstore/**/*.tsx",
+    "appstore/**/*.js",
+    "app/**/*.js",
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "manifests/**/*.ts",
+    "node_modules/electron-prebuilt-compile/electron.d.ts",
+    "app/index.d.ts",
+    "@types/**/*.ts"
+  ],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}

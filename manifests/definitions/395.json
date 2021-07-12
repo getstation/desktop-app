@@ -1,0 +1,17 @@
+{
+  "name": "Milanote",
+  "category": "Design & Creativity",
+  "start_url": "https://app.milanote.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/eDxLFoLuTdu0wDmtTymN"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/frRcJH7HToKshcwT6qtH",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#f4541c",
+  "scope": "https://app.milanote.com",
+  "bx_legacy_service_id": "milanote"
+}

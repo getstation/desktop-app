@@ -1,0 +1,30 @@
+{
+  "name": "Looker",
+  "category": "Marketing & Analytics",
+  "start_url": "https://{{subdomain}}.looker.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/frfUXvfJS6a8GQORFcj8"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/fMBodBzGSuVHRJbll1sg",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#7c5ce4",
+  "scope": "https://*.looker.com",
+  "bx_legacy_service_id": "looker",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain",
+      "on-premise"
+    ],
+    "instance_wording": "team",
+    "instance_label_tpl": "{{subdomain}}.looker.com",
+    "start_url_tpl": "https://{{subdomain}}.looker.com",
+    "subdomain_title": "Looker domain",
+    "subdomain_ui_help": "Enter your team's Looker domain.",
+    "subdomain_ui_suffix": ".looker.com"
+  }
+}

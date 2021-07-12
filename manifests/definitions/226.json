@@ -1,0 +1,14 @@
+{
+  "name": "Gainsight",
+  "category": "User Support & Survey",
+  "start_url": "https://www.gainsight.com/resumes/login/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/5mkuTFS8mzobnEBtnTBQ",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00B5E6",
+  "scope": "https://www.gainsight.com",
+  "bx_legacy_service_id": "gainsight"
+}

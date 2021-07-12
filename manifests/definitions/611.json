@@ -1,0 +1,17 @@
+{
+  "name": "MySMS",
+  "category": "Communication & Collaboration",
+  "start_url": "https://app.mysms.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/EcHpPyxyQseAdE7M2fws"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/sPjyVRWtSZewEgwpAy6A",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1c9ccc",
+  "scope": "https://app.mysms.com",
+  "bx_legacy_service_id": "mysms"
+}

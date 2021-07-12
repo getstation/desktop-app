@@ -1,0 +1,17 @@
+{
+  "name": "Tawk.to",
+  "category": "User Support & Survey",
+  "start_url": "https://dashboard.tawk.to/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/6J3ZYd0zRxJtzz4oeAzs"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/CGw56g9LTEGymMiPKDol",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#28ae4c",
+  "scope": "https://dashboard.tawk.to",
+  "bx_legacy_service_id": "tawkto"
+}

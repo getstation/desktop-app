@@ -1,0 +1,17 @@
+{
+  "name": "SellerLegend",
+  "category": "Sales & CRM",
+  "start_url": "https://app.sellerlegend.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/W4M24e3AQMWjbJ43uubV"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/X0z6hPSPSsOIaV8pYonE",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#24aca4",
+  "scope": "https://app.sellerlegend.com",
+  "bx_legacy_service_id": "sellerlegend"
+}

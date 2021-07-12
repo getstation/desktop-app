@@ -1,0 +1,17 @@
+{
+  "name": "Canvas",
+  "category": "Miscellaneous",
+  "start_url": "https://canvas.instructure.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/USbLruqERhC8zPybVgUt"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/OeYRvnl0RsSF4FrEaQZ2",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#e43d2c",
+  "scope": "https://canvas.instructure.com",
+  "bx_legacy_service_id": "canvas"
+}

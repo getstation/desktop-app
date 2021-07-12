@@ -1,0 +1,14 @@
+{
+  "name": "Postmark",
+  "category": "Marketing & Analytics",
+  "start_url": "https://account.postmarkapp.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/WZswnxkjRBLJEbBhSBDw",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FFE200",
+  "scope": "https://account.postmarkapp.com",
+  "bx_legacy_service_id": "postmark"
+}

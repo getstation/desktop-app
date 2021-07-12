@@ -1,0 +1,17 @@
+{
+  "name": "Spectrum",
+  "category": "Communication & Collaboration",
+  "start_url": "https://spectrum.chat/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/wkvHIZ5YQJuhDD0pr3Vi"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/NMPGSbm9TE60195fuiwp",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#6c2cf4",
+  "scope": "https://spectrum.chat",
+  "bx_legacy_service_id": "spectrum"
+}

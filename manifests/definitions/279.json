@@ -1,0 +1,14 @@
+{
+  "name": "Receptive",
+  "category": "User Support & Survey",
+  "start_url": "https://receptive.io/app/#/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/P5rXVWt1Sda6Klufrdne",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#33495F",
+  "scope": "https://receptive.io",
+  "bx_legacy_service_id": "receptive"
+}

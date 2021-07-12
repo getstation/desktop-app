@@ -1,0 +1,13 @@
+{
+  "name": "TradingView",
+  "category": "Accounting & Finance",
+  "start_url": "https://www.tradingview.com/#signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ZySn2IrSv2SgIDC1LbYB",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3BB3E4",
+  "scope": "https://www.tradingview.com/"
+}

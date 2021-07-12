@@ -1,0 +1,14 @@
+{
+  "name": "Canva",
+  "category": "Design & Creativity",
+  "start_url": "https://www.canva.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/yPtdEx8RW2Tbajyq4Sbp",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#18B9C1",
+  "scope": "https://www.canva.com",
+  "bx_legacy_service_id": "canva"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Discord",
+  "category": "Communication & Collaboration",
+  "start_url": "https://discordapp.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/jwLGcqjrT2iRg19pIUC4",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#7289DA",
+  "scope": "https://discordapp.com",
+  "bx_keep_always_loaded": true,
+  "bx_legacy_service_id": "discord",
+  "recommendedPosition": "15"
+}

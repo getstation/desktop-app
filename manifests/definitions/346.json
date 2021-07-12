@@ -1,0 +1,14 @@
+{
+  "name": "Find That Lead",
+  "category": "Sales & CRM",
+  "start_url": "https://findthatlead.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/l0L8fTrQRnswLl1M2B6K",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#35A8E1",
+  "scope": "https://findthatlead.com",
+  "bx_legacy_service_id": "find-that-lead"
+}

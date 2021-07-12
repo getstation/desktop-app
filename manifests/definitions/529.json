@@ -1,0 +1,17 @@
+{
+  "name": "Yahoo Email",
+  "category": "Communication & Collaboration",
+  "start_url": "https://mail.yahoo.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/tVtQlqlDT8Gr0rfzSB2n"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/PidRuthS34AFc82TYn9Q",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#4c0c94",
+  "scope": "https://mail.yahoo.com",
+  "bx_legacy_service_id": "yahoo-email"
+}

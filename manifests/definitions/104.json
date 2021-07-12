@@ -1,0 +1,15 @@
+{
+  "name": "Evernote",
+  "category": "Communication & Collaboration",
+  "start_url": "https://www.evernote.com/Home.action",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/uxqqrNpfRT6Uei1lH96Q",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#7AC143",
+  "scope": "https://www.evernote.com",
+  "bx_legacy_service_id": "evernote",
+  "recommendedPosition": "18"
+}

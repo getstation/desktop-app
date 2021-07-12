@@ -1,0 +1,17 @@
+{
+  "name": "StackOverflow",
+  "category": "Developer Tools",
+  "start_url": "https://stackoverflow.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/3fQth0WoR9Wsnvaolcm7"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/hb3OR2S9RvWXhJU20hUH",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#f48424",
+  "scope": "https://stackoverflow.com",
+  "bx_legacy_service_id": "stackoverflow"
+}

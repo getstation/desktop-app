@@ -1,0 +1,17 @@
+{
+  "name": "Mode Analytics",
+  "category": "Marketing & Analytics",
+  "start_url": "https://modeanalytics.com/signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/XPjmHPrSWqhQ9ZVRKvIa"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/CRbOUSZ8QLqhWxu0C1Ig",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#34ac64",
+  "scope": "https://modeanalytics.com",
+  "bx_legacy_service_id": "mode-analytics"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Quora",
+  "category": "Curation & Sourcing",
+  "start_url": "https://www.quora.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/fXzE7pVTUOj5YXfh0Dsx"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/RkaiypwRLWTWXnX3l2p5",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#bc2c24",
+  "scope": "https://www.quora.com",
+  "bx_legacy_service_id": "quora"
+}

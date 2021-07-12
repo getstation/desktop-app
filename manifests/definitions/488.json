@@ -1,0 +1,20 @@
+{
+  "name": "Mews",
+  "category": "Admin & Back-office",
+  "start_url": "https://www.mews.li/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Yit5yhyiTqOGrvNm7CYb"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/EMDr2FmHQrKCxDfNoNES",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#000000",
+  "scope": "https://www.mews.li",
+  "bx_legacy_service_id": "mews",
+  "extended_scopes": [
+    "https://mews.li"
+  ]
+}

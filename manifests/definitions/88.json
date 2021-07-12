@@ -1,0 +1,14 @@
+{
+  "name": "Zoho",
+  "category": "Task & Project Management",
+  "start_url": "https://www.zoho.com/login.html",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/M39QFJBCSUeNDGdU6ezN",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F0483E",
+  "scope": "https://www.zoho.com",
+  "bx_legacy_service_id": "zoho"
+}

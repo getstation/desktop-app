@@ -1,0 +1,13 @@
+{
+  "name": "Geckoboard",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.geckoboard.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Syc2kBfkSVi9KpaAvNfx",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#8EC63F",
+  "scope": "https://www.geckoboard.com/"
+}

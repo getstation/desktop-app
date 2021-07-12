@@ -1,0 +1,14 @@
+{
+  "name": "Paychex",
+  "category": "HR & Legal",
+  "start_url": "https://www.paychex.com/login/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/MCHILBgtRgqLocdPTQvS",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#4484BF",
+  "scope": "https://www.paychex.com",
+  "bx_legacy_service_id": "paychex"
+}

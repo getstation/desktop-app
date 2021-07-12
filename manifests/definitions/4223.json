@@ -1,0 +1,13 @@
+{
+  "name": "Viber Out",
+  "category": "Communication & Collaboration",
+  "start_url": "https://account.viber.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/7BV8C22S6GdHvQXdQiFv",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#774483",
+  "scope": "https://www.viber.com"
+}

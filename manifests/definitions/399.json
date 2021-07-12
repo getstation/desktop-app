@@ -1,0 +1,32 @@
+{
+  "name": "gorgias",
+  "category": "User Support & Survey",
+  "start_url": "https://{{subdomain}}.gorgias.io",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/yKiPj0mS7mQNDelewUy2"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/GZgNGh2BTl6jrMmLnxnY",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#072184",
+  "scope": "https://*.gorgias.io",
+  "bx_legacy_service_id": "gorgias",
+  "extended_scopes": [
+    "https://*.gorgias.com"
+  ],
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_wording": "team",
+    "instance_label_tpl": "{{subdomain}}.gorgias.io",
+    "start_url_tpl": "https://{{subdomain}}.gorgias.io",
+    "subdomain_title": "Gorgias domain",
+    "subdomain_ui_help": "Enter your team's Gorgias domain.",
+    "subdomain_ui_suffix": ".gorgias.io"
+  }
+}

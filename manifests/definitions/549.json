@@ -1,0 +1,21 @@
+{
+  "name": "Zalo",
+  "category": "Communication & Collaboration",
+  "start_url": "https://chat.zalo.me",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/IRRXIsIQbqRaqQCk0xHF"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/ovvp0UmmRDkwOpHNUY2g",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0484c4",
+  "scope": "https://chat.zalo.me",
+  "bx_legacy_service_id": "zalo",
+  "extended_scopes": [
+    "https://chat.zalo.me",
+    "https://zalo.me"
+  ]
+}

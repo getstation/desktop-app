@@ -1,0 +1,14 @@
+{
+  "name": "Wave",
+  "category": "Accounting & Finance",
+  "start_url": "https://my.waveapps.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/HRPibc88TsmK2cdAKbI5",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00BFFF",
+  "scope": "https://my.waveapps.com",
+  "bx_legacy_service_id": "wave"
+}

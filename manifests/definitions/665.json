@@ -1,0 +1,17 @@
+{
+  "name": "SendLeap",
+  "category": "Communication & Collaboration",
+  "start_url": "https://sendleap.com/threads",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/8blYJt3T9JpLNWynVGQw"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/NugjAbvRvan8MOE0fYiS",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#04acf4",
+  "scope": "https://sendleap.com",
+  "bx_legacy_service_id": "sendleap"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Livestorm",
+  "category": "Communication & Collaboration",
+  "start_url": "https://app.livestorm.co/#/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/cEbD8D31QL6asffA2H9R",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2492D6",
+  "scope": "https://app.livestorm.co",
+  "bx_legacy_service_id": "livestorm"
+}

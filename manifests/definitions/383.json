@@ -1,0 +1,27 @@
+{
+  "name": "Freshdesk",
+  "category": "Sales & CRM",
+  "start_url": "https://{{subdomain}}.freshdesk.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ErMUgC8nTwanCGQNp7lX",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#25C16F",
+  "scope": "https://*.freshdesk.com",
+  "bx_legacy_service_id": "freshdesk",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain",
+      "on-premise"
+    ],
+    "instance_wording": "team",
+    "instance_label_tpl": "{{subdomain}}.freshdesk.com",
+    "start_url_tpl": "https://{{subdomain}}.freshdesk.com",
+    "subdomain_title": "freshdesk domain",
+    "subdomain_ui_help": "Enter your team's freshdesk domain.",
+    "subdomain_ui_suffix": ".freshdesk.com"
+  }
+}

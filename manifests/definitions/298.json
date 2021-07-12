@@ -1,0 +1,14 @@
+{
+  "name": "Concord",
+  "category": "HR & Legal",
+  "start_url": "https://secure.concordnow.com/negotiation/library/#/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/e6gKrTD2RFOtlUvgspwp",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#E60062",
+  "scope": "https://secure.concordnow.com",
+  "bx_legacy_service_id": "concord"
+}

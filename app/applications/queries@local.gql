@@ -1,0 +1,52 @@
+query GetApplicationState($applicationId: String!, $tabId: String) @live @local {
+  application: getApplicationById(applicationId: $applicationId) {
+    id,
+    appstoreApplicationId,
+    iconURL,
+    manifestURL,
+    manifestData {
+      name,
+      start_url,
+      interpretedIconURL,
+      theme_color,
+      bx_single_page,
+      bx_multi_instance_config {
+        instance_wording,
+      },
+      bx_not_use_native_window_open_on_host,
+      bx_legacy_service_id,
+    },
+    isSnoozed,
+    fullDomain,
+    passwordManagerLogin,
+    identity {
+      profileData {
+        email
+      }
+    },
+    onboardeeApplicationAssignment,
+    forceShowDescription,
+  }
+
+  stationStatus {
+    isOnline,
+    focus,
+  }
+}
+
+query GetApplication($applicationId: String!) @live @local {
+  application: getApplicationById(applicationId: $applicationId) {
+    id,
+    name,
+    manifestURL,
+    manifestData {
+      name,
+      interpretedIconURL,
+      theme_color,
+    },
+  }
+}
+
+mutation SetApplicationForceShowDescription($applicationId: ID!, $forceShowDescription: Boolean!) @local {
+  setApplicationForceShowDescription(applicationId: $applicationId, forceShowDescription: $forceShowDescription)
+}

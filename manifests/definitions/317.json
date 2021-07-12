@@ -1,0 +1,14 @@
+{
+  "name": "Hunter",
+  "category": "Sales & CRM",
+  "start_url": "https://hunter.io/users/sign_in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ybtvxFghTwiNAqBWHsxn",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FF5722",
+  "scope": "https://hunter.io",
+  "bx_legacy_service_id": "hunter"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Taskworld",
+  "category": "Task & Project Management",
+  "start_url": "https://enterprise.taskworld.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/E8vzLBXeQgyAMT6D2DUf",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#27b6ba",
+  "scope": "https://taskworld.com/"
+}

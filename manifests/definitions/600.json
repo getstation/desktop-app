@@ -1,0 +1,17 @@
+{
+  "name": "Plan",
+  "category": "Task & Project Management",
+  "start_url": "https://getplan.co/auth/google",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/fZfzlL7LRwmLRUNBCc2e"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/ZdKQpkMCRtuGQAHLfhKW",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#6E9AD7",
+  "scope": "https://getplan.co",
+  "bx_legacy_service_id": "plan"
+}

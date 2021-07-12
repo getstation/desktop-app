@@ -1,0 +1,17 @@
+{
+  "name": "Artmoi",
+  "category": "Design & Creativity",
+  "start_url": "https://studio.artmoi.me/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Yc8lFsJRjWlneI6xLTzF"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/8P7sUb4dSQ6kVSTHZfO8",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#24ccd4",
+  "scope": "https://studio.artmoi.me",
+  "bx_legacy_service_id": "artmoi"
+}

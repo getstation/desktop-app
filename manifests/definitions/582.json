@@ -1,0 +1,20 @@
+{
+  "name": "ActiveCollab",
+  "category": "Task & Project Management",
+  "start_url": "https://app.activecollab.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/YYfDCWzyR7qsvTxpZ3i8"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/CZLFk2kLTkyPT2uxI3bV",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#449cf4",
+  "scope": "https://app.activecollab.com",
+  "bx_legacy_service_id": "activecollab",
+  "extended_scopes": [
+    "https://activecollab.com"
+  ]
+}

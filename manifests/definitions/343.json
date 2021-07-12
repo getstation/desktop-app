@@ -1,0 +1,14 @@
+{
+  "name": "ProductHunt",
+  "category": "Curation & Sourcing",
+  "start_url": "https://www.producthunt.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/0azETKerQKiUJoUuNOTG",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#DA552F",
+  "scope": "https://www.producthunt.com",
+  "bx_legacy_service_id": "producthunt"
+}

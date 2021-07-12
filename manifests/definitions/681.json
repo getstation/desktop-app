@@ -1,0 +1,28 @@
+{
+  "name": "Hygger",
+  "category": "Task & Project Management",
+  "start_url": "https://{{subdomain}}.hygger.io",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/LV2OUy2DQE6OFFn28VQB"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/3zSZ1SFUQk2QtcMWyOCm",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#fcc40c",
+  "scope": "https://*.hygger.io",
+  "bx_legacy_service_id": "hygger",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_label_tpl": "{{subdomain}}.hygger.io",
+    "start_url_tpl": "https://{{subdomain}}.hygger.io",
+    "subdomain_title": "Hygger domain",
+    "subdomain_ui_help": "Enter your Hygger domain",
+    "subdomain_ui_suffix": ".hygger.io"
+  }
+}

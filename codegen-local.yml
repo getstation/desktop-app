@@ -1,0 +1,132 @@
+# This is the configuration for code-generation
+# for the **local** GraphQL API
+schema: ./app/graphql/schema.graphql
+overwrite: true
+generates:
+  ./app/graphql/resolvers-types.generated.ts:
+    config:
+      contextType: ./#StationGQLContext
+      maybeValue: T | null | undefined
+      mappers:
+        AutoUpdateStatus: ../auto-update/resolvers#AutoUpdateStatusParent
+        Application: ../applications/types#ApplicationImmutable
+        ManifestData: ../applications/manifest-provider/bxAppManifest.d#BxAppManifest
+        StationUserIdentity: ../user-identities/types#StationUserIdentity
+    plugins:
+      - typescript
+      - typescript-reactive-resolvers
+
+  ./app/settings/components/SettingsAutoLaunch/queries@local.gql.generated.tsx:
+    documents: ./app/settings/components/SettingsAutoLaunch/queries@local.gql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+
+  ./app/settings/components/SettingsDownloads/queries@local.gql.generated.tsx:
+    documents: ./app/settings/components/SettingsDownloads/queries@local.gql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+
+  ./app/settings/components/SettingsUpdatesButton/queries@local.gql.generated.tsx:
+    documents: ./app/settings/components/SettingsUpdatesButton/queries@local.gql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+
+  ./app/applications/queries@local.gql.generated.tsx:
+    documents: ./app/applications/queries@local.gql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+
+  ./app/abstract-application/queries@local.gql.generated.tsx:
+    documents: ./app/abstract-application/queries@local.gql
+    mappers:
+      AbstractApplication: ../abstract-application/types#AbstractApplication
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+
+  ./app/activity/queries@local.gql.generated.tsx:
+    documents: ./app/activity/queries@local.gql
+    mappers:
+      ActivityEntry: ../activity/types#ActivityEntry
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+
+  ./app/notifications/queries@local.gql.generated.tsx:
+    documents: ./app/notifications/queries@local.gql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+
+  ./app/password-managers/queries@local.gql.generated.tsx:
+    documents: ./app/password-managers/queries@local.gql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+
+  ./app/dialogs/queries@local.gql.generated.tsx:
+    documents: ./app/dialogs/queries@local.gql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+
+  ./app/dl-toaster/queries@local.gql.generated.tsx:
+    documents: ./app/dl-toaster/queries@local.gql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+
+  ./app/dock/queries@local.gql.generated.tsx:
+    documents: ./app/dock/queries@local.gql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      withHooks: true
+
+  ./app/notification-center/queries@local.gql.generated.tsx:
+    documents: ./app/notification-center/queries@local.gql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+
+  ./app/subdock/queries@local.gql.generated.tsx:
+    documents: ./app/subdock/queries@local.gql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      withHooks: true
+
+  ./app/tabs/queries@local.gql.generated.tsx:
+    documents: ./app/tabs/queries@local.gql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+
+  ./app/onboarding/queries@local.gql.generated.tsx:
+    documents: ./app/onboarding/queries@local.gql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      withHooks: true

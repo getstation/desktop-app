@@ -1,0 +1,44 @@
+query GetAbstractApplication($manifestURL: String) @live @local {
+  abstractApplication(manifestURL: $manifestURL) {
+    manifestURL
+    manifestCheckedAt
+    manifest {
+      name
+      start_url
+      interpretedIconURL
+      theme_color
+      bx_keep_always_loaded
+      bx_multi_instance_config {
+        instance_wording
+      }
+      cxExtensionId
+    }
+    settings {
+      manifestURL
+      alwaysLoaded
+      doNotInstall
+      instanceLogoInDock
+    }
+    instances {
+      id
+      name
+      logoUrl
+      needConfiguration
+      passwordManagerLink {
+        instanceId
+        providerId
+      }
+    }
+    extensions {
+      id
+      manifestURL
+      name
+      iconUrl
+      added
+    }
+  }
+}
+
+mutation CheckForUpdatesApplicationMutation($manifestURL: String!) @local {
+  checkForUpdatesApplication(manifestURL: $manifestURL)
+}

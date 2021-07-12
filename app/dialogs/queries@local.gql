@@ -1,0 +1,7 @@
+query GetApplication($applicationId: String!) @live @local {
+  application: getApplicationById(applicationId: $applicationId) {
+    id,
+    name,
+    manifestURL,
+  }
+}

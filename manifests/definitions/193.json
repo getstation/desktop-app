@@ -1,0 +1,14 @@
+{
+  "name": "Expensify",
+  "category": "Accounting & Finance",
+  "start_url": "https://www.expensify.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/eK4QUTRguZcuxuINK7YQ",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2BD275",
+  "scope": "https://www.expensify.com",
+  "bx_legacy_service_id": "expensify"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Dropbox Paper",
+  "category": "Communication & Collaboration",
+  "start_url": "https://paper.dropbox.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/xgfftrTaRJSuR6ePS33h",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#007EE5",
+  "scope": "https://paper.dropbox.com",
+  "bx_legacy_service_id": "dropbox-paper"
+}

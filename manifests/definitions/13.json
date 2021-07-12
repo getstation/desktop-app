@@ -1,0 +1,14 @@
+{
+  "name": "Station Community",
+  "category": "User Support & Survey",
+  "start_url": "https://station.canny.io/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/qSWM6gNhTKWqRg843wIh",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3070CD",
+  "scope": "https://station.canny.io/",
+  "bx_legacy_service_id": "station-community"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Pitchbook",
+  "category": "Accounting & Finance",
+  "start_url": "https://my.pitchbook.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/AV72wivcTzAxEeYsOYaw"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/X5MtHeZvSZW3SrcJTBsO",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#26649D",
+  "scope": "https://pitchbook.com/"
+}

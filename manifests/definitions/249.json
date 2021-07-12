@@ -1,0 +1,14 @@
+{
+  "name": "Hired",
+  "category": "HR & Legal",
+  "start_url": "https://hired.com/login?cookie_consent=true",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/dPghMYnSeSDk9d9iBdrl",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#E82F3A",
+  "scope": "https://hired.com",
+  "bx_legacy_service_id": "hired"
+}

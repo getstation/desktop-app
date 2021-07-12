@@ -1,0 +1,17 @@
+{
+  "name": "Spendee",
+  "category": "Accounting & Finance",
+  "start_url": "https://app.spendee.com/dashboard",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ahNbJS0wRYWXxQX4Cjni"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/Tt4HlvUSt2vYqiptwAkp",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#fccb64",
+  "scope": "https://app.spendee.com",
+  "bx_legacy_service_id": "spendee"
+}

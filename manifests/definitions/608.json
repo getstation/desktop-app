@@ -1,0 +1,17 @@
+{
+  "name": "Mint",
+  "category": "Accounting & Finance",
+  "start_url": "https://mint.intuit.com/overview.event",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Rz5LDpw6ROamzHYLr8T8"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/yCFWJGZXSbmOE362gMky",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#04a4a4",
+  "scope": "https://mint.intuit.com",
+  "bx_legacy_service_id": "mint"
+}

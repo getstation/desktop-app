@@ -1,0 +1,17 @@
+{
+  "name": "Seeqle",
+  "category": "HR & Legal",
+  "start_url": "https://pro.seeqle.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/HnCr1CyVQ7mTnFrcDWDb"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/7uiSG5QVSriCCrxZo0Q3",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#23ace0",
+  "scope": "https://pro.seeqle.com",
+  "bx_legacy_service_id": "seeqle"
+}

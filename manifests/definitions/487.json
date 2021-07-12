@@ -1,0 +1,17 @@
+{
+  "name": "Team Support",
+  "category": "User Support & Survey",
+  "start_url": "https://app.teamsupport.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/MbTF19oXQCu5Ps2i151S"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/M6b2yDQRgeZe0vzwgxjp",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#fcc205",
+  "scope": "https://app.teamsupport.com",
+  "bx_legacy_service_id": "teamsupport"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Reddit",
+  "category": "Curation & Sourcing",
+  "start_url": "https://www.reddit.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ppjKfOshRwuFPc0RwXx3"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/rAGcbtPcSk2BS7GU2Gqb",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#fc3c1c",
+  "scope": "https://www.reddit.com",
+  "bx_legacy_service_id": "reddit"
+}

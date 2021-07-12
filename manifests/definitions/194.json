@@ -1,0 +1,14 @@
+{
+  "name": "Quip",
+  "category": "Task & Project Management",
+  "start_url": "https://quip.com/account/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/G5P1NEEsQC6GYguU8EuO",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#25B4E9",
+  "scope": "https://quip.com",
+  "bx_legacy_service_id": "quip"
+}

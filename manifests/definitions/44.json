@@ -1,0 +1,25 @@
+{
+  "name": "Quandora",
+  "category": "Communication & Collaboration",
+  "start_url": "https://{{subdomain}}.quandora.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/uGWmGtHtThWjClFcSiGE",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#DD5234",
+  "scope": "https://*.quandora.com",
+  "bx_legacy_service_id": "quandora",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_label_tpl": "{{subdomain}}.quandora.com",
+    "start_url_tpl": "https://{{subdomain}}.quandora.com",
+    "subdomain_title": "Quandora domain",
+    "subdomain_ui_help": "Enter your team's Quandora domain.",
+    "subdomain_ui_suffix": ".quandora.com"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Microsoft Dynamics",
+  "category": "Task & Project Management",
+  "start_url": "https://home.dynamics.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/pVPZzouJSyScky13q5Xa",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#000D93",
+  "scope": "https://home.dynamics.com",
+  "bx_legacy_service_id": "microsoft-dynamics"
+}

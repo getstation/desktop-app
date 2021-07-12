@@ -1,0 +1,14 @@
+{
+  "name": "Heroku",
+  "category": "Developer Tools",
+  "start_url": "https://dashboard.heroku.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/GcqhGRkwTtmBVkBKi0MU",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#430098",
+  "scope": "https://dashboard.heroku.com",
+  "bx_legacy_service_id": "heroku"
+}

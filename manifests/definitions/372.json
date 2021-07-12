@@ -1,0 +1,14 @@
+{
+  "name": "Cloudflare",
+  "category": "Developer Tools",
+  "start_url": "https://www.cloudflare.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/rUuJ70WTAGZcor45IMRF",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F38020",
+  "scope": "https://www.cloudflare.com",
+  "bx_legacy_service_id": "cloudflare"
+}

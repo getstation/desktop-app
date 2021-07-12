@@ -1,0 +1,17 @@
+{
+  "name": "Instagantt",
+  "category": "Task & Project Management",
+  "start_url": "https://instagantt.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/TAkmJ6bRECeEcJSf5ux0"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/7WIwyP2hRwNrmSEkR61G",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0c84f4",
+  "scope": "https://instagantt.com",
+  "bx_legacy_service_id": "instagantt"
+}

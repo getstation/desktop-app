@@ -1,0 +1,14 @@
+{
+  "name": "VWO",
+  "category": "Marketing & Analytics",
+  "start_url": "https://vwo.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/VvV5qHcvRLWHPyYSj78g",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F5873F",
+  "scope": "https://vwo.com",
+  "bx_legacy_service_id": "vwo"
+}

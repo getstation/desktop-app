@@ -1,0 +1,14 @@
+{
+  "name": "Heap Analytics",
+  "category": "Marketing & Analytics",
+  "start_url": "https://heapanalytics.com/app",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/dD8n3YQbTjWRDZhGSXs7",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F0594E",
+  "scope": "https://heapanalytics.com",
+  "bx_legacy_service_id": "heap-analytics"
+}

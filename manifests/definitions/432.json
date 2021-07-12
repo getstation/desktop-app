@@ -1,0 +1,17 @@
+{
+  "name": "Newsify",
+  "category": "Curation & Sourcing",
+  "start_url": "https://newsify.co/account/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/a7HurCrBSo9qqVilPopk"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/6Di8NkSeQtaJh7l3UsXq",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1c8cec",
+  "scope": "https://newsify.co",
+  "bx_legacy_service_id": "newsify"
+}

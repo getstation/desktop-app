@@ -1,0 +1,14 @@
+{
+  "name": "Mailerlite",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.mailerlite.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/BC4KCyMvRTqYaVK9ERrg",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00A250",
+  "scope": "https://app.mailerlite.com",
+  "bx_legacy_service_id": "mailerlite"
+}

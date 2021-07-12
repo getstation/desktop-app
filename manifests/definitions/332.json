@@ -1,0 +1,14 @@
+{
+  "name": "Harvest",
+  "category": "Task & Project Management",
+  "start_url": "https://id.getharvest.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ZEXiDuivS9ONy9dYNVGw",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FF7400",
+  "scope": "https://id.getharvest.com",
+  "bx_legacy_service_id": "harvest"
+}

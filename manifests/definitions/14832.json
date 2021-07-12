@@ -1,0 +1,13 @@
+{
+  "name": "ZipBooks",
+  "category": "Accounting & Finance",
+  "start_url": "https://app.zipbooks.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/5uv4UfJxQ99t1t3HH6tm",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#7953F5",
+  "scope": "https://zipbooks.com/"
+}

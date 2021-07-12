@@ -1,0 +1,15 @@
+{
+  "name": "Glip",
+  "category": "Communication & Collaboration",
+  "start_url": "https://app.glip.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/q5iZueyDSKyBl2jfW1is",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FF8800",
+  "scope": "https://app.glip.com",
+  "bx_keep_always_loaded": true,
+  "bx_legacy_service_id": "glip"
+}

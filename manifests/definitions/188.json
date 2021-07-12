@@ -1,0 +1,14 @@
+{
+  "name": "Later",
+  "category": "Social Media & Advertising",
+  "start_url": "https://app.later.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/W2L1uAqfQAyUvh8CegRO",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#20B1A9",
+  "scope": "https://app.later.com",
+  "bx_legacy_service_id": "later"
+}

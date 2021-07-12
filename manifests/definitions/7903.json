@@ -1,0 +1,15 @@
+{
+  "name": "Typetalk",
+  "category": "Communication & Collaboration",
+  "start_url": "https://typetalk.com/signin/redirect/nulab",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/pK6fYvc3Tam3rBVVDraH",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FE6455",
+  "scope": "https://typetalk.com",
+  "bx_keep_always_loaded": true,
+  "bx_single_page": true
+}

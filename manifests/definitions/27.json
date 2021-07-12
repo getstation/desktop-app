@@ -1,0 +1,30 @@
+{
+  "name": "Slite",
+  "category": "Communication & Collaboration",
+  "start_url": "https://{{subdomain}}.slite.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ZAPY1YYRSRSAezkr6ckP",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FF5A6E",
+  "scope": "https://*.slite.com",
+  "bx_legacy_service_id": "slite",
+  "extended_scopes": [
+    "https://slite.com"
+  ],
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_wording": "team",
+    "instance_label_tpl": "{{subdomain}}.slite.com",
+    "start_url_tpl": "https://{{subdomain}}.slite.com",
+    "subdomain_title": "Slite domain",
+    "subdomain_ui_help": "Enter your team's Slite domain.",
+    "subdomain_ui_suffix": ".slite.com"
+  },
+  "main": "slite/main"
+}

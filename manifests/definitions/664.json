@@ -1,0 +1,17 @@
+{
+  "name": "Apple Developer",
+  "category": "Developer Tools",
+  "start_url": "https://developer.apple.com/account/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/todkKV3SSguMWBlCPvh8"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/no1vtmPRSVeHONUJlquZ",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#888888",
+  "scope": "https://developer.apple.com",
+  "bx_legacy_service_id": "apple-developer"
+}

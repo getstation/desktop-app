@@ -1,0 +1,17 @@
+{
+  "name": "Frame.io",
+  "category": "Task & Project Management",
+  "start_url": "https://app.frame.io/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/TL5ePlgzRt6gB9C65UaI"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/e7gUz1LhSqKGrHiErU5T",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2c24bc",
+  "scope": "https://app.frame.io",
+  "bx_legacy_service_id": "frame-io"
+}

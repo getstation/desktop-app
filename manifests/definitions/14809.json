@@ -1,0 +1,13 @@
+{
+  "name": "Diigo",
+  "category": "Curation & Sourcing",
+  "start_url": "https://www.diigo.com/sign-in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/vRR26TIjSuOmtuxINrV1",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#4F87C7",
+  "scope": "https://www.diigo.com/"
+}

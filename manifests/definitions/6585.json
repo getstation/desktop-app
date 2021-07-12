@@ -1,0 +1,15 @@
+{
+  "name": "Deezer",
+  "category": "Miscellaneous",
+  "start_url": "https://www.deezer.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/xIk1OxEFTC250YCH6may",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#32323D",
+  "scope": "https://www.deezer.com",
+  "bx_keep_always_loaded": true,
+  "bx_single_page": true
+}

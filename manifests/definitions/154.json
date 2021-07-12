@@ -1,0 +1,14 @@
+{
+  "name": "Flaticon",
+  "category": "Design & Creativity",
+  "start_url": "https://profile.flaticon.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/fREYKiynQQ2tas11JXsf",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#A6FE00",
+  "scope": "https://profile.flaticon.com",
+  "bx_legacy_service_id": "flaticon"
+}

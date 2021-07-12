@@ -1,0 +1,27 @@
+{
+  "name": "Tableau",
+  "category": "Marketing & Analytics",
+  "start_url": "https://id.tableau.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/mN9CVDKzTC60XImVGvdl"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/Pghj048eS69WDdqxFrbZ",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#24447c",
+  "scope": "https://id.tableau.com",
+  "bx_legacy_service_id": "tableau",
+  "extended_scopes": [
+    "https://identity.idp.tableau.com",
+    "https://idp.tableau.com",
+    "https://tableau.com"
+  ],
+  "bx_multi_instance_config": {
+    "presets": [
+      "on-premise"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Steamworks",
+  "category": "Developer Tools",
+  "start_url": "https://partner.steamgames.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/w8q80L76ScufSpf0fk6m",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1E1E1E",
+  "scope": "https://partner.steamgames.com/"
+}

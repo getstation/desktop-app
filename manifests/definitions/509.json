@@ -1,0 +1,17 @@
+{
+  "name": "Ora",
+  "category": "Task & Project Management",
+  "start_url": "https://ora.pm/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/UOz9FVshSXyiviAzvjsq"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/aoc9CtRR6y77TaUHeF6Q",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#cc445c",
+  "scope": "https://ora.pm",
+  "bx_legacy_service_id": "ora"
+}

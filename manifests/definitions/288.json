@@ -1,0 +1,20 @@
+{
+  "name": "MailTracker",
+  "category": "Sales & CRM",
+  "start_url": "https://mailtracker.hunter.io/messages",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/gVmZAakSASQp5YCYt5Wq",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FF5622",
+  "scope": "https://mailtracker.hunter.io",
+  "bx_legacy_service_id": "mailtracker",
+  "import": [
+    {
+      "platform": "chrome",
+      "id": "pgbdljpkijehgoacbjpolaomhkoffhnl"
+    }
+  ]
+}

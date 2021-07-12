@@ -1,0 +1,17 @@
+{
+  "name": "Vtiger",
+  "category": "Sales & CRM",
+  "start_url": "https://www.vtiger.com/log-in/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/qPdlU5hRS6KzrMxfrd9X"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/Ab9fHUlRSii5iHI7T2Ai",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#04a0e2",
+  "scope": "https://www.vtiger.com",
+  "bx_legacy_service_id": "vtiger"
+}

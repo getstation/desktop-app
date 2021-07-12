@@ -1,0 +1,31 @@
+{
+  "name": "Flexie",
+  "category": "Sales & CRM",
+  "start_url": "https://{{subdomain}}.flexie.io/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/cflIkG4TUWeatfw9CKih"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/lAC0SkURGGMYJWsKfhCQ",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00648A",
+  "scope": "https://*.flexie.io",
+  "bx_legacy_service_id": "flexie",
+  "extended_scopes": [
+    "https://flexie.io"
+  ],
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_label_tpl": "{{subdomain}}.flexie.io",
+    "start_url_tpl": "https://{{subdomain}}.flexie.io/",
+    "subdomain_title": "Flexie domain",
+    "subdomain_ui_help": "Enter your team's Flexie domain.",
+    "subdomain_ui_suffix": ".flexie.io"
+  }
+}

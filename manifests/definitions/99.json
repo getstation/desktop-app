@@ -1,0 +1,14 @@
+{
+  "name": "Zapier",
+  "category": "Miscellaneous",
+  "start_url": "https://zapier.com/app/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/AwJ5KJxWS1TIfEPFEXWA",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FF4A00",
+  "scope": "https://zapier.com",
+  "bx_legacy_service_id": "zapier"
+}

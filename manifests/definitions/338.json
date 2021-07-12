@@ -1,0 +1,25 @@
+{
+  "name": "YouTrack",
+  "category": "Task & Project Management",
+  "start_url": "https://{{subdomain}}.myjetbrains.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/HWTmVnHARxulQh0mcEIk",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#000000",
+  "scope": "https://*.myjetbrains.com",
+  "bx_legacy_service_id": "youtrack",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_label_tpl": "{{subdomain}}.myjetbrains.com",
+    "start_url_tpl": "https://{{subdomain}}.myjetbrains.com/",
+    "subdomain_title": "YouTrack domain name",
+    "subdomain_ui_help": "Enter your YouTrack domain name.",
+    "subdomain_ui_suffix": ".myjetbrains.com"
+  }
+}

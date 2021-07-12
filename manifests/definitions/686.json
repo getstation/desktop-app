@@ -1,0 +1,28 @@
+{
+  "name": "PagerDuty",
+  "category": "Developer Tools",
+  "start_url": "https://{{subdomain}}.pagerduty.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/cWGaOFgERFqDe5voa11M"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/g3SrV4pnTFala4Hn7tJr",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#24c454",
+  "scope": "https://*.pagerduty.com",
+  "bx_legacy_service_id": "pager-duty",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_label_tpl": "{{subdomain}}.pagerduty.com",
+    "start_url_tpl": "https://{{subdomain}}.pagerduty.com",
+    "subdomain_title": "PagerDuty domain",
+    "subdomain_ui_help": "Enter your PagerDuty domain",
+    "subdomain_ui_suffix": ".pagerduty.com"
+  }
+}

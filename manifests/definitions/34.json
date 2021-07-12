@@ -1,0 +1,15 @@
+{
+  "name": "Asana",
+  "category": "Task & Project Management",
+  "start_url": "https://app.asana.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/b1goeyaVQM2lQA0PNE5b",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F95B82",
+  "scope": "https://app.asana.com",
+  "bx_legacy_service_id": "asana",
+  "recommendedPosition": "22"
+}

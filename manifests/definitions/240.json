@@ -1,0 +1,14 @@
+{
+  "name": "Alan",
+  "category": "HR & Legal",
+  "start_url": "https://alan.eu/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/BfmcnwTcuAI62ik4xw4w",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00CC7E",
+  "scope": "https://alan.eu",
+  "bx_legacy_service_id": "alan"
+}

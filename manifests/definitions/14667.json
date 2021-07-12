@@ -1,0 +1,13 @@
+{
+  "name": "Mavenlink",
+  "category": "Task & Project Management",
+  "start_url": "https://app.mavenlink.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/sQnsic4CSKqDtmtx3sWS",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#01216E",
+  "scope": "https://www.mavenlink.com/"
+}

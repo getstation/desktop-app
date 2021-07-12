@@ -1,0 +1,12 @@
+<!-- Loading Asap google-font asynchronously-->
+        <script type="text/javascript">
+            function addFontScript(d) {
+                const wf = d.createElement('script'), s = d.scripts[0];
+                wf.src = d.location.protocol + '//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+                wf.async = true;
+                s.parentNode.insertBefore(wf, s);
+            }
+
+            WebFontConfig = {google: {families: ['Asap:400,500&display=swap&subset=latin-ext']}};
+            addFontScript(document);
+        </script>

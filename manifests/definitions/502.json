@@ -1,0 +1,20 @@
+{
+  "name": "Support Hero",
+  "category": "User Support & Survey",
+  "start_url": "https://signin.supporthero.io/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/lFB4GeAsQsu8hovC3m36"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/YvaeMmMOSgO5PaZ9njag",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#000000",
+  "scope": "https://signin.supporthero.io",
+  "bx_legacy_service_id": "support-hero",
+  "extended_scopes": [
+    "https://supporthero.io"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Ghostinspector",
+  "category": "Developer Tools",
+  "start_url": "https://app.ghostinspector.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/va8riG0CTQmNOxwex5jn",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#5AA75E",
+  "scope": "https://app.ghostinspector.com",
+  "bx_legacy_service_id": "ghostinspector"
+}

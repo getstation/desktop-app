@@ -1,0 +1,14 @@
+{
+  "name": "Sparkpost",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.sparkpost.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/do4wjv5xR2aYyQHAZ8E0",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FA6423",
+  "scope": "https://app.sparkpost.com",
+  "bx_legacy_service_id": "sparkpost"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Crowdfire",
+  "category": "Marketing & Analytics",
+  "start_url": "https://www.crowdfireapp.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/JhYOn2uBTpOikYlRPrhe",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#E8484C",
+  "scope": "https://www.crowdfireapp.com",
+  "bx_legacy_service_id": "crowdfire"
+}

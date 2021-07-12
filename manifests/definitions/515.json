@@ -1,0 +1,17 @@
+{
+  "name": "WiseStamp",
+  "category": "Marketing & Analytics",
+  "start_url": "https://webapp.wisestamp.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/lIIipSmBSCOnbAyyZDmv"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/6xUddmAhRTedG4K3iKX7",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1eb6eb",
+  "scope": "https://webapp.wisestamp.com",
+  "bx_legacy_service_id": "wisestamp"
+}

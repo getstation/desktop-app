@@ -1,0 +1,14 @@
+{
+  "name": "Prospect.io",
+  "category": "Sales & CRM",
+  "start_url": "https://prospect.io/users/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/BUanLvigT9WSIRlOmaef",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#906ECA",
+  "scope": "https://prospect.io",
+  "bx_legacy_service_id": "prospectio"
+}

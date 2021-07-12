@@ -1,0 +1,20 @@
+{
+  "name": "Expedia Partner Central",
+  "category": "Admin & Back-office",
+  "start_url": "https://www.expediapartnercentral.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Q2vn8VUGREcC6vNXk8Mk"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/GosLw1BTT0yhNbtxYmw6",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#fccc34",
+  "scope": "https://www.expediapartnercentral.com",
+  "bx_legacy_service_id": "expedia-partner-central",
+  "extended_scopes": [
+    "https://expediapartnercentral.com"
+  ]
+}

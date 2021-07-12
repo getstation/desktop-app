@@ -1,0 +1,14 @@
+{
+  "name": "Rollbar",
+  "category": "Developer Tools",
+  "start_url": "https://rollbar.com/login/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/CVWHPKsaQ6WABEEYQ73L",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3B4352",
+  "scope": "https://rollbar.com",
+  "bx_legacy_service_id": "rollbar"
+}

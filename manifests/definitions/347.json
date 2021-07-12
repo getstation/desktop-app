@@ -1,0 +1,14 @@
+{
+  "name": "Pipefy",
+  "category": "Task & Project Management",
+  "start_url": "https://app.pipefy.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/339JEyTvSHuT8i6QRjGk",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#129FFF",
+  "scope": "https://app.pipefy.com",
+  "bx_legacy_service_id": "pipefy"
+}

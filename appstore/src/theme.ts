@@ -1,0 +1,16 @@
+export const colors = {
+  stationBlue: '#3070cd',
+  blueGray: '#e7ecf0',
+  blueGray100: '#3c505d',
+  blueGray40: '#E0E6EB',
+  blueGray30: '#e7ecf0',
+  blueGray10: '#f6f9fb',
+  hoverBlue: '#c8deea',
+  blueGlowing: '#66c6ed',
+  gray: '#c3ced8',
+  dividerColor: '#92a6b8',
+  darkGray: '#a0aeb8',
+  white: '#ffffff',
+  activeSuggestion: '#cfd6db',
+  buttonBorder: '#63a0e6',
+};

@@ -1,0 +1,14 @@
+{
+  "name": "Pablo",
+  "category": "Social Media & Advertising",
+  "start_url": "https://pablo.buffer.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Bj81MNBcQTKDYIROwTrX",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#393C3E",
+  "scope": "https://pablo.buffer.com",
+  "bx_legacy_service_id": "pablo"
+}

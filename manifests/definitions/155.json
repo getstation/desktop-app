@@ -1,0 +1,14 @@
+{
+  "name": "Tiime",
+  "category": "Accounting & Finance",
+  "start_url": "https://secure.tiime.fr/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/EzQWX9TkRCWkY3VjJCXG",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00A5D1",
+  "scope": "https://secure.tiime.fr",
+  "bx_legacy_service_id": "tiime"
+}

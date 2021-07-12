@@ -1,0 +1,14 @@
+{
+  "name": "Marketo",
+  "category": "Marketing & Analytics",
+  "start_url": "https://login.marketo.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/dzg7OYHrSje9gQN0m9h6",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#8D70C9",
+  "scope": "https://login.marketo.com",
+  "bx_legacy_service_id": "marketo"
+}

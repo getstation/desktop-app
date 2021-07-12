@@ -1,0 +1,13 @@
+{
+  "name": "Revolut Business",
+  "category": "Accounting & Finance",
+  "start_url": "https://business.revolut.com/signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/n46xkyVQSUCjm0c9aXrw",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#06B0E6",
+  "scope": "https://business.revolut.com/"
+}

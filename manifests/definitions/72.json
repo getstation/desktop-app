@@ -1,0 +1,14 @@
+{
+  "name": "Pipedrive",
+  "category": "Sales & CRM",
+  "start_url": "https://app.pipedrive.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/vv5FnrGlTe6rOzAx9oUb",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#231F1F",
+  "scope": "https://app.pipedrive.com",
+  "bx_legacy_service_id": "pipedrive"
+}

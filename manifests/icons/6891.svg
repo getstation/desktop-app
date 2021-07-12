@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="360" height="360" viewBox="0 0 360 360">
+  <defs>
+    <rect id="pulsesms-white-a" width="200" height="199.68" x="0" y="0" rx="99.84"/>
+    <rect id="pulsesms-white-c" width="218.182" height="217.833" x="0" y="0"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(80 80)">
+    <g transform="translate(0 .026)">
+      <mask id="pulsesms-white-b" fill="#fff">
+        <use xlink:href="#pulsesms-white-a"/>
+      </mask>
+      <g mask="url(#pulsesms-white-b)">
+        <g transform="translate(-9.09 -16.396)">
+          <rect width="218.182" height="217.833" fill="#FFF" fill-opacity=".58" transform="matrix(1 0 0 -1 0 225.153)"/>
+          <g transform="translate(0 7.32)">
+            <mask id="pulsesms-white-d" fill="#fff">
+              <use xlink:href="#pulsesms-white-c"/>
+            </mask>
+            <polygon fill="#FFF" fill-opacity=".2" points="0 0 218.182 217.833 218.182 0" mask="url(#pulsesms-white-d)" transform="matrix(1 0 0 -1 0 217.833)"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g transform="translate(59.09 59.022)">
+      <polygon fill="#FFF" fill-opacity=".4" points=".804 81.617 87.957 167.913 168.182 167.913 168.182 92.625 78.44 2.675 20.15 39.722"/>
+      <path fill="#000" d="M18.4185653,63.309964 L76.4309763,63.309964 C78.9413618,63.309964 80.9764309,61.2781506 80.9764309,58.7717822 L80.9764309,5.49016602 C80.9764309,2.98379741 78.9413618,0.951984201 76.4309763,0.951984201 L5.38720541,0.951984201 C2.87682016,0.951984201 0.841750842,2.98379741 0.841750842,5.49016602 L0.841750842,48.5004799 L0.841750842,81.0217628 L18.4185653,63.309964 Z"/>
+      <path fill="#FFF" d="M18.4185653,63.309964 L76.4309763,63.309964 C78.9413618,63.309964 80.9764309,61.2781506 80.9764309,58.7717822 L80.9764309,5.49016602 C80.9764309,2.98379741 78.9413618,0.951984201 76.4309763,0.951984201 L5.38720541,0.951984201 C2.87682016,0.951984201 0.841750842,2.98379741 0.841750842,5.49016602 L0.841750842,48.5004799 L0.841750842,81.0217628 L18.4185653,63.309964 Z"/>
+      <g transform="translate(12.626 7.908)">
+        <rect width="56.566" height="8.824" y="34.86" fill="#000" fill-opacity=".2"/>
+        <rect width="56.566" height="8.824" y="19.899" fill="#000" fill-opacity=".2"/>
+        <rect width="56.566" height="8.824" y="4.819" fill="#000" fill-opacity=".2"/>
+        <polygon fill="#FFF" points="12.149 48.754 60.321 1.028 60.321 47.285"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+{
+  "name": "Telegram",
+  "category": "Communication & Collaboration",
+  "start_url": "https://web.telegram.org",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/I9X5pOO7TeacxmJvsP60",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2EB7E5",
+  "scope": "https://web.telegram.org",
+  "bx_keep_always_loaded": true,
+  "bx_legacy_service_id": "telegram",
+  "recommendedPosition": "10"
+}

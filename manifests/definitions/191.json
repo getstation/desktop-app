@@ -1,0 +1,14 @@
+{
+  "name": "Welcomekit",
+  "category": "HR & Legal",
+  "start_url": "https://www.welcomekit.co",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/JhY9KRD0TF23ftqlkKRj",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#30CB8C",
+  "scope": "https://www.welcomekit.co",
+  "bx_legacy_service_id": "welcomekit"
+}

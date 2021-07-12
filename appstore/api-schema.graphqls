@@ -1,0 +1,780 @@
+"""
+ DIRECTIVES
+ Need to be declared so GraphQL understand what can be used and where
+ See: https://www.apollographql.com/docs/graphql-tools/schema-directives/#declaring-schema-directives
+# filter organization fields (BUT ignoreFields) for member only in target organization
+"""
+directive @belongToOrganization(ignoreFields: [String]) on OBJECT
+
+"""Checks if user is authenticated"""
+directive @isAuthenticated(
+  """Additionaly checks if user has their email verified"""
+  requiresEmailVerified: Boolean = false
+) on FIELD_DEFINITION
+
+directive @constraint(format: String) on INPUT_FIELD_DEFINITION
+
+directive @isColor on INPUT_FIELD_DEFINITION
+
+type Application {
+  id: ID!
+
+  """The name of the application"""
+  name: String!
+
+  """The category of the application"""
+  category: ApplicationCategory
+
+  """Date at which the application was added to the store"""
+  addedAt: Date!
+
+  """An URL do the BxApp manifest of this application"""
+  bxAppManifestURL: String!
+
+  """Manifest"""
+  manifest: Manifest!
+
+  """A HTML color code that represents the theme main color"""
+  themeColor: String
+
+  """
+  The prefered URL that should be loaded when the user launches the web application
+  """
+  startURL: String
+
+  """An URL to icon represenrting the app"""
+  iconURL: String
+
+  """true if this application is a chrome extension"""
+  isChromeExtension: Boolean
+
+  """The id of the BrowserX service in the previous architecture"""
+  previousServiceId: String
+
+  """Some other terms that corresponds to the application"""
+  additionalSearchTerms: [String]
+
+  """
+  If the app is recommanded, the position in the list of recommanded apps
+  """
+  recommendedPosition: Int
+
+  """List of boosted features"""
+  boostedFeatures: [String]
+
+  """Is application private"""
+  isPrivate: Boolean
+
+  """Is application preconfigurable with a subdomain or on premise url"""
+  isPreconfigurable: Boolean
+
+  """List of available preconfiguration presets"""
+  preconfigurations: Preconfigurations
+}
+
+type ApplicationCategory {
+  name: String!
+}
+
+type ApplicationConfiguration {
+  """subdomain value of subdomain app"""
+  subdomain: String
+
+  """URL value of on-premise app"""
+  customURL: String
+}
+
+type ApplicationEdge {
+  """Array of Applications"""
+  cursor: String
+  node: Application
+}
+
+input ApplicationRecipeInput {
+  name: String!
+  themeColor: ColorType!
+  bxIconURL: ConstraintString!
+  startURL: ConstraintString!
+  scope: ConstraintString
+}
+
+type ApplicationsConnection {
+  """Total number of applications visible by user"""
+  totalCount: Int
+
+  """Edges of applications"""
+  edges: [ApplicationEdge]
+
+  """Array of application"""
+  list: [Application]
+
+  """Info about the current page in pagination"""
+  pageInfo: PageInfo
+}
+
+"""
+available fields for applications filtering.
+the equivalent of "searchApplicationsByName" is: `applications({ name: { contains: "foo" } })`.
+Warning: you cannot cumulate operators fields, example: `after` and `eq` in a DateOperator.
+"""
+input ApplicationsFilters {
+  name: StringOperator
+  category: StringOperator
+  addedAt: DateOperator
+  isChromeExtension: BooleanOperator
+  additionalSearchTerms: StringOperator
+  boostedFeatures: StringOperator
+  search: StringOperator
+}
+
+enum ApplicationVisibilityInput {
+  """the app will be only visible to the requesting user"""
+  USER_EMAIL
+
+  """
+  the app will be visible to any user with the same email domain than the user
+  """
+  EMAIL_DOMAIN
+}
+
+"""Boolean Filter Operator"""
+input BooleanOperator {
+  eq: Boolean
+  nEq: Boolean
+}
+
+"""
+A ColorType scalar type represents an hexadecimal color code, represented as a
+string of the form "#XXYYZZ" (or its declinations).
+"""
+scalar ColorType
+
+type ConfiguredApplication {
+  id: ID!
+
+  """related application"""
+  application: Application!
+
+  """configuration itself"""
+  configuration: ApplicationConfiguration!
+}
+
+input ConfiguredApplicationInput {
+  """e.g. `recipe/1`"""
+  applicationId: ID!
+
+  """subdomain value for subdomain app. Can be empty"""
+  subdomain: String
+
+  """URL value for on-premise app. Can be empty"""
+  customURL: String
+}
+
+scalar ConstraintString
+
+input CreateOnboardeeApplicationAssignmentsInput {
+  """a description. Can be empty"""
+  description: String
+
+  """
+  a new set of value to create a new configured application (can be empty if configuredApplicationId is not)
+  """
+  configuredApplication: ConfiguredApplicationInput
+
+  """
+  an ID of an existing ConfiguredApplication to reuse (can be empty if is configuredApplication not)
+  """
+  configuredApplicationId: ID
+}
+
+input CreateOnboardeeInput {
+  firstname: String!
+  lastname: String!
+  email: String!
+  role: OnboardeeRole!
+  welcomeMessage: String
+  onboardeeApplicationAssignments: [CreateOnboardeeApplicationAssignmentsInput!]!
+}
+
+input CustomAppRequestInput {
+  """the name of the custom app"""
+  name: String!
+
+  """the visibility of the custom app"""
+  visibility: CustomAppVisibility!
+
+  """URL to the logo of the app"""
+  logoURL: String!
+
+  """the signing URL"""
+  signinURL: String!
+}
+
+enum CustomAppVisibility {
+  """the app will be only visible to the requesting user"""
+  USER_EMAIL
+
+  """
+  the app will be visible to any user with the same email domain than the user
+  """
+  EMAIL_DOMAIN
+}
+
+scalar Date
+
+"""Date Filter Operator"""
+input DateOperator {
+  eq: Date
+  before: Date
+  after: Date
+  between: DateRange
+}
+
+"""used by DateOperator.between"""
+input DateRange {
+  start: Date!
+  end: Date!
+}
+
+type DeleteRequestResult {
+  success: Boolean
+}
+
+type Employee {
+  organization: Organization
+  auth0userId: String!
+  email: String
+  auth0User: User
+}
+
+input FullNameInput {
+  givenName: String!
+  familyName: String!
+}
+
+enum JoinedOrigin {
+  TEAM
+  SELF
+}
+
+type Manifest {
+  scope: String
+  extended_scopes: [String]
+}
+
+type Mutation {
+  """Invite a user to the current user's organization via email"""
+  inviteToMyOrganizationByEmail(
+    """the email to send the invitation to"""
+    email: String!
+  ): Boolean
+
+  """Invite a non-team user"""
+  inviteByEmail(
+    """the email to send the invitation to"""
+    email: String!
+  ): Boolean
+
+  """Will update the installed services for the current user"""
+  updateMyInstalledServices(
+    """the list of `serviceIds`"""
+    servicedIds: [String]!
+  ): Boolean @deprecated(reason: "Replaced by updateMyInstalledApplications")
+
+  """Will log a custom app request for the current user"""
+  submitCustomAppRequest(request: CustomAppRequestInput): Boolean @deprecated(reason: "Replaced by createApplicationFromRecipe")
+
+  """Will update the installed applications for the current user"""
+  updateMyInstalledApplications(
+    """applicationIds corresponds to id on Application type"""
+    applicationIds: [ID]!
+  ): Boolean
+
+  """Create an Application using a recipe format"""
+  createApplicationFromRecipe(applicationRecipe: ApplicationRecipeInput!, visibility: ApplicationVisibilityInput!): Application
+
+  """Update an Application using a recipe format"""
+  updateApplicationFromRecipe(applicationId: ID!, applicationRecipe: UpdateApplicationRecipeInput!): Application!
+
+  """Delete an Application"""
+  deleteApplication(applicationId: ID!): Boolean!
+
+  """Delete user and all personal data of the current logged-in user"""
+  deleteMyData: DeleteRequestResult
+
+  """Create a workspace with the given name and private status"""
+  createWorkspace(
+    """Name should be between 1 and 255 characters long"""
+    name: String!
+    private: Boolean
+    join: Boolean
+    userIds: [ID!]
+  ): Workspace!
+
+  """Create a workspace item on the given workspace"""
+  createWorkspaceItem(workspaceId: ID!, bxResourceId: String!): WorkspaceItem!
+
+  """Remove a workspace"""
+  removeWorkspace(workspaceId: ID!): Boolean!
+
+  """Remove a workspace item"""
+  removeWorkspaceItem(itemId: ID!): Boolean!
+
+  """Reorder workspaces items by moving an item to a new position"""
+  moveWorkspaceItem(itemId: ID!, index: Int!): Boolean!
+
+  """
+  Update a specific workspace.
+  Warning: a public workspace cannot be turned private
+  """
+  updateWorkspace(workspaceId: ID!, input: UpdateWorkspaceInput!): Workspace!
+
+  """Join/Leave a workspace"""
+  joinWorkspace(workspaceId: ID!, join: Boolean!): Boolean!
+
+  """Join a list of users to a workspace"""
+  addUsersToWorkspace(workspaceId: ID!, userIds: [ID!]!): Boolean!
+
+  """Will send a change password email to the current user"""
+  sendMeChangePasswordEmail: Boolean!
+
+  """create a new Onboardee, attached to the viewers Organization"""
+  createOnboardee(input: CreateOnboardeeInput!): Onboardee!
+
+  """update an existing Onboardee, if authorized"""
+  updateOnboardee(id: ID!, input: UpdateOnboardeeInput!): Onboardee!
+
+  """delete an existing Onboardee, if authorized"""
+  deleteOnboardee(id: ID!): Boolean!
+
+  """mark viewers Onboarding as finished"""
+  finishMyOnboarding: Boolean!
+
+  """send an in invitation email to an onboardee"""
+  sendOnboardeeInvitation(onboardeeId: ID!): Boolean!
+
+  """mark an OnboardeeApplicationAssignment as seen"""
+  markOnboardeeApplicationAssignmentAsSeen(id: ID!): Boolean!
+
+  """
+  ## The purpose of this mutation is actually to update firebase profile informations
+  ## It will usually be called after a user sign-up (either google provider or login/password)
+  """
+  updateMyUser(input: UpdateMyUserInput!): User
+
+  """## signup email confirmation"""
+  sendMeEmailAddressVerificationEmail: Boolean!
+}
+
+scalar Number
+
+"""Number Filter Operator"""
+input NumberOperator {
+  eq: Number
+  lt: Number
+  lte: Number
+  gt: Number
+  gte: Number
+  between: NumberRange
+}
+
+"""used by NumberOperator.between"""
+input NumberRange {
+  start: Number!
+  end: Number!
+}
+
+type Onboardee {
+  id: ID!
+  firstname: String!
+  lastname: String!
+  email: String!
+
+  """whitelist of roles"""
+  role: OnboardeeRole!
+
+  """applications assigned to this Onboardee, with attached configuration"""
+  assignedApplications: [OnboardeeApplicationAssignment!]!
+  organization: Organization!
+
+  """this Onboardee as Employee, if possible"""
+  onboardeeEmployee: Employee
+
+  """an optionnal welcome message"""
+  welcomeMessage: String
+
+  """the Onboarder as Employee, if possible (could have been deleted)"""
+  onboarderEmployee: Employee
+
+  """date at which the Onbordee finishes its onboarding"""
+  onboardingFinishedAt: Date
+  createdAt: Date
+}
+
+"""Link between an Onboardee and a configured application"""
+type OnboardeeApplicationAssignment {
+  id: ID!
+  onboardee: Onboardee!
+  configuredApplication: ConfiguredApplication!
+
+  """optional description of the application for the Onboardee"""
+  description: String
+
+  """set when the Onboardee marked this as seen"""
+  seenAt: Date
+}
+
+"""Edge type of Onboardee, hold meta informations about Onboardees"""
+type OnboardeeEdge {
+  cursor: String!
+  node: Onboardee!
+}
+
+enum OnboardeeRole {
+  BusinessDevelopment
+  CustomerSuccess
+  Design
+  Engineering
+  Finance
+  HumanResources
+  Marketing
+  Product
+}
+
+type OnboardeesConnection {
+  """Total number of Onboardees visible by user"""
+  totalCount: Int!
+
+  """Edges of Onboardee"""
+  edges: [OnboardeeEdge!]
+
+  """Info about the current page in pagination"""
+  pageInfo: PageInfo!
+}
+
+type Organization {
+  slug: String!
+  name: String
+  domain: String!
+  pictureUrl: String
+  employees(includeSelf: Boolean = false, limit: Int = 8): [Employee]!
+  totalEmployees: Int
+
+  """Services that are used by the employees of the organization"""
+  employeeInstalledServices: [OrganizationInstalledServiceStats] @deprecated(reason: "Replaced by employeesApplicationsConnection")
+  employeesApplicationsConnection(first: Int, after: String): OrganizationEmployeesApplicationsConnection
+
+  """organization workspaces includes private for the corresponding user."""
+  workspaces: [Workspace!]!
+
+  """get all Onboardees for the current Organization"""
+  onboardees(first: Int, after: String): OnboardeesConnection!
+
+  """
+  get all OnboardeeApplicationAssignment for the given applicationId of the current Organization
+  """
+  applicationConfigurations(applicationId: String!): [OnboardeeApplicationAssignment!]!
+
+  """Will verify if we can create the onboardee with the given email"""
+  canCreateOnboardee(email: String!): Boolean!
+}
+
+type OrganizationEmployeesApplicationsConnection {
+  """Total number of applications visible by user"""
+  totalCount: Int
+  edges: [OrganizationEmployeesApplicationsEdge]
+
+  """Info about the current page in pagination"""
+  pageInfo: PageInfo
+}
+
+type OrganizationEmployeesApplicationsEdge {
+  node: Application
+
+  """
+  number of employees that installed this application in the organization
+  """
+  employeesCount: Int
+  applicationId: String
+}
+
+type OrganizationInstalledServiceStats {
+  service: Service
+  userCount: Int
+}
+
+"""Info about the current page in pagination (help for next)"""
+type PageInfo {
+  """Last Service ID of the returned list"""
+  endCursor: String
+
+  """
+  True if there are more services to return after the last one of the current batch
+  """
+  hasNextPage: Boolean
+}
+
+type Preconfigurations {
+  onpremise: Boolean
+  subdomain: String
+}
+
+type Query {
+  service(id: String): Service @deprecated(reason: "Replaced by application")
+  allServices: [Service]! @deprecated(reason: "Replaced by applicationsConnection")
+  allCategories: [String]!
+  version: String!
+  organization(domain: String): Organization
+
+  """Get all organizations"""
+  organizations: [Organization] @deprecated(reason: "Not used")
+
+  """Get services Connection"""
+  servicesConnection(first: Int, after: String): ServicesConnection @deprecated(reason: "Replaced by applicationsConnection")
+
+  """Get an application by its id"""
+  application(id: ID): Application
+
+  """Get all applications"""
+  applicationsConnection(first: Int, after: String): ApplicationsConnection @deprecated(reason: "Replaced by applications")
+
+  """Get all applications"""
+  applications(
+    """
+    Number of edges to return.
+    `first` is mandatory and should be <=200
+    """
+    first: Int!
+    after: String
+    filters: ApplicationsFilters
+    sort: [SortOrderParameter!]
+  ): ApplicationsConnection
+
+  """Get applications sorted by relevancy"""
+  searchApplicationsByName(term: String, first: Int, after: String): ApplicationsConnection @deprecated(reason: "Replaced by applications")
+
+  """Get all applications categories"""
+  allApplicationCategories: [ApplicationCategory!]!
+
+  """Get Workspace with the given ID"""
+  workspace(workspaceId: ID!): Workspace!
+
+  """Get Workspace item with the given ID"""
+  workspaceItem(itemId: ID!): WorkspaceItem!
+
+  """Returns the currently logged-in user or Null if not authenticated"""
+  viewer: User
+
+  """get an Onboardee for the given onboardeeId, if authorized"""
+  onboardee(onboardeeId: ID!): Onboardee!
+
+  """
+  get an onboardeeApplicationAssignmentId for the given id, if authorized
+  """
+  onboardeeApplicationAssignment(onboardeeApplicationAssignmentId: ID!): OnboardeeApplicationAssignment!
+
+  """
+  get an Organization for a given slug (with a restriction on private fields)
+  """
+  organizationBySlug(slug: String!): Organization
+}
+
+type Service {
+  id: String!
+  iconId: String
+  addedByDefault: Boolean
+  name: String
+  category: String
+  captiveURLScheme: String
+  restrictedEmails: String
+  iconColor: String
+  logo: String
+  logoURL: String
+  signin_url: String
+  injectJS: String
+  instanceTypeWording: String
+  instanceLabel: String
+  alwaysLoaded: Boolean
+
+  """
+  optionsSchema:
+  optionsUiSchema:
+  """
+  removeNotificationOnClose: Boolean
+  doNotInstallOnURLMatch: Boolean
+  deprecated: Boolean
+  newVersionId: String
+  batchNpmVersion: String
+  extensionFor: [String]
+}
+
+"""Edge type of Service, hold meta informations about Services"""
+type ServiceEdge {
+  """Array of Service"""
+  cursor: String
+  node: Service
+}
+
+type ServicesConnection {
+  """Total number of services visible by user"""
+  totalCount: Int
+
+  """Edges of Service"""
+  edges: [ServiceEdge]
+
+  """Array of Service"""
+  list: [Service]
+
+  """Info about the current page in pagination"""
+  pageInfo: PageInfo
+}
+
+"""Sort order direction"""
+enum SortOrderDirection {
+  ASC
+  DESC
+}
+
+"""available fields for applications ordering"""
+enum SortOrderField {
+  popularity
+  name
+  id
+  category
+  addedAt
+  isChromeExtension
+  additionalSearchTerms
+  boostedFeatures
+}
+
+"""sorting parameters"""
+input SortOrderParameter {
+  field: SortOrderField!
+  direction: SortOrderDirection!
+}
+
+"""String Filter Operator"""
+input StringOperator {
+  eq: String
+  contains: String
+  any: Boolean
+}
+
+input UpdateApplicationRecipeInput {
+  name: String
+  themeColor: ColorType
+  bxIconURL: ConstraintString
+  startURL: ConstraintString
+  scope: ConstraintString
+}
+
+input UpdateMyUserInput {
+  fullName: FullNameInput
+  pictureURL: String
+}
+
+input UpdateOnboardeeApplicationAssignmentsInput {
+  id: ID
+
+  """a description. Can be empty"""
+  description: String
+
+  """
+  a new set of value to create a new configured application (can be empty if configuredApplicationId is not)
+  """
+  configuredApplication: ConfiguredApplicationInput
+
+  """
+  an ID of an existing ConfiguredApplication to reuse (can be empty if is configuredApplication not)
+  """
+  configuredApplicationId: ID
+}
+
+input UpdateOnboardeeInput {
+  firstname: String
+  lastname: String
+  email: ConstraintString
+  role: OnboardeeRole
+  welcomeMessage: String
+  onboardeeApplicationAssignments: [UpdateOnboardeeApplicationAssignmentsInput!]
+}
+
+"""used by mutation.updateWorkspace"""
+input UpdateWorkspaceInput {
+  name: String
+
+  """A general or a public workspace cannot be set to private"""
+  private: Boolean
+}
+
+type User {
+  id: ID!
+  auth0userId: ID!
+  email: String
+  email_verified: Boolean
+  name: String
+  given_name: String
+  family_name: String
+  picture: String
+
+  """
+  Contains info about identity providers with which the user originally authenticate
+  """
+  identities: [UserIdentity!]!
+
+  """
+  List the worspaces of the user
+  warning: only works for the current user
+  """
+  workspaces(filter: WorkspacesFilter): [Workspace!]!
+
+  """optional Onboardee related to User"""
+  onboardee: Onboardee
+
+  """
+  True if the user can change their password
+  Field only accessible to current user
+  """
+  canChangePassword: Boolean!
+}
+
+type UserIdentity {
+  """Name of the entity that is authenticating the user."""
+  provider: String!
+
+  """User's unique identifier for this connection/provider"""
+  userId: String!
+}
+
+type Workspace {
+  id: ID!
+  name: String!
+  isGeneral: Boolean!
+  organization: Organization!
+  items: [WorkspaceItem!]!
+  createdAt: Date!
+  private: Boolean!
+  joinedUsers: WorkspaceJoinedUsersConnection!
+  creatorAuth0UserId: String
+}
+
+type WorkspaceItem {
+  id: ID!
+
+  """station-resource://..."""
+  bxResourceId: String!
+  position: Int!
+  workspace: Workspace!
+  createdAt: Date!
+}
+
+type WorkspaceJoinedUsersConnection {
+  totalCount: Int!
+  list: [User!]!
+}
+
+input WorkspacesFilter {
+  excludeJoined: Boolean
+  excludeLeft: Boolean
+}
+

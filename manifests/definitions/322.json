@@ -1,0 +1,14 @@
+{
+  "name": "Anyleads",
+  "category": "Sales & CRM",
+  "start_url": "https://anyleads.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/RlmdBD7rSUSUi9v3f9pQ",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#41B6FF",
+  "scope": "https://anyleads.com",
+  "bx_legacy_service_id": "anylead"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Gocardless",
+  "category": "Accounting & Finance",
+  "start_url": "https://gocardless.com/users/sign_in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/NwkhSOT3297BwMlubybg",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0854B3",
+  "scope": "https://gocardless.com",
+  "bx_legacy_service_id": "gocardless"
+}

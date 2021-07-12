@@ -1,0 +1,14 @@
+{
+  "name": "Behance",
+  "category": "Design & Creativity",
+  "start_url": "https://www.behance.net/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/VzZqsmY3RrG3nPwGeFdn",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0056FE",
+  "scope": "https://www.behance.net",
+  "bx_legacy_service_id": "behance"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Flow",
+  "category": "Task & Project Management",
+  "start_url": "https://app.getflow.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/JVrQrSRoSI2c1lr8Cp5x",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2C9EEE",
+  "scope": "https://app.getflow.com",
+  "bx_legacy_service_id": "flow"
+}

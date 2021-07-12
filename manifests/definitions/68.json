@@ -1,0 +1,14 @@
+{
+  "name": "Bamboo HR",
+  "category": "HR & Legal",
+  "start_url": "https://app.bamboohr.com/login/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/aqh45HuCRK7VkoUbxHee",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#8AC831",
+  "scope": "https://app.bamboohr.com",
+  "bx_legacy_service_id": "bamboo"
+}

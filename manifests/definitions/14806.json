@@ -1,0 +1,13 @@
+{
+  "name": "Dashlane",
+  "category": "Admin & Back-office",
+  "start_url": "https://app.dashlane.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/8P8ySnHfQMaoNquncKUe",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#017C97",
+  "scope": "https://www.dashlane.com/"
+}

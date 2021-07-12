@@ -1,0 +1,17 @@
+{
+  "name": "Base CRM",
+  "category": "Sales & CRM",
+  "start_url": "https://app.futuresimple.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/KAgSNTSeTNCTHPXqe8YB"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/IYJg7ffQ4KuK0BlhVMkI",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#04cc9c",
+  "scope": "https://app.futuresimple.com",
+  "bx_legacy_service_id": "base-crm"
+}

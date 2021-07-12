@@ -1,0 +1,17 @@
+{
+  "name": "Lightspeed eCommerce",
+  "category": "Admin & Back-office",
+  "start_url": "https://services.shoplightspeed.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/U7m0Ox9TybsPl9IQPCMw"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/M70vBfqYSoCL2FtVmdmg",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#e43839",
+  "scope": "https://services.shoplightspeed.com",
+  "bx_legacy_service_id": "lightspeed-ecommerce"
+}

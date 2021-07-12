@@ -1,0 +1,13 @@
+{
+  "name": "Roadmunk",
+  "category": "Task & Project Management",
+  "start_url": "https://app.roadmunk.com/login/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/nmP7KilT8SLFmmEVEju8",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#007AE5",
+  "scope": "https://roadmunk.com/"
+}

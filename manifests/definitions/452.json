@@ -1,0 +1,17 @@
+{
+  "name": "TeamBlind",
+  "category": "Curation & Sourcing",
+  "start_url": "https://www.teamblind.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/laFIGFP8TO66KSVoVRVQ"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/1eHbnrQwUUHieDy4tcQn",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#e41c24",
+  "scope": "https://www.teamblind.com",
+  "bx_legacy_service_id": "teamblind"
+}

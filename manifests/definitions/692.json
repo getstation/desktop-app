@@ -1,0 +1,17 @@
+{
+  "name": "Panda",
+  "category": "Curation & Sourcing",
+  "start_url": "https://usepanda.com/app/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/RHi9FoEcQpeuM0oyy93K"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/Lc0Re1sgQcSacUiRCbvu",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00000",
+  "scope": "https://usepanda.com",
+  "bx_legacy_service_id": "panda"
+}

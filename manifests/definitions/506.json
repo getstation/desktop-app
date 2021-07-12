@@ -1,0 +1,17 @@
+{
+  "name": "Cyfe",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.cyfe.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/N4DHVJ9SCWQNAbsN4cpO"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/sHTrjznhSHud8soLU0Xb",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3cacf4",
+  "scope": "https://app.cyfe.com",
+  "bx_legacy_service_id": "cyfe"
+}

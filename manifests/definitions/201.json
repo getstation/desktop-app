@@ -1,0 +1,14 @@
+{
+  "name": "Wetransfer",
+  "category": "Storage & File-sharing",
+  "start_url": "https://wetransfer.com/sign-in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/hOpvT9HTnyZWusub1If0",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0092D0",
+  "scope": "https://wetransfer.com",
+  "bx_legacy_service_id": "wetransfer"
+}

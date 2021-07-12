@@ -1,0 +1,26 @@
+{
+  "name": "Freshsales",
+  "category": "Sales & CRM",
+  "start_url": "https://{{subdomain}}.freshsales.io",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/SK9xftPaSRKqbfxTT3zl",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FFA800",
+  "scope": "https://*.freshsales.io",
+  "bx_legacy_service_id": "freshsales",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_wording": "team",
+    "instance_label_tpl": "{{subdomain}}.freshsales.io",
+    "start_url_tpl": "https://{{subdomain}}.freshsales.io",
+    "subdomain_title": "Freshsales domain",
+    "subdomain_ui_help": "Enter your team's Freshsales domain.",
+    "subdomain_ui_suffix": ".freshsales.io"
+  }
+}

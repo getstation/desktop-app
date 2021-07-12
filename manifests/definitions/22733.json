@@ -1,0 +1,24 @@
+{
+  "name": "Canny",
+  "category": "Task & Project Management",
+  "start_url": "https://{{subdomain}}.canny.io",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/U7bkZjIhRYaYX3xZFToD",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#5E5DF9",
+  "scope": "https://*.canny.io",
+  "bx_multi_instance_config": {
+    "preset": "subdomain",
+    "presets": [
+      "subdomain"
+    ],
+    "instance_label_tpl": "{{subdomain}}.canny.io",
+    "start_url_tpl": "https://{{subdomain}}.canny.io",
+    "subdomain_title": "Canny domain",
+    "subdomain_ui_help": "Enter your team's Canny domain.",
+    "subdomain_ui_suffix": ".canny.io"
+  }
+}

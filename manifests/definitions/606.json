@@ -1,0 +1,17 @@
+{
+  "name": "Coggle",
+  "category": "Design & Creativity",
+  "start_url": "https://coggle.it/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/NiuLGBGaTDCk2lBECIVF"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/OCqcZAVtTp4Y3ObStZNz",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#9cd46c",
+  "scope": "https://coggle.it",
+  "bx_legacy_service_id": "coggle"
+}

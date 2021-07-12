@@ -1,0 +1,14 @@
+{
+  "name": "Segment",
+  "category": "Marketing & Analytics",
+  "start_url": "https://segment.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/B0bR3t8Q4aDAmte3G4K1",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#43AD7A",
+  "scope": "https://app.segment.com",
+  "bx_legacy_service_id": "segment"
+}

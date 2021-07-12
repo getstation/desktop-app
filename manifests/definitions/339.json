@@ -1,0 +1,14 @@
+{
+  "name": "CakeHR",
+  "category": "HR & Legal",
+  "start_url": "https://cake.hr/signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ZmYxJnOQS9ya1vQKkjPU",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#E60062",
+  "scope": "https://cake.hr",
+  "bx_legacy_service_id": "cakehr"
+}

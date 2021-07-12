@@ -1,0 +1,14 @@
+{
+  "name": "Mailjet",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.mailjet.com/signin",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/yJa0Tu0KTeWFv4Woh2Ay",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FFBF2D",
+  "scope": "https://app.mailjet.com",
+  "bx_legacy_service_id": "mailjet"
+}

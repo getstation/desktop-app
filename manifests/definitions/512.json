@@ -1,0 +1,17 @@
+{
+  "name": "Fleep",
+  "category": "Communication & Collaboration",
+  "start_url": "https://fleep.io/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/kJLObilSQBKEis0S7AHg"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/1u9MQgd6RxSYaoeCDLWY",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3c8cdc",
+  "scope": "https://fleep.io",
+  "bx_legacy_service_id": "fleep"
+}

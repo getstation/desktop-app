@@ -1,0 +1,14 @@
+{
+  "name": "Survey Monkey",
+  "category": "User Support & Survey",
+  "start_url": "https://www.surveymonkey.com/user/sign-in/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/Z4YKjQm3QCqtKrLRcu0G",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00BF6F",
+  "scope": "https://www.surveymonkey.com",
+  "bx_legacy_service_id": "surveymonkey"
+}

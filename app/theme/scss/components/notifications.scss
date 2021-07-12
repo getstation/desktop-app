@@ -1,0 +1,39 @@
+@import "../common/variables";
+@import "../base/mixins";
+@import "../common/typography";
+// Notifications
+// —————————————————————————————————
+
+.l-notification {
+  background-color: #fff;
+  border-radius: $border-radius;
+  box-shadow: 0 1px 6px rgba(#000, 0.4);
+  color: #000;
+  display: none;
+  line-height: 1.6em;
+  padding: ($gutter * 2);
+  position: fixed;
+  right: ($gutter * 2);
+  text-align: center;
+  top: ($gutter * 2);
+  width: 300px;
+  z-index: 1000;
+  @include font(14px);
+
+  //== Children
+  a {
+    background-color: rgba(#000, 0.05);
+    border-top: 1px solid rgba(#000, 0.1);
+    display: block;
+    line-height: 1.1em;
+    margin: ($gutter * 2) (-($gutter * 2)) (-($gutter * 2));
+    padding: $gutter;
+    text-align: center;
+    @include font(13px, 600);
+  }
+
+  //== Variants
+  &.show {
+    display: block;
+  }
+}

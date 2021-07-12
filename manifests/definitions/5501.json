@@ -1,0 +1,13 @@
+{
+  "name": "Integromat",
+  "category": "Miscellaneous",
+  "start_url": "https://www.integromat.com/en/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/hi5wEaSXakBAM7hVrcwb",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0390be",
+  "scope": "https://www.integromat.com"
+}

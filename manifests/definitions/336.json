@@ -1,0 +1,14 @@
+{
+  "name": "Webflow",
+  "category": "Design & Creativity",
+  "start_url": "https://webflow.com/dashboard",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/vROUNT0LRQO6b4r5ZHlZ",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#4353FF",
+  "scope": "https://webflow.com",
+  "bx_legacy_service_id": "webflow"
+}

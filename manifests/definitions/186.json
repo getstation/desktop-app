@@ -1,0 +1,14 @@
+{
+  "name": "Payfacile",
+  "category": "Accounting & Finance",
+  "start_url": "https://www.payfacile.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/gAjOSQERbWRY7JCcLpbv",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#00B1AF",
+  "scope": "https://www.payfacile.com",
+  "bx_legacy_service_id": "payfacile"
+}

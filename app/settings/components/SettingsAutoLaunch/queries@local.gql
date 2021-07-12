@@ -1,0 +1,8 @@
+  query GetAutolaunchStatus @live @local {
+    autoLaunchEnabled
+  }
+
+  mutation EnableAutoLaunch($enabled: Boolean!) @local{
+    setAutoLaunch(enabled: $enabled)
+  }
+  

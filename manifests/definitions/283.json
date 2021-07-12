@@ -1,0 +1,14 @@
+{
+  "name": "Wootric",
+  "category": "User Support & Survey",
+  "start_url": "https://app.wootric.com/sign_in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/IohbsnMQrewHqeLgX1r9",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#80CC3A",
+  "scope": "https://app.wootric.com",
+  "bx_legacy_service_id": "wootric"
+}

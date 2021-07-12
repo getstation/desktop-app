@@ -1,0 +1,14 @@
+{
+  "name": "Prismic",
+  "category": "Blogging & Content Creation",
+  "start_url": "https://prismic.io/dashboard/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/CAVRiuljQCKV8GkUVCqO",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#1DE9B6",
+  "scope": "https://prismic.io",
+  "bx_legacy_service_id": "prismic"
+}

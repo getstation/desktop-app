@@ -1,0 +1,20 @@
+{
+  "name": "Whimsical",
+  "category": "Design & Creativity",
+  "start_url": "https://whimsical.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/RrCQ6r9Q5qjjYGqRvawH"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/tl6i4fe7S2SPJthwsxaI",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#ac57f4",
+  "scope": "https://whimsical.com",
+  "bx_legacy_service_id": "whimsical",
+  "extended_scopes": [
+    "https://whimsical.co"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "User Engage",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.userengage.com/login/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/YcEvlbNTZINjic4zDewt",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#008BE7",
+  "scope": "https://app.userengage.com",
+  "bx_legacy_service_id": "user-engage"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Survey Gizmo",
+  "category": "User Support & Survey",
+  "start_url": "https://app.surveygizmo.com/login/v1",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/bmVanbiTQUantb3aang5",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FFA100",
+  "scope": "https://app.surveygizmo.com",
+  "bx_legacy_service_id": "survey-gizmo"
+}

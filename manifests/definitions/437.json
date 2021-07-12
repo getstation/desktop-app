@@ -1,0 +1,17 @@
+{
+  "name": "Paddle",
+  "category": "Sales & CRM",
+  "start_url": "https://vendors.paddle.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/1kY73sU2Szy1Mxu9eIhA"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/cyqA2kmQFyr5vdOmpI4X",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2a2a2a",
+  "scope": "https://vendors.paddle.com",
+  "bx_legacy_service_id": "paddle"
+}

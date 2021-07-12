@@ -1,0 +1,20 @@
+{
+  "name": "Deepl",
+  "category": "Miscellaneous",
+  "start_url": "https://www.deepl.com/translator",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/7SA1nsXSgCRPg3G1mUCw"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/sPbncd1vSbKBzqSTGLzt",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0e9bf0",
+  "scope": "https://www.deepl.com",
+  "bx_legacy_service_id": "deepl",
+  "extended_scopes": [
+    "https://deepl.com"
+  ]
+}

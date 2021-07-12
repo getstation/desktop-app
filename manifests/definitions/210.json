@@ -1,0 +1,17 @@
+{
+  "name": "Copper",
+  "category": "Sales & CRM",
+  "start_url": "https://app.prosperworks.com/users/sign_in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/OHDlVkkQiK00zykPeep3"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/2LDpbDXMQrGds1PyfBbr",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FF3465",
+  "scope": "https://app.prosperworks.com",
+  "bx_legacy_service_id": "prosperworks"
+}

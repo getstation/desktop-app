@@ -1,0 +1,17 @@
+{
+  "name": "OneNote",
+  "category": "Communication & Collaboration",
+  "start_url": "https://www.onenote.com/hrd",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/0ijHLBnTFaY21yycnrdg"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/THqoqwlsQgyNy3aEZ4Qh",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#843a7c",
+  "scope": "https://www.onenote.com",
+  "bx_legacy_service_id": "onenote"
+}

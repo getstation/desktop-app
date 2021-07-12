@@ -1,0 +1,18 @@
+{
+  "name": "Voxer",
+  "category": "Communication & Collaboration",
+  "start_url": "https://web.voxer.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/8lbvlMRrR8WBq6mPio0n"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/VFARjmohQLCUYF7Y4cht",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#f46424",
+  "scope": "https://web.voxer.com",
+  "bx_keep_always_loaded": true,
+  "bx_legacy_service_id": "voxer"
+}

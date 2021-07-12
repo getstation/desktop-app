@@ -1,0 +1,17 @@
+{
+  "name": "Convertkit",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.convertkit.com/users/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/IL6tQJADTKNVvIIHDBU5"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/TG3ixIN2TyGa3BJs95oA",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3494d4",
+  "scope": "https://app.convertkit.com",
+  "bx_legacy_service_id": "convertkit"
+}

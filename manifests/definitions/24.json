@@ -1,0 +1,18 @@
+{
+  "name": "Invision",
+  "category": "Design & Creativity",
+  "start_url": "https://projects.invisionapp.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/AAgiLWb5SFKXs6R2ET9w",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#DC395F",
+  "scope": "https://projects.invisionapp.com",
+  "bx_legacy_service_id": "invision",
+  "extended_scopes": [
+    "https://projects.invisionapp.com",
+    "https://invis.io"
+  ]
+}

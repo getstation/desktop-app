@@ -1,0 +1,14 @@
+{
+  "name": "Basecamp",
+  "category": "Task & Project Management",
+  "start_url": "https://3.basecamp.com/sign_in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/sBL5CRfZQYqJwEdx7CPg",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#66CC66",
+  "scope": "https://3.basecamp.com",
+  "bx_legacy_service_id": "basecamp"
+}

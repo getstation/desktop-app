@@ -1,0 +1,15 @@
+{
+  "name": "Zendesk Chat",
+  "category": "User Support & Survey",
+  "start_url": "https://dashboard.zopim.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/6JvwK9BtQ2ms5bvWKypu",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#F99B30",
+  "scope": "https://dashboard.zopim.com",
+  "bx_keep_always_loaded": true,
+  "bx_legacy_service_id": "zendesk-chat"
+}

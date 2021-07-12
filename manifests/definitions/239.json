@@ -1,0 +1,14 @@
+{
+  "name": "Yousign",
+  "category": "HR & Legal",
+  "start_url": "https://yousign.fr/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/b9voyg1nSRKICOl163lx",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#0AA8D3",
+  "scope": "https://yousign.fr",
+  "bx_legacy_service_id": "yousign"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Pardot",
+  "category": "Marketing & Analytics",
+  "start_url": "https://pi.pardot.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/AaBhCgwCT1m3kook9J7f",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#7F868B",
+  "scope": "https://pi.pardot.com",
+  "bx_legacy_service_id": "pardot"
+}

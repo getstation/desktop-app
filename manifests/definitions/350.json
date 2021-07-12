@@ -1,0 +1,14 @@
+{
+  "name": "Forecast",
+  "category": "Task & Project Management",
+  "start_url": "https://id.getharvest.com/forecast/sign_in",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/QUgZFhcpQjiK2fvDwcrG",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FF7400",
+  "scope": "https://id.getharvest.com",
+  "bx_legacy_service_id": "forecast"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Whereby",
+  "category": "Communication & Collaboration",
+  "start_url": "https://whereby.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/HzTh0m1cQhaUd9fvkJM3",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FF2960",
+  "scope": "https://whereby.com/",
+  "bx_legacy_service_id": "appear-in"
+}

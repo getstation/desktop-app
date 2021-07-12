@@ -1,0 +1,60 @@
+
+query GetActiveScreenName {
+  activeScreenName @client {
+    value
+  }
+}
+
+mutation SetActiveScreenName($activeScreenName: String!) {
+  setActiveScreenName(activeScreenName: $activeScreenName) @client
+}
+
+query GetSearchString {
+    search @client {
+        searchString
+        searchStringAfterEnterPress 
+        isEnterPressed
+    }
+}
+
+mutation SetSearchString($searchString: String!, $searchStringAfterEnterPress: String, $isEnterPressed: Boolean) {
+    setSearchString(
+        searchString: $searchString,
+        searchStringAfterEnterPress: $searchStringAfterEnterPress,
+        isEnterPressed: $isEnterPressed
+    ) @client {
+        searchString
+        searchStringAfterEnterPress
+        isEnterPressed
+    }
+}
+
+query GetBurgerStatus {
+  isBurgerOpen @client {
+    value
+  }
+}
+
+mutation SetBurgerStatus($isBurgerOpen: Boolean!) {
+  setBurgerStatus(isBurgerOpen: $isBurgerOpen) @client
+}
+
+query GetCustomAppRequestMode {
+    appRequestMode @client {
+        appRequestIsOpen
+        currentMode
+    }
+}
+
+mutation SetCustomAppRequestMode(
+    $appRequestIsOpen: Boolean!
+    $currentMode: String!
+) {
+    setCustomAppRequestMode(
+        appRequestIsOpen: $appRequestIsOpen
+        currentMode: $currentMode
+    ) @client {
+        appRequestIsOpen
+        currentMode
+    }
+}

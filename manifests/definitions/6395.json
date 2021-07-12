@@ -1,0 +1,16 @@
+{
+  "name": "Airbnb",
+  "category": "Miscellaneous",
+  "start_url": "https://www.airbnb.com/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/B22iKFkbQCaxWjCab0ba"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/ht543DRSOK29eAbEmdJg",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FF5B60",
+  "scope": "https://www.airbnb.com"
+}

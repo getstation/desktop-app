@@ -1,0 +1,14 @@
+{
+  "name": "Instapage",
+  "category": "Marketing & Analytics",
+  "start_url": "https://app.instapage.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/MTdZI1PuQeK1G1pOhN5Q",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#2092C9",
+  "scope": "https://app.instapage.com",
+  "bx_legacy_service_id": "instapage"
+}

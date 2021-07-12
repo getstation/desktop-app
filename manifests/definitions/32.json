@@ -1,0 +1,17 @@
+{
+  "name": "Spendesk",
+  "category": "Accounting & Finance",
+  "start_url": "https://www.spendesk.com/app/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/y0PGQgVRVCz8Eds6ZNla",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#6E00FF",
+  "scope": "https://www.spendesk.com",
+  "bx_legacy_service_id": "spendesk",
+  "extended_scopes": [
+    "https://spendesk.com"
+  ]
+}

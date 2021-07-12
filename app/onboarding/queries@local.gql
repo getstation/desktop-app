@@ -1,0 +1,33 @@
+query GetDefaultApplicationsForOnboarding @live @local {
+  applications: listApplications {
+    id
+    name
+    bxAppManifestURL
+    iconURL
+    themeColor
+  }
+}
+
+query GetApplicationDescriptionStatus($applicationId: String!) @live @local {
+  application: getApplicationById(applicationId: $applicationId) {
+    id,
+    onboardeeApplicationAssignment,
+    forceShowDescription,
+  }
+}
+
+mutation InstallApplication($input: InstallApplicationInput!) @local {
+  installApplication(input: $input) {
+    applicationId
+  }
+}
+
+mutation onboardingDone($nbInstalledApps: Int!, $onboardeeId: ID) @local {
+  onboardingDone(nbInstalledApps: $nbInstalledApps, onboardeeId: $onboardeeId)
+}
+
+mutation DisableApplicationForceShowDescription($applicationId: ID!,
+$forceShowDescription: Boolean = false) @local {
+  setApplicationForceShowDescription(applicationId: $applicationId,
+  forceShowDescription: $forceShowDescription)
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Zenhub",
+  "category": "Developer Tools",
+  "start_url": "https://app.zenhub.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/ZamcgHZQl2ukTlk3Ix8w",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#3F4D9C",
+  "scope": "https://app.zenhub.com",
+  "bx_legacy_service_id": "zenhub"
+}

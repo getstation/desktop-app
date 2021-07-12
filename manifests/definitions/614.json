@@ -1,0 +1,17 @@
+{
+  "name": "Clockify",
+  "category": "Task & Project Management",
+  "start_url": "https://clockify.me/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/4Xqz12vBS9GcqLKN7Lht"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/GYXGbQJxTDOP8j8N7qTQ",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#04acf4",
+  "scope": "https://clockify.me",
+  "bx_legacy_service_id": "clockify"
+}

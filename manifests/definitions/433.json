@@ -1,0 +1,17 @@
+{
+  "name": "10000ft",
+  "category": "Task & Project Management",
+  "start_url": "https://app.10000ft.com",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/kCJ2BVTg6ys5invgkymQ"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/EpKIne8LRbI9gzSKDlGK",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#4771b0",
+  "scope": "https://app.10000ft.com",
+  "bx_legacy_service_id": "10000ft"
+}

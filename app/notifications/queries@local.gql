@@ -1,0 +1,12 @@
+query GetApplicationById($applicationId: String!) @live @local {
+  application: getApplicationById(applicationId: $applicationId) {
+    id,
+    name,
+    manifestURL,
+    manifestData {
+      name,
+      interpretedIconURL,
+      theme_color,
+    },
+  }
+}

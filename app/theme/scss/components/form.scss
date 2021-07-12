@@ -1,0 +1,72 @@
+@import "../common/variables";
+@import "../base/mixins";
+@import "../common/typography";
+
+.c-btn {
+  // background-color: #233CEA;
+  border: none;
+  border-radius: $border-radius;
+  color: #fff;
+  flex: 0 0 auto;
+  height: 40px;
+  line-height: 40px;
+  outline: none;
+  padding: 0 ($gutter * 2);
+  position: relative;
+  @include font(14px, 600);
+
+  &:after {
+    background-color: rgba(#000, 0.2);
+    border-radius: $border-radius;
+    content: "";
+    @include coverer();
+  }
+  &:hover:after { opacity: 0.5 }
+}
+.c-form__field {
+  background-color: #fff;
+  border: none;
+  border-radius: $border-radius;
+  box-shadow: 0 0 0 1px rgba(#000, 0.1);
+  color: #000;
+  flex: 1 1 auto;
+  height: 40px;
+  padding: 0 $gutter;
+  @include font(14px);
+}
+// label {
+//   color: rgba(#fff, 0.7);
+//   @include font(14px);
+// }
+.c-form__checkbox {
+  align-items: center;
+  display: flex;
+
+  //== Children
+  div {
+    display: inline-block;
+    flex: 0 0 auto;
+    margin-right: 8px;
+    position: relative;
+    top: -1px;
+  }
+  input {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    display: block;
+    @include avatar(14px, $border-radius);
+  }
+  span {
+    background-color: rgba(#000, 0.6);
+    content: "";
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2;
+    @include avatar(8px, 2px);
+    @include centerer();
+  }
+  input:checked + span {
+    opacity: 1;
+  }
+}

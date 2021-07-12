@@ -1,0 +1,14 @@
+{
+  "name": "Lingo App",
+  "category": "Design & Creativity",
+  "start_url": "https://www.lingoapp.com/login/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/yinS222uQzWxm5cEEOkW",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FF605D",
+  "scope": "https://www.lingoapp.com",
+  "bx_legacy_service_id": "lingo"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Chartbeat",
+  "category": "Marketing & Analytics",
+  "start_url": "https://chartbeat.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/zxNcZmM4R8mnuy7c26Az",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#657D8D",
+  "scope": "https://chartbeat.com",
+  "bx_legacy_service_id": "chartbeat"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Lightspeed Restaurant",
+  "category": "Admin & Back-office",
+  "start_url": "https://www.lightspeedhq.com/pos/restaurant/login/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/bZfGPjN1RPK5EjA2faDM"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/EPJkn2GbQB6XRgsUUms9",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#e43839",
+  "scope": "https://www.lightspeedhq.com",
+  "bx_legacy_service_id": "lightspeed-restaurant",
+  "extended_scopes": [
+    "https://lightspeedhq.com"
+  ]
+}

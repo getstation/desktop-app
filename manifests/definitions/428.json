@@ -1,0 +1,17 @@
+{
+  "name": "Phabricator",
+  "category": "Developer Tools",
+  "start_url": "https://secure.phabricator.com/",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/RWJVLAEQtOg4F5Tb920Q"
+    },
+    {
+      "src": "https://cdn.filestackcontent.com/gQFGOHMS2yVyMNNOx9Hh",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#384663",
+  "scope": "https://secure.phabricator.com",
+  "bx_legacy_service_id": "phabricator"
+}
