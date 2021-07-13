@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs/Rx';
 import { ServiceSubscription } from '../../lib/class';
 import { RPC, ServiceBaseConstructorOptions } from '../../lib/types';
 import { AutoUpdaterService, AutoUpdaterServiceObserver } from './interface';
-import { autoUpdater, feedURL } from './lib';
+import { autoUpdater } from './lib';
 
 export class AutoUpdaterServiceImpl extends AutoUpdaterService implements RPC.Interface<AutoUpdaterService> {
   private updateDownloaded: boolean;
@@ -12,8 +12,6 @@ export class AutoUpdaterServiceImpl extends AutoUpdaterService implements RPC.In
   constructor(uuid?: string, options?: ServiceBaseConstructorOptions) {
     super(uuid, options);
     this.updateDownloaded = false;
-    const url = feedURL();
-    if (url) autoUpdater.setFeedURL(url);
   }
 
   async quitAndInstall() {

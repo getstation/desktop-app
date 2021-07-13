@@ -12,7 +12,6 @@
   },
   "contributors": [],
   "license": "Apache License 2.0",
-  "updateServerHost": "dl.getstation.com",
   "main": "dist/main.js",
   "scripts": {
     "postinstall": "cd appstore && yarn",
@@ -266,7 +265,7 @@
     "electron-process-manager": "^1.0.0",
     "electron-process-reporter": "1.4.0",
     "electron-squirrel-startup": "^1.0.0",
-    "electron-updater": "^4.0.0",
+    "electron-updater": "^4.3.9",
     "electron-window-state": "5.0.3",
     "emoji-js": "^3.4.1",
     "end-of-stream": "^1.4.1",
