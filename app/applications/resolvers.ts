@@ -37,9 +37,10 @@ const resolvers: Resolvers = {
     listApplications: (_obj) => {
       const manifests = listAllApplications();
 
-      const apps = manifests.map(manifestToMinimalApplication)
-      const mostPop = apps.filter(app => app.recommendedPosition > 0).sort((a, b) => a.recommendedPosition - b.recommendedPosition)
-      const allOthers = apps.filter(app => app.recommendedPosition <= 0)
+      const apps = manifests.map(manifestToMinimalApplication);
+      const mostPop = apps.filter(app => app.recommendedPosition > 0)
+        .sort((a, b) => a.recommendedPosition - b.recommendedPosition);
+      const allOthers = apps.filter(app => app.recommendedPosition <= 0);
 
       return Observable.of([...mostPop, ...allOthers]);
     },
