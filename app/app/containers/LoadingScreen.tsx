@@ -5,7 +5,6 @@ import { compose } from 'react-apollo';
 import injectSheet from 'react-jss';
 import { connect } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
-import BackgroundLogo from '../../common/components/BackgroundLogo';
 import { StationState } from '../../types';
 import { isLoadingScreenVisible } from '../selectors';
 
@@ -101,7 +100,6 @@ class LoadingScreenImpl extends React.PureComponent<StateProps & JSSProps, {}> {
             </p>
           </div>
           <div className={classes.announcement} dangerouslySetInnerHTML={{ __html: announcementHTML }}/>
-          <BackgroundLogo />
         </div>
       </div>
     );
