@@ -38,6 +38,7 @@ dmg:
     type: file
 
 win:
+  publisherName: "Joël Charles"
   target:
   - nsis
   artifactName: ${productName}-${arch}-Setup.${ext}
