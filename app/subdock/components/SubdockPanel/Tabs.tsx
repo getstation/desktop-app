@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-// @ts-ignore: no declaration file
-import * as mergeRefs from 'react-merge-refs';
+import mergeRefs from 'react-merge-refs';
 import classNames from 'classnames';
 // @ts-ignore: no declaration file
 import injectSheet from 'react-jss';
