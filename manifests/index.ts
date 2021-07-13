@@ -60,7 +60,7 @@ export function listMostPopularApplications(): PopularApps {
  */
 export function listAllApplications(): Manifest[] {
   const ids = getAllApplicationIds();
-  return ids.map(getApplicationById);
+  return ids.map(getApplicationById).filter(app => !app.doNotList);
 }
 
 /**
@@ -95,6 +95,7 @@ export function manifestToMinimalApplication(manifest: Manifest): MinimalApplica
     iconURL: manifest.icon,
     themeColor: manifest.theme_color ?? '',
     isChromeExtension: Boolean(getChromeExtensionId(manifest)),
+    recommendedPosition: manifest.recommendedPosition ? Number(manifest.recommendedPosition) : 0,
   });
 }
 

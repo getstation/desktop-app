@@ -6,5 +6,6 @@
   "theme_color": "#2440FF",
   "scope": "station://appstore",
   "bx_no_dock": true,
+  "doNotList": true,
   "bx_legacy_service_id": "appstore"
 }

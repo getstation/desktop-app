@@ -29,6 +29,7 @@ export interface BxAppManifest {
    */
   bx_new_page_url?: string;
   recommendedPosition?: number;
+  doNotList?: boolean;
 }
 export interface ImageResource {
   src: string;

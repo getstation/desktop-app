@@ -5,6 +5,7 @@ export type MinimalApplication = {
   iconURL: string,
   themeColor: string,
   isChromeExtension: boolean,
+  recommendedPosition: number,
 };
 
 export type Data<TApplication = MinimalApplication> = {
