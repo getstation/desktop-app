@@ -12,6 +12,7 @@ import { StationState } from '../../types';
 import SettingsAutoLaunch from './SettingsAutoLaunch/SettingsAutoLaunch';
 import SettingsDeveloperTools from './SettingsDeveloperTools';
 import SettingsDownloadFolder from './SettingsDownloads/SettingsDownloadFolder';
+import SettingsOpenSourceInfo from './SettingsOpenSourceInfo';
 import SettingsUpdatesButton from './SettingsUpdatesButton/SettingsUpdatesButton';
 
 export interface Classes {
@@ -84,6 +85,8 @@ class SettingsPanelGeneralImpl extends React.PureComponent<Props, {}> {
         <SettingsDeveloperTools
           onClickOpenProcessManager={this.props.openProcessManager}
         />
+
+        <SettingsOpenSourceInfo/>
 
       </div>
     );
