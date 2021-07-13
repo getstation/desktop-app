@@ -6,6 +6,8 @@ mac:
   entitlements: 'build/entitlements.mac.plist'
   entitlementsInherit: 'build/entitlements.mac.plist'
 
+artifactName: ${productName}-${arch}.${ext}
+
 publish:
   provider: "github"
 
@@ -37,13 +39,14 @@ dmg:
 
 win:
   target:
-  - squirrel
+  - nsis
+  artifactName: ${productName}-${arch}-Setup.${ext}
 
 linux:
   target:
   - AppImage
   category: Network
-  artifactName: ${productName}-${version}-${arch}.${ext}
+  artifactName: ${productName}-${arch}.${ext}
 
 
 extraResources:

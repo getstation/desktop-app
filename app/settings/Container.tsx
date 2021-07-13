@@ -2,7 +2,6 @@ import { roundedBackground } from '@getstation/theme';
 import * as React from 'react';
 // @ts-ignore: no declaration file
 import injectSheet from 'react-jss';
-import BackgroundLogo from '../common/components/BackgroundLogo';
 import Tab from '../common/containers/Tab';
 import Tabs from '../common/containers/Tabs';
 import Overlay from '../components/Overlay';
@@ -119,7 +118,6 @@ export default class SettingsOverlay extends React.PureComponent<Props, {}> {
             )}
           </Tab>
         </Tabs>
-        <BackgroundLogo />
       </Overlay>
     );
   }
