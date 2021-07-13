@@ -125,8 +125,7 @@ class OnboardingImpl extends React.PureComponent<Props, State> {
   }
 
   async updateSearchedApplications(term: string) {
-    const results = search(term);
-    const applications = results.map(manifestToMinimalApplication);
+    const applications = search(term);
     this.setState({
       currentSearchedApplicationsResult: applications,
     });
