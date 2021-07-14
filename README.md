@@ -30,7 +30,7 @@
 * yarn >= `1.7.x`
 
 ```bash
-$ git clone https://github.com/getstation/browserX
+$ git clone https://github.com/getstation/desktop-app.git
 $ cd browserX
 $ yarn
 ```
@@ -158,8 +158,8 @@ This repository should be used as a proper monorepo. Packages that should be imp
 
 ## Releases
 
-1. [Draft a new release](https://github.com/getstation/browserX/releases/new) tagged with the desired version
-2. Apply your changes on [`release`](https://github.com/getstation/browserX/tree/release) branch
+1. [Draft a new release](https://github.com/getstation/desktop-app/releases/new) tagged with the desired version
+2. Apply your changes on [`release`](https://github.com/getstation/desktop-app/tree/release) branch
 3. On `release` branch, bump the version with `yarn version` to the corresponding version number
 4. Let the CI build artifacts for each platform
 5. Publish the draft
