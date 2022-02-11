@@ -1,3 +1,5 @@
+⚠️ This project is not actively maintained. Forks or PRs encouraged (PRs will be reviewed)
+
 # Station Desktop Application
 
 ## Table of Contents
