@@ -15,17 +15,17 @@ import { BrowserXThemeProvider } from '@getstation/theme';
 import ConsoleErrorBoundary from './common/containers/ConsoleErrorBoundary';
 import { getGQlClient } from './utils/graphql';
 
-
-import { ActionsBusReactContext, createActionsEmitter, createActionsBus } from './store/actionsBus';
+import {
+  ActionsBusReactContext,
+  createActionsEmitter,
+  createActionsBus
+} from './store/actionsBus';
 import { BxNotification } from './notification-center/webview-preload';
-
 
 window.Notification = BxNotification;
 
-
 // prevent app pinch zomming
 webFrame.setVisualZoomLevelLimits(1, 1);
-webFrame.setLayoutZoomLevelLimits(0, 0);
 
 if (process.env.STATION_REACT_PERF) {
   const Perf = require('react-addons-perf'); // eslint-disable-line global-require
@@ -41,14 +41,16 @@ const client = getGQlClient();
 const actionsEmitter = createActionsEmitter();
 const actionsBus = createActionsBus(actionsEmitter);
 
-configureStore(actionsEmitter).then(store => {
-  // for debug purpose, gives us a way to easily access the store
-  window.stationStore = store;
+configureStore(actionsEmitter)
+  .then(store => {
+    // for debug purpose, gives us a way to easily access the store
+    window.stationStore = store;
 
-  render(store);
-}).catch(handleError());
+    render(store);
+  })
+  .catch(handleError());
 
-const render = (store) => {
+const render = store => {
   const AppSub = require('./containers/AppSub').default; // eslint-disable-line global-require
 
   ReactDOM.render(
@@ -64,11 +66,13 @@ const render = (store) => {
           </ApolloProvider>
         </ActionsBusReactContext.Provider>
       </ConsoleErrorBoundary>
-    </Provider>
-    , document.getElementById('root')
+    </Provider>,
+    document.getElementById('root')
   );
 
   ipcRenderer.send('bx-ready-to-show');
 };
 
-if (module.hot) { module.hot.accept(); }
+if (module.hot) {
+  module.hot.accept();
+}
