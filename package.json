@@ -369,7 +369,7 @@
     "simple-icons": "^1.8.4",
     "slack": "^11.0.2",
     "source-map-support": "^0.4.15",
-    "sqlite3": "^4.1.1",
+    "sqlite3": "^5.0.8",
     "stats-lite": "^2.1.0",
     "stream-electron-ipc": "^1.0.14",
     "stream-json-rpc": "^0.7.9",
