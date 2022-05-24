@@ -232,7 +232,6 @@
     "@babel/runtime": "^7.4.3",
     "@getstation/apollo-link-reactive-schema": "^1.0.0",
     "@getstation/electron-google-oauth2": "^2.0.0",
-    "@getstation/electron-spellchecker": "^4.1.0",
     "@getstation/fetch-favicon": "^0.0.4-rc.2",
     "@getstation/frecency": "1.4.0",
     "@getstation/reactive-graphql": "^3.0.1",
