@@ -8,13 +8,14 @@ import * as ReactDOM from 'react-dom';
 import { logger } from '../../api/logger';
 import { Omit } from '../../types';
 import { dissoc } from 'ramda';
+import { remote } from 'electron';
 
 export interface ElectronWebviewProps extends Omit<Electron.WebviewTag, 'src'> {
   // webview `src` is updated by the webview itself, so we do not want to
   // update it ourselves directly. Instead we must call `loadUrl` on underlying
   // webcontents, and the webview will update the src attribute accordingly.
   // `initialSrc` is just taken into account once, when the Component is mounting.
-  initialSrc?: string,
+  initialSrc?: string;
 
   hidden: boolean;
   className: string;
@@ -47,7 +48,7 @@ export interface ElectronWebviewProps extends Omit<Electron.WebviewTag, 'src'> {
 export const changableProps = {
   useragent: 'setUserAgent',
   devtools: 'setDevTools',
-  muted: 'setAudioMuted',
+  muted: 'setAudioMuted'
 };
 
 export const events = [
@@ -82,7 +83,7 @@ export const events = [
   'update-target-url',
   'devtools-opened',
   'devtools-closed',
-  'devtools-focused',
+  'devtools-focused'
 ];
 
 export const methods = [
@@ -138,7 +139,7 @@ export const methods = [
   'setZoomLevel',
   'showDefinitionForSelection',
   'getWebContents',
-  'focus',
+  'focus'
 ];
 
 /*
@@ -209,15 +210,15 @@ const removeInitialSrcProp = dissoc('initialSrc');
 
 // Additional dynamically generated members
 interface ElectronWebview {
-  reload: () => any,
-  isDevToolsOpened: Function,
-  getURL: () => any,
-  goForward: () => any,
-  goBack: () => any,
-  openDevTools: () => any,
-  closeDevTools: () => any,
-  getTitle: () => any,
-  pasteAndMatchStyle: () => any,
+  reload: () => any;
+  isDevToolsOpened: Function;
+  getURL: () => any;
+  goForward: () => any;
+  goBack: () => any;
+  openDevTools: () => any;
+  closeDevTools: () => any;
+  getTitle: () => any;
+  pasteAndMatchStyle: () => any;
 }
 
 class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
@@ -235,9 +236,12 @@ class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
     const container = ReactDOM.findDOMNode(this.ref);
 
     let propString = '';
-    Object.keys(this.props).forEach((propName) => {
+    Object.keys(this.props).forEach(propName => {
       // Waiting for a fix https://github.com/electron/electron/issues/9618
-      if (this.props[propName] !== undefined && typeof this.props[propName] !== 'function') {
+      if (
+        this.props[propName] !== undefined &&
+        typeof this.props[propName] !== 'function'
+      ) {
         propString += getPropString(propName, this.props[propName]);
       }
     });
@@ -265,7 +269,7 @@ class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
     this.view.addEventListener('did-attach', (...attachArgs: any[]) => {
       this.ready = true;
       this.forwardKeyboardEvents();
-      events.forEach((event) => {
+      events.forEach(event => {
         const propName = camelCase(`on-${event}`);
         if (this.props[propName]) {
           this.view.addEventListener(event, this.props[propName], false);
@@ -280,7 +284,7 @@ class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
       this.view.focus();
     });
 
-    methods.forEach((method) => {
+    methods.forEach(method => {
       if (this[method]) return;
       this[method] = (...args: any[]) => {
         if (!this.ready) return;
@@ -295,43 +299,54 @@ class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
 
   /**
    * With Electron 3.0 webviews, events are not bubbled-up anymore.
-   * The goal of this method is to simulate the old behaviour.
+   * The goal of this method is to simulate the old behavior.
    */
   forwardKeyboardEvents() {
     // Inspired by https://github.com/electron/electron/issues/14258#issuecomment-416893856
-    this.view.getWebContents().on('before-input-event', (_event, input) => {
-      // Create a fake KeyboardEvent from the data provided
-      const emulatedKeyboardEvent = new KeyboardEvent(input.type.toLowerCase(), {
-        code: input.code,
-        key: input.key,
-        shiftKey: input.shift,
-        altKey: input.alt,
-        ctrlKey: input.control,
-        metaKey: input.meta,
-        repeat: input.isAutoRepeat,
-        bubbles: true,
-        composed: true,
-        cancelable: true,
-      });
-      // Workaround for mousetrap
-      const keyCodeValue = getKeyboardKeyCode(emulatedKeyboardEvent.key, emulatedKeyboardEvent.code);
-      Object.defineProperty(emulatedKeyboardEvent, 'which', {
-        value: keyCodeValue,
-      });
-      Object.defineProperty(emulatedKeyboardEvent, 'keyCode', {
-        value: keyCodeValue,
-      });
+    remote.webContents
+      .fromId(this.view.getWebContentsId())
+      .on('before-input-event', (_event, input) => {
+        // Create a fake KeyboardEvent from the data provided
+        const emulatedKeyboardEvent = new KeyboardEvent(
+          input.type.toLowerCase(),
+          {
+            code: input.code,
+            key: input.key,
+            shiftKey: input.shift,
+            altKey: input.alt,
+            ctrlKey: input.control,
+            metaKey: input.meta,
+            repeat: input.isAutoRepeat,
+            bubbles: true,
+            composed: true,
+            cancelable: true
+          }
+        );
+        // Workaround for mousetrap
+        const keyCodeValue = getKeyboardKeyCode(
+          emulatedKeyboardEvent.key,
+          emulatedKeyboardEvent.code
+        );
+        Object.defineProperty(emulatedKeyboardEvent, 'which', {
+          value: keyCodeValue
+        });
+        Object.defineProperty(emulatedKeyboardEvent, 'keyCode', {
+          value: keyCodeValue
+        });
 
-      this.view.dispatchEvent(emulatedKeyboardEvent);
-    });
+        this.view.dispatchEvent(emulatedKeyboardEvent);
+      });
   }
 
   shouldComponentUpdate(nextProps: ElectronWebviewProps) {
-    return !shallowEquals(removeInitialSrcProp(this.props), removeInitialSrcProp(nextProps));
+    return !shallowEquals(
+      removeInitialSrcProp(this.props),
+      removeInitialSrcProp(nextProps)
+    );
   }
 
   componentDidUpdate(prevProps: ElectronWebviewProps) {
-    Object.keys(changableProps).forEach((propName) => {
+    Object.keys(changableProps).forEach(propName => {
       const propValue = this.props[propName];
       if (propValue !== prevProps[propName]) {
         this[changableProps[propName]](propValue);
@@ -344,7 +359,7 @@ class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
       const className = `${props.className} ${props.hidden ? 'hidden' : ''}`;
       return this.view.setAttribute('class', className);
     }
-  }
+  };
 
   // tslint:disable-next-line:function-name
   UNSAFE_componentWillReceiveProps(nextProps: ElectronWebviewProps) {
@@ -357,7 +372,10 @@ class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
     if (!this.view) return;
     // Calling `.focus()` on an already focused webview actually blurs it.
     // see https://github.com/electron/electron/issues/13697
-    if (document.activeElement && (document.activeElement as HTMLElement).blur) {
+    if (
+      document.activeElement &&
+      (document.activeElement as HTMLElement).blur
+    ) {
       (document.activeElement as HTMLElement).blur();
     }
     this.view.focus();
@@ -377,7 +395,12 @@ class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
 
   render() {
     return (
-      <div ref={(elt) => { this.ref = elt as HTMLElement; }} style={this.props.style as object || {}} />
+      <div
+        ref={elt => {
+          this.ref = elt as HTMLElement;
+        }}
+        style={(this.props.style as object) || {}}
+      />
     );
   }
 }

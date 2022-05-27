@@ -16,7 +16,11 @@ import ReduxBasedGradientProvider from './theme/ReduxBasedGradientProvider';
 import { getGQlClient } from './utils/graphql';
 import ConsoleErrorBoundary from './common/containers/ConsoleErrorBoundary';
 
-import { ActionsBusReactContext, createActionsEmitter, createActionsBus } from './store/actionsBus';
+import {
+  ActionsBusReactContext,
+  createActionsEmitter,
+  createActionsBus
+} from './store/actionsBus';
 
 import { BxNotification } from './notification-center/webview-preload';
 
@@ -24,7 +28,6 @@ window.Notification = BxNotification;
 
 // prevent app pinch zomming
 webFrame.setVisualZoomLevelLimits(1, 1);
-webFrame.setLayoutZoomLevelLimits(0, 0);
 
 if (process.env.STATION_REACT_PERF) {
   const Perf = require('react-addons-perf'); // eslint-disable-line global-require
@@ -39,16 +42,18 @@ const apolloClient = getGQlClient();
 const actionsEmitter = createActionsEmitter();
 const actionsBus = createActionsBus(actionsEmitter);
 
-configureStore(actionsEmitter).then(store => {
-  // for debug purpose, gives us a way to easily access the store
-  window.stationStore = store;
+configureStore(actionsEmitter)
+  .then(store => {
+    // for debug purpose, gives us a way to easily access the store
+    window.stationStore = store;
 
-  render(store);
+    render(store);
 
-  return null;
-}).catch(handleError());
+    return null;
+  })
+  .catch(handleError());
 
-const render = (store) => {
+const render = store => {
   const App = require('./containers/App').default; // eslint-disable-line global-require
 
   ReactDOM.render(
@@ -66,11 +71,13 @@ const render = (store) => {
           </ApolloHooksProvider>
         </ApolloProvider>
       </ActionsBusReactContext.Provider>
-    </Provider>
-    , document.getElementById('root')
+    </Provider>,
+    document.getElementById('root')
   );
 
   ipcRenderer.send('bx-ready-to-show');
 };
 
-if (module.hot) { module.hot.accept(); }
+if (module.hot) {
+  module.hot.accept();
+}

@@ -5,14 +5,12 @@
 // Dock
 // —————————————————————————————————
 
-
 //== Variables
 $dock-size: $app-size;
 $app-dot-size: 18px;
 
 .l-dock {
 }
-
 
 //== Loading
 .l-dock__loading {
@@ -30,9 +28,10 @@ $app-dot-size: 18px;
     z-index: 8;
     @include animation(loader 1s infinite alternate linear);
   }
-  &:after { z-index: 7 }
+  &:after {
+    z-index: 7;
+  }
 }
-
 
 //== Scrolling area
 .l-dock__scroll {
@@ -48,8 +47,9 @@ $app-dot-size: 18px;
 }
 
 //== Children
-.l-dock__scroll__item { margin-top: calc( ( #{$dock-size} - #{$app-size} ) / 2 ) }
-
+.l-dock__scroll__item {
+  margin-top: calc((#{$dock-size} - #{$app-size}) * 0.5);
+}
 
 //== Applications
 .l-dock__app {
@@ -63,14 +63,24 @@ $app-dot-size: 18px;
   @include avatar($app-size, 0);
 
   //== Children
-  .isvg { transform: scale(0.8) translate3d(1px, 1px, 0) }
-  .l-dock__app__bkg { opacity: 0 }
-  .isvg path { opacity: 0.3 }
+  .isvg {
+    transform: scale(0.8) translate3d(1px, 1px, 0);
+  }
+  .l-dock__app__bkg {
+    opacity: 0;
+  }
+  .isvg path {
+    opacity: 0.3;
+  }
 
   //== States
-  .l-dock__app:not(.l-dock__app--active):hover & .isvg path { opacity: 0.6 }
+  .l-dock__app:not(.l-dock__app--active):hover & .isvg path {
+    opacity: 0.6;
+  }
   .l-dock__app--active & .isvg path,
-  .l-dock__app--active & .l-dock__app__bkg { opacity: 1 }
+  .l-dock__app--active & .l-dock__app__bkg {
+    opacity: 1;
+  }
 
   //== Variants
   &.l-dock__app__icon--user {
@@ -78,9 +88,10 @@ $app-dot-size: 18px;
     opacity: 0.3;
     width: auto;
   }
-  &.l-dock__app__icon--user--active { opacity: 1 }
+  &.l-dock__app__icon--user--active {
+    opacity: 1;
+  }
 }
-
 
 //== Has subdock
 .l-dock__app__subdock {
@@ -98,10 +109,13 @@ $app-dot-size: 18px;
     flex: 0 0 auto;
     @include avatar(3px);
   }
-  span.active { background-color: #fff }
-  span + span { margin-left: 3px }
+  span.active {
+    background-color: #fff;
+  }
+  span + span {
+    margin-left: 3px;
+  }
 }
-
 
 //== Notifications and accounts
 .l-dock__app__account,
@@ -124,16 +138,20 @@ $app-dot-size: 18px;
   }
 }
 .l-dock__app__notification {
-  background-color: #FF5E57;
+  background-color: #ff5e57;
   top: 5px;
   z-index: 6;
   @include avatar(8px);
 }
 .l-dock__notification {
   .l-dock__notification__default,
-  &.l-dock__notification--on .l-dock__notification__snoozed { display: block }
+  &.l-dock__notification--on .l-dock__notification__snoozed {
+    display: block;
+  }
   &.l-dock__notification--on .l-dock__notification__default,
-  .l-dock__notification__snoozed { display: none }
+  .l-dock__notification__snoozed {
+    display: none;
+  }
 }
 
 .l-dock__divider {
@@ -146,9 +164,13 @@ $app-dot-size: 18px;
   position: relative;
 
   //== Variants
-  &.active { background-color: #3254e7 }
+  &.active {
+    background-color: #3254e7;
+  }
   &.active .isvg path,
-  &.active:hover .isvg path { opacity: 1 !important }
+  &.active:hover .isvg path {
+    opacity: 1 !important;
+  }
 }
 .l-dock__quick-search {
   position: relative;

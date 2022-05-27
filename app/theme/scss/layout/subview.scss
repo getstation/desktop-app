@@ -4,7 +4,6 @@
 // Subview
 // —————————————————————————————————
 
-
 //== Variables
 $title-height: 36px;
 $favicon-size: 20px;
@@ -25,13 +24,14 @@ $favicon-size: 20px;
     height: 100%;
   }
   //== Variants
-  &.l-subview--show { z-index: $zindex-huge }
+  &.l-subview--show {
+    z-index: $zindex-huge;
+  }
   &.l-subview--fullscreen {
     bottom: 30px;
     top: 30px;
   }
 }
-
 
 .l-subview__title {
   color: rgba(#fff, 0.8);
@@ -45,7 +45,7 @@ $favicon-size: 20px;
 .l-subview__title__favicon {
   background-size: cover;
   display: inline-block;
-  margin-right: ($gutter / 2);
+  margin-right: ($gutter * 0.5);
   position: relative;
   top: 6px;
   @include avatar($favicon-size);
@@ -62,7 +62,9 @@ $favicon-size: 20px;
 
   //== Children
   & > div,
-  webview {height: calc(100vh - #{$title-height}) }
+  webview {
+    height: calc(100vh - #{$title-height});
+  }
   webview {
     position: relative;
     z-index: 2;
@@ -78,21 +80,29 @@ $favicon-size: 20px;
 .l-subview__copy_link,
 .l-subview__open {
   cursor: pointer;
-  margin-top: -($favicon-size / 2);
+  margin-top: -($favicon-size * 0.5);
   position: absolute;
   top: 50%;
   @include avatar($favicon-size, 0);
 }
-.l-subview__reduce { right: $gutter }
-.l-subview__open { right: $gutter + $favicon-size + $gutter }
-.l-subview__copy_link { right: $gutter + $favicon-size + $gutter + $favicon-size + $gutter }
+.l-subview__reduce {
+  right: $gutter;
+}
+.l-subview__open {
+  right: $gutter + $favicon-size + $gutter;
+}
+.l-subview__copy_link {
+  right: $gutter + $favicon-size + $gutter + $favicon-size + $gutter;
+}
 .l-subview__reduce__border {
   opacity: 0.3;
 
   //== States
   .l-subview__reduce:hover &,
   .l-subview__copy_link:hover &,
-  .l-subview__open:hover & { opacity: 1 }
+  .l-subview__open:hover & {
+    opacity: 1;
+  }
 }
 .l-subview__loading {
   display: flex;

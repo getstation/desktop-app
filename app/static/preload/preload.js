@@ -17,8 +17,9 @@ class BxMetasObserver {
   }
 
   startObserve() {
-    this.headMutationObserver =
-      new MutationObserver(this._onMutations.bind(this));
+    this.headMutationObserver = new MutationObserver(
+      this._onMutations.bind(this)
+    );
     this.headMutationObserver.observe(document.head, {
       subtree: true,
       childList: true,
@@ -31,33 +32,32 @@ class BxMetasObserver {
   }
 
   _onMutations(mutations) {
-    const attrChanges =
-      mutations
-        .filter(e => e.type === 'attributes')
-        .filter(e => e.target.matches(BX_META_SELECTOR));
+    const attrChanges = mutations
+      .filter(e => e.type === 'attributes')
+      .filter(e => e.target.matches(BX_META_SELECTOR));
     if (attrChanges.length > 0) return this.emitMetasCurrentValuesIfChanged();
 
-
     // badge meta node removed
-    const deletions =
-      mutations
-        .filter(e => e.type === 'childList')
-        .filter(e => e.removedNodes.length > 0)
-        // removedNodes is nodelist, convert
-        .map(e => Array.from(e.removedNodes).filter(node => !!node.matches))
-        .map(removedNodes => removedNodes.find(node => node.matches(BX_META_SELECTOR)))
-        .filter(removedNode => !!removedNode);
+    const deletions = mutations
+      .filter(e => e.type === 'childList')
+      .filter(e => e.removedNodes.length > 0)
+      // removedNodes is nodelist, convert
+      .map(e => Array.from(e.removedNodes).filter(node => !!node.matches))
+      .map(removedNodes =>
+        removedNodes.find(node => node.matches(BX_META_SELECTOR))
+      )
+      .filter(removedNode => !!removedNode);
     if (deletions.length > 0) return this.emitMetasCurrentValuesIfChanged();
 
-
-    const additions =
-      mutations
-        .filter(e => e.type === 'childList')
-        .filter(e => e.addedNodes.length > 0)
-        // addedNodes is nodelist, convert to array
-        .map(e => Array.from(e.addedNodes).filter(node => !!node.matches))
-        .map(addedNodes => addedNodes.find(node => node.matches(BX_META_SELECTOR)))
-        .filter(addedNode => !!addedNode);
+    const additions = mutations
+      .filter(e => e.type === 'childList')
+      .filter(e => e.addedNodes.length > 0)
+      // addedNodes is nodelist, convert to array
+      .map(e => Array.from(e.addedNodes).filter(node => !!node.matches))
+      .map(addedNodes =>
+        addedNodes.find(node => node.matches(BX_META_SELECTOR))
+      )
+      .filter(addedNode => !!addedNode);
     if (additions.length > 0) return this.emitMetasCurrentValuesIfChanged();
   }
 
@@ -85,13 +85,18 @@ class BxMetasObserver {
 
 const badgeObserver = new BxMetasObserver();
 document.addEventListener(
-  'DOMContentLoaded', () => {
+  'DOMContentLoaded',
+  () => {
     badgeObserver.init();
 
     // track any click so we use it as activity indicator
-    document.body.addEventListener('click', () => {
-      ipc.sendToHost('page-click');
-    }, true);
+    document.body.addEventListener(
+      'click',
+      () => {
+        ipc.sendToHost('page-click');
+      },
+      true
+    );
   },
   false
 );
@@ -115,11 +120,17 @@ require('./window-open');
 
 // This piece of code is injected by `Google Drive Offline` extension
 // It prevents Google drive from displaying the popup when copy/pasting
-(function () {
+(function() {
   window._docs_chrome_extension_exists = !0;
   window._docs_chrome_extension_features_version = 1;
-  window._docs_chrome_extension_permissions = ["alarms", "clipboardRead", "clipboardWrite", "storage", "unlimitedStorage"];
-})()
+  window._docs_chrome_extension_permissions = [
+    'alarms',
+    'clipboardRead',
+    'clipboardWrite',
+    'storage',
+    'unlimitedStorage'
+  ];
+})();
 
 require('../../plugins/webview-preload');
 require('../../notification-center/webview-preload');
@@ -132,38 +143,6 @@ require('./autologin');
 // see APP-760 for more context
 // require('./autofill');
 
-// it looks like require('electron-spellchecker') can take
-// quite a bunch of time, so we'd like to post-pone that
-
-// GDrive catch spellchecker errors and prevent user from saving
-// edited documents. Since Google provide a great spellchecker at
-// the web app level, we don't activate ours.
-// todo - we will load our preloads in a isolated context
-// Electron 5 will set it by default
-
-// The electron spellchecker use webContents.setSpellChecker
-// and use Node native modules.
-// ref: https://github.com/electron/electron/issues/11868
-// ref 2: https://github.com/electron/electron/commit/aadee6cb3542caf2492c3f2369d69cc1d663599b
-
-const spellcheckerBlacklist = [
-  'docs.google.com',
-];
-
-if (!spellcheckerBlacklist.includes(window.location.host)) {
-  setTimeout(() => {
-    try {
-      require('../../spellchecker/webview-preload');
-    } catch (e) {
-      const { protocol } = parse(window.location.href);
-      if (protocol !== 'chrome-extension:') {
-        console.error(e);
-      }
-    }
-  }, 15000);
-}
-
-
 // Forward print actions to handle them in sagas
 window.print = () => {
   ipc.send('print');
@@ -173,37 +152,57 @@ window.print = () => {
 // GDrive expect to have `window.chrome.rumtime` present
 // https://github.com/electron/electron/issues/16587
 if (!window.chrome.runtime) {
-  window.chrome = Object.assign({
-    runtime: {
-      connect: () => {
-        return {
-          onMessage: {
-            addListener: () => { },
-            removeListener: () => { },
-          },
-          postMessage: () => { },
-          disconnect: () => { },
-        };
-      },
-      sendMessage: (extensionId, message, /*optional*/ options, responseCallback) => {
-        if (typeof options === 'function') {
-          responseCallback = options;
+  window.chrome = Object.assign(
+    {
+      runtime: {
+        connect: () => {
+          return {
+            onMessage: {
+              addListener: () => {},
+              removeListener: () => {}
+            },
+            postMessage: () => {},
+            disconnect: () => {}
+          };
+        },
+        sendMessage: (
+          extensionId,
+          message,
+          /*optional*/ options,
+          responseCallback
+        ) => {
+          if (typeof options === 'function') {
+            responseCallback = options;
+          }
+          if (!responseCallback) return;
+          if (typeof responseCallback !== 'function')
+            throw new Error(
+              'Error in invocation of runtime.sendMessage(optional string extensionId, any message, optional object options, optional function responseCallback): No matching signature.'
+            );
+
+          // Not implemented
+          callSendMessageCallbackWithError(
+            responseCallback,
+            'Could not establish connection. Receiving end does not exist.'
+          );
+        },
+        sendNativeMessage: (application, message, responseCallback) => {
+          if (!responseCallback) return;
+          if (typeof responseCallback !== 'function')
+            throw new Error(
+              'Error in invocation of runtime.sendNativeMessage(string application, object message, function responseCallback): No matching signature.'
+            );
+
+          // Not implemented
+          callSendMessageCallbackWithError(
+            responseCallback,
+            'Could not establish connection. Receiving end does not exist.'
+          );
         }
-        if (!responseCallback) return;
-        if (typeof responseCallback !== 'function') throw new Error('Error in invocation of runtime.sendMessage(optional string extensionId, any message, optional object options, optional function responseCallback): No matching signature.');
-
-        // Not implemented
-        callSendMessageCallbackWithError(responseCallback, 'Could not establish connection. Receiving end does not exist.')
-      },
-      sendNativeMessage: (application, message, responseCallback) => {
-        if (!responseCallback) return;
-        if (typeof responseCallback !== 'function') throw new Error('Error in invocation of runtime.sendNativeMessage(string application, object message, function responseCallback): No matching signature.');
-
-        // Not implemented
-        callSendMessageCallbackWithError(responseCallback, 'Could not establish connection. Receiving end does not exist.')
       }
     },
-  }, window.chrome);
+    window.chrome
+  );
 }
 
 /**
@@ -237,13 +236,18 @@ if (window.location.hostname === 'web.whatsapp.com') {
 // Chrome does not emit `KeyboardEvent` for `t` when
 // `Cmd+T` is pressed. We are trying to mimic a similar behavior.
 // related issue: https://github.com/electron/electron/issues/19279
-const isCmdT = e => e.key === 't' && e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey;
+const isCmdT = e =>
+  e.key === 't' && e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey;
 
-window.addEventListener('keydown', (event) => {
-  if (isCmdT(event)) {
-    event.stopPropagation();
-  }
-}, { capture: true });
+window.addEventListener(
+  'keydown',
+  event => {
+    if (isCmdT(event)) {
+      event.stopPropagation();
+    }
+  },
+  { capture: true }
+);
 
 // POST PRELOAD CLEANING
 
@@ -256,7 +260,7 @@ export const whitelist = new Set([
   'chrome',
   '_docs_chrome_extension_exists',
   '_docs_chrome_extension_features_version',
-  '_docs_chrome_extension_permissions',
+  '_docs_chrome_extension_permissions'
 ]);
 
 const { removeDiff } = require('./clean-global');

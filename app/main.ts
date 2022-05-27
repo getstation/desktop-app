@@ -19,29 +19,32 @@ const loadWorker = () => {
     webPreferences: {
       nodeIntegration: true,
       backgroundThrottling: false,
+      enableRemoteModule: true,
       /**
        * See {@link GenericWindowManager} for details
        */
       webSecurity: false,
-      allowRunningInsecureContent: false,
+      allowRunningInsecureContent: false
     },
     width: 0,
     height: 0,
-    show: false,
+    show: false
   });
 
   // Used by other renderers
   (global as any).worker = Object.freeze({
-    webContentsId: worker.webContents.id,
+    webContentsId: worker.webContents.id
   });
 
-  (services.browserWindow as BrowserWindowManagerServiceImpl).setWorkerBrowserWindow(worker).catch(handleError());
+  (services.browserWindow as BrowserWindowManagerServiceImpl)
+    .setWorkerBrowserWindow(worker)
+    .catch(handleError());
 
   worker.loadURL(getUrlToLoad('index.html'));
 
   if (!isPackaged) {
     worker.webContents.openDevTools({
-      mode: 'detach',
+      mode: 'detach'
     });
   }
 
@@ -54,10 +57,11 @@ const loadCliWindow = async (command: string) => {
     webPreferences: {
       nodeIntegration: true,
       backgroundThrottling: false,
+      enableRemoteModule: true
     },
     width: 0,
     height: 0,
-    show: false,
+    show: false
   });
 
   await bw.loadURL(getUrlToLoad('cli.html'));
@@ -89,14 +93,14 @@ const initWorker = () => {
  */
 const overrideUserDataPath = () => {
   if (process.env.OVERRIDE_USER_DATA_PATH) {
-    const userDataPath = path.join(app.getPath('appData'), process.env.OVERRIDE_USER_DATA_PATH);
+    const userDataPath = path.join(
+      app.getPath('appData'),
+      process.env.OVERRIDE_USER_DATA_PATH
+    );
     app.setPath('userData', userDataPath);
   } else if (!isPackaged) {
     app.name = 'Station Dev';
-    const userDataPath = path.join(
-      app.getPath('appData'),
-      'Station Dev'
-    );
+    const userDataPath = path.join(app.getPath('appData'), 'Station Dev');
     app.setPath('userData', userDataPath);
   } else {
     // do not conflict with pre open-source data
@@ -111,7 +115,7 @@ const applyLogLevel = () => {
     logLevel = 'debug';
   }
   if (process.env.LOG_LEVEL) {
-    logLevel = (process.env.LOG_LEVEL as LevelOption);
+    logLevel = process.env.LOG_LEVEL as LevelOption;
   }
 
   log.transports.file.level = logLevel;
@@ -189,7 +193,10 @@ if (!isPackaged) {
   process.on('uncaughtException', error => {
     const stack = error.stack ? error.stack : `${error.name}: ${error.message}`;
     const message = 'Uncaught Exception:\n' + stack;
-    dialog.showErrorBox('A JavaScript error occurred in the main process', message);
+    dialog.showErrorBox(
+      'A JavaScript error occurred in the main process',
+      message
+    );
   });
 } else {
   process.on('unhandledRejection', error => {
@@ -201,6 +208,8 @@ if (!isPackaged) {
   });
 }
 
-if (module.hot) { module.hot.accept(); }
+if (module.hot) {
+  module.hot.accept();
+}
 
 init();
