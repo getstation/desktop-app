@@ -98,7 +98,8 @@ export default class GenericWindowManager extends EventEmitter {
         // A better solution would be to run those requests inside the context of their designated webviews
         // (i.e. make slack calls inside the slack webview context).
         webSecurity: false,
-        allowRunningInsecureContent: false
+        allowRunningInsecureContent: false,
+        contextIsolation: false,
       }
     });
 

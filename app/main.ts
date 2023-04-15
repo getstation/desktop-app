@@ -24,7 +24,8 @@ const loadWorker = () => {
        * See {@link GenericWindowManager} for details
        */
       webSecurity: false,
-      allowRunningInsecureContent: false
+      allowRunningInsecureContent: false,
+      contextIsolation: false,
     },
     width: 0,
     height: 0,
@@ -57,7 +58,8 @@ const loadCliWindow = async (command: string) => {
     webPreferences: {
       nodeIntegration: true,
       backgroundThrottling: false,
-      enableRemoteModule: true
+      enableRemoteModule: true,
+      contextIsolation: false,
     },
     width: 0,
     height: 0,

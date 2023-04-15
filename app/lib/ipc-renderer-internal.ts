@@ -2,13 +2,17 @@
 /**
  * Make `ipcRendererInternal` available as Electron uses it.
  * @see https://github.com/electron/electron/blob/81e9dab52f6f59a56c3f928156823dd482817539/lib/renderer/ipc-renderer-internal.ts
+ * @see new version https://github.com/electron/electron/blob/fa3379a5d5cd6494c126be4d4d21a36c75f46554/lib/renderer/ipc-renderer-internal.ts
  */
 
-const { ipc } = (process as any).electronBinding('ipc');
-const v8Util = (process as any).electronBinding('v8_util');
+import { EventEmitter } from 'events';
 
-// Created by init.js.
-export const ipcRendererInternal = v8Util.getHiddenValue(global, 'ipc-internal');
+const { ipc } = (process as any)._linkedBinding('electron_renderer_ipc');
+//const v8Util = (process as any)._linkedBinding('electron_browser_v8_util');
+  
+//export const ipcRendererInternal = v8Util.getHiddenValue(global, 'ipc-internal');
+export const ipcRendererInternal = new EventEmitter() as any; // as ElectronInternal.IpcRendererInternal;
+ 
 const internal = true;
 
 ipcRendererInternal.send = function (channel: any, ...args: any[]) {
