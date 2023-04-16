@@ -1,105 +1,136 @@
-import {
-  app,
-} from 'electron';
-import enhanceWebRequest from 'electron-better-web-request';
+// import { app, OnBeforeSendHeadersListenerDetails } from 'electron';
+// import enhanceWebRequest from 'electron-better-web-request';
 
 // todo(mikael) type correctly the electron-better-web-request public API
 
-const orderListeners = (listeners: any) => {
-  const orderableOrigins = [
-    'ecx-cors', // warning(hugo) minify all keys
-    'bx-dynamic-user-agent',
-    'ecx-api-handler',
-  ];
+// const orderListeners = (listeners: any) => {
+//   const orderableOrigins = [
+//     'ecx-cors', // warning(hugo) minify all keys
+//     'bx-dynamic-user-agent',
+//     'ecx-api-handler',
+//   ];
 
-  const orderedListeners = orderableOrigins.reduce(
-    (orderedList: any[], origin: string) => {
-      const listener = listeners.find(
-        (l: any) => l.context.origin && l.context.origin === origin
-      );
+//   const orderedListeners = orderableOrigins.reduce(
+//     (orderedList: any[], origin: string) => {
+//       const listener = listeners.find(
+//         (l: any) => l.context.origin && l.context.origin === origin
+//       );
 
-      if (listener) {
-        orderedList.push(listener);
+//       if (listener) {
+//         orderedList.push(listener);
 
-        return orderedList;
-      }
+//         return orderedList;
+//       }
 
-      return orderedList;
-    },
-    []
-  );
+//       return orderedList;
+//     },
+//     []
+//   );
 
-  const unorderedListeners = listeners.filter(
-    (l: any) => !orderableOrigins.includes(l.context.origin)
-  );
+//   const unorderedListeners = listeners.filter(
+//     (l: any) => !orderableOrigins.includes(l.context.origin)
+//   );
 
-  return [...unorderedListeners, ...orderedListeners];
-};
+//   return [...unorderedListeners, ...orderedListeners];
+// };
 
-const webRequestHandler = (listeners: any) => {
-  const sortedListeners = orderListeners(listeners);
+// const webRequestHandler = (listeners: any) => {
+//   const sortedListeners = orderListeners(listeners);
 
-  const response = sortedListeners.reduce(
-    async (accumulator: any, element: any) => {
-      if (accumulator.cancel) {
-        return accumulator;
-      }
+//   const response = sortedListeners.reduce(
+//     async (accumulator: any, element: any) => {
+//       if (accumulator.cancel) {
+//         return accumulator;
+//       }
 
-      const result = await element.apply();
+//       const result = await element.apply();
 
-      return { ...accumulator, ...result };
-    },
-    { cancel: false }
-  );
+//       return { ...accumulator, ...result };
+//     },
+//     { cancel: false }
+//   );
 
-  return response;
-};
+//   return response;
+// };
 
-const callbackMethods = [
-  'onBeforeRequest',
-  'onBeforeSendHeaders',
-  'onHeadersReceived',
-];
+// const callbackMethods = [
+//   'onBeforeRequest',
+//   'onBeforeSendHeaders',
+//   'onHeadersReceived',
+// ];
+
+const defaultUserAgent = [
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1)',
+  'AppleWebKit/537.36 (KHTML, like Gecko)',
+  'Chrome/87.0.4280.141',
+  'Safari/537.36',
+].join(' ');
 
 const whatsappUserAgent = [
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1)',
   'AppleWebKit/537.36 (KHTML, like Gecko)',
-  'Chrome/76.0.3809.100 Safari/537.36',
+  'Chrome/76.0.3809.100',
+  'Safari/537.36',
 ].join(' ');
 
-// @ts-ignore: type
-app.on('session-created', (session: Electron.Session) => {
-  enhanceWebRequest(session);
+export const getUserAgentForApp = (url: string, currentUserAgent: string): string => {
 
-  /*
-  for (const callbackMethod of callbackMethods) {
-    // @ts-ignore
-    session.webRequest.setResolver(callbackMethod, webRequestHandler);
+  // if (!url.startsWith('http://localhost')) {
+  //   console.log(`URL ${url}`);
+  // }
+
+  if (url.startsWith('file://') || url.startsWith('http://localhost')) {
+    return currentUserAgent;
   }
-  */
+  else if (url.startsWith('https://web.whatsapp.com')) {
+    return whatsappUserAgent;
+  }
+  else if (url.startsWith('https://accounts.google.com')) {
+    return 'Chrome/87.0.4280.141';
+  }
 
-  // some webapps have a special behavior when we see we are on Electron
-  // we don't want that so we remove the Electron mention
-  const userAgent = session.getUserAgent();
-  session.setUserAgent(userAgent.replace(/Electron\/\S*\s/, ''));
+  return defaultUserAgent;
+}
 
-  // !! Set User Agent does not affect service workers since
-  // there are outside session context and WhatsApp is not happy
-  // with our custom user agent so we rewrite it on flight,
-  // before send the request
-  const filter = {
-    urls: ['https://web.whatsapp.com/*'],
-  };
+// // @ts-ignore: type
+// app.on('session-created', (session: Electron.Session) => {
+//   enhanceWebRequest(session);
 
-  // @ts-ignore: type
-  session.webRequest.onBeforeSendHeaders(
-    filter,
-    (details: any, callback: any) => {
-      const requestHeaders = {
-        ...details.requestHeaders,
-        'User-Agent': whatsappUserAgent,
-      };
-      callback({ cancel: false, requestHeaders });
-    },
-  );
-});
+//   /*
+//   for (const callbackMethod of callbackMethods) {
+//     // @ts-ignore
+//     session.webRequest.setResolver(callbackMethod, webRequestHandler);
+//   }
+//   */
+
+//   // some webapps have a special behavior when we see we are on Electron
+//   // we don't want that so we remove the Electron mention
+//   const userAgent = session.getUserAgent();
+
+//   // session.setUserAgent(userAgent.replace(/Electron\/\S*\s/, ''));
+//   session.setUserAgent(defaultUserAgent);
+  
+
+//   console.log(`VVVVVV userAgent=${session.getUserAgent()}`);
+
+
+//   // !! Set User Agent does not affect service workers since
+//   // there are outside session context and WhatsApp is not happy
+//   // with our custom user agent so we rewrite it on flight,
+//   // before send the request
+//   const filter = {
+//     urls: ['https://web.whatsapp.com/*'],
+//   };
+
+//   // @ts-ignore: type
+//   session.webRequest.onBeforeSendHeaders(
+//     (details: OnBeforeSendHeadersListenerDetails, callback: any) => {
+//       const requestHeaders = {
+//         ...details.requestHeaders,
+//         'User-Agent': getUserAgent(details.url),
+//       };
+//       callback({ cancel: false, requestHeaders });
+//     },
+//   );
+// });
+

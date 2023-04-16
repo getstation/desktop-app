@@ -1,6 +1,6 @@
 /* tslint:disable global-require, no-import-side-effect */
 import './dotenv';
-import { app, BrowserWindow, ipcMain, dialog, session } from 'electron';
+import { app, BrowserWindow, ipcMain, dialog, session, OnBeforeSendHeadersListenerDetails } from 'electron';
 import log, { LevelOption } from 'electron-log';
 // @ts-ignore: no declaration file
 import { format } from 'electron-log/lib/format';
@@ -11,6 +11,7 @@ import { BrowserWindowManagerServiceImpl } from './services/services/browser-win
 import services from './services/servicesManager';
 import { getUrlToLoad } from './utils/dev';
 import { isPackaged } from './utils/env';
+import { getUserAgentForApp } from './session';
 
 bootServices(); // all side effects related to services (in main process)
 
@@ -77,8 +78,15 @@ const loadCliWindow = async (command: string) => {
   }
 };
 
+
 const initWorker = () => {
   app.on('ready', () => {
+
+    session.defaultSession.webRequest.onBeforeSendHeaders((details: OnBeforeSendHeadersListenerDetails, callback: any) => {
+        details.requestHeaders["User-Agent"] = getUserAgentForApp(details.url, session.defaultSession.getUserAgent());
+        callback({ cancel: false, requestHeaders: details.requestHeaders });
+    });
+
     loadWorker();
 
     if (module.hot) {
