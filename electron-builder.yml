@@ -1,10 +1,4 @@
 appId: org.getstation.DesktopApp
-mac:
-  hardenedRuntime: true
-  gatekeeperAssess: false
-  category: public.app-category.tools
-  entitlements: 'build/entitlements.mac.plist'
-  entitlementsInherit: 'build/entitlements.mac.plist'
 
 artifactName: ${productName}-${arch}.${ext}
 
@@ -37,15 +31,27 @@ dmg:
     y: 150
     type: file
 
+mac:
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+  hardenedRuntime: true
+  gatekeeperAssess: false
+  category: public.app-category.tools
+  entitlements: 'build/entitlements.mac.plist'
+  entitlementsInherit: 'build/entitlements.mac.plist'
+
 win:
   target:
-  - nsis
+    - nsis
   artifactName: ${productName}-${arch}-Setup.${ext}
   verifyUpdateCodeSignature: false
 
 linux:
   target:
-  - AppImage
+    - AppImage
   category: Network
   artifactName: ${productName}-${arch}.${ext}
 
