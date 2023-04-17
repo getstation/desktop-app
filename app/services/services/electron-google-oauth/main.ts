@@ -14,8 +14,6 @@ export class ElectronGoogleOAuthServiceImpl extends ElectronGoogleOAuthService i
     return client.openAuthWindowAndGetTokens(forceAddSession)
       .then(async (tokens) => {
 
-        console.log(`DDDDDD ${JSON.stringify(client.oauth2Client)}`);
-
         const service = google.people({
             version: 'v1',
             auth: client.oauth2Client,
