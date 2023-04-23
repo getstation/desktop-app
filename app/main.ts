@@ -141,13 +141,13 @@ const applyLogLevel = () => {
 };
 
 const installDevToolsExtensions = async () => {
-  const ECx = require('electron-chrome-extension').default;
+//  const ECx = require('electron-chrome-extension').default;
 
   // REACT_DEVELOPER_TOOLS
-  await ECx.load('fmkadmapgofadopljbjfkapdkoienihi');
+//  await ECx.load('fmkadmapgofadopljbjfkapdkoienihi');
 
   // Apollo Client Developer Tools
-  await ECx.load('jdkknkkbebbapilgoeccciglkfbmbnfm');
+//  await ECx.load('jdkknkkbebbapilgoeccciglkfbmbnfm');
 
   // TODO: not working as it
   // Redux DevTools

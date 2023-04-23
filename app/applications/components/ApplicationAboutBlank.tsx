@@ -50,6 +50,11 @@ export default class ApplicationAboutBlank extends React.PureComponent<Props, {}
   render() {
     const { classes, applicationName, canGoBack } = this.props;
 
+
+    console.log(`ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ  ApplicationAboutBlank`);
+
+    
+
     return (
       <div className={classes!.container}>
         <div>

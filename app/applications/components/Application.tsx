@@ -121,6 +121,10 @@ class ApplicationImpl extends React.PureComponent<Props, {}> {
   render() {
     const { classes, application, isExtension, actionType, subTitle } = this.props;
 
+
+    console.log(`ZZZZZZZZZZZZZZZZZZZZZZZZZZZ ApplicationImpl`);
+
+
     return (
       <div className={classes!.container}>
         <div className={classes!.iconContainer}>
