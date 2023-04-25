@@ -1,6 +1,6 @@
 import * as log from 'electron-log';
-import { delay, SagaIterator } from 'redux-saga';
-import { all, call, put, race, take } from 'redux-saga/effects';
+import { SagaIterator } from 'redux-saga';
+import { all, call, delay, put, race, take } from 'redux-saga/effects';
 import { installApplication, InstallApplicationReturn } from '../applications/sagas/lifecycle';
 import { takeEveryWitness } from '../utils/sagas';
 import { GoogleSigninError, signInWithGoogle } from './api';
@@ -48,7 +48,7 @@ function* signinThenInstallApplication(action: RequestSignInThenAddAppAction): S
     success: take((subaction: any) =>
       subaction.type === CREATE && subaction.provider === action.provider),
     error: take(SIGNIN_ERROR),
-    timeout: call(delay, 120000), // 2 minutes
+    timeout: delay(120000), // 2 minutes
   });
 
   if (success) {

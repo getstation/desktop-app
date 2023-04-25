@@ -1,5 +1,4 @@
-import { delay } from 'redux-saga';
-import { all, call, put, select } from 'redux-saga/effects';
+import { all, call, put, select, delay } from 'redux-saga/effects';
 import {
   ACTIVATE_FOR_CURRENT_TAB,
   FIND_NEXT_IN_TAB,
@@ -35,7 +34,7 @@ function* waitBeforeCallingFindInPage(mountedAt) {
   const waitMsBeforeFindInPage = 2500;
   const diff = Date.now() - mountedAt;
   if (diff < waitMsBeforeFindInPage) {
-    yield call(delay, waitMsBeforeFindInPage - diff);
+    yield delay(waitMsBeforeFindInPage - diff);
   }
 }
 

@@ -1,6 +1,7 @@
 import ms from 'ms';
 import KeyboardLayout from 'keyboard-layout';
-import { delay, eventChannel } from 'redux-saga';
+import { eventChannel } from 'redux-saga';
+import { delay } from 'redux-saga/effects';
 import {
   all,
   call,
@@ -63,7 +64,7 @@ function* sagaPrepareQuit(bxApp) {
     // Here we pause the state persistor to ensure that the debounce in each `StateProxy`
     // will have time to fulfill
     bxApp.store.persistor.pause();
-    yield call(delay, DELAY); // Wait for persistence to flush
+    yield delay(DELAY); // Wait for persistence to flush
 
     // We tell app that we do not want to prevent `quit` event anymore
     yield callService('electronApp', 'canResumeQuit');
@@ -137,7 +138,7 @@ function* sagaLoadingScreen() {
   if (domReady) {
     // Most of the time, when 'dom-ready' is triggered, the webview is still blank,
     // so we wait a little longer
-    yield call(delay, 1500);
+    yield delay(1500);
   }
 
   yield put(setLoadingScreenVisibility(false));

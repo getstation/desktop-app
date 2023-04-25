@@ -1,5 +1,6 @@
 import ms = require('ms');
-import { delay, SagaIterator } from 'redux-saga';
+import { SagaIterator } from 'redux-saga';
+import { delay } from 'redux-saga/effects';
 import { all, call, fork, select, take } from 'redux-saga/effects';
 import * as Sequelize from 'sequelize';
 import Activity from '../activity/model';
@@ -43,7 +44,7 @@ const cleanOldActivity = async (timeToKeepData: number): Promise<void> => {
 function* cleanOldActivityEveryDay(): SagaIterator {
   const timeToKeepData = ms('180 days'); // about 3 months
 
-  yield call(delay, ms('5 minutes'));
+  yield delay(ms('5 minutes'));
 
   yield call(cleanOldActivity, timeToKeepData);
 

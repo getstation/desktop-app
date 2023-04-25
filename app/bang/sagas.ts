@@ -2,7 +2,8 @@
 import { search, activity, SDK } from '@getstation/sdk';
 import * as log from 'electron-log';
 import isEmpty = require('is-empty');
-import { delay, SagaIterator } from 'redux-saga';
+import { SagaIterator } from 'redux-saga';
+import { delay } from 'redux-saga/effects';
 import { all, call, fork, put, select, getContext } from 'redux-saga/effects';
 import { Selector } from 'reselect';
 // @ts-ignore: no declaration file
@@ -206,7 +207,7 @@ function* onSelectItem(action: SelectItemAction): SagaIterator {
 
   if (isBangVisible) {
     yield put(setVisibility(format, false, 'item-selected'));
-    yield call(delay, 300);
+    yield delay(300);
   }
 
   if (onSelect) {
@@ -235,7 +236,7 @@ function* onCyclingStep({ item, format }: CyclingStepAction): SagaIterator {
 
 function* resetQueryOnBangHide({ visible, format }: SetVisibilityAction): SagaIterator {
   if (!visible && format === 'center-modal') {
-    yield call(delay, 300); // workaround: wait for the bang to close completely
+    yield delay(300); // workaround: wait for the bang to close completely
     yield put(setSearchValue(''));
   }
 }
