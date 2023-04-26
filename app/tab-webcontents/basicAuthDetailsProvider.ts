@@ -25,7 +25,7 @@ export class BasicAuthDetailsProviderServiceImpl extends BasicAuthDetailsProvide
     // Wait for the form to be submitted to continue
     const action = await this.store.runSaga(function* () {
       return yield take((act: any) => act.type === PERFORM_BASIC_AUTH && act.tabId === tabId);
-    }).done;
+    }).toPromise();
 
     this.store.dispatch(promptWebcontentsBasicAuth(tabId, false));
 

@@ -27,7 +27,7 @@ export class WebContentsOverrideProviderServiceImpl extends WebContentsOverrideP
       if (twc) return;
       // not populated yet, so we wait
       yield take((act: any) => act.type === NEW_WEBCONTENTS_ATTACHED_TO_TAB && act.webcontentsId === webContentsId);
-    }).done;
+    }).toPromise();
 
     const overrides: WebContentsOverrideData = {};
     const manifest = await this.getManifestByWebContentsId(webContentsId);

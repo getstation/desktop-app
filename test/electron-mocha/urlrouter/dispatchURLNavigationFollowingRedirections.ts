@@ -42,7 +42,7 @@ describe('URL Router Follow Redirects', () => {
       },
       dispatcher,
       { url: shortenedUrl })
-      .done;
+      .toPromise();
 
     server.stop();
 
@@ -63,7 +63,7 @@ describe('URL Router Follow Redirects', () => {
       },
       dispatcher,
       { url: shortenedUrl })
-      .done;
+      .toPromise();
 
     server.stop();
 
@@ -85,7 +85,7 @@ describe('URL Router Follow Redirects', () => {
       },
       dispatcher,
       { url: shortenedUrl })
-      .done;
+      .toPromise();
 
     server.stop();
 
@@ -104,7 +104,7 @@ describe('URL Router Follow Redirects', () => {
       },
       dispatcher,
       { url: bitlyUrlForGithub })
-      .done;
+      .toPromise();
 
     assert.equal(action, 'NEW_TAB');
     assert.equal(destination.applicationId, 'github-S1PwoQsDG');
@@ -122,7 +122,7 @@ describe('URL Router Follow Redirects', () => {
       },
       dispatcher,
       { url: googleUrlForStationWebsite })
-      .done;
+      .toPromise();
 
     assert.equal(action, 'NAV_TO_TAB');
     assert.equal(destination.tabId, 'getstation-app-1/getstation-tab-1');
@@ -140,7 +140,7 @@ describe('URL Router Follow Redirects', () => {
       },
       dispatcher,
       { url: gitIoLink })
-      .done;
+      .toPromise();
 
     assert.equal(action, 'NEW_TAB');
     assert.equal(destination.applicationId, 'github-S1PwoQsDG');
@@ -158,7 +158,7 @@ describe('URL Router Follow Redirects', () => {
       },
       dispatcher,
       { url: twitterUrlForRandomSite })
-      .done;
+      .toPromise();
 
     assert.equal(action, 'DEFAULT_BROWSER');
     assert.equal(url, twitterUrlForRandomSite);
@@ -176,7 +176,7 @@ describe('URL Router Follow Redirects', () => {
       },
       dispatcher,
       { url: slackUrlForRandomSite })
-      .done;
+      .toPromise();
 
     assert.equal(action, 'DEFAULT_BROWSER');
     assert.equal(url, slackUrlForRandomSite);
@@ -193,7 +193,7 @@ describe('URL Router Follow Redirects', () => {
       },
       dispatcher,
       { url: googleUrlForAppearIn })
-      .done;
+      .toPromise();
 
     assert.equal(action, 'NAV_TO_TAB');
     assert.equal(destination.tabId, 'gdrive-mu-BJZ3JYXiPf/Ml3CcWibN');

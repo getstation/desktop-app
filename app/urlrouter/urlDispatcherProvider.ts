@@ -26,6 +26,6 @@ export class UrlDispatcherProviderServiceImpl extends UrlDispatcherProviderServi
     // run the `dispatchUrlSaga`, which is the entry point to dispatch a new URL inside bx
     await this.store.runSaga(dispatchUrlSaga, {
       type: DISPATCH_URL, url, origin: { tabId, applicationId }, options: { target: NEW_TAB },
-    }).done;
+    }).toPromise();
   }
 }

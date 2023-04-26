@@ -42,7 +42,7 @@ function asyncInit(store: StationStoreWorker, sagaMiddleware: SagaMiddleware<any
     );
     persistor.pause();
 
-    const sagaPromise = sagaMiddleware.run(rootSaga, bxApp).done;
+    const sagaPromise = sagaMiddleware.run(rootSaga, bxApp).toPromise();
     const promiseState = getInitialState('local');
 
     // Wait for saga being ready before notifying that Electron App is ready

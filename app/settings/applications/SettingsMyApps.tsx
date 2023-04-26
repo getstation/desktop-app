@@ -177,7 +177,7 @@ const SettingsMyApps = connect<StateProps, DispatchProps>(
     dispatch
   ),
   null,
-  { withRef: true },
+  { forwardRef: true },
 )(SettingsMyAppsImpl);
 
 export default SettingsMyApps;
