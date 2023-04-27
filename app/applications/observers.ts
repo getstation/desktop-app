@@ -16,7 +16,7 @@ import { remoteUpdateInstalledApplications } from './duck';
  * unique values) which "equality" can be tested via `Immutable.is`.
  */
 const observeServicesInstalled = observer(getInstalledApplicationsIdsAsSetWithoutNonInstallables,
-  (dispatch: Dispatch<any>) => dispatch(remoteUpdateInstalledApplications()),
+  (dispatch: Dispatch) => dispatch(remoteUpdateInstalledApplications()),
   {
     // Immutable.is will treat Sets equlity better than JS native ===
     equals: Immutable.is,

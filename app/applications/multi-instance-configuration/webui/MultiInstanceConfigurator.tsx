@@ -237,10 +237,6 @@ export default class MultiInstanceConfigurator extends React.Component<Props, St
 
   render() {
 
-
-    console.log(`ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ  MultiInstanceConfigurator`);
-
-    
     const { classes } = this.props;
     const { manifest } = this.state;
 

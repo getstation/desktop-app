@@ -7,7 +7,7 @@ import { activateService } from './duck';
 
 const observeAppsInstalled = observer(
   getInstalledManifestURLs,
-  (dispatch: Dispatch<any>, URLs: string[], previousURLs: string[]) => {
+  (dispatch: Dispatch, URLs: string[], previousURLs: string[]) => {
 
     const URLSet = Immutable.Set(URLs);
     const previousURLSet = Immutable.Set(previousURLs);

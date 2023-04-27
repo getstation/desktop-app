@@ -24,7 +24,7 @@ const getManifestURLFromServiceId = (plugins: Immutable.Map<string, any>, servic
  */
 const observePluginsActivation = observer(
   getPlugins,
-  (_dispatch: Dispatch<any>, plugins: Immutable.Map<string, any>, previousPlugins: Immutable.Map<string, any>) => {
+  (_dispatch: Dispatch, plugins: Immutable.Map<string, any>, previousPlugins: Immutable.Map<string, any>) => {
     if (!plugins || plugins === previousPlugins) return;
     const pluginIds = Immutable.Set<string>(pluginsToServiceIds(plugins));
     const previousPluginIds = previousPlugins ? Immutable.Set<string>(pluginsToServiceIds(previousPlugins)) : Immutable.Set<string>();
