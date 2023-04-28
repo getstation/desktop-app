@@ -71,6 +71,10 @@ const whatsappUserAgent = [
   'AppleWebKit/537.36 (KHTML, like Gecko)',
   'Chrome/76.0.3809.100',
   'Safari/537.36',
+
+  // 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)',
+  // 'AppleWebKit/537.36 (KHTML, like Gecko)',
+  // 'Chrome/112.0.0.0 Safari/537.36',
 ].join(' ');
 
 export const getUserAgentForApp = (url: string, currentUserAgent: string): string => {
@@ -92,6 +96,9 @@ export const getUserAgentForApp = (url: string, currentUserAgent: string): strin
   return defaultUserAgent;
 }
 
+export const getRefererForApp = (referer: string): string => {
+  return referer && referer.startsWith('http://localhost') ? '' : referer;
+}
 // // @ts-ignore: type
 // app.on('session-created', (session: Electron.Session) => {
 //   enhanceWebRequest(session);
