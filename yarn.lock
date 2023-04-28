@@ -3634,14 +3634,7 @@
   resolved "https://registry.yarnpkg.com/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
   integrity sha512-EaObqwIvayI5a8dCzhFrjKzVwKLxjoG9T6Ppd5CEo07LRKfQ8Yokw54r5+Wq7FaBQ+yXRvQAYPrHwya1/UFt9g==
 
-"@types/fs-extra@^5.0.4":
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-5.1.0.tgz#2a325ef97901504a3828718c390d34b8426a10a1"
-  integrity sha512-AInn5+UBFIK9FK5xc9yP5e3TQSPNNgjHByqYcj9g5elVBnDQcQL7PlO1CIRy2gWlbwK7UPYqi7vRvFA44dCmYQ==
-  dependencies:
-    "@types/node" "*"
-
-"@types/fs-extra@^9.0.7":
+"@types/fs-extra@^9.0.13", "@types/fs-extra@^9.0.7":
   version "9.0.13"
   resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-9.0.13.tgz#7594fbae04fe7f1918ce8b3d213f74ff44ac1f45"
   integrity sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==
@@ -3858,7 +3851,7 @@
   resolved "https://registry.yarnpkg.com/@types/mkdirp/-/mkdirp-0.3.29.tgz#7f2ad7ec55f914482fc9b1ec4bb1ae6028d46066"
   integrity sha1-fyrX7FX5FEgvybHsS7GuYCjUYGY=
 
-"@types/mocha@^5.2.0":
+"@types/mocha@^5.2.5":
   version "5.2.7"
   resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-5.2.7.tgz#315d570ccb56c53452ff8638738df60726d5b6ea"
   integrity sha512-NYrtPht0wGzhwe9+/idPaBB+TqkY9AhTvOLMkThm0IoEfLaiVQZwBwyJ5puCkO3AUCWrmcoePjp2mbFocKy4SQ==
@@ -7821,10 +7814,10 @@ content-disposition@0.5.4:
   version "0.5.2"
   resolved "https://codeload.github.com/alexstrat/content-disposition/tar.gz/240b36fcad7478aeb1e79b1ccc75ebf514ec64e0"
 
-content-security-policy-parser@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/content-security-policy-parser/-/content-security-policy-parser-0.1.1.tgz#aab52f88264f316d909919d281a13dbf042b293c"
-  integrity sha512-JsDgjU0uZJ1IYKGSX5yVlZh20dD2iv0L3peulJbW/FhEl/OvlGF5jdJY6EpuRjZeqg/YZcnZvvUJTJm/BQmulg==
+content-security-policy-parser@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/content-security-policy-parser/-/content-security-policy-parser-0.4.1.tgz#27b507649b1b75bc75f179df91919a869ee116b5"
+  integrity sha512-NNJS8XPnx3OKr/CUOSwDSJw+lWTrZMYnclLKj0Y9CYOfJNJTWLFGPg3u2hYgbXMXKVRkZR2fbyReNQ1mUff/Qg==
 
 content-type-parser@^1.0.1:
   version "1.0.2"
@@ -9419,10 +9412,10 @@ dottie@^2.0.2:
   resolved "https://registry.yarnpkg.com/dottie/-/dottie-2.0.3.tgz#797a4f4c92a9a65499806be4051b9d9dcd5a5d77"
   integrity sha512-4liA0PuRkZWQFQjwBypdxPfZaRWiv5tkhMXY2hzsa2pNf5s7U3m9cwUchfNKe8wZQxdGPQQzO6Rm2uGe0rvohQ==
 
-download-crx@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/download-crx/-/download-crx-1.0.5.tgz#54dbe56b7dfdd15d6a614e9527800de334d58abe"
-  integrity sha1-VNvla3390V1qYU6VJ4AN4zTVir4=
+download-crx@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/download-crx/-/download-crx-1.1.0.tgz#ad6758164a06fa6b3a1d8b8cfe92194fe2b74e93"
+  integrity sha512-I+itPJvylK8ByLad3kVuic+tHsO84N1JWCniHcEhfw0HfI+DrELQ44VE4WW7XxM8BrEBs4vEFcE/HWUdw4pRXA==
   dependencies:
     argparse "^1.0.7"
     got "^6.3.0"
@@ -9524,28 +9517,28 @@ electron-builder@22.10.5:
     update-notifier "^5.1.0"
     yargs "^16.2.0"
 
-"electron-chrome-extension@https://github.com/viktor44/electron-chrome-extension/releases/download/6.0.1/release.tar.gz":
-  version "6.0.1"
-  resolved "https://github.com/viktor44/electron-chrome-extension/releases/download/6.0.1/release.tar.gz#e15206dea9f2dcc0d67cd421520879827f6df6e3"
+"electron-chrome-extension@https://github.com/viktor44/electron-chrome-extension/releases/download/v6.0.2/release.tar.gz":
+  version "6.0.2"
+  resolved "https://github.com/viktor44/electron-chrome-extension/releases/download/v6.0.2/release.tar.gz#3669b8532677150e61ca3dd67d3a1b49616d3c5d"
   dependencies:
     capitalize "^2.0.4"
-    content-security-policy-parser "^0.1.1"
-    download-crx "^1.0.5"
+    content-security-policy-parser "^0.4.1"
+    download-crx "^1.1.0"
     electron-better-web-request "^1.0.1"
-    electron-fetch "^1.3.0"
+    electron-fetch "^1.9.1"
     electron-ipc-plus "^1.3.4"
     electron-simple-ipc "https://github.com/viktor44/electron-simple-ipc/archive/refs/tags/1.1.2.tar.gz"
-    electron-simple-rpc "https://github.com/viktor44/electron-simple-rpc/archive/refs/tags/1.1.3.tar.gz"
-    fs-extra "^7.0.1"
-    glob "7.1.4"
+    electron-simple-rpc "https://github.com/viktor44/electron-simple-rpc/archive/refs/tags/v1.1.4.tar.gz"
+    fs-extra "^9.1.0"
+    glob "^7.1.4"
     mime-types "^2.1.21"
     p-queue "^3.0.0"
-    querystring "^0.2.0"
+    querystring "^0.2.1"
     string.prototype.matchall "^3.0.1"
     tmp-promise "^1.0.5"
     unzip-crx-3 "^0.2.0"
     uuid "^3.2.1"
-    xml-js "^1.6.8"
+    xml-js "^1.6.11"
 
 electron-debug@^3.2.0:
   version "3.2.0"
@@ -9565,12 +9558,12 @@ electron-devtools-installer@^2.2.4:
     rimraf "^2.5.2"
     semver "^5.3.0"
 
-electron-fetch@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/electron-fetch/-/electron-fetch-1.3.0.tgz#00d9bb1fe7a66ddc3fea538910e01b26fee9abb5"
-  integrity sha512-WzHnWZqKdiCKHqqHu+GphezoWRSUVH6BQ/f13vu16VwYKJRZNt2dUrx40eZJcyZcDGn6RJDTAHS6jVoHoglgNw==
+electron-fetch@^1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/electron-fetch/-/electron-fetch-1.9.1.tgz#e28bfe78d467de3f2dec884b1d72b8b05322f30f"
+  integrity sha512-M9qw6oUILGVrcENMSRRefE1MbHPIz0h79EKIeJWK9v563aT9Qkh8aEHPO1H5vi970wPirNY+jO9OpFoLiMsMGA==
   dependencies:
-    encoding "^0.1.12"
+    encoding "^0.1.13"
 
 electron-ipc-plus@^1.3.4:
   version "1.3.4"
@@ -9688,21 +9681,17 @@ electron-rebuild@^1.8.6:
     spawn-rx "^3.0.0"
     yargs "^14.2.0"
 
-"electron-simple-ipc@https://github.com/noscito/electron-simple-ipc/archive/refs/tags/1.1.2.tar.gz":
-  version "1.1.2"
-  uid "562c7dc9b4e133a3c193675c26571f73e58b4897"
-  resolved "https://github.com/noscito/electron-simple-ipc/archive/refs/tags/1.1.2.tar.gz#562c7dc9b4e133a3c193675c26571f73e58b4897"
-
 "electron-simple-ipc@https://github.com/viktor44/electron-simple-ipc/archive/refs/tags/1.1.2.tar.gz":
   version "1.1.2"
+  uid "562c7dc9b4e133a3c193675c26571f73e58b4897"
   resolved "https://github.com/viktor44/electron-simple-ipc/archive/refs/tags/1.1.2.tar.gz#562c7dc9b4e133a3c193675c26571f73e58b4897"
 
-"electron-simple-rpc@https://github.com/viktor44/electron-simple-rpc/archive/refs/tags/1.1.3.tar.gz":
-  version "1.1.3"
-  resolved "https://github.com/viktor44/electron-simple-rpc/archive/refs/tags/1.1.3.tar.gz#54e02e0e58510abf57162feaa632a4601aba5a11"
+"electron-simple-rpc@https://github.com/viktor44/electron-simple-rpc/archive/refs/tags/v1.1.4.tar.gz":
+  version "1.1.4"
+  resolved "https://github.com/viktor44/electron-simple-rpc/archive/refs/tags/v1.1.4.tar.gz#d5bf8df7111ef0d69af1ccd93896eb57ac2ac320"
   dependencies:
     bluebird "^3.7.2"
-    electron-simple-ipc "https://github.com/noscito/electron-simple-ipc/archive/refs/tags/1.1.2.tar.gz"
+    electron-simple-ipc "https://github.com/viktor44/electron-simple-ipc/archive/refs/tags/1.1.2.tar.gz"
     lodash "^4.17.21"
     uuid "^3.0.1"
 
@@ -9902,7 +9891,7 @@ encodeurl@^1.0.2, encodeurl@~1.0.2:
   resolved "https://registry.yarnpkg.com/encodeurl/-/encodeurl-1.0.2.tgz#ad3ff4c86ec2d029322f5a02c3a9a606c95b3f59"
   integrity sha1-rT/0yG7C0CkyL1oCw6mmBslbP1k=
 
-encoding@^0.1.11, encoding@^0.1.12:
+encoding@^0.1.11, encoding@^0.1.12, encoding@^0.1.13:
   version "0.1.13"
   resolved "https://registry.yarnpkg.com/encoding/-/encoding-0.1.13.tgz#56574afdd791f54a8e9b2785c0582a2d26210fa9"
   integrity sha512-ETBauow1T35Y/WZMkio9jiM0Z5xjHHmJ4XmjZOq1l/dXz3lr2sRn87nJy20RupqSh1F2m3HHPSp8ShIPQJrJ3A==
@@ -18935,6 +18924,11 @@ querystring@0.2.0, querystring@^0.2.0:
   resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
   integrity sha1-sgmEkgO7Jd+CDadW50cAWHhSFiA=
 
+querystring@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.1.tgz#40d77615bb09d16902a85c3e38aa8b5ed761c2dd"
+  integrity sha512-wkvS7mL/JMugcup3/rMitHmd9ecIGd2lhFhK9N3UUQ450h66d1r3Y9nvXzQAW1Lq+wyx61k/1pfKS5KuKiyEbg==
+
 querystringify@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.1.1.tgz#60e5a5fd64a7f8bfa4d2ab2ed6fdf4c85bad154e"
@@ -22757,7 +22751,7 @@ tslint-config-airbnb@=5.11.0:
     tslint-eslint-rules "^5.4.0"
     tslint-microsoft-contrib "~5.2.0"
 
-tslint-config-station@0.6.0:
+tslint-config-station@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/tslint-config-station/-/tslint-config-station-0.6.0.tgz#5c8be4c296e2f11fc6e1e68a3dea26e336ebcfaa"
   integrity sha512-E2txp3T11RmMzhUNAqGZDAasIFir9iS8ulLeXxd38qX8euhA58Bz5bXHv+c4R3led29Tym2Zfj1Agle1ZT4XTg==
@@ -24174,10 +24168,10 @@ xdg-basedir@^4.0.0:
   resolved "https://registry.yarnpkg.com/xdg-basedir/-/xdg-basedir-4.0.0.tgz#4bc8d9984403696225ef83a1573cbbcb4e79db13"
   integrity sha512-PSNhEJDejZYV7h50BohL09Er9VaIefr2LMAf3OEmpCkjOi34eYyQYAXUTjEQtZJTKcF0E2UKTh+osDLsgNim9Q==
 
-xml-js@^1.6.8:
-  version "1.6.8"
-  resolved "https://registry.yarnpkg.com/xml-js/-/xml-js-1.6.8.tgz#e06419c54235f18f4c2cdda824cbd65a782330de"
-  integrity sha512-kUv/geyN80d+s1T68uBfjoz+PjNUjwwf5AWWRwKRqqQaGozpMVsFsKYnenPsxlbN/VL7f0ia8NfLLPCDwX+95Q==
+xml-js@^1.6.11:
+  version "1.6.11"
+  resolved "https://registry.yarnpkg.com/xml-js/-/xml-js-1.6.11.tgz#927d2f6947f7f1c19a316dd8eea3614e8b18f8e9"
+  integrity sha512-7rVi2KMfwfWFl+GpPg6m80IVMWXLRjO+PxTq7V2CDhoGak0wzYzFgUY2m4XJ47OGdXd8eLE8EmwfAmdjw7lC1g==
   dependencies:
     sax "^1.2.4"
 
