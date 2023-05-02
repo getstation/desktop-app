@@ -7,6 +7,7 @@ publish:
 
 asar: true
 
+afterPack: "scripts/after-pack.js"
 afterSign: "scripts/notarize.js"
 
 # electronDownload:
@@ -54,7 +55,6 @@ linux:
     - AppImage
   category: Network
   artifactName: ${productName}-${arch}.${ext}
-
 
 extraResources:
   - ".env.example"
