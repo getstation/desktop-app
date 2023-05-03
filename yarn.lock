@@ -9487,9 +9487,9 @@ electron-builder@23.6.0:
     simple-update-notifier "^1.0.7"
     yargs "^17.5.1"
 
-"electron-chrome-extension@https://github.com/viktor44/electron-chrome-extension/releases/download/v6.0.2/release.tar.gz":
-  version "6.0.2"
-  resolved "https://github.com/viktor44/electron-chrome-extension/releases/download/v6.0.2/release.tar.gz#3669b8532677150e61ca3dd67d3a1b49616d3c5d"
+"electron-chrome-extension@https://github.com/viktor44/electron-chrome-extension/releases/download/v6.0.3/release.tar.gz":
+  version "6.0.3"
+  resolved "https://github.com/viktor44/electron-chrome-extension/releases/download/v6.0.3/release.tar.gz#0bbe55ab9476c55dda12f09f469fa9fbde05c82f"
   dependencies:
     capitalize "^2.0.4"
     content-security-policy-parser "^0.4.1"
