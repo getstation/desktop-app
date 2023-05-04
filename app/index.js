@@ -16,11 +16,7 @@ import ReduxBasedGradientProvider from './theme/ReduxBasedGradientProvider';
 import { getGQlClient } from './utils/graphql';
 import ConsoleErrorBoundary from './common/containers/ConsoleErrorBoundary';
 
-import {
-  ActionsBusReactContext,
-  createActionsEmitter,
-  createActionsBus
-} from './store/actionsBus';
+import { ActionsBusReactContext, createActionsEmitter, createActionsBus } from './store/actionsBus';
 
 import { BxNotification } from './notification-center/webview-preload';
 
@@ -53,7 +49,7 @@ configureStore(actionsEmitter)
   })
   .catch(handleError());
 
-const render = store => {
+const render = (store) => {
   const App = require('./containers/App').default; // eslint-disable-line global-require
 
   ReactDOM.render(

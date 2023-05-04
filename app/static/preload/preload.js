@@ -120,7 +120,7 @@ require('./window-open');
 
 // This piece of code is injected by `Google Drive Offline` extension
 // It prevents Google drive from displaying the popup when copy/pasting
-(function() {
+(function () {
   window._docs_chrome_extension_exists = !0;
   window._docs_chrome_extension_features_version = 1;
   window._docs_chrome_extension_permissions = [
@@ -260,7 +260,7 @@ export const whitelist = new Set([
   'chrome',
   '_docs_chrome_extension_exists',
   '_docs_chrome_extension_features_version',
-  '_docs_chrome_extension_permissions'
+  '_docs_chrome_extension_permissions',
 ]);
 
 const { removeDiff } = require('./clean-global');

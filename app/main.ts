@@ -30,12 +30,12 @@ const loadWorker = () => {
     },
     width: 0,
     height: 0,
-    show: false
+    show: false,
   });
 
   // Used by other renderers
   (global as any).worker = Object.freeze({
-    webContentsId: worker.webContents.id
+    webContentsId: worker.webContents.id,
   });
 
   (services.browserWindow as BrowserWindowManagerServiceImpl)
@@ -46,7 +46,7 @@ const loadWorker = () => {
 
   if (!isPackaged) {
     worker.webContents.openDevTools({
-      mode: 'detach'
+      mode: 'detach',
     });
   }
 
@@ -64,7 +64,7 @@ const loadCliWindow = async (command: string) => {
     },
     width: 0,
     height: 0,
-    show: false
+    show: false,
   });
 
   await bw.loadURL(getUrlToLoad('cli.html'));
@@ -87,10 +87,6 @@ const initWorker = () => {
         details.referrer = getRefererForApp(details.referrer);
         details.requestHeaders['Referer'] = details.referrer;
 
-
-        // console.log(`Referer: ${details.referrer}, Headers: ${JSON.stringify(details.requestHeaders)}`);
-
-
         callback({ cancel: false, requestHeaders: details.requestHeaders });
     });
 
@@ -110,10 +106,7 @@ const initWorker = () => {
  */
 const overrideUserDataPath = () => {
   if (process.env.OVERRIDE_USER_DATA_PATH) {
-    const userDataPath = path.join(
-      app.getPath('appData'),
-      process.env.OVERRIDE_USER_DATA_PATH
-    );
+    const userDataPath = path.join(app.getPath('appData'), process.env.OVERRIDE_USER_DATA_PATH);
     app.setPath('userData', userDataPath);
   } else if (!isPackaged) {
     app.name = 'Station Dev';
@@ -132,7 +125,7 @@ const applyLogLevel = () => {
     logLevel = 'debug';
   }
   if (process.env.LOG_LEVEL) {
-    logLevel = process.env.LOG_LEVEL as LevelOption;
+    logLevel = (process.env.LOG_LEVEL as LevelOption);
   }
 
   log.transports.file.level = logLevel;
@@ -210,10 +203,7 @@ if (!isPackaged) {
   process.on('uncaughtException', error => {
     const stack = error.stack ? error.stack : `${error.name}: ${error.message}`;
     const message = 'Uncaught Exception:\n' + stack;
-    dialog.showErrorBox(
-      'A JavaScript error occurred in the main process',
-      message
-    );
+    dialog.showErrorBox('A JavaScript error occurred in the main process', message);
   });
 } else {
   process.on('unhandledRejection', error => {

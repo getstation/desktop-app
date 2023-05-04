@@ -3,7 +3,6 @@ import { EventEmitter } from 'events';
 import { buffers, Channel, END, eventChannel, TakeableChannel } from 'redux-saga';
 import {
   call,
-/* vk: CallEffectFn, */
   cancel,
   delay,
   fork,

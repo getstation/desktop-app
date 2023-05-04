@@ -48,7 +48,7 @@ export interface ElectronWebviewProps extends Omit<Electron.WebviewTag, 'src'> {
 export const changableProps = {
   useragent: 'setUserAgent',
   devtools: 'setDevTools',
-  muted: 'setAudioMuted'
+  muted: 'setAudioMuted',
 };
 
 export const events = [
@@ -83,7 +83,7 @@ export const events = [
   'update-target-url',
   'devtools-opened',
   'devtools-closed',
-  'devtools-focused'
+  'devtools-focused',
 ];
 
 export const methods = [
@@ -139,7 +139,7 @@ export const methods = [
   'setZoomLevel',
   'showDefinitionForSelection',
   'getWebContents',
-  'focus'
+  'focus',
 ];
 
 /*
@@ -236,12 +236,9 @@ class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
     const container = ReactDOM.findDOMNode(this.ref);
 
     let propString = '';
-    Object.keys(this.props).forEach(propName => {
+    Object.keys(this.props).forEach((propName) => {
       // Waiting for a fix https://github.com/electron/electron/issues/9618
-      if (
-        this.props[propName] !== undefined &&
-        typeof this.props[propName] !== 'function'
-      ) {
+      if (this.props[propName] !== undefined && typeof this.props[propName] !== 'function') {
         propString += getPropString(propName, this.props[propName]);
       }
     });
@@ -269,7 +266,7 @@ class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
     this.view.addEventListener('did-attach', (...attachArgs: any[]) => {
       this.ready = true;
       this.forwardKeyboardEvents();
-      events.forEach(event => {
+      events.forEach((event) => {
         const propName = camelCase(`on-${event}`);
         if (this.props[propName]) {
           this.view.addEventListener(event, this.props[propName], false);
@@ -284,7 +281,7 @@ class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
       this.view.focus();
     });
 
-    methods.forEach(method => {
+    methods.forEach((method) => {
       if (this[method]) return;
       this[method] = (...args: any[]) => {
         if (!this.ready) return;
@@ -299,7 +296,7 @@ class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
 
   /**
    * With Electron 3.0 webviews, events are not bubbled-up anymore.
-   * The goal of this method is to simulate the old behavior.
+   * The goal of this method is to simulate the old behaviour.
    */
   forwardKeyboardEvents() {
     // Inspired by https://github.com/electron/electron/issues/14258#issuecomment-416893856
@@ -339,14 +336,11 @@ class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
   }
 
   shouldComponentUpdate(nextProps: ElectronWebviewProps) {
-    return !shallowEquals(
-      removeInitialSrcProp(this.props),
-      removeInitialSrcProp(nextProps)
-    );
+    return !shallowEquals(removeInitialSrcProp(this.props), removeInitialSrcProp(nextProps));
   }
 
   componentDidUpdate(prevProps: ElectronWebviewProps) {
-    Object.keys(changableProps).forEach(propName => {
+    Object.keys(changableProps).forEach((propName) => {
       const propValue = this.props[propName];
       if (propValue !== prevProps[propName]) {
         this[changableProps[propName]](propValue);
@@ -372,10 +366,7 @@ class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
     if (!this.view) return;
     // Calling `.focus()` on an already focused webview actually blurs it.
     // see https://github.com/electron/electron/issues/13697
-    if (
-      document.activeElement &&
-      (document.activeElement as HTMLElement).blur
-    ) {
+    if (document.activeElement && (document.activeElement as HTMLElement).blur) {
       (document.activeElement as HTMLElement).blur();
     }
     this.view.focus();

@@ -15,11 +15,7 @@ import { BrowserXThemeProvider } from '@getstation/theme';
 import ConsoleErrorBoundary from './common/containers/ConsoleErrorBoundary';
 import { getGQlClient } from './utils/graphql';
 
-import {
-  ActionsBusReactContext,
-  createActionsEmitter,
-  createActionsBus
-} from './store/actionsBus';
+import { ActionsBusReactContext, createActionsEmitter, createActionsBus } from './store/actionsBus';
 import { BxNotification } from './notification-center/webview-preload';
 
 window.Notification = BxNotification;
@@ -50,7 +46,7 @@ configureStore(actionsEmitter)
   })
   .catch(handleError());
 
-const render = store => {
+const render = (store) => {
   const AppSub = require('./containers/AppSub').default; // eslint-disable-line global-require
 
   ReactDOM.render(

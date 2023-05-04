@@ -8,10 +8,8 @@
 import { EventEmitter } from 'events';
 
 const { ipc } = (process as any)._linkedBinding('electron_renderer_ipc');
-//const v8Util = (process as any)._linkedBinding('electron_browser_v8_util');
   
-//export const ipcRendererInternal = v8Util.getHiddenValue(global, 'ipc-internal');
-export const ipcRendererInternal = new EventEmitter() as any; // as ElectronInternal.IpcRendererInternal;
+export const ipcRendererInternal = new EventEmitter() as any;
  
 const internal = true;
 

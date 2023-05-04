@@ -10,10 +10,12 @@ export const addToastForDownload = downloadId => ({
   type: ADD,
   downloadId
 });
+
 export const removeToastForDownload = downloadId => ({
   type: REMOVE,
   downloadId
 });
+
 export const openDownloadedFile = downloadId => (dispatch, getState) => {
   const state = getState();
   const filePath = state.getIn(['downloads', downloadId, 'filePath']);

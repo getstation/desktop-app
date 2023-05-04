@@ -5,10 +5,7 @@ import { NotificationProps } from '../../notification-center/types';
 import { handleError } from '../../services/api/helpers';
 import { observer } from '../../services/lib/helpers';
 import { RPC } from '../../services/lib/types';
-import {
-  BrowserWindowService,
-  BrowserWindowServiceConstructorOptions
-} from '../../services/services/browser-window/interface';
+import { BrowserWindowService, BrowserWindowServiceConstructorOptions } from '../../services/services/browser-window/interface';
 import services from '../../services/servicesManager';
 import { isPackaged } from '../../utils/env';
 import { windowCreated, windowDeleted } from '../duck';
@@ -28,21 +25,23 @@ services.electronApp
   .catch(handleError());
 
 export default class GenericWindowManager extends EventEmitter {
+
   public static store: Store<any>;
   protected static FILEPATH: string;
   public window?: RPC.Node<BrowserWindowService>;
   public windowId?: number;
 
   static dispatch(a: Action) {
-    if (allowDispatch && GenericWindowManager.store)
+    if (allowDispatch && GenericWindowManager.store) {
       GenericWindowManager.store.dispatch(a);
+    }
   }
 
   static focus(webviewId: number) {
     return services.browserWindow.focus(webviewId).catch(
       handleError({
         console: false,
-        log: true
+        log: true,
       })
     );
   }
@@ -72,10 +71,7 @@ export default class GenericWindowManager extends EventEmitter {
     }
   }
 
-  async create(
-    options: BrowserWindowServiceConstructorOptions,
-    shownow: boolean = false
-  ) {
+  async create(options: BrowserWindowServiceConstructorOptions, shownow: boolean = false) {
     if (this.isCreated()) return this.window;
 
     this.window = await services.browserWindow.create({
@@ -174,8 +170,7 @@ export default class GenericWindowManager extends EventEmitter {
 
   load(filepath?: string) {
     if (!this.isCreated()) return;
-    const fp =
-      filepath || (<typeof GenericWindowManager>this.constructor).FILEPATH;
+    const fp = filepath || (<typeof GenericWindowManager>this.constructor).FILEPATH;
     if (!fp) throw new Error(`Invalid loadURL parameter: ${fp}`);
     return this.window.load(fp);
   }
