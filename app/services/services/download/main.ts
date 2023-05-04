@@ -50,6 +50,7 @@ function isAttachmentAsMainframe(details: Electron.OnCompletedListenerDetails) {
     // can't parse
     return false;
   }
+}
 
 function hasEmptyHistory(webContentsId?: number) {
   if (!webContentsId) return true;
