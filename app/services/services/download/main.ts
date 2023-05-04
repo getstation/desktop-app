@@ -3,7 +3,6 @@ import * as contentDisposition from 'content-disposition';
 import { app, BrowserWindow, dialog, Session, session as electronSession, webContents } from 'electron';
 import { head } from 'ramda';
 // @ts-ignore: no declaration file
-//import * as recursivelyLowercaseKeys from 'recursive-lowercase-json';
 import { Observer } from 'rxjs/Observer';
 import { Observable } from 'rxjs/Rx';
 import { observeSessions } from '../../api/sessions';
@@ -51,19 +50,6 @@ function isAttachmentAsMainframe(details: Electron.OnCompletedListenerDetails) {
     // can't parse
     return false;
   }
-
-  // vk:
-  // const responseHeaders = recursivelyLowercaseKeys(details.responseHeaders);
-  // if (!responseHeaders['content-disposition'] || !responseHeaders['content-disposition'][0]) return false;
-
-  // try {
-  //   const disposition = contentDisposition.parse(responseHeaders['content-disposition'][0]);
-  //   return disposition.type === 'attachment';
-  // } catch (_) {
-  //   // can't parse
-  //   return false;
-  // }
-}
 
 function hasEmptyHistory(webContentsId?: number) {
   if (!webContentsId) return true;
