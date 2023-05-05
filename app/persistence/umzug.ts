@@ -4,8 +4,6 @@ import { SequelizeStorage, Umzug } from 'umzug';
 import db from '../database/database';
 import { DataTypes } from 'sequelize';
 
-db.getQueryInterface().create;
-
 const umzug = new Umzug({
   context: db.getQueryInterface(),
   storage: new SequelizeStorage({ sequelize: db }),
