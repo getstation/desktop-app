@@ -4,6 +4,8 @@ import getPasswordManagerLinks from '../../../app/password-managers/persistence/
 import onePasswordProxy from '../../../app/password-managers/providers/onePassword/persistence';
 import umzug from '../../../app/persistence/umzug';
 
+beforeAll(() => umzug.up());
+
 // Password Manager Config
 
 const config1 = Immutable.Map({
@@ -35,17 +37,15 @@ const config2Bis = Immutable.Map({
 
 const bothConfigs = config1.merge(config2);
 
-beforeAll(() => umzug.up());
-
 test('db is empty', () => {
-  return onePasswordProxy.get()
-    .then(configs => {
-      expect(configs.size === 0).toBe(true);
-    });
+  return onePasswordProxy.get().then(configs => {
+    expect(configs.size === 0).toBe(true);
+  });
 });
 
 test('contains state with 1 config', () => {
-  return onePasswordProxy.set(config1)
+  return onePasswordProxy
+    .set(config1)
     .then(() => onePasswordProxy.get())
     .then(configs => {
       expect(config1.toJS()).toEqual(configs.toJS());
@@ -53,7 +53,8 @@ test('contains state with 1 config', () => {
 });
 
 test('update with sames values', () => {
-  return onePasswordProxy.set(config1)
+  return onePasswordProxy
+    .set(config1)
     .then(() => onePasswordProxy.get())
     .then(configs => {
       expect(config1.toJS()).toEqual(configs.toJS());
@@ -61,7 +62,8 @@ test('update with sames values', () => {
 });
 
 test('add one identity', () => {
-  return onePasswordProxy.set(bothConfigs)
+  return onePasswordProxy
+    .set(bothConfigs)
     .then(() => onePasswordProxy.get())
     .then(configs => {
       expect(bothConfigs.toJS()).toEqual(configs.toJS());
@@ -69,7 +71,8 @@ test('add one identity', () => {
 });
 
 test('delete one identity', () => {
-  return onePasswordProxy.set(config2)
+  return onePasswordProxy
+    .set(config2)
     .then(() => onePasswordProxy.get())
     .then(configs => {
       expect(config2.toJS()).toEqual(configs.toJS());
@@ -77,7 +80,8 @@ test('delete one identity', () => {
 });
 
 test('update identity', () => {
-  return onePasswordProxy.set(config2Bis)
+  return onePasswordProxy
+    .set(config2Bis)
     .then(() => onePasswordProxy.get())
     .then(configs => {
       expect(config2Bis.toJS()).toEqual(configs.toJS());
@@ -86,12 +90,10 @@ test('update identity', () => {
 
 test('empty memory cache and load from db', () => {
   onePasswordProxy.clear();
-  return onePasswordProxy.get()
-    .then(configs => {
-      expect(config2Bis.toJS()).toEqual(configs.toJS());
-    });
+  return onePasswordProxy.get().then(configs => {
+    expect(config2Bis.toJS()).toEqual(configs.toJS());
+  });
 });
-
 
 // Password Manager Link
 
@@ -102,7 +104,7 @@ const link1 = Immutable.Map({
     passwordManagerId: 'efounders.1password.com',
     passwordManagerItemId: 'JFFAA4TIKNE5DKSTRYK4QMTMZQ',
     login: 'mylogin',
-    avatar: 'https://test.com/image.png',
+    avatar: 'https://test.com/image.png'
   })
 });
 
@@ -113,7 +115,7 @@ const link2 = Immutable.Map({
     passwordManagerId: 'efounders.1password.com',
     passwordManagerItemId: 'AAFAA4TIKNE5DKSTRYK4BBBBBB',
     login: 'mylogin2Bis',
-    avatar: 'https://test.com/image2Bis.png',
+    avatar: 'https://test.com/image2Bis.png'
   })
 });
 
@@ -124,25 +126,23 @@ const link2Bis = Immutable.Map({
     passwordManagerId: 'efounders.1password.com',
     passwordManagerItemId: 'AAFAA4TIKNE5DKSTRYK4BBBBBB',
     login: 'mylogin2Bis',
-    avatar: 'https://test.com/image2Bis.png',
+    avatar: 'https://test.com/image2Bis.png'
   })
 });
 
 const bothLinks = link1.merge(link2);
 
-beforeAll(() => umzug.up());
-
 const proxyLinks = getPasswordManagerLinks(models);
 
 test('db is empty', () => {
-  return proxyLinks.get()
-    .then(links => {
-      expect(links.size === 0).toBe(true);
-    });
+  return proxyLinks.get().then(links => {
+    expect(links.size === 0).toBe(true);
+  });
 });
 
 test('contains state with 1 config', () => {
-  return proxyLinks.set(link1)
+  return proxyLinks
+    .set(link1)
     .then(() => proxyLinks.get())
     .then(links => {
       expect(link1.toJS()).toEqual(links.toJS());
@@ -150,7 +150,8 @@ test('contains state with 1 config', () => {
 });
 
 test('update with sames values', () => {
-  return proxyLinks.set(link1)
+  return proxyLinks
+    .set(link1)
     .then(() => proxyLinks.get())
     .then(links => {
       expect(link1.toJS()).toEqual(links.toJS());
@@ -158,7 +159,8 @@ test('update with sames values', () => {
 });
 
 test('add one identity', () => {
-  return proxyLinks.set(bothLinks)
+  return proxyLinks
+    .set(bothLinks)
     .then(() => proxyLinks.get())
     .then(links => {
       expect(bothLinks.toJS()).toEqual(links.toJS());
@@ -166,7 +168,8 @@ test('add one identity', () => {
 });
 
 test('delete one identity', () => {
-  return proxyLinks.set(link2)
+  return proxyLinks
+    .set(link2)
     .then(() => proxyLinks.get())
     .then(links => {
       expect(link2.toJS()).toEqual(links.toJS());
@@ -174,7 +177,8 @@ test('delete one identity', () => {
 });
 
 test('update identity', () => {
-  return proxyLinks.set(link2Bis)
+  return proxyLinks
+    .set(link2Bis)
     .then(() => proxyLinks.get())
     .then(links => {
       expect(link2Bis.toJS()).toEqual(links.toJS());
@@ -183,8 +187,7 @@ test('update identity', () => {
 
 test('empty memory cache and load from db', () => {
   proxyLinks.clear();
-  return proxyLinks.get()
-    .then(links => {
-      expect(link2Bis.toJS()).toEqual(links.toJS());
-    });
+  return proxyLinks.get().then(links => {
+    expect(link2Bis.toJS()).toEqual(links.toJS());
+  });
 });
