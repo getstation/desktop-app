@@ -120,7 +120,7 @@ jobs:
       - name: Upgrade node-gyp version
         shell: pwsh
         run: |
-          npm install --global node-gyp@latest
+          npm install --global node-gyp@8.4.1
           npm prefix -g | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
       - name: Install dependencies
         if: |
