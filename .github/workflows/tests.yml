@@ -68,6 +68,7 @@ jobs:
         run: |
           npm config set registry "http://registry.npmjs.org"
           yarn config set registry "http://registry.npmjs.org"
+          yarn config set network-timeout 300000
       - name: Install dependencies
         run: yarn install --frozen-lockfile --prefer-offline && yarn run rebuild-all-native
       - name: GQL Codegen
