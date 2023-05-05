@@ -117,6 +117,11 @@ jobs:
           key: ${{ runner.os }}-${{ matrix.node-version }}-nodemodules-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-${{ matrix.node-version }}-nodemodules-
+      - name: Upgrade node-gyp version
+        shell: pwsh
+        run: |
+          npm install --global node-gyp@latest
+          npm prefix -g | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
       - name: Install dependencies
         if: |
           steps.yarn-cache.outputs.cache-hit != 'true' ||
