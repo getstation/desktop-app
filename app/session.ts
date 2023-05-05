@@ -60,30 +60,16 @@
 // ];
 
 const defaultUserAgent = [
-  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1)',
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)',
   'AppleWebKit/537.36 (KHTML, like Gecko)',
-  'Chrome/87.0.4280.141',
-  'Safari/537.36',
-].join(' ');
-
-const whatsappUserAgent = [
-  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1)',
-  'AppleWebKit/537.36 (KHTML, like Gecko)',
-  'Chrome/76.0.3809.100',
+  'Chrome/112.0.0.0',
   'Safari/537.36',
 ].join(' ');
 
 export const getUserAgentForApp = (url: string, currentUserAgent: string): string => {
 
-  // if (!url.startsWith('http://localhost')) {
-  //   console.log(`URL ${url}`);
-  // }
-
   if (url.startsWith('file://') || url.startsWith('http://localhost')) {
     return currentUserAgent;
-  }
-  else if (url.startsWith('https://web.whatsapp.com')) {
-    return whatsappUserAgent;
   }
   else if (url.startsWith('https://accounts.google.com')) {
     return 'Chrome/87.0.4280.141';
