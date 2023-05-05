@@ -1,5 +1,5 @@
 import ms from 'ms';
-import KeyboardLayout from '@axosoft/keyboard-layout';
+// import KeyboardLayout from '@axosoft/keyboard-layout';
 import { eventChannel } from 'redux-saga';
 import { delay } from 'redux-saga/effects';
 import {
@@ -186,32 +186,32 @@ function* sagaHandleDownloadDialog() {
   });
 }
 
-const observeKeyboardLayout = emitter => {
-  let firstValueEmitted = false;
-  KeyboardLayout.observeCurrentKeyboardLayout(layout => {
-    if (firstValueEmitted) {
-      emitter(layout);
-    } else {
-      setImmediate(() => {
-        emitter(layout);
-        firstValueEmitted = true;
-      });
-    }
-  });
-};
+// const observeKeyboardLayout = emitter => {
+//   let firstValueEmitted = false;
+//   KeyboardLayout.observeCurrentKeyboardLayout(layout => {
+//     if (firstValueEmitted) {
+//       emitter(layout);
+//     } else {
+//       setImmediate(() => {
+//         emitter(layout);
+//         firstValueEmitted = true;
+//       });
+//     }
+//   });
+// };
 
-const createKeyboardLayoutChannel = () =>
-  eventChannel(emitter => {
-    const subscription = observeKeyboardLayout(emitter);
-    return () => subscription.dispose();
-  });
+// const createKeyboardLayoutChannel = () =>
+//   eventChannel(emitter => {
+//     const subscription = observeKeyboardLayout(emitter);
+//     return () => subscription.dispose();
+//   });
 
-function* sagaHandleKeyboardLayout() {
-  const keyboardLayoutChannel = createKeyboardLayoutChannel();
-  yield takeEveryWitness(keyboardLayoutChannel, function*(layout) {
-    yield put(keyboardLayoutChanged(layout));
-  });
-}
+// function* sagaHandleKeyboardLayout() {
+//   const keyboardLayoutChannel = createKeyboardLayoutChannel();
+//   yield takeEveryWitness(keyboardLayoutChannel, function*(layout) {
+//     yield put(keyboardLayoutChanged(layout));
+//   });
+// }
 
 /**
  * For dev purpose.
@@ -248,7 +248,7 @@ export default function* main(bxApp) {
   yield all([
     takeEveryWitness(READY, sagaLoadingScreen),
     takeEveryWitness(READY, sagaHandleDownloadDialog),
-    takeEveryWitness(READY, sagaHandleKeyboardLayout),
+    // takeEveryWitness(READY, sagaHandleKeyboardLayout),
     takeEveryWitness(READY, sagaLoadAppMetadata),
     takeEveryWitness(READY, sagaPrepareQuit, bxApp),
     takeEveryWitness(REHYDRATION_COMPLETE, sagaSyncAutoLaunch),

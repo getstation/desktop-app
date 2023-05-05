@@ -31,19 +31,6 @@
   dependencies:
     tslib "~2.0.1"
 
-"@axosoft/keyboard-layout@^2.0.19-gk.1":
-  version "2.0.19-gk.1"
-  resolved "https://registry.yarnpkg.com/@axosoft/keyboard-layout/-/keyboard-layout-2.0.19-gk.1.tgz#c9b26107325f8f134e50ddac509c125fbf7fc202"
-  integrity sha512-/Z329miGIqWPxlcCdDcqzzYnBOhwB0kRRYPvGolB6GWc9RmZPOMGjb66Crd4OnALvI4nO+ztsW7onakuhLUBRw==
-  dependencies:
-    "@axosoft/nan" "^2.18.0-gk.1"
-    event-kit "^2.0.0"
-
-"@axosoft/nan@^2.18.0-gk.1":
-  version "2.18.0-gk.1"
-  resolved "https://registry.yarnpkg.com/@axosoft/nan/-/nan-2.18.0-gk.1.tgz#bf058fdae75224c04212edd01d534db7b9e019b1"
-  integrity sha512-rBLCaXNfzbM/XakZhvuambkKatlFBHVtAgiMKV/YmNZvcBKWocNGJSyXiDPUDHJ7fCTVgEe1h66vfzdE4vBJTQ==
-
 "@babel/code-frame@7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.0.0.tgz#06e2ab19bdb535385559aabb5ba59729482800f8"
@@ -10368,11 +10355,6 @@ event-emitter@^0.3.5:
   dependencies:
     d "1"
     es5-ext "~0.10.14"
-
-event-kit@^2.0.0:
-  version "2.5.3"
-  resolved "https://registry.yarnpkg.com/event-kit/-/event-kit-2.5.3.tgz#d47e4bc116ec0aacd00263791fa1a55eb5e79ba1"
-  integrity sha512-b7Qi1JNzY4BfAYfnIRanLk0DOD1gdkWHT4GISIn8Q2tAf3LpU8SP2CMwWaq40imYoKWbtN4ZhbSRxvsnikooZQ==
 
 event-pubsub@4.3.0:
   version "4.3.0"

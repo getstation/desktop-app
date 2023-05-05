@@ -224,7 +224,6 @@
   },
   "dependencies": {
     "1password-node": "^3.0.0",
-    "@axosoft/keyboard-layout": "^2.0.19-gk.1",
     "@babel/plugin-proposal-decorators": "^7.4.4",
     "@babel/runtime": "^7.4.3",
     "@electron/remote": "^2.0.9",
