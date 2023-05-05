@@ -31,6 +31,19 @@
   dependencies:
     tslib "~2.0.1"
 
+"@axosoft/keyboard-layout@^2.0.19-gk.1":
+  version "2.0.19-gk.1"
+  resolved "https://registry.yarnpkg.com/@axosoft/keyboard-layout/-/keyboard-layout-2.0.19-gk.1.tgz#c9b26107325f8f134e50ddac509c125fbf7fc202"
+  integrity sha512-/Z329miGIqWPxlcCdDcqzzYnBOhwB0kRRYPvGolB6GWc9RmZPOMGjb66Crd4OnALvI4nO+ztsW7onakuhLUBRw==
+  dependencies:
+    "@axosoft/nan" "^2.18.0-gk.1"
+    event-kit "^2.0.0"
+
+"@axosoft/nan@^2.18.0-gk.1":
+  version "2.18.0-gk.1"
+  resolved "https://registry.yarnpkg.com/@axosoft/nan/-/nan-2.18.0-gk.1.tgz#bf058fdae75224c04212edd01d534db7b9e019b1"
+  integrity sha512-rBLCaXNfzbM/XakZhvuambkKatlFBHVtAgiMKV/YmNZvcBKWocNGJSyXiDPUDHJ7fCTVgEe1h66vfzdE4vBJTQ==
+
 "@babel/code-frame@7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.0.0.tgz#06e2ab19bdb535385559aabb5ba59729482800f8"
@@ -15060,14 +15073,6 @@ jwt-decode@^2.2.0:
   resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-2.2.0.tgz#7d86bd56679f58ce6a84704a657dd392bba81a79"
   integrity sha1-fYa9VmefWM5qhHBKZX3TkruoGnk=
 
-keyboard-layout@^2.0.17:
-  version "2.0.17"
-  resolved "https://registry.yarnpkg.com/keyboard-layout/-/keyboard-layout-2.0.17.tgz#32d35dc4196a88a3973b6c8863fd3c1b39643d43"
-  integrity sha512-W9LL+1e8CS9fi0s8ZHINDN1HZ6QpYjE4yLi4+faed7ozppNOAxINjv5w16zG9tJv8Jp5LJrCfO5PZ9aV1m5d4g==
-  dependencies:
-    event-kit "^2.0.0"
-    nan "^2.13.2"
-
 keyboardevent-from-electron-accelerator@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/keyboardevent-from-electron-accelerator/-/keyboardevent-from-electron-accelerator-2.0.0.tgz#ace21b1aa4e47148815d160057f9edb66567c50c"
@@ -16628,7 +16633,7 @@ mware-ts@^1.0.0:
   dependencies:
     bluebird "^3.5.1"
 
-nan@^2.12.1, nan@^2.13.2:
+nan@^2.12.1:
   version "2.14.2"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.2.tgz#f5376400695168f4cc694ac9393d0c9585eeea19"
   integrity sha512-M2ufzIiINKCuDfBSAUr1vWQ+vuVcA9kqx8JJUsbQi6yf1uGRyb7HfpdfUr5qLXf3B/t8dPvcjhKMmlfnP47EzQ==
@@ -16770,11 +16775,6 @@ node-addon-api@^4.2.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-4.3.0.tgz#52a1a0b475193e0928e98e0426a0d1254782b77f"
   integrity sha512-73sE9+3UaLYYFmDsFZnqCInzPyh3MqIwZO9cw58yIqAZhONrrabrYyYe3TuIqtIiOuTXVhsGau8hcrhhwSsDIQ==
-
-node-addon-api@^5.0.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-5.1.0.tgz#49da1ca055e109a23d537e9de43c09cca21eb762"
-  integrity sha512-eh0GgfEkpnoWDq+VY8OyvYhFEzBk6jIYbRKdIlyTiAXIVJ8PyBaKb0rp7oDtoddbdoHWhq8wwr+XZ81F1rpNdA==
 
 node-dir@^0.1.10, node-dir@^0.1.17:
   version "0.1.17"
@@ -23797,22 +23797,6 @@ widest-line@^3.1.0:
   integrity sha512-NsmoXalsWVDMGupxZ5R08ka9flZjjiLvHVAWYOKtiKM8ujtZWr9cRffak+uSE48+Ob8ObalXpwyeUiyDD6QFgg==
   dependencies:
     string-width "^4.0.0"
-
-windows-notification-state@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/windows-notification-state/-/windows-notification-state-2.0.0.tgz#b7b696921d21f19a2e2dd12d96cfb16314c7ff32"
-  integrity sha512-8c2DQBZw8wgCU73a7oLp+YfzbLAxLa3D7OONXpfH3Rk2r2lEH+1NIvw7gYUVxior8zXpFu6WCgzjcARwbaRl/w==
-  dependencies:
-    bindings "^1.5.0"
-    node-addon-api "^5.0.0"
-
-windows-quiet-hours@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/windows-quiet-hours/-/windows-quiet-hours-2.0.0.tgz#3c4fdabcb07dc6519a2d3a2e7aa8c4db92281730"
-  integrity sha512-ANHLNqcsaA0w6iRkKbN5iYu0kNq5ByPAOxBsFzIUi6efdmCDskum8XnsRBnK/ASzPsjfEJUXttbQ75lJjTF8vA==
-  dependencies:
-    bindings "^1.5.0"
-    node-addon-api "*"
 
 winreg@1.2.4:
   version "1.2.4"

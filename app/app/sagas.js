@@ -1,12 +1,11 @@
 import ms from 'ms';
-import KeyboardLayout from 'keyboard-layout';
+import KeyboardLayout from '@axosoft/keyboard-layout';
 import { eventChannel } from 'redux-saga';
 import { delay } from 'redux-saga/effects';
 import {
   all,
   call,
   cancel,
-
   fork,
   put,
   race,

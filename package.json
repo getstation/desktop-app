@@ -224,6 +224,7 @@
   },
   "dependencies": {
     "1password-node": "^3.0.0",
+    "@axosoft/keyboard-layout": "^2.0.19-gk.1",
     "@babel/plugin-proposal-decorators": "^7.4.4",
     "@babel/runtime": "^7.4.3",
     "@electron/remote": "^2.0.9",
@@ -290,7 +291,6 @@
     "join-array": "^1.1.3",
     "jss-nested": "^6.0.1",
     "jwt-decode": "^2.2.0",
-    "keyboard-layout": "^2.0.17",
     "keycode": "^2.2.0",
     "ldclient-js": "^2.10.2",
     "lodash.camelcase": "^4.3.0",
