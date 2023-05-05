@@ -295,7 +295,6 @@
     "lodash.snakecase": "^4.1.1",
     "lodash.throttle": "^4.1.1",
     "lru-cache": "^4.1.1",
-    "macos-notification-state": "^2.0.2",
     "markdown-it": "^10.0.0",
     "markdown-it-emoji": "^1.4.0",
     "median": "^0.0.2",

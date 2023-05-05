@@ -57,8 +57,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
-          # The workaround below with node-gyp doesn't work for cached node installation
-          node-version: "14.21.2"
+          node-version: "14"
           cache: "yarn"
       # See https://github.com/nodejs/node-gyp/blob/main/docs/Force-npm-to-use-global-node-gyp.md
       # https://github.com/nodejs/node-gyp/blob/main/docs/Updating-npm-bundled-node-gyp.md
