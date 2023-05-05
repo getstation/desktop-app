@@ -110,6 +110,13 @@ jobs:
           key: ${{ runner.os }}-${{ matrix.node-version }}-nodemodules-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-${{ matrix.node-version }}-nodemodules-
+      # See https://github.com/nodejs/node-gyp/issues/2272
+      # https://github.com/nodejs/node-gyp/blob/main/docs/Updating-npm-bundled-node-gyp.md
+      - name: Upgrade node-gyp version
+        shell: pwsh
+        run: |
+          npm install --global node-gyp@latest
+          npm prefix -g | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
       - name: Install dependencies
         if: |
           steps.yarn-cache.outputs.cache-hit != 'true' ||
