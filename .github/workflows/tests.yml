@@ -124,6 +124,7 @@ jobs:
           $NodeModulesPath = $NodeDirPath + "\node_modules\npm\node_modules\npm-lifecycle"
           cd $NodeModulesPath
           npm install node-gyp@8.x
+      - name: Install dependencies
         if: |
           steps.yarn-cache.outputs.cache-hit != 'true' ||
           steps.cache-node-modules.outputs.cache-hit != 'true'
