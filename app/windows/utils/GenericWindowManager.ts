@@ -17,7 +17,7 @@ services.electronApp
       {
         onBeforeQuit() {
           allowDispatch = false;
-        }
+        },
       },
       'gwm-quit'
     )
@@ -96,7 +96,7 @@ export default class GenericWindowManager extends EventEmitter {
         webSecurity: false,
         allowRunningInsecureContent: false,
         contextIsolation: false,
-      }
+      },
     });
 
     this.emit('window-created');
@@ -150,9 +150,9 @@ export default class GenericWindowManager extends EventEmitter {
           },
           onNewNotification(notificationId: string, props: NotificationProps) {
             self.emit('new-notification', notificationId, props, {
-              webContentsId
+              webContentsId,
             });
-          }
+          },
         },
         'gwm'
       )

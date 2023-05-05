@@ -45,7 +45,7 @@ function isAttachmentAsMainframe(details: Electron.OnCompletedListenerDetails) {
   try {
     const disposition = contentDisposition.parse(dispositionHeader[0]);
     return disposition.type === 'attachment';
-  } 
+  }
   catch (_) {
     // can't parse
     return false;

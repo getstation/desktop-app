@@ -8,8 +8,8 @@ import { StationUserIdentity } from './types';
 const processGoogleAuthData = (data: { profile: people_v1.Schema$Person, tokens: Credentials }): Omit<StationUserIdentity, 'identityId'> => {
   const { profile, tokens } = data;
   const nameObject = profile.names ? profile.names[0] : {};
-  const emailObject = profile.emailAddresses ? profile.emailAddresses[0] : {}; 
-  const photoObject = profile.photos ? profile.photos[0] : {}; 
+  const emailObject = profile.emailAddresses ? profile.emailAddresses[0] : {};
+  const photoObject = profile.photos ? profile.photos[0] : {};
   return {
     provider: 'google',
     userId: nameObject.metadata?.source?.id || 'undefined',

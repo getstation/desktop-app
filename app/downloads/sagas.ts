@@ -116,7 +116,7 @@ function* handleDownloadSaga(downloadItemService: RPC.Node<DownloadItemService>)
   const endedAt = yield call(Date.now);
   yield put(
     updateItemProgress(downloadId, doneState, {
-      endedAt, progressRate: 1
+      endedAt, progressRate: 1,
     })
   );
 }
@@ -145,7 +145,7 @@ export default function* main(): SagaIterator {
     takeEveryWitness(SET_DOWNLOAD_FOLDER, handleSetDownloadFolder),
     takeEveryWitness(DOWNLOAD_FOLDER_BROWSE_CLICK, handleChangeDownloadFolderSaga),
     takeEveryWitness(onWillDownloadChannel, handleDownloadSaga),
-    takeEveryWitness(REVEAL_PATH_IN_FINDER, handleRevealPathInFinderSaga)
+    takeEveryWitness(REVEAL_PATH_IN_FINDER, handleRevealPathInFinderSaga),
   ]);
 
   // When exit station app, close the download channel;

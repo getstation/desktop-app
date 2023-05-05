@@ -90,11 +90,11 @@ export const getUserAgentForApp = (url: string, currentUserAgent: string): strin
   }
 
   return defaultUserAgent;
-}
+};
 
 export const getRefererForApp = (referer: string): string => {
   return referer && referer.startsWith('http://localhost') ? '' : referer;
-}
+};
 // // @ts-ignore: type
 // app.on('session-created', (session: Electron.Session) => {
 //   enhanceWebRequest(session);
@@ -112,10 +112,8 @@ export const getRefererForApp = (referer: string): string => {
 
 //   // session.setUserAgent(userAgent.replace(/Electron\/\S*\s/, ''));
 //   session.setUserAgent(defaultUserAgent);
-  
 
 //   console.log(`VVVVVV userAgent=${session.getUserAgent()}`);
-
 
 //   // !! Set User Agent does not affect service workers since
 //   // there are outside session context and WhatsApp is not happy
@@ -136,4 +134,3 @@ export const getRefererForApp = (referer: string): string => {
 //     },
 //   );
 // });
-

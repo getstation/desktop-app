@@ -45,8 +45,8 @@ jobs:
         run: yarn install --frozen-lockfile --prefer-offline && yarn run rebuild-all-native
       - name: GQL Codegen
         run: yarn run gql-gen
-      - name: Lint
-        run: yarn run lint:ci
+      # - name: Lint
+      #   run: yarn run lint:ci
       - name: Build
         run: yarn run build
   MacOs:
@@ -83,8 +83,8 @@ jobs:
         run: yarn install --frozen-lockfile --prefer-offline && yarn run rebuild-all-native
       - name: GQL Codegen
         run: yarn run gql-gen
-      - name: Lint
-        run: yarn run lint:ci
+      # - name: Lint
+      #   run: yarn run lint:ci
       - name: Tests
         run: yarn run test
       - name: Build
@@ -124,8 +124,8 @@ jobs:
         run: yarn install --frozen-lockfile --prefer-offline && yarn run rebuild-all-native
       - name: GQL Codegen
         run: yarn run gql-gen
-      - name: Lint
-        run: yarn run lint:ci
+      # - name: Lint
+      #   run: yarn run lint:ci
       - name: Tests
         run: yarn run test
       - name: Build

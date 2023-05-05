@@ -78,16 +78,15 @@ const loadCliWindow = async (command: string) => {
   }
 };
 
-
 const initWorker = () => {
   app.on('ready', () => {
 
     session.defaultSession.webRequest.onBeforeSendHeaders((details: OnBeforeSendHeadersListenerDetails, callback: any) => {
-        details.requestHeaders['User-Agent'] = getUserAgentForApp(details.url, session.defaultSession.getUserAgent());
-        details.referrer = getRefererForApp(details.referrer);
-        details.requestHeaders['Referer'] = details.referrer;
+      details.requestHeaders['User-Agent'] = getUserAgentForApp(details.url, session.defaultSession.getUserAgent());
+      details.referrer = getRefererForApp(details.referrer);
+      details.requestHeaders.Referer = details.referrer;
 
-        callback({ cancel: false, requestHeaders: details.requestHeaders });
+      callback({ cancel: false, requestHeaders: details.requestHeaders });
     });
 
     loadWorker();

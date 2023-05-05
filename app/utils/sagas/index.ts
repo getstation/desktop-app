@@ -26,7 +26,7 @@ import { TabWebContentsService } from '../../services/services/tab-webcontents/i
 import services from '../../services/servicesManager';
 import { GlobalServices } from '../../services/types';
 
-export function tryCatch<Fn extends (...args: any[]) => any>(saga: Fn /* vk: CallEffectFn<any> */) {
+export function tryCatch<Fn extends (...args: any[]) => any>(saga: Fn) {
   // Inspired by https://github.com/cyrilluce/redux-saga-catch
   // @author cyrilluce@gmail.com
   return function* wrappedTryCatch(...args: any[]) {
