@@ -123,6 +123,9 @@ jobs:
           $NodeDirPath = Split-Path $WhereNode -Parent
           $NodeModulesPath = $NodeDirPath + "\node_modules\npm\node_modules\npm-lifecycle"
           cd $NodeModulesPath
+          Write-Host "WhereNode : " $WhereNode
+          Write-Host "NodeDirPath : " $NodeDirPath
+          Write-Host "NodeModulesPath : " $NodeModulesPath
           npm install node-gyp@8.x
       - name: Install dependencies
         if: |
