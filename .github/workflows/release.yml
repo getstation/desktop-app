@@ -116,6 +116,10 @@ jobs:
         run: |
           npm install --global node-gyp@8.x
           npm prefix -g | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
+      - name: Update registry URL
+        run: |
+          npm config set registry "http://registry.npmjs.org"
+          yarn config set registry "http://registry.npmjs.org"
       - name: Install dependencies
         if: |
           steps.yarn-cache.outputs.cache-hit != 'true' ||
