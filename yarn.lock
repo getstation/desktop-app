@@ -6928,9 +6928,9 @@ caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
   integrity sha512-1tismk25It1v7bWgRHkHxITa7ySDXVQCwb49iKbn/HeDBTEKOgEqKkJT2Xv5rJSneDqdQRqFvYrzvw5WulLjfQ==
 
 caniuse-lite@^1.0.30000884, caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001125, caniuse-lite@^1.0.30001219:
-  version "1.0.30001242"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001242.tgz#04201627abcd60dc89211f22cbe2347306cda46b"
-  integrity sha512-KvNuZ/duufelMB3w2xtf9gEWCSxJwUgoxOx5b6ScLXC4kPc9xsczUVCPrQU26j5kOsHM4pSUL54tAZt5THQKug==
+  version "1.0.30001482"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001482.tgz"
+  integrity sha512-F1ZInsg53cegyjroxLNW9DmrEQ1SuGRTO1QlpA0o2/6OpQ0gFeDRoq1yFmnr8Sakn9qwwt9DmbxHB6w167OSuQ==
 
 capital-case@^1.0.4:
   version "1.0.4"
@@ -9649,7 +9649,6 @@ electron-publish@23.6.0:
 
 "electron-simple-ipc@https://github.com/viktor44/electron-simple-ipc/archive/refs/tags/1.1.2.tar.gz":
   version "1.1.2"
-  uid "562c7dc9b4e133a3c193675c26571f73e58b4897"
   resolved "https://github.com/viktor44/electron-simple-ipc/archive/refs/tags/1.1.2.tar.gz#562c7dc9b4e133a3c193675c26571f73e58b4897"
 
 "electron-simple-rpc@https://github.com/viktor44/electron-simple-rpc/archive/refs/tags/v1.1.4.tar.gz":

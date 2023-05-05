@@ -238,8 +238,8 @@
     "@getstation/sdk": "0.15.0",
     "@getstation/slack": "^13.0.0",
     "@getstation/theme": "0.21.0",
-    "@meetfranz/electron-notification-state": "^1.0.0",
     "@mapbox/node-pre-gyp": "1.0.10",
+    "@meetfranz/electron-notification-state": "^1.0.0",
     "apollo-cache-inmemory": "^1.5.1",
     "apollo-client": "^2.6.0-beta.8",
     "apollo-link": "1.2.14",
@@ -393,7 +393,7 @@
     "ws": "^5.2.2"
   },
   "devEngines": {
-    "node": ">=12.4.0",
+    "node": ">=14.0.0",
     "yarn": ">=1.17.3"
   },
   "jest": {
@@ -424,7 +424,7 @@
     }
   },
   "volta": {
-    "node": "12.8.1",
+    "node": "14.21.3",
     "yarn": "1.19.1"
   },
   "electronWebpack": {
