@@ -58,7 +58,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
-          node-version: "14"
+          node-version: "14.21.2"
           cache: "yarn"
       - name: Update node-gyp
         run: |
