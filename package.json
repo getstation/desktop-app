@@ -60,9 +60,6 @@
     "react-redux": "^5.1.2",
     "umzug": "2.1.0",
     "**/graphql": "14.0.2",
-    "**/macos-notification-state": "^2.0.2",
-    "**/windows-quiet-hours": "^2.0.0",
-    "**/windows-notification-state": "^2.0.0",
     "node-abi": "^2.12.0"
   },
   "devDependencies": {
