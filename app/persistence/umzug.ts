@@ -9,12 +9,14 @@ const umzug = new Umzug({
   storage: new SequelizeStorage({ sequelize: db }),
 
   migrations: {
-    glob: path.resolve(__dirname, 'umzug-runs', '*.js'),
-    resolve(params) {
-      let f = require(`./umzug-runs/${path.basename(params.name)}`);
+    glob: process.platform === 'win32'
+            ? path.resolve(__dirname, 'umzug-runs', '*.js').replaceAll('\\', '/')
+            : path.resolve(__dirname, 'umzug-runs', '*.js'),
+    resolve({ name }) {
+      let f = require(`./umzug-runs/${path.basename(name)}`);
       f = f.default ? f.default : f;
       return {
-        ...params,
+        name,
         up({ context }) {
           return f.up(context, DataTypes);
         },

@@ -1,8 +1,9 @@
 import * as Immutable from 'immutable';
-import ms = require('ms');
 import { ListStateProxy } from '../../../app/persistence/backend';
 import { DockProxy } from '../../../app/persistence/local.backend';
 import umzug from '../../../app/persistence/umzug';
+
+const ms = require('ms');
 
 const dockData = Immutable.List([
   'gmail-Byg_4OpCzW',
