@@ -1,6 +1,6 @@
 /* tslint:disable global-require, no-import-side-effect */
 import './dotenv';
-import { app, BrowserWindow, ipcMain, dialog, session } from 'electron';
+import { app, BrowserWindow, ipcMain, dialog, session, OnBeforeSendHeadersListenerDetails } from 'electron';
 import log, { LevelOption } from 'electron-log';
 // @ts-ignore: no declaration file
 import { format } from 'electron-log/lib/format';
@@ -11,6 +11,7 @@ import { BrowserWindowManagerServiceImpl } from './services/services/browser-win
 import services from './services/servicesManager';
 import { getUrlToLoad } from './utils/dev';
 import { isPackaged } from './utils/env';
+import { getUserAgentForApp, getRefererForApp } from './session';
 
 bootServices(); // all side effects related to services (in main process)
 
@@ -19,11 +20,13 @@ const loadWorker = () => {
     webPreferences: {
       nodeIntegration: true,
       backgroundThrottling: false,
+      enableRemoteModule: true,
       /**
        * See {@link GenericWindowManager} for details
        */
       webSecurity: false,
       allowRunningInsecureContent: false,
+      contextIsolation: false,
     },
     width: 0,
     height: 0,
@@ -35,7 +38,9 @@ const loadWorker = () => {
     webContentsId: worker.webContents.id,
   });
 
-  (services.browserWindow as BrowserWindowManagerServiceImpl).setWorkerBrowserWindow(worker).catch(handleError());
+  (services.browserWindow as BrowserWindowManagerServiceImpl)
+    .setWorkerBrowserWindow(worker)
+    .catch(handleError());
 
   worker.loadURL(getUrlToLoad('index.html'));
 
@@ -54,6 +59,8 @@ const loadCliWindow = async (command: string) => {
     webPreferences: {
       nodeIntegration: true,
       backgroundThrottling: false,
+      enableRemoteModule: true,
+      contextIsolation: false,
     },
     width: 0,
     height: 0,
@@ -73,6 +80,15 @@ const loadCliWindow = async (command: string) => {
 
 const initWorker = () => {
   app.on('ready', () => {
+
+    session.defaultSession.webRequest.onBeforeSendHeaders((details: OnBeforeSendHeadersListenerDetails, callback: any) => {
+      details.requestHeaders['User-Agent'] = getUserAgentForApp(details.url, session.defaultSession.getUserAgent());
+      details.referrer = getRefererForApp(details.referrer);
+      details.requestHeaders.Referer = details.referrer;
+
+      callback({ cancel: false, requestHeaders: details.requestHeaders });
+    });
+
     loadWorker();
 
     if (module.hot) {
@@ -93,10 +109,7 @@ const overrideUserDataPath = () => {
     app.setPath('userData', userDataPath);
   } else if (!isPackaged) {
     app.name = 'Station Dev';
-    const userDataPath = path.join(
-      app.getPath('appData'),
-      'Station Dev'
-    );
+    const userDataPath = path.join(app.getPath('appData'), 'Station Dev');
     app.setPath('userData', userDataPath);
   } else {
     // do not conflict with pre open-source data
@@ -127,13 +140,13 @@ const applyLogLevel = () => {
 };
 
 const installDevToolsExtensions = async () => {
-  const ECx = require('electron-chrome-extension').default;
+//  const ECx = require('electron-chrome-extension').default;
 
   // REACT_DEVELOPER_TOOLS
-  await ECx.load('fmkadmapgofadopljbjfkapdkoienihi');
+//  await ECx.load('fmkadmapgofadopljbjfkapdkoienihi');
 
   // Apollo Client Developer Tools
-  await ECx.load('jdkknkkbebbapilgoeccciglkfbmbnfm');
+//  await ECx.load('jdkknkkbebbapilgoeccciglkfbmbnfm');
 
   // TODO: not working as it
   // Redux DevTools
@@ -201,6 +214,8 @@ if (!isPackaged) {
   });
 }
 
-if (module.hot) { module.hot.accept(); }
+if (module.hot) {
+  module.hot.accept();
+}
 
 init();

@@ -5,7 +5,7 @@ import * as memoize from 'memoizee';
 import injectSheet from 'react-jss';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { delay } from 'redux-saga';
+import { delay } from 'redux-saga/effects';
 // @ts-ignore: no declaration file
 import { updateUI } from 'redux-ui/transpiled/action-reducer';
 
@@ -177,7 +177,7 @@ const SettingsMyApps = connect<StateProps, DispatchProps>(
     dispatch
   ),
   null,
-  { withRef: true },
+  { forwardRef: true },
 )(SettingsMyAppsImpl);
 
 export default SettingsMyApps;

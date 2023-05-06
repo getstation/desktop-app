@@ -33,7 +33,6 @@ const externalsWhitelist = [
   "react-resize-detector",
   "react-svg-inline",
   "react-tether",
-  "react-time",
   "react-transition-group",
   'scrollmonitor-react',
   'prop-types',

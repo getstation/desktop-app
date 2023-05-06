@@ -1,6 +1,6 @@
 import { equals } from 'ramda';
 import { SagaIterator } from 'redux-saga';
-import { all, call, fork, put, select, getContext } from 'redux-saga/effects';
+import { all, call, fork, put, putResolve, select, getContext } from 'redux-saga/effects';
 import { handleError } from '../services/api/helpers';
 import services from '../services/servicesManager';
 import { callService, serviceAddObserverChannel, takeEveryWitness } from '../utils/sagas';
@@ -61,12 +61,12 @@ function* watchInstalledManifests() {
 
 function* unloadSync(id: Extension['id']): SagaIterator {
   yield callService('ecx', 'unloadExtension', id);
-  yield put.resolve(removeFromLoaded(id));
+  yield putResolve(removeFromLoaded(id));
 }
 
 function* loadSync(id: Extension['id']): SagaIterator {
   const loadedExtension = yield callService('ecx', 'loadExtension', id);
-  return yield put.resolve(setAsLoaded(loadedExtension));
+  return yield putResolve(setAsLoaded(loadedExtension));
 }
 
 function* checkForUpdate(

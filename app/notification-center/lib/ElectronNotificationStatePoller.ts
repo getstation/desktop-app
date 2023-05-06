@@ -1,9 +1,8 @@
 import { EventEmitter } from 'events';
 import ms = require('ms');
-import { getDoNotDisturb } from '@meetfranz/electron-notification-state';
+import { getDoNotDisturb } from '@stack-inc/electron-notification-state';
 
 export default class ElectronNotificationStatePoller extends EventEmitter {
-
   interval: number;
   intervalId: any;
   state: boolean | null;

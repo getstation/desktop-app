@@ -1,6 +1,6 @@
 import log from 'electron-log';
-import { delay, eventChannel, SagaIterator } from 'redux-saga';
-import { all, call, put, select } from 'redux-saga/effects';
+import { eventChannel, SagaIterator } from 'redux-saga';
+import { all, call, delay, put, select } from 'redux-saga/effects';
 import {
   askEnableNotifications,
   disableNotifications,
@@ -96,7 +96,7 @@ function* sagaSnooze(action: SetSnoozeDurationAction): SagaIterator {
 
   log.debug(`snooze started: ${duration}`);
 
-  yield call(delay, durationInMs);
+  yield delay(durationInMs);
   yield put(resetSnoozeDuration(via));
   log.debug('snooze finish');
 }

@@ -43,7 +43,7 @@ export class AlertDialogProviderServiceImpl extends AlertDialogProviderService i
     await this.store.runSaga(function* () {
       yield take((act: Action) => isClickDialogAction(act) && act.dialog.id === id);
       return;
-    }).done;
+    }).toPromise();
 
     return;
   }

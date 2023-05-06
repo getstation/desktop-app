@@ -3,7 +3,6 @@ import * as contentDisposition from 'content-disposition';
 import { app, BrowserWindow, dialog, Session, session as electronSession, webContents } from 'electron';
 import { head } from 'ramda';
 // @ts-ignore: no declaration file
-import * as recursivelyLowercaseKeys from 'recursive-lowercase-json';
 import { Observer } from 'rxjs/Observer';
 import { Observable } from 'rxjs/Rx';
 import { observeSessions } from '../../api/sessions';
@@ -12,19 +11,42 @@ import { RPC, SubscriptionConstructorParam } from '../../lib/types';
 import { DownloadItemServiceImpl } from './downloadItem/main';
 import { DownloadItemService, DownloadService, DownloadServiceObserver } from './interface';
 
+function getHeaderName(headerName: string, headers?: Record<string, string>): string | undefined {
+  if (headers) {
+    const lowCaseHeader = headerName.toLowerCase();
+    for (const key in headers) {
+      if (key.toLowerCase() === lowCaseHeader) {
+        return key;
+      }
+    }
+  }
+  return undefined;
+}
+
+function getHeader(headerName: string, headers?: Record<string, any>): any {
+  const realHeaderName = getHeaderName(headerName, headers);
+  return headers && realHeaderName ? headers[realHeaderName] : undefined;
+}
+
 /**
  * Returns true if the request was a download in the main frame.
  */
-function isAttachmentAsMainframe(details: Electron.OnCompletedDetails) {
-  if (details.resourceType !== 'mainFrame') return false;
+function isAttachmentAsMainframe(details: Electron.OnCompletedListenerDetails) {
+  if (details.resourceType !== 'mainFrame') {
+    return false;
+  }
 
-  const responseHeaders = recursivelyLowercaseKeys(details.responseHeaders);
-  if (!responseHeaders['content-disposition'] || !responseHeaders['content-disposition'][0]) return false;
+  const { responseHeaders } = details;
+  const dispositionHeader: string[] = getHeader('content-disposition', responseHeaders);
+  if (!dispositionHeader || !dispositionHeader[0]) {
+    return false;
+  }
 
   try {
-    const disposition = contentDisposition.parse(responseHeaders['content-disposition'][0]);
+    const disposition = contentDisposition.parse(dispositionHeader[0]);
     return disposition.type === 'attachment';
-  } catch (_) {
+  }
+  catch (_) {
     // can't parse
     return false;
   }

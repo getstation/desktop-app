@@ -1,5 +1,5 @@
-import { delay, SagaIterator } from 'redux-saga';
-import { all, call, put, select } from 'redux-saga/effects';
+import { SagaIterator } from 'redux-saga';
+import { all, call, delay, put, select } from 'redux-saga/effects';
 // @ts-ignore: no declaration file
 import { updateUI } from 'redux-ui/transpiled/action-reducer';
 import { navigateToApplicationTab, setActiveTab, setHomeTabAsActive } from '../applications/duck';
@@ -76,7 +76,7 @@ function* doCloseTab(
 
 function* animateApplicationIcon({ applicationId }: addTabAction): SagaIterator {
   yield put(updateUI('applicationTabAdded', applicationId, true));
-  yield call(delay, 1000);
+  yield delay(1000);
   yield put(updateUI('applicationTabAdded', applicationId, false));
 }
 

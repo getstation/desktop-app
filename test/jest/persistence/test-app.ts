@@ -7,14 +7,14 @@ const appData = Immutable.Map({
   version: 1,
   autoLaunchEnabled: true,
   downloadFolder: '/any/path',
-  promptDownload: false,
+  promptDownload: false
 });
 
 const appData2 = Immutable.Map({
   version: 2,
   autoLaunchEnabled: true,
   downloadFolder: '/any/path',
-  promptDownload: true,
+  promptDownload: true
 });
 
 const wrongData = Immutable.Map({
@@ -22,62 +22,64 @@ const wrongData = Immutable.Map({
   unaivalableProp: true,
   autoLaunchEnabled: true,
   downloadFolder: '/any/path',
-  promptDownload: false,
+  promptDownload: false
 });
 
 const emptyData = Immutable.Map({
-  version: 1,
+  version: 1
 });
-
-const filledData = {
-  version: 1,
-  promptDownload: false,
-};
 
 const correctedData = {
   version: 1,
   autoLaunchEnabled: true,
   downloadFolder: '/any/path',
-  promptDownload: false,
+  promptDownload: false
 };
 
 beforeAll(() => umzug.up());
 
 const proxy = new SingletonStateProxy(AppProxy);
 
-test('db has no app', () => proxy.get()
-  .then((app: Immutable.Map<string, any>) => {
+test('db has no app', () =>
+  proxy.get().then((app: Immutable.Map<string, any>) => {
     expect(app.size === 0).toBe(true);
   }));
 
-test('Should return filtered element if bad data sent', () => proxy.set(wrongData)
+test('Should return filtered element if bad data sent', () =>
+  proxy
+    .set(wrongData)
     .then(() => proxy.get())
     .then((app: Immutable.Map<string, any>) => {
       expect(app.toJS()).toEqual(correctedData);
     }));
 
-test('Should return correct data if empty data', () => proxy.set(emptyData)
+test('Should return correct data if empty data', () =>
+  proxy
+    .set(emptyData)
     .then(() => proxy.get())
     .then((app: Immutable.Map<string, any>) => {
-      expect(app.toJS()).toEqual(filledData);
+      expect(app.toJS()).toEqual(correctedData);
     }));
 
-test('contains app version 1', () => proxy.set(appData)
-  .then(() => proxy.get())
-  .then((app: Immutable.Map<string, any>) => {
-    expect(appData.toJS()).toEqual(app.toJS());
-  }));
+test('contains app version 1', () =>
+  proxy
+    .set(appData)
+    .then(() => proxy.get())
+    .then((app: Immutable.Map<string, any>) => {
+      expect(appData.toJS()).toEqual(app.toJS());
+    }));
 
-test('update app to version 2', () => proxy.set(appData2)
-  .then(() => proxy.get())
-  .then((app: Immutable.Map<string, any>) => {
-    expect(appData2.toJS()).toEqual(app.toJS());
-  }));
+test('update app to version 2', () =>
+  proxy
+    .set(appData2)
+    .then(() => proxy.get())
+    .then((app: Immutable.Map<string, any>) => {
+      expect(appData2.toJS()).toEqual(app.toJS());
+    }));
 
 test('empty memory cache and load from db', () => {
   proxy.clear();
-  return proxy.get()
-    .then((app: Immutable.Map<string, any>) => {
-      expect(appData2.toJS()).toEqual(app.toJS());
-    });
+  return proxy.get().then((app: Immutable.Map<string, any>) => {
+    expect(appData2.toJS()).toEqual(app.toJS());
+  });
 });

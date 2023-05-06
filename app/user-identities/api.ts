@@ -1,22 +1,24 @@
-import { Schema$Person } from 'googleapis/build/src/apis/plus/v1';
+import { people_v1 } from 'googleapis/build/src/apis/people/v1';
 import { Credentials } from 'google-auth-library/build/src/auth/credentials';
 import { Omit } from '../types';
 import services from '../services/servicesManager';
 import { StationUserIdentity } from './types';
 
 // utils
-const processGoogleAuthData = (data: { profile: Schema$Person, tokens: Credentials }): Omit<StationUserIdentity, 'identityId'> => {
+const processGoogleAuthData = (data: { profile: people_v1.Schema$Person, tokens: Credentials }): Omit<StationUserIdentity, 'identityId'> => {
   const { profile, tokens } = data;
-  const name = profile.name || {};
+  const nameObject = profile.names ? profile.names[0] : {};
+  const emailObject = profile.emailAddresses ? profile.emailAddresses[0] : {};
+  const photoObject = profile.photos ? profile.photos[0] : {};
   return {
     provider: 'google',
-    userId: profile.id,
+    userId: nameObject.metadata?.source?.id || 'undefined',
     profileData: {
-      displayName: profile.displayName,
-      firstName: name.givenName,
-      lastName: name.familyName,
-      email: profile.emails[0].value,
-      imageURL: profile.image.url,
+      displayName: nameObject.displayName || '',
+      firstName: nameObject.givenName || '',
+      lastName: nameObject.familyName || '',
+      email: emailObject.value || '',
+      imageURL: photoObject.url || '',
     },
     accessToken: tokens.access_token || undefined,
     refreshToken: tokens.refresh_token || undefined,

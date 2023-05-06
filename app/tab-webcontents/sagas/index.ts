@@ -1,6 +1,6 @@
 import { ipcRenderer } from 'electron';
-import { delay, SagaIterator } from 'redux-saga';
-import { all, call, getContext, put, race, select, spawn, take } from 'redux-saga/effects';
+import { SagaIterator } from 'redux-saga';
+import { all, call, delay, getContext, put, race, select, spawn, take } from 'redux-saga/effects';
 import { BrowserXAppWorker } from '../../app-worker';
 import { MAIN_APP_READY } from '../../app/duck';
 import { getFocusedTabId } from '../../app/selectors';
@@ -86,7 +86,7 @@ function* interceptPrint({ webcontentsId, tabId }: NewWebcontentsAttachedToTabAc
     if (currentActiveTabId === tabId) {
       // If print is called on  current active tab, show print modal...
       // delay is a workaround for https://github.com/electron/electron/issues/16792
-      yield call(delay, 500);
+      yield delay(500);
       yield callService('tabWebContents', 'print', webcontentsId);
     } else {
       // ... else, add it to print queue.
@@ -161,7 +161,7 @@ function* closeSubwindowIfReattachedOrTimeout({ tabId }: CloseAfterReattachedOrT
   yield race({
     reattach: take((action: any) =>
       action.type === ATTACH_WEBCONTENTS_TO_TAB && action.tabId === tabId),
-    timeout: call(delay, 5000),
+    timeout: delay(5000),
   });
 
   yield call([SubWindowManager, SubWindowManager.close], tabId);
@@ -207,20 +207,20 @@ function* startProgressiveWarmup() {
   });
 
   // wait for the first tab to load correctly
-  yield call(delay, ms('15sec'));
+  yield delay(ms('15sec'));
 
   for (const tab of tabsToLoad.values()) {
     yield put(doAttach(getTabId(tab)));
-    yield call(delay, ms('4sec'));
+    yield delay(ms('4sec'));
   }
 }
 
 function* setTabActivityDebounced({ tabId }: FrontActiveTabChangeAction) {
-  const now = yield call(Date.now);
+  const now:number = yield call(Date.now);
   // FRONT_ACTIVE_TAB_CHANGE can be triggered 2 times quickly
   // when switching from tab 1 in app A to tab 2 in app B
   // we debounce and take only last one
-  yield call(delay, 100);
+  yield delay(100);
   yield put(updateLastActivity(tabId, now));
 }
 

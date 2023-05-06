@@ -461,7 +461,7 @@ const App = compose(
       );
     },
     null,
-    { withRef: true },
+    { forwardRef: true },
   ),
 )(AppImpl);
 

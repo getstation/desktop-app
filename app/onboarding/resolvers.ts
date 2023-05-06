@@ -41,7 +41,7 @@ const resolvers: Resolvers = {
         customURL: configuration?.customURL ?? undefined,
         identityId,
       };
-      const { applicationId } = await ctx.store.runSaga(installApplication, manifestURL, options).done;
+      const { applicationId } = await ctx.store.runSaga(installApplication, manifestURL, options).toPromise();
       return { applicationId };
     },
     onboardingDone: async (_obj, args, context) => {

@@ -1,7 +1,7 @@
 import { remote } from 'electron';
 import log from 'electron-log';
-import { delay, SagaIterator } from 'redux-saga';
-import { all, call, fork, getContext, put, race, select, take } from 'redux-saga/effects';
+import { SagaIterator } from 'redux-saga';
+import { all, call, delay, fork, getContext, put, race, select, take } from 'redux-saga/effects';
 import { getApplicationManifestURL } from '../../app/applications/get';
 import { listAllApplications, manifestToApplicationItem } from '../../manifests';
 import { logger } from '../api/logger';
@@ -34,7 +34,7 @@ function* urlFromRedirections(dispatch: DispatchURLAction): SagaIterator {
   try {
     yield race({
       task: callService('urlRouterHelper', 'resolveRedirects', { url }),
-      timeout: call(delay, followRedirectsTimeout),
+      timeout: delay(followRedirectsTimeout),
     });
   } catch (e) {
     if (e !== errorMessageTooManyRedirects) logger.notify(e);

@@ -1,8 +1,9 @@
 import { remote } from 'electron';
 import * as isBlank from 'is-blank';
 import * as _ from 'lodash';
-import { delay, SagaIterator } from 'redux-saga';
-import { all, call, getContext, put, race, select } from 'redux-saga/effects';
+import { SagaIterator } from 'redux-saga';
+import { delay } from 'redux-saga/effects';
+import { all, call, getContext, put, putResolve, race, select } from 'redux-saga/effects';
 import {
   getBxAppManifestURL,
   listAllApplications,
@@ -67,7 +68,7 @@ export function* addApplicationRequest(
 
   const { installation, timeout }: { installation: InstallApplicationReturn, timeout: any } = yield race({
     installation: call(installApplication, normalizedManifestURL, { installContext: context }),
-    timeout: call(delay, 2000),
+    timeout: delay(2000),
   });
 
   if (timeout) {
@@ -76,7 +77,7 @@ export function* addApplicationRequest(
 
   if (!inBackground) {
     // @ts-ignore thunk
-    yield put.resolve(changeSelectedApp(installation.applicationId, 'app-installation'));
+    yield putResolve(changeSelectedApp(installation.applicationId, 'app-installation'));
   }
 
   // pubsub

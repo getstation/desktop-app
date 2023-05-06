@@ -1,5 +1,5 @@
-import { delay, SagaIterator } from 'redux-saga';
-import { all, call, fork, put, select, take } from 'redux-saga/effects';
+import { SagaIterator } from 'redux-saga';
+import { all, delay, fork, put, putResolve, select, take } from 'redux-saga/effects';
 // @ts-ignore: no declaration file
 import { updateUI } from 'redux-ui/transpiled/action-reducer';
 import { setLoadingScreenVisibility, setShowLogin } from '../../app/duck';
@@ -11,7 +11,7 @@ import { APP_STORE_STEP_FINISHED, markOnboardingAsDone } from '../duck';
 import ms = require('ms');
 
 function* doOnboardingIfNecessary() {
-  const isOnboarded = yield select(getShowLogin);
+  const isOnboarded: boolean = yield select(getShowLogin);
   if (!isOnboarded) return;
 
   yield put(updateUI('onboarding', 'step', 0));
@@ -25,9 +25,9 @@ function* doOnboardingIfNecessary() {
 
   // let's navigate to the first application of the dock
   const applicationId: string = yield select(getFirstApplicationIdInDock);
-  yield put.resolve(changeSelectedApp(applicationId, 'app-installation'));
+  yield putResolve(changeSelectedApp(applicationId, 'app-installation'));
 
-  yield call(delay, ms('3sec'));
+  yield delay(ms('3sec'));
   yield put(setLoadingScreenVisibility(false));
 
   yield put(markOnboardingAsDone());

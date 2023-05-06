@@ -1,11 +1,11 @@
 import ms from 'ms';
-import KeyboardLayout from 'keyboard-layout';
-import { delay, eventChannel } from 'redux-saga';
+// import KeyboardLayout from '@axosoft/keyboard-layout';
+import { eventChannel } from 'redux-saga';
+import { delay } from 'redux-saga/effects';
 import {
   all,
   call,
   cancel,
-
   fork,
   put,
   race,
@@ -63,7 +63,7 @@ function* sagaPrepareQuit(bxApp) {
     // Here we pause the state persistor to ensure that the debounce in each `StateProxy`
     // will have time to fulfill
     bxApp.store.persistor.pause();
-    yield call(delay, DELAY); // Wait for persistence to flush
+    yield delay(DELAY); // Wait for persistence to flush
 
     // We tell app that we do not want to prevent `quit` event anymore
     yield callService('electronApp', 'canResumeQuit');
@@ -137,7 +137,7 @@ function* sagaLoadingScreen() {
   if (domReady) {
     // Most of the time, when 'dom-ready' is triggered, the webview is still blank,
     // so we wait a little longer
-    yield call(delay, 1500);
+    yield delay(1500);
   }
 
   yield put(setLoadingScreenVisibility(false));
@@ -186,32 +186,32 @@ function* sagaHandleDownloadDialog() {
   });
 }
 
-const observeKeyboardLayout = emitter => {
-  let firstValueEmitted = false;
-  KeyboardLayout.observeCurrentKeyboardLayout(layout => {
-    if (firstValueEmitted) {
-      emitter(layout);
-    } else {
-      setImmediate(() => {
-        emitter(layout);
-        firstValueEmitted = true;
-      });
-    }
-  });
-};
+// const observeKeyboardLayout = emitter => {
+//   let firstValueEmitted = false;
+//   KeyboardLayout.observeCurrentKeyboardLayout(layout => {
+//     if (firstValueEmitted) {
+//       emitter(layout);
+//     } else {
+//       setImmediate(() => {
+//         emitter(layout);
+//         firstValueEmitted = true;
+//       });
+//     }
+//   });
+// };
 
-const createKeyboardLayoutChannel = () =>
-  eventChannel(emitter => {
-    const subscription = observeKeyboardLayout(emitter);
-    return () => subscription.dispose();
-  });
+// const createKeyboardLayoutChannel = () =>
+//   eventChannel(emitter => {
+//     const subscription = observeKeyboardLayout(emitter);
+//     return () => subscription.dispose();
+//   });
 
-function* sagaHandleKeyboardLayout() {
-  const keyboardLayoutChannel = createKeyboardLayoutChannel();
-  yield takeEveryWitness(keyboardLayoutChannel, function*(layout) {
-    yield put(keyboardLayoutChanged(layout));
-  });
-}
+// function* sagaHandleKeyboardLayout() {
+//   const keyboardLayoutChannel = createKeyboardLayoutChannel();
+//   yield takeEveryWitness(keyboardLayoutChannel, function*(layout) {
+//     yield put(keyboardLayoutChanged(layout));
+//   });
+// }
 
 /**
  * For dev purpose.
@@ -248,7 +248,7 @@ export default function* main(bxApp) {
   yield all([
     takeEveryWitness(READY, sagaLoadingScreen),
     takeEveryWitness(READY, sagaHandleDownloadDialog),
-    takeEveryWitness(READY, sagaHandleKeyboardLayout),
+    // takeEveryWitness(READY, sagaHandleKeyboardLayout),
     takeEveryWitness(READY, sagaLoadAppMetadata),
     takeEveryWitness(READY, sagaPrepareQuit, bxApp),
     takeEveryWitness(REHYDRATION_COMPLETE, sagaSyncAutoLaunch),

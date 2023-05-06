@@ -76,7 +76,7 @@ export default connect(
     isSubdockOpen: getIsSubdockOpen(state),
     releaseName: getReleaseName(state),
   }),
-  (dispatch: Dispatch<any>) => bindActionCreators({
+  (dispatch: Dispatch) => bindActionCreators({
     onClickQuitAndInstall: quitAndInstall,
     onClickOpenReleaseNotes: openReleaseNotes,
     onToggleReleaseNotesSubdockVisibility: toggleReleaseNotesSubdockVisibility,

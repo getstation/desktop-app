@@ -7,15 +7,19 @@ const REMOVE = 'browserX/dl-toaster/REMOVE';
 
 // action creators
 export const addToastForDownload = downloadId => ({
-  type: ADD, downloadId
+  type: ADD,
+  downloadId
 });
+
 export const removeToastForDownload = downloadId => ({
-  type: REMOVE, downloadId
+  type: REMOVE,
+  downloadId
 });
+
 export const openDownloadedFile = downloadId => (dispatch, getState) => {
   const state = getState();
   const filePath = state.getIn(['downloads', downloadId, 'filePath']);
-  remote.shell.openItem(filePath);
+  remote.shell.openPath(filePath);
 };
 
 // reducer

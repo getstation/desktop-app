@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 /* eslint-disable no-param-reassign */
 
@@ -6,7 +7,7 @@ const path = require('path');
  * Disable verbose logs
  * @param config {webpack.Configuration}
  */
-const mutateStats = (config) => {
+const mutateStats = config => {
   config.stats = 'errors-only';
 };
 
@@ -14,8 +15,10 @@ const mutateStats = (config) => {
  * set ts-loader as transpileOnly for now. Also excludes node_modules from compilation
  * @param config {webpack.Configuration}
  */
-const mutateFixTsLoader = (config) => {
-  const tsLoader = config.module.rules.find(r => r && r.use && r.use[0] && r.use[0].loader === 'ts-loader');
+const mutateFixTsLoader = config => {
+  const tsLoader = config.module.rules.find(
+    r => r && r.use && r.use[0] && r.use[0].loader === 'ts-loader'
+  );
 
   if (tsLoader) {
     tsLoader.use[0].options.transpileOnly = true;
@@ -27,11 +30,11 @@ const mutateFixTsLoader = (config) => {
  * minimizer should keep classnames and fnames
  * @param config {webpack.Configuration}
  */
-const mutateFixTerser = (config) => {
+const mutateFixTerser = config => {
   if (config.mode === 'production') {
     Object.assign(config.optimization.minimizer[0].options.terserOptions, {
       keep_classnames: true,
-      keep_fnames: true,
+      keep_fnames: true
     });
   }
 };
@@ -40,7 +43,7 @@ const mutateFixTerser = (config) => {
  * add sources to sourcemap
  * @param config {webpack.Configuration}
  */
-const mutateDevtool = (config) => {
+const mutateDevtool = config => {
   if (config.mode === 'production') {
     config.devtool = 'source-map';
   }
@@ -50,7 +53,7 @@ const mutateDevtool = (config) => {
  * loader for graphql schema and .env.* files
  * @param config {webpack.Configuration}
  */
-const mutateAddRules = (config) => {
+const mutateAddRules = config => {
   config.module.rules.push({
     test: /\.graphql$/,
     exclude: /node_modules/,
@@ -66,7 +69,7 @@ const mutateAddRules = (config) => {
  * minimizer should keep classnames and fnames
  * @param config {webpack.Configuration}
  */
-const mutateAddExternals = (config) => {
+const mutateAddExternals = config => {
   // Used by window-open overload
   config.externals.push('react-addons-perf');
 };
@@ -75,16 +78,17 @@ const mutateAddExternals = (config) => {
  * alias some missing imports
  * @param config {webpack.Configuration}
  */
-const mutateAlias = (config) => {
+const mutateAlias = config => {
   // Electron does not bundle `ipcRendererInternal` anymore since 7.x
-  config.resolve.alias['@electron/internal/renderer/ipc-renderer-internal'] =
-    path.resolve(__dirname, 'app/lib/ipc-renderer-internal.ts');
+  config.resolve.alias[
+    '@electron/internal/renderer/ipc-renderer-internal'
+  ] = path.resolve(__dirname, 'app/lib/ipc-renderer-internal.ts');
 };
 
 /**
  * @param config {webpack.Configuration}
  */
-const mutateWebpackConfig = (config) => {
+const mutateWebpackConfig = config => {
   mutateStats(config);
   mutateFixTsLoader(config);
   mutateFixTerser(config);
@@ -92,8 +96,21 @@ const mutateWebpackConfig = (config) => {
   mutateAddExternals(config);
   mutateDevtool(config);
   mutateAlias(config);
+
+  if (config.mode === 'production') {
+    config.plugins.push(
+      new webpack.DefinePlugin({
+        'process.env.GOOGLE_CLIENT_ID': JSON.stringify(
+          process.env.GOOGLE_CLIENT_ID
+        ),
+        'process.env.GOOGLE_CLIENT_SECRET': JSON.stringify(
+          process.env.GOOGLE_CLIENT_SECRET
+        )
+      })
+    );
+  }
 };
 
 module.exports = {
-  mutateWebpackConfig,
+  mutateWebpackConfig
 };
