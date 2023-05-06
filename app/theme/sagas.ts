@@ -2,8 +2,8 @@ import { COLORS, getGradients, QUICK_DURATION, QUICK_INTERVAL } from '@getstatio
 import * as log from 'electron-log';
 // @ts-ignore no declaration file
 import ms = require('ms');
-import { delay, SagaIterator } from 'redux-saga';
-import { all, call, put } from 'redux-saga/effects';
+import { SagaIterator } from 'redux-saga';
+import { all, call, delay, put } from 'redux-saga/effects';
 import { READY } from '../app/duck';
 
 import { periodicTick, takeEveryWitness, takeLatestWitness } from '../utils/sagas';
@@ -140,7 +140,7 @@ function* jumpColorsTransition({ fromColors, toColors }: JumpColorsTransition): 
     yield put(changeThemeColors(gradients[cursor]));
     cursor += 1;
   });
-  yield call(delay, duration);
+  yield delay(duration);
   jumpInProgress = false;
 }
 

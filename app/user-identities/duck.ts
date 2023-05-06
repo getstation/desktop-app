@@ -60,9 +60,8 @@ export type UserIdentityActions =
 // Action creators
 
 export const requestSignIn = (provider: AuthProviders, options = { scopes: [
-  'https://www.googleapis.com/auth/plus.me',
-  'profile',
-  'email',
+  'https://www.googleapis.com/auth/userinfo.email',
+  'https://www.googleapis.com/auth/userinfo.profile',
 ] }): RequestSignInAction => ({
   type: SIGNIN_REQUESTED, provider, options,
 });

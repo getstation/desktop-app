@@ -6,7 +6,7 @@ import { StationState } from '../types';
 
 const observeDockDuplicates = observer(
   (state: StationState) => state.get('dock'),
-  (_dispatch: Dispatch<any>, state: StationState, previousState: StationState | undefined) => {
+  (_dispatch: Dispatch, state: StationState, previousState: StationState | undefined) => {
     if (state === previousState) return;
     if (state.toSet().size === state.size) return;
     logger.notify(new Error('Duplicate entries in dock'), {

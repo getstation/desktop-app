@@ -1,7 +1,7 @@
 // See https://github.com/electron/electron/blob/b92163d2260dcee8dfef531a9fb837b6d372e060/lib/renderer/init.ts
 import { ipcRendererInternal } from '../../../lib/ipc-renderer-internal';
 
-const { hasSwitch, getSwitchValue } = (process as any).electronBinding('command_line');
+const { hasSwitch, getSwitchValue } = (process as any)._linkedBinding('electron_common_command_line');
 
 const parseOption = <T>(
   name: string, defaultValue: T, converter?: (value: string) => T

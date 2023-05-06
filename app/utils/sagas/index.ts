@@ -1,12 +1,13 @@
 import log from 'electron-log';
 import { EventEmitter } from 'events';
-import { buffers, Channel, delay, END, eventChannel, Pattern, TakeableChannel } from 'redux-saga';
+import { buffers, Channel, END, eventChannel, TakeableChannel } from 'redux-saga';
 import {
   call,
-  CallEffectFn,
   cancel,
+  delay,
   fork,
   ForkEffect,
+  Pattern,
   put,
   race,
   take,
@@ -25,7 +26,7 @@ import { TabWebContentsService } from '../../services/services/tab-webcontents/i
 import services from '../../services/servicesManager';
 import { GlobalServices } from '../../services/types';
 
-export function tryCatch(saga: CallEffectFn<any>) {
+export function tryCatch<Fn extends (...args: any[]) => any>(saga: Fn) {
   // Inspired by https://github.com/cyrilluce/redux-saga-catch
   // @author cyrilluce@gmail.com
   return function* wrappedTryCatch(...args: any[]) {

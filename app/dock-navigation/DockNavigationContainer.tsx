@@ -52,7 +52,7 @@ const DockNavigationContainer = connect<StateToProps, DispatchFromProps, {}>(
     canGoBack: getCurrentActiveTabProperty(state, 'canGoBack'),
     canGoForward:getCurrentActiveTabProperty(state, 'canGoForward'),
   }),
-  (dispatch: Dispatch<any>) => bindActionCreators(
+  (dispatch: Dispatch) => bindActionCreators(
     {
       onGoBack: () => executeWebviewMethodForCurrentTab('go-back'),
       onGoForward: () => executeWebviewMethodForCurrentTab('go-forward'),

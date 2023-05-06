@@ -37,7 +37,7 @@ describe('URL Router Dispatcher', () => {
       },
       dispatcher,
       { url: linkToRedirect }, { }, {})
-      .done;
+      .toPromise();
 
     assert.equal(action, 'NAV_TO_TAB');
     assert.equal(destination.tabId, 'linkedIn-SJYMzYu6M/BJeYzft_6f');

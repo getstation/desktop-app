@@ -8,13 +8,14 @@ import * as ReactDOM from 'react-dom';
 import { logger } from '../../api/logger';
 import { Omit } from '../../types';
 import { dissoc } from 'ramda';
+import { remote } from 'electron';
 
 export interface ElectronWebviewProps extends Omit<Electron.WebviewTag, 'src'> {
   // webview `src` is updated by the webview itself, so we do not want to
   // update it ourselves directly. Instead we must call `loadUrl` on underlying
   // webcontents, and the webview will update the src attribute accordingly.
   // `initialSrc` is just taken into account once, when the Component is mounting.
-  initialSrc?: string,
+  initialSrc?: string;
 
   hidden: boolean;
   className: string;
@@ -209,15 +210,15 @@ const removeInitialSrcProp = dissoc('initialSrc');
 
 // Additional dynamically generated members
 interface ElectronWebview {
-  reload: () => any,
-  isDevToolsOpened: Function,
-  getURL: () => any,
-  goForward: () => any,
-  goBack: () => any,
-  openDevTools: () => any,
-  closeDevTools: () => any,
-  getTitle: () => any,
-  pasteAndMatchStyle: () => any,
+  reload: () => any;
+  isDevToolsOpened: Function;
+  getURL: () => any;
+  goForward: () => any;
+  goBack: () => any;
+  openDevTools: () => any;
+  closeDevTools: () => any;
+  getTitle: () => any;
+  pasteAndMatchStyle: () => any;
 }
 
 class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
@@ -299,31 +300,39 @@ class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
    */
   forwardKeyboardEvents() {
     // Inspired by https://github.com/electron/electron/issues/14258#issuecomment-416893856
-    this.view.getWebContents().on('before-input-event', (_event, input) => {
-      // Create a fake KeyboardEvent from the data provided
-      const emulatedKeyboardEvent = new KeyboardEvent(input.type.toLowerCase(), {
-        code: input.code,
-        key: input.key,
-        shiftKey: input.shift,
-        altKey: input.alt,
-        ctrlKey: input.control,
-        metaKey: input.meta,
-        repeat: input.isAutoRepeat,
-        bubbles: true,
-        composed: true,
-        cancelable: true,
-      });
-      // Workaround for mousetrap
-      const keyCodeValue = getKeyboardKeyCode(emulatedKeyboardEvent.key, emulatedKeyboardEvent.code);
-      Object.defineProperty(emulatedKeyboardEvent, 'which', {
-        value: keyCodeValue,
-      });
-      Object.defineProperty(emulatedKeyboardEvent, 'keyCode', {
-        value: keyCodeValue,
-      });
+    remote.webContents
+      .fromId(this.view.getWebContentsId())
+      .on('before-input-event', (_event, input) => {
+        // Create a fake KeyboardEvent from the data provided
+        const emulatedKeyboardEvent = new KeyboardEvent(
+          input.type.toLowerCase(),
+          {
+            code: input.code,
+            key: input.key,
+            shiftKey: input.shift,
+            altKey: input.alt,
+            ctrlKey: input.control,
+            metaKey: input.meta,
+            repeat: input.isAutoRepeat,
+            bubbles: true,
+            composed: true,
+            cancelable: true
+          }
+        );
+        // Workaround for mousetrap
+        const keyCodeValue = getKeyboardKeyCode(
+          emulatedKeyboardEvent.key,
+          emulatedKeyboardEvent.code
+        );
+        Object.defineProperty(emulatedKeyboardEvent, 'which', {
+          value: keyCodeValue
+        });
+        Object.defineProperty(emulatedKeyboardEvent, 'keyCode', {
+          value: keyCodeValue
+        });
 
-      this.view.dispatchEvent(emulatedKeyboardEvent);
-    });
+        this.view.dispatchEvent(emulatedKeyboardEvent);
+      });
   }
 
   shouldComponentUpdate(nextProps: ElectronWebviewProps) {
@@ -344,7 +353,7 @@ class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
       const className = `${props.className} ${props.hidden ? 'hidden' : ''}`;
       return this.view.setAttribute('class', className);
     }
-  }
+  };
 
   // tslint:disable-next-line:function-name
   UNSAFE_componentWillReceiveProps(nextProps: ElectronWebviewProps) {
@@ -377,7 +386,12 @@ class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
 
   render() {
     return (
-      <div ref={(elt) => { this.ref = elt as HTMLElement; }} style={this.props.style as object || {}} />
+      <div
+        ref={elt => {
+          this.ref = elt as HTMLElement;
+        }}
+        style={(this.props.style as object) || {}}
+      />
     );
   }
 }

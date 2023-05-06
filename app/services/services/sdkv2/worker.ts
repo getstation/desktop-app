@@ -125,7 +125,7 @@ export class SDKv2ServiceImpl extends SDKv2Service implements RPC.Interface<SDKv
         let body;
         const sagaMethod = await bxAPIAction.sagaMethod();
         const params = generateParams(bxAPIAction.allowedParameters, payload);
-        body = await (this.store.runSaga as Function)(sagaMethod, ...params).done;
+        body = await (this.store.runSaga as Function)(sagaMethod, ...params).toPromise();
 
         if (body) {
           return {

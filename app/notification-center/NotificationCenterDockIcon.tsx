@@ -39,7 +39,7 @@ const NotificationCenterDockIcon = connect<StateToProps, DispatchToProps, {}>(
     badge: getNotifications(state).size,
     active: isVisible(state),
   }),
-  (dispatch: Dispatch<any>) => bindActionCreators({
+  (dispatch: Dispatch) => bindActionCreators({
     onClick: toggleVisibility,
   }, dispatch)
 )(NotificationCenterDockIconImpl);

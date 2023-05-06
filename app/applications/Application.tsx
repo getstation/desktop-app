@@ -6,7 +6,7 @@ import * as slack from 'slack';
 import { GradientType, withGradient } from '@getstation/theme';
 import ElectronWebview from 'app/common/components/ElectronWebview';
 import classNames from 'classnames';
-import { clipboard } from 'electron';
+import { clipboard, remote } from 'electron';
 // @ts-ignore no declaration file
 import { fetchFavicon, setFetchFaviconTimeout } from '@getstation/fetch-favicon';
 import Maybe from 'graphql/tsutils/Maybe';
@@ -382,7 +382,7 @@ class ApplicationImpl extends React.PureComponent {
       const webview = this.webView.view;
 
       webview.addEventListener('did-attach', () => {
-        const webContents = webview.getWebContents();
+        const webContents = remote.webContents.fromId(webview.getWebContentsId());
 
         webview.addEventListener('did-navigate-in-page', (e: any) => this.handleDidNavigateInPage(e));
         webview.addEventListener('did-navigate', (e: any) => this.handleDidNavigate(e));
@@ -456,7 +456,7 @@ class ApplicationImpl extends React.PureComponent {
           onDidFailLoad={this.handleDidFailLoad}
           onDomReady={this.handleDomReady}
           onCrashed={this.handleWebcontentsCrashed}
-          webpreferences={`allowDisplayingInsecureContent,nativeWindowOpen=${notUseNativeWindowOpen ? 'no' : 'yes'}`}
+          webpreferences={`allowDisplayingInsecureContent,nativeWindowOpen=${notUseNativeWindowOpen ? 'no' : 'yes'},contextIsolation=no`}
         />
 
       </div>

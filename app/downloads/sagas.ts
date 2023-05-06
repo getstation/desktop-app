@@ -25,11 +25,13 @@ import {
 
 // temporay type definitions
 interface NewItemAction {
-  downloadId: string, filePath: string, webContentsId: number,
+  downloadId: string;
+  filePath: string;
+  webContentsId: number;
 }
 
 interface SetDownloadFolderAction {
-  downloadFolder: string,
+  downloadFolder: string;
 }
 
 /**
@@ -130,7 +132,7 @@ function* handleChangeDownloadFolderSaga(): SagaIterator {
 
 function* handleRevealPathInFinderSaga({ path }: revealPathInFinderAction): SagaIterator {
   if (path) {
-    yield call([remote.shell, 'openItem'], path);
+    yield call([remote.shell, 'openPath'], path);
   }
 }
 

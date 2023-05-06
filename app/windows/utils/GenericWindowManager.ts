@@ -11,11 +11,18 @@ import { isPackaged } from '../../utils/env';
 import { windowCreated, windowDeleted } from '../duck';
 
 let allowDispatch = true;
-services.electronApp.addObserver(observer({
-  onBeforeQuit() {
-    allowDispatch = false;
-  },
-}, 'gwm-quit')).catch(handleError());
+services.electronApp
+  .addObserver(
+    observer(
+      {
+        onBeforeQuit() {
+          allowDispatch = false;
+        },
+      },
+      'gwm-quit'
+    )
+  )
+  .catch(handleError());
 
 export default class GenericWindowManager extends EventEmitter {
 
@@ -25,15 +32,18 @@ export default class GenericWindowManager extends EventEmitter {
   public windowId?: number;
 
   static dispatch(a: Action) {
-    if (allowDispatch && GenericWindowManager.store) GenericWindowManager.store.dispatch(a);
+    if (allowDispatch && GenericWindowManager.store) {
+      GenericWindowManager.store.dispatch(a);
+    }
   }
 
   static focus(webviewId: number) {
-    return services.browserWindow.focus(webviewId)
-      .catch(handleError({
+    return services.browserWindow.focus(webviewId).catch(
+      handleError({
         console: false,
         log: true,
-      }));
+      })
+    );
   }
 
   isCreated(): this is Required<GenericWindowManager> {
@@ -47,7 +57,7 @@ export default class GenericWindowManager extends EventEmitter {
   async show() {
     if (this.isCreated()) {
       await this.window.show();
-      setTimeout(async() => {
+      setTimeout(async () => {
         if (!this.window) return;
         // Wait for window to be initialised, and for potential `blur()` to be triggered beforehand
         await this.window.focus();
@@ -70,6 +80,7 @@ export default class GenericWindowManager extends EventEmitter {
       webPreferences: {
         nodeIntegration: true,
         webviewTag: true,
+        enableRemoteModule: true,
         // The following 2 parameters combined will disable the `same-origin` policy.
         // This allows any window (and the worker) to make http requests to externals services
         // without being filtered.
@@ -84,6 +95,7 @@ export default class GenericWindowManager extends EventEmitter {
         // (i.e. make slack calls inside the slack webview context).
         webSecurity: false,
         allowRunningInsecureContent: false,
+        contextIsolation: false,
       },
     });
 
@@ -94,50 +106,57 @@ export default class GenericWindowManager extends EventEmitter {
     /* tslint:disable-next-line no-this-assignment */
     const self = this;
 
-    this.window.addObserver(observer({
-      onReadyToShow() {
-        self.show();
-        if (!isPackaged) {
-          self.window && self.window.openDevTools();
-        }
-      },
-      onShow() {
-        self.emit('shown');
-      },
-      onBeforeUnload() {
-        self.emit('beforeunload');
-      },
-      onDidFinishLoad() {
-        self.emit('loaded');
-      },
-      onClosed() {
-        GenericWindowManager.dispatch(windowDeleted(self.windowId));
-        self.window = undefined;
-        self.windowId = undefined;
-        self.emit('closed');
-      },
-      onEnterFullScreen() {
-        self.emit('enter-full-screen');
-      },
-      onLeaveFullScreen() {
-        self.emit('leave-full-screen');
-      },
-      onFocus() {
-        self.emit('focus');
-      },
-      onBlur() {
-        self.emit('blur');
-      },
-      onSwipe(direction: 'up' | 'right' | 'down' | 'left') {
-        self.emit(`swipe-${direction}`);
-      },
-      onContextMenu(params: Electron.ContextMenuParams) {
-        self.emit('context-menu', params);
-      },
-      onNewNotification(notificationId: string, props: NotificationProps) {
-        self.emit('new-notification', notificationId, props, { webContentsId });
-      },
-    }, 'gwm'));
+    this.window.addObserver(
+      observer(
+        {
+          onReadyToShow() {
+            self.show();
+            if (!isPackaged) {
+              self.window && self.window.openDevTools();
+            }
+          },
+          onShow() {
+            self.emit('shown');
+          },
+          onBeforeUnload() {
+            self.emit('beforeunload');
+          },
+          onDidFinishLoad() {
+            self.emit('loaded');
+          },
+          onClosed() {
+            GenericWindowManager.dispatch(windowDeleted(self.windowId));
+            self.window = undefined;
+            self.windowId = undefined;
+            self.emit('closed');
+          },
+          onEnterFullScreen() {
+            self.emit('enter-full-screen');
+          },
+          onLeaveFullScreen() {
+            self.emit('leave-full-screen');
+          },
+          onFocus() {
+            self.emit('focus');
+          },
+          onBlur() {
+            self.emit('blur');
+          },
+          onSwipe(direction: 'up' | 'right' | 'down' | 'left') {
+            self.emit(`swipe-${direction}`);
+          },
+          onContextMenu(params: Electron.ContextMenuParams) {
+            self.emit('context-menu', params);
+          },
+          onNewNotification(notificationId: string, props: NotificationProps) {
+            self.emit('new-notification', notificationId, props, {
+              webContentsId,
+            });
+          },
+        },
+        'gwm'
+      )
+    );
 
     if (shownow) {
       await this.show();
@@ -151,7 +170,7 @@ export default class GenericWindowManager extends EventEmitter {
 
   load(filepath?: string) {
     if (!this.isCreated()) return;
-    const fp = filepath || (<typeof GenericWindowManager> this.constructor).FILEPATH;
+    const fp = filepath || (<typeof GenericWindowManager>this.constructor).FILEPATH;
     if (!fp) throw new Error(`Invalid loadURL parameter: ${fp}`);
     return this.window.load(fp);
   }
@@ -162,14 +181,11 @@ export default class GenericWindowManager extends EventEmitter {
     });
 
     this.on('focus', () => {
-      setTimeout(
-        async () => {
-          if (this.window && await this.window.isFocused()) {
-            GenericWindowManager.dispatch(changeAppFocusState(this.windowId));
-          }
-        },
-        1
-      );
+      setTimeout(async () => {
+        if (this.window && (await this.window.isFocused())) {
+          GenericWindowManager.dispatch(changeAppFocusState(this.windowId));
+        }
+      }, 1);
     });
   }
 
