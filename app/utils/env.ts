@@ -1,8 +1,11 @@
 let _isPackaged = process.env.NODE_ENV !== 'test';
 
 if (!['storybook', 'test'].includes(process.env.NODE_ENV!)) {
-  const { app, remote } = require('electron');
-  _isPackaged = Boolean(process.type === 'renderer' ? remote.app.isPackaged : app.isPackaged);
+  _isPackaged = Boolean(
+      process.type === 'renderer' 
+          ? require('@electron/remote').app.isPackaged 
+          : require('electron').app.isPackaged
+  );
 }
 
 export const isPackaged = _isPackaged;

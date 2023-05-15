@@ -6,7 +6,6 @@ const glob = require('glob');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WriteFilePlugin = require('write-file-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { mutateWebpackConfig } = require('./webpack.config.common');
 
@@ -54,19 +53,14 @@ module.exports = (config) => {
     if (plugin.constructor.name === 'HtmlWebpackPlugin') {
       plugin.options.chunks = ['worker'];
     }
-
-    // css filenames must not conflict (default is just 'styles.css')
-    if (plugin.constructor.name === 'MiniCssExtractPlugin') {
-      return new MiniCssExtractPlugin({
-        filename: '[name].styles.css',
-        chunkFilename: '[id].styles.css',
-      });
-    }
-
     return plugin;
   });
 
   config.plugins = config.plugins.concat([
+    new MiniCssExtractPlugin({
+      filename: '[name].styles.css',
+      chunkFilename: '[id].styles.css',
+    }),
     // generates main window html file
     new HtmlWebpackPlugin({
       chunks: ['mainRenderer'],
