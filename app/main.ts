@@ -12,10 +12,12 @@ import services from './services/servicesManager';
 import { getUrlToLoad } from './utils/dev';
 import { isPackaged } from './utils/env';
 import { getUserAgentForApp, getRefererForApp } from './session';
+import { initialize as remoteInitialize, enable as remoteEnable } from '@electron/remote/main';
 
 bootServices(); // all side effects related to services (in main process)
 
-require("@electron/remote/main").initialize();
+//require("@electron/remote/main").initialize();
+remoteInitialize();
 
 const loadWorker = () => {
   const worker = new BrowserWindow({
@@ -34,7 +36,8 @@ const loadWorker = () => {
     show: false,
   });
 
-  require("@electron/remote/main").enable(worker.webContents);
+  //require("@electron/remote/main").enable(worker.webContents);
+  remoteEnable(worker.webContents);
 
   // Used by other renderers
   (global as any).worker = Object.freeze({
@@ -68,7 +71,8 @@ const loadCliWindow = async (command: string) => {
     height: 0,
     show: false,
   });
-  require("@electron/remote/main").enable(bw.webContents);
+  // require("@electron/remote/main").enable(bw.webContents);
+  remoteEnable(bw.webContents);
 
   await bw.loadURL(getUrlToLoad('cli.html'));
 
