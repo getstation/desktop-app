@@ -15,12 +15,13 @@ import { getUserAgentForApp, getRefererForApp } from './session';
 
 bootServices(); // all side effects related to services (in main process)
 
+require("@electron/remote/main").initialize();
+
 const loadWorker = () => {
   const worker = new BrowserWindow({
     webPreferences: {
       nodeIntegration: true,
       backgroundThrottling: false,
-      enableRemoteModule: true,
       /**
        * See {@link GenericWindowManager} for details
        */
@@ -32,6 +33,8 @@ const loadWorker = () => {
     height: 0,
     show: false,
   });
+
+  require("@electron/remote/main").enable(worker.webContents);
 
   // Used by other renderers
   (global as any).worker = Object.freeze({
@@ -59,13 +62,13 @@ const loadCliWindow = async (command: string) => {
     webPreferences: {
       nodeIntegration: true,
       backgroundThrottling: false,
-      enableRemoteModule: true,
       contextIsolation: false,
     },
     width: 0,
     height: 0,
     show: false,
   });
+  require("@electron/remote/main").enable(bw.webContents);
 
   await bw.loadURL(getUrlToLoad('cli.html'));
 
