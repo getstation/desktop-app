@@ -6,7 +6,8 @@ import {
   LoginItem,
   Session,
 } from '1password-node';
-import { remote } from 'electron';
+//import { remote } from 'electron';
+import { app as remoteApp } from '@electron/remote';
 import { join } from 'path';
 
 import { logger } from '../../../api/logger';
@@ -17,7 +18,7 @@ import {
 } from '../../types';
 import Abstract from '../abstract/runtime';
 
-const binaryFolderPath = join(remote.app.getPath('userData'), 'Resources', '1PasswordCLI', 'op');
+const binaryFolderPath = join(remoteApp.getPath('userData'), 'Resources', '1PasswordCLI', 'op');
 
 class OnePassword extends Abstract implements IProviderRuntime {
   private session: Session;

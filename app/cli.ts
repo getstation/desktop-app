@@ -1,6 +1,7 @@
-import { ipcRenderer, remote } from 'electron';
+import { ipcRenderer /*, remote */ } from 'electron';
+import { app as remoteApp, getCurrentWebContents as remoteGetCurrentWebContents } from '@electron/remote';
 
-const exit = () => remote.app.exit(0);
+const exit = () => remoteApp.exit(0);
 
 const commands: Record<string, Function> = {
   database(args: any[]) {
@@ -14,6 +15,6 @@ ipcRenderer.on('command', async (_e, command: string, ...args: string[]) => {
     exit();
   } catch (e) {
     console.error(e);
-    remote.getCurrentWebContents().openDevTools();
+    remoteGetCurrentWebContents().openDevTools();
   }
 });

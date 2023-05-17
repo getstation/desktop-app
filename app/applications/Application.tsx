@@ -6,7 +6,8 @@ import * as slack from 'slack';
 import { GradientType, withGradient } from '@getstation/theme';
 import ElectronWebview from 'app/common/components/ElectronWebview';
 import classNames from 'classnames';
-import { clipboard, remote } from 'electron';
+import { clipboard /*, remote */ } from 'electron';
+import { webContents as remoteWebContents } from '@electron/remote';
 // @ts-ignore no declaration file
 import { fetchFavicon, setFetchFaviconTimeout } from '@getstation/fetch-favicon';
 import Maybe from 'graphql/tsutils/Maybe';
@@ -382,7 +383,7 @@ class ApplicationImpl extends React.PureComponent {
       const webview = this.webView.view;
 
       webview.addEventListener('did-attach', () => {
-        const webContents = remote.webContents.fromId(webview.getWebContentsId());
+        const webContents = remoteWebContents.fromId(webview.getWebContentsId());
 
         webview.addEventListener('did-navigate-in-page', (e: any) => this.handleDidNavigateInPage(e));
         webview.addEventListener('did-navigate', (e: any) => this.handleDidNavigate(e));

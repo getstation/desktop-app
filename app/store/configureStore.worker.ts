@@ -1,4 +1,5 @@
-import { remote } from 'electron';
+//import { remote } from 'electron';
+import { dialog as remoteDialog } from '@electron/remote';
 import log from 'electron-log';
 import * as EventEmitter from 'events';
 import { applyMiddleware, compose, createStore } from 'redux';
@@ -65,7 +66,7 @@ function asyncInit(store: StationStoreWorker, sagaMiddleware: SagaMiddleware<any
       .catch(err => {
         logger.notify(err);
         log.error(err);
-        remote.dialog.showMessageBox({
+        remoteDialog.showMessageBox({
           type: 'error',
           buttons: ['OK'],
           title: 'Station Fatal Error',

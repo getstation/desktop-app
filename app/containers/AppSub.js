@@ -1,6 +1,6 @@
 import { GradientType, withGradient } from '@getstation/theme';
 import classNames from 'classnames';
-import { remote } from 'electron';
+import { getCurrentWindow as remoteGetCurrentWindow } from '@electron/remote';
 import PropTypes from 'prop-types';
 import React from 'react';
 import injectSheet from 'react-jss';
@@ -65,7 +65,7 @@ class AppSub extends React.PureComponent {
   };
 
   componentDidMount() {
-    this.currentWindowId = remote.getCurrentWindow().id;
+    this.currentWindowId = remoteGetCurrentWindow().id;
   }
 
   render() {

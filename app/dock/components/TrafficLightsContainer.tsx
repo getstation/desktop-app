@@ -1,4 +1,5 @@
-import { remote } from 'electron';
+//import { remote } from 'electron';
+import { getCurrentWindow as remoteGetCurrentWindow } from '@electron/remote';
 import * as React from 'react';
 import TrafficLights from './TrafficLights';
 
@@ -17,7 +18,7 @@ export default class TrafficLightsContainer extends React.PureComponent<Props, S
   constructor(props: Props) {
     super(props);
 
-    this.win = remote.getCurrentWindow();
+    this.win = remoteGetCurrentWindow();
 
     this.state = {
       focused: this.win.isFocused(),

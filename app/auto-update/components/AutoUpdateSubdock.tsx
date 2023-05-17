@@ -1,5 +1,5 @@
 import { Button, ThemeTypes as Theme } from '@getstation/theme';
-import { remote } from 'electron';
+import { app as remoteApp } from '@electron/remote';
 import * as React from 'react';
 // @ts-ignore: no declaration file
 import injectSheet from 'react-jss';
@@ -83,9 +83,9 @@ export default class AutoUpdateSubdock extends React.PureComponent<Props, {}> {
       <div className={classes!.container}>
         <div className={classes!.header}>
           <img className={classes!.logo} src="static/illustrations/illustration--updates.svg" alt="" />
-          <h1 className={classes!.title}>What's new on {remote.app.name}?</h1>
+          <h1 className={classes!.title}>What's new on {remoteApp.name}?</h1>
           <p className={classes!.description}>
-            You're now on version {remote.app.getVersion()}
+            You're now on version {remoteApp.getVersion()}
           </p>
         </div>
 

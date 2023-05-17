@@ -1,6 +1,7 @@
 import { GradientType, InjectedProps as withGradientProps, withGradient } from '@getstation/theme';
 import { withApollo, WithApolloClient } from 'react-apollo';
-import { remote } from 'electron';
+//import { remote } from 'electron';
+import { getCurrentWindow as remoteGetCurrentWindow } from '@electron/remote';
 import * as Immutable from 'immutable';
 // @ts-ignore: no declaration file
 import { validate as validateEmail } from 'isemail';
@@ -78,7 +79,7 @@ class OnboardingImpl extends React.PureComponent<Props, State> {
   constructor(props: Props) {
     super(props);
 
-    this.win = remote.getCurrentWindow();
+    this.win = remoteGetCurrentWindow();
 
     this.state = {
       isWindowFocused: this.win.isFocused(),
@@ -166,7 +167,7 @@ class OnboardingImpl extends React.PureComponent<Props, State> {
   }
 
   handleCloseWindow() {
-    remote.getCurrentWindow().close();
+    remoteGetCurrentWindow().close();
   }
 
   handleMinimizeWindow() {

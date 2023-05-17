@@ -1,4 +1,5 @@
-import { remote } from 'electron';
+//import { remote } from 'electron';
+import { getGlobal as remoteGetGlobal, getCurrentWebContents as remoteGetCurrentWebContents } from '@electron/remote';
 import { compact } from 'ramda-adjunct';
 import * as Immutable from 'immutable';
 // @ts-ignore: no declaration file
@@ -18,7 +19,7 @@ import { namespace } from './const';
 import { createActionsBusMiddleware, ActionsEmitter } from './actionsBus';
 
 export default async function configureStore(actionsEmitter?: ActionsEmitter): Promise<Store> {
-  const workerWebContentsId = remote.getGlobal('worker').webContentsId;
+  const workerWebContentsId = remoteGetGlobal('worker').webContentsId;
   const duplex = new ElectronIpcRendererDuplex(workerWebContentsId, namespace);
 
   const { forwardToServer, getInitialStateClient, replayActionClient } = client(duplex, namespace);
@@ -31,7 +32,7 @@ export default async function configureStore(actionsEmitter?: ActionsEmitter): P
     composeEnhancers = composeWithDevTools({
       realtime: true,
       trace: true,
-      name: `renderer webContentsId=${remote.getCurrentWebContents().id}`,
+      name: `renderer webContentsId=${remoteGetCurrentWebContents().id}`,
       port: 8000,
     });
   }

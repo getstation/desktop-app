@@ -1,4 +1,5 @@
-import { remote } from 'electron';
+//import { remote } from 'electron';
+import { app as remoteApp } from '@electron/remote';
 import * as fs from 'fs-extra';
 import * as memoize from 'memoizee';
 import { join } from 'path';
@@ -8,7 +9,7 @@ import { Manifest } from './index';
 
 export type BxAppManifestWithId = BxAppManifest & { id: number };
 
-const privateManifestsPath = join(remote.app.getPath('userData'), 'private-manifests.json');
+const privateManifestsPath = join(remoteApp.getPath('userData'), 'private-manifests.json');
 let highestId = 1000000;
 
 const getPrivateData = memoize((): BxAppManifestWithId[] => {

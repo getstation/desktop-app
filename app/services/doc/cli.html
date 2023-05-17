@@ -6,14 +6,15 @@
 <body>
 <div id="container"></div>
 <script>
-  const { remote } = require('electron');
+//  const { remote } = require('electron');
+  const { app: remoteApp, getGlobal: remoteGetGlobal } = require('@electron/remote');
   const fs = require('fs');
 
   mermaid.initialize({
     theme: 'default',
   });
 
-  const mmds = remote.getGlobal('sharedObject').mmds;
+  const mmds = remoteGetGlobal('sharedObject').mmds;
   const container = document.querySelector("#container");
 
   const generateSVG = (input) => {
@@ -28,7 +29,7 @@
   document.addEventListener(
     'DOMContentLoaded', () => {
       mmds.forEach(generateSVG);
-      remote.app.exit();
+      remoteApp.exit();
     },
     false
   );

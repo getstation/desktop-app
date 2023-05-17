@@ -1,5 +1,6 @@
 import { ThemeTypes as Theme } from '@getstation/theme';
-import { remote } from 'electron';
+//import { remote } from 'electron';
+import { app as remoteApp } from '@electron/remote';
 import * as React from 'react';
 // @ts-ignore: no declaration file
 import injectSheet from 'react-jss';
@@ -67,8 +68,8 @@ class SettingsPanelGeneralImpl extends React.PureComponent<Props, {}> {
       <div className={classes!.container}>
         <div className={classes!.header}>
           <div>
-            {remote.app.name}
-            <span className={classes!.thin}>version {remote.app.getVersion()}</span>
+            {remoteApp.name}
+            <span className={classes!.thin}>version {remoteApp.getVersion()}</span>
           </div>
 
           <SettingsUpdatesButton />

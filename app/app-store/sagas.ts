@@ -1,4 +1,4 @@
-import { remote } from 'electron';
+import { app as remoteApp } from '@electron/remote';
 import * as isBlank from 'is-blank';
 import * as _ from 'lodash';
 import { SagaIterator } from 'redux-saga';
@@ -108,7 +108,7 @@ function* installAppStoreApplicationIfNotPresent(): SagaIterator {
  * Will be called once Station launches.
  */
 function* installSlackStationNextIfNextAndNotPresent(): SagaIterator {
-  const appName = remote.app.name;
+  const appName = remoteApp.name;
   if (appName !== 'Station Next') return;
 
   const nextSlackAlreadyInstalled: boolean = yield select(hasAlreadyApplicationsForManifest, SLACK_STATION_NEXT_MANIFEST_URL);

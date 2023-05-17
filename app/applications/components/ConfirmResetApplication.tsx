@@ -1,5 +1,6 @@
 import { Modal } from '@getstation/theme';
-import { remote } from 'electron';
+//import { remote } from 'electron';
+import { getCurrentWindow as remoteGetCurrentWindow } from '@electron/remote';
 import * as React from 'react';
 // @ts-ignore: no declaration file
 import injectSheet from 'react-jss';
@@ -13,7 +14,7 @@ import { resetApplication, ResetApplicationAction } from '../duck';
 import { withGetApplication } from '../queries@local.gql.generated';
 import { getUIConfirmResetApplicationModalIsVisible } from '../selectors';
 
-const currentWindowId = remote.getCurrentWindow().id;
+const currentWindowId = remoteGetCurrentWindow().id;
 
 interface Classes {
   description: string,

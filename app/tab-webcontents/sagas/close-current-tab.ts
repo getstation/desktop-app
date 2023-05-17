@@ -1,4 +1,5 @@
-import { remote } from 'electron';
+//import { remote } from 'electron';
+import { BrowserWindow as remoteBrowserWindow } from '@electron/remote';
 import { SagaIterator } from 'redux-saga';
 import { call, select, put, all, getContext } from 'redux-saga/effects';
 import { getTabById, getTabsSortedByLastActivityAt } from '../../tabs/selectors';
@@ -34,7 +35,8 @@ function* closeWindowIfNotMain(): SagaIterator {
 
   // yield callService('browserWindow', 'getFocusedWindow') doesn't work
   // since we don't manage SaaS his own opened windows
-  const focusedWindow = yield call([remote, remote.BrowserWindow.getFocusedWindow]);
+  const focusedWindow = yield call([remoteBrowserWindow, remoteBrowserWindow.getFocusedWindow]);
+  //vk: const focusedWindow = yield call([remote, remote.BrowserWindow.getFocusedWindow]);
 
   if (mainWindowId !== focusedWindow.id) {
     yield call([focusedWindow, focusedWindow.close]);

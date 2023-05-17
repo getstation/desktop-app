@@ -1,4 +1,4 @@
-import { remote } from 'electron';
+import { shell as remoteShell } from '@electron/remote';
 import { Set } from 'immutable';
 
 // actions
@@ -19,7 +19,7 @@ export const removeToastForDownload = downloadId => ({
 export const openDownloadedFile = downloadId => (dispatch, getState) => {
   const state = getState();
   const filePath = state.getIn(['downloads', downloadId, 'filePath']);
-  remote.shell.openPath(filePath);
+  remoteShell.openPath(filePath);
 };
 
 // reducer

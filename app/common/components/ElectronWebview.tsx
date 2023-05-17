@@ -8,7 +8,7 @@ import * as ReactDOM from 'react-dom';
 import { logger } from '../../api/logger';
 import { Omit } from '../../types';
 import { dissoc } from 'ramda';
-import { remote } from 'electron';
+import { webContents as remoteWebContents } from '@electron/remote';
 
 export interface ElectronWebviewProps extends Omit<Electron.WebviewTag, 'src'> {
   // webview `src` is updated by the webview itself, so we do not want to
@@ -300,7 +300,7 @@ class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
    */
   forwardKeyboardEvents() {
     // Inspired by https://github.com/electron/electron/issues/14258#issuecomment-416893856
-    remote.webContents
+    remoteWebContents
       .fromId(this.view.getWebContentsId())
       .on('before-input-event', (_event, input) => {
         // Create a fake KeyboardEvent from the data provided
