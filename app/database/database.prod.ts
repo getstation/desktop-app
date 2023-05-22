@@ -1,5 +1,5 @@
 import * as cls from 'continuation-local-storage';
-import { app /*, remote */ } from 'electron';
+import { app } from 'electron';
 import log from 'electron-log';
 import * as mkdirp from 'mkdirp';
 import * as path from 'path';

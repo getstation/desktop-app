@@ -1,5 +1,4 @@
-//import { remote } from 'electron';
-import { getCurrentWindow as remoteGetCurrentWindow } from '@electron/remote';
+import * as remote from '@electron/remote';
 import PropTypes from 'prop-types';
 import React from 'react';
 import injectSheet from 'react-jss';
@@ -65,7 +64,7 @@ class AboutWindowPresenter extends React.PureComponent {
     return (
       <div className={classes.container}>
         { isDarwin &&
-          <OSBar onClose={() => remoteGetCurrentWindow().close()} />
+          <OSBar onClose={() => remote.getCurrentWindow().close()} />
         }
 
         <div className={classes.body}>

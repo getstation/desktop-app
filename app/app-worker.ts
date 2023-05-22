@@ -2,8 +2,8 @@
 process.worker = true;
 // tslint:disable:no-import-side-effect
 import './dotenv';
-import { ipcRenderer /*, remote */ } from 'electron';
-import { app as remoteApp } from '@electron/remote';
+import { ipcRenderer } from 'electron';
+import * as remote from '@electron/remote';
 import { InMemoryCache, NormalizedCacheObject } from 'apollo-cache-inmemory';
 import ApolloClient from 'apollo-client';
 import { join } from 'path';
@@ -88,7 +88,7 @@ export class BrowserXAppWorker {
       this.initAutoLaunch().catch(handleError());
     } catch (e) {
       handleError()(e);
-      remoteApp.exit(1);
+      remote.app.exit(1);
     }
   }
 
@@ -96,7 +96,7 @@ export class BrowserXAppWorker {
     this.manifestProvider = new ManifestProvider({
       // Use native fetch for manifests fetching
       distantFetcher: new DistantFetcher(),
-      cachePath: join(remoteApp.getPath('userData'), 'ApplicationManifestsCache'),
+      cachePath: join(remote.app.getPath('userData'), 'ApplicationManifestsCache'),
     });
 
     (services.manifest as ManifestServiceImpl).init(this.manifestProvider);

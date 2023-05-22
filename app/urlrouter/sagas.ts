@@ -1,5 +1,4 @@
-//import { remote } from 'electron';
-import { shell as remoteShell } from '@electron/remote';
+import * as remote from '@electron/remote';
 import log from 'electron-log';
 import { SagaIterator } from 'redux-saga';
 import { all, call, delay, fork, getContext, put, race, select, take } from 'redux-saga/effects';
@@ -103,7 +102,7 @@ function* triggerCorrespondingAction(
       // dispatch(executeWebviewMethod(destination, 'reload'));
       break;
     case URLRouterAction.DEFAULT_BROWSER:
-      remoteShell.openExternal(url);
+      remote.shell.openExternal(url);
       break;
     case URLRouterAction.NAV_TO_TAB:
       yield put(navigateToApplicationTabAutomatically(destination.tabId));

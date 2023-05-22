@@ -1,8 +1,7 @@
 import { updateUI } from 'redux-ui/transpiled/action-reducer';
 import classNames from 'classnames';
 import memoize from 'memoizee';
-//import { remote } from 'electron';
-import { getCurrentWindow as remoteGetCurrentWindow } from '@electron/remote';
+import * as remote from '@electron/remote';
 import mod from 'mod-op';
 import PropTypes from 'prop-types';
 import { findIndex, prop, propEq, tail } from 'ramda';
@@ -63,7 +62,7 @@ const styles = () => ({
   }
 });
 
-const onTrafficLightClose = () => remoteGetCurrentWindow().close();
+const onTrafficLightClose = () => remote.getCurrentWindow().close();
 
 @injectSheet(styles)
 class DockImpl extends React.PureComponent {

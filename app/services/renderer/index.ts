@@ -1,5 +1,4 @@
-//import { remote } from 'electron';
-import { getGlobal as remoteGetGlobal } from '@electron/remote';
+import * as remote from '@electron/remote';
 import { ElectronIpcRendererDuplex } from 'stream-electron-ipc';
 import rpcchannel, { RPCChannel } from 'stream-json-rpc';
 import { isPackaged } from '../../utils/env';
@@ -37,7 +36,7 @@ export const getMainPeerHandler = () => {
 };
 
 export const getWorkerPeerHandler = () => {
-  const workerWebContentsId = remoteGetGlobal('worker').webContentsId;
+  const workerWebContentsId = remote.getGlobal('worker').webContentsId;
   const duplex = new ElectronIpcRendererDuplex(workerWebContentsId, servicesDuplexNamespace);
   const channel: RPCChannel = rpcchannel(duplex, {
     forwardErrors: true, // !isPackaged,

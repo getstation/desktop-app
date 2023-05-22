@@ -17,10 +17,10 @@ const protocolsAllowed = [
   'station:',
 ];
 if (micromatch.isMatch(window.location.origin, originsAllowed) || protocolsAllowed.includes(window.location.protocol)) {
-  const { ipcRenderer /*, remote */ } = require('electron');
-  const { getGlobal: remoteGetGlobal } = require('@electron/remote');
+  const { ipcRenderer } = require('electron');
+  const remote = require('@electron/remote');
   const { Observable } = require('rxjs/Rx');
-  const workerWebContentsId = remoteGetGlobal('worker').webContentsId;
+  const workerWebContentsId = remote.GetGlobal('worker').webContentsId;
 
   const sendPerformToProxy = (channel, payload) => {
     const p = new Promise(resolve => {

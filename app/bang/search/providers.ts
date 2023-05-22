@@ -1,6 +1,6 @@
 import * as path from 'path';
 import { LocalStorage } from 'node-localstorage';
-import { app as remoteApp } from '@electron/remote';
+import * as remote from '@electron/remote';
 import * as moment from 'moment';
 import { reverse } from 'ramda';
 import { SDK, activity } from '@getstation/sdk';
@@ -75,7 +75,7 @@ export const createInMemoryStorageProvider = (): FrecencyStorageProvider & { cle
 };
 
 export const createContextualFrecencyStorageProvider = () => {
-  const userDataPath = remoteApp.getPath('userData');
+  const userDataPath = remote.app.getPath('userData');
   const storageProviderPath = path.join(userDataPath, 'frecencyDataStorage');
   return new LocalStorage(storageProviderPath);
 };

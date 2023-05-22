@@ -1,8 +1,8 @@
 /* eslint-disable global-require,import/imports-first */
 import './utils/stat-cache';
 import './dotenv';
-import { /* remote, */ webFrame, ipcRenderer } from 'electron';
-import { getCurrentWindow as remoteGetCurrentWindow } from '@electron/remote';
+import { webFrame, ipcRenderer } from 'electron';
+import * as remote from '@electron/remote';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -32,7 +32,7 @@ if (process.env.STATION_REACT_PERF) {
   // Perf.printWasted()
 }
 
-const currentWindow = remoteGetCurrentWindow();
+const currentWindow = remote.getCurrentWindow();
 
 const client = getGQlClient();
 const actionsEmitter = createActionsEmitter();
