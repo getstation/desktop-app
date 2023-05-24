@@ -1,4 +1,5 @@
 import { BrowserWindow, ipcMain, screen } from 'electron';
+import * as remoteMain from '@electron/remote/main';
 import * as windowStateKeeper from 'electron-window-state';
 import { fromEvent } from 'rxjs/observable/fromEvent';
 import * as sanitize from 'sanitize-filename';
@@ -21,6 +22,9 @@ export class BrowserWindowServiceImpl extends BrowserWindowService implements RP
       ...positionOptions,
       ...options,
     });
+
+    remoteMain.enable(this.window.webContents);
+
     if (options.preventNavigation) {
       this.window.webContents.on('will-navigate', event => event.preventDefault());
     }

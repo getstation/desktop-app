@@ -13,7 +13,9 @@ export class AutolaunchServiceImpl extends AutolaunchService implements RPC.Inte
   }
 
   async set(enable: boolean) {
-    if (!this.provider) throw new Error('missing autolaunch provider service');
+    if (!this.provider) {
+      throw new Error('missing autolaunch provider service');
+    }
 
     const appName = await this.provider.getAppName();
 
@@ -23,6 +25,11 @@ export class AutolaunchServiceImpl extends AutolaunchService implements RPC.Inte
       name: appName,
       path: process.env.APPIMAGE,
     } : { name: appName };
+
+
+    //log.info(`ZZZZZZZZZ ${JSON.stringify(this.provider)}`);
+
+
     const autoLauncher = new AutoLaunch(autolaunchConfig);
 
     // optimistically set the AutoLaunch status in store

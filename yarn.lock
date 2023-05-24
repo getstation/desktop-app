@@ -1402,6 +1402,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.3.4":
+  version "7.21.5"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.21.5.tgz#8492dddda9644ae3bda3b45eabe87382caee7200"
+  integrity sha512-8jI69toZqqcsnqGGqwGS4Qb1VwLOEp4hz+CXPywcvjs60u3B4Pom/U/7rm4W8tMOYEB+E9wgD0mW1l3r8qlI9Q==
+  dependencies:
+    regenerator-runtime "^0.13.11"
+
 "@babel/runtime@^7.6.3":
   version "7.21.0"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.21.0.tgz#5b55c9d394e5fcf304909a8b00c07dc217b56673"
@@ -2430,13 +2437,6 @@
   dependencies:
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
-
-"@magne4000/json-rpc-peer@^0.16.0":
-  version "0.16.0"
-  resolved "https://registry.yarnpkg.com/@magne4000/json-rpc-peer/-/json-rpc-peer-0.16.0.tgz#c94a9044e02be2716703f558afbf3ad9ff4dbafb"
-  integrity sha512-I8RvP57tb8Svryyr/Aps6tgxdmklDjMeTkClMn03Ut9VhzGm4LxEVH3Jyqom9TBCRgylpXRG1sBkBoYQrfi1gQ==
-  dependencies:
-    json-rpc-protocol "^0.13.1"
 
 "@malept/cross-spawn-promise@^1.1.0":
   version "1.1.1"
@@ -4096,10 +4096,15 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.17.3.tgz#6d327abaa4be34a74e421ed6409a0ae2f47f4c3d"
   integrity sha512-e6ZowgGJmTuXa3GyaPbTGxX17tnThl2aSSizrFthQ7m9uLGZBXiGhgE55cjRZTF5kjZvYn9EOPOMljdjwbflxw==
 
-"@types/node@^14.18.42", "@types/node@^14.6.2":
+"@types/node@^14.18.42":
   version "14.18.42"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.18.42.tgz#fa39b2dc8e0eba61bdf51c66502f84e23b66e114"
   integrity sha512-xefu+RBie4xWlK8hwAzGh3npDz/4VhF6icY/shU+zv/1fNn+ZVG7T7CRwe9LId9sAYRPxI+59QBPuKL3WpyGRg==
+
+"@types/node@^14.6.2":
+  version "14.18.47"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.18.47.tgz#89a56b05804d136cb99bf2f823bb00814a889aae"
+  integrity sha512-OuJi8bIng4wYHHA3YpKauL58dZrPxro3d0tabPHyiNF8rKfGKuVfr83oFlPLmKri1cX+Z3cJP39GXmnqkP11Gw==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -5582,10 +5587,10 @@ auto-bind@~4.0.0:
   resolved "https://registry.yarnpkg.com/auto-bind/-/auto-bind-4.0.0.tgz#e3589fc6c2da8f7ca43ba9f84fa52a744fc997fb"
   integrity sha512-Hdw8qdNiqdJ8LqT0iK0sVzkFbzg6fhnQqqfWhBDxcHZvU75+B+ayzTy8x+k5Ix0Y92XOhOUlx74ps+bA6BeYMQ==
 
-auto-launch@^5.0.5:
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/auto-launch/-/auto-launch-5.0.5.tgz#d14bd002b1ef642f85e991a6195ff5300c8ad3c0"
-  integrity sha512-ppdF4mihhYzMYLuCcx9H/c5TUOCev8uM7en53zWVQhyYAJrurd2bFZx3qQVeJKF2jrc7rsPRNN5cD+i23l6PdA==
+auto-launch@^5.0.6:
+  version "5.0.6"
+  resolved "https://registry.yarnpkg.com/auto-launch/-/auto-launch-5.0.6.tgz#ccc238ddc07b2fa84e96a1bc2fd11b581a20cb2d"
+  integrity sha512-OgxiAm4q9EBf9EeXdPBiVNENaWE3jUZofwrhAkWjHDYGezu1k3FRZHU8V2FBxGuSJOHzKmTJEd0G7L7/0xDGFA==
   dependencies:
     applescript "^1.0.0"
     mkdirp "^0.5.1"
@@ -9836,6 +9841,7 @@ electron-publish@23.6.0:
 
 "electron-simple-ipc@https://github.com/viktor44/electron-simple-ipc/archive/refs/tags/1.1.2.tar.gz":
   version "1.1.2"
+  uid "562c7dc9b4e133a3c193675c26571f73e58b4897"
   resolved "https://github.com/viktor44/electron-simple-ipc/archive/refs/tags/1.1.2.tar.gz#562c7dc9b4e133a3c193675c26571f73e58b4897"
 
 "electron-simple-rpc@https://github.com/viktor44/electron-simple-rpc/archive/refs/tags/v1.1.4.tar.gz":
@@ -9946,7 +9952,7 @@ electron-winstaller@^2.6.4:
     lodash.template "^4.2.2"
     temp "^0.8.3"
 
-electron@^14.2.9:
+electron@^14:
   version "14.2.9"
   resolved "https://registry.yarnpkg.com/electron/-/electron-14.2.9.tgz#9e1e95643ec3847592a186e8115d1ddb2e4921ee"
   integrity sha512-7LdJFmqVzO9NLKO0hwOwPA6Kv4GSybGMcej8f2q7fVT4O8mIfL9oo/v4axVjVWm0+58ROQtHv8hYnnAs3ygG0Q==
@@ -14960,6 +14966,15 @@ json-parse-even-better-errors@^2.3.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/json-parse-even-better-errors/-/json-parse-even-better-errors-2.3.1.tgz#7c47805a94319928e05777405dc12e1f7a4ee02d"
   integrity sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==
+
+json-rpc-peer@^0.17.0:
+  version "0.17.0"
+  resolved "https://registry.yarnpkg.com/json-rpc-peer/-/json-rpc-peer-0.17.0.tgz#1182664b1db4c6072faba8163d1d213d063183bb"
+  integrity sha512-I6+/iVMij53vrEduktiz7ijiGSrA9Bqsl8n1A+pRHoe0Dqsej3dN9EquA9pLv3tbG8aVHyoQI3nNzstztpg6Fw==
+  dependencies:
+    "@babel/runtime" "^7.3.4"
+    json-rpc-protocol "^0.13.1"
+    lodash "^4.17.4"
 
 json-rpc-protocol@^0.13.1:
   version "0.13.1"
@@ -21752,10 +21767,12 @@ stream-each@^1.1.0:
     end-of-stream "^1.1.0"
     stream-shift "^1.0.0"
 
-stream-electron-ipc@^1.0.14:
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/stream-electron-ipc/-/stream-electron-ipc-1.0.14.tgz#278b2056b88f905895a03f7ab1f340a1d94d4934"
-  integrity sha512-tOM0FaH8pimulIy+ze+eN6ZHxlMhv6Jbz/LCx4+mz/Tf9xzoqjRtvJB5IFRthebjucTtxrDIdmY+TnhWBzrhfg==
+stream-electron-ipc@^14.0.0:
+  version "14.0.0"
+  resolved "https://registry.yarnpkg.com/stream-electron-ipc/-/stream-electron-ipc-14.0.0.tgz#91d56dced83f08bc6a3745d2d5407e0cfa4070a9"
+  integrity sha512-R8UvSS15ip1/Y8PMTDhlnCeEYPRsSgp8Z94SBRR+FAKNB3jCzObrXJPyFilzW66Vttcbf4ymjkHCC3zldNqTPw==
+  dependencies:
+    "@electron/remote" "^2.0.9"
 
 stream-http@^2.7.2:
   version "2.8.3"
@@ -21768,13 +21785,13 @@ stream-http@^2.7.2:
     to-arraybuffer "^1.0.0"
     xtend "^4.0.0"
 
-stream-json-rpc@^0.7.9:
-  version "0.7.9"
-  resolved "https://registry.yarnpkg.com/stream-json-rpc/-/stream-json-rpc-0.7.9.tgz#b197a51b72c126533f17c97e3e4d78ccf4b77ea1"
-  integrity sha512-Posatp/bWkteK1PvtQcdlkh1pLViaiG5dmCHgJMwgw4hQweoQ/rJiXJUAdlEXZfXz1PEDci65CQOZAGz+wuWVg==
+stream-json-rpc@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/stream-json-rpc/-/stream-json-rpc-0.9.0.tgz#3922ac8d30a8d28b31435f0e80eddeb64d78bdc0"
+  integrity sha512-HBtQlIcrNf+Nll9jCbJiw1nn7Bush+vrqiUIlyrTEny9ycjQJfjdHOOH7GjqQzhqOxlj8D6UoEeiO1Xj6Dd50w==
   dependencies:
-    "@magne4000/json-rpc-peer" "^0.16.0"
     end-of-stream "^1.4.4"
+    json-rpc-peer "^0.17.0"
     multiplex "^6.7.0"
     pump "^3.0.0"
     uuid "^3.3.3"

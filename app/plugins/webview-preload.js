@@ -20,7 +20,18 @@ if (micromatch.isMatch(window.location.origin, originsAllowed) || protocolsAllow
   const { ipcRenderer } = require('electron');
   const remote = require('@electron/remote');
   const { Observable } = require('rxjs/Rx');
-  const workerWebContentsId = remote.GetGlobal('worker').webContentsId;
+
+
+//  require('electron-log').info(`XXXXXXXXXXXXXXXXXXXX 1 ${JSON.stringify(window.location)}`);
+  //console.log(`XXXXXXXXXXXXXXXXXXXX 1 ${JSON.stringify(window.location)}`);
+
+
+  const workerWebContentsId = remote.getGlobal('worker').webContentsId;
+
+
+  // require('electron-log').info(`XXXXXXXXXXXXXXXXXXXX 2`);
+  //console.log(`XXXXXXXXXXXXXXXXXXXX 2`);
+
 
   const sendPerformToProxy = (channel, payload) => {
     const p = new Promise(resolve => {
