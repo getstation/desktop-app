@@ -1,6 +1,6 @@
 /* tslint:disable global-require, no-import-side-effect */
 import './dotenv';
-import { app, BrowserWindow, ipcMain, dialog, session, OnBeforeSendHeadersListenerDetails, webContents } from 'electron';
+import { app, BrowserWindow, ipcMain, dialog, session, OnBeforeSendHeadersListenerDetails } from 'electron';
 import log, { LevelOption } from 'electron-log';
 // @ts-ignore: no declaration file
 import { format } from 'electron-log/lib/format';
@@ -17,7 +17,6 @@ import * as remoteMain from '@electron/remote/main';
 bootServices(); // all side effects related to services (in main process)
 
 remoteMain.initialize();
-remoteMain.enable(webContents);
 
 const loadWorker = () => {
   const worker = new BrowserWindow({
@@ -36,19 +35,17 @@ const loadWorker = () => {
     show: false,
   });
 
-  //require('electron-log').info(`ZZZZZZZZZZZZZZZZZZZZZ 1`);
-
   remoteMain.enable(worker.webContents);
-
-  //require('electron-log').info(`ZZZZZZZZZZZZZZZZZZZZZ 2`);
 
   // Used by other renderers
   (global as any).worker = Object.freeze({
     webContentsId: worker.webContents.id,
   });
 
-  //require('electron-log').info(`ZZZZZZZZZZZZZZZZZZZZZ 3`);
-
+  ipcMain.handle('get-worker-contents-id', () => {
+    return worker.webContents.id;
+  });
+  
   (services.browserWindow as BrowserWindowManagerServiceImpl)
     .setWorkerBrowserWindow(worker)
     .catch(handleError());

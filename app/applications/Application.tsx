@@ -382,7 +382,7 @@ class ApplicationImpl extends React.PureComponent {
     if (this.webView && this.webView.view) {
       const webview = this.webView.view;
 
-      webview.addEventListener('did-attach', () => {
+      webview.addEventListener('dom-ready', () => {
         const webContents = remote.webContents.fromId(webview.getWebContentsId());
 
         webview.addEventListener('did-navigate-in-page', (e: any) => this.handleDidNavigateInPage(e));
@@ -447,7 +447,7 @@ class ApplicationImpl extends React.PureComponent {
           hidden={this.props.hidden}
           className="l-webview__content"
           preload={preloadUrl}
-          allowpopups="true"
+          allowpopups={true}
           loading={this.props.loading}
           webviewRef={this.setWebviewRef}
           onPageTitleUpdated={this.handleTitleUpdated}
@@ -457,7 +457,9 @@ class ApplicationImpl extends React.PureComponent {
           onDidFailLoad={this.handleDidFailLoad}
           onDomReady={this.handleDomReady}
           onCrashed={this.handleWebcontentsCrashed}
-          webpreferences={`allowDisplayingInsecureContent,nativeWindowOpen=${notUseNativeWindowOpen ? 'no' : 'yes'},contextIsolation=no`}
+          nodeintegration={true}
+          nodeintegrationinsubframes={true}
+          webpreferences={`allowRunningInsecureContent=true,nativeWindowOpen=${notUseNativeWindowOpen ? 'false' : 'true'},contextIsolation=false,nodeIntegration=true,nodeIntegrationInSubFrames=true,nodeIntegrationInWorker=true`}
         />
 
       </div>
