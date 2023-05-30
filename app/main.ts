@@ -45,6 +45,9 @@ const loadWorker = () => {
   ipcMain.handle('get-worker-contents-id', () => {
     return worker.webContents.id;
   });
+  ipcMain.on('get-worker-contents-id-sync', (event) => {
+    event.returnValue = worker.webContents.id;
+  });
   
   (services.browserWindow as BrowserWindowManagerServiceImpl)
     .setWorkerBrowserWindow(worker)

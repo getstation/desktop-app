@@ -1,9 +1,10 @@
 let _isPackaged = process.env.NODE_ENV !== 'test';
 
 if (!['storybook', 'test'].includes(process.env.NODE_ENV!)) {
+
   _isPackaged = Boolean(
       process.type === 'renderer' 
-          ? require('@electron/remote').app.isPackaged 
+          ? require('electron').ipcRenderer.sendSync('get-is-packaged')
           : require('electron').app.isPackaged
   );
 }
