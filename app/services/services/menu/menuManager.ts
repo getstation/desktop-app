@@ -239,7 +239,7 @@ export class BrowserXMenuManager extends EventEmitter {
         {
           label: 'Discover Station\'s features',
           click(_menuItem: Electron.MenuItem, _browserWindow: Electron.BrowserWindow, event: Electron.KeyboardEvent) {
-            emit('click-item', { event: serializedKeyboardEvent(event), action: 'station-tour' });
+            emit('click-item', { event: serializedKeyboardEvent(event), action: 'station-features' });
           },
         },
         {
@@ -290,7 +290,7 @@ export class BrowserXMenuManager extends EventEmitter {
         {
           label: 'Discover Station\'s features',
           click(_menuItem: Electron.MenuItem, _browserWindow: Electron.BrowserWindow, event: Electron.KeyboardEvent) {
-            emit('click-item', { event: serializedKeyboardEvent(event), action: 'station-tour' });
+            emit('click-item', { event: serializedKeyboardEvent(event), action: 'station-features' });
           },
         },
         {

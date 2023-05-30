@@ -262,7 +262,8 @@ export class BrowserXAppWorker {
       case 'show-release-notes':
         this.dispatch(setReleaseNotesSubdockVisibility(true));
         break;
-      case 'station-tour':
+      case 'station-features':
+        this.dispatch(dispatchUrl('https://getstation.com/features'));
         break;
       case 'reset-current-application':
         this.dispatch(updateUI('confirmResetApplicationModal', 'isVisible', getFocus(this.getState())));
