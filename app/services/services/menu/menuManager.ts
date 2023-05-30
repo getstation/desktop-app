@@ -6,11 +6,11 @@ import { isDarwin } from '../../../utils/process';
 import { serializedKeyboardEvent } from './helpers';
 
 const openFaq = () => {
-  shell.openExternal('https://intercom.help/station');
+  shell.openExternal('https://github.com/getstation/desktop-app/wiki/FAQ');
 };
 
 const openPrivacyPolicies = () => {
-  shell.openExternal('https://intercom.help/station/data-and-privacy/station-privacy-policies');
+  shell.openExternal('https://github.com/getstation/desktop-app/wiki/FAQ#-data--privacy');
 };
 
 export class BrowserXMenuManager extends EventEmitter {

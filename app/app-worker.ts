@@ -257,7 +257,7 @@ export class BrowserXAppWorker {
         this.dispatch(toggleKbdShortcuts());
         break;
       case 'show-community':
-        this.dispatch(dispatchUrl('https://feedback.getstation.com/'));
+        this.dispatch(dispatchUrl('https://github.com/getstation/desktop-app/issues'));
         break;
       case 'show-release-notes':
         this.dispatch(setReleaseNotesSubdockVisibility(true));
