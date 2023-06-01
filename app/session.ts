@@ -63,12 +63,25 @@ import { Session, OnBeforeSendHeadersListenerDetails, OnHeadersReceivedListenerD
 //   'onHeadersReceived',
 // ];
 
-// const defaultUserAgent = [
-//   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)',
-//   'AppleWebKit/537.36 (KHTML, like Gecko)',
-//   'Chrome/112.0.0.0',
-//   'Safari/537.36',
-// ].join(' ');
+const defaultUserAgent = [
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)',
+  'AppleWebKit/537.36 (KHTML, like Gecko)',
+  'Chrome/112.0.0.0',
+  'Safari/537.36',
+].join(' ');
+
+export const getUserAgentForApp = (url: string, currentUserAgent: string): string => {
+
+  if (url.startsWith('file://') || url.startsWith('http://localhost')) {
+    return currentUserAgent;
+  }
+  else if (url.startsWith('https://accounts.google.com')) {
+    return 'Chrome/87.0.4280.141';
+  }
+
+  return defaultUserAgent;
+};
+
 
 const getHeaderName = (headerName: string, headers?: Record<string, string>): string | undefined => {
   if (headers) {
@@ -97,21 +110,6 @@ export const setHeader = (headerName: string, headerValue: any, headers?: Record
   }
   return headers;
 }
-
-
-export const getUserAgentForApp = (url: string, currentUserAgent: string): string => {
-
-  return currentUserAgent.replace(/Electron\/\S*\s/, '');
-
-  // if (url.startsWith('file://') || url.startsWith('http://localhost')) {
-  //   return currentUserAgent;
-  // }
-  // else if (url.startsWith('https://accounts.google.com')) {
-  //   return 'Chrome/87.0.4280.141';
-  // }
-
-  // return defaultUserAgent;
-};
 
 // // @ts-ignore: type
 // app.on('session-created', (session: Electron.Session) => {
