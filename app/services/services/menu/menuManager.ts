@@ -6,11 +6,11 @@ import { isDarwin } from '../../../utils/process';
 import { serializedKeyboardEvent } from './helpers';
 
 const openFaq = () => {
-  shell.openExternal('https://intercom.help/station');
+  shell.openExternal('https://github.com/getstation/desktop-app/wiki/FAQ');
 };
 
 const openPrivacyPolicies = () => {
-  shell.openExternal('https://intercom.help/station/data-and-privacy/station-privacy-policies');
+  shell.openExternal('https://github.com/getstation/desktop-app/wiki/FAQ#-data--privacy');
 };
 
 export class BrowserXMenuManager extends EventEmitter {
@@ -239,7 +239,7 @@ export class BrowserXMenuManager extends EventEmitter {
         {
           label: 'Discover Station\'s features',
           click(_menuItem: Electron.MenuItem, _browserWindow: Electron.BrowserWindow, event: Electron.KeyboardEvent) {
-            emit('click-item', { event: serializedKeyboardEvent(event), action: 'station-tour' });
+            emit('click-item', { event: serializedKeyboardEvent(event), action: 'station-features' });
           },
         },
         {
@@ -290,7 +290,7 @@ export class BrowserXMenuManager extends EventEmitter {
         {
           label: 'Discover Station\'s features',
           click(_menuItem: Electron.MenuItem, _browserWindow: Electron.BrowserWindow, event: Electron.KeyboardEvent) {
-            emit('click-item', { event: serializedKeyboardEvent(event), action: 'station-tour' });
+            emit('click-item', { event: serializedKeyboardEvent(event), action: 'station-features' });
           },
         },
         {
