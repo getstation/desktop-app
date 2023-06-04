@@ -198,7 +198,7 @@ class OnboardingImpl extends React.PureComponent<Props, State> {
         emails={emails}
         onEmailsChange={this.updateEmails}
         loginButtonDisabled={loginButtonDisabled}
-        privacyPoliciesLink={'https://intercom.help/station/data-and-privacy/station-privacy-policies'}
+        privacyPoliciesLink={'https://github.com/getstation/desktop-app/wiki/FAQ#-data--privacy'}
         isWindowFocused={isWindowFocused}
         onCloseWindow={this.handleCloseWindow}
         onMinimizeWindow={this.handleMinimizeWindow}

@@ -38,7 +38,7 @@ export interface StateProps {
 
 export type Props = OwnProps & StateProps;
 
-const annoyedLink = 'https://intercom.help/station/app-specific-questions/i-find-google-calendar-reminder-popups-annoying';
+const annoyedLink = 'https://github.com/getstation/desktop-app/wiki/FAQ-%7C-%F0%9F%93%A3-Notifications-&-badges#i-find-google-calendar-reminder-popups-annoying';
 
 const actionCTAOnBottom = (props: Props) =>
   props.dialog.get('actions').some((action) => Boolean(action!.get('text')));
