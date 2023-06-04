@@ -173,12 +173,8 @@ export const enhanceSession = (session: Session) => {
       (details: OnHeadersReceivedListenerDetails, callback: (headersReceivedResponse: HeadersReceivedResponse) => void) => {
 
         let headers = details.responseHeaders;
-
-        console.log(`XXXXXXXXXXXXXXXXX ${details.url} "${getHeader('X-Frame-Options', headers)}"`)
-
         if (getHeader('X-Frame-Options', headers)) {
           headers = setHeader('X-Frame-Options', 'SAMEORIGIN', headers);
-          console.log(`CCCCCCCCCCC ${JSON.stringify(headers)}`)
         }
 
         callback({
