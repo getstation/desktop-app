@@ -21850,8 +21850,10 @@ stream-each@^1.1.0:
     end-of-stream "^1.1.0"
     stream-shift "^1.0.0"
 
-"stream-electron-ipc@file:../stream-json-rpc/packages/stream-electron-ipc":
-  version "14.0.0"
+stream-electron-ipc@^14.1.0:
+  version "14.1.0"
+  resolved "https://registry.yarnpkg.com/stream-electron-ipc/-/stream-electron-ipc-14.1.0.tgz#b6f71930b4ee78e996d4539856ebc80cade021ec"
+  integrity sha512-1qGUJagudRbwep/Tr5knwMRT11NIwcP7++AXhmjThkmA7mbpYjNtVWrvKoDgDZbppiBHwmCTYpnSlGwpMulv1A==
 
 stream-http@^2.7.2:
   version "2.8.3"
@@ -21864,8 +21866,10 @@ stream-http@^2.7.2:
     to-arraybuffer "^1.0.0"
     xtend "^4.0.0"
 
-"stream-json-rpc@file:../stream-json-rpc/packages/stream-json-rpc":
-  version "0.9.0"
+stream-json-rpc@^0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/stream-json-rpc/-/stream-json-rpc-0.9.1.tgz#2ab3410ff375a316ba54b660994807b27864400a"
+  integrity sha512-25NqUNkxxqqT0kJ2nw68nmfxdv5zExcMCxlUtlFQ9nCtXj74mqb/2uBfGQTJhLt847XaT+hrUVOIS5UaHW2FCg==
   dependencies:
     end-of-stream "^1.4.4"
     json-rpc-peer "^0.17.0"
