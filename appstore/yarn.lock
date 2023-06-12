@@ -15136,7 +15136,7 @@ supports-color@^8.0.0:
   dependencies:
     has-flag "^4.0.0"
 
-svg-inline-loader@^0.8.0:
+svg-inline-loader@^0.8.2:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/svg-inline-loader/-/svg-inline-loader-0.8.2.tgz#9872414f9e4141601e04eb80cda748c9a50dae71"
   integrity sha512-kbrcEh5n5JkypaSC152eGfGcnT4lkR0eSfvefaUJkLqgGjRQJyKDvvEE/CCv5aTSdfXuc+N98w16iAojhShI3g==
