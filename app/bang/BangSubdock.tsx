@@ -29,7 +29,6 @@ import {
 import { findItemById, getId } from './helpers/utils';
 import { canShowInsert, getResultsJS, getSearchSessionId, getSearchValue, isVisible } from './selectors';
 
-const gDriveIcon = SimpleIcons['Google Drive'].svg;
 const kbShortcut = SHORTCUTS.bang.kbd.replace(' ', '+');
 
 export interface OwnProps {
@@ -243,7 +242,6 @@ class BangSubdockImpl extends React.PureComponent<Props> {
     return (
       <BangPresenter
         {...this.props}
-        gDriveIcon={gDriveIcon}
         kbShortcut={kbShortcut}
         setRef={this.setRef}
         handleArrowDown={this.selectNextItemArrowDown}

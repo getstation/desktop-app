@@ -59,10 +59,6 @@ const mutateAddRules = config => {
     exclude: /node_modules/,
     loader: 'graphql-import-loader'
   });
-  config.module.rules.push({
-    test: /\.svg$/,
-    loader: 'svg-inline-loader'
-  });
 };
 
 /**
