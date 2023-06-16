@@ -396,6 +396,7 @@ class ApplicationImpl extends React.PureComponent {
   render() {
     const { notUseNativeWindowOpen, tab } = this.props;
     const tabUrl = tab.get('url', '');
+    const nodeIntegrationEnabled = tabUrl.startsWith('station://')
 
     const {
       applicationId, applicationName, applicationIcon, themeColor, manifestURL,
@@ -457,9 +458,7 @@ class ApplicationImpl extends React.PureComponent {
           onDidFailLoad={this.handleDidFailLoad}
           onDomReady={this.handleDomReady}
           onCrashed={this.handleWebcontentsCrashed}
-          nodeintegration={true}
-          nodeintegrationinsubframes={true}
-          webpreferences={`allowRunningInsecureContent=true,nativeWindowOpen=${notUseNativeWindowOpen ? 'false' : 'true'},contextIsolation=false,nodeIntegration=true,nodeIntegrationInSubFrames=true,nodeIntegrationInWorker=true`}
+          webpreferences={`allowRunningInsecureContent=true,nativeWindowOpen=${notUseNativeWindowOpen},contextIsolation=false,nodeIntegration=${nodeIntegrationEnabled}`}
         />
 
       </div>
