@@ -32,7 +32,6 @@ export interface OwnProps {
   onQuit: () => void;
   setHighlightedItemId: (id: string) => void;
   highlightedItemId?: string;
-  gDriveIcon: string;
   kbShortcut: string;
   setRef: (ref: BangInput | null) => void;
   handleArrowDown: () => void;
@@ -79,7 +78,6 @@ class BangPresenterImpl extends React.PureComponent<Props, {}> {
       items,
       highlightedItemId,
       kbShortcut,
-      gDriveIcon,
       setRef,
       handleEnter,
       handleClick,
@@ -116,7 +114,6 @@ class BangPresenterImpl extends React.PureComponent<Props, {}> {
 
         {shouldShowInsert && searchValue === '' && (
           <BangInsert
-            gDriveIconSrc={gDriveIcon}
             onGDriveConnect={onShowSettings}
             isGDriveConnected={isGDriveConnected}
           />

@@ -50,10 +50,6 @@ module.exports = (env, argv) => {
           ]
         },
         {
-          test: /\.svg$/,
-          loader: 'svg-inline-loader'
-        },
-        {
           test: /\.graphql$/,
           exclude: /node_modules/,
           loader: 'graphql-import-loader'

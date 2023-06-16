@@ -6,8 +6,7 @@ import { bindActionCreators, compose } from 'redux';
 import { markAsRead, notificationClick, toggleVisibility } from '../duck';
 import { getFullNotificationsOrderedGrouped } from '../selectors';
 import NotificationGroup from './NotificationGroup';
-
-const illuSVG = require('../components/resources/illustration--no-notif.svg');
+import illuSVG from '../components/resources/illustration--no-notif.svg';
 
 interface StateProps {
   groupedNotifications: Immutable.List<Immutable.Map<string, any>>,

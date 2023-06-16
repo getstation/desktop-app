@@ -2,7 +2,7 @@ import { Button, Size, Style } from '@getstation/theme';
 import * as React from 'react';
 // @ts-ignore: no declaration file
 import injectSheet from 'react-jss';
-import SVGInline from 'react-svg-inline';
+import gDriveIcon from '../../static/bang/googledrive.svg';
 
 interface Classes {
   container: string,
@@ -16,7 +16,6 @@ interface Classes {
 
 export interface Props {
   classes?: Classes,
-  gDriveIconSrc: string,
   isGDriveConnected: boolean,
   onGDriveConnect: () => any,
 }
@@ -69,11 +68,12 @@ export default class BangInsert extends React.PureComponent<Props> {
   }
 
   renderGDriveTooltip() {
-    const { classes, gDriveIconSrc, onGDriveConnect } = this.props;
+    const { classes, onGDriveConnect } = this.props;
 
     return (
       <div className={classes!.item}>
-        <SVGInline className={classes!.gdriveIcon} svg={gDriveIconSrc} fill="#FFF" />
+  
+        <img className={classes!.gdriveIcon} src={gDriveIcon} />
 
         <p className={classes!.gdriveDesc}>Access Google Docs and Sheets with the Quick Switch</p>
 
