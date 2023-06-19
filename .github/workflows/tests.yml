@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
-          node-version: "14"
+          node-version: "18"
           cache: "yarn"
       - name: Update node-gyp
         run: |
@@ -41,7 +41,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
-          node-version: "14"
+          node-version: "18"
           cache: "yarn"
       - name: Update node-gyp
         run: |
@@ -66,7 +66,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
-          node-version: "14"
+          node-version: "18"
           cache: "yarn"
       - name: Update node-gyp
         run: |

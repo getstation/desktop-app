@@ -32,7 +32,6 @@ export const consumeLockFileIfExists = (file: FILE) => {
   return new Promise((resolve) => {
     fs.stat(filepath, (statErr) => {
       if (statErr) {
-        log.error('[APP DATA]', statErr);
         resolve(false);
       }
 
