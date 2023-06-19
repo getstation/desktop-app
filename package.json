@@ -193,7 +193,6 @@
     "npm-run": "^4.1.2",
     "raw-loader": "^4.0.2 ",
     "react-addons-perf": "^15.4.2",
-    "redux-devtools-cli": "^0.0.1-1",
     "redux-logger": "^2.7.4",
     "redux-saga-test-plan": "^3.7.0",
     "remote-redux-devtools": "0.5.0",
@@ -415,7 +414,7 @@
     }
   },
   "volta": {
-    "node": "14.21.3",
+    "node": "18.14.0",
     "yarn": "1.19.1"
   },
   "electronWebpack": {
