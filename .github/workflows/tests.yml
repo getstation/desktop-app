@@ -21,10 +21,10 @@ jobs:
         with:
           node-version: "18"
           cache: "yarn"
-      - name: Update node-gyp
-        run: |
-          npm install --global node-gyp@8.x
-          npm config set node_gyp $(npm prefix -g)/lib/node_modules/node-gyp/bin/node-gyp.js
+      # - name: Update node-gyp
+      #   run: |
+      #     npm install --global node-gyp@8.x
+      #     npm config set node_gyp $(npm prefix -g)/lib/node_modules/node-gyp/bin/node-gyp.js
       - name: Install dependencies
         run: yarn install --frozen-lockfile --prefer-offline && yarn run rebuild-all-native
       - name: GQL Codegen
@@ -43,10 +43,10 @@ jobs:
         with:
           node-version: "18"
           cache: "yarn"
-      - name: Update node-gyp
-        run: |
-          npm install --global node-gyp@8.x
-          npm config set node_gyp $(npm prefix -g)/lib/node_modules/node-gyp/bin/node-gyp.js
+      # - name: Update node-gyp
+      #   run: |
+      #     npm install --global node-gyp@8.x
+      #     npm config set node_gyp $(npm prefix -g)/lib/node_modules/node-gyp/bin/node-gyp.js
       - name: Install dependencies
         run: yarn install --frozen-lockfile --prefer-offline && yarn run rebuild-all-native
       - name: GQL Codegen
@@ -68,10 +68,10 @@ jobs:
         with:
           node-version: "18"
           cache: "yarn"
-      - name: Update node-gyp
-        run: |
-          npm install --global node-gyp@8.x
-          npm prefix -g | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
+      # - name: Update node-gyp
+      #   run: |
+      #     npm install --global node-gyp@8.x
+      #     npm prefix -g | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
       - name: Update registry URL
         run: |
           npm config set registry "http://registry.npmjs.org"
