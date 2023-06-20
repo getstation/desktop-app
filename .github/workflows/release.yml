@@ -68,11 +68,13 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: "18"
-          cache: "yarn"
       - name: Update node-gyp
         run: |
-          npm install --global node-gyp@8.x
-          npm prefix -g | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
+          $WhereNode = Get-Command node | Select-Object -ExpandProperty Definition
+          $NodeDirPath = Split-Path $WhereNode -Parent
+          $NodeModulesPath = $NodeDirPath + "\node_modules\npm\node_modules\@npmcli\run-script"
+          cd $NodeModulesPath
+          npm install node-gyp@latest
       - name: Update registry URL
         run: |
           npm config set registry "http://registry.npmjs.org"
