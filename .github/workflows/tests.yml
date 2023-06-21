@@ -33,6 +33,7 @@ jobs:
       #   run: yarn run lint:ci
       - name: Build
         run: yarn run build
+        
   MacOs:
     runs-on: macos-latest
     env:

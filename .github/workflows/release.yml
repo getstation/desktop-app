@@ -28,6 +28,7 @@ jobs:
         run: yarn run gql-gen
       - name: Build and Release
         run: yarn run release
+
   MacOs:
     runs-on: macos-latest
     env:
@@ -68,15 +69,13 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: "18"
-      - name: Update node-gyp
+      - name: Configure Node
+        shell: powershell
         run: |
-          $WhereNode = Get-Command node | Select-Object -ExpandProperty Definition
-          $NodeDirPath = Split-Path $WhereNode -Parent
-          $NodeModulesPath = $NodeDirPath + "\node_modules\npm\node_modules\@npmcli\run-script"
-          cd $NodeModulesPath
-          npm install node-gyp@latest
-      - name: Update registry URL
-        run: |
+          # npm v9 doesn't allow custom config parameters (i.e. node_gyp) anymode, so we have to downgrade it to v8
+          npm install -g npm@8  
+          npm install -g node-gyp@latest
+          npm prefix -g | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
           npm config set registry "http://registry.npmjs.org"
           yarn config set registry "http://registry.npmjs.org"
           yarn config set network-timeout 300000
