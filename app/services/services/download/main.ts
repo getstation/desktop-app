@@ -10,24 +10,7 @@ import { ServiceSubscription } from '../../lib/class';
 import { RPC, SubscriptionConstructorParam } from '../../lib/types';
 import { DownloadItemServiceImpl } from './downloadItem/main';
 import { DownloadItemService, DownloadService, DownloadServiceObserver } from './interface';
-
-function getHeaderName(headerName: string, headers?: Record<string, string>): string | undefined {
-  if (headers) {
-    const lowCaseHeader = headerName.toLowerCase();
-    for (const key in headers) {
-      if (key.toLowerCase() === lowCaseHeader) {
-        return key;
-      }
-    }
-  }
-  return undefined;
-}
-
-function getHeader(headerName: string, headers?: Record<string, any>): any {
-  const realHeaderName = getHeaderName(headerName, headers);
-  return headers && realHeaderName ? headers[realHeaderName] : undefined;
-}
-
+import { getHeader } from '../../../session';
 /**
  * Returns true if the request was a download in the main frame.
  */

@@ -1,4 +1,4 @@
-import { remote } from 'electron';
+import * as remote from '@electron/remote';
 import log from 'electron-log';
 import * as EventEmitter from 'events';
 import { applyMiddleware, compose, createStore } from 'redux';

@@ -1,6 +1,6 @@
 import { GradientType, InjectedProps as withGradientProps, withGradient } from '@getstation/theme';
 import { withApollo, WithApolloClient } from 'react-apollo';
-import { remote } from 'electron';
+import * as remote from '@electron/remote';
 import * as Immutable from 'immutable';
 // @ts-ignore: no declaration file
 import { validate as validateEmail } from 'isemail';

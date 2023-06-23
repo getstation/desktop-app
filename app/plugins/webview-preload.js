@@ -17,9 +17,8 @@ const protocolsAllowed = [
   'station:',
 ];
 if (micromatch.isMatch(window.location.origin, originsAllowed) || protocolsAllowed.includes(window.location.protocol)) {
-  const { ipcRenderer, remote } = require('electron');
+  const { ipcRenderer } = require('electron');
   const { Observable } = require('rxjs/Rx');
-  const workerWebContentsId = remote.getGlobal('worker').webContentsId;
 
   const sendPerformToProxy = (channel, payload) => {
     const p = new Promise(resolve => {
@@ -28,7 +27,8 @@ if (micromatch.isMatch(window.location.origin, originsAllowed) || protocolsAllow
       });
     });
     setTimeout(() => {
-      ipcRenderer.sendTo(workerWebContentsId, 'bx-api-perform', channel, payload);
+      ipcRenderer.invoke('get-worker-contents-id')
+          .then(workerWebContentsId => ipcRenderer.sendTo(workerWebContentsId, 'bx-api-perform', channel, payload));
     }, 1);
     return p;
   };
@@ -40,7 +40,8 @@ if (micromatch.isMatch(window.location.origin, originsAllowed) || protocolsAllow
       });
     });
     setTimeout(() => {
-      ipcRenderer.sendTo(workerWebContentsId, 'bx-api-subscribe', channel);
+      ipcRenderer.invoke('get-worker-contents-id')
+          .then(workerWebContentsId => ipcRenderer.sendTo(workerWebContentsId, 'bx-api-subscribe', channel));
     }, 1);
     return o;
   };

@@ -6,7 +6,8 @@ import * as slack from 'slack';
 import { GradientType, withGradient } from '@getstation/theme';
 import ElectronWebview from 'app/common/components/ElectronWebview';
 import classNames from 'classnames';
-import { clipboard, remote } from 'electron';
+import { clipboard } from 'electron';
+import * as remote from '@electron/remote';
 // @ts-ignore no declaration file
 import { fetchFavicon, setFetchFaviconTimeout } from '@getstation/fetch-favicon';
 import Maybe from 'graphql/tsutils/Maybe';
@@ -381,7 +382,7 @@ class ApplicationImpl extends React.PureComponent {
     if (this.webView && this.webView.view) {
       const webview = this.webView.view;
 
-      webview.addEventListener('did-attach', () => {
+      webview.addEventListener('dom-ready', () => {
         const webContents = remote.webContents.fromId(webview.getWebContentsId());
 
         webview.addEventListener('did-navigate-in-page', (e: any) => this.handleDidNavigateInPage(e));
@@ -395,6 +396,7 @@ class ApplicationImpl extends React.PureComponent {
   render() {
     const { notUseNativeWindowOpen, tab } = this.props;
     const tabUrl = tab.get('url', '');
+    const nodeIntegrationEnabled = tabUrl.startsWith('station://')
 
     const {
       applicationId, applicationName, applicationIcon, themeColor, manifestURL,
@@ -446,7 +448,7 @@ class ApplicationImpl extends React.PureComponent {
           hidden={this.props.hidden}
           className="l-webview__content"
           preload={preloadUrl}
-          allowpopups="true"
+          allowpopups={true}
           loading={this.props.loading}
           webviewRef={this.setWebviewRef}
           onPageTitleUpdated={this.handleTitleUpdated}
@@ -456,7 +458,7 @@ class ApplicationImpl extends React.PureComponent {
           onDidFailLoad={this.handleDidFailLoad}
           onDomReady={this.handleDomReady}
           onCrashed={this.handleWebcontentsCrashed}
-          webpreferences={`allowDisplayingInsecureContent,nativeWindowOpen=${notUseNativeWindowOpen ? 'no' : 'yes'},contextIsolation=no`}
+          webpreferences={`allowRunningInsecureContent=true,nativeWindowOpen=${notUseNativeWindowOpen},contextIsolation=false,nodeIntegration=${nodeIntegrationEnabled}`}
         />
 
       </div>

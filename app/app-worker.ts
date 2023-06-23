@@ -2,7 +2,8 @@
 process.worker = true;
 // tslint:disable:no-import-side-effect
 import './dotenv';
-import { ipcRenderer, remote } from 'electron';
+import { ipcRenderer } from 'electron';
+import * as remote from '@electron/remote';
 import { InMemoryCache, NormalizedCacheObject } from 'apollo-cache-inmemory';
 import ApolloClient from 'apollo-client';
 import { join } from 'path';

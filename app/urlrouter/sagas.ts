@@ -1,4 +1,4 @@
-import { remote } from 'electron';
+import * as remote from '@electron/remote';
 import log from 'electron-log';
 import { SagaIterator } from 'redux-saga';
 import { all, call, delay, fork, getContext, put, race, select, take } from 'redux-saga/effects';

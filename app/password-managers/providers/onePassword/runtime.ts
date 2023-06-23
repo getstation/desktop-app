@@ -6,7 +6,7 @@ import {
   LoginItem,
   Session,
 } from '1password-node';
-import { remote } from 'electron';
+import * as remote from '@electron/remote';
 import { join } from 'path';
 
 import { logger } from '../../../api/logger';

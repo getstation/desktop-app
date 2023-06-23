@@ -1,4 +1,4 @@
-import { remote } from 'electron';
+import * as remote from '@electron/remote';
 import { compact } from 'ramda-adjunct';
 import * as Immutable from 'immutable';
 // @ts-ignore: no declaration file

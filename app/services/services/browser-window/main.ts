@@ -1,4 +1,5 @@
-import { BrowserWindow, ipcMain, screen } from 'electron';
+import { BrowserWindow, ipcMain, screen, webContents, WebContents, WebPreferences, app } from 'electron';
+import * as remoteMain from '@electron/remote/main';
 import * as windowStateKeeper from 'electron-window-state';
 import { fromEvent } from 'rxjs/observable/fromEvent';
 import * as sanitize from 'sanitize-filename';
@@ -21,6 +22,46 @@ export class BrowserWindowServiceImpl extends BrowserWindowService implements RP
       ...positionOptions,
       ...options,
     });
+
+    remoteMain.enable(this.window.webContents);
+
+    // app.on(
+    //     'web-contents-created',
+    //     (event: Event, webContents: WebContents) => {
+    //         require('electron-log').info(`CC [ ${webContents.id} ] ${process.type} ${webContents.getURL()}`);
+    //         remoteMain.enable(webContents);
+    //     }
+    // );
+
+    // this.window.webContents.on(
+    //     'did-attach-webview', 
+    //     (event: Event, webContents: WebContents) => {
+    //       require('electron-log').info(`BB [ ${webContents.id} ] ${process.type} ${webContents.getURL()}`);
+    //       remoteMain.enable(webContents);
+    //         // const all = webContents.getAllWebContents();
+    //         // all.forEach((item) => {
+    //         //     remoteMain.enable(item);
+    //         // });
+    //     }
+    // );
+
+    // this.window.webContents.on(
+    //   'will-attach-webview', 
+    //   (event: Event, webPreferences: Electron.WebPreferences /*, params: Record<string, string> */) => {
+    //       webPreferences.nodeIntegration = true;
+    //       webPreferences.nodeIntegrationInSubFrames = true;
+    //       webPreferences.nodeIntegrationInWorker = true;
+    //       webPreferences.webSecurity = false;
+    //       const all = webContents.getAllWebContents();
+    //       all
+    //         .forEach(wc => {
+    //             require('electron-log').info(`AA [ ${wc.id} ] ${process.type} ${wc.getURL()}`);
+    //             // remoteMain.enable(wc);
+    //         });
+    //     }
+    // );
+
+
     if (options.preventNavigation) {
       this.window.webContents.on('will-navigate', event => event.preventDefault());
     }

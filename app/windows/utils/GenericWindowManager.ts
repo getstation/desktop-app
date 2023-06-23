@@ -80,7 +80,6 @@ export default class GenericWindowManager extends EventEmitter {
       webPreferences: {
         nodeIntegration: true,
         webviewTag: true,
-        enableRemoteModule: true,
         // The following 2 parameters combined will disable the `same-origin` policy.
         // This allows any window (and the worker) to make http requests to externals services
         // without being filtered.

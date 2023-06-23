@@ -1,6 +1,6 @@
 import * as path from 'path';
 import { LocalStorage } from 'node-localstorage';
-import { remote } from 'electron';
+import * as remote from '@electron/remote';
 import * as moment from 'moment';
 import { reverse } from 'ramda';
 import { SDK, activity } from '@getstation/sdk';

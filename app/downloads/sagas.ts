@@ -1,4 +1,4 @@
-import { remote } from 'electron';
+import * as remote from '@electron/remote';
 import { SagaIterator } from 'redux-saga';
 import { all, call, put, select } from 'redux-saga/effects';
 import { SET_DOWNLOAD_FOLDER, setDefaultDownloadFolder, setDownloadFolder } from '../app/duck';

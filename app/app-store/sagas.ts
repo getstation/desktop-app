@@ -1,4 +1,4 @@
-import { remote } from 'electron';
+import * as remote from '@electron/remote';
 import * as isBlank from 'is-blank';
 import * as _ from 'lodash';
 import { SagaIterator } from 'redux-saga';
