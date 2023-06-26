@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { notarize } = require('electron-notarize');
+const { notarize } = require('@electron/notarize');
 
 exports.default = async function notarizing(context) {
   const { electronPlatformName, appOutDir } = context;
@@ -17,5 +17,9 @@ exports.default = async function notarizing(context) {
     appPath: `${appOutDir}/${productFilename}.app`,
     appleId: process.env.AC_USERNAME,
     appleIdPassword: process.env.AC_PASSWORD,
+    // to find AC_TEAM_ID run 
+    // xcrun altool --list-providers -u <email> -p <password>
+    // AC_TEAM_ID=ProviderShortname from the output
+    teamId: process.env.AC_TEAM_ID, 
   });
 };
