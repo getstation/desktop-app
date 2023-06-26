@@ -1,5 +1,5 @@
 import * as cls from 'continuation-local-storage';
-import { app, remote } from 'electron';
+import { app } from 'electron';
 import log from 'electron-log';
 import * as mkdirp from 'mkdirp';
 import * as path from 'path';
@@ -9,7 +9,7 @@ import operatorsAliases from './operatorsAliases';
 const isRenderer = process.type === 'renderer';
 
 export const getDatabaseDir = () => {
-  const userDataPath = (isRenderer ? (remote.app) : app).getPath('userData');
+  const userDataPath = (isRenderer ? require('@electron/remote').app : app).getPath('userData');
   const p = path.join(userDataPath, 'db');
   mkdirp.sync(p);
   return p;

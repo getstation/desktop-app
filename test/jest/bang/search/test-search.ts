@@ -12,6 +12,7 @@ import {
   case6,
   case7
 } from './fixtures';
+import { SearchEngine } from '../../../../app/bang/search/types';
 
 const noop = () => {};
 
@@ -36,7 +37,7 @@ describe('bang:search', () => {
   const now = dateFrecencyData + ms('15 day');
   const dateStub = sinon.stub(Date, 'now').returns(dateFrecencyData);
 
-  let searchEngine = createFakeSearchEngine(contextualFrecencyData, loggers);
+  let searchEngine: SearchEngine;
 
   const resetSearchEngine = () => {
     dateStub.returns(dateFrecencyData);
@@ -50,8 +51,6 @@ describe('bang:search', () => {
   afterAll(() => {
     dateStub.restore();
   });
-
-  afterEach(() => {});
 
   const search = (fixture: SearchResultFixture, limit: number = 1) => {
     return searchEngine.search(

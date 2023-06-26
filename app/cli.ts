@@ -1,4 +1,5 @@
-import { ipcRenderer, remote } from 'electron';
+import { ipcRenderer } from 'electron';
+import * as remote from '@electron/remote';
 
 const exit = () => remote.app.exit(0);
 

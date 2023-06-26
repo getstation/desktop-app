@@ -1,6 +1,6 @@
 /* tslint:disable global-require, no-import-side-effect */
 import './dotenv';
-import { app, BrowserWindow, ipcMain, dialog, session, OnBeforeSendHeadersListenerDetails } from 'electron';
+import { app, session, BrowserWindow, ipcMain, dialog } from 'electron';
 import log, { LevelOption } from 'electron-log';
 // @ts-ignore: no declaration file
 import { format } from 'electron-log/lib/format';
@@ -11,16 +11,18 @@ import { BrowserWindowManagerServiceImpl } from './services/services/browser-win
 import services from './services/servicesManager';
 import { getUrlToLoad } from './utils/dev';
 import { isPackaged } from './utils/env';
-import { getUserAgentForApp, getRefererForApp } from './session';
+import { enhanceSession } from './session';
+import * as remoteMain from '@electron/remote/main';
 
 bootServices(); // all side effects related to services (in main process)
+
+remoteMain.initialize();
 
 const loadWorker = () => {
   const worker = new BrowserWindow({
     webPreferences: {
       nodeIntegration: true,
       backgroundThrottling: false,
-      enableRemoteModule: true,
       /**
        * See {@link GenericWindowManager} for details
        */
@@ -33,11 +35,20 @@ const loadWorker = () => {
     show: false,
   });
 
+  remoteMain.enable(worker.webContents);
+
   // Used by other renderers
   (global as any).worker = Object.freeze({
     webContentsId: worker.webContents.id,
   });
 
+  ipcMain.handle('get-worker-contents-id', () => {
+    return worker.webContents.id;
+  });
+  ipcMain.on('get-worker-contents-id-sync', (event) => {
+    event.returnValue = worker.webContents.id;
+  });
+  
   (services.browserWindow as BrowserWindowManagerServiceImpl)
     .setWorkerBrowserWindow(worker)
     .catch(handleError());
@@ -59,13 +70,13 @@ const loadCliWindow = async (command: string) => {
     webPreferences: {
       nodeIntegration: true,
       backgroundThrottling: false,
-      enableRemoteModule: true,
       contextIsolation: false,
     },
     width: 0,
     height: 0,
     show: false,
   });
+  remoteMain.enable(bw.webContents);
 
   await bw.loadURL(getUrlToLoad('cli.html'));
 
@@ -81,13 +92,7 @@ const loadCliWindow = async (command: string) => {
 const initWorker = () => {
   app.on('ready', () => {
 
-    session.defaultSession.webRequest.onBeforeSendHeaders((details: OnBeforeSendHeadersListenerDetails, callback: any) => {
-      details.requestHeaders['User-Agent'] = getUserAgentForApp(details.url, session.defaultSession.getUserAgent());
-      details.referrer = getRefererForApp(details.referrer);
-      details.requestHeaders.Referer = details.referrer;
-
-      callback({ cancel: false, requestHeaders: details.requestHeaders });
-    });
+    enhanceSession(session.defaultSession);
 
     loadWorker();
 

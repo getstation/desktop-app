@@ -1,6 +1,6 @@
 import { GradientType, InjectedProps as withGradientProps, withGradient } from '@getstation/theme';
 import { withApollo, WithApolloClient } from 'react-apollo';
-import { remote } from 'electron';
+import * as remote from '@electron/remote';
 import * as Immutable from 'immutable';
 // @ts-ignore: no declaration file
 import { validate as validateEmail } from 'isemail';
@@ -198,7 +198,7 @@ class OnboardingImpl extends React.PureComponent<Props, State> {
         emails={emails}
         onEmailsChange={this.updateEmails}
         loginButtonDisabled={loginButtonDisabled}
-        privacyPoliciesLink={'https://intercom.help/station/data-and-privacy/station-privacy-policies'}
+        privacyPoliciesLink={'https://github.com/getstation/desktop-app/wiki/FAQ#-data--privacy'}
         isWindowFocused={isWindowFocused}
         onCloseWindow={this.handleCloseWindow}
         onMinimizeWindow={this.handleMinimizeWindow}

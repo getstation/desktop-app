@@ -29,7 +29,7 @@ storiesOf('Screens|Onboarding', module)
       onExpandWindow={action('onExpandWindow')}
       isDarwin={boolean('is Darwin', true)}
       validateEmail={validateEmail}
-      privacyPoliciesLink={'https://intercom.help/station/data-and-privacy/station-privacy-policies'}
+      privacyPoliciesLink={'https://github.com/getstation/desktop-app/wiki/FAQ#-data--privacy'}
       searchInputValue={text('searchInputValue', '')}
       handleSearchInputValue={action('handleSearchInputValue')}
     />

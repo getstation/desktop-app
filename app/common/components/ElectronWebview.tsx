@@ -8,7 +8,7 @@ import * as ReactDOM from 'react-dom';
 import { logger } from '../../api/logger';
 import { Omit } from '../../types';
 import { dissoc } from 'ramda';
-import { remote } from 'electron';
+import * as remote from '@electron/remote';
 
 export interface ElectronWebviewProps extends Omit<Electron.WebviewTag, 'src'> {
   // webview `src` is updated by the webview itself, so we do not want to
@@ -265,7 +265,6 @@ class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
 
     this.view.addEventListener('did-attach', (...attachArgs: any[]) => {
       this.ready = true;
-      this.forwardKeyboardEvents();
       events.forEach((event) => {
         const propName = camelCase(`on-${event}`);
         if (this.props[propName]) {
@@ -276,6 +275,7 @@ class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
     });
 
     this.view.addEventListener('dom-ready', () => {
+      this.forwardKeyboardEvents();
       // Remove this once https://github.com/electron/electron/issues/14474 is fixed
       this.view.blur();
       this.view.focus();

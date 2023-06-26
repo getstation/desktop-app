@@ -35,7 +35,7 @@ const AppRequestError = () => {
       <img className={classes.errorImage} src={astroAwkwardPath} />
       <h4 className={classes.title}>Something went wrong, <br /> we're sorry.</h4>
       <div className={classes.text}>
-        Please retry in couples of minutes or post topic in our <a target="_blank" href="https://feedback.getstation.com/">Community</a> forum: we'll be there for you.
+        Please retry in couples of minutes or post topic in our <a target="_blank" href="https://github.com/getstation/desktop-app/issues">Community</a> forum: we'll be there for you.
       </div>
     </div>
   );

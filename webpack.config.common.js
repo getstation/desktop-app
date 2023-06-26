@@ -1,3 +1,4 @@
+require('./webpack.monkeypatch-crypto');
 const path = require('path');
 const webpack = require('webpack');
 
@@ -58,10 +59,6 @@ const mutateAddRules = config => {
     test: /\.graphql$/,
     exclude: /node_modules/,
     loader: 'graphql-import-loader'
-  });
-  config.module.rules.push({
-    test: /\.svg$/,
-    loader: 'svg-inline-loader'
   });
 };
 

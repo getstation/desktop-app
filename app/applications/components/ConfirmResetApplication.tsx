@@ -1,5 +1,5 @@
 import { Modal } from '@getstation/theme';
-import { remote } from 'electron';
+import * as remote from '@electron/remote';
 import * as React from 'react';
 // @ts-ignore: no declaration file
 import injectSheet from 'react-jss';

@@ -1,7 +1,8 @@
 /* eslint-disable global-require,import/imports-first */
 import './utils/stat-cache';
 import './dotenv';
-import { remote, webFrame, ipcRenderer } from 'electron';
+import { webFrame, ipcRenderer } from 'electron';
+import * as remote from '@electron/remote';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
