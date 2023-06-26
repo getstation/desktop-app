@@ -2,7 +2,7 @@
   "name": "station-desktop-app",
   "private": true,
   "productName": "Station",
-  "version": "2.2.0-RC3",
+  "version": "2.2.0",
   "description": "Station",
   "homepage": "https://getstation.com",
   "author": {
