@@ -1,17 +1,14 @@
 appId: org.getstation.DesktopApp
 
-artifactName: ${productName}-${arch}.${ext}
-
 publish:
-  provider: "github"
+  provider: 'github'
 
 asar: true
+asarUnpack: 
+  - 'node_modules/**/*.{node,dll}'
 
-afterPack: "scripts/after-pack.js"
-afterSign: "scripts/notarize.js"
-
-# electronDownload:
-#   mirror: https://s3.amazonaws.com/dev.getstation.com/electron/v
+afterPack: 'scripts/after-pack.js'
+afterSign: 'scripts/notarize.js'
 
 directories:
   output: release
@@ -27,7 +24,7 @@ dmg:
   - x: 410
     y: 150
     type: link
-    path: "/Applications"
+    path: '/Applications'
   - x: 130
     y: 150
     type: file
@@ -36,12 +33,11 @@ mac:
   target:
     - target: dmg
       arch:
-        - x64
-        - arm64
+        - universal
     - target: zip
       arch:
-        - x64
-        - arm64
+        - universal
+  artifactName: ${productName}.${ext}
   hardenedRuntime: true
   gatekeeperAssess: false
   category: public.app-category.tools
@@ -51,7 +47,7 @@ mac:
 win:
   target:
     - nsis
-  artifactName: ${productName}-${arch}-Setup.${ext}
+  artifactName: ${productName}-Setup.${ext}
   verifyUpdateCodeSignature: false
 
 linux:
@@ -61,23 +57,24 @@ linux:
   artifactName: ${productName}-${arch}.${ext}
 
 extraResources:
-  - ".env.example"
-  - ".env.production"
+  - '.env.example'
+  - '.env.production'
 
 files:
-  - "build/icon_512x512.png"
-  - "dist/**"
-  - from: "app/static/icon--provider"
-    to: "static/icon--provider"
+  - 'build/icon_512x512.png'
+  - '!**/*.map'
+  - from: 'app/static/icon--provider'
+    to: 'static/icon--provider'
     filter:
-      - "icon-provider--gdrive.svg"
-      - "icon-provider--notion.svg"
-      - "icon-provider--slack.svg"
-  - from: "app/static/illustrations"
-    to: "static/illustrations"
-  - from: "app/static/logos"
-    to: "static/logos"
-  - from: "app/static/social-network"
-    to: "static/social-network"
-  - from: "app/static/animations"
-    to: "static/animations"
+      - 'icon-provider--gdrive.svg'
+      - 'icon-provider--notion.svg'
+      - 'icon-provider--slack.svg'
+  - from: 'app/static/illustrations'
+    to: 'static/illustrations'
+  - from: 'app/static/logos'
+    to: 'static/logos'
+  - from: 'app/static/social-network'
+    to: 'static/social-network'
+  - from: 'app/static/animations'
+    to: 'static/animations'
+

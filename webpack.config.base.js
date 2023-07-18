@@ -96,7 +96,7 @@ module.exports = (env, argv) => {
       ],
     };
 
-    conf.devtool = 'source-map';
+   conf.devtool = process.env.WEBPACK_DEVTOOL;
   }
 
   return conf;
