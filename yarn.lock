@@ -3149,7 +3149,7 @@
   dependencies:
     graphql "^14.0.2"
 
-"@getstation/sdk@0.15.0":
+"@getstation/sdk@^0.15.0":
   version "0.15.0"
   resolved "https://registry.yarnpkg.com/@getstation/sdk/-/sdk-0.15.0.tgz#905863a557b115d85450539c1a32d92578a12e2e"
   integrity sha512-7lgXxkgAn/nGWqqF/2t2DaCrWzJ2v7vBPG5tsQqj/0ZthnpWIQje+AmVZovzYjn2LbQxWpFpQUzlqT2dx69xvQ==
@@ -3163,29 +3163,7 @@
   dependencies:
     tiny-json-http "^7.0.2"
 
-"@getstation/theme@0.21.0":
-  version "0.21.0"
-  resolved "https://registry.yarnpkg.com/@getstation/theme/-/theme-0.21.0.tgz#a2dc5d269e35e3e22e4e61b770f577a0dcc787cf"
-  integrity sha512-HPaz0Be0IdSWSYVR8Knm3KX5PipJ4Jw1xm3c8afgcbYRdUzDzz9ZIsUZFhMdvdqumEsZ6OStGTQ8/FmZQdKc2Q==
-  dependencies:
-    classnames "^2.2.5"
-    color "^3.0.0"
-    create-react-context "^0.2.2"
-    jss-nested "^6.0.1"
-    linked-map "^2.2.2"
-    mousetrap "^1.6.2"
-    ms "^2.1.1"
-    react "^16.3.1"
-    react-debounce-input "^3.2.0"
-    react-dom "^16.3.1"
-    react-hover-observer "^2.1.0"
-    react-jss "^8.6.1"
-    react-key-handler "1.0.1"
-    react-popper "^1.3.4"
-    react-select "^3.0.4"
-    shortid "^2.2.8"
-
-"@getstation/theme@1.2.0":
+"@getstation/theme@1.2.0", "@getstation/theme@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@getstation/theme/-/theme-1.2.0.tgz#d59cac8a86228f6ed43513ea4e5ca863be0462f4"
   integrity sha512-E4+QVW5whUTrqWAK+QlCXKL5DUcR+sMZ6snMuIEpUqMnDfid/ET/Fac2Na+a34BHgZF8Pe/aggzWd67NoRJEYg==
@@ -3206,15 +3184,6 @@
     react-popper "^1.3.4"
     react-select "^3.0.4"
     shortid "^2.2.8"
-
-"@getstation/time-require@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@getstation/time-require/-/time-require-1.0.0.tgz#f85f6e345628f4e2d0d8fab9eb1c88f40ce93efa"
-  integrity sha512-YA4IcBM20diZHw4OAg5IXXDs6ngPZpECiNRy0iFNRT/5KjWSYZ1IKLpmTFBdqoWJXZ/wBw1KkgPuFYKQigeuKw==
-  dependencies:
-    chalk "^2.3.0"
-    pretty-ms "^3.1.0"
-    table "^4.0.2"
 
 "@graphql-codegen/add@1.8.3":
   version "1.8.3"
@@ -7482,7 +7451,7 @@ ajv-keywords@^2.1.0:
   resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-2.1.1.tgz#617997fc5f60576894c435f940d819e135b80762"
   integrity sha1-YXmX/F9gV2iUxDX5QNgZ4TW4B2I=
 
-ajv-keywords@^3.0.0, ajv-keywords@^3.1.0, ajv-keywords@^3.4.1, ajv-keywords@^3.5.2:
+ajv-keywords@^3.1.0, ajv-keywords@^3.4.1, ajv-keywords@^3.5.2:
   version "3.5.2"
   resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-3.5.2.tgz#31f29da5ab6e00d1c2d329acf7b5929614d5014d"
   integrity sha512-5p6WTN0DdTGVQk6VjcEju19IgaHudalcfabD7yhDGeA6bcQnmL+CpveLJq/3hvfwd1aof6L386Ougkx6RfyMIQ==
@@ -7497,7 +7466,7 @@ ajv@^5.2.3, ajv@^5.3.0:
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.3.0"
 
-ajv@^6.0.1, ajv@^6.1.0, ajv@^6.10.0, ajv@^6.10.1, ajv@^6.10.2, ajv@^6.12.0, ajv@^6.12.2, ajv@^6.12.3, ajv@^6.12.4, ajv@^6.12.5:
+ajv@^6.1.0, ajv@^6.10.0, ajv@^6.10.1, ajv@^6.10.2, ajv@^6.12.0, ajv@^6.12.2, ajv@^6.12.3, ajv@^6.12.4, ajv@^6.12.5:
   version "6.12.6"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.12.6.tgz#baf5a62e802b07d977034586f8c3baf5adf26df4"
   integrity sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==
@@ -13377,7 +13346,7 @@ es-to-primitive@^1.2.1:
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
 
-es5-ext@^0.10.14, es5-ext@^0.10.30, es5-ext@^0.10.35, es5-ext@^0.10.45, es5-ext@^0.10.9, es5-ext@~0.10.14, es5-ext@~0.10.2:
+es5-ext@^0.10.14, es5-ext@^0.10.35, es5-ext@^0.10.45, es5-ext@^0.10.9, es5-ext@~0.10.14, es5-ext@~0.10.2:
   version "0.10.46"
   resolved "https://registry.yarnpkg.com/es5-ext/-/es5-ext-0.10.46.tgz#efd99f67c5a7ec789baa3daa7f79870388f7f572"
   integrity sha512-24XxRvJXNFwEMpJb3nOkiRJKRoupmjYmOPVlI65Qy2SrtxwOTB+g6ODjBKOtwEHbYrhWRty9xxOWLNdClT2djw==
@@ -19823,20 +19792,6 @@ memoize-weak@^1.0.0:
   resolved "https://registry.yarnpkg.com/memoize-weak/-/memoize-weak-1.0.2.tgz#d0015a4c7c6cff2263dbbb49db1dc206ebb94916"
   integrity sha1-0AFaTHxs/yJj27tJ2x3CBuu5SRY=
 
-memoizee@0.4.12:
-  version "0.4.12"
-  resolved "https://registry.yarnpkg.com/memoizee/-/memoizee-0.4.12.tgz#780e99a219c50c549be6d0fc61765080975c58fb"
-  integrity sha512-sprBu6nwxBWBvBOh5v2jcsGqiGLlL2xr2dLub3vR8dnE8YB17omwtm/0NSHl8jjNbcsJd5GMWJAnTSVe/O0Wfg==
-  dependencies:
-    d "1"
-    es5-ext "^0.10.30"
-    es6-weak-map "^2.0.2"
-    event-emitter "^0.3.5"
-    is-promise "^2.1"
-    lru-queue "0.1"
-    next-tick "1"
-    timers-ext "^0.1.2"
-
 memoizee@^0.4.11, memoizee@^0.4.14:
   version "0.4.14"
   resolved "https://registry.yarnpkg.com/memoizee/-/memoizee-0.4.14.tgz#07a00f204699f9a95c2d9e77218271c7cd610d57"
@@ -21549,11 +21504,6 @@ parse-json@^5.0.0:
     json-parse-even-better-errors "^2.3.0"
     lines-and-columns "^1.1.6"
 
-parse-ms@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/parse-ms/-/parse-ms-1.0.1.tgz#56346d4749d78f23430ca0c713850aef91aa361d"
-  integrity sha1-VjRtR0nXjyNDDKDHE4UK75GqNh0=
-
 parse-passwd@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/parse-passwd/-/parse-passwd-1.0.0.tgz#6d5b934a456993b23d37f40a382d6f1666a8e5c6"
@@ -22138,13 +22088,6 @@ pretty-hrtime@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/pretty-hrtime/-/pretty-hrtime-1.0.3.tgz#b7e3ea42435a4c9b2759d99e0f201eb195802ee1"
   integrity sha1-t+PqQkNaTJsnWdmeDyAesZWALuE=
-
-pretty-ms@^3.1.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/pretty-ms/-/pretty-ms-3.2.0.tgz#87a8feaf27fc18414d75441467d411d6e6098a25"
-  integrity sha512-ZypexbfVUGTFxb0v+m1bUyy92DHe5SyYlnyY0msyms5zd3RwyvNgyxZZsXXgoyzlxjx5MiqtXUdhUfvQbe0A2Q==
-  dependencies:
-    parse-ms "^1.0.0"
 
 prismjs@^1.21.0, prismjs@^1.8.4:
   version "1.29.0"
@@ -26050,18 +25993,6 @@ table@4.0.2:
     slice-ansi "1.0.0"
     string-width "^2.1.1"
 
-table@^4.0.2:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/table/-/table-4.0.3.tgz#00b5e2b602f1794b9acaf9ca908a76386a7813bc"
-  integrity sha512-S7rnFITmBH1EnyKcvxBh1LjYeQMmnZtCXSEbHcH6S0NoKit24ZuFO/T1vDcLdYsLQkM188PVVhQmzKIuThNkKg==
-  dependencies:
-    ajv "^6.0.1"
-    ajv-keywords "^3.0.0"
-    chalk "^2.1.0"
-    lodash "^4.17.4"
-    slice-ansi "1.0.0"
-    string-width "^2.1.1"
-
 tapable@^0.2.5, tapable@^0.2.7:
   version "0.2.9"
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-0.2.9.tgz#af2d8bbc9b04f74ee17af2b4d9048f807acd18a8"
@@ -26377,7 +26308,7 @@ timers-browserify@^2.0.4:
   dependencies:
     setimmediate "^1.0.4"
 
-timers-ext@^0.1.2, timers-ext@^0.1.5:
+timers-ext@^0.1.5:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/timers-ext/-/timers-ext-0.1.5.tgz#77147dd4e76b660c2abb8785db96574cbbd12922"
   integrity sha512-tsEStd7kmACHENhsUPaxb8Jf8/+GZZxyNFQbZD07HQOyooOa6At1rQqjffgvg7n+dxscQa9cjjMdWhJtsP2sxg==
