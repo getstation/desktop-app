@@ -14,13 +14,12 @@
   "license": "Apache License 2.0",
   "main": "dist/main.js",
   "scripts": {
-    "postinstall": "cd appstore && yarn",
     "sass": "sass app/theme/scss/app.global.scss app/theme/css/app.global.css",
     "build-webpack:webui:dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=development webpack --config webpack.config.webui.js --colors --progress --mode=development",
     "build-webpack:webui:prod": "cross-env NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production webpack --config webpack.config.webui.js --colors --mode=production --no-progress",
     "build-webpack:dev": "yarn run gql-gen && yarn run sass && yarn run build-webpack:appstore:prod && yarn run build-webpack:webui:dev && electron-webpack dev",
     "build-webpack:prod": "yarn run gql-gen && yarn run sass && rimraf dist && cross-env NODE_OPTIONS=--openssl-legacy-provider electron-webpack --no-progress && yarn run build-webpack:appstore:prod && yarn run build-webpack:webui:prod",
-    "build-webpack:appstore:prod": "cd appstore && yarn && yarn run build",
+    "build-webpack:appstore:prod": "yarn workspaces run build",
     "start": "yarn run build-webpack:dev",
     "dev": "yarn run build-webpack:dev",
     "dist": "yarn run build-webpack:prod && cross-env NODE_ENV=production electron-builder",
@@ -49,6 +48,9 @@
     "dump:manifests": "./scripts/application_manifests/dump_manifests.sh",
     "dump:icons": "./scripts/application_manifests/dump_icons.sh"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "bin": {
     "electron": "./node_modules/.bin/electron"
   },
@@ -186,6 +188,7 @@
     "mermaid": "^8.0.0",
     "mini-css-extract-plugin": "^0.8.0",
     "morgan": "^1.8.2",
+	"node-gyp": "^9.4.0",
     "node-fetch": "^2.6.0",
     "npm-run": "^4.1.2",
     "raw-loader": "^4.0.2 ",
