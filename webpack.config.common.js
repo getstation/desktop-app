@@ -46,7 +46,7 @@ const mutateFixTerser = config => {
  */
 const mutateDevtool = config => {
   if (config.mode === 'production') {
-    config.devtool = 'source-map';
+    config.devtool = process.env.WEBPACK_DEVTOOL;
   }
 };
 

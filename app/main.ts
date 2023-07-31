@@ -179,8 +179,10 @@ const init = () => {
   initWorker();
 
   if (isPackaged) {
-    const sourceMapSupport = require('source-map-support');
-    sourceMapSupport.install();
+    if (process.env.WEBPACK_DEVTOOL) {
+      const sourceMapSupport = require('source-map-support');
+      sourceMapSupport.install();
+    }
   } else {
     require('electron-debug')();
   }
