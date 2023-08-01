@@ -96,7 +96,7 @@ export class BrowserXAppWorker {
     this.manifestProvider = new ManifestProvider({
       // Use native fetch for manifests fetching
       distantFetcher: new DistantFetcher(),
-      cachePath: join(remote.app.getPath('userData'), 'ApplicationManifestsCache'),
+//      cachePath: join(remote.app.getPath('userData'), 'ApplicationManifestsCache'),
     });
 
     (services.manifest as ManifestServiceImpl).init(this.manifestProvider);
