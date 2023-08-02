@@ -44,7 +44,7 @@ export interface IProviderConfiguration {
 export interface IManifestProvider {
   cacheFetcher: IFetcher;
   distantFetcher: IFetcher;
-  cachePath: string;
+  cachePath?: string;
   cacheLimit: number;
 
   get(url: ManifestURL): Observable<IBxApp>;

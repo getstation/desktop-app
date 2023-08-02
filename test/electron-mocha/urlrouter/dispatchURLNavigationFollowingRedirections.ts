@@ -10,7 +10,7 @@ import ManifestProvider from '../../../app/applications/manifest-provider/manife
 import URLRouter from '../../../app/urlrouter/URLRouter';
 
 const manifestProvider = new ManifestProvider({
-  cachePath: join(app.getPath('userData'), 'ApplicationManifestsCache'),
+//  cachePath: join(app.getPath('userData'), 'ApplicationManifestsCache'),
 });
 
 const context = {
