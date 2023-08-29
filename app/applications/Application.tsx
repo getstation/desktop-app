@@ -458,7 +458,7 @@ class ApplicationImpl extends React.PureComponent {
           onDidFailLoad={this.handleDidFailLoad}
           onDomReady={this.handleDomReady}
           onCrashed={this.handleWebcontentsCrashed}
-          webpreferences={`allowRunningInsecureContent=true,nativeWindowOpen=${notUseNativeWindowOpen},contextIsolation=false,nodeIntegration=${nodeIntegrationEnabled}`}
+          webpreferences={`allowRunningInsecureContent=true,nativeWindowOpen=${!(!!notUseNativeWindowOpen)},contextIsolation=false,nodeIntegration=${nodeIntegrationEnabled}`}
         />
 
       </div>
