@@ -12,7 +12,7 @@ import { getLocation } from 'ip-geolocate';
 import * as memoize from 'memoizee';
 // @ts-ignore: no declaration file
 import * as mod from 'mod-op';
-import { publicIpv4 as getMyPublicIPv4 } from 'public-ip';
+import { v4 as getMyPublicIPv4 } from 'public-ip';
 // @ts-ignore: no declaration file
 import * as SunCalc from 'suncalc';
 import { isPackaged } from '../utils/env';
