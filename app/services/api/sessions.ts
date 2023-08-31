@@ -1,5 +1,6 @@
 import { app, session, Session } from 'electron';
 import { ReplaySubject } from 'rxjs';
+import { filter, take } from 'rxjs/operators';
 
 let listening = false;
 let sessions: ReplaySubject<Session> = new ReplaySubject();
@@ -7,8 +8,8 @@ let sessions: ReplaySubject<Session> = new ReplaySubject();
 export const observeSessions = () => sessions.asObservable();
 
 export const waitDefaultSession = () => observeSessions()
-  .filter(s => s === session.defaultSession)
-  .take(1)
+  .pipe(filter(s => s === session.defaultSession))
+  .pipe(take(1))
   .toPromise();
 
 export const startSessionsListening = () => {
