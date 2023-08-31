@@ -2,7 +2,7 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
-import { Observable } from 'rxjs';
+import { from } from 'rxjs';
 import MultiInstanceConfigurator from '../../app/applications/multi-instance-configuration/webui/MultiInstanceConfigurator';
 
 const windowBxOverrideForOnPremiseApp = () => {
@@ -42,7 +42,7 @@ const windowBxOverrideForGDrive = () => {
       },
     },
     identities: {
-      $get: Observable.from([
+      $get: from([
         [{
           type: 'google',
           id: 'id',

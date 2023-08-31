@@ -1,6 +1,7 @@
 import * as eos from 'end-of-stream';
 import { EventEmitter } from 'events';
 import { BehaviorSubject } from 'rxjs';
+import { filter, take } from 'rxjs/operators';
 import { RPCChannel, RPCChannelPeer } from 'stream-json-rpc';
 import { bxnotifier, bxsubscription, endpoints } from './const';
 import { Debugger } from './debug';
@@ -190,8 +191,8 @@ export abstract class ServiceBase implements IServiceBase {
 
   protected whenReady() {
     return this.ready$
-      .filter(x => Boolean(x))
-      .take(1)
+      .pipe(filter(x => Boolean(x)))
+      .pipe(take(1))
       .toPromise();
   }
 

@@ -2,6 +2,7 @@ import { app } from 'electron';
 import * as path from 'path';
 import { anyPass, equals } from 'ramda';
 import { Observer, Observable } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 import * as shortid from 'shortid';
 // @ts-ignore no definition types
 import * as unusedFilename from 'unused-filename';
@@ -112,8 +113,10 @@ export class DownloadItemServiceImpl extends DownloadItemService implements RPC.
 
   async whenDone(): Promise<DownloadDoneState> {
     const state$: Observable<DownloadDoneState> = await this.downloadItem$
-      .map(tryGetState)
-      .filter(isDoneState) as Observable<DownloadDoneState>;
+      .pipe(
+        map(tryGetState),
+        filter(isDoneState)
+      ) as Observable<DownloadDoneState>;
     const done = await state$.toPromise();
 
     downloadFinished(done, this.savePath);
@@ -164,9 +167,11 @@ export class DownloadItemServiceImpl extends DownloadItemService implements RPC.
   private async addOnUpdatedObserver(observer: RPC.ObserverNode<DownloadItemServiceObserver>) {
     if (observer.onUpdated) {
       const state$ = this.downloadItem$
-        .map(tryGetState)
-        .filter(isUpdateState)
-        .map(state => ({ state })) as Observable<DownloadUpdatedStatePayload>;
+        .pipe(
+          map(tryGetState),
+          filter(isUpdateState),
+          map(state => ({ state }))
+        ) as Observable<DownloadUpdatedStatePayload>;
       return state$.subscribe(observer.onUpdated);
     }
     return () => {};

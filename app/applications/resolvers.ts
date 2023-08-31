@@ -1,5 +1,5 @@
 import * as Immutable from 'immutable';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { from, of, Observable, BehaviorSubject } from 'rxjs';
 import { distinctUntilChanged, map } from 'rxjs/operators';
 import { oc } from 'ts-optchain';
 
@@ -41,12 +41,12 @@ const resolvers: Resolvers = {
         .sort((a, b) => a.recommendedPosition - b.recommendedPosition);
       const allOthers = apps.filter(app => app.recommendedPosition <= 0);
 
-      return Observable.of([...mostPop, ...allOthers]);
+      return of([...mostPop, ...allOthers]);
     },
     getApplicationById: (_obj, args, context) => {
       const { applicationId } = args;
       if (!applicationId) {
-        return Observable.from([null]);
+        return from([null]);
       }
       return subscribeStore(
         context.store,

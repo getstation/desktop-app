@@ -1,5 +1,7 @@
 import { history } from '@getstation/sdk';
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { combineLatest, BehaviorSubject, Subscription } from 'rxjs';
+import { map } from 'rxjs/operators';
+import {  } from "rxjs/index";
 import { AbstractProvider } from '../common';
 
 export default class HistoryProvider extends AbstractProvider<history.HistoryConsumer> {
@@ -24,19 +26,20 @@ export default class HistoryProvider extends AbstractProvider<history.HistoryCon
 
   protected refreshResultsSubscription() {
     if (this.subscriptions) this.subscriptions.unsubscribe();
-    this.subscriptions = Observable
-      .combineLatest(this._consumers.map(c => c.entries))
-      .map((consumerEntries: history.HistoryEntry[][]) => {
-        const flattenEntries = [];
+    this.subscriptions = combineLatest(this._consumers.map(c => c.entries))
+      .pipe(
+        map((consumerEntries: history.HistoryEntry[][]) => {
+          const flattenEntries = [];
 
-        for (const consumerEntry of consumerEntries) {
-          for (const entry of consumerEntry) {
-            flattenEntries.push(entry);
+          for (const consumerEntry of consumerEntries) {
+            for (const entry of consumerEntry) {
+              flattenEntries.push(entry);
+            }
           }
-        }
-        return flattenEntries
-          .sort((l, r) => r.date.getTime() - l.date.getTime());
-      })
+          return flattenEntries
+            .sort((l, r) => r.date.getTime() - l.date.getTime());
+        })
+      )
       .subscribe(this.entries);
   }
 }

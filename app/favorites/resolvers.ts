@@ -1,3 +1,4 @@
+import { map, skipWhile, take } from 'rxjs/operators';
 import { Resolvers } from '../graphql/resolvers-types.generated';
 import { getFavoriteMatchingTab, getFavorite } from './selectors';
 import { navigateToApplicationTabAutomatically, createNewTab } from '../applications/duck';
@@ -139,9 +140,11 @@ const createAndWaitTabInStore = async (
   ));
 
   const matchingTab = await subscribeStore(store)
-    .map((state: StationState) => getTabMatchingURL(state, url))
-    .skipWhile((tab) => !Boolean(tab))
-    .take(1)
+    .pipe(
+      map((state: StationState) => getTabMatchingURL(state, url)),
+      skipWhile((tab) => !Boolean(tab)),
+      take(1)
+    )
     .toPromise();
 
   if (!matchingTab) throw new Error('Could not create a new tab when detaching');

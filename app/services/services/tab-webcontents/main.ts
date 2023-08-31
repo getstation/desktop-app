@@ -3,6 +3,7 @@ import { app, ipcMain, session } from 'electron';
 import log from 'electron-log';
 import { omit } from 'ramda';
 import { fromEvent, Observable, Subject } from 'rxjs';
+import { filter, share } from 'rxjs/operators';
 import { sendToAllWebcontents } from '../../../lib/ipc-broadcast';
 import { ServiceSubscription } from '../../lib/class';
 import { observer } from '../../lib/helpers';
@@ -131,7 +132,7 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
   async setAlertDialogProvider(provider: RPC.Node<AlertDialogProviderService>) {
     return new ServiceSubscription(this.onNewWebviews().subscribe(wc => {
       return fromEvent(wc, 'ipc-message-sync', (event, channel, props) => ({ event, channel, props }))
-        .filter(({ channel }) => channel === 'window-alert')
+        .pipe(filter(({ channel }) => channel === 'window-alert'))
         .subscribe(async ({ event, props }) => {
           await provider.show(wc.id, props);
           if (event && event.sendReply) {
@@ -142,7 +143,7 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
   }
 
   async setAutoLoginDetailsProvider(provider: RPC.Node<TabWebContentsAutoLoginDetailsProviderService>) {
-    const shared = this.onNewWebviews().share();
+    const shared = this.onNewWebviews().pipe(share());
     return new ServiceSubscription([
       this.askAutoLogin.subscribe(async (webContentsId: number) => {
         const wc = await getWebContentsFromIdOrThrow(webContentsId);
@@ -155,14 +156,14 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
       }),
       shared.subscribe(wc => {
         return fromEvent(wc, 'ipc-message', (_e, channel) => channel)
-          .filter(channel => channel === 'autologin-get-credentials')
+          .pipe(filter(channel => channel === 'autologin-get-credentials'))
           .subscribe(() => {
             return this.askAutoLoginCredentials(wc.id);
           });
       }),
       shared.subscribe(wc => {
         return fromEvent(wc, 'ipc-message', (_e, channel) => channel)
-          .filter(channel => channel === 'autologin-display-removeLinkBanner')
+          .pipe(filter(channel => channel === 'autologin-display-removeLinkBanner'))
           .subscribe(async () => {
             await provider.showRemoveLinkBanner(wc.id);
           });
@@ -296,7 +297,7 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
     if (obs.onPrint) {
       const sub = new ServiceSubscription(
         fromEvent(wc, 'ipc-message', (_e, channel) => channel)
-          .filter(channel => channel === 'print')
+          .pipe(filter(channel => channel === 'print'))
           .subscribe(() => {
             obs.onPrint!();
           }),

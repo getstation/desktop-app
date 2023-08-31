@@ -1,5 +1,5 @@
 import { ipcRenderer } from 'electron';
-import { distinctUntilChanged, map } from 'rxjs/operators';
+import { distinctUntilChanged, map, share } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { uninstallAllInstances } from '../../../abstract-application/duck';
 import { setConfigData, uninstallApplication } from '../../../applications/duck';
@@ -114,7 +114,7 @@ export class SDKv2ServiceImpl extends SDKv2Service implements RPC.Interface<SDKv
 
   setStore(store: StationStoreWorker) {
     this.store = store;
-    this.observableStore = subscribeStore(store).share() as Observable<StationState>;
+    this.observableStore = subscribeStore(store).pipe(share()) as Observable<StationState>;
   }
 
   async callAction(channel: SDKv2Actions | SDKv2Selectors, payload: any) {

@@ -4,7 +4,7 @@ import {
   insert, is, pipe, propEq, take, flatten, filter, map,
 } from 'ramda';
 import * as operators from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { of, Observable } from 'rxjs';
 import { Reducer, Transformer } from '../../utils/fp';
 import { GlobalActivityEntry } from './types';
 import ActivityEntry = activity.ActivityEntry;
@@ -121,19 +121,23 @@ const createActivityObservable = (
 
   const globalAscendingLimitor = queryArgs.ascending ? operators.take(nbMissingEntries) : identity;
   const limitedGlobalActivity$ = globalActivity$
-    .map(entry => [entry])
-    .map(activityFilter)
-    .filter(activities => activities.length > 0)
+    .pipe(
+      operators.map(entry => [entry]),
+      operators.map(activityFilter),
+      operators.filter(activities => activities.length > 0)
+    )
     .pipe(globalAscendingLimitor);
 
-  return Observable.of(limitedDbResults)
-    .concat(limitedGlobalActivity$) // all filtered results (history results + activity results)
-    .map(pipe(
-      activityFilter,
-      convertGlobalActivity,
-    ))
-    .scan(activityReducer, []) // ordering and limit
-    .distinctUntilChanged();
+  return of(limitedDbResults)
+    .pipe(
+      operators.concat(limitedGlobalActivity$), // all filtered results (history results + activity results)
+      operators.map(pipe(
+        activityFilter,
+        convertGlobalActivity,
+      )),
+      operators.scan(activityReducer, []), // ordering and limit
+      operators.distinctUntilChanged()
+    );
 };
 
 export default createActivityObservable;

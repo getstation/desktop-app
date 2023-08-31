@@ -1,4 +1,5 @@
 import { BehaviorSubject } from 'rxjs';
+import { skip } from 'rxjs/operators';
 import { ActionsEmitter, ActionsBus } from './types';
 
 /*
@@ -11,4 +12,4 @@ export const createActionsEmitter = (): ActionsEmitter => new BehaviorSubject({ 
 * it can be provided via props or context api
 */
 export const createActionsBus = (actionsEmitter: ActionsEmitter): ActionsBus =>
-  actionsEmitter.asObservable().skip(1); // skip initial value
+  actionsEmitter.asObservable().pipe(skip(1)); // skip initial value

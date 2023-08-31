@@ -1,5 +1,6 @@
 // @ts-ignore: no declaration file
 import { search, activity, SDK } from '@getstation/sdk';
+import { observeOn, distinctUntilChanged, timestamp } from 'rxjs/operators';
 import * as log from 'electron-log';
 import isEmpty = require('is-empty');
 import { SagaIterator } from 'redux-saga';
@@ -104,15 +105,13 @@ function* sdkSearchProvider(computedResults$: Subject<Pair<SearchSectionSerializ
     .search
     .provider
     .results
-    .observeOn(asyncScheduler)
-    .timestamp();
+    .pipe(observeOn(asyncScheduler), timestamp());
 
   const query$ = bxSDK
     .search
     .provider
     .query
-    .distinctUntilChanged()
-    .timestamp();
+    .pipe(distinctUntilChanged(), timestamp());
 
   const providerResultsWithQuery$ = combineLatest(providerResults$, query$);
   const providerResultsWithQueryChannel = observableChannel(providerResultsWithQuery$);
@@ -168,7 +167,7 @@ function* appsSearchConsumer(): SagaIterator {
   let cancelRunningQuery: () => void = noop;
 
   // consumer.on('query') -> compute results -> send results to provider
-  const queryChannel = observableChannel(sdk.search.query.distinctUntilChanged());
+  const queryChannel = observableChannel(sdk.search.query.pipe(distinctUntilChanged()));
   yield takeEveryWitness(
     queryChannel,
     function* ({ value }: search.SearchQuery) {

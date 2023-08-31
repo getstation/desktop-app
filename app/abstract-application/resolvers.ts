@@ -87,7 +87,7 @@ const resolvers: Resolvers = {
         ),
         ...extensions
           .filter(e => e.extensionFor.includes(manifestURL!))
-          .map(e => context.manifestProvider.get(e.manifestURL).map(m => ({ ...m, manifestURL: e.manifestURL }))),
+          .map(e => context.manifestProvider.get(e.manifestURL).pipe(map(m => ({ ...m, manifestURL: e.manifestURL })))),
         memoize((manifestURLs: List<string>, ...extensionsManifests: any[]) =>
           extensionsManifests.map(extensionManifest => {
             const { manifest } = extensionManifest;

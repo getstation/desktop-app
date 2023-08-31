@@ -4,6 +4,7 @@ import { app, BrowserWindow, dialog, Session, session as electronSession, webCon
 import { head } from 'ramda';
 // @ts-ignore: no declaration file
 import { Observer, Observable } from 'rxjs';
+import { flatMap } from 'rxjs/operators';
 import { observeSessions } from '../../api/sessions';
 import { ServiceSubscription } from '../../lib/class';
 import { RPC, SubscriptionConstructorParam } from '../../lib/types';
@@ -133,7 +134,7 @@ export class DownloadServiceImpl extends DownloadService implements RPC.Interfac
 
   private async addOnWillDownloadObserver(observer: RPC.ObserverNode<DownloadServiceObserver>) {
     if (observer.onWillDownload) {
-      const onWillDownload$ = observeSessions().flatMap(makeOnWillDownload(this));
+      const onWillDownload$ = observeSessions().pipe(flatMap(makeOnWillDownload(this)));
       return onWillDownload$.subscribe(observer.onWillDownload.bind(observer));
     }
     return () => { };

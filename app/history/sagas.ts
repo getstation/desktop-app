@@ -4,7 +4,7 @@ import { compact } from 'ramda-adjunct';
 import { SagaIterator } from 'redux-saga';
 import { all, call, fork, put, select, take, getContext } from 'redux-saga/effects';
 import { asyncScheduler, combineLatest, from } from 'rxjs';
-import { distinctUntilChanged, observeOn } from 'rxjs/operators';
+import { distinctUntilChanged, observeOn, switchMap, map } from 'rxjs/operators';
 
 import { BrowserXAppWorker } from '../app-worker';
 import { getApplicationManifestURL } from '../applications/get';
@@ -29,9 +29,7 @@ function* sdkHistoryProvider(): SagaIterator {
     .history
     .provider
     .entries
-    .pipe(
-      observeOn(asyncScheduler),
-    );
+    .pipe(observeOn(asyncScheduler));
 
   const providerHistoryChannel = observableChannel(providerHistory$);
 
@@ -62,7 +60,7 @@ function* sdkHistoryAppConsumer({ store }: BrowserXAppWorker): SagaIterator {
     .history
     .provider
     .consumersObservable
-    .switchMap(consumers => sdk
+    .pipe(switchMap(consumers => sdk
       .activity
       .query({
         limit: 50,
@@ -78,12 +76,14 @@ function* sdkHistoryAppConsumer({ store }: BrowserXAppWorker): SagaIterator {
       .pipe(
         distinctUntilChanged()
       )
-    );
+    ));
 
   // @ts-ignore
   const tabs$ = from(store)
-    .map((s: StationState) => getTabs(s))
-    .distinctUntilChanged();
+    .pipe(
+      map((s: StationState) => getTabs(s)),
+      distinctUntilChanged()
+    );
 
   const activityWithTabs$ = combineLatest(activityQuery$, tabs$);
   const activityWithTabsChannel = observableChannel(activityWithTabs$);

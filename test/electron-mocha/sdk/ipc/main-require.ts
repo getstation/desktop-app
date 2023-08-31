@@ -1,6 +1,6 @@
 import bxsdk from '@getstation/sdk';
 import { ipcMain } from 'electron';
-import { Observable } from 'rxjs';
+import { from } from 'rxjs';
 import { sendToAllWebcontents } from '../../../../app/lib/ipc-broadcast';
 import bxSDK from '../../../../app/sdk/index';
 
@@ -27,6 +27,6 @@ ipcMain.on('test:ipc:trigger-send-from-main', () => {
 // When the main process receives a new IPC message,
 // forwards it to all renderers.
 // @ts-ignore: limitation of Symbol.observable definition
-Observable.from(sdk.ipc).subscribe((value) => {
+from(sdk.ipc).subscribe((value) => {
   sendToAllWebcontents('test:ipc:trigger-send-from-renderer', value);
 });

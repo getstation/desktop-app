@@ -1,6 +1,6 @@
 import { over, lensProp } from 'ramda';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { filter, map, distinctUntilChanged } from 'rxjs/operators';
+import { filter, first, map, distinctUntilChanged } from 'rxjs/operators';
 import * as moment from 'moment';
 import * as crypto from 'crypto';
 import { join } from 'path';
@@ -121,7 +121,7 @@ export default class ManifestProvider implements IManifestProvider {
   * @param rawUrl
   */
   async getFirstValue(rawUrl: ManifestURL): Promise<IBxApp> {
-    return this.get(rawUrl).first().toPromise();
+    return this.get(rawUrl).pipe(first()).toPromise();
   }
 
   /**

@@ -1,6 +1,7 @@
 import { ipc } from '@getstation/sdk';
 import * as shortid from 'shortid';
 import { Subject } from 'rxjs';
+import { share } from 'rxjs/operators';
 import { handleError } from '../../services/api/helpers';
 import { observer } from '../../services/lib/helpers';
 import services from '../../services/servicesManager';
@@ -63,7 +64,7 @@ function createChannels(): SDKIpcProviderInterface {
  */
 function transformChannelsForConsumer(channels: SDKIpcProviderInterface): ipc.IpcProviderInterface {
   return {
-    bxToPluginChannel: channels.bxToPluginChannel.asObservable().share(),
+    bxToPluginChannel: channels.bxToPluginChannel.asObservable().pipe(share()),
     pluginToBxChannel: channels.pluginToBxChannel,
   };
 }
