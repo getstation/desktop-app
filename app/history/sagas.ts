@@ -3,9 +3,8 @@ import { HistoryConsumer } from '@getstation/sdk/lib/history/consumer';
 import { compact } from 'ramda-adjunct';
 import { SagaIterator } from 'redux-saga';
 import { all, call, fork, put, select, take, getContext } from 'redux-saga/effects';
-import { combineLatest, from } from 'rxjs';
+import { asyncScheduler, combineLatest, from } from 'rxjs';
 import { distinctUntilChanged, observeOn } from 'rxjs/operators';
-import { async } from 'rxjs/scheduler/async';
 
 import { BrowserXAppWorker } from '../app-worker';
 import { getApplicationManifestURL } from '../applications/get';
@@ -31,7 +30,7 @@ function* sdkHistoryProvider(): SagaIterator {
     .provider
     .entries
     .pipe(
-      observeOn(async),
+      observeOn(asyncScheduler),
     );
 
   const providerHistoryChannel = observableChannel(providerHistory$);

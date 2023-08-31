@@ -12,7 +12,7 @@ import { flatten, uniqBy } from 'ramda';
 import { noop } from 'ramda-adjunct';
 import { Subscription, Subject, combineLatest } from 'rxjs';
 import { Timestamp } from 'rxjs/internal/operators/timestamp';
-import { async } from 'rxjs/scheduler/async';
+import { asyncScheduler } from 'rxjs';
 import { dispatchUrl } from '../applications/duck';
 import { historyItemsAsLastUsedSection } from '../history/api';
 import bxSDK from '../sdk';
@@ -104,7 +104,7 @@ function* sdkSearchProvider(computedResults$: Subject<Pair<SearchSectionSerializ
     .search
     .provider
     .results
-    .observeOn(async)
+    .observeOn(asyncScheduler)
     .timestamp();
 
   const query$ = bxSDK
