@@ -1,7 +1,7 @@
 import log from 'electron-log';
 import { mergeAll } from 'ramda';
 import { logger } from '../../api/logger';
-import { fromEvent } from 'rxjs/observable/fromEvent';
+import { fromEvent } from 'rxjs';
 
 export type HandleErrorOptions = {
   console: boolean, // default: true

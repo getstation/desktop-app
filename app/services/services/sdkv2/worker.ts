@@ -1,6 +1,6 @@
 import { ipcRenderer } from 'electron';
 import { distinctUntilChanged, map } from 'rxjs/operators';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs';
 import { uninstallAllInstances } from '../../../abstract-application/duck';
 import { setConfigData, uninstallApplication } from '../../../applications/duck';
 import { getSnoozeDurationInMs } from '../../../notification-center/selectors';

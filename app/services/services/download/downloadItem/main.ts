@@ -1,8 +1,7 @@
 import { app } from 'electron';
 import * as path from 'path';
 import { anyPass, equals } from 'ramda';
-import { Observable } from 'rxjs/Observable';
-import { Observer } from 'rxjs/Observer';
+import { Observer, Observable } from 'rxjs';
 import * as shortid from 'shortid';
 // @ts-ignore no definition types
 import * as unusedFilename from 'unused-filename';

@@ -9,7 +9,7 @@ import { StationState } from '../types';
 import BangSubdock from './BangSubdock';
 import { SearchPaneClosedVia, setVisibility, toggleVisibility } from './duck';
 import { isVisible as getIsBangVisible } from './selectors';
-import classNames = require('classnames');
+import * as classNames from 'classnames';
 // @ts-ignore: no declaration file
 import injectSheet from 'react-jss';
 

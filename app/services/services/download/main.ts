@@ -3,8 +3,7 @@ import * as contentDisposition from 'content-disposition';
 import { app, BrowserWindow, dialog, Session, session as electronSession, webContents } from 'electron';
 import { head } from 'ramda';
 // @ts-ignore: no declaration file
-import { Observer } from 'rxjs/Observer';
-import { Observable } from 'rxjs/Rx';
+import { Observer, Observable } from 'rxjs';
 import { observeSessions } from '../../api/sessions';
 import { ServiceSubscription } from '../../lib/class';
 import { RPC, SubscriptionConstructorParam } from '../../lib/types';

@@ -1,5 +1,5 @@
 import { activity, SDK, tabs } from '@getstation/sdk';
-import { EMPTY, Observable, Subscription } from 'rxjs/Rx';
+import { EMPTY, Observable, Subscription } from 'rxjs';
 import { distinctUntilChanged, filter, map, skip, switchMap } from 'rxjs/operators';
 
 import { ResourceExtractor, ResourceRecord } from './resource';

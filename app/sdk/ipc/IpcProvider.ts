@@ -1,6 +1,6 @@
 import { ipc } from '@getstation/sdk';
 import * as shortid from 'shortid';
-import * as Rx from 'rxjs/Rx';
+import { Subject } from 'rxjs';
 import { handleError } from '../../services/api/helpers';
 import { observer } from '../../services/lib/helpers';
 import services from '../../services/servicesManager';
@@ -47,8 +47,8 @@ export default class IpcProvider extends AbstractProvider<ipc.IpcConsumer> {
  * @returns {SDKIpcProviderInterface}
  */
 function createChannels(): SDKIpcProviderInterface {
-  const pluginToBxChannel = new Rx.Subject();
-  const bxToPluginChannel = new Rx.Subject();
+  const pluginToBxChannel = new Subject();
+  const bxToPluginChannel = new Subject();
   return {
     pluginToBxChannel,
     bxToPluginChannel,

@@ -2,7 +2,7 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs';
 import MultiInstanceConfigurator from '../../app/applications/multi-instance-configuration/webui/MultiInstanceConfigurator';
 
 const windowBxOverrideForOnPremiseApp = () => {

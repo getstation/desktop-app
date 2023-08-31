@@ -3,7 +3,7 @@ import * as memoize from 'memoizee';
 import { map } from 'rxjs/operators';
 import { Resolvers } from '../graphql/resolvers-types.generated';
 import { subscribeStore } from '../utils/observable';
-import { combineLatest } from 'rxjs/observable/combineLatest';
+import { combineLatest } from 'rxjs';
 import { getSettingsByManifestURL } from '../application-settings/selectors';
 import extensions from '../chrome-extensions/data';
 import { getApplicationsByManifestURL, getInstalledManifestURLs, getHomeTab } from '../applications/selectors';

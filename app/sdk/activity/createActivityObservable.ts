@@ -4,7 +4,7 @@ import {
   insert, is, pipe, propEq, take, flatten, filter, map,
 } from 'ramda';
 import * as operators from 'rxjs/operators';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs';
 import { Reducer, Transformer } from '../../utils/fp';
 import { GlobalActivityEntry } from './types';
 import ActivityEntry = activity.ActivityEntry;

@@ -1,9 +1,6 @@
 import { search } from '@getstation/sdk';
 import * as Immutable from 'immutable';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import * as Rx from 'rxjs/Rx';
-import { Subject } from 'rxjs/Subject';
-import { Subscription } from 'rxjs/Subscription';
+import { BehaviorSubject, Observable, Subject, Subscription } from 'rxjs';
 import { AbstractProvider } from '../common';
 import { SearchSection } from './types';
 
@@ -75,7 +72,7 @@ export default class SearchProvider extends AbstractProvider<search.SearchConsum
 
   protected refreshResultsSubscription() {
     if (this.resultsSubscription) this.resultsSubscription.unsubscribe();
-    this.resultsSubscription = Rx.Observable
+    this.resultsSubscription = Observable
       // Keep only the last values of each of the consumers
       .combineLatest(this._consumers.map(c => c.results))
       .debounceTime(50) // flickering results workaround

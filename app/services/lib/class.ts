@@ -1,6 +1,6 @@
 import * as eos from 'end-of-stream';
 import { EventEmitter } from 'events';
-import { BehaviorSubject } from 'rxjs/Rx';
+import { BehaviorSubject } from 'rxjs';
 import { RPCChannel, RPCChannelPeer } from 'stream-json-rpc';
 import { bxnotifier, bxsubscription, endpoints } from './const';
 import { Debugger } from './debug';

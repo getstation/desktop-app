@@ -1,6 +1,6 @@
 import bxsdk from '@getstation/sdk';
 import { ipcMain } from 'electron';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs';
 import { sendToAllWebcontents } from '../../../../app/lib/ipc-broadcast';
 import bxSDK from '../../../../app/sdk/index';
 

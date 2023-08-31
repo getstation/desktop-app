@@ -1,6 +1,5 @@
 import { over, lensProp } from 'ramda';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { Observable } from 'rxjs/Observable';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { filter, map, distinctUntilChanged } from 'rxjs/operators';
 import * as moment from 'moment';
 import * as crypto from 'crypto';

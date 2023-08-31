@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs';
 import { activity } from '@getstation/sdk/lib/activity';
 import createActivityObservable, { Options } from '../../../../app/sdk/activity/createActivityObservable';
 import { GlobalActivityEntry } from '../../../../app/sdk/activity/types';

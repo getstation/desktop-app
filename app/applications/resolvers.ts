@@ -1,6 +1,5 @@
 import * as Immutable from 'immutable';
-import { Observable } from 'rxjs/Observable';
-import { BehaviorSubject } from 'rxjs/Rx';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { distinctUntilChanged, map } from 'rxjs/operators';
 import { oc } from 'ts-optchain';
 

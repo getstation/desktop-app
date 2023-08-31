@@ -10,10 +10,9 @@ import { Selector } from 'reselect';
 import { updateUI } from 'redux-ui/transpiled/action-reducer';
 import { flatten, uniqBy } from 'ramda';
 import { noop } from 'ramda-adjunct';
-import { combineLatest } from 'rxjs/observable/combineLatest';
+import { Subscription, Subject, combineLatest } from 'rxjs';
 import { Timestamp } from 'rxjs/internal/operators/timestamp';
 import { async } from 'rxjs/scheduler/async';
-import { Subject } from 'rxjs/Subject';
 import { dispatchUrl } from '../applications/duck';
 import { historyItemsAsLastUsedSection } from '../history/api';
 import bxSDK from '../sdk';
@@ -54,7 +53,6 @@ import { ActivityEntry } from '../activity/types';
 import { getHistoryItems } from '../history/selectors';
 import { getFavoritesWithApplications } from '../favorites/selectors';
 import { StationState } from '../types';
-import { Subscription } from 'rxjs/Rx';
 
 const TOP_HITS_ITEMS = 3;
 

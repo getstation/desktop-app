@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { BxAppManifest } from './bxAppManifest';
 import { Moment } from 'moment';
 

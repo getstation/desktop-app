@@ -1,4 +1,4 @@
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 
 export interface SDKIpcProviderInterface {
   pluginToBxChannel: Subject<any>;

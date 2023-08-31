@@ -3,8 +3,7 @@ import { HistoryConsumer } from '@getstation/sdk/lib/history/consumer';
 import { compact } from 'ramda-adjunct';
 import { SagaIterator } from 'redux-saga';
 import { all, call, fork, put, select, take, getContext } from 'redux-saga/effects';
-import { combineLatest } from 'rxjs/observable/combineLatest';
-import { from } from 'rxjs/observable/from';
+import { combineLatest, from } from 'rxjs';
 import { distinctUntilChanged, observeOn } from 'rxjs/operators';
 import { async } from 'rxjs/scheduler/async';
 

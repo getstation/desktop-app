@@ -1,7 +1,5 @@
 import { history } from '@getstation/sdk';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import * as Rx from 'rxjs/Rx';
-import { Subscription } from 'rxjs/Subscription';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { AbstractProvider } from '../common';
 
 export default class HistoryProvider extends AbstractProvider<history.HistoryConsumer> {
@@ -26,7 +24,7 @@ export default class HistoryProvider extends AbstractProvider<history.HistoryCon
 
   protected refreshResultsSubscription() {
     if (this.subscriptions) this.subscriptions.unsubscribe();
-    this.subscriptions = Rx.Observable
+    this.subscriptions = Observable
       .combineLatest(this._consumers.map(c => c.entries))
       .map((consumerEntries: history.HistoryEntry[][]) => {
         const flattenEntries = [];

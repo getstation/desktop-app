@@ -148,6 +148,11 @@ export default class GenericWindowManager extends EventEmitter {
             self.emit('context-menu', params);
           },
           onNewNotification(notificationId: string, props: NotificationProps) {
+
+
+            require('electron-log').info('SSSSSSSSSSS');
+
+            
             self.emit('new-notification', notificationId, props, {
               webContentsId,
             });

@@ -1,8 +1,8 @@
 import { BrowserWindow, ipcMain, screen, webContents, WebContents, WebPreferences, app } from 'electron';
 import * as remoteMain from '@electron/remote/main';
 import * as windowStateKeeper from 'electron-window-state';
-import { fromEvent } from 'rxjs/observable/fromEvent';
-import * as sanitize from 'sanitize-filename';
+import { fromEvent } from 'rxjs';
+//import * as sanitize from 'sanitize-filename';
 import { NotificationProps } from '../../../notification-center/types';
 import { ServiceSubscription } from '../../lib/class';
 import { RPC } from '../../lib/types';
@@ -218,6 +218,7 @@ export class BrowserWindowServiceImpl extends BrowserWindowService implements RP
 
   private startInitPositionManager(savePosition?: string): Partial<BrowserWindowServiceConstructorOptions> {
     if (!savePosition) return {};
+    const sanitize = require('sanitize-filename');
     const sanitizedFilename = sanitize(savePosition);
     if (!sanitizedFilename) throw new Error(`Invalid file name ${savePosition}`);
 

@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { ApplicationConfigData } from '../applications/duck';
 import { MinimalApplication } from '../applications/graphql/withApplications';
 import { BxAppManifest } from '../applications/manifest-provider/bxAppManifest';

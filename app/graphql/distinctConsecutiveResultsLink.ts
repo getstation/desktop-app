@@ -1,7 +1,7 @@
 import { ApolloLink, ExecutionResult, NextLink, Observable as ZenObservable, Operation } from 'apollo-link';
 import log from 'electron-log';
 import { equals, pick } from 'ramda';
-import { from } from 'rxjs/observable/from';
+import { from } from 'rxjs';
 import { isPackaged } from '../utils/env';
 
 const filterResult = pick(['data', 'errors']);

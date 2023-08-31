@@ -1,6 +1,6 @@
 import { SDK } from '@getstation/sdk';
 import { evolve } from 'ramda';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { BxAppManifest } from '../applications/manifest-provider/bxAppManifest';
 import { service } from '../services/lib/decorator';
 

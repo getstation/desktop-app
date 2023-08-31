@@ -1,6 +1,5 @@
 import { BrowserWindow, session, webContents } from 'electron';
-import { fromEvent } from 'rxjs/observable/fromEvent';
-import { merge } from 'rxjs/observable/merge';
+import { fromEvent, merge } from 'rxjs';
 import { RPC } from '../../lib/types';
 import { TabWebContentsLifeCycleObserver, TabWebContentsNotificationsObserver } from './interface';
 

@@ -1,5 +1,5 @@
 import { app, session, Session } from 'electron';
-import { ReplaySubject } from 'rxjs/Rx';
+import { ReplaySubject } from 'rxjs';
 
 let listening = false;
 let sessions: ReplaySubject<Session> = new ReplaySubject();
