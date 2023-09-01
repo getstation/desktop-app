@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { from, Observable } from 'rxjs';
 import { activity } from '@getstation/sdk/lib/activity';
 import createActivityObservable, { Options } from '../../../../app/sdk/activity/createActivityObservable';
 import { GlobalActivityEntry } from '../../../../app/sdk/activity/types';
@@ -26,7 +26,7 @@ const dbEntries: GlobalActivityEntry[] = [
   createDummyGlobalActivityEntry(500, 'a', 'c1', 'r3'),
 ];
 
-const globalActivity$: Observable<GlobalActivityEntry> = Observable.from([
+const globalActivity$: Observable<GlobalActivityEntry> = from([
   createDummyGlobalActivityEntry(1000, 'a', 'c1', 'r2'),
   createDummyGlobalActivityEntry(2000, 'b', 'c2', 'r2'),
   createDummyGlobalActivityEntry(3000, 'a', 'c1', 'r1'),
