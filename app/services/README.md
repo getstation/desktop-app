@@ -96,7 +96,7 @@ export class MenuService extends ServiceBase implements RPC.Interface<MenuServic
 #### Implementation
 The implementation of a Service resides in a unique process.
 ```typescript
-import { fromEvent } from 'rxjs/observable/fromEvent';
+import { fromEvent } from 'rxjs';
 import { BrowserXMenuManager } from '../../../menu/app-menu';
 import { RPC } from '../../lib/types';
 import { getNode, service, ServiceBase } from '../../lib/class';

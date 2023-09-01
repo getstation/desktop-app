@@ -1,7 +1,7 @@
 import { config } from '@getstation/sdk';
 import { is } from 'immutable';
 import { distinctUntilChanged, map } from 'rxjs/operators';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs';
 import { updateApplicationIcon } from '../../applications/duck';
 import { getApplicationManifestURL } from '../../applications/get';
 import { getApplicationById, getApplications } from '../../applications/selectors';

@@ -2,7 +2,7 @@ import { Button, Size, Style } from '@getstation/theme';
 import * as React from 'react';
 // @ts-ignore: no declaration file
 import injectSheet from 'react-jss';
-import { Subscription } from 'rxjs/Rx';
+import { Subscription } from 'rxjs';
 import { identitiesStyle, IdentitiesStylesType } from './styles';
 
 export interface Props {

@@ -1,6 +1,5 @@
 import { resources, SDK } from '@getstation/sdk';
-import { EMPTY } from 'rxjs';
-import { Observable } from 'rxjs/internal/Observable';
+import { EMPTY, Observable } from 'rxjs';
 
 import { idExtractor } from './activity';
 import SlackSearch from './search';

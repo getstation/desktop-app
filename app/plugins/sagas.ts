@@ -1,7 +1,7 @@
 import bxsdk from '@getstation/sdk';
 import { SagaIterator } from 'redux-saga';
 import { all, call, put } from 'redux-saga/effects';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs';
 import { BrowserXAppWorker } from '../app-worker';
 import { getManifestOrTimeout } from '../applications/api';
 import { BxAppManifest } from '../applications/manifest-provider/bxAppManifest';

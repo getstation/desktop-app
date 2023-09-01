@@ -5,7 +5,7 @@
 import * as slack from 'slack';
 import { GradientType, withGradient } from '@getstation/theme';
 import ElectronWebview from 'app/common/components/ElectronWebview';
-import classNames from 'classnames';
+import * as classNames from 'classnames';
 import { clipboard } from 'electron';
 import * as remote from '@electron/remote';
 // @ts-ignore no declaration file
@@ -25,7 +25,7 @@ import { bindActionCreators } from 'redux';
 // @ts-ignore no declaration file
 import { updateUI } from 'redux-ui/transpiled/action-reducer';
 import { filter } from 'rxjs/operators';
-import { Observable, Subscription } from 'rxjs/Rx';
+import { Observable, Subscription } from 'rxjs';
 import { oc } from 'ts-optchain';
 import { format as formatUrl } from 'url';
 import { injectJS } from '../plugins/helpers';

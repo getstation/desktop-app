@@ -3,7 +3,7 @@ import * as isBlank from 'is-blank';
 // @ts-ignore: no declaration file
 import * as RadixRouter from 'radix-router';
 import { uniq } from 'ramda';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { BehaviorSubject } from 'rxjs';
 import { URL as NodeURL } from 'url';
 import { isNotInstallableApplication } from '../application-settings/selectors';
 import { getApplicationId, getApplicationManifestURL, getApplicationCustomURL } from '../applications/get';

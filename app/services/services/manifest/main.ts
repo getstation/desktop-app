@@ -1,3 +1,4 @@
+import { take } from 'rxjs/operators';
 import ManifestProvider from '../../../applications/manifest-provider/manifest-provider';
 import { RPC } from '../../lib/types';
 import { ManifestService } from './interface';
@@ -6,7 +7,7 @@ export class ManifestServiceImpl extends ManifestService implements RPC.Interfac
   protected manifestProvider: ManifestProvider;
 
   async getManifest(manifestURL: string) {
-    const bxApp = await this.manifestProvider.get(manifestURL).take(1).toPromise();
+    const bxApp = await this.manifestProvider.get(manifestURL).pipe(take(1)).toPromise();
     return bxApp.manifest;
   }
 

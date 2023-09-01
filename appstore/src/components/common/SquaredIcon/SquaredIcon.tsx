@@ -2,7 +2,7 @@ import { Icon, IconSymbol, Tooltip } from '@getstation/theme';
 import * as React from 'react';
 import { createUseStyles } from 'react-jss';
 import { colors } from '@src/theme';
-import classNames from 'classnames';
+import * as classNames from 'classnames';
 
 const useStyles = createUseStyles({
   main: {
