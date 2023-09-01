@@ -1,5 +1,5 @@
 import { Consumer } from '@getstation/sdk';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { BehaviorSubject } from 'rxjs';
 
 export abstract class AbstractProvider<C extends Consumer> {
   public consumersObservable: BehaviorSubject<C[]>;

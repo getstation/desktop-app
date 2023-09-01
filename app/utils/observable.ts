@@ -1,7 +1,7 @@
 import log from 'electron-log';
 import { Store } from 'redux';
 import { distinctUntilChanged, map } from 'rxjs/operators';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs';
 import { logger } from '../api/logger';
 
 type Selector<S, R> = (state: S) => R;

@@ -4661,7 +4661,7 @@
     "@types/node" "*"
     "@types/responselike" "^1.0.0"
 
-"@types/classnames@^2.2.0":
+"@types/classnames@^2.3.1":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.3.1.tgz#3c2467aa0f1a93f1f021e3b9bcf938bd5dfdc0dd"
   integrity sha512-zeOWb0JGBoVmlQoznvqXbE0tEC/HONsnoUNH19Hc96NFsTAwTXbTqb8FMYkru1F/iqp7a18Ws3nWJvtA1sHD1A==
@@ -5171,7 +5171,7 @@
     "@types/glob" "*"
     "@types/node" "*"
 
-"@types/sanitize-filename@^1.1.28":
+"@types/sanitize-filename@^1.6.3":
   version "1.6.3"
   resolved "https://registry.yarnpkg.com/@types/sanitize-filename/-/sanitize-filename-1.6.3.tgz#182ebd5658fbd3fe36bcb771daad8b2623371705"
   integrity sha512-1dAV8Va7KsiXNAstV2JmF4CRVG3Fsyl+VnBw87C9cCMccekpOqJBezS7MUnHYPChNAFee1WakwBXdfn7QJxzVg==
@@ -8275,7 +8275,7 @@ classnames@*, classnames@^2.2.1, classnames@^2.2.5:
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
   integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==
 
-classnames@^2.2.6:
+classnames@^2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.2.tgz#351d813bf0137fcc6a76a16b88208d2560a0d924"
   integrity sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==
@@ -10735,6 +10735,7 @@ electron-publish@24.5.0:
 
 "electron-simple-ipc@https://github.com/viktor44/electron-simple-ipc/archive/refs/tags/1.1.2.tar.gz":
   version "1.1.2"
+  uid "562c7dc9b4e133a3c193675c26571f73e58b4897"
   resolved "https://github.com/viktor44/electron-simple-ipc/archive/refs/tags/1.1.2.tar.gz#562c7dc9b4e133a3c193675c26571f73e58b4897"
 
 "electron-simple-rpc@https://github.com/viktor44/electron-simple-rpc/archive/refs/tags/v1.1.4.tar.gz":
@@ -20560,18 +20561,6 @@ rx-lite@*, rx-lite@^4.0.8:
   resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-4.0.8.tgz#0b1e11af8bc44836f04a6407e92da42467b79444"
   integrity sha1-Cx4Rr4vESDbwSmQH6S2kJGe3lEQ=
 
-rxjs-compat@^6.4.0:
-  version "6.6.7"
-  resolved "https://registry.yarnpkg.com/rxjs-compat/-/rxjs-compat-6.6.7.tgz#6eb4ef75c0a58ea672854a701ccc8d49f41e69cb"
-  integrity sha512-szN4fK+TqBPOFBcBcsR0g2cmTTUF/vaFEOZNuSdfU8/pGFnNmmn2u8SystYXG1QMrjOPBc6XTKHMVfENDf6hHw==
-
-rxjs@6.4.*:
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.4.0.tgz#f3bb0fe7bda7fb69deac0c16f17b50b0b8790504"
-  integrity sha512-Z9Yfa11F6B9Sg/BK9MnqnQ+aQYicPLtilXBp2yUtDt2JRCE0h26d33EnfO3ZxoNxG0T92OUucP3Ct7cpfkdFfw==
-  dependencies:
-    tslib "^1.9.0"
-
 rxjs@^5.5.6:
   version "5.5.12"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.12.tgz#6fa61b8a77c3d793dbaf270bee2f43f652d741cc"
@@ -20579,7 +20568,7 @@ rxjs@^5.5.6:
   dependencies:
     symbol-observable "1.0.1"
 
-rxjs@^6.1.0, rxjs@^6.3.3, rxjs@^6.4.0, rxjs@^6.5.2:
+rxjs@^6.1.0, rxjs@^6.3.3, rxjs@^6.4.0, rxjs@^6.5.2, rxjs@^6.6.7:
   version "6.6.7"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.6.7.tgz#90ac018acabf491bf65044235d5863c4dab804c9"
   integrity sha512-hTdwr+7yYNIT5n4AMYp85KA6yw2Va0FLa3Rguvbpa4W3I5xynaBZo41cM3XM+4Q6fRMj3sBYIR1VAmZMXYJvRQ==
@@ -20628,7 +20617,7 @@ sane@^4.0.3:
     minimist "^1.1.1"
     walker "~1.0.5"
 
-sanitize-filename@*, sanitize-filename@^1.6.1, sanitize-filename@^1.6.3:
+sanitize-filename@*, sanitize-filename@^1.6.3:
   version "1.6.3"
   resolved "https://registry.yarnpkg.com/sanitize-filename/-/sanitize-filename-1.6.3.tgz#755ebd752045931977e30b2025d340d7c9090378"
   integrity sha512-y/52Mcy7aw3gRm7IrcGDFx/bCk4AhRh2eI9luHOQM86nZsqwiRkkq2GekHXBBD+SmPidc8i2PqtYZl+pWJ8Oeg==

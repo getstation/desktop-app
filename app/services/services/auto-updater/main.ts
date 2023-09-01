@@ -1,6 +1,5 @@
 import { app } from 'electron';
-import { fromEvent } from 'rxjs/observable/fromEvent';
-import { Subscription } from 'rxjs/Rx';
+import { fromEvent, Subscription } from 'rxjs';
 import { ServiceSubscription } from '../../lib/class';
 import { RPC, ServiceBaseConstructorOptions } from '../../lib/types';
 import { AutoUpdaterService, AutoUpdaterServiceObserver } from './interface';

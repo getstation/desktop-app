@@ -1,4 +1,5 @@
 import ms = require('ms');
+import { take } from 'rxjs/operators';
 import * as BluebirdPromise from 'bluebird';
 import { BxAppManifest } from './manifest-provider/bxAppManifest';
 import { BrowserXAppWorker } from '../app-worker';
@@ -23,7 +24,7 @@ export async function getManifestOrTimeout(appWorker: BrowserXAppWorker | IManif
   }
   if (!manifestProvider) throw new Error('manifestProvider not present');
 
-  const $firstManifest = manifestProvider.get(manifestURL).take(1);
+  const $firstManifest = manifestProvider.get(manifestURL).pipe(take(1));
 
   const manifest = await BluebirdPromise.resolve(
     $firstManifest.toPromise()

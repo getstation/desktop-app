@@ -1,7 +1,7 @@
 import { activity } from '@getstation/sdk';
 import { evolve, omit, pipe } from 'ramda';
 import { compact } from 'ramda-adjunct';
-import { AnyFindOptions, Op } from 'sequelize';
+import { FindOptions, Op } from 'sequelize';
 import { GlobalActivityEntry, SerializedActivityEntry } from './types';
 
 export const deserializeActivityEntry: (activity: SerializedActivityEntry) => GlobalActivityEntry = pipe(
@@ -12,7 +12,7 @@ export const deserializeActivityEntry: (activity: SerializedActivityEntry) => Gl
 );
 
 export const getSerializedQueryParams = (consumer: activity.ActivityConsumer, queryArgs: activity.QueryArgs):
-  AnyFindOptions => {
+  FindOptions => {
   const { global, orderBy, ascending, where, whereNot, limitByDate } = queryArgs;
 
   const whereResources = where.resourceIds ? { resourceId: where.resourceIds } : {};

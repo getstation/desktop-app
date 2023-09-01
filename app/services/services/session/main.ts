@@ -21,7 +21,7 @@ export class SessionServiceImpl extends SessionService implements RPC.Interface<
     return session.getUserAgent();
   }
 
-  async getCookies(filter: Electron.Filter): Promise<Electron.Cookie[]> {
+  async getCookies(filter: Electron.CookiesGetFilter): Promise<Electron.Cookie[]> {
     const session = await this.getSession();
     return session.cookies.get(filter);
   }

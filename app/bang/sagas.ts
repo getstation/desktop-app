@@ -1,5 +1,6 @@
 // @ts-ignore: no declaration file
 import { search, activity, SDK } from '@getstation/sdk';
+import { observeOn, distinctUntilChanged, timestamp } from 'rxjs/operators';
 import * as log from 'electron-log';
 import isEmpty = require('is-empty');
 import { SagaIterator } from 'redux-saga';
@@ -10,10 +11,9 @@ import { Selector } from 'reselect';
 import { updateUI } from 'redux-ui/transpiled/action-reducer';
 import { flatten, uniqBy } from 'ramda';
 import { noop } from 'ramda-adjunct';
-import { combineLatest } from 'rxjs/observable/combineLatest';
+import { Subscription, Subject, combineLatest } from 'rxjs';
 import { Timestamp } from 'rxjs/internal/operators/timestamp';
-import { async } from 'rxjs/scheduler/async';
-import { Subject } from 'rxjs/Subject';
+import { asyncScheduler } from 'rxjs';
 import { dispatchUrl } from '../applications/duck';
 import { historyItemsAsLastUsedSection } from '../history/api';
 import bxSDK from '../sdk';
@@ -54,7 +54,6 @@ import { ActivityEntry } from '../activity/types';
 import { getHistoryItems } from '../history/selectors';
 import { getFavoritesWithApplications } from '../favorites/selectors';
 import { StationState } from '../types';
-import { Subscription } from 'rxjs/Rx';
 
 const TOP_HITS_ITEMS = 3;
 
@@ -106,15 +105,13 @@ function* sdkSearchProvider(computedResults$: Subject<Pair<SearchSectionSerializ
     .search
     .provider
     .results
-    .observeOn(async)
-    .timestamp();
+    .pipe(observeOn(asyncScheduler), timestamp());
 
   const query$ = bxSDK
     .search
     .provider
     .query
-    .distinctUntilChanged()
-    .timestamp();
+    .pipe(distinctUntilChanged(), timestamp());
 
   const providerResultsWithQuery$ = combineLatest(providerResults$, query$);
   const providerResultsWithQueryChannel = observableChannel(providerResultsWithQuery$);
@@ -170,7 +167,7 @@ function* appsSearchConsumer(): SagaIterator {
   let cancelRunningQuery: () => void = noop;
 
   // consumer.on('query') -> compute results -> send results to provider
-  const queryChannel = observableChannel(sdk.search.query.distinctUntilChanged());
+  const queryChannel = observableChannel(sdk.search.query.pipe(distinctUntilChanged()));
   yield takeEveryWitness(
     queryChannel,
     function* ({ value }: search.SearchQuery) {

@@ -1,4 +1,5 @@
 import * as path from 'path';
+import { take } from 'rxjs/operators';
 import { LocalStorage } from 'node-localstorage';
 import * as remote from '@electron/remote';
 import * as moment from 'moment';
@@ -41,7 +42,7 @@ export const feedGlobalFrecencyStorage = async (searchEngine: SearchEngine, sdk:
 
   // the global frecency algortihm need to be fed with `ascending` entries but the query we made is `descending`,
   // so that's why we `reverse(entries)`
-  const descendingEntries = await allEntries$.take(1).toPromise();
+  const descendingEntries = await allEntries$.pipe(take(1)).toPromise();
   const ascendingEntries = reverse(descendingEntries);
 
   for (const entry of ascendingEntries) {

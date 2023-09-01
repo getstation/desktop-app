@@ -1,4 +1,4 @@
-import { Subject } from 'rxjs/Rx';
+import { Subject } from 'rxjs';
 import { ServiceSubscription } from '../../lib/class';
 import { RPC } from '../../lib/types';
 import { SDKIPCBroadcastService, SDKIPCBroadcastServiceObserver } from './interface';

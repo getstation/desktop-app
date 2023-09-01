@@ -16,7 +16,7 @@ import {
   takeLatest,
   throttle,
 } from 'redux-saga/effects';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import * as shortid from 'shortid';
 import { logger } from '../../api/logger';
 import { ERROR, error, ErrorAction, FIN, fin, FinAction } from '../../plugins/duck';

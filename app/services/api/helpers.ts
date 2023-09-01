@@ -1,7 +1,8 @@
 import log from 'electron-log';
+import { filter } from 'rxjs/operators'
 import { mergeAll } from 'ramda';
 import { logger } from '../../api/logger';
-import { fromEvent } from 'rxjs/observable/fromEvent';
+import { fromEvent } from 'rxjs';
 
 export type HandleErrorOptions = {
   console: boolean, // default: true
@@ -31,7 +32,7 @@ export const subscribeToEvent = (target: any, eventName: string, callback: any) 
 
 export const subscribeToIPCMessage = (target: any, eventName: string, callback: any) => {
   return fromEvent(target, 'ipc-message', (_e, channel, props) => ({ channel, props }))
-    .filter(({ channel }) => channel === eventName)
+    .pipe(filter(({ channel }) => channel === eventName))
     .subscribe(({ props }) => {
       callback(props);
     });

@@ -1,8 +1,6 @@
 import { app, BrowserWindow, globalShortcut } from 'electron';
-import { fromEvent } from 'rxjs/observable/fromEvent';
-import { fromEventPattern } from 'rxjs/observable/fromEventPattern';
 import { share } from 'rxjs/operators';
-import { Observable, Subject, Subscription } from 'rxjs/Rx';
+import { fromEvent, fromEventPattern, Observable, Subject, Subscription } from 'rxjs';
 import ContextMenu, { ContextMenuContext } from '../../../context-menu';
 import { SHORTCUTS } from '../../../keyboard-shortcuts';
 import { handleError, subscribeToEvent, subscribeToIPCMessage } from '../../api/helpers';

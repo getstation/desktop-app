@@ -1,8 +1,7 @@
-import { sortBy, nth } from 'ramda';
+import { sortBy } from 'ramda';
 import { react } from '@getstation/sdk';
 import { ComponentClass } from 'react';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import * as Rx from 'rxjs/Rx';
+import { BehaviorSubject } from 'rxjs';
 import { AbstractProvider, DefaultMap } from '../common';
 
 type OrderedComponentClass = [number, ComponentClass];
@@ -14,7 +13,7 @@ export default class ReactProvider extends AbstractProvider<react.ReactConsumer>
 
   constructor() {
     super();
-    this.portals = new DefaultMap(() => new Rx.BehaviorSubject(null));
+    this.portals = new DefaultMap(() => new BehaviorSubject(null));
     this.linkedComponents = new WeakMap();
   }
 
