@@ -22,8 +22,6 @@ import { BxNotification } from './notification-center/webview-preload';
 
 window.Notification = BxNotification;
 
-console.log(`XXXXXXXXX ${JSON.stringify(window.Notification)}`);
-
 // prevent app pinch zomming
 webFrame.setVisualZoomLevelLimits(1, 1);
 
