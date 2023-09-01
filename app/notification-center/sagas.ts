@@ -110,10 +110,6 @@ function* sagaResetSnooze(action: ResetSnoozeDurationAction): SagaIterator {
 }
 
 function* sagaNewNotification(action: NewNotificationAction): SagaIterator {
-
-  log.info(`ZZZZZZZZZ sagaNewNotification`);
-
-
   // Call listeners
   const { notifications }: DeprecatedSDKProvider = yield call(getProvider);
   const [e, tamperedAction] = yield call([notifications, notifications.callNew], action);
@@ -200,11 +196,6 @@ function* interceptNotificationEventsFromWebContents({ webcontentsId, tabId }: {
   yield takeEveryWitness(newNotificationChannel, function* handle(props: NewNotificationProps) {
     const isNotifEnabled = yield select(getNotificationsEnabled, applicationId);
     // disable notification if explicity choose it
-
-
-    log.info(`DDDDDD ${isNotifEnabled}`); 
-
-
     if (isNotifEnabled === false) return;
     if (isNotifEnabled === undefined) {
       yield put(askEnableNotifications({

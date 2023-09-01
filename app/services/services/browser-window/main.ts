@@ -2,7 +2,6 @@ import { BrowserWindow, ipcMain, screen, webContents, WebContents, WebPreference
 import * as remoteMain from '@electron/remote/main';
 import * as windowStateKeeper from 'electron-window-state';
 import { fromEvent } from 'rxjs';
-//import * as sanitize from 'sanitize-filename';
 import { NotificationProps } from '../../../notification-center/types';
 import { ServiceSubscription } from '../../lib/class';
 import { RPC } from '../../lib/types';
