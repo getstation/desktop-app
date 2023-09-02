@@ -16,7 +16,6 @@ import * as isBlank from 'is-blank';
 // @ts-ignore
 import * as throttle from 'lodash.throttle';
 import * as path from 'path';
-import { propEq } from 'ramda';
 import { noop, compact } from 'ramda-adjunct';
 import * as React from 'react';
 import { compose } from 'react-apollo';
@@ -24,7 +23,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 // @ts-ignore no declaration file
 import { updateUI } from 'redux-ui/transpiled/action-reducer';
-import { filter } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 import { Observable, Subscription } from 'rxjs';
 import { oc } from 'ts-optchain';
 import { format as formatUrl } from 'url';
@@ -225,8 +224,11 @@ class ApplicationImpl extends React.PureComponent {
 
     const tabId = getTabId(this.props.tab);
     const executeWebviewMethodForTab: Observable<ExecuteWebviewMethodAction> = actionsBus
-      .pipe(filter(propEq('type', EXECUTE_WEBVIEW_METHOD)))
-      .pipe(filter(propEq('tabId', tabId)));
+      .pipe(
+        filter(action => action.type === EXECUTE_WEBVIEW_METHOD),
+        map(action => action as ExecuteWebviewMethodAction),
+        filter(action => action.tabId === tabId)
+      );
 
     this.busSubscription = executeWebviewMethodForTab.subscribe(action => {
       this.handleExecuteWebviewMethod(action);
@@ -394,7 +396,8 @@ class ApplicationImpl extends React.PureComponent {
   }
 
   render() {
-    const { notUseNativeWindowOpen, tab } = this.props;
+    const tab = this.props.tab;
+    const useNativeWindowOpen = !this.props.notUseNativeWindowOpen;
     const tabUrl = tab.get('url', '');
     const nodeIntegrationEnabled = tabUrl.startsWith('station://')
 
@@ -458,7 +461,7 @@ class ApplicationImpl extends React.PureComponent {
           onDidFailLoad={this.handleDidFailLoad}
           onDomReady={this.handleDomReady}
           onCrashed={this.handleWebcontentsCrashed}
-          webpreferences={`allowRunningInsecureContent=true,nativeWindowOpen=${notUseNativeWindowOpen},contextIsolation=false,nodeIntegration=${nodeIntegrationEnabled}`}
+          webpreferences={`allowRunningInsecureContent=true,nativeWindowOpen=${useNativeWindowOpen},contextIsolation=false,nodeIntegration=${nodeIntegrationEnabled}`}
         />
 
       </div>

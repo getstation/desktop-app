@@ -17,34 +17,36 @@ export class AutolaunchServiceImpl extends AutolaunchService implements RPC.Inte
       throw new Error('missing autolaunch provider service');
     }
 
-    const appName = await this.provider.getAppName();
-
-    // Fix for AppImage
-    // see https://github.com/Teamwork/node-auto-launch/issues/85#issuecomment-403974827
-    const autolaunchConfig = process.env.APPIMAGE ? {
-      name: appName,
-      path: process.env.APPIMAGE,
-    } : { name: appName };
-    const autoLauncher = new AutoLaunch(autolaunchConfig);
-
     // optimistically set the AutoLaunch status in store
     // for UI recactivity. Will correct later if needed
     await this.provider.setAutoLaunchEnabled(enable);
 
-    let isAutoLaunched;
     try {
-      isAutoLaunched = await autoLauncher.isEnabled();
-    } catch (e) {
-      isAutoLaunched = false;
-    }
+      const appName = await this.provider.getAppName();
 
-    try {
+      // Fix for AppImage
+      // see https://github.com/Teamwork/node-auto-launch/issues/85#issuecomment-403974827
+      const autolaunchConfig = process.env.APPIMAGE ? {
+        name: appName,
+        path: process.env.APPIMAGE,
+      } : { name: appName };
+      const autoLauncher = new AutoLaunch(autolaunchConfig);
+  
+      let isAutoLaunched;
+      try {
+        isAutoLaunched = await autoLauncher.isEnabled();
+      } 
+      catch (e) {
+        isAutoLaunched = false;
+      }
+
       if (enable && !isAutoLaunched) {
         await autoLauncher.enable();
       } else if (!enable && isAutoLaunched) {
         await autoLauncher.disable();
       }
-    } catch (e) {
+    } 
+    catch (e) {
       log.error('autoLauncher enable/disable failed', e);
       await this.provider.setAutoLaunchEnabled(false);
     }

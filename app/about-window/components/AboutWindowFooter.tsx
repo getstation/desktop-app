@@ -37,7 +37,7 @@ export default class AboutWindowFooter extends React.PureComponent<Props, {}> {
 
     return (
       <footer className={classes!.footer}>
-        <p>2019 - Station</p>
+        <p>2019 - { new Date().getFullYear() }</p>
         <a
           className={classes!.link}
           href="https://medium.com/getstation/your-way-of-working-belongs-to-the-stone-age-9ff64782f40"
