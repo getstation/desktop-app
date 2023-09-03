@@ -1,6 +1,7 @@
 // @ts-ignore: no declaration file
 import * as isBlank from 'is-blank';
 import { createSelector } from 'reselect';
+import { map } from 'rxjs/operators';
 
 import { getTabApplicationId, getTabTitle } from '../tabs/get';
 import { getApplicationManifestURL } from '../applications/get';
@@ -27,7 +28,7 @@ const resolvers: Resolvers = {
       if (query) {
         store.dispatch(setSearchValue(query));
         return subscribeStore(store, getResultsJS)
-          .map(flattenResults);
+          .pipe(map(flattenResults));
       }
 
       // History

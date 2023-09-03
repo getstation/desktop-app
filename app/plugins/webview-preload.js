@@ -18,7 +18,7 @@ const protocolsAllowed = [
 ];
 if (micromatch.isMatch(window.location.origin, originsAllowed) || protocolsAllowed.includes(window.location.protocol)) {
   const { ipcRenderer } = require('electron');
-  const { Observable } = require('rxjs/Rx');
+  const { Observable } = require('rxjs');
 
   const sendPerformToProxy = (channel, payload) => {
     const p = new Promise(resolve => {

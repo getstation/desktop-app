@@ -17,7 +17,10 @@ export default class AutoUpdaterMock extends EventEmitter {
   }
 
   checkForUpdates() {
-    if (!this.url) throw new Error('No feed URL was provided.');
+    if (!this.url) {
+      log.warn('No feed URL was provided.');
+      return;
+    }
 
     const scenario = process.env.STATION_AUTOUPDATER_MOCK_SCENARIO || 'available';
     log.debug(`autoUpdater.mock: checkForUpdates with scenario ${scenario} and url ${this.url}`);

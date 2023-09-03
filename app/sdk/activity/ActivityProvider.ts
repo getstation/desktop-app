@@ -1,6 +1,5 @@
 import { activity } from '@getstation/sdk';
-import { Observable } from 'rxjs/Rx';
-import { Subject } from 'rxjs/Subject';
+import { Observable, Subject } from 'rxjs';
 import { AbstractProvider } from '../common';
 import { deserializeActivityEntry, getSerializedQueryParams } from './api';
 import createActivityObservable from './createActivityObservable';

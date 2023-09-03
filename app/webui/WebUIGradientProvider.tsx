@@ -1,6 +1,6 @@
 import { GradientProvider } from '@getstation/theme';
 import * as React from 'react';
-import { Observable, Subscription } from 'rxjs/Rx';
+import { Observable, Subscription } from 'rxjs';
 
 export type Props = {
   children: any,

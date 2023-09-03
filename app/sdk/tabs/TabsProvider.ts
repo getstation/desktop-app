@@ -3,7 +3,7 @@ import { is } from 'immutable';
 import { equals } from 'ramda';
 import { Store } from 'redux';
 import { distinctUntilChanged, filter, map, scan, share } from 'rxjs/operators';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs';
 import { getFocusedTabId } from '../../app/selectors';
 import { createNewTab, navigateToApplicationTabAutomatically } from '../../applications/duck';
 import { getApplicationId, getApplicationManifestURL } from '../../applications/get';

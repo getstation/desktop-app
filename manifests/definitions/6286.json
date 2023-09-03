@@ -12,5 +12,11 @@
     }
   ],
   "theme_color": "#2b90d9",
-  "scope": "https://mastodon.social"
+  "scope": "https://mastodon.social",
+  "bx_legacy_service_id": "mastodon",
+  "bx_multi_instance_config": {
+    "presets": [
+      "on-premise"
+    ]
+  }
 }

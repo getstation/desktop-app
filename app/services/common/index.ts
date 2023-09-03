@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs';
 import { firstConnectionHandler } from 'stream-electron-ipc';
 import rpcchannel from 'stream-json-rpc';
 import { isPackaged } from '../../utils/env';

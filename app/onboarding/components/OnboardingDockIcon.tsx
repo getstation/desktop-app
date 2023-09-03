@@ -1,5 +1,5 @@
 import { Icon, IconSymbol, ThemeTypes } from '@getstation/theme';
-import classNames = require('classnames');
+import * as classNames from 'classnames';
 import * as React from 'react';
 // @ts-ignore: no declaration file
 import injectSheet from 'react-jss';

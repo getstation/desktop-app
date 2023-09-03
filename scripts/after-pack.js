@@ -17,7 +17,7 @@ exports.default = async function(context) {
 
   const wrapperScript = 
     `#!/bin/sh 
-    nohup $(dirname $0)/station-desktop-app.bin --no-sandbox "$@" >/dev/null 2>&1 &
+    nohup "$(dirname "$(readlink -f "$0")")/station-desktop-app.bin" --no-sandbox "$@" >/dev/null 2>&1 &
     `;
   fs.writeFileSync('station-desktop-app', wrapperScript);
   fs.chmodSync('station-desktop-app', '755');

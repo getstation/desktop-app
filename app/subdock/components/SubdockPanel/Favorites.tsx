@@ -3,7 +3,7 @@ import * as ReactApolloHooks from 'react-apollo-hooks';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 // @ts-ignore: no declaration file
 import injectSheet from 'react-jss';
-import classNames from 'classnames';
+import * as classNames from 'classnames';
 
 import { MinimalSubdockApplication } from '../SubdockItem';
 import { ActiveTab } from '../../Container';

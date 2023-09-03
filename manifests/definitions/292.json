@@ -10,5 +10,10 @@
   ],
   "theme_color": "#3F4D9C",
   "scope": "https://app.zenhub.com",
-  "bx_legacy_service_id": "zenhub"
+  "bx_legacy_service_id": "zenhub",
+  "bx_multi_instance_config": {
+    "presets": [
+      "on-premise"
+    ]
+  }
 }
