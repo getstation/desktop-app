@@ -43,6 +43,7 @@ mac:
   category: public.app-category.tools
   entitlements: 'build/entitlements.mac.plist'
   entitlementsInherit: 'build/entitlements.mac.plist'
+  singleArchFiles: '*'
 
 win:
   target:
