@@ -1,7 +1,6 @@
 import { over, lensProp } from 'ramda';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { Observable } from 'rxjs/Observable';
-import { filter, map, distinctUntilChanged } from 'rxjs/operators';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { filter, first, map, distinctUntilChanged } from 'rxjs/operators';
 import * as moment from 'moment';
 import * as crypto from 'crypto';
 import { join } from 'path';
@@ -48,7 +47,7 @@ const defaultConfig: IProviderConfiguration = {
 export default class ManifestProvider implements IManifestProvider {
   cacheFetcher: IFetcher;
   distantFetcher: IFetcher;
-  cachePath: string;
+  cachePath?: string;
   cacheLimit: number;
 
   private readonly store: BehaviorSubject<ManifestStore>;
@@ -62,8 +61,6 @@ export default class ManifestProvider implements IManifestProvider {
       cacheLimit,
     } = config;
 
-    if (!cachePath) throw new Error('ManifestProvider : No path provided (manifests caching)');
-
     // Register sub-modules
     this.cacheFetcher = cacheFetcher;
     this.distantFetcher = distantFetcher;
@@ -74,6 +71,10 @@ export default class ManifestProvider implements IManifestProvider {
 
     // Start subject
     this.store = new BehaviorSubject<ManifestStore>(new Map());
+  }
+
+  diskCacheEnabled() : boolean {
+    return !isBlank(this.cachePath);
   }
 
   // EXPOSED APIs
@@ -87,7 +88,9 @@ export default class ManifestProvider implements IManifestProvider {
    * @param rawUrl
    */
   get(rawUrl: ManifestURL): Observable<IBxApp> {
-    if (isBlank(rawUrl)) throw new Error('Manifest Provider : no URL given to get');
+    if (isBlank(rawUrl)) {
+      throw new Error('Manifest Provider : no URL given to get');
+    }
 
     const url = this.normalize(rawUrl);
     this.loadManifest(url);
@@ -102,7 +105,9 @@ export default class ManifestProvider implements IManifestProvider {
     * @param rawUrl
     */
   getFromCache(rawUrl: ManifestURL): IBxApp | undefined {
-    if (isBlank(rawUrl)) throw new Error('Manifest Provider : no URL given to get');
+    if (isBlank(rawUrl)) {
+      throw new Error('Manifest Provider : no URL given to get');
+    }
 
     const url = this.normalize(rawUrl);
     return this.store.value.get(url);
@@ -116,7 +121,7 @@ export default class ManifestProvider implements IManifestProvider {
   * @param rawUrl
   */
   async getFirstValue(rawUrl: ManifestURL): Promise<IBxApp> {
-    return this.get(rawUrl).first().toPromise();
+    return this.get(rawUrl).pipe(first()).toPromise();
   }
 
   /**
@@ -126,7 +131,9 @@ export default class ManifestProvider implements IManifestProvider {
    * @param rawUrl
    */
   async update(rawUrl: ManifestURL) {
-    if (isBlank(rawUrl)) throw new Error('Manifest Provider : no URL given to get');
+    if (isBlank(rawUrl)) {
+      throw new Error('Manifest Provider : no URL given to get');
+    }
 
     const url = this.normalize(rawUrl);
     return await this.fetchDistant(url);
@@ -159,6 +166,9 @@ export default class ManifestProvider implements IManifestProvider {
 
     // If not loaded from memory, check the cache
     if (!loaded) {
+      if (!this.diskCacheEnabled()) {
+        return false;
+      }
       const uri = this.buildCacheURI(url);
       const cached = await this.cacheFetcher.fetch(uri);
 
@@ -204,8 +214,13 @@ export default class ManifestProvider implements IManifestProvider {
   }
 
   private shouldUpdate(url: ManifestURL) {
+    if (!this.diskCacheEnabled()) {
+      return false;
+    }
     const loaded = this.store.getValue().get(url);
-    if (!loaded) return false;
+    if (!loaded) {
+      return false;
+    }
 
     // Check cache deprecation limit
     const cacheLimit = loaded.lastChecked.clone();
@@ -215,6 +230,9 @@ export default class ManifestProvider implements IManifestProvider {
   }
 
   private async saveToCache(url: ManifestURL, app: IBxApp) {
+    if (!this.diskCacheEnabled()) {
+      return;
+    }
     const current = this.store.getValue().get(url);
 
     if (!current || app.lastChecked.isAfter(current.lastChecked)) {
@@ -239,6 +257,6 @@ export default class ManifestProvider implements IManifestProvider {
 
   private buildCacheURI(url: ManifestURL) {
     const filename = `${this.hasher(url)}.json`;
-    return join(this.cachePath, filename);
+    return this.cachePath ? join(this.cachePath, filename) : '';
   }
 }

@@ -12,7 +12,6 @@ import { getLocation } from 'ip-geolocate';
 import * as memoize from 'memoizee';
 // @ts-ignore: no declaration file
 import * as mod from 'mod-op';
-// @ts-ignore: no declaration file
 import { v4 as getMyPublicIPv4 } from 'public-ip';
 // @ts-ignore: no declaration file
 import * as SunCalc from 'suncalc';
@@ -82,7 +81,7 @@ export function getGradient(color1: string, color2: string, ratio: number) {
 }
 
 export const getMyCoordinates = memoize(
-  (): Promise<Coordinates> =>
+  (): Promise<Coordinates | undefined> =>
     getMyPublicIPv4()
       .then((ip: string) => new Promise((resolve, reject) => {
         getLocation(
@@ -109,9 +108,11 @@ export const getMyCoordinates = memoize(
 );
 
 export const getSunCalc = memoize(
-  (coords: Coordinates): SunCalc | undefined => {
+  (coords?: Coordinates): SunCalc | undefined => {
     // If coordinates are undefined = abort
-    if (!coords) return undefined;
+    if (!coords) {
+      return undefined;
+    }
 
     const times = SunCalc.getTimes(new Date(), coords.latitude, coords.longitude);
     let suncalc = {};

@@ -1,8 +1,8 @@
-import * as remote from '@electron/remote';
 import PropTypes from 'prop-types';
 import React from 'react';
 import injectSheet from 'react-jss';
 import SVGInline from 'react-svg-inline';
+
 import OSBar from '../os-bar/OSBar';
 import AboutWindowFooter from './components/AboutWindowFooter';
 import AboutWindowVersions from './components/AboutWindowVersions';
@@ -63,9 +63,7 @@ class AboutWindowPresenter extends React.PureComponent {
 
     return (
       <div className={classes.container}>
-        { isDarwin &&
-          <OSBar onClose={() => remote.getCurrentWindow().close()} />
-        }
+        { isDarwin && <OSBar /> }
 
         <div className={classes.body}>
           <SVGInline svg={inlineSVG} />

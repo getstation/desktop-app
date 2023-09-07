@@ -83,7 +83,6 @@
     "@storybook/addon-viewport": "^5.2.5",
     "@storybook/addons": "^5.2.5",
     "@storybook/react": "^5.2.5",
-    "@types/classnames": "^2.2.9",
     "@types/jest": "^24.9.1",
     "@types/lodash": "^4.14.194",
     "@types/memoizee": "^0.4.3",

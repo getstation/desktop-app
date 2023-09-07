@@ -1,5 +1,5 @@
 import { ipcMain } from 'electron';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs';
 import { firstConnectionHandler } from 'stream-electron-ipc';
 import rpcchannel from 'stream-json-rpc';
 import { ServicePeerHandler } from '../../../app/services/lib/class';

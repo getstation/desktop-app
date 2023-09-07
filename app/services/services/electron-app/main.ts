@@ -1,8 +1,7 @@
 import { app, session } from 'electron';
 import log from 'electron-log';
 import * as globalTunnel from 'global-tunnel-ng';
-import { fromEvent } from 'rxjs/observable/fromEvent';
-import { Subject, Subscription } from 'rxjs/Rx';
+import { fromEvent, Subject, Subscription } from 'rxjs';
 import { ServiceSubscription } from '../../lib/class';
 import { RPC } from '../../lib/types';
 import { ElectronAppService, ElectronAppServiceObserver } from './interface';

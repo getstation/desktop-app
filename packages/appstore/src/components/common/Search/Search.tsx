@@ -2,7 +2,7 @@ import * as React from 'react';
 import { createUseStyles } from 'react-jss';
 import { Icon, IconSymbol } from '@getstation/theme';
 import { colors } from '@src/theme';
-import classNames from 'classnames';
+import * as classNames from 'classnames';
 
 const { useState, forwardRef } = React;
 

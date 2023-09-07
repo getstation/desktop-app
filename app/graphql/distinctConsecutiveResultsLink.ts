@@ -1,7 +1,8 @@
 import { ApolloLink, ExecutionResult, NextLink, Observable as ZenObservable, Operation } from 'apollo-link';
 import log from 'electron-log';
 import { equals, pick } from 'ramda';
-import { from } from 'rxjs/observable/from';
+import { from } from 'rxjs';
+import { distinctUntilChanged } from 'rxjs/operators';
 import { isPackaged } from '../utils/env';
 
 const filterResult = pick(['data', 'errors']);
@@ -30,7 +31,7 @@ export class DistinctConsecutiveResultsLink extends ApolloLink {
     return ZenObservable.from(
       // @ts-ignore: TS definitions slightly incompatible, but it works like a charm
       from(observable)
-        .distinctUntilChanged(compare(operation))
+        .pipe(distinctUntilChanged(compare(operation)))
     );
   }
 }

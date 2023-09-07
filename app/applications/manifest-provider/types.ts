@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { BxAppManifest } from './bxAppManifest';
 import { Moment } from 'moment';
 
@@ -44,7 +44,7 @@ export interface IProviderConfiguration {
 export interface IManifestProvider {
   cacheFetcher: IFetcher;
   distantFetcher: IFetcher;
-  cachePath: string;
+  cachePath?: string;
   cacheLimit: number;
 
   get(url: ManifestURL): Observable<IBxApp>;

@@ -12,5 +12,5 @@ export class SessionService extends ServiceBase implements RPC.Interface<Session
   // @ts-ignore
   getUserAgent(): Promise<string> {}
   // @ts-ignore
-  getCookies(filter: Electron.Filter): Promise<Electron.Cookie[]> {}
+  getCookies(filter: Electron.CookiesGetFilter): Promise<Electron.Cookie[]> {}
 }
