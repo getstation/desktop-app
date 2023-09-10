@@ -21,6 +21,7 @@ export default class MainWindowManager extends GenericWindowManager {
     await super.create({
       show: false,
       frame: !isDarwin,
+//      autoHideMenuBar: true,
       icon: getResourceIconPath(),
       acceptFirstMouse: true,
       savePosition: 'main-window',

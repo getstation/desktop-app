@@ -18,11 +18,15 @@ import {
 } from './interface';
 import { BrowserXMenuManager } from './menuManager';
 import AutofillContextMenu from '../../../context-menus/autofill-menu';
+import { log } from 'console';
+import { setHideMainMenu } from '../../../app/duck';
+import { StationStoreWorker } from '../../../types';
 
 export class MenuServiceImpl extends MenuService implements RPC.Node<MenuService> {
 
   protected menuManager: BrowserXMenuManager;
   protected globalShortcutsObservable: Observable<unknown>;
+  protected store: StationStoreWorker;
 
   constructor(uuid?: string) {
     super(uuid, { ready: false });
@@ -70,6 +74,15 @@ export class MenuServiceImpl extends MenuService implements RPC.Node<MenuService
 
   async setVisible({ menuItemId, value }: IMenuServiceSetMenuItemBooleanParam) {
     this.menuManager.menu.getMenuItemById(menuItemId).visible = value;
+  }
+
+  async setStore(store: StationStoreWorker) {
+    this.store = store;
+  }
+
+  async hide(hide: boolean) {
+    log('ZZZZZZ Hide', this.store);
+    await this.store.dispatch(setHideMainMenu(hide));
   }
 
   protected registerGlobalShortcuts() {

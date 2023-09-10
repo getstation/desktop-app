@@ -355,6 +355,7 @@ export class BrowserXAppWorker {
     const { dispatch } = this.store;
     const mainWindowManager = this.mainWindowManager;
     const handleMenuItemClick = this.handleMenuItemClick.bind(this);
+    services.menu.setStore(this.store);
     // install the menu
     services.menu.addObserver(observer({
       onClickItem(param: any) {

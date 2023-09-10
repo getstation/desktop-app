@@ -177,18 +177,32 @@ export class FavoriteProxy extends MapProxyMixin({
 
 export class AppProxy extends SingletonProxyMixin({
   model: App,
-  mapStateToObject: async state => ({
+  mapStateToObject: async state => 
+  {
+    require('electron-log').info('CCCCCC' + JSON.stringify(state));
+
+  return ({
     version: state.get('version'),
     autoLaunchEnabled: state.get('autoLaunchEnabled'),
+    hideMainMenu: state.get('hideMainMenu'),
     downloadFolder: state.get('downloadFolder'),
     promptDownload: state.get('promptDownload'),
-  }),
-  mapObjectToState: async obj => Immutable.Map({
+  })
+  }
+  ,
+  mapObjectToState: async obj => 
+  {
+    require('electron-log').info('DDDDDD' + JSON.stringify(obj));
+
+  return Immutable.Map({
     version: obj.version,
     autoLaunchEnabled: obj.autoLaunchEnabled,
+    hideMainMenu: obj.hideMainMenu,
     downloadFolder: obj.downloadFolder,
     promptDownload: Boolean(obj.promptDownload),
-  }),
+  })
+  }
+  ,
 }) {
 }
 
