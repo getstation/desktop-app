@@ -54,6 +54,7 @@ import GenericWindowManager from './windows/utils/GenericWindowManager';
 import MainWindowManager from './windows/utils/MainWindowManager';
 import URLRouter from './urlrouter/URLRouter';
 import { closeCurrentTab } from './tabs/duck';
+import { MenuServiceImpl } from './services/services/menu/main';
 
 export class BrowserXAppWorker {
   public store: StationStoreWorker;
@@ -355,7 +356,7 @@ export class BrowserXAppWorker {
     const { dispatch } = this.store;
     const mainWindowManager = this.mainWindowManager;
     const handleMenuItemClick = this.handleMenuItemClick.bind(this);
-    services.menu.setStore(this.store);
+
     // install the menu
     services.menu.addObserver(observer({
       onClickItem(param: any) {
@@ -368,6 +369,8 @@ export class BrowserXAppWorker {
         mainWindowManager.focus();
       },
     }, 'init-menu')).catch(handleError());
+
+    (services.menu as MenuServiceImpl).setStore(this.store);
   }
 
   private initOnlineListener() {

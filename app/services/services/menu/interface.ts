@@ -2,7 +2,6 @@ import { ContextMenuContext } from '../../../context-menu';
 import { ServiceBase } from '../../lib/class';
 import { service } from '../../lib/decorator';
 import { RPC } from '../../lib/types';
-import { StationStoreWorker } from '../../../types';
 
 // Menu
 
@@ -19,8 +18,6 @@ export class MenuService extends ServiceBase implements RPC.Interface<MenuServic
   addObserver(observer: RPC.ObserverNode<IMenuServiceObserver>): Promise<RPC.Subscription> { }
   // @ts-ignore
   hide(hide: boolean): Promise<void> {}
-  // @ts-ignore
-  setStore(store: StationStoreWorker): Promise<void> {}
 }
 
 export type IMenuServiceObserverOnClickItemParam = {

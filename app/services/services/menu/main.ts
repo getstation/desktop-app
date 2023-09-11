@@ -1,6 +1,8 @@
 import { app, BrowserWindow, globalShortcut } from 'electron';
 import { share } from 'rxjs/operators';
 import { fromEvent, fromEventPattern, Observable, Subject, Subscription } from 'rxjs';
+import log from 'electron-log';
+
 import ContextMenu, { ContextMenuContext } from '../../../context-menu';
 import { SHORTCUTS } from '../../../keyboard-shortcuts';
 import { handleError, subscribeToEvent, subscribeToIPCMessage } from '../../api/helpers';
@@ -18,7 +20,6 @@ import {
 } from './interface';
 import { BrowserXMenuManager } from './menuManager';
 import AutofillContextMenu from '../../../context-menus/autofill-menu';
-import { log } from 'console';
 import { setHideMainMenu } from '../../../app/duck';
 import { StationStoreWorker } from '../../../types';
 
@@ -26,7 +27,8 @@ export class MenuServiceImpl extends MenuService implements RPC.Node<MenuService
 
   protected menuManager: BrowserXMenuManager;
   protected globalShortcutsObservable: Observable<unknown>;
-  protected store: StationStoreWorker;
+
+  private store?: StationStoreWorker;
 
   constructor(uuid?: string) {
     super(uuid, { ready: false });
@@ -76,13 +78,27 @@ export class MenuServiceImpl extends MenuService implements RPC.Node<MenuService
     this.menuManager.menu.getMenuItemById(menuItemId).visible = value;
   }
 
-  async setStore(store: StationStoreWorker) {
+  setStore(store: StationStoreWorker) {
+
+    log.info('SSSSSS setStore', store);
+
     this.store = store;
   }
 
   async hide(hide: boolean) {
-    log('ZZZZZZ Hide', this.store);
-    await this.store.dispatch(setHideMainMenu(hide));
+    log.info('ZZZZZZ Hide', this.store);
+    if (this.store) {
+      if (this.store.dispatch) {
+        log.info('ZZZZZZ dispatch');
+        await this.store.dispatch(setHideMainMenu(hide));
+      }
+      else {
+        log.info('ZZZZZZ NO dispatch');
+      }
+    }
+    else {
+      log.info('ZZZZZZ NO store');
+    }
   }
 
   protected registerGlobalShortcuts() {
