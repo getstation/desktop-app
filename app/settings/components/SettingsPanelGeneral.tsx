@@ -4,8 +4,9 @@ import * as React from 'react';
 // @ts-ignore: no declaration file
 import injectSheet from 'react-jss';
 import { connect } from 'react-redux';
-
 import { bindActionCreators } from 'redux';
+
+// @ts-ignore: no declaration file
 import { openProcessManager } from '../../app/duck';
 import { areBetaIncludedInUpdates, getDownloadFolder } from '../../app/selectors';
 import { clickBrowseDownloadFolder, revealPathInFinder } from '../../downloads/duck';
@@ -16,6 +17,7 @@ import SettingsDownloadFolder from './SettingsDownloads/SettingsDownloadFolder';
 import SettingsOpenSourceInfo from './SettingsOpenSourceInfo';
 import SettingsUpdatesButton from './SettingsUpdatesButton/SettingsUpdatesButton';
 import SettingsHideMainMenu from './SettingsHideMainMenu/SettingsHideMainMenu';
+import { isDarwin } from '../../utils/process';
 
 export interface Classes {
   container: string,
@@ -78,7 +80,7 @@ class SettingsPanelGeneralImpl extends React.PureComponent<Props, {}> {
 
         <SettingsAutoLaunch />
 
-        <SettingsHideMainMenu />
+        { !isDarwin && <SettingsHideMainMenu /> }
 
         <SettingsDownloadFolder
           currentDownloadFolder={this.props.downloadFolder}

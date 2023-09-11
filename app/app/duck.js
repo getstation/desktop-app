@@ -49,12 +49,9 @@ export const enableAutoLaunch = (enable = true) => ({
   type: ENABLE_AUTO_LAUNCH, enable
 });
 
-export const setHideMainMenu = (hide) => {
-  require('electron-log').info('ZZZ setHideMainMenu', hide);
-return ({
+export const setHideMainMenu = (hide) => ({
   type: SET_HIDE_MAIN_MENU, hide
 });
-}
 
 export const hideMainMenu = (hide) => ({
   type: HIDE_MAIN_MENU, hide
@@ -139,19 +136,15 @@ export const setAppMetadata = (metadata) => {
 // Reducer
 export default function app(state = new Map(), action) {
   switch (action.type) {
-    case CHANGE_APP_FOCUS_STATE:
+    case CHANGE_APP_FOCUS_STATE: {
       return state.set('focus', action.focus);
-
+    }
     case SET_AUTO_LAUNCH_ENABLED: {
-      require('electron-log').info('XXX autoLaunchEnabled', JSON.stringify(action));
       return state.set('autoLaunchEnabled', action.enabled);
     }
-
     case SET_HIDE_MAIN_MENU: {
-      require('electron-log').info('XXX hideMainMenu', JSON.stringify(action));
       return state.set('hideMainMenu', action.hide);
     }
-
     case SET_INCLUDES_BETA_IN_UPDATES:
       return state.set('includesBetaInUpdates', action.included);
 

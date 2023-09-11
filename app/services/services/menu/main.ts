@@ -1,7 +1,6 @@
 import { app, BrowserWindow, globalShortcut } from 'electron';
 import { share } from 'rxjs/operators';
 import { fromEvent, fromEventPattern, Observable, Subject, Subscription } from 'rxjs';
-import log from 'electron-log';
 
 import ContextMenu, { ContextMenuContext } from '../../../context-menu';
 import { SHORTCUTS } from '../../../keyboard-shortcuts';
@@ -17,18 +16,17 @@ import {
   IMenuServiceSetMenuItemBooleanParam,
   MenuService,
   MenuServiceObserver,
+  MenuProviderService,
 } from './interface';
 import { BrowserXMenuManager } from './menuManager';
 import AutofillContextMenu from '../../../context-menus/autofill-menu';
-import { setHideMainMenu } from '../../../app/duck';
-import { StationStoreWorker } from '../../../types';
 
 export class MenuServiceImpl extends MenuService implements RPC.Node<MenuService> {
 
   protected menuManager: BrowserXMenuManager;
   protected globalShortcutsObservable: Observable<unknown>;
-
-  private store?: StationStoreWorker;
+  
+  private provider?: RPC.Node<MenuProviderService>;
 
   constructor(uuid?: string) {
     super(uuid, { ready: false });
@@ -67,38 +65,45 @@ export class MenuServiceImpl extends MenuService implements RPC.Node<MenuService
   }
 
   async setChecked({ menuItemId, value }: IMenuServiceSetMenuItemBooleanParam) {
-    this.menuManager.menu.getMenuItemById(menuItemId).checked = value;
+    if (!this.menuManager) {
+      throw new Error('missing menu provider service');
+    }
+    const menuItem = this.menuManager.menu.getMenuItemById(menuItemId);
+    if (menuItem) {
+      menuItem.checked = value;
+    }
   }
 
   async setEnabled({ menuItemId, value }: IMenuServiceSetMenuItemBooleanParam) {
-    this.menuManager.menu.getMenuItemById(menuItemId).enabled = value;
+    if (!this.menuManager) {
+      throw new Error('missing menu provider service');
+    }
+    const menuItem = this.menuManager.menu.getMenuItemById(menuItemId);
+    if (menuItem) {
+      menuItem.enabled = value;
+    }
   }
 
   async setVisible({ menuItemId, value }: IMenuServiceSetMenuItemBooleanParam) {
-    this.menuManager.menu.getMenuItemById(menuItemId).visible = value;
+    if (!this.menuManager) {
+      throw new Error('missing menu provider service');
+    }
+    const menuItem = this.menuManager.menu.getMenuItemById(menuItemId);
+    if (menuItem) {
+      menuItem.visible = value;
+    }
   }
 
-  setStore(store: StationStoreWorker) {
-
-    log.info('SSSSSS setStore', store);
-
-    this.store = store;
+  async setMenuProvider(provider: RPC.Node<MenuProviderService>) {
+    this.provider = provider;
   }
 
   async hide(hide: boolean) {
-    log.info('ZZZZZZ Hide', this.store);
-    if (this.store) {
-      if (this.store.dispatch) {
-        log.info('ZZZZZZ dispatch');
-        await this.store.dispatch(setHideMainMenu(hide));
-      }
-      else {
-        log.info('ZZZZZZ NO dispatch');
-      }
+    if (!this.provider) {
+      throw new Error('missing menu provider service');
     }
-    else {
-      log.info('ZZZZZZ NO store');
-    }
+
+    await this.provider.setHideMainMenu(hide);
   }
 
   protected registerGlobalShortcuts() {

@@ -4,8 +4,17 @@ import { service } from '../../lib/decorator';
 import { RPC } from '../../lib/types';
 
 // Menu
+export type IMenuServiceSetMenuItemBooleanParam = { 
+  menuItemId: string, 
+  value: boolean 
+};
 
-export type IMenuServiceSetMenuItemBooleanParam = { menuItemId: string, value: boolean };
+@service('menu')
+export class MenuProviderService extends ServiceBase implements RPC.Interface<MenuProviderService> {
+  // @ts-ignore
+  setHideMainMenu(hide: boolean): Promise<void> {}
+}
+
 @service('menu')
 export class MenuService extends ServiceBase implements RPC.Interface<MenuService> {
   // @ts-ignore
@@ -17,6 +26,8 @@ export class MenuService extends ServiceBase implements RPC.Interface<MenuServic
   // @ts-ignore
   addObserver(observer: RPC.ObserverNode<IMenuServiceObserver>): Promise<RPC.Subscription> { }
   // @ts-ignore
+  setMenuProvider(provider: RPC.Node<MenuProviderService>): Promise<void> {}
+  // @ts-ignore
   hide(hide: boolean): Promise<void> {}
 }
 
@@ -25,6 +36,7 @@ export type IMenuServiceObserverOnClickItemParam = {
   action: string,
   args: any[],
 };
+
 @service('menu')
 export class MenuServiceObserver extends ServiceBase implements RPC.Interface<MenuServiceObserver> {
   // @ts-ignore

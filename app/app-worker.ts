@@ -6,10 +6,10 @@ import { ipcRenderer } from 'electron';
 import * as remote from '@electron/remote';
 import { InMemoryCache, NormalizedCacheObject } from 'apollo-cache-inmemory';
 import ApolloClient from 'apollo-client';
-import { join } from 'path';
 import { PubSub } from 'graphql-subscriptions';
 // @ts-ignore no declaration file
 import { updateUI } from 'redux-ui/transpiled/action-reducer';
+// @ts-ignore no declaration file
 import { openProcessManager, setFullScreenState, setOnlineStatus, toggleKbdShortcuts } from './app/duck';
 import { getFocus } from './app/selectors';
 import {
@@ -23,9 +23,11 @@ import { dispatchUrl } from './applications/duck';
 import ManifestProvider from './applications/manifest-provider/manifest-provider';
 import DistantFetcher from './applications/manifest-provider/distant-fetcher';
 import { getForeFrontNavigationStateProperty } from './applications/utils';
+// @ts-ignore no declaration file
 import { setReleaseNotesSubdockVisibility } from './auto-update/duck';
 import * as bang from './bang/duck';
 import { AlertDialogProviderServiceImpl } from './dialogs/alertDialogProvider';
+// @ts-ignore no declaration file
 import * as inTabSearch from './in-tab-search/duck';
 import * as notificationCenter from './notification-center/duck';
 import { NotificationProps } from './notification-center/types';
@@ -54,7 +56,7 @@ import GenericWindowManager from './windows/utils/GenericWindowManager';
 import MainWindowManager from './windows/utils/MainWindowManager';
 import URLRouter from './urlrouter/URLRouter';
 import { closeCurrentTab } from './tabs/duck';
-import { MenuServiceImpl } from './services/services/menu/main';
+import { MenuProviderServiceImpl } from './services/services/menu/worker';
 
 export class BrowserXAppWorker {
   public store: StationStoreWorker;
@@ -370,7 +372,7 @@ export class BrowserXAppWorker {
       },
     }, 'init-menu')).catch(handleError());
 
-    (services.menu as MenuServiceImpl).setStore(this.store);
+    services.menu.setMenuProvider(new MenuProviderServiceImpl(this.store));
   }
 
   private initOnlineListener() {
