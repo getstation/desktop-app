@@ -136,15 +136,15 @@ export const setAppMetadata = (metadata) => {
 // Reducer
 export default function app(state = new Map(), action) {
   switch (action.type) {
-    case CHANGE_APP_FOCUS_STATE: {
+    case CHANGE_APP_FOCUS_STATE:
       return state.set('focus', action.focus);
-    }
-    case SET_AUTO_LAUNCH_ENABLED: {
+
+    case SET_AUTO_LAUNCH_ENABLED:
       return state.set('autoLaunchEnabled', action.enabled);
-    }
-    case SET_HIDE_MAIN_MENU: {
+
+    case SET_HIDE_MAIN_MENU:
       return state.set('hideMainMenu', action.hide);
-    }
+
     case SET_INCLUDES_BETA_IN_UPDATES:
       return state.set('includesBetaInUpdates', action.included);
 
@@ -175,9 +175,8 @@ export default function app(state = new Map(), action) {
     case KEYBOARD_LAYOUT_CHANGE:
       return state.set('keyboardLayout', action.layout);
 
-    case TOGGLE_PROMPT_DOWNLOAD: {
+    case TOGGLE_PROMPT_DOWNLOAD:
       return state.set('promptDownload', Boolean(action.promptDownload));
-    }
 
     case SET_APP_METADATA:
       return state
