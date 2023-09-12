@@ -10,12 +10,6 @@ export type IMenuServiceSetMenuItemBooleanParam = {
 };
 
 @service('menu')
-export class MenuProviderService extends ServiceBase implements RPC.Interface<MenuProviderService> {
-  // @ts-ignore
-  setHideMainMenu(hide: boolean): Promise<void> {}
-}
-
-@service('menu')
 export class MenuService extends ServiceBase implements RPC.Interface<MenuService> {
   // @ts-ignore
   setChecked(param: IMenuServiceSetMenuItemBooleanParam): Promise<void> { }
@@ -25,10 +19,6 @@ export class MenuService extends ServiceBase implements RPC.Interface<MenuServic
   setVisible(param: IMenuServiceSetMenuItemBooleanParam): Promise<void> { }
   // @ts-ignore
   addObserver(observer: RPC.ObserverNode<IMenuServiceObserver>): Promise<RPC.Subscription> { }
-  // @ts-ignore
-  setMenuProvider(provider: RPC.Node<MenuProviderService>): Promise<void> {}
-  // @ts-ignore
-  hide(hide: boolean): Promise<void> {}
 }
 
 export type IMenuServiceObserverOnClickItemParam = {

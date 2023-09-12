@@ -97,7 +97,7 @@ function* sagaSyncHideMainMenu() {
 }
 
 function* sagaHideMainMenu({ hide }) {
-  yield call([services.menu, services.menu.hide], hide);
+  yield call([services.browserWindow, services.browserWindow.hideMainMenu], hide);
 }
 
 function* sagaTogglePromptDownload({ promptDownload }) {

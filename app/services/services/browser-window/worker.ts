@@ -2,9 +2,9 @@
 import { setHideMainMenu } from '../../../app/duck';
 import { StationStoreWorker } from '../../../types';
 import { RPC } from '../../lib/types';
-import { MenuProviderService } from './interface';
+import { BrowserWindowManagerProviderService } from './interface';
 
-export class MenuProviderServiceImpl extends MenuProviderService implements RPC.Interface<MenuProviderService> {
+export class BrowserWindowManagerProviderServiceImpl extends BrowserWindowManagerProviderService implements RPC.Interface<BrowserWindowManagerProviderService> {
   store: StationStoreWorker;
 
   constructor(store: StationStoreWorker, uuid?: string) {

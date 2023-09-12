@@ -16,7 +16,6 @@ import {
   IMenuServiceSetMenuItemBooleanParam,
   MenuService,
   MenuServiceObserver,
-  MenuProviderService,
 } from './interface';
 import { BrowserXMenuManager } from './menuManager';
 import AutofillContextMenu from '../../../context-menus/autofill-menu';
@@ -26,8 +25,6 @@ export class MenuServiceImpl extends MenuService implements RPC.Node<MenuService
   protected menuManager: BrowserXMenuManager;
   protected globalShortcutsObservable: Observable<unknown>;
   
-  private provider?: RPC.Node<MenuProviderService>;
-
   constructor(uuid?: string) {
     super(uuid, { ready: false });
     this.menuManager = new BrowserXMenuManager();
@@ -92,18 +89,6 @@ export class MenuServiceImpl extends MenuService implements RPC.Node<MenuService
     if (menuItem) {
       menuItem.visible = value;
     }
-  }
-
-  async setMenuProvider(provider: RPC.Node<MenuProviderService>) {
-    this.provider = provider;
-  }
-
-  async hide(hide: boolean) {
-    if (!this.provider) {
-      throw new Error('missing menu provider service');
-    }
-
-    await this.provider.setHideMainMenu(hide);
   }
 
   protected registerGlobalShortcuts() {

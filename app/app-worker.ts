@@ -22,6 +22,7 @@ import {
 import { dispatchUrl } from './applications/duck';
 import ManifestProvider from './applications/manifest-provider/manifest-provider';
 import DistantFetcher from './applications/manifest-provider/distant-fetcher';
+// @ts-ignore no declaration file
 import { getForeFrontNavigationStateProperty } from './applications/utils';
 // @ts-ignore no declaration file
 import { setReleaseNotesSubdockVisibility } from './auto-update/duck';
@@ -56,7 +57,7 @@ import GenericWindowManager from './windows/utils/GenericWindowManager';
 import MainWindowManager from './windows/utils/MainWindowManager';
 import URLRouter from './urlrouter/URLRouter';
 import { closeCurrentTab } from './tabs/duck';
-import { MenuProviderServiceImpl } from './services/services/menu/worker';
+import { BrowserWindowManagerProviderServiceImpl } from './services/services/browser-window/worker';
 
 export class BrowserXAppWorker {
   public store: StationStoreWorker;
@@ -324,6 +325,7 @@ export class BrowserXAppWorker {
   }
 
   private initWindowManager() {
+    services.browserWindow.setProvider(new BrowserWindowManagerProviderServiceImpl(this.store));
     GenericWindowManager.store = this.store;
     this.mainWindowManager = new MainWindowManager();
     this.mainWindowManager.on('enter-full-screen', () => this.dispatch(setFullScreenState(true)));
@@ -371,8 +373,6 @@ export class BrowserXAppWorker {
         mainWindowManager.focus();
       },
     }, 'init-menu')).catch(handleError());
-
-    services.menu.setMenuProvider(new MenuProviderServiceImpl(this.store));
   }
 
   private initOnlineListener() {
