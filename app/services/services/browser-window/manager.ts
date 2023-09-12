@@ -110,6 +110,7 @@ export class BrowserWindowManagerServiceImpl extends BrowserWindowManagerService
     this.autoHideMainMenu = hide;
     BrowserWindow.getAllWindows().forEach((bw) => {
       bw.setAutoHideMenuBar(hide);
+      bw.setMenuBarVisibility(!hide);
     });
     await this.provider.setHideMainMenu(hide);
   }
