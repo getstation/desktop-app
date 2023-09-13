@@ -16,6 +16,10 @@ export const App = db.define(
       type: Sequelize.BOOLEAN,
       defaultValue: true,
     },
+    hideMainMenu: {
+      type: Sequelize.BOOLEAN,
+      defaultValue: false,
+    },
     downloadFolder: {
       type: Sequelize.STRING,
     },

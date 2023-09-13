@@ -5,14 +5,18 @@ import { distinctUntilChanged, map } from 'rxjs/operators';
 import { subscribeStore } from '../utils/observable';
 import { Resolvers } from '../graphql/resolvers-types.generated';
 
-import { getAppAutoLaunchEnabledStatus, getPromptDownloadEnabled } from './selectors';
+import { getAppAutoLaunchEnabledStatus, getAppHideMainMenuStatus, getPromptDownloadEnabled } from './selectors';
 import { getStationStatus } from '../app/selectors';
-import { enableAutoLaunch, togglePromptDownload } from './duck';
+import { enableAutoLaunch, hideMainMenu, togglePromptDownload } from './duck';
 
 const resolvers: Resolvers = {
   Query: {
     autoLaunchEnabled: (_obj, _args, context) => {
       return subscribeStore(context.store, getAppAutoLaunchEnabledStatus)
+        .pipe(map(Boolean), distinctUntilChanged());
+    },
+    hideMainMenu: (_obj, _args, context) => {
+      return subscribeStore(context.store, getAppHideMainMenuStatus)
         .pipe(map(Boolean), distinctUntilChanged());
     },
     promptDownloadEnabled: (_obj, _args, context) => {
@@ -30,6 +34,10 @@ const resolvers: Resolvers = {
   Mutation: {
     setAutoLaunch: (_obj, args, context) => {
       context.store.dispatch(enableAutoLaunch(args.enabled));
+      return true;
+    },
+    setHideMainMenu: (_obj, args, context) => {
+      context.store.dispatch(hideMainMenu(args.hide));
       return true;
     },
     setPromptDownload: (_obj, args, context) => {

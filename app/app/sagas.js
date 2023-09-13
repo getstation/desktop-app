@@ -21,12 +21,11 @@ import {
   callService,
   serviceAddObserverChannel,
   takeEveryWitness,
-  takeLatestWitness
 } from '../utils/sagas';
 import {
   CHANGE_APP_FOCUS_STATE,
-  ENABLE_AUTO_LAUNCH,
-  enableAutoLaunch,
+  ENABLE_AUTO_LAUNCH, enableAutoLaunch,
+  HIDE_MAIN_MENU, hideMainMenu,
   INCLUDE_BETA_IN_UPDATES,
   keyboardLayoutChanged,
   OPEN_PROCESS_MANAGER,
@@ -44,6 +43,7 @@ import { getWindowCurrentTabId } from '../windows/get';
 import { getWindow } from '../windows/selectors';
 import {
   getAppAutoLaunchEnabledStatus,
+  getAppHideMainMenuStatus,
   getPromptDownloadEnabled,
   isFullyReady,
   isKbdShortcutsOverlayVisible
@@ -85,6 +85,19 @@ function* sagaSyncAutoLaunch() {
 
 function* sagaEnableAutoLaunch({ enable }) {
   yield call([services.autolaunch, services.autolaunch.set], enable);
+}
+
+function* sagaSyncHideMainMenu() {
+  let isHide = yield select(getAppHideMainMenuStatus);
+  if (typeof isHide === 'undefined') {
+    isHide = false;
+  }
+
+  yield put(hideMainMenu(isHide));
+}
+
+function* sagaHideMainMenu({ hide }) {
+  yield call([services.browserWindow, services.browserWindow.hideMainMenu], hide);
 }
 
 function* sagaTogglePromptDownload({ promptDownload }) {
@@ -252,8 +265,10 @@ export default function* main(bxApp) {
     takeEveryWitness(READY, sagaLoadAppMetadata),
     takeEveryWitness(READY, sagaPrepareQuit, bxApp),
     takeEveryWitness(REHYDRATION_COMPLETE, sagaSyncAutoLaunch),
+    takeEveryWitness(REHYDRATION_COMPLETE, sagaSyncHideMainMenu),
     takeEveryWitness(REHYDRATION_COMPLETE, sagaSyncPromptDownload),
     takeEveryWitness(ENABLE_AUTO_LAUNCH, sagaEnableAutoLaunch),
+    takeEveryWitness(HIDE_MAIN_MENU, sagaHideMainMenu),
     takeEveryWitness(TOGGLE_PROMPT_DOWNLOAD, sagaTogglePromptDownload),
     takeEveryWitness(INCLUDE_BETA_IN_UPDATES, sagaIncludeBetaInUpdates),
     takeEveryWitness(TOGGLE_MAXIMIZE, sagaSendToggleMaximize),

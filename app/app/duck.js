@@ -10,6 +10,8 @@ export const READY = 'browserX/app/READY';
 export const CHANGE_APP_FOCUS_STATE = 'browserX/app/CHANGE_APP_FOCUS_STATE';
 export const SET_AUTO_LAUNCH_ENABLED = 'browserX/app/SET_AUTO_LAUNCH_ENABLED';
 export const ENABLE_AUTO_LAUNCH = 'browserX/app/ENABLE_AUTO_LAUNCH';
+export const SET_HIDE_MAIN_MENU = 'browserX/app/SET_HIDE_MAIN_MENU';
+export const HIDE_MAIN_MENU = 'browserX/app/HIDE_MAIN_MENU';
 export const INCLUDE_BETA_IN_UPDATES = 'browserX/app/INCLUDE_BETA_IN_UPDATES';
 export const SET_INCLUDES_BETA_IN_UPDATES = 'browserX/app/SET_INCLUDES_BETA_IN_UPDATES';
 export const SET_FULL_SCREEN_STATE = 'browserX/app/SET_FULL_SCREEN_STATE';
@@ -45,6 +47,14 @@ export const setAutoLaunchEnabled = (enabled) => ({
 
 export const enableAutoLaunch = (enable = true) => ({
   type: ENABLE_AUTO_LAUNCH, enable
+});
+
+export const setHideMainMenu = (hide) => ({
+  type: SET_HIDE_MAIN_MENU, hide
+});
+
+export const hideMainMenu = (hide) => ({
+  type: HIDE_MAIN_MENU, hide
 });
 
 export const includeBetaInUpdates = (include = true) => ({
@@ -132,6 +142,9 @@ export default function app(state = new Map(), action) {
     case SET_AUTO_LAUNCH_ENABLED:
       return state.set('autoLaunchEnabled', action.enabled);
 
+    case SET_HIDE_MAIN_MENU:
+      return state.set('hideMainMenu', action.hide);
+
     case SET_INCLUDES_BETA_IN_UPDATES:
       return state.set('includesBetaInUpdates', action.included);
 
@@ -162,9 +175,8 @@ export default function app(state = new Map(), action) {
     case KEYBOARD_LAYOUT_CHANGE:
       return state.set('keyboardLayout', action.layout);
 
-    case TOGGLE_PROMPT_DOWNLOAD: {
+    case TOGGLE_PROMPT_DOWNLOAD:
       return state.set('promptDownload', Boolean(action.promptDownload));
-    }
 
     case SET_APP_METADATA:
       return state
