@@ -80,6 +80,12 @@ export class BrowserWindowServiceObserver extends ServiceBase implements RPC.Int
   onNewNotification(notificationId: string, props: NotificationProps): void {}
 }
 
+@service('browser-window')
+export class BrowserWindowManagerProviderService extends ServiceBase implements RPC.Interface<BrowserWindowManagerProviderService> {
+  // @ts-ignore
+  setHideMainMenu(hide: boolean): Promise<void> {}
+}
+
 // Represents `Electron.BrowserWindow` static methods
 @service('browser-window')
 export class BrowserWindowManagerService extends ServiceBase implements RPC.Interface<BrowserWindowManagerService> {
@@ -95,4 +101,8 @@ export class BrowserWindowManagerService extends ServiceBase implements RPC.Inte
   focus(browserWindowId: number): Promise<void> {}
   // @ts-ignore
   toggleWorkerDevTools(): Promise<void> {}
+  // @ts-ignore
+  setProvider(provider: RPC.Node<BrowserWindowManagerProviderService>): Promise<void> {}
+  // @ts-ignore
+  hideMainMenu(hide: boolean): Promise<void> {}
 }

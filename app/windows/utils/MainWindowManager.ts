@@ -2,7 +2,6 @@ import { getUrlToLoad } from '../../utils/dev';
 import { isDarwin } from '../../utils/process';
 import { getResourceIconPath } from '../../utils/resources';
 import { windowCreated } from '../duck';
-
 import GenericWindowManager from './GenericWindowManager';
 
 export default class MainWindowManager extends GenericWindowManager {

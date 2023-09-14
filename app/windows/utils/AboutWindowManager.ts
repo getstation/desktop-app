@@ -1,6 +1,6 @@
 import { getUrlToLoad } from '../../utils/dev';
-import { isDarwin } from '../../utils/process';
 import GenericWindowManager from './GenericWindowManager';
+import { BrowserWindowServiceConstructorOptions } from '../../services/services/browser-window/interface';
 
 class AboutWindowManager extends GenericWindowManager {
   static FILEPATH = getUrlToLoad('about.html');
@@ -10,13 +10,16 @@ class AboutWindowManager extends GenericWindowManager {
   }
 
   async create() {
-    if (this.isCreated()) return this.window;
+    if (this.isCreated()) {
+      return this.window;
+    }
 
-    const params = {
+    const params: BrowserWindowServiceConstructorOptions = {
       width: 550,
       height: 380,
       show: false,
-      frame: !isDarwin,
+      frame: false,
+      skipTaskbar: true,
       resizable: false,
     };
 
