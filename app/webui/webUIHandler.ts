@@ -1,32 +1,36 @@
-import { protocol } from 'electron';
+import { net, protocol } from 'electron';
 import { dirname } from 'path';
-import { parse } from 'url';
+import { pathToFileURL } from 'url';
 import { BX_PROTOCOL } from './const';
 import handlers from './handlers';
 
 protocol.registerSchemesAsPrivileged([
-  { scheme: BX_PROTOCOL, privileges: { standard: true, secure: true } },
+  { 
+    scheme: BX_PROTOCOL, 
+    privileges: { 
+      standard: true, 
+      secure: true,
+    } 
+  },
 ]);
 
 export function start() {
-  protocol.registerFileProtocol(BX_PROTOCOL, (req, callback) => {
-    const parsedUrl = parse(req.url);
+  protocol.handle(BX_PROTOCOL, (req: GlobalRequest) => {
+    const parsedUrl = new URL(req.url);
     const handler = handlers.find(h => h.hostname === parsedUrl.hostname);
 
     if (!handler) {
-      // @ts-ignore
-      return callback(-6); // file not found
+      return new Response(new Blob([`Handler not found for ${req.url}`]), { status: 404 });
     }
-
     if (!parsedUrl.pathname) {
-      // @ts-ignore
-      return callback(-6); // file not found
+      return new Response(new Blob([`Empty path in ${req.url}`]), { status: 404 });
     }
 
     if (parsedUrl.pathname !== '/') {
-      return callback(`${dirname(handler.filePath)}/${parsedUrl.pathname.substr(1)}`);
+      const fileUrl = `${dirname(handler.filePath)}/${parsedUrl.pathname.substring(1)}`;
+      return net.fetch(pathToFileURL(fileUrl).toString());
     }
 
-    return callback(handler.filePath);
+    return net.fetch(pathToFileURL(handler.filePath).toString());
   });
 }
