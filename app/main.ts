@@ -167,6 +167,9 @@ const lazyBxAppMain = () => {
 };
 
 const init = () => {
+
+  app.commandLine.appendSwitch('allow-insecure-localhost');
+
   overrideUserDataPath();
   applyLogLevel();
 
