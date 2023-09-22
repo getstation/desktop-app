@@ -174,7 +174,6 @@ const init = () => {
     loadCliWindow('database').catch(console.error);
     return;
   }
-  if (require('electron-squirrel-startup')) return;
 
   initWorker();
 

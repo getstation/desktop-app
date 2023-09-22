@@ -26,3 +26,18 @@ export const asNativeImage = memoize((url: string): Promise<Electron.NativeImage
     }
   });
 }, { promise: true, max: 20 });
+
+export function getDoNotDisturb(): boolean {
+  if (process.platform === 'win32') {
+    const { getFocusAssist } = require('windows-focus-assist');
+    const focusAssist: string = getFocusAssist().name;
+    return focusAssist == 'PRIORITY_ONLY' || focusAssist == 'ALARMS_ONLY';
+  }
+
+  if (process.platform === 'darwin') {
+    const { getDoNotDisturb: getMacOsDoNotDisturb } = require('macos-notification-state');
+    return getMacOsDoNotDisturb();
+  }
+
+  return false;
+}
