@@ -20,12 +20,16 @@ export default class ElectronNotificationStatePoller extends EventEmitter {
 
   start() {
     this.intervalId = setInterval(() => {
-      services.osNotification.isDoNotDisturbEnabled().then(doNotDisturb => {
-        if (doNotDisturb !== this.state) {
-            this.emit('os-dnd-state', doNotDisturb);
-            this.state = doNotDisturb;
-        }
-      });
+      services.osNotification.isDoNotDisturbEnabled()
+        .then(doNotDisturb => {
+          if (doNotDisturb !== this.state) {
+              this.emit('os-dnd-state', doNotDisturb);
+              this.state = doNotDisturb;
+          }
+        })
+        .catch(e => {
+          console.log('Error while polling OS notification state', e);
+        }); 
     }, this.interval);
   }
 

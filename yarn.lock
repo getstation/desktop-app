@@ -3540,6 +3540,12 @@
   resolved "https://registry.yarnpkg.com/@sinonjs/text-encoding/-/text-encoding-0.7.1.tgz#8da5c6530915653f3a1f38fd5f101d8c3f8079c5"
   integrity sha512-+iTbntw2IZPb/anVDbypzfQa+ay64MW0Zo8aJ8gZPWMMK6/OubMVb6lUPMagqjOPnmtauXnFCACVl3O7ogjeqQ==
 
+"@stack-inc/macos-notification-state@https://github.com/stack-inc/macos-notification-state/archive/refs/tags/v2.0.1.tar.gz":
+  version "2.0.1"
+  resolved "https://github.com/stack-inc/macos-notification-state/archive/refs/tags/v2.0.1.tar.gz#4ae64703499dca9167d1cd0e720eb86a44512089"
+  dependencies:
+    bindings "^1.5.0"
+
 "@storybook/addon-actions@4":
   version "4.1.18"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-4.1.18.tgz#f8eae3fef92b9f3f4d166d066e98b47377784a7b"
@@ -10648,7 +10654,6 @@ electron-publish@24.5.0:
 
 "electron-simple-ipc@https://github.com/viktor44/electron-simple-ipc/archive/refs/tags/1.1.2.tar.gz":
   version "1.1.2"
-  uid "562c7dc9b4e133a3c193675c26571f73e58b4897"
   resolved "https://github.com/viktor44/electron-simple-ipc/archive/refs/tags/1.1.2.tar.gz#562c7dc9b4e133a3c193675c26571f73e58b4897"
 
 "electron-simple-rpc@https://github.com/viktor44/electron-simple-rpc/archive/refs/tags/v1.1.4.tar.gz":
@@ -16271,14 +16276,6 @@ lru-queue@0.1:
   dependencies:
     es5-ext "~0.10.2"
 
-macos-notification-state@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/macos-notification-state/-/macos-notification-state-3.0.0.tgz#c9ca80416c9ea0d29b78f37866bc7deb417ccc00"
-  integrity sha512-tvFDZajIcwIsYg1WQAXGtrJFljlL1PEOK2cCoPDrN//XxIwTiVNvaXznxLjV4mYkyXctIDVs0ujGdrbGzeOY/w==
-  dependencies:
-    bindings "^1.5.0"
-    node-addon-api "3.0.0"
-
 make-dir@^1.0.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-1.3.0.tgz#79c1033b80515bd6d24ec9933e860ca75ee27f0c"
@@ -17147,11 +17144,6 @@ node-addon-api@*:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-6.0.0.tgz#cfb3574e6df708ff71a30db6c4762d9e06e11c27"
   integrity sha512-GyHvgPvUXBvAkXa0YvYnhilSB1A+FRYMpIVggKzPZqdaZfevZOuzfWzyvgzOwRLHBeo/MMswmJFsrNF4Nw1pmA==
-
-node-addon-api@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-3.0.0.tgz#812446a1001a54f71663bed188314bba07e09247"
-  integrity sha512-sSHCgWfJ+Lui/u+0msF3oyCgvdkhxDbkCS6Q8uiJquzOimkJBvX6hl5aSSA7DR1XbMpdM8r7phjcF63sF4rkKg==
 
 node-addon-api@^1.6.3:
   version "1.7.2"
