@@ -1,4 +1,4 @@
-import { app, BrowserWindow, shell, WebContents } from 'electron';
+import { app, BrowserWindow, shell, WebContents, HandlerDetails } from 'electron';
 
 import { isDarwin } from '../../../utils/process';
 import { RPC } from '../../lib/types';
@@ -30,9 +30,9 @@ export class BrowserWindowManagerServiceImpl extends BrowserWindowManagerService
 
     app.on('browser-window-created', (_e, bw) => {
       bw.on('closed', closeAppIfAllWindowsClosed);
-      bw.webContents.on('new-window', (e, url) => {
-        e.preventDefault();
-        shell.openExternal(url);
+      bw.webContents.setWindowOpenHandler((details: HandlerDetails) => {
+        shell.openExternal(details.url);
+        return { action: 'deny' };
       });
     });
   }

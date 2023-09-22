@@ -1,8 +1,9 @@
 import { Notification, webContents } from 'electron';
+
 import { ServiceSubscription } from '../../lib/class';
 import { RPC } from '../../lib/types';
 import { IOSNotificationServiceShowParam, OSNotification, OSNotificationObserver, OSNotificationService } from './interface';
-import { asNativeImage } from './utils';
+import { getDoNotDisturb, asNativeImage } from './utils';
 
 export class OSNotificationServiceImpl extends OSNotificationService implements RPC.Interface<OSNotificationService> {
 
@@ -34,6 +35,10 @@ export class OSNotificationServiceImpl extends OSNotificationService implements 
       // Send signal back to the webview to trigger click callbacks if any
       myWebcontent.send('trigger-notification-click', notificationId);
     } catch (e) {}
+  }
+
+  async isDoNotDisturbEnabled() {
+    return getDoNotDisturb();
   }
 
 }
