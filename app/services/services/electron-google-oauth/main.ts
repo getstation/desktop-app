@@ -10,7 +10,7 @@ const CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET!;
 export class ElectronGoogleOAuthServiceImpl extends ElectronGoogleOAuthService implements RPC.Interface<ElectronGoogleOAuthService> {
   async signIn(scopes: string[], forceAddSession?: boolean) {
 
-    const client = new ElectronGoogleOAuth2(CLIENT_ID, CLIENT_SECRET, scopes);
+    const client = new ElectronGoogleOAuth2(CLIENT_ID, CLIENT_SECRET, scopes, { successRedirectURL: 'https://getstation.com/' });
     return client.openAuthWindowAndGetTokens(forceAddSession)
       .then(async (tokens) => {
 
