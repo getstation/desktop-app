@@ -22,7 +22,9 @@ export const getWebContentsFromIdOrThrow = async (webContentsId: number, maxTrie
     });
     count = count - 1;
   }
-  if (wc === null) throw new Error(`Unable to retrieve webContents ${webContentsId}`);
+  if (!wc) {
+    throw new Error(`Unable to retrieve webContents ${webContentsId}`);
+  }
   return wc;
 };
 
