@@ -47,9 +47,15 @@ export class BrowserWindowService extends ServiceBase implements RPC.Interface<B
   setMetadata<T extends object>(metadata: T): Promise<void> {}
   // @ts-ignore
   isFocused(): Promise<boolean> {}
-
   // @ts-ignore
   addObserver(observer: RPC.ObserverNode<BrowserWindowServiceObserver>): Promise<RPC.Subscription> {}
+  /**
+   * Sets whether the window should show always on top of other windows. After
+   * setting this, the window is still a normal window, not a toolbox window which
+   * can not be focused on.
+   */
+  // @ts-ignore
+  setAlwaysOnTop(flag: boolean, level?: 'normal' | 'floating' | 'torn-off-menu' | 'modal-panel' | 'main-menu' | 'status' | 'pop-up-menu' | 'screen-saver', relativeLevel?: number): Promise<void> {}
 }
 
 @service('browser-window')

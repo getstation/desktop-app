@@ -241,4 +241,8 @@ export class BrowserWindowServiceImpl extends BrowserWindowService implements RP
     if (!this.stateManager) return;
     this.stateManager.manage(this.window);
   }
+
+  async setAlwaysOnTop(flag: boolean, level?: 'normal' | 'floating' | 'torn-off-menu' | 'modal-panel' | 'main-menu' | 'status' | 'pop-up-menu' | 'screen-saver', relativeLevel?: number) {
+    this.window.setAlwaysOnTop(flag, level, relativeLevel); 
+  }
 }
