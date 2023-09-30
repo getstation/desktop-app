@@ -219,11 +219,11 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
         log.debug('WindowOpen', details, process.type);
 
         if (details.disposition === 'new-window') {
-          provider.dispatchUrl(details.url, wc.id, DEFAULT_BROWSER);
+          provider.dispatchUrl(details.url, wc.id, DEFAULT_BROWSER_BACKGROUND);
           return { action: 'deny' };
         }
         else if (details.disposition === 'background-tab') {
-          provider.dispatchUrl(details.url, wc.id, DEFAULT_BROWSER_BACKGROUND);
+          provider.dispatchUrl(details.url, wc.id, DEFAULT_BROWSER);
           return { action: 'deny' };
         }
 
