@@ -3,7 +3,7 @@ import { RPC } from '../services/lib/types';
 import { UrlDispatcherProviderService } from '../services/services/tab-webcontents/interface';
 import { getTabWebcontentsByWebContentsId, getWebcontentsTabId } from '../tab-webcontents/selectors';
 import { getApplicationIdByTabId } from '../tabs/selectors';
-import { NEW_TAB } from './constants';
+import { DEFAULT_BROWSER_BACKGROUND, NEW_TAB, Targets } from './constants';
 import { dispatchUrlSaga } from './sagas';
 import { StationStoreWorker } from 'app/types';
 
@@ -16,7 +16,7 @@ export class UrlDispatcherProviderServiceImpl extends UrlDispatcherProviderServi
     this.store = store;
   }
 
-  async dispatchUrl(url: string, originWebContentsId: number) {
+  async dispatchUrl(url: string, originWebContentsId: number, target: Targets = NEW_TAB) {
     const state = this.store.getState();
 
     const twc = getTabWebcontentsByWebContentsId(state, originWebContentsId);
@@ -24,8 +24,16 @@ export class UrlDispatcherProviderServiceImpl extends UrlDispatcherProviderServi
     const applicationId = getApplicationIdByTabId(state, tabId);
 
     // run the `dispatchUrlSaga`, which is the entry point to dispatch a new URL inside bx
-    await this.store.runSaga(dispatchUrlSaga, {
-      type: DISPATCH_URL, url, origin: { tabId, applicationId }, options: { target: NEW_TAB },
-    }).toPromise();
+    await this.store.runSaga(
+      dispatchUrlSaga, 
+      {
+        type: DISPATCH_URL, 
+        url, 
+        origin: { tabId, applicationId }, 
+        options: { 
+          target,
+          loadInBackground: target === DEFAULT_BROWSER_BACKGROUND,
+        },
+      }).toPromise();
   }
 }

@@ -2,7 +2,7 @@ import { Account } from '../../../password-managers/types';
 import { ServiceBase } from '../../lib/class';
 import { service, timeout } from '../../lib/decorator';
 import { RPC } from '../../lib/types';
-
+import { NEW_TAB, Targets } from '../../../urlrouter/constants';
 /**
  * Service used to interact with WebContents related to tabs
  */
@@ -122,7 +122,7 @@ export class TabWebContentsNotificationsObserver extends ServiceBase implements 
 export class UrlDispatcherProviderService extends ServiceBase
   implements RPC.Interface<UrlDispatcherProviderService> {
   // @ts-ignore
-  dispatchUrl(url: string, originWebContentsId: number): void { }
+  dispatchUrl(url: string, originWebContentsId: number, target: Targets = NEW_TAB): void { }
 }
 
 @service('webcontents')

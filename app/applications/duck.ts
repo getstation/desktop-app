@@ -130,7 +130,15 @@ export type RemoteUpdateInstalledApplicationsAction = {
 };
 export type DispatchURLAction = {
   type: DISPATCH_URL,
-  url: string, origin?: { tabId?: string, applicationId?: string }, options?: { target: Targets },
+  url: string, 
+  origin?: { 
+    tabId?: string, 
+    applicationId?: string 
+  }, 
+  options?: { 
+    target?: Targets, 
+    loadInBackground?: boolean,
+  },
 };
 export type ToggleNotificationsAction = {
   type: TOGGLE_NOTIFICATIONS, applicationId: string,

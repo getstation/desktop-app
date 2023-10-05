@@ -1,10 +1,6 @@
 export const NEW_TAB = 'URLROUTER/NEW_TAB';
 export const NEW_WINDOW = 'URLROUTER/NEW_WINDOW';
 export const DEFAULT_BROWSER = 'URLROUTER/DEFAULT_BROWSER';
+export const DEFAULT_BROWSER_BACKGROUND = 'URLROUTER/DEFAULT_BROWSER_BACKGROUND';
 
-export type DispatchUrlOptions = {
-  afterFollowingRedirects?: boolean,
-  originalUrl?: string,
-};
-
-export type Targets = typeof NEW_TAB | typeof NEW_WINDOW | typeof DEFAULT_BROWSER;
+export type Targets = typeof NEW_TAB | typeof NEW_WINDOW | typeof DEFAULT_BROWSER | typeof DEFAULT_BROWSER_BACKGROUND;
