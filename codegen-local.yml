@@ -23,6 +23,13 @@ generates:
       - typescript-operations
       - typescript-react-apollo
 
+  ./app/settings/components/SettingsHideMainMenu/queries@local.gql.generated.tsx:
+    documents: ./app/settings/components/SettingsHideMainMenu/queries@local.gql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+
   ./app/settings/components/SettingsDownloads/queries@local.gql.generated.tsx:
     documents: ./app/settings/components/SettingsDownloads/queries@local.gql
     plugins:

@@ -1,6 +1,8 @@
 type Query {
-  """Is launch at startup enabled or not."""
+  """ Is launch at startup enabled or not. """
   autoLaunchEnabled: Boolean,
+  """ Hide main menu (Windows, Linux) """
+  hideMainMenu: Boolean,
 
   promptDownloadEnabled: Boolean,
 
@@ -38,19 +40,16 @@ type Query {
 }
 
 type Mutation {
-  """
-  Will set the value of auto-launch.
-  """
+  """ Will set the value of auto-launch. """
   setAutoLaunch(
-    """
-    True if autolaunch should be enabled
-    """
+    """ True if autolaunch should be enabled """
     enabled: Boolean!
   ): Boolean,
 
-  setPromptDownload(
-    enabled: Boolean!
-  ):Boolean
+  """ Will set the value of hideMainMenu property. """
+  setHideMainMenu(hide: Boolean!): Boolean,
+
+  setPromptDownload(enabled: Boolean!):Boolean
 
   """Trigger an action to check for updates"""
   checkForUpdates: Boolean,

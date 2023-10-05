@@ -37,6 +37,8 @@ export class OSNotificationService extends ServiceBase implements RPC.Interface<
    */
   // @ts-ignore
   show(param: IOSNotificationServiceShowParam): Promise<RPC.Node<OSNotification>> {}
+  // @ts-ignore
+  isDoNotDisturbEnabled(): Promise<boolean> {}
 }
 
 /**

@@ -167,6 +167,9 @@ const lazyBxAppMain = () => {
 };
 
 const init = () => {
+
+  app.commandLine.appendSwitch('allow-insecure-localhost');
+
   overrideUserDataPath();
   applyLogLevel();
 
@@ -174,7 +177,6 @@ const init = () => {
     loadCliWindow('database').catch(console.error);
     return;
   }
-  if (require('electron-squirrel-startup')) return;
 
   initWorker();
 

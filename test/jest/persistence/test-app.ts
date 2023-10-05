@@ -6,6 +6,7 @@ import umzug from '../../../app/persistence/umzug';
 const appData = Immutable.Map({
   version: 1,
   autoLaunchEnabled: true,
+  hideMainMenu: true,
   downloadFolder: '/any/path',
   promptDownload: false
 });
@@ -13,6 +14,7 @@ const appData = Immutable.Map({
 const appData2 = Immutable.Map({
   version: 2,
   autoLaunchEnabled: true,
+  hideMainMenu: true,
   downloadFolder: '/any/path',
   promptDownload: true
 });
@@ -21,6 +23,7 @@ const wrongData = Immutable.Map({
   version: 1,
   unaivalableProp: true,
   autoLaunchEnabled: true,
+  hideMainMenu: true,
   downloadFolder: '/any/path',
   promptDownload: false
 });
@@ -32,6 +35,7 @@ const emptyData = Immutable.Map({
 const correctedData = {
   version: 1,
   autoLaunchEnabled: true,
+  hideMainMenu: true,
   downloadFolder: '/any/path',
   promptDownload: false
 };

@@ -17,14 +17,17 @@ export const getStationStatus = (state: StationState): StationStatus => state.ge
 export const getAppAutoLaunchEnabledStatus = (state: StationState): boolean | undefined =>
   getStationStatus(state).get('autoLaunchEnabled');
 
+export const getAppHideMainMenuStatus = (state: StationState): boolean | undefined =>
+  getStationStatus(state).get('hideMainMenu');
+
 export const areBetaIncludedInUpdates = (state: StationState): boolean =>
-state.getIn(['app', 'includesBetaInUpdates'], false);
+  state.getIn(['app', 'includesBetaInUpdates'], false);
 
 export const isFullScreen = (state: StationState): boolean =>
-Boolean(state.getIn(['app', 'isFullScreen']));
+  Boolean(state.getIn(['app', 'isFullScreen']));
 
 export const getFocus = (state: StationState): number | undefined =>
-getStationStatus(state).get('focus');
+  getStationStatus(state).get('focus');
 
 export const getPromptDownloadEnabled = (state: StationState): boolean =>
   getStationStatus(state).get('promptDownload');

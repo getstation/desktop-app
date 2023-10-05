@@ -1,0 +1,8 @@
+  query GetHideMainMenuStatus @live @local {
+    hideMainMenu
+  }
+
+  mutation EnableHideMainMenu($hide: Boolean!) @local{
+    setHideMainMenu(hide: $hide)
+  }
+  

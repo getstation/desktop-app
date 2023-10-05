@@ -1,6 +1,6 @@
 import { EventEmitter } from 'events';
-import ms = require('ms');
-import { getDoNotDisturb } from '@stack-inc/electron-notification-state';
+
+import services from '../../services/servicesManager';
 
 export default class ElectronNotificationStatePoller extends EventEmitter {
   interval: number;
@@ -10,6 +10,7 @@ export default class ElectronNotificationStatePoller extends EventEmitter {
   constructor() {
     super();
 
+    const ms = require('ms');
     this.interval = ms('1sec');
     this.intervalId = undefined;
     this.state = null;
@@ -19,10 +20,16 @@ export default class ElectronNotificationStatePoller extends EventEmitter {
 
   start() {
     this.intervalId = setInterval(() => {
-      if (getDoNotDisturb() !== this.state) {
-        this.emit('os-dnd-state', getDoNotDisturb());
-        this.state = getDoNotDisturb();
-      }
+      services.osNotification.isDoNotDisturbEnabled()
+        .then(doNotDisturb => {
+          if (doNotDisturb !== this.state) {
+              this.emit('os-dnd-state', doNotDisturb);
+              this.state = doNotDisturb;
+          }
+        })
+        .catch(e => {
+          console.log('Error while polling OS notification state', e);
+        }); 
     }, this.interval);
   }
 

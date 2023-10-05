@@ -1,7 +1,8 @@
-import { app, BrowserWindow, shell, WebContents } from 'electron';
+import { app, BrowserWindow, shell, WebContents, HandlerDetails } from 'electron';
+
 import { isDarwin } from '../../../utils/process';
 import { RPC } from '../../lib/types';
-import { BrowserWindowManagerService, BrowserWindowServiceConstructorOptions } from './interface';
+import { BrowserWindowManagerService, BrowserWindowServiceConstructorOptions, BrowserWindowManagerProviderService } from './interface';
 import { BrowserWindowServiceImpl } from './main';
 
 const areAllWindowsClosed = () => {
@@ -18,6 +19,8 @@ const closeAppIfAllWindowsClosed = () => {
 export class BrowserWindowManagerServiceImpl extends BrowserWindowManagerService implements RPC.Interface<BrowserWindowManagerService> {
   protected weakrefs: WeakMap<Electron.BrowserWindow, BrowserWindowServiceImpl>;
   private worker?: BrowserWindow;
+  private provider?: RPC.Node<BrowserWindowManagerProviderService>;
+  private autoHideMainMenu: boolean = false;
 
   constructor(uuid?: string) {
     super(uuid);
@@ -27,15 +30,18 @@ export class BrowserWindowManagerServiceImpl extends BrowserWindowManagerService
 
     app.on('browser-window-created', (_e, bw) => {
       bw.on('closed', closeAppIfAllWindowsClosed);
-      bw.webContents.on('new-window', (e, url) => {
-        e.preventDefault();
-        shell.openExternal(url);
+      bw.webContents.setWindowOpenHandler((details: HandlerDetails) => {
+        shell.openExternal(details.url);
+        return { action: 'deny' };
       });
     });
   }
 
   async create(options: BrowserWindowServiceConstructorOptions) {
-    const windowService = new BrowserWindowServiceImpl(options);
+    const windowService = new BrowserWindowServiceImpl({
+      autoHideMenuBar: this.autoHideMainMenu,
+      ...options
+    });
     this.weakrefs.set(windowService.window, windowService);
     return windowService;
   }
@@ -62,10 +68,13 @@ export class BrowserWindowManagerServiceImpl extends BrowserWindowManagerService
   }
 
   async toggleWorkerDevTools() {
-    if (!this.worker) throw new Error('no worker BrowserWindow');
+    if (!this.worker) {
+      throw new Error('no worker BrowserWindow');
+    }
     if (this.worker.webContents.isDevToolsOpened()) {
       this.worker.webContents.closeDevTools();
-    } else {
+    } 
+    else {
       this.worker.webContents.openDevTools({
         mode: 'detach',
       });
@@ -79,7 +88,7 @@ export class BrowserWindowManagerServiceImpl extends BrowserWindowManagerService
     }
   }
 
-  private getServiceFromBrowserWindow(bw?: Electron.BrowserWindow) {
+  private getServiceFromBrowserWindow(bw?: Electron.BrowserWindow): BrowserWindowServiceImpl {
     if (!bw) {
       throw new Error('BrowserWindow is not defined');
     }
@@ -88,5 +97,21 @@ export class BrowserWindowManagerServiceImpl extends BrowserWindowManagerService
       throw new Error(`BrowserWindow ${bw.id} has not been initialized through BrowserWindowManagerService`);
     }
     return windowService;
+  }
+
+  async setProvider(provider: RPC.Node<BrowserWindowManagerProviderService>) {
+    this.provider = provider;
+  }
+
+  async hideMainMenu(hide: boolean) {
+    if (!this.provider) {
+      throw new Error('missing menu provider service');
+    }
+    this.autoHideMainMenu = hide;
+    BrowserWindow.getAllWindows().forEach((bw) => {
+      bw.setAutoHideMenuBar(hide);
+      bw.setMenuBarVisibility(!hide);
+    });
+    await this.provider.setHideMainMenu(hide);
   }
 }

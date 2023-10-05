@@ -47,9 +47,15 @@ export class BrowserWindowService extends ServiceBase implements RPC.Interface<B
   setMetadata<T extends object>(metadata: T): Promise<void> {}
   // @ts-ignore
   isFocused(): Promise<boolean> {}
-
   // @ts-ignore
   addObserver(observer: RPC.ObserverNode<BrowserWindowServiceObserver>): Promise<RPC.Subscription> {}
+  /**
+   * Sets whether the window should show always on top of other windows. After
+   * setting this, the window is still a normal window, not a toolbox window which
+   * can not be focused on.
+   */
+  // @ts-ignore
+  setAlwaysOnTop(flag: boolean, level?: 'normal' | 'floating' | 'torn-off-menu' | 'modal-panel' | 'main-menu' | 'status' | 'pop-up-menu' | 'screen-saver', relativeLevel?: number): Promise<void> {}
 }
 
 @service('browser-window')
@@ -80,6 +86,12 @@ export class BrowserWindowServiceObserver extends ServiceBase implements RPC.Int
   onNewNotification(notificationId: string, props: NotificationProps): void {}
 }
 
+@service('browser-window')
+export class BrowserWindowManagerProviderService extends ServiceBase implements RPC.Interface<BrowserWindowManagerProviderService> {
+  // @ts-ignore
+  setHideMainMenu(hide: boolean): Promise<void> {}
+}
+
 // Represents `Electron.BrowserWindow` static methods
 @service('browser-window')
 export class BrowserWindowManagerService extends ServiceBase implements RPC.Interface<BrowserWindowManagerService> {
@@ -95,4 +107,8 @@ export class BrowserWindowManagerService extends ServiceBase implements RPC.Inte
   focus(browserWindowId: number): Promise<void> {}
   // @ts-ignore
   toggleWorkerDevTools(): Promise<void> {}
+  // @ts-ignore
+  setProvider(provider: RPC.Node<BrowserWindowManagerProviderService>): Promise<void> {}
+  // @ts-ignore
+  hideMainMenu(hide: boolean): Promise<void> {}
 }

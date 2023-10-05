@@ -180,12 +180,14 @@ export class AppProxy extends SingletonProxyMixin({
   mapStateToObject: async state => ({
     version: state.get('version'),
     autoLaunchEnabled: state.get('autoLaunchEnabled'),
+    hideMainMenu: state.get('hideMainMenu'),
     downloadFolder: state.get('downloadFolder'),
     promptDownload: state.get('promptDownload'),
   }),
   mapObjectToState: async obj => Immutable.Map({
     version: obj.version,
     autoLaunchEnabled: obj.autoLaunchEnabled,
+    hideMainMenu: obj.hideMainMenu,
     downloadFolder: obj.downloadFolder,
     promptDownload: Boolean(obj.promptDownload),
   }),

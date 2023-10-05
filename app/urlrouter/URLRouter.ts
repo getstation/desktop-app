@@ -13,7 +13,7 @@ import { ApplicationImmutable } from '../applications/types';
 import { handleError } from '../services/api/helpers';
 import { getTabIdMatchingURL } from '../tabs/selectors';
 import { StationState, StationStore } from '../types';
-import { DEFAULT_BROWSER, NEW_TAB, NEW_WINDOW, Targets } from './constants';
+import { DEFAULT_BROWSER, DEFAULT_BROWSER_BACKGROUND, NEW_TAB, NEW_WINDOW, Targets } from './constants';
 import {
   ApplicationConnectionNode,
   ApplicationItem,
@@ -61,7 +61,7 @@ export default class URLRouter {
     // Handy re-usable checks
     const newTab = options.target === NEW_TAB;
     const newWindow = options.target === NEW_WINDOW;
-    const defaultBrowser = options.target === DEFAULT_BROWSER;
+    const defaultBrowser = options.target === DEFAULT_BROWSER || options.target == DEFAULT_BROWSER_BACKGROUND;
 
     if (defaultBrowser) {
       return [URLRouterAction.DEFAULT_BROWSER, null];

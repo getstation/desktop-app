@@ -1,6 +1,7 @@
 import { app, BrowserWindow, globalShortcut } from 'electron';
 import { share } from 'rxjs/operators';
 import { fromEvent, fromEventPattern, Observable, Subject, Subscription } from 'rxjs';
+
 import ContextMenu, { ContextMenuContext } from '../../../context-menu';
 import { SHORTCUTS } from '../../../keyboard-shortcuts';
 import { handleError, subscribeToEvent, subscribeToIPCMessage } from '../../api/helpers';
@@ -23,7 +24,7 @@ export class MenuServiceImpl extends MenuService implements RPC.Node<MenuService
 
   protected menuManager: BrowserXMenuManager;
   protected globalShortcutsObservable: Observable<unknown>;
-
+  
   constructor(uuid?: string) {
     super(uuid, { ready: false });
     this.menuManager = new BrowserXMenuManager();
@@ -61,15 +62,33 @@ export class MenuServiceImpl extends MenuService implements RPC.Node<MenuService
   }
 
   async setChecked({ menuItemId, value }: IMenuServiceSetMenuItemBooleanParam) {
-    this.menuManager.menu.getMenuItemById(menuItemId).checked = value;
+    if (!this.menuManager) {
+      throw new Error('missing menu provider service');
+    }
+    const menuItem = this.menuManager.menu.getMenuItemById(menuItemId);
+    if (menuItem) {
+      menuItem.checked = value;
+    }
   }
 
   async setEnabled({ menuItemId, value }: IMenuServiceSetMenuItemBooleanParam) {
-    this.menuManager.menu.getMenuItemById(menuItemId).enabled = value;
+    if (!this.menuManager) {
+      throw new Error('missing menu provider service');
+    }
+    const menuItem = this.menuManager.menu.getMenuItemById(menuItemId);
+    if (menuItem) {
+      menuItem.enabled = value;
+    }
   }
 
   async setVisible({ menuItemId, value }: IMenuServiceSetMenuItemBooleanParam) {
-    this.menuManager.menu.getMenuItemById(menuItemId).visible = value;
+    if (!this.menuManager) {
+      throw new Error('missing menu provider service');
+    }
+    const menuItem = this.menuManager.menu.getMenuItemById(menuItemId);
+    if (menuItem) {
+      menuItem.visible = value;
+    }
   }
 
   protected registerGlobalShortcuts() {
