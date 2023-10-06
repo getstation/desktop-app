@@ -30,7 +30,7 @@ jobs:
         run: yarn run release
 
   MacOs:
-    runs-on: macos-latest
+    runs-on: macos-13
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
