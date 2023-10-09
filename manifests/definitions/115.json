@@ -1,7 +1,7 @@
 {
   "name": "Google Chat",
   "category": "Communication & Collaboration",
-  "start_url": "https://chat.google.com/",
+  "start_url": "https://accounts.google.com/AddSession?passive=true&Email={{userIdentity.profileData.email}}&continue=https://chat.google.com/chat/u/{{userIdentity.profileData.email}}",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/jYO38GpXTlWHrZ36Cd0M",
@@ -25,7 +25,7 @@
     ],
     "instance_wording": "account",
     "instance_label_tpl": "{{email}}",
-    "start_url_tpl": "https://accounts.google.com/AddSession?passive=true&Email={{userIdentity.profileData.email}}&continue=https://chat.google.com/mail/u/{{userIdentity.profileData.email}}"
+    "start_url_tpl": "https://accounts.google.com/AddSession?passive=true&Email={{userIdentity.profileData.email}}&continue=https://chat.google.com/chat/u/{{userIdentity.profileData.email}}"
   },
   "recommendedPosition": "24"
 }
