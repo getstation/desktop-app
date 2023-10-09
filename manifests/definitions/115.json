@@ -1,7 +1,7 @@
 {
-  "name": "Hangouts",
+  "name": "Google Chat",
   "category": "Communication & Collaboration",
-  "start_url": "https://hangouts.google.com/",
+  "start_url": "https://chat.google.com/",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/jYO38GpXTlWHrZ36Cd0M",
@@ -9,11 +9,23 @@
     }
   ],
   "theme_color": "#82B750",
-  "scope": "https://hangouts.google.com",
+  "scope": "https://chat.google.com",
   "bx_keep_always_loaded": true,
   "bx_use_native_window_open_on_host": true,
   "bx_single_page": true,
   "bx_legacy_service_id": "google-hangouts",
   "bx_override_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36 Edge/80.0.361.62",
+  "extended_scopes": [
+    "https://*.googleusercontent.com"
+  ],
+  "bx_multi_instance_config": {
+    "preset": "google-account",
+    "presets": [
+      "google-account"
+    ],
+    "instance_wording": "account",
+    "instance_label_tpl": "{{email}}",
+    "start_url_tpl": "https://accounts.google.com/AddSession?passive=true&Email={{userIdentity.profileData.email}}&continue=https://chat.google.com/mail/u/{{userIdentity.profileData.email}}"
+  },
   "recommendedPosition": "24"
 }
