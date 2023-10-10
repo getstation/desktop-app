@@ -1,7 +1,7 @@
 {
   "name": "Google Chat",
   "category": "Communication & Collaboration",
-  "start_url": "https://chat.google.com",
+  "start_url": "https://accounts.google.com/AddSession?passive=true&Email={{userIdentity.profileData.email}}&continue=https://chat.google.com/chat/u/{{userIdentity.profileData.email}}",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/TeJ8ka1fS5WEQ6Lk1maM"
@@ -14,5 +14,17 @@
   "theme_color": "#057473",
   "scope": "https://chat.google.com",
   "bx_legacy_service_id": "google-chat",
+  "extended_scopes": [
+    "https://*.googleusercontent.com"
+  ],
+  "bx_multi_instance_config": {
+    "preset": "google-account",
+    "presets": [
+      "google-account"
+    ],
+    "instance_wording": "account",
+    "instance_label_tpl": "{{email}}",
+    "start_url_tpl": "https://accounts.google.com/AddSession?passive=true&Email={{userIdentity.profileData.email}}&continue=https://chat.google.com/chat/u/{{userIdentity.profileData.email}}"
+  },
   "bx_override_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36"
 }
