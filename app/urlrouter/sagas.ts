@@ -19,8 +19,16 @@ import { navigateTabToURL, changeHashAndNavigateToTab } from '../tab-webcontents
 import { setCursorIcon } from '../ui/duck';
 import { getCursorIcon } from '../ui/selectors';
 import { callService, takeEveryWitness, tryCatch } from '../utils/sagas';
-import { DispatchUrlOptions } from './constants';
 import { ApplicationItem, URLRouterAction, URLRouterActionAndDestination } from './types';
+import { BrowserWindowService } from '../services/services/browser-window/interface';
+import services from '../services/servicesManager';
+import { RPC } from '../services/lib/types';
+import { service } from 'app/services/lib/decorator';
+
+export type DispatchUrlOptions = {
+  afterFollowingRedirects?: boolean,
+  originalUrl?: string,
+};
 
 const queue = new Set();
 const followRedirectsTimeout = 3000;
@@ -62,7 +70,9 @@ export function* dispatchUrlSaga(
 
   const [action, destination]: URLRouterActionAndDestination = yield call([router, router.routeURL], url, origin!, options!);
 
-  if (process.env.NODE_ENV !== 'test') log.debug('[dispatch url]', url, origin, options, action, destination);
+  if (process.env.NODE_ENV !== 'test') {
+    log.debug('[dispatch url]', url, 'origin:', origin, 'options:', options, 'action: ', action, 'destination:', destination);
+  }
 
   if (action === URLRouterAction.DEFAULT_BROWSER && !afterFollowingRedirects) {
     const urlFromRedirects = yield call(urlFromRedirections, dispatch);
@@ -102,7 +112,29 @@ function* triggerCorrespondingAction(
       // dispatch(executeWebviewMethod(destination, 'reload'));
       break;
     case URLRouterAction.DEFAULT_BROWSER:
-      remote.shell.openExternal(url);
+      if (!options || !options.loadInBackground) {
+        remote.shell.openExternal(url)
+      }
+      else {
+        services.browserWindow.getFocusedWindow()
+          .then(lastFocusedWindow => {
+            if (lastFocusedWindow) {
+              lastFocusedWindow.setAlwaysOnTop(true)
+                .then(() => remote.shell.openExternal(url)
+                  .then(() => setTimeout(() => {
+                      lastFocusedWindow.show();
+                      lastFocusedWindow.setAlwaysOnTop(false);
+                    }, 
+                    100) //vk: I can't explain why, but without this timeout, open in background doesn't work
+                  )
+                );
+            }
+            else {
+              log.info('Focused window is empty');
+              remote.shell.openExternal(url);
+            }
+          });
+      }
       break;
     case URLRouterAction.NAV_TO_TAB:
       yield put(navigateToApplicationTabAutomatically(destination.tabId));
