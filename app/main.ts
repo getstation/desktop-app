@@ -92,8 +92,6 @@ const loadCliWindow = async (command: string) => {
 const initWorker = () => {
   app.on('ready', () => {
 
-    enhanceSession(session.defaultSession);
-
     loadWorker();
 
     if (module.hot) {
