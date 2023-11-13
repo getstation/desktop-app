@@ -48,6 +48,8 @@ jobs:
           cache: "yarn"
       - name: Configure Node
         run: |
+          # npm v9 doesn't allow custom config parameters (i.e. node_gyp) anymode, so we have to downgrade it to v8
+          npm install -g npm@8  
           npm install -g node-gyp@latest
           npm config set node_gyp $(npm prefix -g)/lib/node_modules/node-gyp/bin/node-gyp.js
       - name: GQL Codegen
