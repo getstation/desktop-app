@@ -32,11 +32,9 @@ module.exports = (env = {}) => {
   const isSourceMap = !!env.sourceMap || isDev;
   const envConfig = require('./' + (isDev ? 'development' : 'production') + '.config.js');
 
-  // console.
-
   return {
     cache: true,
-    devtool: 'source-map', // isDev ? 'eval-source-map' : 'source-map',
+    devtool: isDev ? 'eval-source-map' : false,
     devServer: DEV_SERVER,
 
     context: PATHS.root,
@@ -146,7 +144,7 @@ module.exports = (env = {}) => {
         cacheGroups: {
           vendor: {
               test: /[\\/]node_modules[\\/]/,
-              name: 'vendors',
+              name: 'vendor',
               enforce: true,
               chunks: 'all'
           }
@@ -155,13 +153,6 @@ module.exports = (env = {}) => {
     },
     plugins: [
       new webpack.DefinePlugin(envConfig),
-      // new webpack.optimize.CommonsChunkPlugin({
-      //   name: 'vendor',
-      //   minChunks: (module) => module.context && module.context.indexOf('node_modules') !== -1,
-      // }),
-      // new webpack.optimize.CommonsChunkPlugin({
-      //   name: 'manifest',
-      // }),
       new CopyWebPackPlugin([
         { context: './src/static/', from: './**/*', to: 'static' }
       ]),
@@ -174,24 +165,6 @@ module.exports = (env = {}) => {
           // multiStep: true, // better performance with many files
         }),
       ] : []),
-      // ...(isBuild ? [
-      //   new UglifyJsPlugin({
-      //     uglifyOptions: {
-      //       output: { comments: false },
-      //       mangle: false,
-      //       compress: {
-      //         sequences: true,
-      //         dead_code: true,
-      //         conditionals: true,
-      //         booleans: true,
-      //         unused: true,
-      //         if_return: true,
-      //         join_vars: true,
-      //         drop_console: false
-      //       },
-      //     }
-      //   }),
-      // ] : []),
     ]
   };
 };

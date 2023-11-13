@@ -156,7 +156,7 @@
     "concurrently": "^4.1.1",
     "cross-env": "^6.0.3",
     "css-loader": "^3.2.1",
-    "electron": "25.8.2",
+    "electron": "25.9.4",
     "electron-builder": "^24.6.4",
     "electron-mocha": "^8.1.0",
     "electron-webpack": "^2.8.2",

@@ -22,5 +22,7 @@ module.exports = (config) => {
     config.devtool = 'source-map';
   }
 
+  config.target = 'electron-main';
+
   return config;
 };
