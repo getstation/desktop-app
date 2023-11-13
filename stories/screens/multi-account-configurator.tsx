@@ -38,7 +38,7 @@ const windowBxOverrideForGDrive = () => {
     },
     manifest: {
       async getManifest() {
-        return JSON.parse('{"name":"Google Drive","start_url":"https://drive.google.com/drive/{{#if moreThanOneIdentity}}u/{{userIdentity.profileData.email}}{{/if}}","icons":[{"src":"https://cdn.filestackcontent.com/J4MAUo7LRZm2fhyp6X0f","platform":"browserx"}],"theme_color":"#FCCD48","scope":"https://drive.google.com","extended_scopes":["https://docs.google.com","https://drive.google.com"],"bx_use_native_window_open_on_host":true,"bx_legacy_service_id":"gdrive-mu","bx_multi_instance_config":{"presets":["google-account"],"instance_wording":"account","instance_label_tpl":"{{email}}","start_url_tpl":"https://drive.google.com/drive/{{#if moreThanOneIdentity}}u/{{userIdentity.profileData.email}}{{/if}}"}}');
+        return JSON.parse('{"name":"Google Drive","start_url":"https://drive.google.com/drive/{{#if moreThanOneIdentity}}u/{{userIdentity.profileData.email}}{{/if}}","icons":[{"src":"https://cdn.filestackcontent.com/J4MAUo7LRZm2fhyp6X0f","platform":"browserx"}],"theme_color":"#FCCD48","scope":"https://drive.google.com","extended_scopes":["https://docs.google.com","https://drive.google.com"],"bx_legacy_service_id":"gdrive-mu","bx_multi_instance_config":{"presets":["google-account"],"instance_wording":"account","instance_label_tpl":"{{email}}","start_url_tpl":"https://drive.google.com/drive/{{#if moreThanOneIdentity}}u/{{userIdentity.profileData.email}}{{/if}}"}}');
       },
     },
     identities: {

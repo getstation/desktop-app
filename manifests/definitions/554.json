@@ -13,7 +13,6 @@
   ],
   "theme_color": "#2F4357",
   "scope": "https://www.tumblr.com",
-  "bx_use_native_window_open_on_host": true,
   "bx_legacy_service_id": "tumblr",
   "extended_scopes": [
     "https://tumblr.com"

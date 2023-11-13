@@ -10,7 +10,6 @@
   ],
   "theme_color": "#FCCD48",
   "scope": "https://drive.google.com",
-  "bx_use_native_window_open_on_host": true,
   "bx_legacy_service_id": "gdrive-mu",
   "extended_scopes": [
     "https://docs.google.com",

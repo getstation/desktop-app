@@ -10,7 +10,6 @@
   ],
   "theme_color": "#499AFF",
   "scope": "https://clearbit.com",
-  "bx_use_native_window_open_on_host": true,
   "bx_legacy_service_id": "clearbit-connect",
   "extended_scopes": [
     "https://*.clearbit.com"
