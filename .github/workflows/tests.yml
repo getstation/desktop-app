@@ -47,6 +47,7 @@ jobs:
       - name: Configure Node
         run: |
           npm install -g node-gyp@latest
+          npm config set node_gyp $(npm prefix -g)/lib/node_modules/node-gyp/bin/node-gyp.js
       - name: Install dependencies
         run: yarn install --frozen-lockfile --prefer-offline && yarn run rebuild-all-native
       - name: GQL Codegen
