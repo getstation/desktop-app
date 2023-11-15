@@ -48,6 +48,8 @@ module.exports = (config) => {
   // console.log(require('util').inspect(config, { depth: 8 }));
   mutateWebpackConfig(config);
 
+  config.target = 'electron-renderer';
+
   config.plugins = config.plugins.map((plugin) => {
     // default HtmlWebpackPlugin should be the worker
     if (plugin.constructor.name === 'HtmlWebpackPlugin') {

@@ -11,7 +11,6 @@
   "theme_color": "#205081",
   "scope": "https://inbox.google.com",
   "bx_keep_always_loaded": true,
-  "bx_use_native_window_open_on_host": true,
   "bx_single_page": true,
   "bx_legacy_service_id": "google-inbox",
   "bx_multi_instance_config": {

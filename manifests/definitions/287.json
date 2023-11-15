@@ -10,7 +10,6 @@
   ],
   "theme_color": "#E63A36",
   "scope": "https://gmelius.io",
-  "bx_use_native_window_open_on_host": true,
   "bx_legacy_service_id": "gmelius",
   "import": [
     {
