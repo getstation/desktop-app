@@ -25,6 +25,5 @@
     "instance_wording": "account",
     "instance_label_tpl": "{{email}}",
     "start_url_tpl": "https://accounts.google.com/AddSession?passive=true&Email={{userIdentity.profileData.email}}&continue=https://chat.google.com/chat/u/{{userIdentity.profileData.email}}"
-  },
-  "bx_override_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36"
+  }
 }
