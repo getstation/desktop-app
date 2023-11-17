@@ -211,11 +211,7 @@ class DockImpl extends React.PureComponent {
 
   onIconOverStateChange = memoize(applicationId => isOver => {
     clearTimeout(this.timeoutIcon);
-    if (isOver) {
-      this.timeoutIcon = setTimeout(() => {
-        this.setState({ overIcon: true, applicationId });
-      }, 300);
-    } else {
+    if (!isOver) {
       this.timeoutIcon = setTimeout(() => {
         this.setState({ overIcon: false });
       }, 150);
@@ -432,6 +428,10 @@ class DockImpl extends React.PureComponent {
     }
   });
 
+  handleRightClickDockItem = memoize(applicationId => () => {
+    this.setState({ overIcon: true, applicationId });
+  });
+
   handleClickDock = () => {
     const { isSettingsVisible, closeSettings } = this.props;
     if (isSettingsVisible) {
@@ -513,6 +513,7 @@ class DockImpl extends React.PureComponent {
                   logoURL={logoURL}
                   onOverStateChange={this.onIconOverStateChange(applicationId)}
                   onClick={this.handleClickDockItem(applicationId)}
+                  onRightClick={this.handleRightClickDockItem(applicationId)}
                   index={index}
                   moveIcon={this.handleMoveIcon}
                   showSubdock={this.isSubdockOpenForApplication(applicationId)}
