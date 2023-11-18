@@ -8,6 +8,7 @@ import { oc } from 'ts-optchain';
 import { withGetApplication, GetApplicationQuery } from '../queries@local.gql.generated';
 
 import AppDockIcon from './ConnectedAppDockIcon';
+import { on } from 'events';
 
 interface AppDockIconProps {
   applicationId: string,
@@ -18,6 +19,7 @@ interface AppDockIconProps {
   tabTitle: string,
   onOverStateChange: any,
   onClick: () => any,
+  onRightClick: () => any,
   dramaticEnter?: boolean,
 }
 
@@ -143,7 +145,7 @@ class DraggableAppDockIcon extends React.PureComponent<Props> {
     const {
       isDragging, connectDragSource, connectDropTarget, applicationId, active, badge, isInstanceLogoInDockIcon,
       logoURL, onOverStateChange, dramaticEnter,
-      onClick, iconRef,
+      onClick, onRightClick, iconRef,
     } = this.props;
 
     const opacity = isDragging ? 0 : undefined;
@@ -158,6 +160,7 @@ class DraggableAppDockIcon extends React.PureComponent<Props> {
           logoURL={logoURL}
           onOverStateChange={onOverStateChange}
           onClick={onClick}
+          onRightClick={onRightClick}
           iconRef={iconRef}
           dramaticEnter={dramaticEnter}
         />
