@@ -14,6 +14,7 @@ class DockItem extends React.PureComponent {
     logoURL: PropTypes.string.isRequired,
     onOverStateChange: PropTypes.func.isRequired,
     onClick: PropTypes.func.isRequired,
+    onRightClick: PropTypes.func.isRequired,
 
     index: PropTypes.number.isRequired,
     moveIcon: PropTypes.func.isRequired,
@@ -36,6 +37,7 @@ class DockItem extends React.PureComponent {
       logoURL,
       onOverStateChange,
       onClick,
+      onRightClick,
       manifestURL,
       index,
       moveIcon,
@@ -67,6 +69,7 @@ class DockItem extends React.PureComponent {
                   logoURL={logoURL}
                   onOverStateChange={onOverStateChange}
                   onClick={onClick}
+                  onRightClick={onRightClick}
                   manifestURL={manifestURL}
                   index={index}
                   moveIcon={moveIcon}
