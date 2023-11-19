@@ -551,11 +551,6 @@
       "manifestURL": "https://api.getstation.com/application-recipe/113/bxAppManifest.json"
     },
     {
-      "serviceId": "google-inbox",
-      "appStoreApplicationId": "recipe/114",
-      "manifestURL": "https://api.getstation.com/application-recipe/114/bxAppManifest.json"
-    },
-    {
       "serviceId": "google-hangouts",
       "appStoreApplicationId": "recipe/115",
       "manifestURL": "https://api.getstation.com/application-recipe/115/bxAppManifest.json"
@@ -799,11 +794,6 @@
       "serviceId": "uxpin",
       "appStoreApplicationId": "recipe/165",
       "manifestURL": "https://api.getstation.com/application-recipe/165/bxAppManifest.json"
-    },
-    {
-      "serviceId": "google-data-studio",
-      "appStoreApplicationId": "recipe/166",
-      "manifestURL": "https://api.getstation.com/application-recipe/166/bxAppManifest.json"
     },
     {
       "serviceId": "databox",
@@ -2459,11 +2449,6 @@
       "serviceId": "kayako",
       "appStoreApplicationId": "recipe/507",
       "manifestURL": "https://api.getstation.com/application-recipe/507/bxAppManifest.json"
-    },
-    {
-      "serviceId": "google-allo",
-      "appStoreApplicationId": "recipe/508",
-      "manifestURL": "https://api.getstation.com/application-recipe/508/bxAppManifest.json"
     },
     {
       "serviceId": "ora",

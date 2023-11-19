@@ -684,7 +684,7 @@ const TMP_MOST_POP_APPS = {
     {
       id: 'recipe/35',
       previousServiceId: 'google-adwords',
-      name: 'Google Adwords',
+      name: 'Google Ads',
       category: {
         name: 'Social Media & Advertising',
         __typename: 'ApplicationCategory',
@@ -1141,7 +1141,7 @@ const TMP_MOST_POP_APPS = {
     {
       id: 'recipe/246',
       previousServiceId: 'google-webmaster',
-      name: 'Google Webmaster',
+      name: 'Google Search Central',
       category: {
         name: 'Admin & Back-office',
         __typename: 'ApplicationCategory',
@@ -1152,26 +1152,6 @@ const TMP_MOST_POP_APPS = {
       isChromeExtension: false,
       bxAppManifestURL:
         'http://localhost:4001/application-recipe/246/bxAppManifest.json',
-      isPrivate: null,
-      isPreconfigurable: false,
-      preconfigurations: null,
-      __typename: 'Application',
-    },
-    {
-      id: 'recipe/114',
-      previousServiceId: 'google-inbox',
-      name: 'Google Inbox',
-      category: {
-        name: 'Communication & Collaboration',
-        __typename: 'ApplicationCategory',
-      },
-      themeColor: '#205081',
-      iconURL: 'https://cdn.filestackcontent.com/Xtg0cw5R8si2i2goOHwr',
-      startURL:
-        'https://inbox.google.com/{{#if moreThanOneIdentity}}u/{{userIdentity.profileData.email}}{{/if}}',
-      isChromeExtension: false,
-      bxAppManifestURL:
-        'http://localhost:4001/application-recipe/114/bxAppManifest.json',
       isPrivate: null,
       isPreconfigurable: false,
       preconfigurations: null,
@@ -1638,14 +1618,14 @@ const TMP_MOST_POP_APPS = {
     {
       id: 'recipe/35',
       previousServiceId: 'google-adwords',
-      name: 'Google Adwords',
+      name: 'Google Ads',
       category: {
         name: 'Social Media & Advertising',
         __typename: 'ApplicationCategory',
       },
       themeColor: '#4285F4',
       iconURL: 'https://cdn.filestackcontent.com/Pb8eVvJESNmyqDWYrTG5',
-      startURL: 'https://adwords.google.com/um/Welcome/Home?',
+      startURL: 'https://ads.google.com/aw/overview',
       isChromeExtension: false,
       bxAppManifestURL:
         'http://localhost:4001/application-recipe/35/bxAppManifest.json',
@@ -2095,7 +2075,7 @@ const TMP_MOST_POP_APPS = {
     {
       id: 'recipe/246',
       previousServiceId: 'google-webmaster',
-      name: 'Google Webmaster',
+      name: 'Google Search Central',
       category: {
         name: 'Admin & Back-office',
         __typename: 'ApplicationCategory',
@@ -2106,26 +2086,6 @@ const TMP_MOST_POP_APPS = {
       isChromeExtension: false,
       bxAppManifestURL:
         'http://localhost:4001/application-recipe/246/bxAppManifest.json',
-      isPrivate: null,
-      isPreconfigurable: false,
-      preconfigurations: null,
-      __typename: 'Application',
-    },
-    {
-      id: 'recipe/114',
-      previousServiceId: 'google-inbox',
-      name: 'Google Inbox',
-      category: {
-        name: 'Communication & Collaboration',
-        __typename: 'ApplicationCategory',
-      },
-      themeColor: '#205081',
-      iconURL: 'https://cdn.filestackcontent.com/Xtg0cw5R8si2i2goOHwr',
-      startURL:
-        'https://inbox.google.com/{{#if moreThanOneIdentity}}u/{{userIdentity.profileData.email}}{{/if}}',
-      isChromeExtension: false,
-      bxAppManifestURL:
-        'http://localhost:4001/application-recipe/114/bxAppManifest.json',
       isPrivate: null,
       isPreconfigurable: false,
       preconfigurations: null,
