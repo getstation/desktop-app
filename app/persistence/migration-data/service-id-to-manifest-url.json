@@ -156,11 +156,6 @@
       "manifestURL": "https://api.getstation.com/application-recipe/30/bxAppManifest.json"
     },
     {
-      "serviceId": "wunderlist",
-      "appStoreApplicationId": "recipe/31",
-      "manifestURL": "https://api.getstation.com/application-recipe/31/bxAppManifest.json"
-    },
-    {
       "serviceId": "spendesk",
       "appStoreApplicationId": "recipe/32",
       "manifestURL": "https://api.getstation.com/application-recipe/32/bxAppManifest.json"
@@ -259,11 +254,6 @@
       "serviceId": "bufferapp",
       "appStoreApplicationId": "recipe/51",
       "manifestURL": "https://api.getstation.com/application-recipe/51/bxAppManifest.json"
-    },
-    {
-      "serviceId": "logmatic",
-      "appStoreApplicationId": "recipe/52",
-      "manifestURL": "https://api.getstation.com/application-recipe/52/bxAppManifest.json"
     },
     {
       "serviceId": "salesmachine",
@@ -666,11 +656,6 @@
       "manifestURL": "https://api.getstation.com/application-recipe/134/bxAppManifest.json"
     },
     {
-      "serviceId": "flowdock",
-      "appStoreApplicationId": "recipe/135",
-      "manifestURL": "https://api.getstation.com/application-recipe/135/bxAppManifest.json"
-    },
-    {
       "serviceId": "devdocs",
       "appStoreApplicationId": "recipe/136",
       "manifestURL": "https://api.getstation.com/application-recipe/136/bxAppManifest.json"
@@ -796,11 +781,6 @@
       "manifestURL": "https://api.getstation.com/application-recipe/160/bxAppManifest.json"
     },
     {
-      "serviceId": "teamweek",
-      "appStoreApplicationId": "recipe/161",
-      "manifestURL": "https://api.getstation.com/application-recipe/161/bxAppManifest.json"
-    },
-    {
       "serviceId": "airtable",
       "appStoreApplicationId": "recipe/162",
       "manifestURL": "https://api.getstation.com/application-recipe/162/bxAppManifest.json"
@@ -884,11 +864,6 @@
       "serviceId": "instapage",
       "appStoreApplicationId": "recipe/178",
       "manifestURL": "https://api.getstation.com/application-recipe/178/bxAppManifest.json"
-    },
-    {
-      "serviceId": "talkus",
-      "appStoreApplicationId": "recipe/179",
-      "manifestURL": "https://api.getstation.com/application-recipe/179/bxAppManifest.json"
     },
     {
       "serviceId": "tribe",
@@ -1014,11 +989,6 @@
       "serviceId": "chatfuel",
       "appStoreApplicationId": "recipe/204",
       "manifestURL": "https://api.getstation.com/application-recipe/204/bxAppManifest.json"
-    },
-    {
-      "serviceId": "nuage",
-      "appStoreApplicationId": "recipe/205",
-      "manifestURL": "https://api.getstation.com/application-recipe/205/bxAppManifest.json"
     },
     {
       "serviceId": "wrike",
@@ -1151,11 +1121,6 @@
       "manifestURL": "https://api.getstation.com/application-recipe/231/bxAppManifest.json"
     },
     {
-      "serviceId": "natero",
-      "appStoreApplicationId": "recipe/232",
-      "manifestURL": "https://api.getstation.com/application-recipe/232/bxAppManifest.json"
-    },
-    {
       "serviceId": "onepagecrm",
       "appStoreApplicationId": "recipe/233",
       "manifestURL": "https://api.getstation.com/application-recipe/233/bxAppManifest.json"
@@ -1199,11 +1164,6 @@
       "serviceId": "codecov",
       "appStoreApplicationId": "recipe/241",
       "manifestURL": "https://api.getstation.com/application-recipe/241/bxAppManifest.json"
-    },
-    {
-      "serviceId": "communicatorcorp",
-      "appStoreApplicationId": "recipe/242",
-      "manifestURL": "https://api.getstation.com/application-recipe/242/bxAppManifest.json"
     },
     {
       "serviceId": "drift",
@@ -1536,11 +1496,6 @@
       "manifestURL": "https://api.getstation.com/application-recipe/308/bxAppManifest.json"
     },
     {
-      "serviceId": "roadmap",
-      "appStoreApplicationId": "recipe/309",
-      "manifestURL": "https://api.getstation.com/application-recipe/309/bxAppManifest.json"
-    },
-    {
       "serviceId": "facebook-messenger",
       "appStoreApplicationId": "recipe/310",
       "manifestURL": "https://api.getstation.com/application-recipe/310/bxAppManifest.json"
@@ -1549,11 +1504,6 @@
       "serviceId": "instant-magazine",
       "appStoreApplicationId": "recipe/311",
       "manifestURL": "https://api.getstation.com/application-recipe/311/bxAppManifest.json"
-    },
-    {
-      "serviceId": "diffeo",
-      "appStoreApplicationId": "recipe/312",
-      "manifestURL": "https://api.getstation.com/application-recipe/312/bxAppManifest.json"
     },
     {
       "serviceId": "getsitecontrol",
@@ -1629,11 +1579,6 @@
       "serviceId": "visible",
       "appStoreApplicationId": "recipe/327",
       "manifestURL": "https://api.getstation.com/application-recipe/327/bxAppManifest.json"
-    },
-    {
-      "serviceId": "nereo",
-      "appStoreApplicationId": "recipe/328",
-      "manifestURL": "https://api.getstation.com/application-recipe/328/bxAppManifest.json"
     },
     {
       "serviceId": "wistia",
@@ -1779,16 +1724,6 @@
       "serviceId": "moodo",
       "appStoreApplicationId": "recipe/358",
       "manifestURL": "https://api.getstation.com/application-recipe/358/bxAppManifest.json"
-    },
-    {
-      "serviceId": "graphcool",
-      "appStoreApplicationId": "recipe/359",
-      "manifestURL": "https://api.getstation.com/application-recipe/359/bxAppManifest.json"
-    },
-    {
-      "serviceId": "webtask",
-      "appStoreApplicationId": "recipe/360",
-      "manifestURL": "https://api.getstation.com/application-recipe/360/bxAppManifest.json"
     },
     {
       "serviceId": "complice",
@@ -2054,11 +1989,6 @@
       "serviceId": "dynalist",
       "appStoreApplicationId": "recipe/412",
       "manifestURL": "https://api.getstation.com/application-recipe/412/bxAppManifest.json"
-    },
-    {
-      "serviceId": "stride",
-      "appStoreApplicationId": "recipe/413",
-      "manifestURL": "https://api.getstation.com/application-recipe/413/bxAppManifest.json"
     },
     {
       "serviceId": "lever",
@@ -2379,11 +2309,6 @@
       "serviceId": "ahrefs",
       "appStoreApplicationId": "recipe/476",
       "manifestURL": "https://api.getstation.com/application-recipe/476/bxAppManifest.json"
-    },
-    {
-      "serviceId": "sleekr",
-      "appStoreApplicationId": "recipe/477",
-      "manifestURL": "https://api.getstation.com/application-recipe/477/bxAppManifest.json"
     },
     {
       "serviceId": "amazon",
@@ -2934,11 +2859,6 @@
       "serviceId": "notejoy",
       "appStoreApplicationId": "recipe/587",
       "manifestURL": "https://api.getstation.com/application-recipe/587/bxAppManifest.json"
-    },
-    {
-      "serviceId": "fullcontact",
-      "appStoreApplicationId": "recipe/588",
-      "manifestURL": "https://api.getstation.com/application-recipe/588/bxAppManifest.json"
     },
     {
       "serviceId": "freeagent",

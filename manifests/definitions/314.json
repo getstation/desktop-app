@@ -1,7 +1,7 @@
 {
   "name": "Wedo",
   "category": "Task & Project Management",
-  "start_url": "https://app.wedo.com/",
+  "start_url": "https://login.wedo.swiss/",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/hMddW4zNQtyeEQPrPtFR",
@@ -9,6 +9,6 @@
     }
   ],
   "theme_color": "#00BFFF",
-  "scope": "https://app.wedo.com",
+  "scope": "https://*.wedo.swiss/",
   "bx_legacy_service_id": "wedo"
 }

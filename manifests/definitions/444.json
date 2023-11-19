@@ -1,7 +1,7 @@
 {
   "name": "Relay by Goboomtown",
   "category": "Communication & Collaboration",
-  "start_url": "https://app.thinkrelay.com/",
+  "start_url": "https://app.goboomtown.com/",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/QkU0JKYTgQd6BWhmnGEA"
@@ -12,9 +12,6 @@
     }
   ],
   "theme_color": "#4a74b4",
-  "scope": "https://app.thinkrelay.com",
-  "bx_legacy_service_id": "goboomtown-relay",
-  "extended_scopes": [
-    "https://relay.goboomtown.com"
-  ]
+  "scope": "https://app.goboomtown.com/",
+  "bx_legacy_service_id": "goboomtown-relay"
 }

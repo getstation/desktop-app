@@ -625,25 +625,6 @@ const TMP_MOST_POP_APPS = {
       __typename: 'Application',
     },
     {
-      id: 'recipe/31',
-      previousServiceId: 'wunderlist',
-      name: 'Wunderlist',
-      category: {
-        name: 'Task & Project Management',
-        __typename: 'ApplicationCategory',
-      },
-      themeColor: '#E94027',
-      iconURL: 'https://cdn.filestackcontent.com/vzqaMOmpQOCizweWjdHD',
-      startURL: 'https://www.wunderlist.com/login?redirect_url=/webapp',
-      isChromeExtension: false,
-      bxAppManifestURL:
-        'http://localhost:4001/application-recipe/31/bxAppManifest.json',
-      isPrivate: null,
-      isPreconfigurable: false,
-      preconfigurations: null,
-      __typename: 'Application',
-    },
-    {
       id: 'recipe/23',
       previousServiceId: 'intercom',
       name: 'Intercom',
@@ -1592,25 +1573,6 @@ const TMP_MOST_POP_APPS = {
       isChromeExtension: false,
       bxAppManifestURL:
         'http://localhost:4001/application-recipe/379/bxAppManifest.json',
-      isPrivate: null,
-      isPreconfigurable: false,
-      preconfigurations: null,
-      __typename: 'Application',
-    },
-    {
-      id: 'recipe/31',
-      previousServiceId: 'wunderlist',
-      name: 'Wunderlist',
-      category: {
-        name: 'Task & Project Management',
-        __typename: 'ApplicationCategory',
-      },
-      themeColor: '#E94027',
-      iconURL: 'https://cdn.filestackcontent.com/vzqaMOmpQOCizweWjdHD',
-      startURL: 'https://www.wunderlist.com/login?redirect_url=/webapp',
-      isChromeExtension: false,
-      bxAppManifestURL:
-        'http://localhost:4001/application-recipe/31/bxAppManifest.json',
       isPrivate: null,
       isPreconfigurable: false,
       preconfigurations: null,
