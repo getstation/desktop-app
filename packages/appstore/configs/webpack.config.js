@@ -2,7 +2,7 @@ require('./webpack.monkeypatch-crypto');
 
 const path = require('path');
 const webpack = require('webpack');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebPackPlugin = require('copy-webpack-plugin');
 
@@ -34,7 +34,7 @@ module.exports = (env = {}) => {
 
   return {
     cache: true,
-    devtool: isDev ? 'eval-source-map' : 'source-map',
+    devtool: isDev ? 'eval-source-map' : false,
     devServer: DEV_SERVER,
 
     context: PATHS.root,
@@ -44,9 +44,13 @@ module.exports = (env = {}) => {
         './src/index.tsx',
       ],
     },
+
+    target: 'electron-renderer',
+
     output: {
       path: PATHS.dist,
       filename: isDev ? '[name].js' : '[name].[hash].js',
+      sourceMapFilename: isDev ? '[name].js.map' : '[name].[hash].js.map',
       publicPath: '',
     },
 
@@ -109,20 +113,46 @@ module.exports = (env = {}) => {
         },
       ],
     },
-    // optimization: {
-    //   splitChunks: {
-    //     https://webpack.js.org/plugins/split-chunks-plugin/
-    //   }
-    // },
+    optimization: {
+      ...(isBuild ? {
+            minimizer: [
+              new TerserPlugin({
+                terserOptions: {
+                  comments: false,
+                  ecma: undefined,
+                  warnings: false,
+                  parse: {},
+                  compress: false,
+                  mangle: true,
+                  module: false,
+                  output: { comments: false },
+                  toplevel: false,
+                  nameCache: null,
+                  ie8: false,
+                  keep_classnames: true,
+                  keep_fnames: true,
+                  safari10: false,
+                },
+                sourceMap: true,
+                parallel: true,
+              }),
+            ]
+          } : {}),
+      runtimeChunk: 'single',
+      splitChunks: {
+        // https://webpack.js.org/plugins/split-chunks-plugin/
+        cacheGroups: {
+          vendor: {
+              test: /[\\/]node_modules[\\/]/,
+              name: 'vendor',
+              enforce: true,
+              chunks: 'all'
+          }
+        }
+      },
+    },
     plugins: [
       new webpack.DefinePlugin(envConfig),
-      // new webpack.optimize.CommonsChunkPlugin({
-      //   name: 'vendor',
-      //   minChunks: (module) => module.context && module.context.indexOf('node_modules') !== -1,
-      // }),
-      // new webpack.optimize.CommonsChunkPlugin({
-      //   name: 'manifest',
-      // }),
       new CopyWebPackPlugin([
         { context: './src/static/', from: './**/*', to: 'static' }
       ]),
@@ -133,29 +163,6 @@ module.exports = (env = {}) => {
       ...(isDev ? [
         new webpack.HotModuleReplacementPlugin({
           // multiStep: true, // better performance with many files
-        }),
-        new webpack.NamedModulesPlugin(),
-      ] : []),
-      ...(isBuild ? [
-        new webpack.LoaderOptionsPlugin({
-          minimize: true,
-          debug: false
-        }),
-        new UglifyJsPlugin({
-          uglifyOptions: {
-            output: { comments: false },
-            mangle: false,
-            compress: {
-              sequences: true,
-              dead_code: true,
-              conditionals: true,
-              booleans: true,
-              unused: true,
-              if_return: true,
-              join_vars: true,
-              drop_console: false
-            },
-          }
         }),
       ] : []),
     ]

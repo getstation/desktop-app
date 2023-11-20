@@ -10,6 +10,5 @@
   ],
   "theme_color": "#DC4B3E",
   "scope": "https://maps.google.com",
-  "bx_legacy_service_id": "googlemaps",
-  "bx_override_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36 Edge/80.0.361.62"
+  "bx_legacy_service_id": "googlemaps"
 }

@@ -10,7 +10,6 @@
   ],
   "theme_color": "#094AB1",
   "scope": "https://onedrive.live.com",
-  "bx_use_native_window_open_on_host": true,
   "bx_legacy_service_id": "onedrive",
   "recommendedPosition": "29"
 }

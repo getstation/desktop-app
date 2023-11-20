@@ -14,6 +14,5 @@
   "theme_color": "#4c8cf4",
   "scope": "https://translate.google.com",
   "bx_legacy_service_id": "google-translate",
-  "bx_override_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36 Edge/80.0.361.62",
   "recommendedPosition": "26"
 }

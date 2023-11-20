@@ -10,7 +10,7 @@
   "main": "dist/app.js",
   "scripts": {
     "build": "yarn run build:app && yarn run build:storybook",
-    "build:app": "yarn run clean && yarn run gql-gen && cross-env NODE_OPTIONS=--openssl-legacy-provider webpack --config configs/webpack.config.js --env build --env ssourceMap",
+    "build:app": "yarn run clean && yarn run gql-gen && cross-env NODE_OPTIONS=--openssl-legacy-provider webpack --config configs/webpack.config.js --env.build",
     "build:storybook": "yarn run gql-gen && cross-env NODE_ENV=storybook NODE_OPTIONS=--openssl-legacy-provider build-storybook -o dist/__storybook --quiet ",
     "clean": "rimraf dist storybook-static",
     "dev": "yarn run gql-gen && webpack-dev-server --config configs/webpack.config.js --open --mode=development",
@@ -114,10 +114,10 @@
     "rimraf": "^3.0.0",
     "storybook-react-router": "^1.0.8",
     "svg-inline-loader": "^0.8.2",
+    "terser-webpack-plugin": "^4.2.3",
     "ts-jest": "^24.3.0",
     "ts-loader": "^6.2.1",
     "typescript": "^3.9.4",
-    "uglifyjs-webpack-plugin": "^1.3.0",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^4.15.1"

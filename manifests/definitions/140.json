@@ -10,7 +10,6 @@
   ],
   "theme_color": "#0070C9",
   "scope": "https://outlook.live.com",
-  "bx_use_native_window_open_on_host": true,
   "bx_legacy_service_id": "outlook",
   "recommendedPosition": "12"
 }

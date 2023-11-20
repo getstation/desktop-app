@@ -10,7 +10,6 @@
   ],
   "theme_color": "#E64229",
   "scope": "https://todoist.com",
-  "bx_use_native_window_open_on_host": true,
   "bx_legacy_service_id": "todoist",
   "recommendedPosition": "30"
 }
