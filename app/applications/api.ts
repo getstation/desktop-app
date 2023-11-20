@@ -28,7 +28,7 @@ export async function getManifestOrTimeout(appWorker: BrowserXAppWorker | IManif
 
   const manifest = await BluebirdPromise.resolve(
     $firstManifest.toPromise()
-  ).timeout(ms('30sec'), 'Could not get the manifest');
+  ).timeout(ms('30sec'), `Could not get the manifest ${manifestURL}`);
 
   return manifest.manifest;
 }
