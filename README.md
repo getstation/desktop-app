@@ -26,39 +26,40 @@
 ## Installation
 
 ### Requirements
-* node >= `12.4.x`
-* yarn >= `1.7.x`
+* node >= `18.x`
+* yarn >= `1.19.x`
 
 ```bash
 $ git clone https://github.com/getstation/desktop-app.git
-$ cd browserX
+$ cd desktop-app
 $ yarn
 ```
 
 ### MacOS
-Run this command from a terminal.
-This will avoid a security prompt at each start related to node-sass hot loader.
-```bash
-# if not already installed, install coreutils
-$ brew install coreutils
-# then execute firewall script
-$ dev_utils/firewall_osx.sh
-```
+
+No additional requirements.
 
 ### Windows
+
 Install `node-gyp` dependencies
+
 ```bash
 $ npm --add-python-to-path install --global --production windows-build-tools
 ```
 
 ### Ubuntu
+
 ```bash
 $ sudo apt install graphicsmagick icnsutils libxtst-dev libx11-dev libxrender-dev libxkbfile-dev libgconf-2-4
 ```
 
 ### CentOS or Amazon Linux 2
+
+CentOS 9 is required.
+
 ```bash
-$ sudo yum install libX11-devel libXt-devel libXtst-devel xorg-x11-xkb-utils-devel libxkbcommon-x11-devel libxkbcommon-devel
+$ sudo yum install clang dbus-devel gtk3-devel libnotify-devel xorg-x11-server-utils libcap-devel \
+                   cups-devel libXtst-devel alsa-lib-devel libXrandr-devel nss-devel
 ```
 
 > See [dotenv](#dotenv) for further configuration.

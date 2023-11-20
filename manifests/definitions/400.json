@@ -1,7 +1,7 @@
 {
   "name": "Brain.fm",
   "category": "Miscellaneous",
-  "start_url": "https://www1.brain.fm/login",
+  "start_url": "https://my.brain.fm/signin",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/jz5vZOooQvWQwJDvs06z"
@@ -12,6 +12,6 @@
     }
   ],
   "theme_color": "#5c04e4",
-  "scope": "https://www1.brain.fm",
+  "scope": "https://*.brain.fm",
   "bx_legacy_service_id": "brainfm"
 }

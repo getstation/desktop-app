@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
-  <g fill="#FFF" transform="translate(16 15)">
-    <polygon points="30 30 0 30 0 0 30 0" opacity=".453"/>
-    <polygon points="30 30 6 30 6 6 30 6" opacity=".411"/>
-    <path d="M30,30 L6,30 L6,6 L30,6 L30,30 Z M24,24 L24,6 L6,6 L6,24 L24,24 Z" opacity=".661"/>
-    <polygon points="24 24 12 24 12 12 24 12" opacity=".349"/>
-    <polygon points="18 18 12 18 12 12 18 12"/>
-  </g>
-</svg>

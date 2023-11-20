@@ -11,9 +11,7 @@
   "theme_color": "#82B750",
   "scope": "https://hangouts.google.com",
   "bx_keep_always_loaded": true,
-  "bx_use_native_window_open_on_host": true,
   "bx_single_page": true,
   "bx_legacy_service_id": "google-hangouts",
-  "bx_override_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36 Edge/80.0.361.62",
-  "recommendedPosition": "24"
+  "bx_override_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36 Edge/80.0.361.62"
 }

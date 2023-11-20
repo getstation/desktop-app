@@ -28,6 +28,7 @@ export interface OwnProps {
   dramaticEnter?: boolean,
   onOverStateChange?: (newState: boolean) => void,
   onClick?: () => void,
+  onRightClick?: () => void,
   iconRef: (el: HTMLDivElement) => void,
 }
 
@@ -107,12 +108,13 @@ export class AppDockIcon extends React.PureComponent<Props> {
   handleMouseLeave = () => this.props.onOverStateChange!(false);
 
   renderSurroundingLink(element: JSX.Element): JSX.Element {
-    const { classes, onClick, iconRef } = this.props;
+    const { classes, onClick, onRightClick, iconRef } = this.props;
     return (
       <div ref={iconRef}>
         <a
           className={classes!.anchor}
           onClick={onClick}
+          onContextMenu={onRightClick}
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
         >
