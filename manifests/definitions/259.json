@@ -1,7 +1,7 @@
 {
   "name": "Solid",
   "category": "Communication & Collaboration",
-  "start_url": "https://solid.wisembly.com/login",
+  "start_url": "https://www.wisembly.com/en/",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/LOVvtRMQduhFjSiiSJ2Y",
@@ -9,6 +9,6 @@
     }
   ],
   "theme_color": "#3A434C",
-  "scope": "https://solid.wisembly.com",
+  "scope": "https://www.wisembly.com",
   "bx_legacy_service_id": "solid"
 }

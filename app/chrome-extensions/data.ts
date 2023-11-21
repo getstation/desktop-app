@@ -1,6 +1,5 @@
 import {
   GMAIL_MANIFEST_URL,
-  INBOX_MANIFEST_URL,
   SALESFORCE_MANIFEST_URL,
   MIXMAX_MANIFEST_URL,
   CLEARBIT_MANIFEST_URL,
@@ -14,7 +13,6 @@ export default [
     manifestURL: MIXMAX_MANIFEST_URL,
     extensionFor: [
       GMAIL_MANIFEST_URL,
-      INBOX_MANIFEST_URL,
       SALESFORCE_MANIFEST_URL,
     ],
   },
@@ -22,14 +20,12 @@ export default [
     manifestURL: CLEARBIT_MANIFEST_URL,
     extensionFor: [
       GMAIL_MANIFEST_URL,
-      INBOX_MANIFEST_URL,
     ],
   },
   {
     manifestURL: GMELIUS_MANIFEST_URL,
     extensionFor: [
       GMAIL_MANIFEST_URL,
-      INBOX_MANIFEST_URL,
       SALESFORCE_MANIFEST_URL,
     ],
   },
@@ -37,14 +33,12 @@ export default [
     manifestURL: MAILTRACKER_MANIFEST_URL,
     extensionFor: [
       GMAIL_MANIFEST_URL,
-      INBOX_MANIFEST_URL,
     ],
   },
   {
     manifestURL: BOOMERANG_MANIFEST_URL,
     extensionFor: [
       GMAIL_MANIFEST_URL,
-      INBOX_MANIFEST_URL,
     ],
   },
 ];

@@ -222,9 +222,6 @@ function callSendMessageCallbackWithError(responseCallback, errorMessage) {
 require('../../webui/preload');
 
 // Specifics
-if (window.location.hostname === 'www.wunderlist.com') {
-  require('./wunderlisthack');
-}
 if (window.location.hostname === 'www.messenger.com') {
   require('./messengerPreload');
 }

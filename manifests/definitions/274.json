@@ -1,7 +1,7 @@
 {
   "name": "Kissmetrics",
   "category": "Marketing & Analytics",
-  "start_url": "https://signin.kissmetrics.com/signin",
+  "start_url": "https://signin.kissmetrics.io/signin",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/oNFDyd1vQ8eaYsnTWohj",
@@ -9,6 +9,6 @@
     }
   ],
   "theme_color": "#4651FF",
-  "scope": "https://signin.kissmetrics.com",
+  "scope": "https://signin.kissmetrics.io",
   "bx_legacy_service_id": "kissmetrics"
 }
