@@ -24,8 +24,6 @@ jobs:
       #     npm config set node_gyp $(npm prefix -g)/lib/node_modules/node-gyp/bin/node-gyp.js
       - name: Install dependencies
         run: yarn install --frozen-lockfile && yarn run rebuild-all-native
-      - name: GQL Codegen
-        run: yarn run gql-gen
       - name: Build and Release
         run: yarn run release
 
@@ -52,8 +50,6 @@ jobs:
           npm install -g npm@8  
           npm install -g node-gyp@latest
           npm config set node_gyp $(npm prefix -g)/lib/node_modules/node-gyp/bin/node-gyp.js
-      - name: GQL Codegen
-        run: yarn run gql-gen
       - name: Build and Release
         run: yarn run release
 
@@ -82,7 +78,5 @@ jobs:
           yarn config set network-timeout 300000
       - name: Install dependencies
         run: yarn install --frozen-lockfile && yarn run rebuild-all-native
-      - name: GQL Codegen
-        run: yarn run gql-gen
       - name: Build and Release
         run: yarn run release
