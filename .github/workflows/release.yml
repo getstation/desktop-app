@@ -28,7 +28,7 @@ jobs:
         run: yarn run release
 
   MacOs:
-    runs-on: macos-latest
+    runs-on: macos-13
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
@@ -50,6 +50,8 @@ jobs:
           npm install -g npm@8  
           npm install -g node-gyp@latest
           npm config set node_gyp $(npm prefix -g)/lib/node_modules/node-gyp/bin/node-gyp.js
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile && yarn run rebuild-all-native
       - name: Build and Release
         run: yarn run release
 
