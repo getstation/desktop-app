@@ -1281,7 +1281,7 @@ const TMP_MOST_POP_APPS = {
       },
       themeColor: '#1E213F',
       iconURL: 'https://cdn.filestackcontent.com/kMqInOmTOuMJwO1VqlBA',
-      startURL: 'https://mail.protonmail.com',
+      startURL: 'https://mail.proton.me',
       isChromeExtension: false,
       bxAppManifestURL:
         'http://localhost:4001/application-recipe/550/bxAppManifest.json',
@@ -2215,7 +2215,7 @@ const TMP_MOST_POP_APPS = {
       },
       themeColor: '#1E213F',
       iconURL: 'https://cdn.filestackcontent.com/kMqInOmTOuMJwO1VqlBA',
-      startURL: 'https://mail.protonmail.com',
+      startURL: 'https://mail.proton.me',
       isChromeExtension: false,
       bxAppManifestURL:
         'http://localhost:4001/application-recipe/550/bxAppManifest.json',
