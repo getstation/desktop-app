@@ -1,7 +1,7 @@
 {
   "name": "Proton Mail",
   "category": "Communication & Collaboration",
-  "start_url": "https://mail.protonmail.com",
+  "start_url": "https://mail.proton.me",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/ekRf8BPoRdemQsR2UZMA"
@@ -12,11 +12,7 @@
     }
   ],
   "theme_color": "#1E213F",
-  "scope": "https://mail.protonmail.com",
+  "scope": "https://mail.proton.me",
   "bx_keep_always_loaded": true,
-  "bx_legacy_service_id": "protonmail",
-  "extended_scopes": [
-    "https://mail.protonmail.com",
-    "https://protonmail.com"
-  ]
+  "bx_legacy_service_id": "protonmail"
 }
