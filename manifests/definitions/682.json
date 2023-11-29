@@ -17,7 +17,8 @@
   "bx_multi_instance_config": {
     "preset": "subdomain",
     "presets": [
-      "subdomain"
+      "subdomain",
+      "on-premise"
     ],
     "instance_label_tpl": "{{subdomain}}.zulipchat.com",
     "start_url_tpl": "https://{{subdomain}}.zulipchat.com/",
