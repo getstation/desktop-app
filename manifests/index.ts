@@ -5,7 +5,7 @@ import { BxAppManifest } from '../app/applications/manifest-provider/bxAppManife
 import { ApplicationItem } from '../app/urlrouter/types';
 import { getPrivateApplicationById, getPrivateManifests } from './private';
 
-const reqSvg = require.context('!url-loader!./icons', true, /\.svg$/);
+const reqIcon = require.context('!url-loader!./icons', true, /\.(png|svg)$/);
 const reqManifest = require.context('./definitions', true, /\.json$/);
 
 export type Manifest = Omit<BxAppManifest, 'icons'> & { id: string, icon: string };
@@ -73,11 +73,15 @@ export function getApplicationById(id: string): Manifest {
     return getPrivateApplicationById(Number(id))!;
   }
 
-  const svgData: string = reqSvg(`./${id}.svg`).default;
+  const svgIconName = `./${id}.svg`;
+  const pngIconName = `./${id}.png`;
+  const iconData: string = reqIcon.keys().indexOf(svgIconName) >= 0
+                            ? reqIcon(svgIconName).default
+                            : reqIcon(pngIconName).default;
   const manifest: BxAppManifest = reqManifest(`./${id}.json`);
 
   delete manifest.icons;
-  (manifest as Manifest).icon = svgData;
+  (manifest as Manifest).icon = iconData;
   (manifest as Manifest).id = id;
 
   return manifest as Manifest;
