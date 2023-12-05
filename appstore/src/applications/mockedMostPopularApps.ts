@@ -1141,7 +1141,7 @@ const TMP_MOST_POP_APPS = {
     {
       id: 'recipe/246',
       previousServiceId: 'google-webmaster',
-      name: 'Google Search Central',
+      name: 'Google Search Console',
       category: {
         name: 'Admin & Back-office',
         __typename: 'ApplicationCategory',
@@ -2075,7 +2075,7 @@ const TMP_MOST_POP_APPS = {
     {
       id: 'recipe/246',
       previousServiceId: 'google-webmaster',
-      name: 'Google Search Central',
+      name: 'Google Search Console',
       category: {
         name: 'Admin & Back-office',
         __typename: 'ApplicationCategory',
