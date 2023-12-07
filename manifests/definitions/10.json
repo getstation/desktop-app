@@ -1,0 +1,14 @@
+{
+  "name": "ChatGPT",
+  "category": "Communication & Collaboration",
+  "start_url": "https://chat.openai.com/auth/login",
+  "icons": [
+    {
+      "src": "https://cdn.filestackcontent.com/qSWM6gNhTKWqRg843wIh",
+      "platform": "browserx"
+    }
+  ],
+  "theme_color": "#FFFFFF",
+  "scope": "https://chat.openai.com/",
+  "bx_legacy_service_id": "chatgpt"
+}
