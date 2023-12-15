@@ -243,7 +243,7 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
             noMenubar = falseValues.includes(value);
           }
           else if (key === 'popup') {
-            noMenubar = trueValues.includes(value);
+            popup = trueValues.includes(value);
           }
         }
       }
