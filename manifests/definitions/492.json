@@ -1,7 +1,7 @@
 {
   "name": "TrustYou",
   "category": "User Support & Survey",
-  "start_url": "http://www.trustyou.com/",
+  "start_url": "https://www.trustyou.com/",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/w94KxBT6R0qU4YEc46K5"
@@ -12,7 +12,7 @@
     }
   ],
   "theme_color": "#0494dc",
-  "scope": "http://www.trustyou.com",
+  "scope": "https://www.trustyou.com",
   "bx_legacy_service_id": "trustyou",
   "extended_scopes": [
     "https://trustyou.com"
