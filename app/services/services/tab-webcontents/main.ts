@@ -217,7 +217,8 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
    */
   isNewWindowForUserRequest(details: HandlerDetails): boolean {
 
-    if (details.url.startsWith('about:blank')) {
+    if (details.url.startsWith('about:blank')
+        || details.url.startsWith('https://accounts.google.com/o/oauth2/')) {
       return true;
     }
 
