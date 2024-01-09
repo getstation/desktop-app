@@ -1,7 +1,7 @@
 {
   "name": "Basecamp",
   "category": "Task & Project Management",
-  "start_url": "https://3.basecamp.com/sign_in",
+  "start_url": "https://launchpad.37signals.com/signin",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/sBL5CRfZQYqJwEdx7CPg",
@@ -9,6 +9,6 @@
     }
   ],
   "theme_color": "#66CC66",
-  "scope": "https://3.basecamp.com",
+  "scope": "https://launchpad.37signals.com",
   "bx_legacy_service_id": "basecamp"
 }
