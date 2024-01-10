@@ -10,5 +10,6 @@
   ],
   "theme_color": "#00ABF1",
   "scope": "https://tweetdeck.twitter.com",
-  "bx_legacy_service_id": "tweetdeck"
+  "bx_legacy_service_id": "tweetdeck",
+  "bx_isolated_session": true
 }

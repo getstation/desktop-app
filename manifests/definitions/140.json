@@ -11,5 +11,6 @@
   "theme_color": "#0070C9",
   "scope": "https://outlook.live.com",
   "bx_legacy_service_id": "outlook",
+  "bx_isolated_session": true,
   "recommendedPosition": "12"
 }

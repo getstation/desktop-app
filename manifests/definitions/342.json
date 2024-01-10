@@ -11,5 +11,6 @@
   "theme_color": "#094AB1",
   "scope": "https://onedrive.live.com",
   "bx_legacy_service_id": "onedrive",
+  "bx_isolated_session": true,
   "recommendedPosition": "29"
 }

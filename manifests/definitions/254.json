@@ -11,6 +11,7 @@
   "theme_color": "#C75B12",
   "scope": "https://www.office.com",
   "bx_legacy_service_id": "office-365",
+  "bx_isolated_session": true,
   "extended_scopes": [
     "https://office.live.com",
     "https://www.onenote.com",
