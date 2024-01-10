@@ -1,7 +1,7 @@
 {
   "name": "Finamatic",
   "category": "Accounting & Finance",
-  "start_url": "http://finamatic.fr",
+  "start_url": "https://finamatic.fr",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/y9OagSOoSP2Y0M8GFzh6",
@@ -9,6 +9,6 @@
     }
   ],
   "theme_color": "#507ABD",
-  "scope": "http://finamatic.fr",
+  "scope": "https://finamatic.fr",
   "bx_legacy_service_id": "finamatic"
 }

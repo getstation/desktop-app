@@ -2063,7 +2063,7 @@ const TMP_MOST_POP_APPS = {
       },
       themeColor: '#66CC66',
       iconURL: 'https://cdn.filestackcontent.com/sBL5CRfZQYqJwEdx7CPg',
-      startURL: 'https://3.basecamp.com/sign_in',
+      startURL: 'https://launchpad.37signals.com/signin',
       isChromeExtension: false,
       bxAppManifestURL:
         'http://localhost:4001/application-recipe/87/bxAppManifest.json',

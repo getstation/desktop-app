@@ -1,7 +1,7 @@
 {
   "name": "Amity",
   "category": "User Support & Survey",
-  "start_url": "http://app.getamity.com/",
+  "start_url": "https://app.getamity.com/",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/yzbIdohSWqUmPWbKMPax",
@@ -9,9 +9,6 @@
     }
   ],
   "theme_color": "#8BC542",
-  "scope": "http://app.getamity.com",
-  "bx_legacy_service_id": "amity",
-  "extended_scopes": [
-    "https://app.getamity.com"
-  ]
+  "scope": "https://app.getamity.com",
+  "bx_legacy_service_id": "amity"
 }
