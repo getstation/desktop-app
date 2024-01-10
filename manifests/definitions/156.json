@@ -20,5 +20,6 @@
     "instance_label_tpl": "{{email}}",
     "start_url_tpl": "https://keep.google.com/{{#if moreThanOneIdentity}}u/{{userIdentity.profileData.email}}{{/if}}"
   },
+  "bx_use_default_session": true,
   "recommendedPosition": "14"
 }

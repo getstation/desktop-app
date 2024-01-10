@@ -22,5 +22,6 @@
     "subdomain_title": "Facebook workplace domain",
     "subdomain_ui_help": "Enter your organization's Workplace domain.",
     "subdomain_ui_suffix": ".facebook.com"
-  }
+  },
+  "bx_use_default_session": true
 }

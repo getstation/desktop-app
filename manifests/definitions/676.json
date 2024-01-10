@@ -24,5 +24,6 @@
     "subdomain_title": "Jandi domain",
     "subdomain_ui_help": "Enter your Jandi domain",
     "subdomain_ui_suffix": ".jandi.com"
-  }
+  },
+  "bx_use_default_session": true
 }

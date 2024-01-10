@@ -28,5 +28,6 @@
     "subdomain_title": "Ryver domain",
     "subdomain_ui_help": "Enter your organization's Ryver domain.",
     "subdomain_ui_suffix": ".ryver.com"
-  }
+  },
+  "bx_use_default_session": true
 }

@@ -102,7 +102,7 @@ export interface OwnProps {
   applicationIcon: Maybe<string>,
   themeColor: Maybe<string>,
   notUseNativeWindowOpen: Maybe<boolean>,
-  isolatedSession: Maybe<boolean>,
+  useDefaultSession: Maybe<boolean>,
 
   appFocus: Maybe<number>,
   isOnline: Maybe<boolean>,
@@ -408,7 +408,7 @@ class ApplicationImpl extends React.PureComponent {
       crashed, errorCode, errorDescription,
       canGoBack, themeGradient, email,
       promptBasicAuth, performBasicAuth, basicAuthInfo,
-      isolatedSession,
+      useDefaultSession,
     } = this.props;
 
     return (
@@ -456,7 +456,7 @@ class ApplicationImpl extends React.PureComponent {
           allowpopups={true}
           loading={this.props.loading}
           webviewRef={this.setWebviewRef}
-          partition={isolatedSession ? `persist:${applicationId}` : ''}
+          partition={useDefaultSession ? '' : `persist:${applicationId}`}
           onPageTitleUpdated={this.handleTitleUpdated}
           onPageFaviconUpdated={this.handleFaviconUpdated}
           onDidStartLoading={this.handleDidStartLoading}
@@ -492,7 +492,7 @@ const Application = compose(
         applicationIcon: manifestData.interpretedIconURL(),
         themeColor: manifestData.theme_color(),
         notUseNativeWindowOpen: manifestData.bx_not_use_native_window_open_on_host(),
-        isolatedSession: manifestData.bx_isolated_session(),
+        useDefaultSession: manifestData.bx_use_default_session(),
 
         isOnline: stationStatus.isOnline(),
         appFocus: stationStatus.focus(),

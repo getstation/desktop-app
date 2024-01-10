@@ -12,6 +12,5 @@
   "scope": "https://web.telegram.org",
   "bx_keep_always_loaded": true,
   "bx_legacy_service_id": "telegram",
-  "bx_isolated_session": true,
   "recommendedPosition": "10"
 }

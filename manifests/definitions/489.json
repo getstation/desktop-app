@@ -25,5 +25,6 @@
     "subdomain_title": "FareHarbor domain",
     "subdomain_ui_help": "Enter your team's FareHarbor domain.",
     "subdomain_ui_suffix": ".fareharbor.com"
-  }
+  },
+  "bx_use_default_session": true
 }

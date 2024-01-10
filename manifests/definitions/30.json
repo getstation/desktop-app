@@ -22,5 +22,6 @@
     "subdomain_title": "Near subdomain",
     "subdomain_ui_help": "Enter your team's Near domain.",
     "subdomain_ui_suffix": ".nearcrm.com"
-  }
+  },
+  "bx_use_default_session": true
 }

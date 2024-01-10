@@ -27,5 +27,6 @@
     "subdomain_title": "Freebe.me domain",
     "subdomain_ui_help": "Enter your Freebe.me domain",
     "subdomain_ui_suffix": ".freebe.me"
-  }
+  },
+  "bx_use_default_session": true
 }

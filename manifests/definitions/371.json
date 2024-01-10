@@ -21,5 +21,6 @@
     "subdomain_title": "Freshbooks domain",
     "subdomain_ui_help": "Enter your business Freshbooks domain.",
     "subdomain_ui_suffix": ".freshbooks.com"
-  }
+  },
+  "bx_use_default_session": true
 }

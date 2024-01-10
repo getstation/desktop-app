@@ -11,6 +11,5 @@
   "theme_color": "#1DA1F2",
   "scope": "https://twitter.com",
   "bx_legacy_service_id": "twitter",
-  "bx_isolated_session": true,
   "recommendedPosition": "9"
 }

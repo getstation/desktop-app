@@ -28,5 +28,6 @@
     "subdomain_title": "Gorgias domain",
     "subdomain_ui_help": "Enter your team's Gorgias domain.",
     "subdomain_ui_suffix": ".gorgias.io"
-  }
+  },
+  "bx_use_default_session": true
 }

@@ -27,5 +27,6 @@
     "subdomain_title": "Zenvest domain",
     "subdomain_ui_help": "Enter your Zenvest domain",
     "subdomain_ui_suffix": ".zenvest.com"
-  }
+  },
+  "bx_use_default_session": true
 }

@@ -11,6 +11,5 @@
   "theme_color": "#5559AE",
   "scope": "https://teams.live.com",
   "bx_legacy_service_id": "microsoft-teams",
-  "bx_isolated_session": true,
   "recommendedPosition": "25"
 }
