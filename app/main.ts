@@ -1,6 +1,6 @@
 /* tslint:disable global-require, no-import-side-effect */
 import './dotenv';
-import { app, session, BrowserWindow, ipcMain, dialog } from 'electron';
+import { app, BrowserWindow, ipcMain, dialog } from 'electron';
 import log, { LevelOption } from 'electron-log';
 // @ts-ignore: no declaration file
 import { format } from 'electron-log/lib/format';
@@ -11,7 +11,6 @@ import { BrowserWindowManagerServiceImpl } from './services/services/browser-win
 import services from './services/servicesManager';
 import { getUrlToLoad } from './utils/dev';
 import { isPackaged } from './utils/env';
-import { enhanceSession } from './session';
 import * as remoteMain from '@electron/remote/main';
 
 bootServices(); // all side effects related to services (in main process)

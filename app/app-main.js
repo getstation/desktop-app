@@ -22,8 +22,10 @@ export default class BrowserXAppMain extends EventEmitter {
       if (typeof this.onOpen === 'function') {
         await this.onOpen();
       }
-
     });
+    app.on('session-created', (session) => {
+      enhanceSession(session);
+    })
   }
 
   // eslint-disable-next-line class-methods-use-this

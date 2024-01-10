@@ -12,5 +12,6 @@
   "scope": "https://web.whatsapp.com",
   "bx_keep_always_loaded": true,
   "bx_legacy_service_id": "whatsapp",
+  "bx_isolated_session": true,
   "recommendedPosition": "4"
 }
