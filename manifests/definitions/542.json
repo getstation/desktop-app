@@ -29,5 +29,6 @@
     "subdomain_title": "Freshservice domain",
     "subdomain_ui_help": "Enter your organization's Freshservice domain.",
     "subdomain_ui_suffix": ".freshservice.com"
-  }
+  },
+  "bx_use_default_session": true
 }

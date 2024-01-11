@@ -14,6 +14,7 @@ query GetApplicationState($applicationId: String!, $tabId: String) @live @local 
         instance_wording,
       },
       bx_not_use_native_window_open_on_host,
+      bx_use_default_session,
       bx_legacy_service_id,
     },
     isSnoozed,

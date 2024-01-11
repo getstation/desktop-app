@@ -19,5 +19,6 @@
     "instance_wording": "account",
     "instance_label_tpl": "{{email}}",
     "start_url_tpl": "https://accounts.google.com/AddSession?passive=true&Email={{userIdentity.profileData.email}}&continue=https://tagmanager.google.com"
-  }
+  },
+  "bx_use_default_session": true
 }

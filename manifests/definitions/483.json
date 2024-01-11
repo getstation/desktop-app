@@ -25,5 +25,6 @@
     "subdomain_title": "Databricks domain",
     "subdomain_ui_help": "Enter your team's Databricks domain.",
     "subdomain_ui_suffix": ".databricks.com"
-  }
+  },
+  "bx_use_default_session": true
 }

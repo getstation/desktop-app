@@ -21,5 +21,6 @@
     "subdomain_title": "YouTrack domain name",
     "subdomain_ui_help": "Enter your YouTrack domain name.",
     "subdomain_ui_suffix": ".myjetbrains.com"
-  }
+  },
+  "bx_use_default_session": true
 }

@@ -22,5 +22,6 @@
     "subdomain_title": "Freshsales domain",
     "subdomain_ui_help": "Enter your team's Freshsales domain.",
     "subdomain_ui_suffix": ".freshsales.io"
-  }
+  },
+  "bx_use_default_session": true
 }

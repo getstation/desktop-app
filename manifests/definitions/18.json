@@ -26,5 +26,6 @@
     "instance_label_tpl": "{{email}}",
     "start_url_tpl": "https://accounts.google.com/AddSession?passive=true&Email={{userIdentity.profileData.email}}&continue=https://calendar.google.com/calendar/{{#if moreThanOneIdentity}}b/{{userIdentity.profileData.email}}{{/if}}"
   },
+  "bx_use_default_session": true,
   "recommendedPosition": "2"
 }

@@ -24,5 +24,6 @@
     "subdomain_title": "PagerDuty domain",
     "subdomain_ui_help": "Enter your PagerDuty domain",
     "subdomain_ui_suffix": ".pagerduty.com"
-  }
+  },
+  "bx_use_default_session": true
 }

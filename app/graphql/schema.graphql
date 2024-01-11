@@ -282,6 +282,8 @@ type ManifestData {
  bx_legacy_service_id: String,
  """Native window on host"""
  bx_not_use_native_window_open_on_host: Boolean,
+ """true - use default shared session. false or unset - isolated session for each app instance"""
+ bx_use_default_session: Boolean,
  """Application Chrome Extension ID"""
  cxExtensionId: ID,
 }

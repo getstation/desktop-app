@@ -26,5 +26,6 @@
     "subdomain_ui_help": "Enter your team's Slite domain.",
     "subdomain_ui_suffix": ".slite.com"
   },
+  "bx_use_default_session": true,
   "main": "slite/main"
 }

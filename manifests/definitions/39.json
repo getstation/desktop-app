@@ -16,5 +16,6 @@
       "on-premise"
     ]
   },
+  "bx_use_default_session": true,
   "recommendedPosition": "19"
 }

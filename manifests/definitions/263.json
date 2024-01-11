@@ -22,5 +22,6 @@
     "subdomain_title": "Staffomatic domain",
     "subdomain_ui_help": "Enter your team's Staffomatic domain.",
     "subdomain_ui_suffix": ".staffomaticapp.com"
-  }
+  },
+  "bx_use_default_session": true
 }

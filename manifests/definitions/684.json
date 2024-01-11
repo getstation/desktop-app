@@ -24,5 +24,6 @@
     "subdomain_title": "Planfix domain",
     "subdomain_ui_help": "Enter your Planfix domain",
     "subdomain_ui_suffix": ".planfix.ru"
-  }
+  },
+  "bx_use_default_session": true
 }
