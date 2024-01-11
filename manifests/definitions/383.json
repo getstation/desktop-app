@@ -23,5 +23,6 @@
     "subdomain_title": "freshdesk domain",
     "subdomain_ui_help": "Enter your team's freshdesk domain.",
     "subdomain_ui_suffix": ".freshdesk.com"
-  }
+  },
+  "bx_use_default_session": true
 }

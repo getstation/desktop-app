@@ -27,5 +27,6 @@
     "subdomain_ui_help": "Enter your account's  domain.",
     "subdomain_ui_suffix": ".atlassian.net"
   },
+  "bx_use_default_session": true,
   "recommendedPosition": "23"
 }
