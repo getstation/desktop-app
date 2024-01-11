@@ -28,5 +28,6 @@
     "subdomain_title": "CapsuleCRM domain",
     "subdomain_ui_help": "Enter your team's CapsuleCRM domain.",
     "subdomain_ui_suffix": ".capsulecrm.com"
-  }
+  },
+  "bx_use_default_session": true
 }

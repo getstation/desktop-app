@@ -17,12 +17,14 @@
   "bx_multi_instance_config": {
     "preset": "subdomain",
     "presets": [
-      "subdomain"
+      "subdomain",
+      "on-premise"
     ],
     "instance_label_tpl": "{{subdomain}}.zulipchat.com",
     "start_url_tpl": "https://{{subdomain}}.zulipchat.com/",
     "subdomain_title": "Zulip domain",
     "subdomain_ui_help": "Enter your Zulip domain",
     "subdomain_ui_suffix": ".zulipchat.com"
-  }
+  },
+  "bx_use_default_session": true
 }

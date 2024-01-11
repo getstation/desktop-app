@@ -26,5 +26,6 @@
     "subdomain_title": "Gitlab domain",
     "subdomain_ui_help": "Enter your team's Gitlab domain.",
     "subdomain_ui_suffix": ".gitlab.com"
-  }
+  },
+  "bx_use_default_session": true
 }

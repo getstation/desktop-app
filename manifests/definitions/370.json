@@ -22,5 +22,6 @@
     "subdomain_title": "Kanban Tool company account",
     "subdomain_ui_help": "Enter your Kanban Tool company account.",
     "subdomain_ui_suffix": ".kanbantool.com"
-  }
+  },
+  "bx_use_default_session": true
 }

@@ -23,5 +23,6 @@
     "subdomain_title": "AWS domain",
     "subdomain_ui_help": "Enter your account's  domain.",
     "subdomain_ui_suffix": ".signin.aws.amazon.com"
-  }
+  },
+  "bx_use_default_session": true
 }

@@ -29,5 +29,6 @@
     "subdomain_title": "Space ID",
     "subdomain_ui_help": "Enter your Space ID.",
     "subdomain_ui_suffix": ".backlog.com"
-  }
+  },
+  "bx_use_default_session": true
 }

@@ -24,5 +24,6 @@
     "subdomain_title": "HipChat domain",
     "subdomain_ui_help": "Enter your team's HipChat domain.",
     "subdomain_ui_suffix": ".hipchat.com"
-  }
+  },
+  "bx_use_default_session": true
 }

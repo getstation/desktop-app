@@ -22,5 +22,6 @@
     "subdomain_title": "Domo domain",
     "subdomain_ui_help": "Enter your organization's Domo domain.",
     "subdomain_ui_suffix": ".domo.com"
-  }
+  },
+  "bx_use_default_session": true
 }

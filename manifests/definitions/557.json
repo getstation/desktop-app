@@ -29,5 +29,6 @@
     "subdomain_title": "Rocket.Chat domain",
     "subdomain_ui_help": "Enter your organization's Rocket.Chat domain.",
     "subdomain_ui_suffix": ".rocket.chat"
-  }
+  },
+  "bx_use_default_session": true
 }

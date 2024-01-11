@@ -29,6 +29,7 @@
     "subdomain_ui_help": "Enter your team's Slack domain.",
     "subdomain_ui_suffix": ".slack.com"
   },
+  "bx_use_default_session": true,
   "main": "slack/main",
   "renderer": "slack/renderer",
   "recommendedPosition": "5"

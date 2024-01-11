@@ -22,7 +22,6 @@ export const BOOMERANG_MANIFEST_URL = 'http://localhost:4001/application-recipe/
 
 // Applications receiving Chrome Extensions
 export const GMAIL_MANIFEST_URL = 'http://localhost:4001/application-recipe/14/bxAppManifest.json';
-export const INBOX_MANIFEST_URL = 'http://localhost:4001/application-recipe/114/bxAppManifest.json';
 export const SALESFORCE_MANIFEST_URL = 'http://localhost:4001/application-recipe/38/bxAppManifest.json';
 
 // Applications with custom subdock titles
@@ -62,7 +61,6 @@ export const APPLICATIONS_WITH_CUSTOM_SUBDOCK_TITLE: Record<string, { regex: Reg
 // JavaScript Injection
 export const JAVASCRIPT_INJECTIONS = {
   asana: ['asanaInjectedScript'],
-  'google-inbox': ['inboxInjectedScript'],
   gmail: ['gmailInjectedScript'],
   slack: ['slackInjectedScript'],
   'station-support': ['slackInjectedScript'],

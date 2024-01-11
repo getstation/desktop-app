@@ -22,5 +22,6 @@
     "subdomain_title": "Freshteam domain",
     "subdomain_ui_help": "Enter your team's Freshteam domain.",
     "subdomain_ui_suffix": ".freshteam.com"
-  }
+  },
+  "bx_use_default_session": true
 }

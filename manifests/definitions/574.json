@@ -1,7 +1,7 @@
 {
   "name": "Google Voice",
   "category": "Communication & Collaboration",
-  "start_url": "https://voice.google.com",
+  "start_url": "https://voice.google.com/u/0/calls",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/o6ha4USUSBClqiSIFMt1"
@@ -15,5 +15,14 @@
   "scope": "https://voice.google.com",
   "bx_keep_always_loaded": true,
   "bx_legacy_service_id": "google-voice",
-  "bx_override_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36 Edge/80.0.361.62"
+  "bx_multi_instance_config": {
+    "preset": "google-account",
+    "presets": [
+      "google-account"
+    ],
+    "instance_wording": "account",
+    "instance_label_tpl": "{{email}}",
+    "start_url_tpl": "https://accounts.google.com/AddSession?passive=true&Email={{userIdentity.profileData.email}}&continue=https://voice.google.com/u/0/calls"
+  },
+  "bx_use_default_session": true
 }

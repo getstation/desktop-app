@@ -21,5 +21,6 @@
     "subdomain_title": "Lucca domain",
     "subdomain_ui_help": "Enter your company Lucca domain.",
     "subdomain_ui_suffix": ".ilucca.net"
-  }
+  },
+  "bx_use_default_session": true
 }

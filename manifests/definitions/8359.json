@@ -1,7 +1,7 @@
 {
   "name": "Postman",
   "category": "Developer Tools",
-  "start_url": "https://identity.getpostman.com/",
+  "start_url": "https://web.postman.co/home",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/PMf6myGQ7XHxz0zhB1XQ"
@@ -12,5 +12,5 @@
     }
   ],
   "theme_color": "#FF6C37",
-  "scope": "https://www.getpostman.com/"
+  "scope": "https://*.postman.co"
 }

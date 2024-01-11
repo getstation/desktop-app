@@ -1,7 +1,7 @@
 {
-  "name": "Looker",
+  "name": "Google Looker Studio",
   "category": "Marketing & Analytics",
-  "start_url": "https://{{subdomain}}.looker.com",
+  "start_url": "https://lookerstudio.google.com",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/frfUXvfJS6a8GQORFcj8"
@@ -12,19 +12,16 @@
     }
   ],
   "theme_color": "#7c5ce4",
-  "scope": "https://*.looker.com",
+  "scope": "https://lookerstudio.google.com",
   "bx_legacy_service_id": "looker",
   "bx_multi_instance_config": {
-    "preset": "subdomain",
+    "preset": "google-account",
     "presets": [
-      "subdomain",
-      "on-premise"
+      "google-account"
     ],
-    "instance_wording": "team",
-    "instance_label_tpl": "{{subdomain}}.looker.com",
-    "start_url_tpl": "https://{{subdomain}}.looker.com",
-    "subdomain_title": "Looker domain",
-    "subdomain_ui_help": "Enter your team's Looker domain.",
-    "subdomain_ui_suffix": ".looker.com"
-  }
+    "instance_wording": "account",
+    "instance_label_tpl": "{{email}}",
+    "start_url_tpl": "https://accounts.google.com/AddSession?passive=true&Email={{userIdentity.profileData.email}}&continue=https://lookerstudio.google.com"
+  },
+  "bx_use_default_session": true
 }

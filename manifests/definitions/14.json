@@ -25,5 +25,6 @@
     "instance_label_tpl": "{{email}}",
     "start_url_tpl": "https://accounts.google.com/AddSession?passive=true&Email={{userIdentity.profileData.email}}&continue=https://mail.google.com/mail/u/{{userIdentity.profileData.email}}"
   },
+  "bx_use_default_session": true,
   "recommendedPosition": "1"
 }

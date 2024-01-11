@@ -1,7 +1,7 @@
 {
   "name": "Active Campaign",
   "category": "Marketing & Analytics",
-  "start_url": "http://www.activecampaign.com/login/",
+  "start_url": "https://www.activecampaign.com/login/",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/hjsKmsPR7mOFSvPQdzqr",
@@ -9,11 +9,12 @@
     }
   ],
   "theme_color": "#255EAF",
-  "scope": "http://www.activecampaign.com",
+  "scope": "https://www.activecampaign.com",
   "bx_legacy_service_id": "active-campaign",
   "bx_multi_instance_config": {
     "presets": [
       "on-premise"
     ]
-  }
+  },
+  "bx_use_default_session": true
 }

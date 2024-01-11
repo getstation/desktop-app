@@ -27,5 +27,6 @@
     "subdomain_title": "Kayako domain",
     "subdomain_ui_help": "Enter your team's Kayako domain.",
     "subdomain_ui_suffix": ".kayako.com"
-  }
+  },
+  "bx_use_default_session": true
 }

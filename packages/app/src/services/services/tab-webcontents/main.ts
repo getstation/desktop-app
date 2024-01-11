@@ -211,6 +211,58 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
     }));
   }
 
+  /**
+   * @param details 
+   * @returns true if a site wants to open a new window for user request (e.g. authorisation window) 
+   */
+  isNewWindowForUserRequest(details: HandlerDetails): boolean {
+
+    if (details.url.startsWith('about:blank')
+        || details.url.startsWith('https://accounts.google.com/o/oauth2/')) {
+      return true;
+    }
+
+    if (details.features) {
+      let noLocation = false;
+      let noToolbar = false;
+      let noMenubar = false;
+      let popup = false;
+      const trueValues = ['yes', 'true', '1'];
+      const falseValues = ['no', 'false', '0'];
+      for (const featureString of details.features.split(',')) {
+        const pair = featureString.split('=');
+        if (pair.length === 2) {
+          const key = pair[0].trim().toLowerCase();
+          const value = pair[1].trim().toLowerCase();
+          if (key === 'location') {
+            noLocation = falseValues.includes(value);
+          }
+          else if (key === 'toolbar') {
+            noToolbar = falseValues.includes(value);
+          }
+          else if (key === 'menubar') {
+            noMenubar = falseValues.includes(value);
+          }
+          else if (key === 'popup') {
+            popup = trueValues.includes(value);
+          }
+        }
+      }
+      if (popup 
+          || noLocation && noToolbar && noMenubar) {
+        return true;
+      }
+    }
+
+    if (details.frameName) {
+      if (!['_self', '_blank', '_parent', '_top'].includes(details.frameName)) {
+        return true;
+      }
+    }
+    
+    return false;
+  }
+
   async setUrlDispatcherProvider(provider: RPC.Node<UrlDispatcherProviderService>) {
     return new ServiceSubscription(this.onNewWebviews().subscribe(wc => {
 
@@ -219,6 +271,9 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
         log.debug('WindowOpen', details, process.type);
 
         if (details.disposition === 'new-window') {
+          if (this.isNewWindowForUserRequest(details)) {
+            return { action: 'allow' };
+          }
           provider.dispatchUrl(details.url, wc.id, DEFAULT_BROWSER_BACKGROUND);
           return { action: 'deny' };
         }

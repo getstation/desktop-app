@@ -20,5 +20,6 @@
     "subdomain_title": "Canny domain",
     "subdomain_ui_help": "Enter your team's Canny domain.",
     "subdomain_ui_suffix": ".canny.io"
-  }
+  },
+  "bx_use_default_session": true
 }

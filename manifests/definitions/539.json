@@ -23,5 +23,6 @@
     "presets": [
       "on-premise"
     ]
-  }
+  },
+  "bx_use_default_session": true
 }

@@ -1,7 +1,7 @@
 {
   "name": "Google Music ",
   "category": "Miscellaneous",
-  "start_url": "http://music.google.com",
+  "start_url": "https://music.google.com",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/EoPPZugTcqgztlRMFJza"
@@ -12,10 +12,7 @@
     }
   ],
   "theme_color": "#fccc1b",
-  "scope": "http://music.google.com",
+  "scope": "https://music.google.com",
   "bx_legacy_service_id": "google-music",
-  "extended_scopes": [
-    "https://music.google.com"
-  ],
   "bx_override_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36 Edge/80.0.361.62"
 }

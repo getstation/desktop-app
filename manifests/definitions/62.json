@@ -25,5 +25,6 @@
     "subdomain_title": "Zendesk domain",
     "subdomain_ui_help": "Enter your company's Zendesk subdomain.",
     "subdomain_ui_suffix": ".zendesk.com"
-  }
+  },
+  "bx_use_default_session": true
 }

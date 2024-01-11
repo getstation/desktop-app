@@ -27,5 +27,6 @@
     "subdomain_title": "Flexie domain",
     "subdomain_ui_help": "Enter your team's Flexie domain.",
     "subdomain_ui_suffix": ".flexie.io"
-  }
+  },
+  "bx_use_default_session": true
 }

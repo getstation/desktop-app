@@ -22,5 +22,6 @@
     "subdomain_title": "Monday domain",
     "subdomain_ui_help": "Enter your team's Monday domain.",
     "subdomain_ui_suffix": ".monday.com"
-  }
+  },
+  "bx_use_default_session": true
 }
