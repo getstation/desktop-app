@@ -24,5 +24,6 @@
     "subdomain_title": "Hygger domain",
     "subdomain_ui_help": "Enter your Hygger domain",
     "subdomain_ui_suffix": ".hygger.io"
-  }
+  },
+  "bx_use_default_session": true
 }

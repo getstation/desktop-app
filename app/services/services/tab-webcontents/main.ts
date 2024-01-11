@@ -217,7 +217,8 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
    */
   isNewWindowForUserRequest(details: HandlerDetails): boolean {
 
-    if (details.url.startsWith('about:blank')) {
+    if (details.url.startsWith('about:blank')
+        || details.url.startsWith('https://accounts.google.com/o/oauth2/')) {
       return true;
     }
 
@@ -225,6 +226,8 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
       let noLocation = false;
       let noToolbar = false;
       let noMenubar = false;
+      let popup = false;
+      const trueValues = ['yes', 'true', '1'];
       const falseValues = ['no', 'false', '0'];
       for (const featureString of details.features.split(',')) {
         const pair = featureString.split('=');
@@ -240,12 +243,23 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
           else if (key === 'menubar') {
             noMenubar = falseValues.includes(value);
           }
+          else if (key === 'popup') {
+            popup = trueValues.includes(value);
+          }
         }
       }
-      if (noLocation && noToolbar && noMenubar) {
+      if (popup 
+          || noLocation && noToolbar && noMenubar) {
         return true;
       }
     }
+
+    if (details.frameName) {
+      if (!['_self', '_blank', '_parent', '_top'].includes(details.frameName)) {
+        return true;
+      }
+    }
+    
     return false;
   }
 

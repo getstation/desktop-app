@@ -22,5 +22,6 @@
     "subdomain_title": "Freshcaller domain",
     "subdomain_ui_help": "Enter your team's Freshcaller domain.",
     "subdomain_ui_suffix": ".freshcaller.com"
-  }
+  },
+  "bx_use_default_session": true
 }

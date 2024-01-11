@@ -21,5 +21,6 @@
     "subdomain_title": "Quandora domain",
     "subdomain_ui_help": "Enter your team's Quandora domain.",
     "subdomain_ui_suffix": ".quandora.com"
-  }
+  },
+  "bx_use_default_session": true
 }

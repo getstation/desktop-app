@@ -28,5 +28,6 @@
     "subdomain_title": "Procurify domain",
     "subdomain_ui_help": "Enter your company's Propcurify domain.",
     "subdomain_ui_suffix": ".procurify.com"
-  }
+  },
+  "bx_use_default_session": true
 }

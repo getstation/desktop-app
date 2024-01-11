@@ -1,7 +1,7 @@
 {
   "name": "Crisp",
   "category": "User Support & Survey",
-  "start_url": " https://app.crisp.chat/",
+  "start_url": "https://app.crisp.chat/",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/NOoIrp0sT9GudSUC6W7c",
@@ -9,7 +9,7 @@
     }
   ],
   "theme_color": "#4661EE",
-  "scope": " https://app.crisp.chat",
+  "scope": "https://app.crisp.chat",
   "bx_keep_always_loaded": true,
   "bx_legacy_service_id": "crisp"
 }

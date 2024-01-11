@@ -19,6 +19,7 @@ export interface BxAppManifest {
   bx_keep_always_loaded?: boolean;
   bx_not_use_native_window_open_on_host?: boolean;
   bx_no_dock?: boolean;
+  bx_use_default_session?: boolean;
   bx_single_page?: boolean;
   bx_multi_instance_config?: MultiInstanceConfig;
   bx_legacy_service_id?: string;

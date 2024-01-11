@@ -24,5 +24,6 @@
     "subdomain_title": "Kanbanize domain",
     "subdomain_ui_help": "Enter your Kanbanize domain",
     "subdomain_ui_suffix": ".kanbanize.com"
-  }
+  },
+  "bx_use_default_session": true
 }

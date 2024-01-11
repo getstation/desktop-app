@@ -7,5 +7,6 @@
   "scope": "station://appstore",
   "bx_no_dock": true,
   "doNotList": true,
+  "bx_use_default_session": true,
   "bx_legacy_service_id": "appstore"
 }
