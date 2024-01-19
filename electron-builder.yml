@@ -47,7 +47,10 @@ mac:
   
 win:
   target:
-    - nsis
+     - target: nsis
+       arch:
+         - x64
+         - ia32
   artifactName: ${productName}-Setup.${ext}
   verifyUpdateCodeSignature: false
 
