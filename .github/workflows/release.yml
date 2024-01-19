@@ -4,57 +4,6 @@ on:
     branches:
       - release
 jobs:
-  Linux:
-    runs-on: ubuntu-latest
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-    steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
-        with:
-          node-version: "18"
-          cache: "yarn"
-      # See https://github.com/nodejs/node-gyp/blob/main/docs/Force-npm-to-use-global-node-gyp.md
-      # https://github.com/nodejs/node-gyp/blob/main/docs/Updating-npm-bundled-node-gyp.md
-      # - name: Update node-gyp
-      #   run: |
-      #     npm install --global node-gyp@8.x
-      #     npm config set node_gyp $(npm prefix -g)/lib/node_modules/node-gyp/bin/node-gyp.js
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile && yarn run rebuild-all-native
-      - name: Build and Release
-        run: yarn run release
-
-  MacOs:
-    runs-on: macos-13
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
-      CSC_LINK: ${{ secrets.CSC_LINK }}
-      AC_USERNAME: ${{ secrets.AC_USERNAME }}
-      AC_PASSWORD: ${{ secrets.AC_PASSWORD }}
-      AC_TEAM_ID: ${{ secrets.AC_TEAM_ID }}
-      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-    steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
-        with:
-          node-version: "18"
-          cache: "yarn"
-      - name: Configure Node
-        run: |
-          # npm v9 doesn't allow custom config parameters (i.e. node_gyp) anymode, so we have to downgrade it to v8
-          npm install -g npm@8  
-          npm install -g node-gyp@latest
-          npm config set node_gyp $(npm prefix -g)/lib/node_modules/node-gyp/bin/node-gyp.js
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile && yarn run rebuild-all-native
-      - name: Build and Release
-        run: yarn run release
-
   Windows:
     runs-on: windows-2019
     env:
@@ -67,13 +16,11 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
-          node-version: "18"
+          node-version: "16"
       - name: Configure Node
         shell: powershell
         run: |
-          # npm v9 doesn't allow custom config parameters (i.e. node_gyp) anymode, so we have to downgrade it to v8
-          npm install -g npm@8  
-          npm install -g node-gyp@latest
+          npm install --global node-gyp@8.x
           npm prefix -g | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
           npm config set registry "http://registry.npmjs.org"
           yarn config set registry "http://registry.npmjs.org"
