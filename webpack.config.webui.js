@@ -2,7 +2,6 @@
  * webui compoments can't be build through electron-webpack yet because it doesn't support `target: 'web'`.
  * So we have to build it manually.
  */
-require('./webpack.monkeypatch-crypto');
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');

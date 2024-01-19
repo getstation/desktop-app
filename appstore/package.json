@@ -10,8 +10,8 @@
   "main": "dist/app.js",
   "scripts": {
     "build": "yarn run build:app && yarn run build:storybook",
-    "build:app": "yarn run clean && yarn run gql-gen && cross-env NODE_OPTIONS=--openssl-legacy-provider webpack --config configs/webpack.config.js --env.build",
-    "build:storybook": "yarn run gql-gen && cross-env NODE_ENV=storybook NODE_OPTIONS=--openssl-legacy-provider build-storybook -o dist/__storybook --quiet ",
+    "build:app": "yarn run clean && yarn run gql-gen && cross-env webpack --config configs/webpack.config.js --env.build",
+    "build:storybook": "yarn run gql-gen && cross-env NODE_ENV=storybook build-storybook -o dist/__storybook --quiet ",
     "clean": "rimraf dist storybook-static",
     "dev": "yarn run gql-gen && webpack-dev-server --config configs/webpack.config.js --open --mode=development",
     "test": "jest",
