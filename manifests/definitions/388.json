@@ -14,5 +14,6 @@
   "theme_color": "#E43966",
   "scope": "https://www.instagram.com",
   "bx_legacy_service_id": "instagram",
+  "bx_override_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5735.289 Safari/537.36",
   "recommendedPosition": "11"
 }

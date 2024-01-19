@@ -149,11 +149,12 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
       this.askAutoLogin.subscribe(async (webContentsId: number) => {
         const wc = await getWebContentsFromIdOrThrow(webContentsId);
 
-        const { account, canAutoSubmit } = await provider.getCredentials(wc.id);
-        if (account) {
-          wc.focus();
-          wc.send('autologin-value-retrieved', account, canAutoSubmit);
-        }
+        // vk: 18.01.2024 FIXME: TypeError: Cannot destructure property 'account' of '(intermediate value)' as it is null.
+        // const { account, canAutoSubmit } = await provider.getCredentials(wc.id);
+        // if (account) {
+        //   wc.focus();
+        //   wc.send('autologin-value-retrieved', account, canAutoSubmit);
+        // }
       }),
       shared.subscribe(wc => {
         return fromEvent(wc, 'ipc-message', (_e, channel) => channel)
