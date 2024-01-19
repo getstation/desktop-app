@@ -17,7 +17,6 @@ export default class BrowserXAppMain extends EventEmitter {
 
   initAppLifeCycle() {
     app.on('ready', async () => {
-      enhanceSession(session.defaultSession);
       // can register a onOpen function that should return a promise
       if (typeof this.onOpen === 'function') {
         await this.onOpen();
