@@ -1,7 +1,7 @@
 {
   "name": "LinkedIn",
   "category": "Social Media & Advertising",
-  "start_url": "https://www.linkedin.com/",
+  "start_url": "https://www.linkedin.com/login/",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/YAlX1QvGGulHyWhujTAX",
@@ -11,8 +11,5 @@
   "theme_color": "#0071A1",
   "scope": "https://www.linkedin.com",
   "bx_legacy_service_id": "linkedIn",
-  "extended_scopes": [
-    "https://linkedin.com"
-  ],
   "recommendedPosition": "8"
 }
