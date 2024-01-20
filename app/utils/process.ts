@@ -15,3 +15,7 @@ export const osName = (() => {
       return process.platform;
   }
 })();
+
+export const isWindows7 = () => {
+  return process.platform === 'win32' && process.getSystemVersion().startsWith('6.');
+}

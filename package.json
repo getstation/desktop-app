@@ -2,7 +2,7 @@
   "name": "station-desktop-app",
   "private": true,
   "productName": "Station",
-  "version": "2.7.0-b2",
+  "version": "2.7.2-w7",
   "description": "Station",
   "homepage": "https://getstation.com",
   "author": {
@@ -16,10 +16,10 @@
   "scripts": {
     "postinstall": "cd appstore && yarn",
     "sass": "sass app/theme/scss/app.global.scss app/theme/css/app.global.css",
-    "build-webpack:webui:dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=development webpack --config webpack.config.webui.js --colors --progress --mode=development",
-    "build-webpack:webui:prod": "cross-env NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production webpack --config webpack.config.webui.js --colors --mode=production --no-progress",
+    "build-webpack:webui:dev": "cross-env NODE_ENV=development webpack --config webpack.config.webui.js --colors --progress --mode=development",
+    "build-webpack:webui:prod": "cross-env NODE_ENV=production webpack --config webpack.config.webui.js --colors --mode=production --no-progress",
     "build-webpack:dev": "yarn run gql-gen && yarn run sass && yarn run build-webpack:appstore:prod && yarn run build-webpack:webui:dev && electron-webpack dev",
-    "build-webpack:prod": "yarn run gql-gen && yarn run sass && rimraf dist && cross-env NODE_OPTIONS=--openssl-legacy-provider electron-webpack --no-progress && yarn run build-webpack:appstore:prod && yarn run build-webpack:webui:prod",
+    "build-webpack:prod": "yarn run gql-gen && yarn run sass && rimraf dist && cross-env electron-webpack --no-progress && yarn run build-webpack:appstore:prod && yarn run build-webpack:webui:prod",
     "build-webpack:appstore:prod": "cd appstore && yarn && yarn run build",
     "start": "yarn run build-webpack:dev",
     "dev": "yarn run build-webpack:dev",
@@ -156,7 +156,7 @@
     "concurrently": "^4.1.1",
     "cross-env": "^6.0.3",
     "css-loader": "^3.2.1",
-    "electron": "25.9.8",
+    "electron": "22.3.27",
     "electron-builder": "^24.9.1",
     "electron-mocha": "^8.1.0",
     "electron-webpack": "^2.8.2",
@@ -406,7 +406,7 @@
     }
   },
   "volta": {
-    "node": "18.14.0",
+    "node": "16",
     "yarn": "1.19.1"
   },
   "electronWebpack": {

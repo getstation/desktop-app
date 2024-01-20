@@ -1,16 +1,12 @@
-import { Session, OnBeforeSendHeadersListenerDetails, OnHeadersReceivedListenerDetails, 
-          HeadersReceivedResponse, BeforeSendResponse } from 'electron';
+import { Session, OnBeforeSendHeadersListenerDetails, BeforeSendResponse } from 'electron';
 import enhanceWebRequest from 'electron-better-web-request';
 
-const defaultUserAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5735.289 Safari/537.36';
+const defaultUserAgent = 'Chrome/114.0.5735.289';
 
 const getUserAgentForApp = (url: string, currentUserAgent: string): string => {
 
   if (url.startsWith('file://') || url.startsWith('http://localhost')) {
     return currentUserAgent;
-  }
-  else if (url.startsWith('https://accounts.google.com')) {
-    return 'Chrome/87.0.4280.141';
   }
 
   return defaultUserAgent;
@@ -52,6 +48,13 @@ export const enhanceSession = (session: Session) => {
   enhanceWebRequest(session);
 
   session.setUserAgent(defaultUserAgent);
+
+  // session.webRequest.onBeforeRequest(
+  //     (details: OnBeforeRequestListenerDetails, callback: (response: CallbackResponse) => void) => {
+  //       console.log('AAAAAA', details.url, ' ||| ', session.getStoragePath());
+  //       callback({ cancel: false });
+  //     }
+  // );
 
   session.webRequest.onBeforeSendHeaders(
       (details: OnBeforeSendHeadersListenerDetails, callback: (beforeSendResponse: BeforeSendResponse) => void) => {
