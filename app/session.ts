@@ -1,6 +1,13 @@
 import { Session, OnBeforeSendHeadersListenerDetails, BeforeSendResponse } from 'electron';
 import enhanceWebRequest from 'electron-better-web-request';
 
+/*
+These applications are sensitive to the User-Agent header and have to be rechecked in case of changing the default value:
+- Google Meet (299.json)
+- Google Chat (517.json)
+
+it's better to remove bx_override_user_agent attribute from manifest before the check to be sure that it's still necessary.
+*/
 const defaultUserAgent = 'Chrome/114.0.5735.289';
 
 const getUserAgentForApp = (url: string, currentUserAgent: string): string => {
