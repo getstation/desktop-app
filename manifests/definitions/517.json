@@ -27,6 +27,5 @@
     "start_url_tpl": "https://accounts.google.com/AddSession?passive=true&Email={{userIdentity.profileData.email}}&continue=https://chat.google.com/chat/u/{{userIdentity.profileData.email}}"
   },
   "bx_use_default_session": true,
-  "bx_override_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5735.289 Safari/537.36",
   "recommendedPosition": "24"
 }
