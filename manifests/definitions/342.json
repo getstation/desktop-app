@@ -1,7 +1,7 @@
 {
   "name": "OneDrive",
   "category": "Storage & File-sharing",
-  "start_url": "https://onedrive.live.com/",
+  "start_url": "https://onedrive.live.com/login/",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/gbFA40QSTDWOZ4HgBItr",
