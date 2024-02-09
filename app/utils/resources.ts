@@ -1,14 +1,17 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-const getResourcePath = (rootPath: string) => path.resolve(__dirname, '../..', rootPath);
+import { isLinux } from './process';
 
 /**
  * Returns the full path of the PNG icon of the app
  */
 export const getResourceIconPath = () => {
-  const stableIconPath = getResourcePath('resources/icon.png');
-  if (fs.existsSync(stableIconPath)) return stableIconPath;
-
+  if (isLinux) {
+    const stableIconPath = path.resolve(__dirname, '../../resources/icon.png');
+    if (fs.existsSync(stableIconPath)) {
+      return stableIconPath;
+    }
+  }
   return undefined;
 };
