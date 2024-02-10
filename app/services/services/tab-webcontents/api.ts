@@ -1,4 +1,4 @@
-import { BrowserWindow, session, webContents } from 'electron';
+import { BrowserWindow, DidCreateWindowDetails, webContents } from 'electron';
 import { fromEvent, merge } from 'rxjs';
 import { filter, take } from 'rxjs/operators';
 import { RPC } from '../../lib/types';
@@ -121,46 +121,92 @@ export const addOnNotificationCloseObserver = (wc: Electron.WebContents, obs: RP
   return () => { };
 };
 
-/**
- * Gmail has a weird way to open PDF for printing.
- * They are opened with a `about:blank` or `about:blank#blocked` url, then code is injected into the new tab/window,
- * which is then redirected to a new URL which will trigger the print.
- *
- * What we are doing to handle this case:
- * - Create a new hidden BrowserWindow and attach is to `event.newGuest`
- * - Wait for this window to trigger a download
- * - If within 2 seconds we received a download, we close the window
- * - Else, we show it or dispatch it
- *
- * NB: When overriding the User Agent to bypass Google blacklist, ALL URLs seems to be handled that way instead of just downloads...
- *
- * NB: As the print PDF thingy is tied to the PDF viewer which doesn't really work in Electron yet,
- *     we receive a download event instead of a print event.
- */
-export const handleHackGoogleAppsURLs =
-  async (event: Event, options: Partial<Electron.BrowserWindowConstructorOptions>): Promise<BrowserWindow | undefined> => {
-    const actualOptions: Electron.BrowserWindowConstructorOptions = {
-      ...options,
-      width: 400,
-      height: 400,
-      show: false,
-    };
-    const guest = new BrowserWindow(actualOptions);
-    (event as any).newGuest = guest;
+// /**
+//  * Gmail has a weird way to open PDF for printing.
+//  * They are opened with a `about:blank` or `about:blank#blocked` url, then code is injected into the new tab/window,
+//  * which is then redirected to a new URL which will trigger the print.
+//  *
+//  * What we are doing to handle this case:
+//  * - Create a new hidden BrowserWindow and attach is to `event.newGuest`
+//  * - Wait for this window to trigger a download
+//  * - If within 2 seconds we received a download, we close the window
+//  * - Else, we show it or dispatch it
+//  *
+//  * NB: When overriding the User Agent to bypass Google blacklist, ALL URLs seems to be handled that way instead of just downloads...
+//  *
+//  * NB: As the print PDF thingy is tied to the PDF viewer which doesn't really work in Electron yet,
+//  *     we receive a download event instead of a print event.
+//  */
+// export const handleHackGoogleAppsURLs =
+//   async (event: Event, options: Partial<Electron.BrowserWindowConstructorOptions>): Promise<BrowserWindow | undefined> => {
+//     const actualOptions: Electron.BrowserWindowConstructorOptions = {
+//       ...options,
+//       width: 400,
+//       height: 400,
+//       show: false,
+//     };
+//     const guest = new BrowserWindow(actualOptions);
+//     (event as any).newGuest = guest;
 
-    // Wait 2 seconds to receive a downloadItem
-    const downloadItem = await Promise.race([
-      new Promise<boolean>(resolve => {
-        session.defaultSession!.once('will-download', () => resolve(true));
-      }),
-      new Promise<void>(resolve => { setTimeout(resolve, 2000); }),
-    ]);
+//     // Wait 2 seconds to receive a downloadItem
+//     const downloadItem = await Promise.race([
+//       new Promise<boolean>(resolve => {
+//         session.defaultSession!.once('will-download', () => resolve(true));
+//       }),
+//       new Promise<void>(resolve => { setTimeout(resolve, 2000); }),
+//     ]);
 
-    // If download event received, we close the webcontents
-    if (downloadItem) {
-      guest.close();
-      return;
+//     // If download event received, we close the webcontents
+//     if (downloadItem) {
+//       guest.close();
+//       return;
+//     }
+
+//     return guest;
+//   };
+
+const downloadHackPerfixes: string[] = [
+  'https://files.slack.com',    // Download file from Slack.com
+  'about:blank',                // 
+];
+
+const getDownloadHackPrefix = (url : string): (string | null) => {
+  for (const prefix of downloadHackPerfixes) {
+    if (url.startsWith(prefix)) {
+      return prefix;
     }
+  }
+  return null;
+}
 
-    return guest;
-  };
+export const handleDownloadHack = (wc: Electron.WebContents, url: string): boolean => {
+  let result: boolean = false;
+  const downloadUrlPrefix = getDownloadHackPrefix(url);
+  if (downloadUrlPrefix !== null) {
+    result = true;
+    wc.once('did-create-window', (window: BrowserWindow, details: DidCreateWindowDetails) => {
+        if (getDownloadHackPrefix(details.url) !== downloadUrlPrefix) {
+          return;
+        }
+        // Wait 2 seconds to receive a downloadItem
+        Promise.race([
+          new Promise<boolean>(resolve => {
+              wc.session.once('will-download', () => resolve(true));
+          }),
+          new Promise<boolean>(resolve => {
+              setTimeout(() => resolve(false), 2000)
+          }),
+        ])
+        .then(downloadItem => {
+          if (downloadItem) {
+            window.close();
+          }
+          else if (window.webContents.getURL().startsWith(downloadUrlPrefix)) {
+            // if popup is still the same after 2 seconds, we show it to let it finish
+            window.show();
+          }
+        });
+    });      
+  }
+  return result;
+}
