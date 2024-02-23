@@ -1,8 +1,8 @@
 import * as Fuse from 'fuse.js';
-import { getChromeExtensionId } from '../app/abstract-application/helpers';
-import { MinimalApplication } from '../app/applications/graphql/withApplications';
-import { BxAppManifest } from '../app/applications/manifest-provider/bxAppManifest';
-import { ApplicationItem } from '../app/urlrouter/types';
+import { getChromeExtensionId } from '../src/abstract-application/helpers';
+import { MinimalApplication } from '../src/applications/graphql/withApplications';
+import { BxAppManifest } from '../src/applications/manifest-provider/bxAppManifest';
+import { ApplicationItem } from '../src/urlrouter/types';
 import { getPrivateApplicationById, getPrivateManifests } from './private';
 
 const reqIcon = require.context('!url-loader!./icons', true, /\.(png|svg)$/);

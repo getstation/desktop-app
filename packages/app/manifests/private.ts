@@ -2,8 +2,8 @@ import * as remote from '@electron/remote';
 import * as fs from 'fs-extra';
 import * as memoize from 'memoizee';
 import { join } from 'path';
-import { BxAppManifest } from '../app/applications/manifest-provider/bxAppManifest';
-import { PrivateApplicationRequest } from '../app/plugins/bxapi';
+import { BxAppManifest } from '../src/applications/manifest-provider/bxAppManifest';
+import { PrivateApplicationRequest } from '../src/plugins/bxapi';
 import { Manifest } from './index';
 
 export type BxAppManifestWithId = BxAppManifest & { id: number };
