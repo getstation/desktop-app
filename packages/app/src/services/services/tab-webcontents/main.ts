@@ -18,7 +18,7 @@ import {
   addOnPreventUnload,
   awaitDomReady,
   getWebContentsFromIdOrThrow,
-  handleHackGoogleAppsURLs,
+  handleDownloadHack,
 } from './api';
 import {
   AlertDialogProviderService,
@@ -149,11 +149,12 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
       this.askAutoLogin.subscribe(async (webContentsId: number) => {
         const wc = await getWebContentsFromIdOrThrow(webContentsId);
 
-        const { account, canAutoSubmit } = await provider.getCredentials(wc.id);
-        if (account) {
-          wc.focus();
-          wc.send('autologin-value-retrieved', account, canAutoSubmit);
-        }
+        // vk: 18.01.2024 FIXME: TypeError: Cannot destructure property 'account' of '(intermediate value)' as it is null.
+        // const { account, canAutoSubmit } = await provider.getCredentials(wc.id);
+        // if (account) {
+        //   wc.focus();
+        //   wc.send('autologin-value-retrieved', account, canAutoSubmit);
+        // }
       }),
       shared.subscribe(wc => {
         return fromEvent(wc, 'ipc-message', (_e, channel) => channel)
@@ -265,10 +266,12 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
 
   async setUrlDispatcherProvider(provider: RPC.Node<UrlDispatcherProviderService>) {
     return new ServiceSubscription(this.onNewWebviews().subscribe(wc => {
-
+      
       wc.setWindowOpenHandler((details: HandlerDetails) => {
 
-        log.debug('WindowOpen', details, process.type);
+        // log.debug('WindowOpen', details, process.type);
+
+        let useDownloadHack = false;
 
         if (details.disposition === 'new-window') {
           if (this.isNewWindowForUserRequest(details)) {
@@ -280,6 +283,9 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
         else if (details.disposition === 'background-tab') {
           provider.dispatchUrl(details.url, wc.id, DEFAULT_BROWSER);
           return { action: 'deny' };
+        }
+        else if (details.disposition === 'foreground-tab') {
+          useDownloadHack = handleDownloadHack(wc, details.url);
         }
 
         //vk: 2023.09.29 don't know how to verify this hack
@@ -308,6 +314,7 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
           action: 'allow',
           overrideBrowserWindowOptions: {
             fullscreen: false,
+            show: !useDownloadHack,
           }
         };
       });

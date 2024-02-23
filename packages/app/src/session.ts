@@ -1,7 +1,69 @@
-import { Session, OnBeforeSendHeadersListenerDetails, OnHeadersReceivedListenerDetails, 
-          HeadersReceivedResponse, BeforeSendResponse } from 'electron';
+import { Session, OnBeforeSendHeadersListenerDetails, BeforeSendResponse } from 'electron';
 import enhanceWebRequest from 'electron-better-web-request';
 
+const orderListeners = (listeners: any) => {
+  const orderableOrigins = [
+    'ecx-cors', // warning(hugo) minify all keys
+    'bx-dynamic-user-agent',
+    'ecx-api-handler',
+  ];
+
+  const orderedListeners = orderableOrigins.reduce(
+    (orderedList: any[], origin: string) => {
+      const listener = listeners.find(
+        (l: any) => l.context.origin && l.context.origin === origin
+      );
+
+      if (listener) {
+        orderedList.push(listener);
+
+        return orderedList;
+      }
+
+      return orderedList;
+    },
+    []
+  );
+
+  const unorderedListeners = listeners.filter(
+    (l: any) => !orderableOrigins.includes(l.context.origin)
+  );
+
+  return [...unorderedListeners, ...orderedListeners];
+};
+
+const webRequestHandler = (listeners: any) => {
+  const sortedListeners = orderListeners(listeners);
+
+  const response = sortedListeners.reduce(
+    async (accumulator: any, element: any) => {
+      if (accumulator.cancel) {
+        return accumulator;
+      }
+
+      const result = await element.apply();
+
+      return { ...accumulator, ...result };
+    },
+    { cancel: false }
+  );
+
+  return response;
+};
+
+const callbackMethods = [
+  'onBeforeRequest',
+  'onBeforeSendHeaders',
+  'onHeadersReceived',
+];
+
+/*
+These applications are sensitive to the User-Agent header and have to be rechecked in case of changing the default value:
+- Google Meet (299.json)
+- Google Chat (517.json)
+- Google Calendar (18.json)
+it's better to remove bx_override_user_agent attribute from manifest before the check to be sure that it's still necessary.
+*/
 const defaultUserAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5735.289 Safari/537.36';
 
 const getUserAgentForApp = (url: string, currentUserAgent: string): string => {
@@ -50,6 +112,11 @@ export const getRefererForApp = (referer: string): string => {
 
 export const enhanceSession = (session: Session) => {
   enhanceWebRequest(session);
+
+  for (const callbackMethod of callbackMethods) {
+    // @ts-ignore
+    session.webRequest.setResolver(callbackMethod, webRequestHandler);
+  }
 
   session.setUserAgent(defaultUserAgent);
 

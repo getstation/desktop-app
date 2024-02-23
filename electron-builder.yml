@@ -58,11 +58,11 @@ linux:
   artifactName: ${productName}-${arch}.${ext}
 
 extraResources:
-  - '.env.example'
   - '.env.production'
+  - from: 'build/icon_512x512.png'
+    to: 'icon.png'
 
 files:
-  - 'build/icon_512x512.png'
   - '!**/*.map'
   - from: 'app/static/icon--provider'
     to: 'static/icon--provider'

@@ -1,7 +1,7 @@
 {
   "name": "Google Meet",
   "category": "Communication & Collaboration",
-  "start_url": "https://accounts.google.com/AddSession?passive=true&Email={{userIdentity.profileData.email}}&continue=https://meet.google.com",
+  "start_url": "https://meet.google.com",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/3WaVDBFxRPWKJy1iGRPO",

@@ -1,15 +1,14 @@
 {
   "name": "Hangouts",
   "category": "Communication & Collaboration",
-  "start_url": "https://hangouts.google.com/",
-  "icons": [
-    {
-      "src": "https://cdn.filestackcontent.com/jYO38GpXTlWHrZ36Cd0M",
-      "platform": "browserx"
-    }
-  ],
   "theme_color": "#82B750",
-  "scope": "https://hangouts.google.com",
+
+
+  "start_url": "station://appstore/static/app-removed.html",
+  "doNotList": true,
+  "bx_use_default_session": true,
+
+  
   "bx_keep_always_loaded": true,
   "bx_single_page": true,
   "bx_legacy_service_id": "google-hangouts",
