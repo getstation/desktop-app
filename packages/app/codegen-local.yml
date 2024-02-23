@@ -1,9 +1,9 @@
 # This is the configuration for code-generation
 # for the **local** GraphQL API
-schema: ./app/graphql/schema.graphql
+schema: ./src/graphql/schema.graphql
 overwrite: true
 generates:
-  ./app/graphql/resolvers-types.generated.ts:
+  ./src/graphql/resolvers-types.generated.ts:
     config:
       contextType: ./#StationGQLContext
       maybeValue: T | null | undefined
@@ -16,43 +16,43 @@ generates:
       - typescript
       - typescript-reactive-resolvers
 
-  ./app/settings/components/SettingsAutoLaunch/queries@local.gql.generated.tsx:
-    documents: ./app/settings/components/SettingsAutoLaunch/queries@local.gql
+  ./src/settings/components/SettingsAutoLaunch/queries@local.gql.generated.tsx:
+    documents: ./src/settings/components/SettingsAutoLaunch/queries@local.gql
     plugins:
       - typescript
       - typescript-operations
       - typescript-react-apollo
 
-  ./app/settings/components/SettingsHideMainMenu/queries@local.gql.generated.tsx:
-    documents: ./app/settings/components/SettingsHideMainMenu/queries@local.gql
+  ./src/settings/components/SettingsHideMainMenu/queries@local.gql.generated.tsx:
+    documents: ./src/settings/components/SettingsHideMainMenu/queries@local.gql
     plugins:
       - typescript
       - typescript-operations
       - typescript-react-apollo
 
-  ./app/settings/components/SettingsDownloads/queries@local.gql.generated.tsx:
-    documents: ./app/settings/components/SettingsDownloads/queries@local.gql
+  ./src/settings/components/SettingsDownloads/queries@local.gql.generated.tsx:
+    documents: ./src/settings/components/SettingsDownloads/queries@local.gql
     plugins:
       - typescript
       - typescript-operations
       - typescript-react-apollo
 
-  ./app/settings/components/SettingsUpdatesButton/queries@local.gql.generated.tsx:
-    documents: ./app/settings/components/SettingsUpdatesButton/queries@local.gql
+  ./src/settings/components/SettingsUpdatesButton/queries@local.gql.generated.tsx:
+    documents: ./src/settings/components/SettingsUpdatesButton/queries@local.gql
     plugins:
       - typescript
       - typescript-operations
       - typescript-react-apollo
 
-  ./app/applications/queries@local.gql.generated.tsx:
-    documents: ./app/applications/queries@local.gql
+  ./src/applications/queries@local.gql.generated.tsx:
+    documents: ./src/applications/queries@local.gql
     plugins:
       - typescript
       - typescript-operations
       - typescript-react-apollo
 
-  ./app/abstract-application/queries@local.gql.generated.tsx:
-    documents: ./app/abstract-application/queries@local.gql
+  ./src/abstract-application/queries@local.gql.generated.tsx:
+    documents: ./src/abstract-application/queries@local.gql
     mappers:
       AbstractApplication: ../abstract-application/types#AbstractApplication
     plugins:
@@ -60,8 +60,8 @@ generates:
       - typescript-operations
       - typescript-react-apollo
 
-  ./app/activity/queries@local.gql.generated.tsx:
-    documents: ./app/activity/queries@local.gql
+  ./src/activity/queries@local.gql.generated.tsx:
+    documents: ./src/activity/queries@local.gql
     mappers:
       ActivityEntry: ../activity/types#ActivityEntry
     plugins:
@@ -69,52 +69,36 @@ generates:
       - typescript-operations
       - typescript-react-apollo
 
-  ./app/notifications/queries@local.gql.generated.tsx:
-    documents: ./app/notifications/queries@local.gql
+  ./src/notifications/queries@local.gql.generated.tsx:
+    documents: ./src/notifications/queries@local.gql
     plugins:
       - typescript
       - typescript-operations
       - typescript-react-apollo
 
-  ./app/password-managers/queries@local.gql.generated.tsx:
-    documents: ./app/password-managers/queries@local.gql
+  ./src/password-managers/queries@local.gql.generated.tsx:
+    documents: ./src/password-managers/queries@local.gql
     plugins:
       - typescript
       - typescript-operations
       - typescript-react-apollo
 
-  ./app/dialogs/queries@local.gql.generated.tsx:
-    documents: ./app/dialogs/queries@local.gql
+  ./src/dialogs/queries@local.gql.generated.tsx:
+    documents: ./src/dialogs/queries@local.gql
     plugins:
       - typescript
       - typescript-operations
       - typescript-react-apollo
 
-  ./app/dl-toaster/queries@local.gql.generated.tsx:
-    documents: ./app/dl-toaster/queries@local.gql
+  ./src/dl-toaster/queries@local.gql.generated.tsx:
+    documents: ./src/dl-toaster/queries@local.gql
     plugins:
       - typescript
       - typescript-operations
       - typescript-react-apollo
 
-  ./app/dock/queries@local.gql.generated.tsx:
-    documents: ./app/dock/queries@local.gql
-    plugins:
-      - typescript
-      - typescript-operations
-      - typescript-react-apollo
-    config:
-      withHooks: true
-
-  ./app/notification-center/queries@local.gql.generated.tsx:
-    documents: ./app/notification-center/queries@local.gql
-    plugins:
-      - typescript
-      - typescript-operations
-      - typescript-react-apollo
-
-  ./app/subdock/queries@local.gql.generated.tsx:
-    documents: ./app/subdock/queries@local.gql
+  ./src/dock/queries@local.gql.generated.tsx:
+    documents: ./src/dock/queries@local.gql
     plugins:
       - typescript
       - typescript-operations
@@ -122,15 +106,31 @@ generates:
     config:
       withHooks: true
 
-  ./app/tabs/queries@local.gql.generated.tsx:
-    documents: ./app/tabs/queries@local.gql
+  ./src/notification-center/queries@local.gql.generated.tsx:
+    documents: ./src/notification-center/queries@local.gql
     plugins:
       - typescript
       - typescript-operations
       - typescript-react-apollo
 
-  ./app/onboarding/queries@local.gql.generated.tsx:
-    documents: ./app/onboarding/queries@local.gql
+  ./src/subdock/queries@local.gql.generated.tsx:
+    documents: ./src/subdock/queries@local.gql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      withHooks: true
+
+  ./src/tabs/queries@local.gql.generated.tsx:
+    documents: ./src/tabs/queries@local.gql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+
+  ./src/onboarding/queries@local.gql.generated.tsx:
+    documents: ./src/onboarding/queries@local.gql
     plugins:
       - typescript
       - typescript-operations

@@ -54,7 +54,6 @@
     "jest-svg-transformer": "^1.0.0",
     "jsdom": "^9.8.3",
     "kuler": "^2.0.0",
-    "lerna": "^7.1.4",
     "lolex": "^2.1.2",
     "mermaid": "^8.0.0",
     "mini-css-extract-plugin": "^0.8.0",

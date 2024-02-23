@@ -1,6 +1,6 @@
 import * as Immutable from 'immutable';
 import { distinctUntilChanged } from 'rxjs/operators';
-import { getTabWebcontentsById } from '../../app/tab-webcontents/selectors';
+import { getTabWebcontentsById } from './selectors';
 import { IResolvers } from '../graphql/resolvers-types.generated';
 import { subscribeStore } from '../utils/observable';
 

@@ -15,7 +15,14 @@
   "main": "dist/main.js",
   "scripts": {
     "sass": "sass src/theme/scss/app.global.scss src/theme/css/app.global.css",
-    "build": "yarn run sass"
+
+    "clean-gql-gen": "rm -f app/**/*.generated.ts app/**/*.generated.tsx",
+    "gql-gen": "yarn run clean-gql-gen && graphql-codegen --config codegen-local.yml",
+
+    "build-webpack:webui:prod": "cross-env NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production webpack --config webpack.config.webui.js --colors --mode=production --no-progress",
+    "build-webpack:prod": "yarn run gql-gen && yarn run sass && rimraf dist && cross-env NODE_OPTIONS=--openssl-legacy-provider electron-webpack --no-progress && yarn run build-webpack:webui:prod",
+
+    "build": "yarn run build-webpack:prod"
   },
   "workspaces": [
     "packages/*"
@@ -382,14 +389,14 @@
   "electronWebpack": {
     "title": false,
     "renderer": {
-      "sourceDirectory": "app",
+      "sourceDirectory": "src",
       "webpackConfig": "webpack.config.renderer.js"
     },
     "main": {
       "extraEntries": [
         "@/static/preload/preload.js"
       ],
-      "sourceDirectory": "app",
+      "sourceDirectory": "src",
       "webpackConfig": "webpack.config.main.js"
     }
   }

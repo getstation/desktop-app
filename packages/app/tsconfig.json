@@ -29,12 +29,12 @@
     "appstore/**/*.ts",
     "appstore/**/*.tsx",
     "appstore/**/*.js",
-    "app/**/*.js",
-    "app/**/*.ts",
-    "app/**/*.tsx",
+    "src/**/*.js",
+    "src/**/*.ts",
+    "src/**/*.tsx",
     "manifests/**/*.ts",
     "node_modules/electron-prebuilt-compile/electron.d.ts",
-    "app/index.d.ts",
+    "src/index.d.ts",
     "@types/**/*.ts"
   ],
   "exclude": ["node_modules", "**/*.spec.ts"]

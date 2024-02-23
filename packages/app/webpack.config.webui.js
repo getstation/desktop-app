@@ -22,14 +22,14 @@ module.exports = (env, argv) => merge.smart(baseConfig(env, argv), {
     new HtmlWebpackPlugin({
       chunks: ['multiInstanceConfiguration'],
       filename: 'multi-instance-configuration.html',
-      template: './app/app-sub.html',
+      template: './src/app-sub.html',
     }),
     new webpack.NamedModulesPlugin(),
     new WriteFilePlugin(),
   ],
 
   entry: {
-    multiInstanceConfiguration: './app/applications/multi-instance-configuration/webui/index.tsx',
+    multiInstanceConfiguration: './src/applications/multi-instance-configuration/webui/index.tsx',
   },
 
   resolve: {
