@@ -38,8 +38,8 @@ export function getDoNotDisturb(): boolean {
 //  vk: 2023.09.22 Looks like we don't have a library that works on modern OS (i.e 13.6) 
 //      "macos-notification-state": "3.0.0" - uses modern API but it causes application crash on M1 CPU
 //      "@stack-inc/macos-notification-state": "2.0.1" - fork of prevoius library. no crush, but it doesn't return correct value too.
-    const { getDoNotDisturb: getMacOsDoNotDisturb } = require('@stack-inc/macos-notification-state');
-    return getMacOsDoNotDisturb();
+    // const { getDoNotDisturb: getMacOsDoNotDisturb } = require('@stack-inc/macos-notification-state');
+    // return getMacOsDoNotDisturb();
   }
 
   return false;

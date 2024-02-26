@@ -15,7 +15,7 @@ module.exports = (env, argv) => {
     devtool: 'cheap-module-source-map',
 
     resolve: {
-      alias: { '@src': path.resolve(__dirname, 'appstore/src/') },
+      alias: { '@src': path.resolve(__dirname, '../appstore/src/') },
       extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.mjs', '.svg'],
     },
 

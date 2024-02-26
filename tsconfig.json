@@ -18,19 +18,24 @@
     "target": "es2016",
     "jsx": "react",
     "resolveJsonModule": true,
-    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "tslib": ["node_modules/tslib"],
+      "@src/*": ["appstore/src/*"]
+    },
     "lib": ["es2017", "dom"]
   },
   "include": [
+    "appstore/**/*.ts",
+    "appstore/**/*.tsx",
+    "appstore/**/*.js",
     "src/**/*.js",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/index.d.ts",
     "manifests/**/*.ts",
+    "node_modules/electron-prebuilt-compile/electron.d.ts",
+    "src/index.d.ts",
     "../../@types/**/*.ts"
   ],
-  "exclude": [
-    "node_modules", 
-    "**/*.spec.ts"
-  ]
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }

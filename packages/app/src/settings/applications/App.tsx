@@ -21,7 +21,7 @@ import { StationState } from '../../types';
 import AddNewInstance from '../applications/components/AddNewInstance';
 import ApplicationExtensions from '../applications/components/ApplicationExtensions';
 import ListInstances from '../applications/components/ListInstances';
-import { getApplicationsForDock } from '../../../app/dock/selectors';
+import { getApplicationsForDock } from '../../dock/selectors';
 import RemoveModalConfirmation from '../applications/components/RemoveModalConfirmation';
 import { Extension, Instance, Instances } from './types';
 import ExtensionInfos from './components/ExtensionInfos';

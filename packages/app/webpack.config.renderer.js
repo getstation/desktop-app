@@ -6,6 +6,7 @@ const glob = require('glob');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebPackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { mutateWebpackConfig } = require('./webpack.config.common');
 
@@ -67,38 +68,43 @@ module.exports = (config) => {
     new HtmlWebpackPlugin({
       chunks: ['mainRenderer'],
       filename: 'main.html',
-      template: './app/app.html',
+      template: './src/app.html',
       inject: true,
     }),
     // generates sub windows html file
     new HtmlWebpackPlugin({
       chunks: ['subRenderer'],
       filename: 'sub.html',
-      template: './app/app-sub.html',
+      template: './src/app-sub.html',
       inject: true,
     }),
     // generates about window html file
     new HtmlWebpackPlugin({
       chunks: ['aboutRenderer'],
       filename: 'about.html',
-      template: './app/about-window/about.html',
+      template: './src/about-window/about.html',
       inject: true,
     }),
-  ]);
+    new CopyWebPackPlugin([{ 
+      context: '../appstore/dist/appstore',
+      from: '**/*', 
+      to: 'appstore' 
+    }]),
+]);
 
   config.entry = {
     // main window
-    mainRenderer: './app/index.js',
+    mainRenderer: './src/index.js',
     // sub windows
-    subRenderer: './app/index-sub.js',
+    subRenderer: './src/index-sub.js',
     // about window
-    aboutRenderer: './app/about-window/about.js',
+    aboutRenderer: './src/about-window/about.js',
     // worker
-    worker: './app/app-worker.ts',
+    worker: './src/app-worker.ts',
   };
 
   // migration files
-  Object.assign(config.entry, glob.sync('./app/persistence/umzug-runs/*.js')
+  Object.assign(config.entry, glob.sync('./src/persistence/umzug-runs/*.js')
     .reduce((obj, filepath) => {
       const filename = path.basename(filepath, path.extname(filepath));
       return {

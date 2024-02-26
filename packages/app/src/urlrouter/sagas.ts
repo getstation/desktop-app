@@ -2,7 +2,7 @@ import * as remote from '@electron/remote';
 import log from 'electron-log';
 import { SagaIterator } from 'redux-saga';
 import { all, call, delay, fork, getContext, put, race, select, take } from 'redux-saga/effects';
-import { getApplicationManifestURL } from '../../app/applications/get';
+import { getApplicationManifestURL } from '../applications/get';
 import { listAllApplications, manifestToApplicationItem } from '../../manifests';
 import { logger } from '../api/logger';
 import { BrowserXAppWorker } from '../app-worker';
@@ -23,7 +23,7 @@ import { ApplicationItem, URLRouterAction, URLRouterActionAndDestination } from 
 import { BrowserWindowService } from '../services/services/browser-window/interface';
 import services from '../services/servicesManager';
 import { RPC } from '../services/lib/types';
-import { service } from 'app/services/lib/decorator';
+import { service } from '../services/lib/decorator';
 
 export type DispatchUrlOptions = {
   afterFollowingRedirects?: boolean,

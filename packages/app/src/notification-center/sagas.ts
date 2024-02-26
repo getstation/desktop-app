@@ -6,7 +6,7 @@ import {
   disableNotifications,
   enableNotifications,
   navigateToApplicationTabAutomatically,
-} from '../../app/applications/duck';
+} from '../applications/duck';
 import { MAIN_APP_READY } from '../app/duck';
 import { ASK_ENABLE_NOTIFICATIONS, TOGGLE_NOTIFICATIONS } from '../applications/duck';
 import { getNotificationsEnabled } from '../applications/selectors';

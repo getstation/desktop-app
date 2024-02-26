@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import '../utils/stat-cache';
 import '../dotenv';
 import '../theme/css/app.global.css';
-import '../../node_modules/font-awesome/css/font-awesome.min.css';
+import '../../../../node_modules/font-awesome/css/font-awesome.min.css';
 import configureStore from '../store/configureStore.client';
 import ReduxBasedGradientProvider from '../theme/ReduxBasedGradientProvider';
 import { handleError } from '../services/api/helpers';

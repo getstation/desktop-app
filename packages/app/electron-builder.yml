@@ -7,11 +7,11 @@ asar: true
 asarUnpack: 
   - 'node_modules/**/*.{node,dll}'
 
-afterPack: 'scripts/after-pack.js'
-afterSign: 'scripts/notarize.js'
+afterPack: '../../scripts/after-pack.js'
+afterSign: '../../scripts/notarize.js'
 
 directories:
-  output: release
+  output: '../../release'
 
 protocols:
   name: Station
@@ -64,18 +64,18 @@ extraResources:
 
 files:
   - '!**/*.map'
-  - from: 'app/static/icon--provider'
+  - from: 'src/static/icon--provider'
     to: 'static/icon--provider'
     filter:
       - 'icon-provider--gdrive.svg'
       - 'icon-provider--notion.svg'
       - 'icon-provider--slack.svg'
-  - from: 'app/static/illustrations'
+  - from: 'src/static/illustrations'
     to: 'static/illustrations'
-  - from: 'app/static/logos'
+  - from: 'src/static/logos'
     to: 'static/logos'
-  - from: 'app/static/social-network'
+  - from: 'src/static/social-network'
     to: 'static/social-network'
-  - from: 'app/static/animations'
+  - from: 'src/static/animations'
     to: 'static/animations'
 

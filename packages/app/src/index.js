@@ -9,7 +9,7 @@ import { ApolloProvider } from 'react-apollo';
 import { ApolloProvider as ApolloHooksProvider } from 'react-apollo-hooks';
 import { BrowserXThemeProvider } from '@getstation/theme';
 import './theme/css/app.global.css';
-import '../node_modules/font-awesome/css/font-awesome.min.css';
+import '../../../node_modules/font-awesome/css/font-awesome.min.css';
 import { handleError } from './services/api/helpers';
 import configureStore from './store/configureStore.client';
 import ReduxBasedGradientProvider from './theme/ReduxBasedGradientProvider';

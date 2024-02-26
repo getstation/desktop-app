@@ -1,5 +1,5 @@
 {
-  "name": "station-desktop-app",
+  "name": "station-project",
   "private": true,
   "productName": "Station",
   "version": "2.8.0-b1",
@@ -14,7 +14,10 @@
   "license": "Apache License 2.0",
   "main": "dist/main.js",
   "scripts": {
-    "build": "yarn workspaces run build"
+    "build": "yarn workspaces foreach --all --topological run build",
+    "clean": "yarn workspaces foreach --all run clean && rimraf release",
+    "release": "yarn clean && yarn workspaces foreach --all --topological run release",
+    "dev": "yarn workspaces foreach --all --topological run dev"
   },
   "workspaces": [
     "packages/*"
@@ -28,7 +31,6 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-redux": "^5.1.2",
-    "**/graphql": "14.0.2",
     "node-abi": "^2.12.0"
   },
   "devDependencies": {
@@ -87,7 +89,6 @@
     "@babel/runtime": "^7.4.3",
     "@electron/remote": "^2.0.9",
     "@mapbox/node-pre-gyp": "1.0.10",
-    "@stack-inc/macos-notification-state": "https://github.com/stack-inc/macos-notification-state/archive/refs/tags/v2.0.1.tar.gz",
     "array-uniq": "^1.0.3",
     "async-lock": "^1.1.2",
     "auto-launch": "^5.0.6",
@@ -112,7 +113,6 @@
     "end-of-stream": "^1.4.1",
     "enum-values": "^1.2.0",
     "event-target-shim": "^5.0.1",
-    "font-awesome": "^4.7.0",
     "fs-extra": "^9.1.0",
     "fuse.js": "^3.1.0",
     "global-tunnel-ng": "^2.7.1",
@@ -228,51 +228,11 @@
   },
   "devEngines": {
     "node": ">=18.0.0",
-    "yarn": ">=1.17.3"
-  },
-  "jest": {
-    "runner": "@jest-runner/electron/main",
-    "testEnvironment": "node",
-    "preset": "ts-jest/presets/js-with-babel",
-    "transform": {
-      "^.+\\.svg$": "jest-svg-transformer"
-    },
-    "setupFilesAfterEnv": [
-      "<rootDir>/test/setup.jest.ts"
-    ],
-    "testMatch": [
-      "**/test/jest/**/test-*.ts"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "json",
-      "jsx"
-    ],
-    "testURL": "http://localhost/",
-    "globals": {
-      "ts-jest": {
-        "isolatedModules": true
-      }
-    }
+    "yarn": ">=4.1.0"
   },
   "volta": {
     "node": "18.14.0",
-    "yarn": "1.19.1"
+    "yarn": "4.1.0"
   },
-  "electronWebpack": {
-    "title": false,
-    "renderer": {
-      "sourceDirectory": "app",
-      "webpackConfig": "webpack.config.renderer.js"
-    },
-    "main": {
-      "extraEntries": [
-        "@/static/preload/preload.js"
-      ],
-      "sourceDirectory": "app",
-      "webpackConfig": "webpack.config.main.js"
-    }
-  }
+  "packageManager": "yarn@4.1.0"
 }
