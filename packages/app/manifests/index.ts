@@ -76,8 +76,8 @@ export function getApplicationById(id: string): Manifest {
   const svgIconName = `./${id}.svg`;
   const pngIconName = `./${id}.png`;
   const iconData: string = reqIcon.keys().indexOf(svgIconName) >= 0
-                            ? reqIcon(svgIconName).default
-                            : reqIcon(pngIconName).default;
+                            ? reqIcon(svgIconName)
+                            : reqIcon(pngIconName);
   const manifest: BxAppManifest = reqManifest(`./${id}.json`);
 
   delete manifest.icons;
