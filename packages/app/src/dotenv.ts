@@ -5,10 +5,10 @@ import { isPackaged } from './utils/env';
 
 if (isPackaged) {
   dotenv.config({
-    path: resolve(__dirname, '../.env.production'),
+    path: resolve(__dirname, '../../../.env.production'),
   });
 } else {
   dotenv.config({
-    path: resolve(__dirname, '../.env.development'),
+    path: resolve(__dirname, '../../../.env.development'),
   });
 }
