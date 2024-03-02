@@ -1,7 +1,7 @@
 import * as Immutable from 'immutable';
-import { SingletonStateProxy } from '../../../app/persistence/backend';
-import { UserProxy } from '../../../app/persistence/local.backend';
-import umzug from '../../../app/persistence/umzug';
+import { SingletonStateProxy } from '../../../src/persistence/backend';
+import { UserProxy } from '../../../src/persistence/local.backend';
+import umzug from '../../../src/persistence/umzug';
 
 const userData = Immutable.Map({
   id: 'user-Bku4OT0zZ',

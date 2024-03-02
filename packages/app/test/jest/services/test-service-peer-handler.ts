@@ -1,4 +1,4 @@
-import { ServicePeerHandler } from '../../../app/services/lib/class';
+import { ServicePeerHandler } from '../../../src/services/lib/class';
 import { getChannelMock, getPeerMock, TestService, TestServiceImpl } from './mock';
 
 describe('ServicePeerhandler', () => {

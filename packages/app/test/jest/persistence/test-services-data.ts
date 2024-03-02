@@ -1,7 +1,7 @@
 import * as Immutable from 'immutable';
-import { KeyValueStateProxy } from '../../../app/persistence/backend';
-import umzug from '../../../app/persistence/umzug';
-import { ServicesDataProxyMixin } from '../../../app/plugins/persistence';
+import { KeyValueStateProxy } from '../../../src/persistence/backend';
+import umzug from '../../../src/persistence/umzug';
+import { ServicesDataProxyMixin } from '../../../src/plugins/persistence';
 
 const immutableState1 = Immutable.Map({
   manifestURL1: Immutable.Map({

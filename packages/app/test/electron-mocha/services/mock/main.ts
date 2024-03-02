@@ -1,5 +1,5 @@
-import { ServiceSubscription } from '../../../../app/services/lib/class';
-import { RPC } from '../../../../app/services/lib/types';
+import { ServiceSubscription } from '../../../../src/services/lib/class';
+import { RPC } from '../../../../src/services/lib/types';
 import { TestService, TestServiceObserver, TestServiceProvider } from './common';
 
 export class TestServiceImpl extends TestService implements RPC.Interface<TestService> {

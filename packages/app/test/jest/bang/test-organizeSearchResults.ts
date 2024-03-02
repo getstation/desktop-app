@@ -1,6 +1,6 @@
-import { SectionKinds } from '../../../app/bang/api';
-import { SearchPaneItemSelectedItem } from '../../../app/bang/duck';
-import { organizeSearchResults, SearchItem, Section } from '../../../app/bang/helpers/organizeSearchResults';
+import { SectionKinds } from '../../../src/bang/api';
+import { SearchPaneItemSelectedItem } from '../../../src/bang/duck';
+import { organizeSearchResults, SearchItem, Section } from '../../../src/bang/helpers/organizeSearchResults';
 
 const organize = organizeSearchResults;
 

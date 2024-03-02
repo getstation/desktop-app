@@ -1,6 +1,6 @@
 import { RPCChannelPeer } from 'stream-json-rpc';
-import { ServicePeer } from '../../../app/services/lib/class';
-import { getNode } from '../../../app/services/lib/getNode';
+import { ServicePeer } from '../../../src/services/lib/class';
+import { getNode } from '../../../src/services/lib/getNode';
 import { getPeerMock, setPeer, TestService } from './mock';
 
 describe('getNode', () => {

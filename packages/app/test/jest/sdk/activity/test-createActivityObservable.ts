@@ -1,7 +1,7 @@
 import { from, Observable } from 'rxjs';
 import { activity } from '@getstation/sdk/lib/activity';
-import createActivityObservable, { Options } from '../../../../app/sdk/activity/createActivityObservable';
-import { GlobalActivityEntry } from '../../../../app/sdk/activity/types';
+import createActivityObservable, { Options } from '../../../../src/sdk/activity/createActivityObservable';
+import { GlobalActivityEntry } from '../../../../src/sdk/activity/types';
 import ActivityEntry = activity.ActivityEntry;
 
 const createDummyGlobalActivityEntry = (createdAt: number, type: string, pluginId: string, resourceId: string): GlobalActivityEntry => ({

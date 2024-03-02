@@ -2,11 +2,11 @@ import { app } from 'electron';
 import { join } from 'path';
 import * as assert from 'assert';
 import { runSaga } from 'redux-saga';
-import { dispatchUrlSaga } from '../../../app/urlrouter/sagas';
+import { dispatchUrlSaga } from '../../../src/urlrouter/sagas';
 import { getState } from './data-mock';
-import ManifestProvider from '../../../app/applications/manifest-provider/manifest-provider';
-import { BrowserXAppWorker } from '../../../app/app-worker';
-import URLRouter from '../../../app/urlrouter/URLRouter';
+import ManifestProvider from '../../../src/applications/manifest-provider/manifest-provider';
+import { BrowserXAppWorker } from '../../../src/app-worker';
+import URLRouter from '../../../src/urlrouter/URLRouter';
 
 const manifestProvider = new ManifestProvider({
 //  cachePath: join(app.getPath('userData'), 'ApplicationManifestsCache'),

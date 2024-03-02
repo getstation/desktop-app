@@ -16,7 +16,7 @@
     "clean": "rimraf dist",
     "release": "yarn build",
     "dev": "yarn build",
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "jest": {
     "preset": "ts-jest"

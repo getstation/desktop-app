@@ -26,7 +26,8 @@
     "clean": "rimraf dist",
     "build": "yarn run build-webpack:prod",
     "release": "yarn build && cross-env NODE_ENV=production electron-builder",
-    "dev": "yarn run gql-gen && yarn run sass && yarn run build-webpack:webui:dev && electron-webpack dev"
+    "dev": "yarn run gql-gen && yarn run sass && yarn run build-webpack:webui:dev && electron-webpack dev",
+    "test": "cross-env NODE_ENV=test jest --runInBand"
   },
   "bin": {
     "electron": "./node_modules/.bin/electron"

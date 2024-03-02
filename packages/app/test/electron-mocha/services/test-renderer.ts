@@ -1,9 +1,9 @@
 import { ipcRenderer } from 'electron';
 import { ElectronIpcRendererDuplex } from 'stream-electron-ipc';
 import rpcchannel, { RPCChannel } from 'stream-json-rpc';
-import { ServiceBase, ServicePeerHandler } from '../../../app/services/lib/class';
-import { getNode } from '../../../app/services/lib/getNode';
-import { observer } from '../../../app/services/lib/helpers';
+import { ServiceBase, ServicePeerHandler } from '../../../src/services/lib/class';
+import { getNode } from '../../../src/services/lib/getNode';
+import { observer } from '../../../src/services/lib/helpers';
 import { TestService } from './mock/common';
 import { JsonRpcError } from 'json-rpc-protocol';
 import { TestServiceProviderImpl } from './mock/renderer';

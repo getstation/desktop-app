@@ -1,8 +1,8 @@
 import * as Immutable from 'immutable';
-import Activity from '../../../app/activity/model';
-import { ListStateProxy } from '../../../app/persistence/backend';
-import { ListProxyMixin } from '../../../app/persistence/mixins';
-import umzug from '../../../app/persistence/umzug';
+import Activity from '../../../src/activity/model';
+import { ListStateProxy } from '../../../src/persistence/backend';
+import { ListProxyMixin } from '../../../src/persistence/mixins';
+import umzug from '../../../src/persistence/umzug';
 
 export class ActivityFakeProxy extends ListProxyMixin({
   model: Activity,

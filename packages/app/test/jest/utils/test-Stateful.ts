@@ -1,4 +1,4 @@
-import Stateful from '../../../app/utils/Stateful';
+import Stateful from '../../../src/utils/Stateful';
 
 type Dummy = {
   a: string,

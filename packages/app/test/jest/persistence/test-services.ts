@@ -1,7 +1,7 @@
 import * as Immutable from 'immutable';
-import { MapStateProxy } from '../../../app/persistence/backend';
-import { ApplicationSettingsProxy } from '../../../app/persistence/local.backend';
-import umzug from '../../../app/persistence/umzug';
+import { MapStateProxy } from '../../../src/persistence/backend';
+import { ApplicationSettingsProxy } from '../../../src/persistence/local.backend';
+import umzug from '../../../src/persistence/umzug';
 
 const serviceGDrive = Immutable.Map({
   'gdrive-mu': Immutable.Map({

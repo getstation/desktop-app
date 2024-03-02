@@ -1,7 +1,7 @@
 import * as Immutable from 'immutable';
-import umzug from '../../../app/persistence/umzug';
-import * as models from '../../../app/database/model';
-import getUIProxy from '../../../app/ui/persistence/proxy';
+import umzug from '../../../src/persistence/umzug';
+import * as models from '../../../src/database/model';
+import getUIProxy from '../../../src/ui/persistence/proxy';
 
 const uiData = Immutable.Map();
 

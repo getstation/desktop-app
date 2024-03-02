@@ -1,7 +1,7 @@
 import * as Immutable from 'immutable';
-import { ListStateProxy } from '../../../app/persistence/backend';
-import { SubwindowProxy } from '../../../app/persistence/local.backend';
-import umzug from '../../../app/persistence/umzug';
+import { ListStateProxy } from '../../../src/persistence/backend';
+import { SubwindowProxy } from '../../../src/persistence/local.backend';
+import umzug from '../../../src/persistence/umzug';
 
 const subData = Immutable.Set([
   'gmail-Byg_4OpCzW',

@@ -1,5 +1,5 @@
-import { ServiceBase } from '../../../app/services/lib/class';
-import { observer } from '../../../app/services/lib/helpers';
+import { ServiceBase } from '../../../src/services/lib/class';
+import { observer } from '../../../src/services/lib/helpers';
 
 describe('observer', () => {
   it('should check that observer is a usable Service', () => {

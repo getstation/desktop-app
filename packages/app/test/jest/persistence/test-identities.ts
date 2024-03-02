@@ -1,7 +1,7 @@
 import * as Immutable from 'immutable';
-import { MapStateProxy } from '../../../app/persistence/backend';
-import { IdentityProxy } from '../../../app/persistence/local.backend';
-import umzug from '../../../app/persistence/umzug';
+import { MapStateProxy } from '../../../src/persistence/backend';
+import { IdentityProxy } from '../../../src/persistence/local.backend';
+import umzug from '../../../src/persistence/umzug';
 
 const identity1 = Immutable.Map({
   'google-113495821402887020288': Immutable.Map({

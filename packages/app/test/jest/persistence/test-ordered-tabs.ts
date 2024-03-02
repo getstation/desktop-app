@@ -1,7 +1,7 @@
 import * as Immutable from 'immutable';
-import { MapStateProxy } from '../../../app/persistence/backend';
-import { TabsSubdockOrderProxy } from '../../../app/persistence/local.backend';
-import umzug from '../../../app/persistence/umzug';
+import { MapStateProxy } from '../../../src/persistence/backend';
+import { TabsSubdockOrderProxy } from '../../../src/persistence/local.backend';
+import umzug from '../../../src/persistence/umzug';
 
 const applicationGmail = Immutable.Map({
   'gmail-Byg_4OpCzW': Immutable.Map({

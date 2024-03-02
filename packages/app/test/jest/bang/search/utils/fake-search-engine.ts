@@ -1,9 +1,9 @@
-import { createSearchEngine } from '../../../../../app/bang/search/searchEngine';
-import { SearchEngine } from '../../../../../app/bang/search/types';
+import { createSearchEngine } from '../../../../../src/bang/search/searchEngine';
+import { SearchEngine } from '../../../../../src/bang/search/types';
 import {
   Loggers,
   FrecencyStorageProvider
-} from '../../../../../app/bang/search/score';
+} from '../../../../../src/bang/search/score';
 import { FrecencyData } from '../fixtures/types';
 
 const noop = () => {};

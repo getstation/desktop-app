@@ -1,7 +1,7 @@
 import { search } from '@getstation/sdk';
 import { SearchConsumer } from '@getstation/sdk/lib/search/consumer';
 import { Subscription } from 'rxjs';
-import SearchProvider from '../../../app/sdk/search/SearchProvider';
+import SearchProvider from '../../../src/sdk/search/SearchProvider';
 
 jest.useFakeTimers();
 

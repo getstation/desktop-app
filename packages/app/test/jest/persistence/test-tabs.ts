@@ -1,7 +1,7 @@
 import * as Immutable from 'immutable';
-import { MapStateProxy } from '../../../app/persistence/backend';
-import { TabProxy } from '../../../app/persistence/local.backend';
-import umzug from '../../../app/persistence/umzug';
+import { MapStateProxy } from '../../../src/persistence/backend';
+import { TabProxy } from '../../../src/persistence/local.backend';
+import umzug from '../../../src/persistence/umzug';
 
 const tabGcal = Immutable.Map({
   'gcalendar-mu-rkqEuaAzW/tabGcal1': Immutable.Map({

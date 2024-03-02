@@ -1,6 +1,6 @@
-import { StationTab, StationTabImmutable, StationTabsImmutable } from '../../app/tabs/types';
-import { ImmutableList, StationState } from '../../app/types';
-import { StationUserIdentitiesImmutable, StationUserIdentityImmutable } from '../../app/user-identities/types';
+import { StationTab, StationTabImmutable, StationTabsImmutable } from '../../src/tabs/types';
+import { ImmutableList, StationState } from '../../src/types';
+import { StationUserIdentitiesImmutable, StationUserIdentityImmutable } from '../../src/user-identities/types';
 
 {
   const a: StationState = {} as any;

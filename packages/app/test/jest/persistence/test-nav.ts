@@ -1,7 +1,7 @@
 import * as Immutable from 'immutable';
-import { SingletonStateProxy } from '../../../app/persistence/backend';
-import { NavProxy } from '../../../app/persistence/local.backend';
-import umzug from '../../../app/persistence/umzug';
+import { SingletonStateProxy } from '../../../src/persistence/backend';
+import { NavProxy } from '../../../src/persistence/local.backend';
+import umzug from '../../../src/persistence/umzug';
 
 const navData = Immutable.Map({
   tabApplicationId: 'gmail-Byg_4OpCzW',

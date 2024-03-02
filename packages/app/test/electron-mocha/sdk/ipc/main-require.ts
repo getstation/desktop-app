@@ -1,8 +1,8 @@
 import bxsdk from '@getstation/sdk';
 import { ipcMain } from 'electron';
 import { from } from 'rxjs';
-import { sendToAllWebcontents } from '../../../../app/lib/ipc-broadcast';
-import bxSDK from '../../../../app/sdk/index';
+import { sendToAllWebcontents } from '../../../../src/lib/ipc-broadcast';
+import bxSDK from '../../../../src/sdk/index';
 
 (global as any).worker = Object.freeze({
   webContentsId: 1,

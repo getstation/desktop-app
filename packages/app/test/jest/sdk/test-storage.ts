@@ -4,8 +4,8 @@ import * as Immutable from 'immutable';
 import { createStore } from 'redux';
 // @ts-ignore: no declaration file
 import { combineReducers } from 'redux-immutable';
-import { serviceDataReducer } from '../../../app/plugins/duck';
-import StorageProvider from '../../../app/sdk/storage/StorageProvider';
+import { serviceDataReducer } from '../../../src/plugins/duck';
+import StorageProvider from '../../../src/sdk/storage/StorageProvider';
 
 let data!: {
   storage: storage.StorageConsumer,

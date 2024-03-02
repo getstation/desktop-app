@@ -1,5 +1,5 @@
-import { ServiceBase, ServicePeer, ServicePeerHandler } from '../../../app/services/lib/class';
-import { serialize, unserialize } from '../../../app/services/lib/serialization';
+import { ServiceBase, ServicePeer, ServicePeerHandler } from '../../../src/services/lib/class';
+import { serialize, unserialize } from '../../../src/services/lib/serialization';
 import { getPeerMock, setPeer, TestService, TestServiceImpl } from './mock';
 
 describe('Serialization', () => {

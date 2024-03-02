@@ -1,5 +1,5 @@
 import * as Immutable from 'immutable';
-import { tabWebcontentsToKill } from '../../../app/tab-webcontents/api';
+import { tabWebcontentsToKill } from '../../../src/tab-webcontents/api';
 import { applications, manifests, appSettings, tabs, tabWebcontents } from './webcontents-to-kill-data';
 
 describe('webcontents to kill', () => {

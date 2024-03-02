@@ -2,7 +2,7 @@ import bxsdk, { SDK } from '@getstation/sdk';
 import * as assert from 'assert';
 import { ipcRenderer } from 'electron';
 import { from, Subscription } from 'rxjs';
-import bxSDK from '../../../../app/sdk/index';
+import bxSDK from '../../../../src/sdk/index';
 
 describe('browserX SDK IPC', () => {
   let sdk: SDK;

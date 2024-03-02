@@ -1,7 +1,7 @@
 // tslint:disable-next-line:no-import-side-effect
 import 'reflect-metadata';
-import { endpoints, namespace } from '../../../app/services/lib/const';
-import { allServicesRegistry } from '../../../app/services/lib/registry';
+import { endpoints, namespace } from '../../../src/services/lib/const';
+import { allServicesRegistry } from '../../../src/services/lib/registry';
 import { TestService } from './mock';
 
 describe('decorators', () => {
@@ -10,8 +10,8 @@ describe('decorators', () => {
 
   beforeAll(async () => {
     // avoid circular import conflict with fixtures
-    service = (await import('../../../app/services/lib/decorator')).service;
-    endpoint = (await import('../../../app/services/lib/decorator')).endpoint;
+    service = (await import('../../../src/services/lib/decorator')).service;
+    endpoint = (await import('../../../src/services/lib/decorator')).endpoint;
   });
 
   beforeEach(() => {

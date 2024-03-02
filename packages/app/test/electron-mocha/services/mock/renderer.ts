@@ -1,4 +1,4 @@
-import { RPC } from '../../../../app/services/lib/types';
+import { RPC } from '../../../../src/services/lib/types';
 import { TestServiceProvider } from './common';
 
 export class TestServiceProviderImpl extends TestServiceProvider implements RPC.Interface<TestServiceProvider> {

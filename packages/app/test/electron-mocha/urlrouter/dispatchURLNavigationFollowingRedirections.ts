@@ -2,12 +2,12 @@ import * as assert from 'assert';
 import { join } from 'path';
 import { app } from 'electron';
 import { runSaga } from 'redux-saga';
-import { dispatchUrlSaga } from '../../../app/urlrouter/sagas';
+import { dispatchUrlSaga } from '../../../src/urlrouter/sagas';
 import { getState } from './data-mock';
 import { addDummyCookieToSession, removeDummyCookieFromSession } from './electron-mock';
 import { startDummyServer } from './server-mock';
-import ManifestProvider from '../../../app/applications/manifest-provider/manifest-provider';
-import URLRouter from '../../../app/urlrouter/URLRouter';
+import ManifestProvider from '../../../src/applications/manifest-provider/manifest-provider';
+import URLRouter from '../../../src/urlrouter/URLRouter';
 
 const manifestProvider = new ManifestProvider({
 //  cachePath: join(app.getPath('userData'), 'ApplicationManifestsCache'),

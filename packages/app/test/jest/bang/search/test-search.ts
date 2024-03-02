@@ -1,6 +1,6 @@
 import * as ms from 'ms';
 import * as sinon from 'sinon';
-import { SearchResultSerialized } from '../../../../app/bang/duck';
+import { SearchResultSerialized } from '../../../../src/bang/duck';
 import { createFakeSearchEngine } from './utils/fake-search-engine';
 import {
   SearchResultFixture,
@@ -12,7 +12,7 @@ import {
   case6,
   case7
 } from './fixtures';
-import { SearchEngine } from '../../../../app/bang/search/types';
+import { SearchEngine } from '../../../../src/bang/search/types';
 
 const noop = () => {};
 

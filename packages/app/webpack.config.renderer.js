@@ -116,7 +116,7 @@ module.exports = (config) => {
   // '/' is necessary to resolve Icons.svg from theme
   if (config.devServer) {
     // Mainly for `static` folder, probably a cleaner way to do this that is compatible with dev and prod
-    config.devServer.contentBase.push(path.resolve(__dirname, 'app'));
+    config.devServer.contentBase.push(path.resolve(__dirname, 'src'));
     config.devServer.contentBase.push('/');
     config.devServer.headers = { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': '*' };
   }

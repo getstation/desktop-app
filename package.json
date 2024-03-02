@@ -17,7 +17,8 @@
     "build": "yarn workspaces foreach --all --topological run build",
     "clean": "yarn workspaces foreach --all run clean && rimraf release",
     "release": "yarn clean && yarn workspaces foreach --all --topological run release",
-    "dev": "yarn workspaces foreach --all --topological run dev"
+    "dev": "yarn workspaces foreach --all --topological run dev",
+    "test": "yarn workspaces foreach --all run test"
   },
   "workspaces": [
     "packages/*"

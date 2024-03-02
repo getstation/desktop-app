@@ -1,7 +1,7 @@
 import * as Immutable from 'immutable';
-import { ListStateProxy } from '../../../app/persistence/backend';
-import { UserWeeklyUsageProxy } from '../../../app/persistence/local.backend';
-import umzug from '../../../app/persistence/umzug';
+import { ListStateProxy } from '../../../src/persistence/backend';
+import { UserWeeklyUsageProxy } from '../../../src/persistence/local.backend';
+import umzug from '../../../src/persistence/umzug';
 
 const weeklyUsageData = Immutable.List([
   1513589415, // 12/18/2017 @ 9:30am (UTC)

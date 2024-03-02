@@ -1,7 +1,7 @@
 import * as Immutable from 'immutable';
-import { MapStateProxy } from '../../../app/persistence/backend';
-import { FavoriteProxy } from '../../../app/persistence/local.backend';
-import umzug from '../../../app/persistence/umzug';
+import { MapStateProxy } from '../../../src/persistence/backend';
+import { FavoriteProxy } from '../../../src/persistence/local.backend';
+import umzug from '../../../src/persistence/umzug';
 
 const favorite1 = Immutable.Map({
   'favorite-B1MSOEBmZ': Immutable.Map({

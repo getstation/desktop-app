@@ -7,7 +7,7 @@ import ScoreEngine, {
   withPercentages,
   withStrictBound,
   withWeight,
-} from '../../../app/lib/score-engine';
+} from '../../../src/lib/score-engine';
 
 type Item = { id: string };
 const emptyContext = {};

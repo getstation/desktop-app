@@ -2,8 +2,8 @@ import { ipcMain } from 'electron';
 import { Observable } from 'rxjs';
 import { firstConnectionHandler } from 'stream-electron-ipc';
 import rpcchannel from 'stream-json-rpc';
-import { ServicePeerHandler } from '../../../app/services/lib/class';
-import { isPackaged } from '../../../app/utils/env';
+import { ServicePeerHandler } from '../../../src/services/lib/class';
+import { isPackaged } from '../../../src/utils/env';
 import { TestServiceImpl } from './mock/main';
 
 const dummyService = new TestServiceImpl('__test__');

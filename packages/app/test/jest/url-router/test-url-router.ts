@@ -1,4 +1,4 @@
-import UrlRouter from '../../../app/urlrouter/URLRouter';
+import UrlRouter from '../../../src/urlrouter/URLRouter';
 
 const fakeState = {};
 const fakeManifestProvider = {};

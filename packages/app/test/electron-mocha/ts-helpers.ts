@@ -2,8 +2,8 @@ import * as Immutable from 'immutable';
 import { Action } from 'redux';
 import { expectSaga, RunResult, SagaType } from 'redux-saga-test-plan';
 import { PutEffect } from 'redux-saga/effects';
-import rootReducer from '../../app/reducers';
-import { StationState } from '../../app/types';
+import rootReducer from '../../src/reducers';
+import { StationState } from '../../src/types';
 
 // Complete me when necessary
 export const initialState = Immutable.Map({

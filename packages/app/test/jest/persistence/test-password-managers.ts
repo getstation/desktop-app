@@ -1,8 +1,8 @@
 import * as Immutable from 'immutable';
-import * as models from '../../../app/database/model';
-import getPasswordManagerLinks from '../../../app/password-managers/persistence/passwordManagerLinks';
-import onePasswordProxy from '../../../app/password-managers/providers/onePassword/persistence';
-import umzug from '../../../app/persistence/umzug';
+import * as models from '../../../src/database/model';
+import getPasswordManagerLinks from '../../../src/password-managers/persistence/passwordManagerLinks';
+import onePasswordProxy from '../../../src/password-managers/providers/onePassword/persistence';
+import umzug from '../../../src/persistence/umzug';
 
 beforeAll(() => umzug.up());
 
