@@ -27,7 +27,9 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
       - name: Build
-        run: yarn build
+        run: |
+          yarn -v
+          yarn build
         
   MacOs:
     runs-on: macos-latest
