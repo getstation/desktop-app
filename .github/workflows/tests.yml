@@ -21,9 +21,9 @@ jobs:
         with:
           node-version: "18"
           cache: "yarn"
-      - name: Configure Node
-        run: |
-          yarn set version stable
+      # - name: Configure Node
+      #   run: |
+      #     yarn set version stable
       - name: Install dependencies
         run: yarn install --immutable
       - name: Build
@@ -45,7 +45,7 @@ jobs:
           npm install -g npm@8  
           npm install -g node-gyp@latest
           npm config set node_gyp $(npm prefix -g)/lib/node_modules/node-gyp/bin/node-gyp.js
-          yarn set version stable
+          # yarn set version stable
       - name: Install dependencies
         run: yarn install --immutable
       - name: Build
@@ -70,7 +70,7 @@ jobs:
           npm install -g npm@8  
           npm install -g node-gyp@latest
           npm prefix -g | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
-          yarn set version stable
+          # yarn set version stable
       - name: Install dependencies
         run: yarn install --immutable
       - name: Build
