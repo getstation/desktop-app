@@ -27,9 +27,7 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
       - name: Build
-        run: |
-          yarn -v
-          yarn build
+        run: yarn build
         
   MacOs:
     runs-on: macos-latest
@@ -50,8 +48,6 @@ jobs:
           yarn set version stable
       - name: Install dependencies
         run: yarn install --immutable
-      # - name: Lint
-      #   run: yarn run lint:ci
       - name: Build
         run: yarn build
       - name: Tests
@@ -74,10 +70,7 @@ jobs:
           npm install -g npm@8  
           npm install -g node-gyp@latest
           npm prefix -g | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
-          npm config set registry "http://registry.npmjs.org"
           yarn set version stable
-          yarn config set registry "http://registry.npmjs.org"
-          yarn config set network-timeout 300000
       - name: Install dependencies
         run: yarn install --immutable
       - name: Build
