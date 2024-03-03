@@ -14,6 +14,7 @@
   "license": "Apache License 2.0",
   "main": "dist/main.js",
   "scripts": {
+    "install": "",
     "build": "yarn workspaces foreach --all --topological run build",
     "clean": "yarn workspaces foreach --all run clean && rimraf release",
     "release": "yarn clean && yarn workspaces foreach --all --topological run release",
