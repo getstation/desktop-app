@@ -58,7 +58,8 @@ linux:
   artifactName: ${productName}-${arch}.${ext}
 
 extraResources:
-  - '.env.production'
+  - from: '../../.env.production'
+    to: '.env.production'
   - from: 'build/icon_512x512.png'
     to: 'icon.png'
 
