@@ -6,7 +6,7 @@ index fd83201677304175cd888e0f9935ca8059e4e52c..e0337b0df6e3fb8d4135b40962d1e6ad
    "description": "Gets the Focus Assist status in Windows 10 CU or later.",
    "main": "lib/index.js",
    "scripts": {
-+    "install": "",
++    "install": "node-gyp rebuild",
      "test": "node sample/index.js"
    },
    "repository": {
