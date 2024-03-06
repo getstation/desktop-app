@@ -1,0 +1,12 @@
+diff --git a/package.json b/package.json
+index fd83201677304175cd888e0f9935ca8059e4e52c..e0337b0df6e3fb8d4135b40962d1e6ad7651e9e4 100644
+--- a/package.json
++++ b/package.json
+@@ -4,6 +4,7 @@
+   "description": "Gets the Focus Assist status in Windows 10 CU or later.",
+   "main": "lib/index.js",
+   "scripts": {
++    "install": "node-gyp rebuild",
+     "test": "node sample/index.js"
+   },
+   "repository": {
