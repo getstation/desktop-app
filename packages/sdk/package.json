@@ -1,6 +1,6 @@
 {
   "name": "@getstation/sdk",
-  "version": "0.15.0",
+  "version": "0.16.0",
   "author": "joel@getstation.com",
   "license": "ISC",
   "description": "Station SDK",
@@ -31,7 +31,7 @@
     "rxjs": "^6.4.0",
     "tslint": "^5.12.1",
     "tslint-config-station": "^0.6.0",
-    "typescript": "^3.3.1"
+    "typescript": "^3.9.4"
   },
   "toolchain": {
     "node": "10.15.3"
