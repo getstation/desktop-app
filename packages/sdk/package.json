@@ -1,0 +1,39 @@
+{
+  "name": "@getstation/sdk",
+  "version": "0.16.0",
+  "author": "joel@getstation.com",
+  "license": "ISC",
+  "description": "Station SDK",
+  "main": "./lib/index",
+  "types": "./lib/index",
+  "bugs": {
+    "url": "https://github.com/getstation/sdk/issues"
+  },
+  "homepage": "https://github.com/getstation/sdk#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getstation/sdk.git"
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "prepublishOnly": "yarn run lint && yarn run build",
+    "lint": "tslint -p ."
+  },
+  "peerDependencies": {
+    "rxjs": "^6.0.0"
+  },
+  "dependencies": {
+    "tslib": "^1.9.3"
+  },
+  "devDependencies": {
+    "@types/react": "^16.3.14",
+    "@types/react-dom": "^16.0.5",
+    "rxjs": "^6.4.0",
+    "tslint": "^5.12.1",
+    "tslint-config-station": "^0.6.0",
+    "typescript": "^3.9.4"
+  },
+  "toolchain": {
+    "node": "10.15.3"
+  }
+}

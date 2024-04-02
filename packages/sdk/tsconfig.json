@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "declaration": true,
+    "preserveConstEnums": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noImplicitThis": true,
+    "noUnusedParameters": true,
+    "noEmitHelpers": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es2016",
+    "outDir": "./lib",
+    "jsx": "react",
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "typeRoots": ["./node_modules/@types"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}

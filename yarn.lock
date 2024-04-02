@@ -2759,6 +2759,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@getstation/sdk@workspace:packages/sdk":
+  version: 0.0.0-use.local
+  resolution: "@getstation/sdk@workspace:packages/sdk"
+  dependencies:
+    "@types/react": "npm:^16.3.14"
+    "@types/react-dom": "npm:^16.0.5"
+    rxjs: "npm:^6.4.0"
+    tslib: "npm:^1.9.3"
+    tslint: "npm:^5.12.1"
+    tslint-config-station: "npm:^0.6.0"
+    typescript: "npm:^3.9.4"
+  peerDependencies:
+    rxjs: ^6.0.0
+  languageName: unknown
+  linkType: soft
+
 "@getstation/slack@npm:^13.0.0":
   version: 13.0.0
   resolution: "@getstation/slack@npm:13.0.0"
@@ -30663,7 +30679,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslint@npm:^5.11.0":
+"tslint@npm:^5.11.0, tslint@npm:^5.12.1":
   version: 5.20.1
   resolution: "tslint@npm:5.20.1"
   dependencies:
