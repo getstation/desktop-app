@@ -16,24 +16,22 @@
   },
   "scripts": {
     "build": "tsc -p .",
-    "prepublishOnly": "yarn run lint && yarn run build",
-    "lint": "tslint -p ."
-  },
-  "peerDependencies": {
-    "rxjs": "^6.0.0"
+    "clean": "rimraf lib",
+    "release": "yarn build",
+    "dev": "yarn build",
+    "lint": "tslint -p .",
+    "test": "jest --passWithNoTests"
   },
   "dependencies": {
-    "tslib": "^1.9.3"
+    "tslib": "^2.5.0"
   },
   "devDependencies": {
-    "@types/react": "^16.3.14",
-    "@types/react-dom": "^16.0.5",
-    "rxjs": "^6.4.0",
+    "@types/react": "^16.14.40",
+    "@types/react-dom": "^16.9.18",
+    "rimraf": "^3.0.0",
+    "rxjs": "^6.6.7",
     "tslint": "^5.12.1",
     "tslint-config-station": "^0.6.0",
     "typescript": "^3.9.4"
-  },
-  "toolchain": {
-    "node": "10.15.3"
   }
 }

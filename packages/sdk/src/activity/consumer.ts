@@ -1,5 +1,5 @@
 import { from, Observable } from 'rxjs';
-import { flatMap } from 'rxjs/operators';
+import { mergeMap } from 'rxjs/operators';
 
 import { Consumer, DefaultWeakMap } from '../common';
 
@@ -45,7 +45,7 @@ export class ActivityConsumer extends Consumer implements activity.ActivityConsu
     const consumer = protectedProvidersWeakMap.get(this)!;
 
     return from(consumer.query(queryArgs))
-      .pipe(flatMap(c => c));
+      .pipe(mergeMap(c => c));
   }
 
   setProviderInterface(providerInterface: activity.ActivityProviderInterface) {
