@@ -2854,10 +2854,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@getstation/sdk@workspace:packages/sdk"
   dependencies:
+    "@types/jest": "npm:^24.9.1"
     "@types/react": "npm:^16.14.40"
     "@types/react-dom": "npm:^16.9.18"
+    jest: "npm:^24.9.0"
     rimraf: "npm:^3.0.0"
     rxjs: "npm:^6.6.7"
+    ts-jest: "npm:^24.3.0"
     tslib: "npm:^2.5.0"
     tslint: "npm:^5.12.1"
     tslint-config-station: "npm:^0.6.0"

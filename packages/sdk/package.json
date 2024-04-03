@@ -26,12 +26,18 @@
     "tslib": "^2.5.0"
   },
   "devDependencies": {
+    "@types/jest": "^24.9.1",
     "@types/react": "^16.14.40",
     "@types/react-dom": "^16.9.18",
+    "jest": "^24.9.0",
     "rimraf": "^3.0.0",
     "rxjs": "^6.6.7",
+    "ts-jest": "^24.3.0",
     "tslint": "^5.12.1",
     "tslint-config-station": "^0.6.0",
     "typescript": "^3.9.4"
+  },
+  "jest": {
+    "preset": "ts-jest"
   }
 }
