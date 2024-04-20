@@ -21,7 +21,7 @@ const turnOffAudioVolumeObserver = target => {
 
 let disconnectTurnOffAudioVolumeObserver;
 
-window.bx.notificationCenter.snoozeDurationInMs.subscribe(duration => {
+window.bx.notificationCenter.addSnoozeDurationInMsChangeListener((_, duration) => {
   if (duration && !document.location.pathname.includes('/videocall/incall/')) {
     disconnectTurnOffAudioVolumeObserver = turnOffAudioVolumeObserver(document.body);
   } else {

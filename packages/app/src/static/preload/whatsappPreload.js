@@ -10,4 +10,6 @@ Audio.prototype.play = function() {
   return Promise.resolve();
 };
 
-window.bx.notificationCenter.snoozeDurationInMs.subscribe(duration => snoozed = Boolean(duration));
+window.bx.notificationCenter.addSnoozeDurationInMsChangeListener((_, duration) => {
+  snoozed = Boolean(duration);
+});

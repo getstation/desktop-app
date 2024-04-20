@@ -100,7 +100,8 @@ export default class MultiInstanceConfigurator extends React.Component<Props, St
 
   componentDidMount() {
     const { manifestURL } = this.props;
-    window.bx.manifest.getManifest(manifestURL).then((manifest: BxAppManifest) => {
+    window.bx.manifest.getManifest(manifestURL).then(({ body }) => {
+      const manifest = body;
       const presets = this.getPresets(manifest);
       const selectedPreset = isOnlyOnPremise(presets) ? UndefinedPreset : presets[0];
       this.setState({
@@ -223,6 +224,10 @@ export default class MultiInstanceConfigurator extends React.Component<Props, St
     } else if (isOnlyOnPremise(presets) && selectedPreset === OnPremisePreset) { // on-premise/normal flows
       return this.renderOnPremiseForm({ normalFlow: true });
     }
+
+    
+    console.log('XXXXXX', selectedPreset);
+
 
     switch (selectedPreset) {
       case GoogleAccountPreset: return this.renderIdentityForm(); // google-account

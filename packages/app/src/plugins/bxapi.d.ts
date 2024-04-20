@@ -91,7 +91,9 @@ declare module BxAPI {
      * themeColors
      * @since 1.11.0
      */
-    themeColors: ObservableResponse<string[]>,
+    // themeColors: ObservableResponse<string[]>,
+
+    addThemeColorsChangeListener(listener): void;
   }
 
   /**
@@ -103,7 +105,15 @@ declare module BxAPI {
      * snoozeDurationInMs
      * @since 1.12.0
      */
-    snoozeDurationInMs: ObservableResponse<string | undefined>,
+    // snoozeDurationInMs: ObservableResponse<string | undefined>,
+
+    addSnoozeDurationInMsChangeListener(listener): void;
+
+    sendNotification(id: string, notification: any);
+    closeNotification(id: string);
+
+    addNotificationClickListener(listener: (event: Event, notificationId: string) => void): void;
+    removeNotificationClickListener(listener: (event: Event, notificationId: string) => void): void;
   }
 
   /**
@@ -134,7 +144,7 @@ declare module BxAPI {
   }
 
   interface Manifest {
-    getManifest(manifestURL: string): Promise<BxAppManifest>,
+    getManifest(manifestURL: string): Promise<{ body: BxAppManifest }>,
   }
 
   interface Applications {
@@ -151,7 +161,10 @@ declare module BxAPI {
   }
 
   interface Identities {
-    $get: ObservableResponse<any>,
+    // $get: ObservableResponse<any>,
+
+    addIdentitiesChangeListener(listener): void;
+    
     requestLogin(provider: AuthProviders): Promise<any>,
   }
 }
@@ -172,5 +185,7 @@ interface Bx {
 }
 
 declare global {
-  interface Window { bx: Bx; }
+  interface Window { 
+    bx: Bx;
+  }
 }

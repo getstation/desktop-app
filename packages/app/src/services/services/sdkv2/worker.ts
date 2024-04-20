@@ -13,6 +13,7 @@ import { ServiceSubscription } from '../../lib/class';
 import { observer } from '../../lib/helpers';
 import { RPC } from '../../lib/types';
 import { SDKv2Actions, SDKv2Selectors, SDKv2Service, SDKv2ServiceObserver } from './interface';
+import { service } from '../../lib/decorator';
 
 const bxAPIAllowedActions = [
   {
@@ -77,6 +78,12 @@ const bxAPIAllowedActions = [
     // Avoid circular imports
     sagaMethod: () => import('../../../app-store/sagas').then(x => x.getApplicationsByCategory),
     allowedParameters: [],
+  },
+  {
+    channel: SDKv2Actions.GetManifestByURL,
+    // Avoid circular imports
+    sagaMethod: () => import('../../../app-store/sagas').then(x => x.getManifestByURL),
+    allowedParameters: ['manifestURL'],
   },
 ];
 

@@ -14,6 +14,7 @@ export enum SDKv2Actions {
   GetApplicationsByCategory = 'GetApplicationsByCategory',
   RequestPrivateApplication = 'RequestPrivateApplication',
   GetPrivateApplications = 'GetPrivateApplications',
+  GetManifestByURL = 'GetManifestByURL',
 }
 
 export enum SDKv2Selectors {

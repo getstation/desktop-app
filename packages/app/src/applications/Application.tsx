@@ -4,7 +4,7 @@
 */
 import * as slack from 'slack';
 import { GradientType, withGradient } from '@getstation/theme';
-import ElectronWebview from 'app/common/components/ElectronWebview';
+import ElectronWebview from '../common/components/ElectronWebview';
 import * as classNames from 'classnames';
 import { clipboard } from 'electron';
 import * as remote from '@electron/remote';
@@ -346,6 +346,8 @@ class ApplicationImpl extends React.PureComponent {
 
     if (js && this.webView && this.webView.view) {
       this.webView.view.executeJavaScript(js);
+      // const webContents = remote.webContents.fromId(this.webView.view.getWebContentsId());
+      // webContents?.executeJavaScriptInIsolatedWorld(999, [{ code: js }]);
     }
     this.setState({ ready: true });
   }
@@ -400,8 +402,8 @@ class ApplicationImpl extends React.PureComponent {
     const tab = this.props.tab;
     const useNativeWindowOpen = !this.props.notUseNativeWindowOpen;
     const tabUrl = tab.get('url', '');
-    const nodeIntegrationEnabled = tabUrl.startsWith('station://')
-
+    // const nodeIntegrationEnabled = tabUrl.startsWith('station://')
+    const contextIsolationEnabled = !tabUrl.startsWith('station://appstore');
     const {
       applicationId, applicationName, applicationIcon, themeColor, manifestURL,
       askResetApplication, onChooseAccount,
@@ -464,7 +466,7 @@ class ApplicationImpl extends React.PureComponent {
           onDidFailLoad={this.handleDidFailLoad}
           onDomReady={this.handleDomReady}
           onCrashed={this.handleWebcontentsCrashed}
-          webpreferences={`allowRunningInsecureContent=true,nativeWindowOpen=${useNativeWindowOpen},contextIsolation=false,nodeIntegration=${nodeIntegrationEnabled}`}
+          webpreferences={`allowRunningInsecureContent=true,nativeWindowOpen=${useNativeWindowOpen},contextIsolation=${contextIsolationEnabled},nodeIntegration=true`}
         />
 
       </div>

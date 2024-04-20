@@ -17,7 +17,7 @@ const protocolsAllowed = [
   'station:',
 ];
 if (micromatch.isMatch(window.location.origin, originsAllowed) || protocolsAllowed.includes(window.location.protocol)) {
-  const { ipcRenderer } = require('electron');
+  const { contextBridge, ipcRenderer } = require('electron');
   const { Observable } = require('rxjs');
 
   const sendPerformToProxy = (channel, payload) => {
@@ -74,9 +74,25 @@ if (micromatch.isMatch(window.location.origin, originsAllowed) || protocolsAllow
     }
   }
 
-  window.bx = {
+  // zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+
+  const addListenerToChannel = (channel, listener) => {
+    ipcRenderer.on(`bx-api-subscribe-response-${channel}`, listener);
+    setTimeout(() => {
+      ipcRenderer.invoke('get-worker-contents-id')
+          .then(workerWebContentsId => ipcRenderer.sendTo(workerWebContentsId, 'bx-api-subscribe', channel));
+    }, 1);
+  };
+
+  const bxApi = {
     notificationCenter: {
-      snoozeDurationInMs: BxAPI.subscribe('GetSnoozeDuration'),
+        addSnoozeDurationInMsChangeListener: (listener) => addListenerToChannel('GetSnoozeDuration', listener),
+
+        sendNotification: (id, notification) => ipcRenderer.send('new-notification', id, notification),
+        closeNotification: (id) => ipcRenderer.send('notification-close', id),
+
+        addNotificationClickListener: (listener) => ipcRenderer.on('trigger-notification-click', listener),
+        removeNotificationClickListener: (listener) => ipcRenderer.removeListener('trigger-notification-click', listener),
     },
     applications: {
       install: (payload) => BxAPI.perform(
@@ -119,15 +135,87 @@ if (micromatch.isMatch(window.location.origin, originsAllowed) || protocolsAllow
       )
     },
     theme: {
-      themeColors: BxAPI.subscribe('GetThemeColors'),
+      addThemeColorsChangeListener: (listener) => addListenerToChannel('GetThemeColors', listener),
     },
     identities: {
-      $get: BxAPI.subscribe('GetAllIdentities'),
+      addIdentitiesChangeListener: (listener) => addListenerToChannel('GetAllIdentities', listener),
+
       requestLogin: (provider) => BxAPI.perform(
         'RequestLogin',
         { provider },
         ['provider']
       ),
     },
-  };
+     manifest: {
+      getManifest: (manifestURL) => BxAPI.perform(
+        'GetManifestByURL', 
+        { manifestURL }, 
+        ['manifestURL']
+      ),
+     }
+    };
+
+  if (!window.location.href.startsWith('station://appstore')) {
+    contextBridge.exposeInMainWorld('bx', bxApi);
+  }
+  else {
+    window.bx = bxApi;
+  }
+
+  // window.bx = {
+  //   notificationCenter: {
+  //     snoozeDurationInMs: BxAPI.subscribe('GetSnoozeDuration'),
+  //   },
+  //   applications: {
+  //     install: (payload) => BxAPI.perform(
+  //       'InstallApplication',
+  //       payload,
+  //       ['manifestURL', 'context']
+  //     ),
+  //     uninstall: (applicationId) => BxAPI.perform(
+  //       'UninstallApplication',
+  //       { applicationId },
+  //       ['applicationId']
+  //     ),
+  //     uninstallByManifest: (manifestURL) => BxAPI.perform(
+  //       'UninstallApplications',
+  //       { manifestURL },
+  //       ['manifestURL']
+  //     ),
+  //     setConfigData: (applicationId, configData) => BxAPI.perform(
+  //       'SetApplicationConfigData',
+  //       { applicationId, configData },
+  //       ['applicationId', 'configData']
+  //     ),
+  //     search: (query) => BxAPI.perform(
+  //       'SearchApplication',
+  //       { query },
+  //       ['query']
+  //     ),
+  //     getMostPopularApps: () => BxAPI.perform('GetMostPopularApplication', {}, []),
+  //     getAllCategories: () => BxAPI.perform('GetAllCategories', {}, []),
+  //     getApplicationsByCategory: () => BxAPI.perform('GetApplicationsByCategory', {}, []),
+  //     requestPrivate: (payload) => BxAPI.perform(
+  //       'RequestPrivateApplication',
+  //       payload,
+  //       ['name', 'themeColor', 'bxIconURL', 'startURL', 'scope']
+  //     ),
+  //     getPrivateApps: () => BxAPI.perform(
+  //       'GetPrivateApplications',
+  //       {},
+  //       []
+  //     )
+  //   },
+  //   theme: {
+  //     themeColors: BxAPI.subscribe('GetThemeColors'),
+  //   },
+  //   identities: {
+  //     $get: BxAPI.subscribe('GetAllIdentities'),
+  //     requestLogin: (provider) => BxAPI.perform(
+  //       'RequestLogin',
+  //       { provider },
+  //       ['provider']
+  //     ),
+  //   },
+  // };
 }

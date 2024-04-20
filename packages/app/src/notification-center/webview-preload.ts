@@ -67,12 +67,18 @@ export class BxNotification extends EventTarget('click', 'error', 'close', 'show
     });
 
     this._registerIPC();
-    ipcRenderer.send('new-notification', this.id, {
+    window.bx.notificationCenter.sendNotification(this.id, {
       timestamp: this.timestamp,
       title: this.title,
       body: this.body,
       icon: this.icon,
     });
+    // ipcRenderer.send('new-notification', this.id, {
+    //   timestamp: this.timestamp,
+    //   title: this.title,
+    //   body: this.body,
+    //   icon: this.icon,
+    // });
   }
 
   static requestPermission(deprecatedCallback?: NotificationPermissionCallback): Promise<NotificationPermission> {
@@ -82,15 +88,18 @@ export class BxNotification extends EventTarget('click', 'error', 'close', 'show
   }
 
   close() {
-    ipcRenderer.send('notification-close', this.id);
+    window.bx.notificationCenter.closeNotification(this.id);
+    // ipcRenderer.send('notification-close', this.id);
   }
 
   _registerIPC() {
-    ipcRenderer.on('trigger-notification-click', this._handleNotificationClickIPC);
+    window.bx.notificationCenter.addNotificationClickListener(this._handleNotificationClickIPC);
+    // ipcRenderer.on('trigger-notification-click', this._handleNotificationClickIPC);
   }
 
   _unregisterIPC() {
-    ipcRenderer.removeListener('trigger-notification-click', this._handleNotificationClickIPC);
+    window.bx.notificationCenter.removeNotificationClickListener(this._handleNotificationClickIPC);
+    // ipcRenderer.removeListener('trigger-notification-click', this._handleNotificationClickIPC);
   }
 
   _handleNotificationClickIPC = (_e: Event, notificationId: string) => {

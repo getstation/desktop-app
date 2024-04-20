@@ -183,6 +183,11 @@ export function* getApplicationsByCategory(): SagaIterator {
   return appsByCategory;
 }
 
+export function* getManifestByURL(manifestURL: string): SagaIterator {
+  return listAllApplications()
+    .find(app => getBxAppManifestURL(app.id) === manifestURL);
+}
+
 /**
  * Creates a manifest in data folder
  */
