@@ -1,22 +1,26 @@
-/* eslint-disable global-require */
-const micromatch = require('micromatch');
+// /* eslint-disable global-require */
+// const micromatch = require('micromatch');
 
-const originsAllowed = [
-  'http://localhost:8080',
-  'http://localhost:8081',
-  'http://staging-apps.getstation.com',
-  'https://staging-apps.getstation.com',
-  'https://apps.getstation.com',
-  // deploy previews of the appstore
-  'https://*--station-appstore.netlify.com',
+// const originsAllowed = [
+//   'http://localhost:8080',
+//   'http://localhost:8081',
+//   'http://staging-apps.getstation.com',
+//   'https://staging-apps.getstation.com',
+//   'https://apps.getstation.com',
+//   // deploy previews of the appstore
+//   'https://*--station-appstore.netlify.com',
 
-  'https://www.messenger.com',
-  'https://web.whatsapp.com',
-];
-const protocolsAllowed = [
-  'station:',
-];
-if (micromatch.isMatch(window.location.origin, originsAllowed) || protocolsAllowed.includes(window.location.protocol)) {
+//   'https://www.messenger.com',
+//   'https://web.whatsapp.com',
+// ];
+// const protocolsAllowed = [
+//   'station:',
+// ];
+
+// console.log('FFFFF We are here', window.location.origin);
+
+// if (micromatch.isMatch(window.location.origin, originsAllowed) || protocolsAllowed.includes(window.location.protocol)) {
+
   const { contextBridge, ipcRenderer } = require('electron');
   const { Observable } = require('rxjs');
 
@@ -157,9 +161,13 @@ if (micromatch.isMatch(window.location.origin, originsAllowed) || protocolsAllow
 
   if (!window.location.href.startsWith('station://appstore')) {
     contextBridge.exposeInMainWorld('bx', bxApi);
+
+    console.log('GGGGGG contextBridge DONE')
   }
   else {
     window.bx = bxApi;
+
+    console.log('GGGGGG window.bx DONE')
   }
 
   // window.bx = {
@@ -218,4 +226,4 @@ if (micromatch.isMatch(window.location.origin, originsAllowed) || protocolsAllow
   //     ),
   //   },
   // };
-}
+// }

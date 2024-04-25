@@ -341,7 +341,16 @@ class ApplicationImpl extends React.PureComponent {
     this.props.onLoadingStateChanged(false);
   }
 
+
+
   async handleDomReady() {
+    const bxNotifJS = require(`!!raw-loader!../notification-center/bxnotification.js`).default
+    if (bxNotifJS && this.webView && this.webView.view) {
+      this.webView.view.executeJavaScript(bxNotifJS); //`(function(){\n${bxNotifJS}\n})()`);
+    }
+
+    // console.log('ZZZZZZ', bxNotifJS);
+
     const js = await injectJS(this.props.legacyServiceId);
 
     if (js && this.webView && this.webView.view) {
