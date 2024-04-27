@@ -27,7 +27,22 @@ export const SALESFORCE_MANIFEST_URL = consts.SALESFORCE_MANIFEST_URL;
 export const APPLICATIONS_WITH_CUSTOM_SUBDOCK_TITLE = consts.APPLICATIONS_WITH_CUSTOM_SUBDOCK_TITLE;
 
 // JavaScript Injection
-export const JAVASCRIPT_INJECTIONS = consts.JAVASCRIPT_INJECTIONS;
+export const JAVASCRIPT_INJECTIONS = {
+  asana: ['asanaInjectedScript'],
+  gmail: ['gmailInjectedScript'],
+  slack: ['slackInjectedScript'],
+  'station-support': ['slackInjectedScript'],
+  'gdrive-mu': ['removeGoogleAccountInjectedScript'],
+  'gcalendar-mu': ['removeGoogleAccountInjectedScript'],
+  outlook: ['office365InjectedScript'],
+  'office-365': ['office365InjectedScript'],
+  'outlook-pro': ['office365InjectedScript'],
+  'google-keep': ['removeGoogleAccountInjectedScript'],
+  'facebook-messenger': ['messengerInjectedScript'],
+  'whatsapp': ['whatsappInjectedScript'],
+};
 
 // Internal Applications
-export const INTERNAL_APPLICATIONS = consts.INTERNAL_APPLICATIONS;
+export const INTERNAL_APPLICATIONS = [
+  process.env.APP_STORE_MANIFEST_URL!,
+];

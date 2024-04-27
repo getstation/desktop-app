@@ -403,7 +403,7 @@ class ApplicationImpl extends React.PureComponent {
     const useNativeWindowOpen = !this.props.notUseNativeWindowOpen;
     const tabUrl = tab.get('url', '');
     // const nodeIntegrationEnabled = tabUrl.startsWith('station://')
-    const contextIsolationEnabled = !tabUrl.startsWith('station://appstore');
+    const contextIsolationEnabled = true; //!tabUrl.startsWith('station://appstore');
     const {
       applicationId, applicationName, applicationIcon, themeColor, manifestURL,
       askResetApplication, onChooseAccount,

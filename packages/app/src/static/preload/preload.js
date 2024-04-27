@@ -221,14 +221,6 @@ function callSendMessageCallbackWithError(responseCallback, errorMessage) {
 
 require('../../webui/preload');
 
-// Specifics
-if (window.location.hostname === 'www.messenger.com') {
-  require('./messengerPreload');
-}
-if (window.location.hostname === 'web.whatsapp.com') {
-  require('./whatsappPreload');
-}
-
 // Prevents `Cmd+T` to be handled by any app (initialy made for slack app)
 // Chrome does not emit `KeyboardEvent` for `t` when
 // `Cmd+T` is pressed. We are trying to mimic a similar behavior.
