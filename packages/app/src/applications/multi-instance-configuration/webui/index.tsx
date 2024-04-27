@@ -18,8 +18,6 @@ window.bx.theme.addThemeColorsChangeListener(
   (_: any, result: any) => themeColorsObservable.next(result)
 );
 
-// const themeColorsObservable = window.bx.theme.themeColors;
-
 ReactDOM.render(
   <BrowserXThemeProvider>
     <WebUIGradientProvider themeColorsObservable={themeColorsObservable}>

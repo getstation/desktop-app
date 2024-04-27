@@ -62,9 +62,6 @@ class AppImpl extends React.Component<Props, IState> {
       // @ts-ignore : bx attached to window
       const bxApi = window.bx;
 
-      // bxApi.theme.themeColors.subscribe((themeColors: string[]) =>
-      //   this.setState({ themeColors }));
-        
       bxApi.theme.addThemeColorsChangeListener((_: any, themeColors: string[]) => {
         this.setState({ themeColors })
       });
