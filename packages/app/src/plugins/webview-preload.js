@@ -22,6 +22,10 @@
     }, 1);
   };
 
+  const removeListenerToChannel = (channel, listener) => {
+    ipcRenderer.removeListener(`bx-api-subscribe-response-${channel}`, listener);
+  }
+
   class BxAPI {
     static async perform(channel, payload, requiredParams) {
       if (requiredParams) {
@@ -101,6 +105,7 @@
     },
     identities: {
       addIdentitiesChangeListener: (listener) => addListenerToChannel('GetAllIdentities', listener),
+      removeIdentitiesChangeListener: (listener) => removeListenerToChannel('GetAllIdentities', listener),
 
       requestLogin: (provider) => BxAPI.perform(
         'RequestLogin',

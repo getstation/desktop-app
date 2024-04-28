@@ -151,6 +151,7 @@ declare module BxAPI {
 
   interface Identities {
     addIdentitiesChangeListener(listener: (event: IpcRendererEvent, identities: any[]) => void): void;
+    removeIdentitiesChangeListener(listener: (event: IpcRendererEvent, identities: any[]) => void): void;
     
     requestLogin(provider: AuthProviders): Promise<any>,
   }

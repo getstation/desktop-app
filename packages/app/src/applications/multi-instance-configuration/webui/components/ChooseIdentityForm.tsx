@@ -44,22 +44,19 @@ export default class ChooseIdentityForm extends React.PureComponent<Props, State
     this.props.onRequestSignin();
   }
 
-  // tslint:disable-next-line:function-name
-  UNSAFE_componentWillMount() {
-    window.bx.identities.addIdentitiesChangeListener((_: any, identities: any) => {
-      this.setState({
-        identities,
-      });
+  onIdentitiesChanged = (_: any, identities: any) => {
+    this.setState({
+      identities,
     });
   }
 
-  //vk: FIXME: should we remove listener? how?
+  UNSAFE_componentWillMount() {
+    window.bx.identities.addIdentitiesChangeListener(this.onIdentitiesChanged);
+  }
 
-  // componentWillUnmount() {
-  //   if (this.subscription) {
-  //     this.subscription.unsubscribe();
-  //   }
-  // }
+  componentWillUnmount() {
+    window.bx.identities.removeIdentitiesChangeListener(this.onIdentitiesChanged);
+  }
 
   render() {
     const { instanceTypeWording, name, help, classes } = this.props;
