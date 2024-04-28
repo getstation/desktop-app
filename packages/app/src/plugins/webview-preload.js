@@ -23,7 +23,7 @@
   };
 
   const removeListenerToChannel = (channel, listener) => {
-    ipcRenderer.removeListener(`bx-api-subscribe-response-${channel}`, listener);
+    ipcRenderer.off(`bx-api-subscribe-response-${channel}`, listener);
   }
 
   class BxAPI {
@@ -58,7 +58,7 @@
         closeNotification: (id) => ipcRenderer.send('notification-close', id),
 
         addNotificationClickListener: (listener) => ipcRenderer.on('trigger-notification-click', listener),
-        removeNotificationClickListener: (listener) => ipcRenderer.removeListener('trigger-notification-click', listener),
+        removeNotificationClickListener: (listener) => ipcRenderer.off('trigger-notification-click', listener),
     },
     applications: {
       install: (payload) => BxAPI.perform(
