@@ -1,5 +1,4 @@
 /* tslint:disable:function-name */
-import { ipcRenderer } from 'electron';
 import * as shortid from 'shortid';
 import { EventTarget } from 'event-target-shim';
 

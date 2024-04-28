@@ -117,13 +117,6 @@
      }
     };
 
-//  if (!window.location.href.startsWith('station://appstore')) {
     contextBridge.exposeInMainWorld('bx', bxApi);
 
     console.log('>>>> contextBridge done')
-  // }
-  // else {
-  //   window.bx = bxApi;
-
-  //   console.log('>>>> bx done')
-  // }
