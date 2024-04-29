@@ -100,7 +100,8 @@ export default class MultiInstanceConfigurator extends React.Component<Props, St
 
   componentDidMount() {
     const { manifestURL } = this.props;
-    window.bx.manifest.getManifest(manifestURL).then((manifest: BxAppManifest) => {
+    window.bx.manifest.getManifest(manifestURL).then(({ body }) => {
+      const manifest = body;
       const presets = this.getPresets(manifest);
       const selectedPreset = isOnlyOnPremise(presets) ? UndefinedPreset : presets[0];
       this.setState({

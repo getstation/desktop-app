@@ -9,8 +9,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 
 import { AppStoreContext, ContextEnvPlatform } from './context';
-import { MinimalApplication } from '../../app/applications/graphql/withApplications';
-import { PopularApps } from '../../manifests';
+import { MinimalApplication } from '../../app/src/applications/graphql/withApplications';
+import { PopularApps } from '../../app/manifests';
 
 export { ContextEnvPlatform };
 
@@ -62,8 +62,9 @@ class AppImpl extends React.Component<Props, IState> {
       // @ts-ignore : bx attached to window
       const bxApi = window.bx;
 
-      bxApi.theme.themeColors.subscribe((themeColors: string[]) =>
-        this.setState({ themeColors }));
+      bxApi.theme.addThemeColorsChangeListener((_: any, themeColors: string[]) => {
+        this.setState({ themeColors })
+      });
 
       if ('applications' in bxApi) {
         this.setState({

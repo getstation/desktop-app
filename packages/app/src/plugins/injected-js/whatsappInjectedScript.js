@@ -1,3 +1,6 @@
+
+//vk: moved from whatsappPreload.js
+
 let snoozed = false;
 const originalPlay = Audio.prototype.play;
 
@@ -10,4 +13,6 @@ Audio.prototype.play = function() {
   return Promise.resolve();
 };
 
-window.bx.notificationCenter.snoozeDurationInMs.subscribe(duration => snoozed = Boolean(duration));
+window.bx.notificationCenter.addSnoozeDurationInMsChangeListener((_, duration) => {
+  snoozed = Boolean(duration);
+});

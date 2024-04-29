@@ -1,23 +1,4 @@
-/* eslint-disable global-require */
-const micromatch = require('micromatch');
-
-const originsAllowed = [
-  'http://localhost:8080',
-  'http://localhost:8081',
-  'http://staging-apps.getstation.com',
-  'https://staging-apps.getstation.com',
-  'https://apps.getstation.com',
-  // deploy previews of the appstore
-  'https://*--station-appstore.netlify.com',
-
-  'https://www.messenger.com',
-  'https://web.whatsapp.com',
-];
-const protocolsAllowed = [
-  'station:',
-];
-if (micromatch.isMatch(window.location.origin, originsAllowed) || protocolsAllowed.includes(window.location.protocol)) {
-  const { ipcRenderer } = require('electron');
+  const { contextBridge, ipcRenderer } = require('electron');
   const { Observable } = require('rxjs');
 
   const sendPerformToProxy = (channel, payload) => {
@@ -33,24 +14,19 @@ if (micromatch.isMatch(window.location.origin, originsAllowed) || protocolsAllow
     return p;
   };
 
-  const sendSubscribeToProxy = (channel) => {
-    const o = new Observable(obs => {
-      ipcRenderer.on(`bx-api-subscribe-response-${channel}`, (_, result) => {
-        obs.next(result);
-      });
-    });
+  const addListenerToChannel = (channel, listener) => {
+    ipcRenderer.on(`bx-api-subscribe-response-${channel}`, listener);
     setTimeout(() => {
       ipcRenderer.invoke('get-worker-contents-id')
           .then(workerWebContentsId => ipcRenderer.sendTo(workerWebContentsId, 'bx-api-subscribe', channel));
     }, 1);
-    return o;
   };
 
-  class BxAPI {
-    static subscribe(channel) {
-      return sendSubscribeToProxy(channel);
-    }
+  const removeListenerToChannel = (channel, listener) => {
+    ipcRenderer.off(`bx-api-subscribe-response-${channel}`, listener);
+  }
 
+  class BxAPI {
     static async perform(channel, payload, requiredParams) {
       if (requiredParams) {
         for (const requiredParam of requiredParams) {
@@ -74,9 +50,15 @@ if (micromatch.isMatch(window.location.origin, originsAllowed) || protocolsAllow
     }
   }
 
-  window.bx = {
+  const bxApi = {
     notificationCenter: {
-      snoozeDurationInMs: BxAPI.subscribe('GetSnoozeDuration'),
+        addSnoozeDurationInMsChangeListener: (listener) => addListenerToChannel('GetSnoozeDuration', listener),
+
+        sendNotification: (id, notification) => ipcRenderer.send('new-notification', id, notification),
+        closeNotification: (id) => ipcRenderer.send('notification-close', id),
+
+        addNotificationClickListener: (listener) => ipcRenderer.on('trigger-notification-click', listener),
+        removeNotificationClickListener: (listener) => ipcRenderer.off('trigger-notification-click', listener),
     },
     applications: {
       install: (payload) => BxAPI.perform(
@@ -119,15 +101,27 @@ if (micromatch.isMatch(window.location.origin, originsAllowed) || protocolsAllow
       )
     },
     theme: {
-      themeColors: BxAPI.subscribe('GetThemeColors'),
+      addThemeColorsChangeListener: (listener) => addListenerToChannel('GetThemeColors', listener),
     },
     identities: {
-      $get: BxAPI.subscribe('GetAllIdentities'),
+      addIdentitiesChangeListener: (listener) => addListenerToChannel('GetAllIdentities', listener),
+      removeIdentitiesChangeListener: (listener) => removeListenerToChannel('GetAllIdentities', listener),
+
       requestLogin: (provider) => BxAPI.perform(
         'RequestLogin',
         { provider },
         ['provider']
       ),
     },
-  };
-}
+     manifest: {
+      getManifest: (manifestURL) => BxAPI.perform(
+        'GetManifestByURL', 
+        { manifestURL }, 
+        ['manifestURL']
+      ),
+     }
+    };
+
+    contextBridge.exposeInMainWorld('bx', bxApi);
+
+    console.log('>>>> contextBridge done')

@@ -1,7 +1,7 @@
 {
   "name": "station-desktop-app",
   "productName": "Station",
-  "version": "2.7.0-b2",
+  "version": "3.0.0-b2",
   "description": "Station",
   "homepage": "https://getstation.com",
   "author": {
@@ -20,7 +20,7 @@
     "sass": "sass src/theme/scss/app.global.scss src/theme/css/app.global.css",
     "clean-gql-gen": "rm -f src/**/*.generated.ts ||: && rm -f src/**/*.generated.tsx ||:",
     "gql-gen": "yarn run clean-gql-gen && graphql-codegen --config codegen-local.yml",
-    "build-webpack:webui:dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=development webpack --config webpack.config.webui.js --colors --progress --mode=development",
+    "build-webpack:webui:dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=development webpack --config webpack.config.webui.js --colors --no-progress --mode=development",
     "build-webpack:webui:prod": "cross-env NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production webpack --config webpack.config.webui.js --colors --mode=production --no-progress",
     "build-webpack:prod": "yarn run gql-gen && yarn run sass && rimraf dist && cross-env NODE_OPTIONS=--openssl-legacy-provider electron-webpack --no-progress && yarn run build-webpack:webui:prod",
     "clean": "yarn run clean-gql-gen && rimraf dist",
@@ -286,7 +286,7 @@
     "copy-webpack-plugin": "^4.6.0",
     "cross-env": "^6.0.3",
     "css-loader": "^3.2.1",
-    "electron": "25.9.8",
+    "electron": "27.3.11",
     "electron-builder": "^24.9.1",
     "electron-mocha": "^8.1.0",
     "electron-webpack": "^2.8.2",
