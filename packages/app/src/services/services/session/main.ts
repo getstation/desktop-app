@@ -1,12 +1,13 @@
 import * as Electron from 'electron';
 import { waitDefaultSession } from '../../api/sessions';
 import { RPC } from '../../lib/types';
-import { SessionService } from './interface';
+import { SessionService, SessionProviderService } from './interface';
 
 export type SessionOptions = { partition: string };
 
 export class SessionServiceImpl extends SessionService implements RPC.Interface<SessionService> {
   private session?: Electron.Session;
+  private provider?: RPC.Node<SessionProviderService>;
 
   constructor(uuid?: string, options?: SessionOptions) {
     super(uuid, { ready: false });
@@ -14,6 +15,10 @@ export class SessionServiceImpl extends SessionService implements RPC.Interface<
       this.session = session;
       this.ready();
     });
+  }
+
+  init(provider: RPC.Node<SessionProviderService>) {
+    this.provider = provider;
   }
 
   async getUserAgent(): Promise<string> {

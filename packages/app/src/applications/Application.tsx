@@ -7,7 +7,8 @@ import { GradientType, withGradient } from '@getstation/theme';
 import ElectronWebview from '../common/components/ElectronWebview';
 import * as classNames from 'classnames';
 import { clipboard } from 'electron';
-import * as remote from '@electron/remote';
+import services from '../services/servicesManager';
+// import * as remote from '@electron/remote';
 // @ts-ignore no declaration file
 import { fetchFavicon, setFetchFaviconTimeout } from '@getstation/fetch-favicon';
 import Maybe from 'graphql/tsutils/Maybe';
@@ -51,6 +52,7 @@ import LazyWebview from './LazyWebview';
 import { withGetApplicationState } from './queries@local.gql.generated';
 import { getApplicationDescription } from './selectors';
 import { ApplicationImmutable } from './types';
+// @ts-ignore no declaration file
 import { getForeFrontNavigationStateProperty } from './utils';
 
 type WebviewMethod = (webview: ElectronWebview) => void;
@@ -97,6 +99,7 @@ export interface OwnProps {
   loading: boolean,
   manifestURL: Maybe<string>,
   applicationId: string,
+  appstoreApplicationId: string,
 
   applicationName: Maybe<string>,
   applicationIcon: Maybe<string>,
@@ -388,12 +391,10 @@ class ApplicationImpl extends React.PureComponent {
       const webview = this.webView.view;
 
       webview.addEventListener('dom-ready', () => {
-        const webContents = remote.webContents.fromId(webview.getWebContentsId());
-
         webview.addEventListener('did-navigate-in-page', (e: any) => this.handleDidNavigateInPage(e));
         webview.addEventListener('did-navigate', (e: any) => this.handleDidNavigate(e));
         webview.addEventListener('ipc-message', (e: any) => this.handleIPCMessage(e));
-        this.props.onWebcontentsAttached(webContents.id);
+        this.props.onWebcontentsAttached(webview.getWebContentsId());
       });
     }
   }
@@ -403,13 +404,26 @@ class ApplicationImpl extends React.PureComponent {
     const useNativeWindowOpen = !this.props.notUseNativeWindowOpen;
     const tabUrl = tab.get('url', '');
     const {
-      applicationId, applicationName, applicationIcon, themeColor, manifestURL,
+      applicationId, applicationName, applicationIcon, 
+      appstoreApplicationId, themeColor, manifestURL,
       askResetApplication, onChooseAccount,
       crashed, errorCode, errorDescription,
       canGoBack, themeGradient, email,
       promptBasicAuth, performBasicAuth, basicAuthInfo,
       useDefaultSession,
     } = this.props;
+
+    const partition = useDefaultSession ? '' : `persist:${applicationId}`;
+
+    // disable SSL check for private applications
+    if (!useDefaultSession && Number(appstoreApplicationId) > 1000000) {
+      services.defaultSession.disableSslCertVerification(partition);
+
+      // const appSession = remote.session.fromPartition(partition);
+      // appSession.setCertificateVerifyProc((_, callback) => {
+      //   callback(0);
+      // })
+    }
 
     return (
       <div>
@@ -487,6 +501,7 @@ const Application = compose(
 
       return {
         manifestURL: application.manifestURL(),
+        appstoreApplicationId: application.appstoreApplicationId(),
         applicationId: data.variables.applicationId,
         applicationName: manifestData.name(),
         applicationIcon: manifestData.interpretedIconURL(),

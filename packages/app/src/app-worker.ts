@@ -42,6 +42,8 @@ import { AutolaunchProviderServiceImpl } from './services/services/autolaunch/au
 import { ManifestServiceImpl } from './services/services/manifest/main';
 import { IMenuServiceObserverOnClickItemParam } from './services/services/menu/interface';
 import { SDKv2ServiceImpl } from './services/services/sdkv2/worker';
+import { SessionServiceImpl } from './services/services/session/main';
+import { SessionProviderServiceImpl } from './services/services/session/worker';
 import services from './services/servicesManager';
 import { configureStore } from './store/configureStore.worker';
 import { BasicAuthDetailsProviderServiceImpl } from './tab-webcontents/basicAuthDetailsProvider';
@@ -90,6 +92,7 @@ export class BrowserXAppWorker {
       this.initWebContentsOverrideProvider().catch(handleError());
       this.initSDKv2();
       this.initAutoLaunch().catch(handleError());
+      this.initSessionService();
     } catch (e) {
       handleError()(e);
       remote.app.exit(1);
@@ -392,6 +395,10 @@ export class BrowserXAppWorker {
 
   private async initAutoLaunch() {
     return services.autolaunch.setAutolaunchProvider(new AutolaunchProviderServiceImpl(this.store));
+  }
+
+  private initSessionService() {
+    (services.defaultSession as SessionServiceImpl).init(new SessionProviderServiceImpl(this.store))
   }
 
   private dispatch(action: any) {
