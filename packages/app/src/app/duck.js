@@ -184,9 +184,6 @@ export default function app(state = new Map(), action) {
     case TOGGLE_PROMPT_DOWNLOAD:
       return state.set('promptDownload', Boolean(action.promptDownload));
 
-    case DISABLE_SSL_CERT_VERIFICATION:
-      return state.set('disableSslCertVerification', action.partition);
-
     case SET_APP_METADATA:
       return state
         .set('appName', action.name)

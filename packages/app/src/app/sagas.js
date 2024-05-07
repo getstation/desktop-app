@@ -250,13 +250,8 @@ function* sagaHandleOpenProcessManager() {
   yield callService('processManager', 'open', undefined);
 }
 
-function* sagaDisableSslCertVerification() {
-  
-
-  require('electron-log').info('>>>>>>>>>>>', process.type);
-
-  
-
+function* sagaDisableSslCertVerification({ partition }) {
+  yield callService('defaultSession', 'disableSslCertVerification', partition);
 }
 
 /**

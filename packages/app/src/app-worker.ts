@@ -92,7 +92,6 @@ export class BrowserXAppWorker {
       this.initWebContentsOverrideProvider().catch(handleError());
       this.initSDKv2();
       this.initAutoLaunch().catch(handleError());
-      this.initSessionService();
     } catch (e) {
       handleError()(e);
       remote.app.exit(1);
@@ -395,10 +394,6 @@ export class BrowserXAppWorker {
 
   private async initAutoLaunch() {
     return services.autolaunch.setAutolaunchProvider(new AutolaunchProviderServiceImpl(this.store));
-  }
-
-  private initSessionService() {
-    (services.defaultSession as SessionServiceImpl).init(new SessionProviderServiceImpl(this.store))
   }
 
   private dispatch(action: any) {
