@@ -10,7 +10,7 @@ import { MultiInstanceConfigPreset as Preset } from '../../manifest-provider/typ
 import NormalFlowForm from './components/NormalFlowForm';
 import { getPresets } from '../../manifest-provider/helpers';
 
-const requestGoogleSignin = () => window.bx.identities.requestLogin('google');
+const requestGoogleSignin = () => window.bxApi.identities.requestLogin('google');
 
 const {
   Undefined: UndefinedPreset,
@@ -79,28 +79,28 @@ export default class MultiInstanceConfigurator extends React.Component<Props, St
   }
 
   submitSubdomainForm = (subdomain: string) => {
-    window.bx.applications.setConfigData(this.props.applicationId, { subdomain });
+    window.bxApi.applications.setConfigData(this.props.applicationId, { subdomain });
   }
 
   submitIdentityForm = (identityId: string) => {
-    window.bx.applications.setConfigData(this.props.applicationId, { identityId });
+    window.bxApi.applications.setConfigData(this.props.applicationId, { identityId });
   }
 
   submitOnPremiseForm = (customURL: string) => {
-    window.bx.applications.setConfigData(this.props.applicationId, { customURL });
+    window.bxApi.applications.setConfigData(this.props.applicationId, { customURL });
   }
 
   submitNormalForm = () => {
-    window.bx.applications.setConfigData(this.props.applicationId, {});
+    window.bxApi.applications.setConfigData(this.props.applicationId, {});
   }
 
   removeApplication = () => {
-    window.bx.applications.uninstall(this.props.applicationId);
+    window.bxApi.applications.uninstall(this.props.applicationId);
   }
 
   componentDidMount() {
     const { manifestURL } = this.props;
-    window.bx.manifest.getManifest(manifestURL).then(({ body }) => {
+    window.bxApi.manifest.getManifest(manifestURL).then(({ body }) => {
       const manifest = body;
       const presets = this.getPresets(manifest);
       const selectedPreset = isOnlyOnPremise(presets) ? UndefinedPreset : presets[0];

@@ -174,6 +174,6 @@ interface Bx {
 
 declare global {
   interface Window { 
-    bx: Bx;
+    bxApi: Bx;
   }
 }

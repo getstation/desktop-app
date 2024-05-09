@@ -113,7 +113,7 @@ class AppStoreMyCustomApps extends React.PureComponent<Props, AppStoreMyCustomAp
   }
 
   deleteApplication = (app: Application) => {
-    window.bx.applications.uninstallByManifest(app.bxAppManifestURL).then(() => {
+    window.bxApi.applications.uninstallByManifest(app.bxAppManifestURL).then(() => {
       this.exitFlow(false);
       location.reload();
     }).catch((e) => {

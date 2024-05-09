@@ -122,6 +122,6 @@
      }
     };
 
-    contextBridge.exposeInMainWorld('bx', bxApi);
+    contextBridge.exposeInMainWorld('bxApi', bxApi);
 
     console.log('>>>> contextBridge done')
