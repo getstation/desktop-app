@@ -7,7 +7,6 @@ import { GradientType, withGradient } from '@getstation/theme';
 import ElectronWebview from '../common/components/ElectronWebview';
 import * as classNames from 'classnames';
 import { clipboard } from 'electron';
-// import * as remote from '@electron/remote';
 // @ts-ignore no declaration file
 import { fetchFavicon, setFetchFaviconTimeout } from '@getstation/fetch-favicon';
 import Maybe from 'graphql/tsutils/Maybe';
@@ -41,6 +40,7 @@ import {
 } from '../tab-webcontents/duck';
 import { getTabWebcontentsById, getWebcontentsAuthInfo, getWebcontentsAuthState } from '../tab-webcontents/selectors';
 import { updateLoadingState, updateTabBadge, updateTabFavicons, updateTabTitle, updateTabURL } from '../tabs/duck';
+// @ts-ignore no declaration file
 import { disableSslCertVerification } from '../app/duck';
 import { getTabId, getTabLoadingState } from '../tabs/get';
 import { StationTabImmutable } from '../tabs/types';

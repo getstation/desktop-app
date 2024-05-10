@@ -42,8 +42,6 @@ import { AutolaunchProviderServiceImpl } from './services/services/autolaunch/au
 import { ManifestServiceImpl } from './services/services/manifest/main';
 import { IMenuServiceObserverOnClickItemParam } from './services/services/menu/interface';
 import { SDKv2ServiceImpl } from './services/services/sdkv2/worker';
-import { SessionServiceImpl } from './services/services/session/main';
-import { SessionProviderServiceImpl } from './services/services/session/worker';
 import services from './services/servicesManager';
 import { configureStore } from './store/configureStore.worker';
 import { BasicAuthDetailsProviderServiceImpl } from './tab-webcontents/basicAuthDetailsProvider';
