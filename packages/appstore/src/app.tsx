@@ -58,9 +58,9 @@ class AppImpl extends React.Component<Props, IState> {
 
   // tslint:disable-next-line function-name
   async UNSAFE_componentWillMount() {
-    if ('bx' in window) {
+    if ('bxApi' in window) {
       // @ts-ignore : bx attached to window
-      const bxApi = window.bx;
+      const bxApi = window.bxApi;
 
       bxApi.theme.addThemeColorsChangeListener((_: any, themeColors: string[]) => {
         this.setState({ themeColors })

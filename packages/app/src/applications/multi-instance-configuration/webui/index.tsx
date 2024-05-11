@@ -14,7 +14,7 @@ const manifestURL = params.get('manifestURL')!;
 const applicationId = params.get('applicationId')!;
 
 const themeColorsObservable = new Subject<any>();
-window.bx.theme.addThemeColorsChangeListener(
+window.bxApi.theme.addThemeColorsChangeListener(
   (_: any, result: any) => themeColorsObservable.next(result)
 );
 
