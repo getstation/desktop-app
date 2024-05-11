@@ -24,7 +24,7 @@ function* handleAppRequest(request: SubmitAppRequestAction): SagaIterator {
     };
 
     try {
-      const { body } = yield call(window.bx.applications.requestPrivate, applicationRecipe);
+      const { body } = yield call(window.bxApi.applications.requestPrivate, applicationRecipe);
       yield put(setApiResponse(ApiResponse.Done));
       yield put(setApplicationCreated({ id: body.id, bxAppManifestURL: body.bxAppManifestURL }));
     } catch (e) {

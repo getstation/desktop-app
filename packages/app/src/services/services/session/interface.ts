@@ -13,4 +13,6 @@ export class SessionService extends ServiceBase implements RPC.Interface<Session
   getUserAgent(): Promise<string> {}
   // @ts-ignore
   getCookies(filter: Electron.CookiesGetFilter): Promise<Electron.Cookie[]> {}
+  // @ts-ignore
+  disableSslCertVerification(partition: string) : Promise<void> {}
 }

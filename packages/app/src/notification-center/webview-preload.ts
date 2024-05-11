@@ -66,7 +66,7 @@ export class BxNotification extends EventTarget('click', 'error', 'close', 'show
     });
 
     this._registerIPC();
-    window.bx.notificationCenter.sendNotification(this.id, {
+    window.bxApi.notificationCenter.sendNotification(this.id, {
       timestamp: this.timestamp,
       title: this.title,
       body: this.body,
@@ -87,17 +87,17 @@ export class BxNotification extends EventTarget('click', 'error', 'close', 'show
   }
 
   close() {
-    window.bx.notificationCenter.closeNotification(this.id);
+    window.bxApi.notificationCenter.closeNotification(this.id);
     // ipcRenderer.send('notification-close', this.id);
   }
 
   _registerIPC() {
-    window.bx.notificationCenter.addNotificationClickListener(this._handleNotificationClickIPC);
+    window.bxApi.notificationCenter.addNotificationClickListener(this._handleNotificationClickIPC);
     // ipcRenderer.on('trigger-notification-click', this._handleNotificationClickIPC);
   }
 
   _unregisterIPC() {
-    window.bx.notificationCenter.removeNotificationClickListener(this._handleNotificationClickIPC);
+    window.bxApi.notificationCenter.removeNotificationClickListener(this._handleNotificationClickIPC);
     // ipcRenderer.removeListener('trigger-notification-click', this._handleNotificationClickIPC);
   }
 
