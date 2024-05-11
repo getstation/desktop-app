@@ -32,6 +32,7 @@ export const OPEN_PROCESS_MANAGER = 'browserX/app/OPEN_PROCESS_MANAGER';
 export const TOGGLE_PROMPT_DOWNLOAD = 'browserX/app/TOGGLE_PROMPT_DOWNLOAD';
 
 export const SET_APP_METADATA = 'browserX/app/SET_APP_METADATA';
+export const DISABLE_SSL_CERT_VERIFICATION = 'browserX/app/DISABLE_SSL_CERT_VERIFICATION';
 
 // Action creators
 export const ready = () => ({ type: READY });
@@ -132,6 +133,11 @@ export const setAppMetadata = (metadata) => {
     version,
   };
 };
+
+export const disableSslCertVerification = (partition) => ({
+  type: DISABLE_SSL_CERT_VERIFICATION,
+  partition,
+});
 
 // Reducer
 export default function app(state = new Map(), action) {

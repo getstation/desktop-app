@@ -26,6 +26,13 @@ export class SessionServiceImpl extends SessionService implements RPC.Interface<
     return session.cookies.get(filter);
   }
 
+  async disableSslCertVerification(partition: string) : Promise<void> {
+    const session = Electron.session.fromPartition(partition);
+    session.setCertificateVerifyProc((_, callback) => {
+      callback(0);
+    });
+  }
+
   private async initSession(options?: SessionOptions): Promise<Electron.Session> {
     if (options && options.partition) {
       return Electron.session.fromPartition(options.partition);
