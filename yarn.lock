@@ -13820,16 +13820,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron@npm:25.9.8":
-  version: 25.9.8
-  resolution: "electron@npm:25.9.8"
+"electron@npm:27.3.11":
+  version: 27.3.11
+  resolution: "electron@npm:27.3.11"
   dependencies:
     "@electron/get": "npm:^2.0.0"
     "@types/node": "npm:^18.11.18"
     extract-zip: "npm:^2.0.1"
   bin:
     electron: cli.js
-  checksum: 10c0/420204d5949baa1e88dad33b39ea0be526882f6f101279f113cc8b5140f6784f50ab61e951fb1af22bde1fe9c6c75141d585f1e9acd6a8bb8e85d488686d947f
+  checksum: 10c0/9643a284beca7e9855da5d785426426617af05ea2d9377384b8925f757714d9d04994f9f8fd4b4702f630b7b8efe8a7ecf2a1211b5b671570d72fced965c5931
   languageName: node
   linkType: hard
 
@@ -28858,7 +28858,7 @@ __metadata:
     deep-extend: "npm:^0.6.0"
     dom-scroll-into-view: "npm:^1.2.1"
     dotenv: "npm:^16.0.3"
-    electron: "npm:25.9.8"
+    electron: "npm:27.3.11"
     electron-better-web-request: "npm:^1.0.1"
     electron-builder: "npm:^24.9.1"
     electron-chrome-extension: "https://github.com/viktor44/electron-chrome-extension/releases/download/v6.0.3/release.tar.gz"

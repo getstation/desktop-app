@@ -1,3 +1,4 @@
+import { IpcRendererEvent } from 'electron';
 import { Observable } from 'rxjs';
 import { ApplicationConfigData } from '../applications/duck';
 import { MinimalApplication } from '../applications/graphql/withApplications';
@@ -87,13 +88,7 @@ declare module BxAPI {
    * @since 1.11.0
    */
   interface Theme {
-    /**
-     * themeColors
-     * @since 1.11.0
-     */
-    // themeColors: ObservableResponse<string[]>,
-
-    addThemeColorsChangeListener(listener): void;
+    addThemeColorsChangeListener(listener: (event: IpcRendererEvent, themeColors: string[]) => void): void;
   }
 
   /**
@@ -101,19 +96,13 @@ declare module BxAPI {
    * @since 1.12.0
    */
   interface NotificationCenter {
-    /**
-     * snoozeDurationInMs
-     * @since 1.12.0
-     */
-    // snoozeDurationInMs: ObservableResponse<string | undefined>,
-
-    addSnoozeDurationInMsChangeListener(listener): void;
+    addSnoozeDurationInMsChangeListener(listener: (event: IpcRendererEvent, duration: string | undefined) => void): void;
 
     sendNotification(id: string, notification: any);
     closeNotification(id: string);
 
-    addNotificationClickListener(listener: (event: Event, notificationId: string) => void): void;
-    removeNotificationClickListener(listener: (event: Event, notificationId: string) => void): void;
+    addNotificationClickListener(listener: (event: IpcRendererEvent, notificationId: string) => void): void;
+    removeNotificationClickListener(listener: (event: IpcRendererEvent, notificationId: string) => void): void;
   }
 
   /**
@@ -161,9 +150,8 @@ declare module BxAPI {
   }
 
   interface Identities {
-    // $get: ObservableResponse<any>,
-
-    addIdentitiesChangeListener(listener): void;
+    addIdentitiesChangeListener(listener: (event: IpcRendererEvent, identities: any[]) => void): void;
+    removeIdentitiesChangeListener(listener: (event: IpcRendererEvent, identities: any[]) => void): void;
     
     requestLogin(provider: AuthProviders): Promise<any>,
   }

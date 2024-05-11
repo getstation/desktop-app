@@ -1,3 +1,6 @@
+
+//vk: moved from whatsappPreload.js
+
 let snoozed = false;
 const originalPlay = Audio.prototype.play;
 

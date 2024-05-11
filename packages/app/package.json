@@ -286,7 +286,7 @@
     "copy-webpack-plugin": "^4.6.0",
     "cross-env": "^6.0.3",
     "css-loader": "^3.2.1",
-    "electron": "25.9.8",
+    "electron": "27.3.11",
     "electron-builder": "^24.9.1",
     "electron-mocha": "^8.1.0",
     "electron-webpack": "^2.8.2",

@@ -411,8 +411,6 @@ class ApplicationImpl extends React.PureComponent {
     const tab = this.props.tab;
     const useNativeWindowOpen = !this.props.notUseNativeWindowOpen;
     const tabUrl = tab.get('url', '');
-    // const nodeIntegrationEnabled = tabUrl.startsWith('station://')
-    const contextIsolationEnabled = !tabUrl.startsWith('station://appstore');
     const {
       applicationId, applicationName, applicationIcon, themeColor, manifestURL,
       askResetApplication, onChooseAccount,
@@ -475,7 +473,7 @@ class ApplicationImpl extends React.PureComponent {
           onDidFailLoad={this.handleDidFailLoad}
           onDomReady={this.handleDomReady}
           onCrashed={this.handleWebcontentsCrashed}
-          webpreferences={`allowRunningInsecureContent=true,nativeWindowOpen=${useNativeWindowOpen},contextIsolation=${contextIsolationEnabled},nodeIntegration=true`}
+          webpreferences={`allowRunningInsecureContent=true,nativeWindowOpen=${useNativeWindowOpen},contextIsolation=true,nodeIntegration=true`}
         />
 
       </div>

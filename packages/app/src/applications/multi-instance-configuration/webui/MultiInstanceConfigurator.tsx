@@ -225,10 +225,6 @@ export default class MultiInstanceConfigurator extends React.Component<Props, St
       return this.renderOnPremiseForm({ normalFlow: true });
     }
 
-    
-    console.log('XXXXXX', selectedPreset);
-
-
     switch (selectedPreset) {
       case GoogleAccountPreset: return this.renderIdentityForm(); // google-account
       case SubdomainPreset: return this.renderSubdomainForm(); // subdomain

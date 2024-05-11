@@ -2,7 +2,6 @@ import { Button, Size, Style } from '@getstation/theme';
 import * as React from 'react';
 // @ts-ignore: no declaration file
 import injectSheet from 'react-jss';
-// import { Subscription } from 'rxjs';
 import { identitiesStyle, IdentitiesStylesType } from './styles';
 
 export interface Props {
@@ -29,8 +28,6 @@ export default class ChooseIdentityForm extends React.PureComponent<Props, State
     help: 'Choose an account',
   };
 
-  // private subscription: Subscription;
-
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -47,28 +44,19 @@ export default class ChooseIdentityForm extends React.PureComponent<Props, State
     this.props.onRequestSignin();
   }
 
-  // tslint:disable-next-line:function-name
-  UNSAFE_componentWillMount() {
-    window.bx.identities.addIdentitiesChangeListener((_: any, identities: any) => {
-      this.setState({
-        identities,
-      });
+  onIdentitiesChanged = (_: any, identities: any) => {
+    this.setState({
+      identities,
     });
-
-    // this.subscription = window.bx.identities.$get.subscribe(identities => {
-    //   this.setState({
-    //     identities,
-    //   });
-    // });
   }
 
-  //vk: FIXME: should we remove listener? how?
+  UNSAFE_componentWillMount() {
+    window.bx.identities.addIdentitiesChangeListener(this.onIdentitiesChanged);
+  }
 
-  // componentWillUnmount() {
-  //   if (this.subscription) {
-  //     this.subscription.unsubscribe();
-  //   }
-  // }
+  componentWillUnmount() {
+    window.bx.identities.removeIdentitiesChangeListener(this.onIdentitiesChanged);
+  }
 
   render() {
     const { instanceTypeWording, name, help, classes } = this.props;

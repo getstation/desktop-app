@@ -57,23 +57,3 @@ export const APPLICATIONS_WITH_CUSTOM_SUBDOCK_TITLE: Record<string, { regex: Reg
     },
   ],
 };
-
-// JavaScript Injection
-export const JAVASCRIPT_INJECTIONS = {
-  asana: ['asanaInjectedScript'],
-  gmail: ['gmailInjectedScript'],
-  slack: ['slackInjectedScript'],
-  'station-support': ['slackInjectedScript'],
-  'gdrive-mu': ['gdriveInjectedScript'],
-  'gcalendar-mu': ['gcalendarInjectedScript'],
-  outlook: ['office365InjectedScript'],
-  'office-365': ['office365InjectedScript'],
-  'outlook-pro': ['office365InjectedScript'],
-  'google-keep': ['removeGoogleAccountInjectedScript'],
-  'facebook-messenger': ['messengerInjectedScript'],
-};
-
-// Internal Applications
-export const INTERNAL_APPLICATIONS = [
-  process.env.APP_STORE_MANIFEST_URL!,
-];
