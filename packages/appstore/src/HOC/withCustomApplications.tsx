@@ -14,7 +14,7 @@ export default function withCustomApplications(Component: React.Component<any>) 
     });
 
     React.useEffect(() => {
-      window.bx.applications.getPrivateApps().then(({ body }) => {
+      window.bxApi.applications.getPrivateApps().then(({ body }) => {
         setData({
           privateApps: body.map(app => {
             return {

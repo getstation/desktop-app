@@ -1,7 +1,7 @@
 export const findApplicationByName = (applicationName: string) => {
 
-  if ('bx' in window) {
-    const bxApi = window.bx;
+  if ('bxApi' in window) {
+    const bxApi = window.bxApi;
 
     return bxApi.applications.search(applicationName).then(({ body }) => {
       return body || [];

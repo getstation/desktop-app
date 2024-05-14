@@ -187,6 +187,11 @@ const notificationClickChannel = (notif: RPC.Node<OSNotification>) => eventChann
 });
 
 function* sagaNotificationClick(action: NotificationClickAction): SagaIterator {
+
+
+  console.log('>>>>>> sagaNotificationClick');
+
+
   const { notificationId } = action;
   // Mark notification as read
   yield put(markAsRead(notificationId));

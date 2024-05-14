@@ -245,7 +245,7 @@ const postload = Object.keys(window);
 
 // List of allowed exposure on globals
 export const whitelist = new Set([
-  'bx',
+  'bxApi',
   'chrome',
   '_docs_chrome_extension_exists',
   '_docs_chrome_extension_features_version',

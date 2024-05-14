@@ -51,11 +51,11 @@ export default class ChooseIdentityForm extends React.PureComponent<Props, State
   }
 
   UNSAFE_componentWillMount() {
-    window.bx.identities.addIdentitiesChangeListener(this.onIdentitiesChanged);
+    window.bxApi.identities.addIdentitiesChangeListener(this.onIdentitiesChanged);
   }
 
   componentWillUnmount() {
-    window.bx.identities.removeIdentitiesChangeListener(this.onIdentitiesChanged);
+    window.bxApi.identities.removeIdentitiesChangeListener(this.onIdentitiesChanged);
   }
 
   render() {
