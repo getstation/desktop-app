@@ -36,7 +36,8 @@ import {
   setLoadingScreenVisibility,
   TOGGLE_PROMPT_DOWNLOAD,
   TOGGLE_KBD_SHORTCUTS,
-  TOGGLE_MAXIMIZE
+  TOGGLE_MAXIMIZE,
+  DISABLE_SSL_CERT_VERIFICATION,
 } from './duck';
 import { DELAY } from '../persistence/backend';
 import { getWindowCurrentTabId } from '../windows/get';
@@ -249,6 +250,10 @@ function* sagaHandleOpenProcessManager() {
   yield callService('processManager', 'open', undefined);
 }
 
+function* sagaDisableSslCertVerification({ partition }) {
+  yield callService('defaultSession', 'disableSslCertVerification', partition);
+}
+
 /**
  * Will load the app metadata in the state.
  */
@@ -275,6 +280,7 @@ export default function* main(bxApp) {
     takeEveryWitness(TOGGLE_KBD_SHORTCUTS, sagaToggleKbdShortcutsOverlay),
     takeEveryWitness(CHANGE_APP_FOCUS_STATE, onChangeAppFocusState),
     takeEveryWitness(OPEN_PROCESS_MANAGER, sagaHandleOpenProcessManager),
+    takeEveryWitness(DISABLE_SSL_CERT_VERIFICATION, sagaDisableSslCertVerification),
     // For dev purpose
     takeEveryWitness('STATION_MANUAL_ERR', sagaTriggerError)
   ]);
