@@ -8,7 +8,7 @@ asarUnpack:
   - 'node_modules/**/*.{node,dll}'
 
 afterPack: '../../scripts/after-pack.js'
-afterSign: '../../scripts/notarize.js'
+# afterSign: '../../scripts/notarize.js'
 
 directories:
   output: '../../release'
@@ -31,9 +31,9 @@ dmg:
 
 mac:
   target:
-    - target: dmg
-      arch:
-        - universal
+#    - target: dmg
+#      arch:
+#        - universal
     - target: zip
       arch:
         - universal
