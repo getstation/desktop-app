@@ -346,8 +346,11 @@ class ApplicationImpl extends React.PureComponent {
   }
 
   async handleDomReady() {
-    const js = await injectJS(this.props.legacyServiceId);
 
+    const webviewInjectJS = require(`!!raw-loader!../static/preload/webview-inject.js`).default
+    this.webView.view.executeJavaScript(webviewInjectJS); //`(function(){\n${bxNotifJS}\n})()`);
+
+    const js = await injectJS(this.props.legacyServiceId);
     if (js && this.webView && this.webView.view) {
       this.webView.view.executeJavaScript(js);
       // const webContents = remote.webContents.fromId(this.webView.view.getWebContentsId());

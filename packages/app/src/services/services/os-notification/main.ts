@@ -16,7 +16,6 @@ export class OSNotificationServiceImpl extends OSNotificationService implements 
     };
 
     if (param.imageURL) {
-
       notificationOptions.icon = await asNativeImage(param.imageURL);
     }
     if (param.body) {
@@ -29,6 +28,9 @@ export class OSNotificationServiceImpl extends OSNotificationService implements 
   }
 
   async triggerClick(webContentsId: number, notificationId: string) {
+
+    console.log('OSNotificationServiceImpl.triggerClick', webContentsId, notificationId);
+    
     try {
       const myWebcontent = webContents.fromId(webContentsId);
       if (!myWebcontent) return;

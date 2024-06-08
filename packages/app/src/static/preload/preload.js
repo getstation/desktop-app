@@ -133,7 +133,7 @@ require('./window-open');
 })();
 
 require('../../plugins/webview-preload');
-require('../../notification-center/webview-preload');
+//require('../../notification-center/webview-preload');
 require('../../dialogs/webview-preload');
 require('../../ui/webview-preload');
 require('./autologin');
