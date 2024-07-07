@@ -32,12 +32,14 @@ export const JAVASCRIPT_INJECTIONS = {
   gmail: ['gmailInjectedScript'],
   slack: ['slackInjectedScript'],
   'station-support': ['slackInjectedScript'],
-  'gdrive-mu': ['removeGoogleAccountInjectedScript'],
+  'gdrive-mu':    ['removeGoogleAccountInjectedScript'],
   'gcalendar-mu': ['removeGoogleAccountInjectedScript'],
+  'google-cloud': ['removeGoogleAccountInjectedScript'],  //vk: FIXME: doesn't work
+  'google-keep':  ['removeGoogleAccountInjectedScript'],
+  'meet':         ['removeGoogleAccountInjectedScript'],
   outlook: ['office365InjectedScript'],
   'office-365': ['office365InjectedScript'],
   'outlook-pro': ['office365InjectedScript'],
-  'google-keep': ['removeGoogleAccountInjectedScript'],
   'facebook-messenger': ['messengerInjectedScript'],
   'whatsapp': ['whatsappInjectedScript'],
 };
