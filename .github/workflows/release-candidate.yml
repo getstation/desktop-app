@@ -1,8 +1,10 @@
 name: Release Candidate
 on:
   push:
-    tags:
-      - 'rc*'
+    branches:
+      - *
+    # tags:
+    #   - 'rc*'
 
 jobs:
   Linux:
@@ -76,9 +78,6 @@ jobs:
           npm install -g npm@8  
           npm install -g node-gyp@latest
           npm prefix -g | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
-          npm config set registry "http://registry.npmjs.org"
-          yarn config set registry "http://registry.npmjs.org"
-          yarn config set network-timeout 300000
       - name: Install dependencies
         run: yarn install --immutable
       - name: Build and Release
