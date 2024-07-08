@@ -1,8 +1,6 @@
 name: Release Candidate
 on:
-  push:
-    branches:
-      - '*'
+  push: {}
     # tags:
     #   - 'rc*'
 
