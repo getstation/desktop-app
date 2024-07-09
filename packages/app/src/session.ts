@@ -1,4 +1,4 @@
-import { Session, OnBeforeSendHeadersListenerDetails, BeforeSendResponse } from 'electron';
+import { Session, OnBeforeSendHeadersListenerDetails, BeforeSendResponse, OnHeadersReceivedListenerDetails, HeadersReceivedResponse } from 'electron';
 import enhanceWebRequest from 'electron-better-web-request';
 
 const orderListeners = (listeners: any) => {
@@ -78,7 +78,7 @@ const getUserAgentForApp = (url: string, currentUserAgent: string): string => {
   return defaultUserAgent;
 };
 
-const getHeaderName = (headerName: string, headers?: Record<string, string>): string | undefined => {
+const getHeaderName = (headerName: string, headers?: Record<string, string[]>): string | undefined => {
   if (headers) {
     const lowCaseHeader = headerName.toLowerCase();
     for (const key in headers) {
@@ -90,12 +90,12 @@ const getHeaderName = (headerName: string, headers?: Record<string, string>): st
   return undefined;
 }
 
-export const getHeader = (headerName: string, headers?: Record<string, any>): any => {
+export const getHeader = (headerName: string, headers?: Record<string, string[]>): any => {
   const realHeaderName = getHeaderName(headerName, headers);
   return headers && realHeaderName ? headers[realHeaderName] : undefined;
 }
 
-export const setHeader = (headerName: string, headerValue: any, headers?: Record<string, any>) => {
+export const setHeader = (headerName: string, headerValue: any, headers?: Record<string, string[]>): Record<string, string[]> | undefined => {
   if (headers) {
     const realHeaderName = getHeaderName(headerName, headers);
     return {
@@ -132,4 +132,18 @@ export const enhanceSession = (session: Session) => {
         });
       }
   );
+
+  session.webRequest.onHeadersReceived(
+    (details: OnHeadersReceivedListenerDetails, callback: (headersReceivedResponse: HeadersReceivedResponse) => void) => {
+      const responseHeaders = details.responseHeaders;
+      
+      if (responseHeaders) {
+        delete responseHeaders['content-security-policy'];  //vk: causes "This document requires 'TrustedHTML' assignment." error. Does not allow us to modify page CSS.
+      }
+
+      callback({
+        responseHeaders,
+      })
+    }
+  )
 }
