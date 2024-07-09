@@ -2315,14 +2315,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@electron/notarize@npm:^2.0.0":
-  version: 2.3.0
-  resolution: "@electron/notarize@npm:2.3.0"
+"@electron/notarize@npm:^2.3.2":
+  version: 2.3.2
+  resolution: "@electron/notarize@npm:2.3.2"
   dependencies:
     debug: "npm:^4.1.1"
     fs-extra: "npm:^9.0.1"
     promise-retry: "npm:^2.0.1"
-  checksum: 10c0/833fc60c2f2b980abfb7be3f8ff5fecf5f2ea3edca711239b0963c7691cd3fe673a59705a1bf6970348a16fcd765f5bdc5827fc1f944850382e7e7e505d1ab7c
+  checksum: 10c0/539ed5cd264c3885fd3ca9c0b243144e3e2856d767de3999da1e3f94f0d79db57cbb08862b640270dfad0292bc5345cd7177db096da2061e28e15a6b85946b32
   languageName: node
   linkType: hard
 
@@ -28743,7 +28743,7 @@ __metadata:
     "@babel/preset-env": "npm:^7.7.1"
     "@babel/preset-react": "npm:^7.7.0"
     "@babel/runtime": "npm:^7.4.3"
-    "@electron/notarize": "npm:^2.0.0"
+    "@electron/notarize": "npm:^2.3.2"
     "@electron/remote": "npm:^2.0.9"
     "@getstation/apollo-link-reactive-schema": "npm:^1.0.0"
     "@getstation/appstore": "workspace:*"

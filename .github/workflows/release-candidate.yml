@@ -1,8 +1,9 @@
-name: Release
+name: Release Candidate
 on:
-  push:
-    branches:
-      - release
+  push: 
+    tags:
+      - 'v*-b*'
+
 jobs:
   Linux:
     runs-on: ubuntu-latest
