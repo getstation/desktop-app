@@ -110,52 +110,18 @@ function* sagaResetSnooze(action: ResetSnoozeDurationAction): SagaIterator {
 }
 
 function* sagaNewNotification(action: NewNotificationAction): SagaIterator {
-
-
-  console.log('>>>>>> New notification 20', (new Date()).toLocaleTimeString(), action.notificationId);
-
-
   // Call listeners
   const { notifications }: DeprecatedSDKProvider = yield call(getProvider);
-
-
-  console.log('>>>>>> New notification 21', (new Date()).toLocaleTimeString(), action.notificationId);
-
-
   const [e, tamperedAction] = yield call([notifications, notifications.callNew], action);
-
-
-  console.log('>>>>>> New notification 22', (new Date()).toLocaleTimeString(), action.notificationId);
-
-
   if (e.isDefaultPrevented()) return;
   const { applicationId, tabId, notificationId, options, props: { title, timestamp, body, icon } } = tamperedAction;
-
-
-  console.log('>>>>>> New notification 23', (new Date()).toLocaleTimeString(), action.notificationId);
-
-
   yield put(addNotification(
     notificationId,
     { applicationId, tabId, title, timestamp, body, icon,
       full: options.full, silent: options.silent, webContentsId: options.webContentsId }
   ));
-
-
-  console.log('>>>>>> New notification 24', (new Date()).toLocaleTimeString(), action.notificationId);
-
-
   yield put(appendNotification(notificationId));
-
-
-  console.log('>>>>>> New notification 25', (new Date()).toLocaleTimeString(), action.notificationId);
-
-
   yield put(showNotification(notificationId));
-
-  console.log('>>>>>> New notification 30', (new Date()).toLocaleTimeString(), action.notificationId);
-
-
 }
 
 function* sagaShowNotification(action: ShowNotificationAction): SagaIterator {
@@ -187,11 +153,6 @@ const notificationClickChannel = (notif: RPC.Node<OSNotification>) => eventChann
 });
 
 function* sagaNotificationClick(action: NotificationClickAction): SagaIterator {
-
-
-  console.log('>>>>>> sagaNotificationClick');
-
-
   const { notificationId } = action;
   // Mark notification as read
   yield put(markAsRead(notificationId));
@@ -245,11 +206,6 @@ function* interceptNotificationEventsFromWebContents({ webcontentsId, tabId }: {
         step: RequestForApplicationNotificationsStep.ASK,
       }));
     }
-
-
-    require('electron-log').log('>>>>>> New notification 12', (new Date()).toLocaleTimeString(), props.id);
-
-
 
     yield put(newNotification(applicationId, tabId, props.id, props));
   });

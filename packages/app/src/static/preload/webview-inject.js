@@ -104,11 +104,19 @@ class BxNotification {
       })
     );
 
+    let fixedIconUrl = this.icon;
+    if (typeof fixedIconUrl === 'string') {
+      //vk: I have no idea why but...
+      if (fixedIconUrl.startsWith('//')) {  // Gmail
+        fixedIconUrl = 'https:' + this.icon;
+      }
+    }
+
     window.bxApi.notificationCenter.sendNotification(this.id, {
       timestamp: this.timestamp,
       title: this.title,
       body: this.body,
-      icon: this.icon,
+      icon: fixedIconUrl,
     });
   }
 

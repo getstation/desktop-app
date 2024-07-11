@@ -1,4 +1,5 @@
 import { Notification, webContents } from 'electron';
+import log from 'electron-log';
 
 import { ServiceSubscription } from '../../lib/class';
 import { RPC } from '../../lib/types';
@@ -8,6 +9,9 @@ import { getDoNotDisturb, asNativeImage } from './utils';
 export class OSNotificationServiceImpl extends OSNotificationService implements RPC.Interface<OSNotificationService> {
 
   async show(param: IOSNotificationServiceShowParam) {
+
+    log.info(`>>> OSNotificationServiceImpl.show ${JSON.stringify(param)}`);
+
     const notificationOptions: Electron.NotificationConstructorOptions = {
       title: param.title,
       actions: [],
@@ -24,13 +28,11 @@ export class OSNotificationServiceImpl extends OSNotificationService implements 
 
     const notification = new Notification(notificationOptions);
     notification.show();
+
     return new OSNotificationImpl(notification);
   }
 
   async triggerClick(webContentsId: number, notificationId: string) {
-
-    console.log('OSNotificationServiceImpl.triggerClick', webContentsId, notificationId);
-    
     try {
       const myWebcontent = webContents.fromId(webContentsId);
       if (!myWebcontent) return;
