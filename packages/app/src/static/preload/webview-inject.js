@@ -99,6 +99,7 @@ class BxNotification {
       timestamp: this.timestamp,
       title: this.title,
       body: this.body,
+      icon: this.icon,
     };
 
     console.log('>>>>>> New notification 1', (new Date()).toLocaleTimeString(), JSON.stringify(newNotification));
@@ -128,6 +129,10 @@ class BxNotification {
         xhr.send();
         return;
       }
+    }
+    else {
+      console.log('Unsupported notification icon type', (typeof fixedIconUrl));
+      fixedIconUrl = undefined;
     }
 
     window.bxApi.notificationCenter.sendNotification(this.id, {
