@@ -11,5 +11,10 @@
   "theme_color": "#0070C9",
   "scope": "https://outlook.live.com",
   "bx_legacy_service_id": "outlook",
+  "extended_scopes": [
+    "https://*.live.com",
+    "https://*.office.com",
+    "https://*.microsoft.com"
+  ],
   "recommendedPosition": "12"
 }

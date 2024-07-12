@@ -139,6 +139,7 @@ export const enhanceSession = (session: Session) => {
       
       if (responseHeaders) {
         delete responseHeaders['content-security-policy'];  //vk: causes "This document requires 'TrustedHTML' assignment." error. Does not allow us to modify page CSS.
+        delete responseHeaders['content-security-policy-report-only'];  
       }
 
       callback({
