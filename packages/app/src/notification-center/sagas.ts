@@ -206,6 +206,7 @@ function* interceptNotificationEventsFromWebContents({ webcontentsId, tabId }: {
         step: RequestForApplicationNotificationsStep.ASK,
       }));
     }
+
     yield put(newNotification(applicationId, tabId, props.id, props));
   });
 

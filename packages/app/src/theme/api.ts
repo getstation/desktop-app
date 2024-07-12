@@ -133,12 +133,13 @@ export const fixSuncalc = (suncalc: SunCalc) => {
     // Drop invalid values
     if (typeof v !== 'number') return {};
     switch (k) {
-      case 'nightEnd':
-        // Fix key name
-        return { dawn: v };
+      case 'dusk':
+        return { night: v };
+      case 'solarNoon':
+        return { midday: v };
       case 'sunrise':
       case 'sunset':
-      case 'night':
+      case 'dawn':
         // Keep valid values
         return { [k]: v };
       default:

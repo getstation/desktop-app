@@ -4,12 +4,12 @@ import * as memoize from 'memoizee';
 
 export const asNativeImage = memoize((url: string): Promise<Electron.NativeImage> => {
   return new Promise((resolve, reject) => {
-    if (url.indexOf('data:') === 0) {
+    if (url.startsWith('data:')) {
       resolve(nativeImage.createFromDataURL(url));
       return;
     }
 
-    if (url.indexOf('http:') === 0 || url.indexOf('https:') === 0) {
+    if (url.startsWith('http:') || url.startsWith('https:')) {
       fetch(url)
         .then((res: any) => res.buffer())
         .then((buffer: Buffer) => {
@@ -19,9 +19,16 @@ export const asNativeImage = memoize((url: string): Promise<Electron.NativeImage
       return;
     }
 
+    if (url.startsWith('blob:http')) {
+      //FIXME: implement blob:https:// ( Telegram notifications )
+      resolve(nativeImage.createEmpty());
+      return;
+    }
+
     try {
       resolve(nativeImage.createFromPath(url));
-    } catch (e) {
+    } 
+    catch (e) {
       reject(new Error(`Unknow schema for ${url}`));
     }
   });
