@@ -1,5 +1,4 @@
 import { nativeImage } from 'electron';
-import fetch from 'electron-fetch';
 import * as memoize from 'memoizee';
 
 export const asNativeImage = memoize((url: string): Promise<Electron.NativeImage> => {
@@ -11,17 +10,9 @@ export const asNativeImage = memoize((url: string): Promise<Electron.NativeImage
 
     if (url.startsWith('http:') || url.startsWith('https:')) {
       fetch(url)
-        .then((res: any) => res.buffer())
-        .then((buffer: Buffer) => {
-          resolve(nativeImage.createFromBuffer(buffer));
-        })
+        .then((res) => res.arrayBuffer())
+        .then((arrayBuffer) => resolve(nativeImage.createFromBuffer(Buffer.from(arrayBuffer))))
         .catch(reject);
-      return;
-    }
-
-    if (url.startsWith('blob:http')) {
-      //FIXME: implement blob:https:// ( Telegram notifications )
-      resolve(nativeImage.createEmpty());
       return;
     }
 
