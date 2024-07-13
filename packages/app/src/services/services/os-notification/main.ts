@@ -1,5 +1,5 @@
 import { Notification, webContents } from 'electron';
-import log from 'electron-log';
+// import log from 'electron-log';
 
 import { ServiceSubscription } from '../../lib/class';
 import { RPC } from '../../lib/types';
@@ -10,7 +10,7 @@ export class OSNotificationServiceImpl extends OSNotificationService implements 
 
   async show(param: IOSNotificationServiceShowParam) {
 
-    log.info(`>>> OSNotificationServiceImpl.show ${JSON.stringify(param)}`);
+    // log.info(`>>> OSNotificationServiceImpl.show ${JSON.stringify(param)}`);
 
     const notificationOptions: Electron.NotificationConstructorOptions = {
       title: param.title,

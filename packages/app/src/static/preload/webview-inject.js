@@ -94,15 +94,15 @@ class BxNotification {
 
     this._registerIPC();
 
-    console.log(
-      '>>>>>> New notification 1', (new Date()).toLocaleTimeString(), JSON.stringify({
-        id: this.id,
-        timestamp: this.timestamp,
-        title: this.title,
-        body: this.body,
-        icon: this.icon,
-      })
-    );
+    const newNotification = {
+      id: this.id,
+      timestamp: this.timestamp,
+      title: this.title,
+      body: this.body,
+      icon: this.icon,
+    };
+
+    console.log('>>>>>> New notification 1', (new Date()).toLocaleTimeString(), JSON.stringify(newNotification));
 
     let fixedIconUrl = this.icon;
     if (typeof fixedIconUrl === 'string') {
@@ -110,12 +110,33 @@ class BxNotification {
       if (fixedIconUrl.startsWith('//')) {  // Gmail
         fixedIconUrl = 'https:' + this.icon;
       }
+      else if (fixedIconUrl.startsWith('blob:http')) {  // Telegram
+        const xhr = new XMLHttpRequest();
+        xhr.responseType = 'blob';
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState === 4) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+              window.bxApi.notificationCenter.sendNotification(this.id, {
+                ...newNotification,
+                icon: event.target.result,
+              });          
+            }
+            reader.readAsDataURL(xhr.response);
+          }
+        };
+        xhr.open('GET', fixedIconUrl);
+        xhr.send();
+        return;
+      }
+    }
+    else {
+      console.log('Unsupported notification icon type', (typeof fixedIconUrl));
+      fixedIconUrl = undefined;
     }
 
     window.bxApi.notificationCenter.sendNotification(this.id, {
-      timestamp: this.timestamp,
-      title: this.title,
-      body: this.body,
+      ...newNotification,
       icon: fixedIconUrl,
     });
   }
