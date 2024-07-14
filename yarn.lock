@@ -28863,7 +28863,6 @@ __metadata:
     electron-builder: "npm:^24.9.1"
     electron-chrome-extension: "https://github.com/viktor44/electron-chrome-extension/releases/download/v6.0.3/release.tar.gz"
     electron-debug: "npm:^3.2.0"
-    electron-fetch: "npm:^1.9.1"
     electron-log: "npm:^2.2.14"
     electron-mocha: "npm:^8.1.0"
     electron-process-manager: "npm:^1.0.0"
