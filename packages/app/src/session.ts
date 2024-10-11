@@ -64,7 +64,7 @@ These applications are sensitive to the User-Agent header and have to be recheck
 - Google Calendar (18.json)
 it's better to remove bx_override_user_agent attribute from manifest before the check to be sure that it's still necessary.
 */
-const defaultUserAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5735.289 Safari/537.36';
+const defaultUserAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36';
 
 const getUserAgentForApp = (url: string, currentUserAgent: string): string => {
 
