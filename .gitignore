@@ -46,8 +46,9 @@ dist/
 .cache/
 .tsnode-cache/
 release/
-app/theme/css
+packages/app/src/theme/css/
 /graphql.config.json
+.yarn/install-state.gz
 
 # Yalc (https://github.com/whitecolor/yalc)
 .yalc/
