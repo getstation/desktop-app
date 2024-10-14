@@ -2,7 +2,7 @@
   "name": "station-project",
   "private": true,
   "productName": "Station",
-  "version": "3.1.0-b3",
+  "version": "3.2.0-b3",
   "description": "Station",
   "homepage": "https://getstation.com",
   "author": {
@@ -28,7 +28,7 @@
     "electron": "./node_modules/.bin/electron"
   },
   "devDependencies": {
-    "rimraf": "^3.0.0"
+    "rimraf": "^5.0.10"
   },
   "devEngines": {
     "node": ">=18.0.0",
