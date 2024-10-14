@@ -1,7 +1,7 @@
 {
   "name": "Microsoft Teams",
   "category": "Communication & Collaboration",
-  "start_url": "https://teams.live.com",
+  "start_url": "https://teams.microsoft.com/v2/?clientexperience=t2",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/5sZEOL6RZesRsLdCozwv",
@@ -10,6 +10,14 @@
   ],
   "theme_color": "#5559AE",
   "scope": "https://teams.live.com",
+  "extended_scopes": [
+    "https://*.live.com",
+    "https://*.office.com",
+    "https://*.msauth.net",
+    "https://*.azureedge.net",
+    "https://*.microsoft.com",
+    "https://*.microsoftonline.com"
+  ],
   "bx_legacy_service_id": "microsoft-teams",
   "recommendedPosition": "25"
 }

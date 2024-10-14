@@ -54,6 +54,8 @@ win:
 linux:
   target:
     - AppImage
+    - deb
+    - rpm
   category: Network
   artifactName: ${productName}-${arch}.${ext}
 
