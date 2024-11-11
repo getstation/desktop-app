@@ -1,5 +1,6 @@
 import { EventEmitter } from 'events';
 import { Action, Store } from 'redux';
+
 import { changeAppFocusState } from '../../app/duck';
 import { NotificationProps } from '../../notification-center/types';
 import { handleError } from '../../services/api/helpers';
@@ -152,6 +153,9 @@ export default class GenericWindowManager extends EventEmitter {
               webContentsId,
             });
           },
+          onMinimize() {
+            self.emit('minimize');
+          }
         },
         'gwm'
       )

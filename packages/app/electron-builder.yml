@@ -64,6 +64,8 @@ extraResources:
     to: '.env.production'
   - from: 'build/icon_512x512.png'
     to: 'icon.png'
+  - from: 'build/icon.ico'
+    to: 'icon.ico'
 
 files:
   - '!**/*.map'
