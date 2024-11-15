@@ -30,6 +30,13 @@ generates:
       - typescript-operations
       - typescript-react-apollo
 
+  ./src/settings/components/SettingsMinimizeToTray/queries@local.gql.generated.tsx:
+    documents: ./src/settings/components/SettingsMinimizeToTray/queries@local.gql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+
   ./src/settings/components/SettingsDownloads/queries@local.gql.generated.tsx:
     documents: ./src/settings/components/SettingsDownloads/queries@local.gql
     plugins:

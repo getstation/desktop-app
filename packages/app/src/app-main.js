@@ -1,10 +1,10 @@
 import * as path from 'path';
 import { EventEmitter } from 'events';
 import { parse } from 'url';
-import { app, webContents, BrowserWindow, Menu, Tray } from 'electron';
+import { app, webContents, BrowserWindow, Menu, Tray, nativeImage } from 'electron';
 import log from 'electron-log';
 
-import { isWindows } from './utils/process';
+import { isDarwin, isWindows } from './utils/process';
 import { isPackaged } from './utils/env';
 import services from './services/servicesManager';
 import { observer } from './services/lib/helpers';
@@ -49,14 +49,15 @@ export default class BrowserXAppMain extends EventEmitter {
     let result = undefined;
 
     if (isWindows) {
-      result = isPackaged 
-        ? path.resolve(process.resourcesPath, 'icon.ico')
-        : path.resolve(__dirname, '../build/icon.ico');
+      result = nativeImage.createFromPath(path.resolve(__dirname, './static/icon-app.png'));
+      result.setTemplateImage(true);
     }
     else {
-      result = isPackaged 
-        ? path.resolve(process.resourcesPath, 'icon.png')
-        : path.resolve(__dirname, '../build/icon_512x512.png');
+      // result = isPackaged 
+      //   ? path.resolve(process.resourcesPath, 'icon.png')
+      //   : path.resolve(__dirname, '../build/icon_512x512.png');
+      result = nativeImage.createFromPath(path.resolve(__dirname, './static/icon-app.png'));
+      result.setTemplateImage(true);
     }
 
     return result;

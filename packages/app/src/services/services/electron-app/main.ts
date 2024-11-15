@@ -4,7 +4,7 @@ import * as globalTunnel from 'global-tunnel-ng';
 import { fromEvent, Subject, Subscription } from 'rxjs';
 import { ServiceSubscription } from '../../lib/class';
 import { RPC } from '../../lib/types';
-import { ElectronAppService, ElectronAppServiceObserver } from './interface';
+import { ElectronAppService, ElectronAppServiceObserver, ElectronAppServiceProviderService } from './interface';
 import { ElectronAppPath } from './types';
 
 const RESUME_QUIT_RECOVERY_DELAY = 5000;
@@ -34,6 +34,7 @@ function initProxyResolver() {
 export class ElectronAppServiceImpl extends ElectronAppService implements RPC.Interface<ElectronAppService> {
   private prepareQuitSubject: Subject<void>;
   private appCanQuit: boolean;
+  private provider?: RPC.Node<ElectronAppServiceProviderService>;
 
   constructor(uuid?: string) {
     super(uuid, { ready: false });
@@ -128,6 +129,24 @@ export class ElectronAppServiceImpl extends ElectronAppService implements RPC.In
     return new ServiceSubscription(subscriptions, obs);
   }
 
+  async showTrayIcon() {
+    if (!this.provider) {
+      log.info('missing provider service');
+      // throw new Error('missing provider service');
+    }
+    log.info('showTrayIcon');
+    await this.provider?.showTrayIcon();
+  }
+
+  async hideTrayIcon() {
+    if (!this.provider) {
+      log.info('missing provider service');
+      // throw new Error('missing provider service');
+    }
+    log.info('hideTrayIcon');
+    await this.provider?.hideTrayIcon();
+  }
+
   private initPrepareQuit() {
     app.on('before-quit', (event) => {
       if (!this.appCanQuit) {
@@ -136,5 +155,9 @@ export class ElectronAppServiceImpl extends ElectronAppService implements RPC.In
         this.prepareQuitSubject.next();
       }
     });
+  }
+
+  async setProvider(provider: RPC.Node<ElectronAppServiceProviderService>) {
+    this.provider = provider;
   }
 }

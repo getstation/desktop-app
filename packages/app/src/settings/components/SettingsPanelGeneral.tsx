@@ -17,6 +17,7 @@ import SettingsDownloadFolder from './SettingsDownloads/SettingsDownloadFolder';
 import SettingsOpenSourceInfo from './SettingsOpenSourceInfo';
 import SettingsUpdatesButton from './SettingsUpdatesButton/SettingsUpdatesButton';
 import SettingsHideMainMenu from './SettingsHideMainMenu/SettingsHideMainMenu';
+import SettingsMinimizeToTray from './SettingsMinimizeToTray/SettingsMinimizeToTray';
 import { isDarwin } from '../../utils/process';
 
 export interface Classes {
@@ -81,6 +82,8 @@ class SettingsPanelGeneralImpl extends React.PureComponent<Props, {}> {
         <SettingsAutoLaunch />
 
         { !isDarwin && <SettingsHideMainMenu /> }
+
+        <SettingsMinimizeToTray />
 
         <SettingsDownloadFolder
           currentDownloadFolder={this.props.downloadFolder}
