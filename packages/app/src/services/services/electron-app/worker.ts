@@ -1,5 +1,3 @@
-import log from 'electron-log';
-
 // @ts-ignore: no declaration file
 import { setMinimizeToTray } from '../../../app/duck';
 import { StationStoreWorker } from '../../../types';
@@ -15,12 +13,10 @@ export class ElectronAppServiceProviderServiceImpl extends ElectronAppServicePro
   }
 
   async showTrayIcon() {
-    log.info('Provider showTrayIcon');
     this.store.dispatch(setMinimizeToTray(true));
   }
 
   async hideTrayIcon() {
-    log.info('Provider hideTrayIcon');
     this.store.dispatch(setMinimizeToTray(false));
   }
 }

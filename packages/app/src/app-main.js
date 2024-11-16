@@ -1,11 +1,8 @@
-import * as path from 'path';
 import { EventEmitter } from 'events';
 import { parse } from 'url';
 import { app, webContents, BrowserWindow, Menu, Tray, nativeImage } from 'electron';
 import log from 'electron-log';
 
-import { isDarwin, isWindows } from './utils/process';
-import { isPackaged } from './utils/env';
 import services from './services/servicesManager';
 import { observer } from './services/lib/helpers';
 import { handleError } from './services/api/helpers';
@@ -45,52 +42,9 @@ export default class BrowserXAppMain extends EventEmitter {
     return services.processManager.addObserver(observer({ onWillKillProcess }));
   }
 
-  getTrayIcon() {
-    let result = undefined;
-
-    if (isWindows) {
-      result = nativeImage.createFromPath(path.resolve(__dirname, './static/icon-app.png'));
-      result.setTemplateImage(true);
-    }
-    else {
-      // result = isPackaged 
-      //   ? path.resolve(process.resourcesPath, 'icon.png')
-      //   : path.resolve(__dirname, '../build/icon_512x512.png');
-      result = nativeImage.createFromPath(path.resolve(__dirname, './static/icon-app.png'));
-      result.setTemplateImage(true);
-    }
-
-    return result;
-  }
-
   initWebUIHandler() {
-    const trayIcon = this.getTrayIcon();
     app.on('ready', () => {
       start();
-
-      const tray = new Tray(trayIcon);
-      const contextMenu = Menu.buildFromTemplate([
-        { 
-          label: 'Open',
-          type: 'normal',
-          click: () => { 
-            BrowserWindow.getAllWindows()
-              .reverse()
-              .forEach(win => {
-                win.show();
-              });
-          },
-        },
-        { 
-          label: 'Exit', 
-          type: 'normal',
-          click: () => { 
-            app.quit() 
-          } 
-        },
-      ]);
-      tray.setToolTip('Station');
-      tray.setContextMenu(contextMenu);
     });
   }
 }

@@ -1,7 +1,11 @@
-import { app, session } from 'electron';
+import * as path from 'path';
+import { BrowserWindow, Menu, Tray, app, nativeImage, session } from 'electron';
 import log from 'electron-log';
 import * as globalTunnel from 'global-tunnel-ng';
 import { fromEvent, Subject, Subscription } from 'rxjs';
+
+// import { isDarwin, isWindows } from '../../../utils/process';
+import { isPackaged } from '../../../utils/env';
 import { ServiceSubscription } from '../../lib/class';
 import { RPC } from '../../lib/types';
 import { ElectronAppService, ElectronAppServiceObserver, ElectronAppServiceProviderService } from './interface';
@@ -35,6 +39,7 @@ export class ElectronAppServiceImpl extends ElectronAppService implements RPC.In
   private prepareQuitSubject: Subject<void>;
   private appCanQuit: boolean;
   private provider?: RPC.Node<ElectronAppServiceProviderService>;
+  private tray?: Tray;
 
   constructor(uuid?: string) {
     super(uuid, { ready: false });
@@ -131,20 +136,21 @@ export class ElectronAppServiceImpl extends ElectronAppService implements RPC.In
 
   async showTrayIcon() {
     if (!this.provider) {
-      log.info('missing provider service');
-      // throw new Error('missing provider service');
+      throw new Error('missing provider service');
     }
-    log.info('showTrayIcon');
-    await this.provider?.showTrayIcon();
+    this.tray = this.createTray();
+    await this.provider.showTrayIcon();
   }
 
   async hideTrayIcon() {
     if (!this.provider) {
-      log.info('missing provider service');
-      // throw new Error('missing provider service');
+      throw new Error('missing provider service');
     }
-    log.info('hideTrayIcon');
-    await this.provider?.hideTrayIcon();
+    if (this.tray) {
+      this.tray.destroy();
+      this.tray = undefined;
+    }
+    await this.provider.hideTrayIcon();
   }
 
   private initPrepareQuit() {
@@ -159,5 +165,46 @@ export class ElectronAppServiceImpl extends ElectronAppService implements RPC.In
 
   async setProvider(provider: RPC.Node<ElectronAppServiceProviderService>) {
     this.provider = provider;
+  }
+
+  getTrayIcon() {
+    const result = nativeImage.createFromPath(
+      isPackaged 
+        ? path.resolve(process.resourcesPath, 'icon-app.png')
+        : path.resolve(__dirname, '../../../static/icon-app.png')
+    );
+    result.setTemplateImage(true);
+
+    return result;
+  }
+
+  createTray() {
+    const tray = new Tray(this.getTrayIcon());
+    const contextMenu = Menu.buildFromTemplate([
+      { 
+        label: 'Open',
+        type: 'normal',
+        click: () => { 
+          BrowserWindow.getAllWindows()
+            .reverse()
+            .forEach(win => {
+              if (win.webContents.id !== 1) {
+                win.show();
+              }
+            });
+        },
+      },
+      { 
+        label: 'Exit', 
+        type: 'normal',
+        click: () => { 
+          app.quit() 
+        } 
+      },
+    ]);
+    tray.setToolTip('Station');
+    tray.setContextMenu(contextMenu);
+
+    return tray;
   }
 }
