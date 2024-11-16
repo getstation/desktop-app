@@ -166,7 +166,7 @@ export class ElectronAppServiceImpl extends ElectronAppService implements RPC.In
     this.provider = provider;
   }
 
-  getTrayIcon() {
+  private getTrayIcon() {
     const result = nativeImage.createFromPath(
       isPackaged 
         ? path.resolve(process.resourcesPath, 'icon-app.png')
@@ -177,20 +177,23 @@ export class ElectronAppServiceImpl extends ElectronAppService implements RPC.In
     return result;
   }
 
-  createTray() {
-    const tray = new Tray(this.getTrayIcon());
+  private showAllWindows() {
+    BrowserWindow.getAllWindows()
+      .reverse()
+      .forEach(win => {
+        if (win.webContents.id !== 1) {
+          win.show();
+        }
+      });
+  }
+
+  private createTray() {
     const contextMenu = Menu.buildFromTemplate([
       { 
         label: 'Open',
         type: 'normal',
         click: () => { 
-          BrowserWindow.getAllWindows()
-            .reverse()
-            .forEach(win => {
-              if (win.webContents.id !== 1) {
-                win.show();
-              }
-            });
+          this.showAllWindows();
         },
       },
       { 
@@ -201,9 +204,11 @@ export class ElectronAppServiceImpl extends ElectronAppService implements RPC.In
         } 
       },
     ]);
+
+    const tray = new Tray(this.getTrayIcon());
+    tray.addListener('double-click', () => this.showAllWindows());
     tray.setToolTip('Station');
     tray.setContextMenu(contextMenu);
-
     return tray;
   }
 }
