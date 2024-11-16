@@ -4,7 +4,6 @@ import log from 'electron-log';
 import * as globalTunnel from 'global-tunnel-ng';
 import { fromEvent, Subject, Subscription } from 'rxjs';
 
-// import { isDarwin, isWindows } from '../../../utils/process';
 import { isPackaged } from '../../../utils/env';
 import { ServiceSubscription } from '../../lib/class';
 import { RPC } from '../../lib/types';
