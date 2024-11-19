@@ -3,6 +3,7 @@ import { isDarwin } from '../../utils/process';
 import { getResourceIconPath } from '../../utils/resources';
 import { windowCreated } from '../duck';
 import GenericWindowManager from './GenericWindowManager';
+import services from '../../services/servicesManager';
 
 export default class MainWindowManager extends GenericWindowManager {
 
@@ -15,7 +16,9 @@ export default class MainWindowManager extends GenericWindowManager {
   }
 
   async create() {
-    if (this.isCreated()) return this.window;
+    if (this.isCreated()) {
+      return this.window;
+    }
 
     await super.create({
       show: false,
@@ -23,6 +26,10 @@ export default class MainWindowManager extends GenericWindowManager {
       icon: getResourceIconPath(),
       acceptFirstMouse: true,
       savePosition: 'main-window',
+    });
+
+    this.on('minimize', () => {
+      services.browserWindow.hideAllWindows();
     });
 
     await super.load();

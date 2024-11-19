@@ -114,4 +114,10 @@ export class BrowserWindowManagerServiceImpl extends BrowserWindowManagerService
     });
     await this.provider.setHideMainMenu(hide);
   }
+
+  async hideAllWindows() {
+    BrowserWindow.getAllWindows().forEach((bw) => {
+      bw.hide();
+    });
+  }
 }

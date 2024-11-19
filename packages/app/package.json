@@ -1,7 +1,7 @@
 {
   "name": "station-desktop-app",
   "productName": "Station",
-  "version": "3.2.0",
+  "version": "3.3.0-b1",
   "description": "Station",
   "homepage": "https://getstation.com",
   "author": {
@@ -69,7 +69,7 @@
     "electron-chrome-extension": "https://github.com/viktor44/electron-chrome-extension/releases/download/v6.0.3/release.tar.gz",
     "electron-debug": "^3.2.0",
     "electron-log": "^2.2.14",
-    "electron-process-manager": "https://github.com/viktor44/electron-process-manager/releases/download/v1.1.0/release.tar.gz",
+    "electron-process-manager": "^1.2.0",
     "electron-updater": "^6.2.1",
     "electron-window-state": "5.0.3",
     "emoji-js": "^3.4.1",

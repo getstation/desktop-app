@@ -58,6 +58,7 @@ import MainWindowManager from './windows/utils/MainWindowManager';
 import URLRouter from './urlrouter/URLRouter';
 import { closeCurrentTab } from './tabs/duck';
 import { BrowserWindowManagerProviderServiceImpl } from './services/services/browser-window/worker';
+import { ElectronAppServiceProviderServiceImpl } from './services/services/electron-app/worker';
 
 export class BrowserXAppWorker {
   public store: StationStoreWorker;
@@ -342,13 +343,16 @@ export class BrowserXAppWorker {
   }
 
   private async initAppLifeCycle() {
+    services.electronApp.setProvider(new ElectronAppServiceProviderServiceImpl(this.store))
     // Don't wrap this in this.store.ready()
     // because we want the window to be created as soon as possible
     await this.mainWindowManager.create();
 
     const onActivate = async () => {
       const isReady = await services.electronApp.isReady();
-      if (!isReady) return;
+      if (!isReady) {
+        return;
+      }
       // On macOS it's common to re-create a window in the app when the
       // dock icon is clicked and there are no other windows open.
       await this.mainWindowManager.create();

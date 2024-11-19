@@ -62,8 +62,8 @@ linux:
 extraResources:
   - from: '../../.env.production'
     to: '.env.production'
-  - from: 'build/icon_512x512.png'
-    to: 'icon.png'
+  - from: 'src/static/icon-app.png'
+    to: 'icon-app.png'
 
 files:
   - '!**/*.map'
