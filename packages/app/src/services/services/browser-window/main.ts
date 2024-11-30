@@ -1,4 +1,4 @@
-import { BrowserWindow, ipcMain, screen, webContents, WebContents, WebPreferences, app } from 'electron';
+import { BrowserWindow, ipcMain, screen } from 'electron';
 import * as remoteMain from '@electron/remote/main';
 import * as windowStateKeeper from 'electron-window-state';
 import { fromEvent } from 'rxjs';
@@ -162,6 +162,7 @@ export class BrowserWindowServiceImpl extends BrowserWindowService implements RP
       this.onAny('closed', obs.onClosed),
       this.onAny('enter-full-screen', obs.onEnterFullScreen),
       this.onAny('leave-full-screen', obs.onLeaveFullScreen),
+      this.onAny('minimize', obs.onMinimize),
       this.onAnyWebContents('did-finish-load', obs.onDidFinishLoad),
       this.onReadyToShow(obs.onReadyToShow),
       this.onContextMenu(obs.onContextMenu),

@@ -84,6 +84,8 @@ export class BrowserWindowServiceObserver extends ServiceBase implements RPC.Int
   onContextMenu(params: Electron.ContextMenuParams): void {}
   // @ts-ignore
   onNewNotification(notificationId: string, props: NotificationProps): void {}
+  // @ts-ignore
+  onMinimize(): void {}
 }
 
 @service('browser-window')
@@ -111,4 +113,6 @@ export class BrowserWindowManagerService extends ServiceBase implements RPC.Inte
   setProvider(provider: RPC.Node<BrowserWindowManagerProviderService>): Promise<void> {}
   // @ts-ignore
   hideMainMenu(hide: boolean): Promise<void> {}
+  // @ts-ignore
+  hideAllWindows(): Promise<void> {}
 }

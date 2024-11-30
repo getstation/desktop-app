@@ -25,11 +25,16 @@ export class ElectronAppService extends ServiceBase implements RPC.Interface<Ele
   dockSetBadge(badge: string): Promise<void> {}
   // @ts-ignore
   getAppMetadata(): Promise<AppMetadata> {}
-
+  // @ts-ignore
+  showTrayIcon(): Promise<void> {}
+  // @ts-ignore
+  hideTrayIcon(): Promise<void> {}
   // @ts-ignore
   trayIconVisible(): Promise<boolean> {}
   // @ts-ignore
   addObserver(obs: RPC.ObserverNode<ElectronAppServiceObserver>): Promise<RPC.Subscription> {}
+  // @ts-ignore
+  setProvider(provider: RPC.Node<ElectronAppServiceProviderService>): Promise<void> {}
 }
 
 @service('electron-app')

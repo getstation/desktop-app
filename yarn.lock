@@ -2809,6 +2809,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@getstation/electron-process-reporter@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@getstation/electron-process-reporter@npm:2.0.0"
+  dependencies:
+    memoizee: "npm:^0.4.17"
+    pidtree: "npm:^0.6.0"
+    pidusage: "npm:3.0.2"
+    rxjs: "npm:^6.6.7"
+  checksum: 10c0/af4afd13f81104efe1ee14fdb4a86bea8ed8c8aae8514e9794948b3440e479b2977226817201c3261cc4f2f5e6c58544858867e990943dfc95d5cb8c33b9496d
+  languageName: node
+  linkType: hard
+
 "@getstation/fetch-favicon@npm:^0.0.4-rc.2":
   version: 0.0.4-rc.2
   resolution: "@getstation/fetch-favicon@npm:0.0.4-rc.2"
@@ -14070,24 +14082,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron-process-manager@https://github.com/viktor44/electron-process-manager/releases/download/v1.1.0/release.tar.gz":
-  version: 1.1.0
-  resolution: "electron-process-manager@https://github.com/viktor44/electron-process-manager/releases/download/v1.1.0/release.tar.gz"
+"electron-process-manager@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "electron-process-manager@npm:1.2.0"
   dependencies:
-    electron-process-reporter: "https://github.com/viktor44/electron-process-reporter/releases/download/v1.5.0/release.tar.gz"
-  checksum: 10c0/7bff2d2e3b19fe73599c7bd514709b460939b5e8c1819b3cbe8541422d9cfc197779f539f504e8f3718545dad092f1de9bc4b1371bd9b254fc76a6f4ede853f5
-  languageName: node
-  linkType: hard
-
-"electron-process-reporter@https://github.com/viktor44/electron-process-reporter/releases/download/v1.5.0/release.tar.gz":
-  version: 1.5.0
-  resolution: "electron-process-reporter@https://github.com/viktor44/electron-process-reporter/releases/download/v1.5.0/release.tar.gz"
-  dependencies:
-    memoizee: "npm:^0.4.17"
-    pidtree: "npm:^0.6.0"
-    pidusage: "npm:3.0.2"
-    rxjs: "npm:^6.6.7"
-  checksum: 10c0/5bdabfd46f3026af71df4128f13d2d395788931afa7dab23370252c6b3f4d417f3b561db72f136db606096bb531076a22e237019ec94486301d3668b015fcd25
+    "@getstation/electron-process-reporter": "npm:^2.0.0"
+  checksum: 10c0/1e6baeac7e28ddbdd04b109420a9f61e9f002e54ecb0afc007fa3441e5b29f40c86e547849743e76949063b7c13416407712b782a6084190e8bd1897c794128d
   languageName: node
   linkType: hard
 
@@ -29387,7 +29387,7 @@ __metadata:
     electron-debug: "npm:^3.2.0"
     electron-log: "npm:^2.2.14"
     electron-mocha: "npm:^12.1.0"
-    electron-process-manager: "https://github.com/viktor44/electron-process-manager/releases/download/v1.1.0/release.tar.gz"
+    electron-process-manager: "npm:^1.2.0"
     electron-updater: "npm:^6.2.1"
     electron-webpack: "npm:^2.8.2"
     electron-window-state: "npm:5.0.3"

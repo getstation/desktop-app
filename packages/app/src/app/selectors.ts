@@ -20,6 +20,9 @@ export const getAppAutoLaunchEnabledStatus = (state: StationState): boolean | un
 export const getAppHideMainMenuStatus = (state: StationState): boolean | undefined =>
   getStationStatus(state).get('hideMainMenu');
 
+export const getAppMinimizeToTrayStatus = (state: StationState): boolean | undefined =>
+  getStationStatus(state).get('minimizeToTray');
+
 export const areBetaIncludedInUpdates = (state: StationState): boolean =>
   state.getIn(['app', 'includesBetaInUpdates'], false);
 

@@ -3,6 +3,8 @@ type Query {
   autoLaunchEnabled: Boolean,
   """ Hide main menu (Windows, Linux) """
   hideMainMenu: Boolean,
+  """ Minimize application to tray icon """
+  minimizeToTray: Boolean,
 
   promptDownloadEnabled: Boolean,
 
@@ -48,6 +50,8 @@ type Mutation {
 
   """ Will set the value of hideMainMenu property. """
   setHideMainMenu(hide: Boolean!): Boolean,
+
+  setMinimizeToTray(enabled: Boolean!): Boolean,
 
   setPromptDownload(enabled: Boolean!):Boolean
 

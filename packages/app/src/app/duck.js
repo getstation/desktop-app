@@ -12,6 +12,8 @@ export const SET_AUTO_LAUNCH_ENABLED = 'browserX/app/SET_AUTO_LAUNCH_ENABLED';
 export const ENABLE_AUTO_LAUNCH = 'browserX/app/ENABLE_AUTO_LAUNCH';
 export const SET_HIDE_MAIN_MENU = 'browserX/app/SET_HIDE_MAIN_MENU';
 export const HIDE_MAIN_MENU = 'browserX/app/HIDE_MAIN_MENU';
+export const SET_MINIMIZE_TO_TRAY = 'browserX/app/SET_MINIMIZE_TO_TRAY';
+export const MINIMIZE_TO_TRAY = 'browserX/app/MINIMIZE_TO_TRAY';
 export const INCLUDE_BETA_IN_UPDATES = 'browserX/app/INCLUDE_BETA_IN_UPDATES';
 export const SET_INCLUDES_BETA_IN_UPDATES = 'browserX/app/SET_INCLUDES_BETA_IN_UPDATES';
 export const SET_FULL_SCREEN_STATE = 'browserX/app/SET_FULL_SCREEN_STATE';
@@ -56,6 +58,14 @@ export const setHideMainMenu = (hide) => ({
 
 export const hideMainMenu = (hide) => ({
   type: HIDE_MAIN_MENU, hide
+});
+
+export const setMinimizeToTray = (enabled) => ({
+  type: SET_MINIMIZE_TO_TRAY, enabled
+});
+
+export const minimizeToTray = (enable) => ({
+  type: MINIMIZE_TO_TRAY, enable
 });
 
 export const includeBetaInUpdates = (include = true) => ({
@@ -151,6 +161,9 @@ export default function app(state = new Map(), action) {
     case SET_HIDE_MAIN_MENU:
       return state.set('hideMainMenu', action.hide);
 
+    case SET_MINIMIZE_TO_TRAY:
+      return state.set('minimizeToTray', action.enabled);
+  
     case SET_INCLUDES_BETA_IN_UPDATES:
       return state.set('includesBetaInUpdates', action.included);
 
