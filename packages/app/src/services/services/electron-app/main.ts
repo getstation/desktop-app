@@ -128,6 +128,10 @@ export class ElectronAppServiceImpl extends ElectronAppService implements RPC.In
     return new ServiceSubscription(subscriptions, obs);
   }
 
+  async trayIconVisible() {
+    return await this.provider?.trayIconVisible() || false;
+  }
+
   private initPrepareQuit() {
     app.on('before-quit', (event) => {
       if (!this.appCanQuit) {

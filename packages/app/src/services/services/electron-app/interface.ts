@@ -27,6 +27,8 @@ export class ElectronAppService extends ServiceBase implements RPC.Interface<Ele
   getAppMetadata(): Promise<AppMetadata> {}
 
   // @ts-ignore
+  trayIconVisible(): Promise<boolean> {}
+  // @ts-ignore
   addObserver(obs: RPC.ObserverNode<ElectronAppServiceObserver>): Promise<RPC.Subscription> {}
 }
 
@@ -40,4 +42,14 @@ export class ElectronAppServiceObserver extends ServiceBase implements RPC.Inter
 export interface AppMetadata {
   name: string,
   version: string,
+}
+
+@service('browser-window')
+export class ElectronAppServiceProviderService extends ServiceBase implements RPC.Interface<ElectronAppServiceProviderService> {
+  // @ts-ignore
+  showTrayIcon(): Promise<void> {}
+  // @ts-ignore
+  hideTrayIcon(): Promise<void> {}
+  // @ts-ignore
+  trayIconVisible(): Promise<boolean> {}
 }
