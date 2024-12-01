@@ -1,6 +1,7 @@
 import { getUrlToLoad } from '../../utils/dev';
 import { isDarwin } from '../../utils/process';
 import { getResourceIconPath } from '../../utils/resources';
+// @ts-ignore: no declaration file
 import { windowCreated } from '../duck';
 import GenericWindowManager from './GenericWindowManager';
 import services from '../../services/servicesManager';
@@ -28,8 +29,11 @@ export default class MainWindowManager extends GenericWindowManager {
       savePosition: 'main-window',
     });
 
-    this.on('minimize', () => {
-      services.browserWindow.hideAllWindows();
+    this.on('minimize', async () => {
+      const trayIconVisible = await services.electronApp.trayIconVisible()
+      if (trayIconVisible) {
+        services.browserWindow.hideAllWindows();
+      }
     });
 
     await super.load();

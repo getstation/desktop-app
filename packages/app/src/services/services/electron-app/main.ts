@@ -151,6 +151,10 @@ export class ElectronAppServiceImpl extends ElectronAppService implements RPC.In
     }
     await this.provider.hideTrayIcon();
   }
+  
+  async trayIconVisible() {
+    return await this.provider?.trayIconVisible() || false;
+  }
 
   private initPrepareQuit() {
     app.on('before-quit', (event) => {

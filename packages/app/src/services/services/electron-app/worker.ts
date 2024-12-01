@@ -1,5 +1,6 @@
 // @ts-ignore: no declaration file
 import { setMinimizeToTray } from '../../../app/duck';
+import { getAppMinimizeToTrayStatus } from '../../../app/selectors';
 import { StationStoreWorker } from '../../../types';
 import { RPC } from '../../lib/types';
 import { ElectronAppServiceProviderService } from './interface';
@@ -18,5 +19,9 @@ export class ElectronAppServiceProviderServiceImpl extends ElectronAppServicePro
 
   async hideTrayIcon() {
     this.store.dispatch(setMinimizeToTray(false));
+  }
+
+  async trayIconVisible() {
+    return getAppMinimizeToTrayStatus(this.store.getState()) || false;
   }
 }
