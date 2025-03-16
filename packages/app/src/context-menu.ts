@@ -117,17 +117,9 @@ export default class ContextMenu extends EventEmitter {
           id: 'copyImage',
           label: 'Copy Image to Clipboard',
           click() {
-            // Fetch the image and copy to clipboard
-            fetch(props.srcURL)
-              .then(response => response.arrayBuffer())
-              .then(buffer => {
-                const { nativeImage } = require('electron');
-                const image = nativeImage.createFromBuffer(Buffer.from(buffer));
-                clipboard.writeImage(image);
-              })
-              .catch(error => {
-                console.error('Failed to copy image to clipboard:', error);
-              });
+            if (webContents) {
+              webContents.copyImageAt(props.x, props.y);
+            }
           },
         },
         {
