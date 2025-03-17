@@ -114,6 +114,15 @@ export default class ContextMenu extends EventEmitter {
           },
         },
         {
+          id: 'copyImage',
+          label: 'Copy Image to Clipboard',
+          click() {
+            if (webContents) {
+              webContents.copyImageAt(props.x, props.y);
+            }
+          },
+        },
+        {
           id: 'copyImageUrl',
           label: 'Copy Image URL',
           click() {
