@@ -26,8 +26,8 @@
 ## Installation
 
 ### Requirements
-* node >= `18.x`
-* yarn >= `1.19.x`
+* node >= `22.x`
+* yarn >= `4.x`
 
 ```bash
 $ git clone https://github.com/getstation/desktop-app.git

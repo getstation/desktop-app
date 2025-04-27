@@ -31,11 +31,11 @@
     "rimraf": "^5.0.10"
   },
   "devEngines": {
-    "node": ">=18.0.0",
+    "node": ">=22.0.0",
     "yarn": ">=4.1.0"
   },
   "volta": {
-    "node": "18.14.0",
+    "node": "22.14.0",
     "yarn": "4.1.0"
   },
   "packageManager": "yarn@4.1.0"

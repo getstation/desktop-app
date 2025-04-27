@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
-          node-version: "18"
+          node-version: "22"
           cache: "yarn"
       # - name: Configure Node
       #   run: |
@@ -28,7 +28,7 @@ jobs:
         run: yarn install --immutable
       - name: Build
         run: yarn build
-        
+
   MacOs:
     runs-on: macos-latest
     env:
@@ -37,12 +37,12 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
-          node-version: "18"
+          node-version: "22"
           cache: "yarn"
       - name: Configure Node
         run: |
           # npm v9 doesn't allow custom config parameters (i.e. node_gyp) anymode, so we have to downgrade it to v8
-          npm install -g npm@8  
+          npm install -g npm@8
           npm install -g node-gyp@latest
           npm config set node_gyp $(npm prefix -g)/lib/node_modules/node-gyp/bin/node-gyp.js
           # yarn set version stable
@@ -61,13 +61,13 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
-          node-version: "18"
+          node-version: "22"
           cache: "yarn"
       - name: Configure Node
         shell: powershell
         run: |
           # npm v9 doesn't allow custom config parameters (i.e. node_gyp) anymode, so we have to downgrade it to v8
-          npm install -g npm@8  
+          npm install -g npm@8
           npm install -g node-gyp@latest
           npm prefix -g | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
           # yarn set version stable
