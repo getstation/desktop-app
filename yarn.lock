@@ -29557,7 +29557,7 @@ __metadata:
     webpack: "npm:^4.46.0"
     webpack-cli: "npm:^3.3.12"
     webpack-merge: "npm:^4.2.2"
-    windows-focus-assist: "patch:windows-focus-assist@npm%3A1.3.0#~/.yarn/patches/windows-focus-assist-npm-1.3.0-e02310a164.patch"
+    windows-focus-assist: "npm:^1.4.0"
     write-file-webpack-plugin: "npm:^4.5.1"
     ws: "npm:^5.2.2"
     xvfb-maybe: "npm:^0.2.1"
@@ -32804,25 +32804,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"windows-focus-assist@npm:1.3.0":
-  version: 1.3.0
-  resolution: "windows-focus-assist@npm:1.3.0"
+"windows-focus-assist@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "windows-focus-assist@npm:1.4.0"
   dependencies:
     bindings: "npm:^1.5.0"
     node-addon-api: "npm:*"
     node-gyp: "npm:latest"
-  checksum: 10c0/0a168df52e517e753fc3310dc3be04c37ca8c9a1afa84798a4ec5db252939382b866b76bf3656ed4b42d79ceed551f620307fb632d3e183cd7bea31a03f10c70
-  languageName: node
-  linkType: hard
-
-"windows-focus-assist@patch:windows-focus-assist@npm%3A1.3.0#~/.yarn/patches/windows-focus-assist-npm-1.3.0-e02310a164.patch":
-  version: 1.3.0
-  resolution: "windows-focus-assist@patch:windows-focus-assist@npm%3A1.3.0#~/.yarn/patches/windows-focus-assist-npm-1.3.0-e02310a164.patch::version=1.3.0&hash=5e48fb"
-  dependencies:
-    bindings: "npm:^1.5.0"
-    node-addon-api: "npm:*"
-    node-gyp: "npm:latest"
-  checksum: 10c0/394ad49aaf273fed06dcccb55deab787387b50263c425fb9b035cd43f52d4cad37e0e63739d92784fc4a554496369672edda80ea8f84201c401028f0566ed5aa
+  checksum: 10c0/e0df9e7906f218772cb9fe81bd64a71643a7ac90ef457fa40e608b793800f72e1eea981fdd25f445adda00cb1d95f7f5e2de15ad0283ec098f8303a70bc4c83c
   languageName: node
   linkType: hard
 
