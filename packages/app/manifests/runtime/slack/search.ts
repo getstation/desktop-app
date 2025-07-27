@@ -108,8 +108,9 @@ class SlackSearch {
           await this.manageTeams();
           if (cancelled) return;
 
-          const results = this.getResults(query.value);
-          this.sdk.search.results.next({ results });
+         const results = this.getResults(query.value);
+this.sdk.search.results.next({ results: results.length > 0 ? results : [] });
+
         },
         e => SlackSearch.errors.next(e)
       );
