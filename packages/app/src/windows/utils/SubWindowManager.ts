@@ -74,7 +74,7 @@ export default class SubWindowManager extends GenericWindowManager {
       },
     });
 
-    await super.load();
+    await super.load(`${SubWindowManager.FILEPATH}?tabId=${this.tabId}`);
 
     return this.window!;
   }

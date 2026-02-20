@@ -1,4 +1,3 @@
-import { oc } from 'ts-optchain';
 import { MultiInstanceConfigPreset } from '../applications/manifest-provider/types';
 import { format } from '../utils/handlebars';
 import { getEmail } from '../user-identities/get';

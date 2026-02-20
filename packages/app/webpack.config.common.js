@@ -28,12 +28,17 @@ const mutateFixTsLoader = config => {
 };
 
 /**
- * minimizer should keep classnames and fnames
+ * optimize terser for smaller production bundles
  * @param config {webpack.Configuration}
  */
 const mutateFixTerser = config => {
   if (config.mode === 'production') {
     Object.assign(config.optimization.minimizer[0].options.terserOptions, {
+      compress: {
+        passes: 2,
+      },
+      // Services registry keys rely on constructor names at runtime.
+      // Minifying class/function names can cause collisions like "browser-window:A".
       keep_classnames: true,
       keep_fnames: true
     });
@@ -96,6 +101,7 @@ const mutateWebpackConfig = config => {
 
   if (config.mode === 'production') {
     config.plugins.push(
+      new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
       new webpack.DefinePlugin({
         'process.env.GOOGLE_CLIENT_ID': JSON.stringify(
           process.env.GOOGLE_CLIENT_ID

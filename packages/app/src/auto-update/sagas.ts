@@ -19,7 +19,6 @@ import {
 } from './duck';
 import { isDownloadingUpdate, isUpdateAvailable } from './selectors';
 import ms = require('ms');
-import { BrowserXAppWorker } from '../app-worker';
 
 const POLL_UPDATE_INTERVAL = ms('30mins');
 

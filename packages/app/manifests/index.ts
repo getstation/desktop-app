@@ -75,9 +75,14 @@ export function getApplicationById(id: string): Manifest {
 
   const svgIconName = `./${id}.svg`;
   const pngIconName = `./${id}.png`;
-  const iconData: string = reqIcon.keys().indexOf(svgIconName) >= 0
-                            ? reqIcon(svgIconName)
-                            : reqIcon(pngIconName);
+  // `url-loader` can return either a string URL or an ES module object
+  // depending on loader defaults/version. Normalize to a plain string.
+  const rawIconData = reqIcon.keys().indexOf(svgIconName) >= 0
+    ? reqIcon(svgIconName)
+    : reqIcon(pngIconName);
+  const iconData: string = typeof rawIconData === 'string'
+    ? rawIconData
+    : rawIconData.default;
   const manifest: BxAppManifest = reqManifest(`./${id}.json`);
 
   delete manifest.icons;

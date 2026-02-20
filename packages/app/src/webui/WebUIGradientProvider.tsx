@@ -1,10 +1,17 @@
 import { GradientProvider } from '@getstation/theme';
 import * as React from 'react';
-import { Observable, Subscription } from 'rxjs';
+
+type SubscriptionLike = {
+  unsubscribe: () => void,
+};
+
+type Subscribable<T> = {
+  subscribe: (next: (value: T) => void) => SubscriptionLike,
+};
 
 export type Props = {
   children: any,
-  themeColorsObservable: Observable<string[]>,
+  themeColorsObservable: Subscribable<string[]>,
 };
 
 export type State = {
@@ -12,7 +19,7 @@ export type State = {
 };
 
 export class WebUIGradientProvider extends React.Component<Props, State> {
-  subscription: Subscription;
+  subscription: SubscriptionLike;
 
   constructor(props: Props) {
     super(props);

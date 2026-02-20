@@ -1,4 +1,3 @@
-// tslint:disable-next-line:no-import-side-effect
 import 'reflect-metadata';
 import { endpoints, namespace } from '../../../src/services/lib/const';
 import { allServicesRegistry } from '../../../src/services/lib/registry';

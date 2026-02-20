@@ -1,0 +1,81 @@
+module.exports = {
+  root: true,
+  env: {
+    browser: true,
+    es2022: true,
+    jest: true,
+    node: true,
+  },
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
+  plugins: ['@typescript-eslint'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
+  rules: {
+    '@typescript-eslint/ban-ts-comment': 'off',
+    '@typescript-eslint/ban-types': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
+    '@typescript-eslint/no-empty-interface': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-extra-non-null-assertion': 'off',
+    '@typescript-eslint/no-namespace': 'off',
+    '@typescript-eslint/no-non-null-asserted-optional-chain': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/no-unsafe-declaration-merging': 'off',
+    '@typescript-eslint/no-this-alias': 'off',
+    '@typescript-eslint/no-unused-expressions': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/prefer-as-const': 'off',
+    'no-case-declarations': 'off',
+    'no-console': 'off',
+    'no-constant-condition': 'off',
+    'no-empty': 'off',
+    'no-async-promise-executor': 'off',
+    'no-extra-boolean-cast': 'off',
+    'no-extra-semi': 'off',
+    'no-inner-declarations': 'off',
+    'no-irregular-whitespace': 'off',
+    'no-var': 'off',
+    'no-prototype-builtins': 'off',
+    'no-self-assign': 'off',
+    'no-undef': 'off',
+    'no-unreachable': 'off',
+    'no-unused-vars': 'off',
+    'no-useless-escape': 'off',
+    'prefer-const': 'off',
+    'require-yield': 'off',
+  },
+  overrides: [
+    {
+      files: ['**/*.{ts,tsx}'],
+      rules: {
+        '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+      },
+    },
+    {
+      files: ['**/test/**/*.{ts,tsx}', '**/*.spec.{ts,tsx}', '**/*.test.{ts,tsx}'],
+      rules: {
+        '@typescript-eslint/no-unused-vars': 'off',
+      },
+    },
+    {
+      files: ['**/interface.ts', '**/interfaces.ts', '**/dummy.ts'],
+      rules: {
+        '@typescript-eslint/no-unused-vars': 'off',
+      },
+    },
+    {
+      files: ['**/*.js'],
+      parser: 'espree',
+    },
+  ],
+};

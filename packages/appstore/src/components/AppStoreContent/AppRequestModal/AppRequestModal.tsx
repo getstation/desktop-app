@@ -5,7 +5,6 @@ import withSelectedCustomApp, { WithSelectedCustomAppProps } from '@src/HOC/with
 import AppRequestStepsButtons
   from '@src/components/AppStoreContent/AppStoreRequest/AppRequestStepsButtons/AppRequestStepsButtons';
 import { Modal } from '@getstation/theme';
-import { customAppsCategories } from '@src/shared/constants/constants';
 import styles, { AppRequestModalClasses } from '@src/components/AppStoreContent/AppRequestModal/styles';
 import AppRequestError
   from '@src/components/AppStoreContent/AppStoreRequest/AppRequestSteps/AppRequestError/AppRequestError';

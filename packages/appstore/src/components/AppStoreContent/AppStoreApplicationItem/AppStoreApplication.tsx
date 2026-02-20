@@ -11,7 +11,6 @@ import withSearchString, { WithSearchStringProps } from '@src/HOC/withSearchStri
 import {
   customAppsCategories,
   customAppsMode,
-  screenNames,
   applicationNameMaxWidth,
 } from '@src/shared/constants/constants';
 import { SET_SEARCH_STRING } from '@src/graphql/schemes/search';

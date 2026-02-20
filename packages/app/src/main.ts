@@ -1,6 +1,5 @@
-/* tslint:disable global-require, no-import-side-effect */
 import './dotenv';
-import { app, BrowserWindow, ipcMain, dialog } from 'electron';
+import { app, BrowserWindow, ipcMain, dialog, webContents } from 'electron';
 import log, { LevelOption } from 'electron-log';
 // @ts-ignore: no declaration file
 import { format } from 'electron-log/lib/format';
@@ -47,7 +46,7 @@ const loadWorker = () => {
   ipcMain.on('get-worker-contents-id-sync', (event) => {
     event.returnValue = worker.webContents.id;
   });
-  
+
   (services.browserWindow as BrowserWindowManagerServiceImpl)
     .setWorkerBrowserWindow(worker)
     .catch(handleError());
@@ -59,6 +58,32 @@ const loadWorker = () => {
       mode: 'detach',
     });
   }
+
+  // Proxy for bx-api communication (replacing deprecating ipcRenderer.sendTo)
+  ipcMain.on('bx-api-perform', (event, channel, payload) => {
+    console.log(`[DEBUG] main.ts: bx-api-perform from senderId=${event.sender.id}, channel=${channel}`);
+    worker.webContents.send('bx-api-perform', { senderId: event.sender.id }, channel, payload);
+  });
+
+  ipcMain.on('bx-api-subscribe', (event, channel) => {
+    console.log(`[DEBUG] main.ts: bx-api-subscribe from senderId=${event.sender.id}, channel=${channel}`);
+    worker.webContents.send('bx-api-subscribe', { senderId: event.sender.id }, channel);
+  });
+
+  // Proxy responses from worker to webviews
+  // IMPORTANT: We include the original sender's ID so the target renderer knows who to reply to.
+  // The format is: targetWebContents.send(channel, { __senderId: originalSenderId }, ...data)
+  ipcMain.on('bx-api-response', (event, targetId, channel, ...args) => {
+    console.log(`[DEBUG] bx-api-response: from=${event.sender.id}, targetId=${targetId}, channel=${channel}, argsCount=${args.length}`);
+    const targetWebContents = webContents.fromId(targetId);
+    if (targetWebContents) {
+      console.log(`[DEBUG] Forwarding to webContents ${targetId} on channel ${channel} with senderId=${event.sender.id}`);
+      // Include the original sender's webContentsId so the target can reply back
+      targetWebContents.send(channel, { __senderId: event.sender.id }, ...args);
+    } else {
+      console.log(`[DEBUG] Target webContents ${targetId} not found!`);
+    }
+  });
 
   return worker;
 };
@@ -142,13 +167,13 @@ const applyLogLevel = () => {
 };
 
 const installDevToolsExtensions = async () => {
-//  const ECx = require('electron-chrome-extension').default;
+  //  const ECx = require('electron-chrome-extension').default;
 
   // REACT_DEVELOPER_TOOLS
-//  await ECx.load('fmkadmapgofadopljbjfkapdkoienihi');
+  //  await ECx.load('fmkadmapgofadopljbjfkapdkoienihi');
 
   // Apollo Client Developer Tools
-//  await ECx.load('jdkknkkbebbapilgoeccciglkfbmbnfm');
+  //  await ECx.load('jdkknkkbebbapilgoeccciglkfbmbnfm');
 
   // TODO: not working as it
   // Redux DevTools

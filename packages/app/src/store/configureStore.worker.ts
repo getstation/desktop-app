@@ -12,7 +12,7 @@ import thunk from 'redux-thunk';
 // @ts-ignore: no declaration file
 import { server } from 'shared-redux';
 import { Duplex } from 'stream';
-import { firstConnectionHandler } from 'stream-electron-ipc';
+import { firstConnectionHandler } from '../utils/stream-ipc-proxy';
 import { BrowserXAppWorker } from '../app-worker';
 import { ready } from '../app/duck';
 import observers, { delayedObservers } from '../observers';
@@ -47,7 +47,9 @@ function asyncInit(store: StationStoreWorker, sagaMiddleware: SagaMiddleware<any
 
     // Wait for saga being ready before notifying that Electron App is ready
     services.electronApp.afterReady().then(() => {
-      return sagaPromise.then(() => store.dispatch(ready()));
+      return sagaPromise.then(() => {
+        store.dispatch(ready());
+      });
     });
 
     store.persistor = persistor;
@@ -88,20 +90,27 @@ export function configureStore(bxApp: BrowserXAppWorker) {
   let composeEnhancers = compose;
 
   if (!isPackaged) {
-    const { composeWithDevTools } = require('remote-redux-devtools');
-    composeEnhancers = composeWithDevTools({
-      trace: true,
-      realtime: true,
-      name: 'main',
-      port: 8000,
-    });
+    // const { composeWithDevTools } = require('remote-redux-devtools');
+    // composeEnhancers = composeWithDevTools({
+    //   trace: true,
+    //   realtime: true,
+    //   name: 'main',
+    //   port: 8000,
+    // });
+    composeEnhancers = compose;
   }
 
   const eventEmitter = new EventEmitter();
   const readyPromise = new Promise<void>(resolve => eventEmitter.once('ready', resolve));
 
   const { forwardToClients, replayActionServer } = server(
-    (cb: (socket: Duplex) => void) => firstConnectionHandler(cb, namespace),
+    (cb: (socket: Duplex) => void) => {
+      console.log('[DEBUG] Worker: Setting up firstConnectionHandler for bx-redux');
+      firstConnectionHandler((socket) => {
+        console.log('[DEBUG] Worker: New bx-redux connection received');
+        cb(socket);
+      }, namespace);
+    },
     namespace,
     {
       readyAfter: readyPromise,

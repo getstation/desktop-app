@@ -1,0 +1,35 @@
+name: Version & Release
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  semantic-release:
+    runs-on: ubuntu-latest
+    env:
+      ELECTRON_DISABLE_SANDBOX: "1"
+      ELECTRON_NO_SANDBOX: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: yarn
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: Pre-release stability checks
+        run: yarn pre-release:check
+      - name: Semantic release
+        run: npx semantic-release
+        env:
+          # Prefer a PAT so downstream workflows (Release) are triggered by created tags/releases.
+          GH_TOKEN: ${{ secrets.RELEASE_TOKEN != '' && secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN != '' && secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}

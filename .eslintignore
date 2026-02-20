@@ -1,2 +1,7 @@
-**/*.ts
-**/*.tsx
+**/*.generated.ts
+**/*.generated.tsx
+**/*.d.ts
+**/dist/**
+**/lib/**
+**/node_modules/**
+packages/app/manifests/**/*.json

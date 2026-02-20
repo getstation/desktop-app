@@ -14,6 +14,12 @@ export type ConfigData = {
   customURL?: string,
 };
 
+const INVALID_ICON_URLS = new Set([
+  '[object Module]',
+  'undefined',
+  'null',
+]);
+
 export const formatStartUrl = (manifest: BxAppManifest, configData: ConfigData): string =>
   formatURL(URLType.START, manifest, configData);
 
@@ -48,5 +54,14 @@ const formatURL = (urlType: URLType, manifest: BxAppManifest, configData: Config
 
 export const interpretedIconUrl = (manifest: BxAppManifest) => {
   // FIXME: Should we update the `BxAppManifest` or ignore this ?
-  return manifest.icon;
+  return normalizeIconUrl(manifest.icon) || undefined;
+};
+
+export const normalizeIconUrl = (iconUrl?: string | null): string | null => {
+  if (!iconUrl) return null;
+
+  const value = `${iconUrl}`.trim();
+  if (!value || INVALID_ICON_URLS.has(value)) return null;
+
+  return value;
 };

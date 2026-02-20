@@ -176,7 +176,6 @@ export default class BangList extends React.PureComponent<Props, State> {
     });
   }
 
-  // tslint:disable-next-line:function-name
   UNSAFE_componentWillReceiveProps(nextProps: Props) {
     const { forEmptyQuery } = nextProps;
     if (forEmptyQuery) return;

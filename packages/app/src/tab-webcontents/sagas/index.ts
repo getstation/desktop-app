@@ -61,7 +61,6 @@ import sleepingSagas from './sleeping';
 import closeCurrentTabSagas from './close-current-tab';
 import ms = require('ms');
 import { ContextMenuService } from '../../services/services/menu/interface';
-import services from '../../services/servicesManager';
 
 let seenWebcontents = new Set();
 
@@ -142,6 +141,7 @@ function* interceptWebcontentsReady({ webcontentsId, tabId }: DomReadyAction) {
     webcontentsId, 'addLifeCycleObserver', 'onDomReady', 'intercept-ready');
 
   yield takeEveryWitness(domReadyEventChannel, function* handle() {
+    console.log(`[DEBUG] interceptWebcontentsReady: DOM_READY for tabId=${tabId}, wcId=${webcontentsId}`);
     yield put(domReady(webcontentsId, tabId));
   });
 }
@@ -216,7 +216,7 @@ function* startProgressiveWarmup() {
 }
 
 function* setTabActivityDebounced({ tabId }: FrontActiveTabChangeAction) {
-  const now:number = yield call(Date.now);
+  const now: number = yield call(Date.now);
   // FRONT_ACTIVE_TAB_CHANGE can be triggered 2 times quickly
   // when switching from tab 1 in app A to tab 2 in app B
   // we debounce and take only last one
@@ -270,7 +270,8 @@ function* interceptAutofill({ webcontentsId }: { webcontentsId: number }) {
   const clickChannel = serviceAddObserverChannel(autofillMenu, 'onClickItem', 'autofill-popup-value-selected');
 
   yield takeEveryWitness(clickChannel, function* handle({ action, args }: any) {
-    if (args.length > 0) ipcRenderer.sendTo(webcontentsId, action, args[0]);
+    // Use proxy through main process instead of deprecated sendTo
+    if (args.length > 0) ipcRenderer.send('bx-api-response', webcontentsId, action, args[0]);
   });
 
   // yield takeEveryWitness(popupChannel, function* handle(rect: any) {

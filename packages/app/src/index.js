@@ -26,11 +26,17 @@ window.Notification = BxNotification;
 webFrame.setVisualZoomLevelLimits(1, 1);
 
 if (process.env.STATION_REACT_PERF) {
-  const Perf = require('react-addons-perf'); // eslint-disable-line global-require
-  window.Perf = Perf;
-  // use like this:
-  // Perf.start() and then Perf.stop()
-  // Perf.printWasted()
+  try {
+    const Perf = require('react-addons-perf'); // eslint-disable-line global-require
+    window.Perf = Perf;
+    // use like this:
+    // Perf.start() and then Perf.stop()
+    // Perf.printWasted()
+  } catch (error) {
+    // Optional legacy dependency; keep startup working even if not installed.
+    // eslint-disable-next-line no-console
+    console.warn('react-addons-perf is not installed:', error && error.message);
+  }
 }
 
 const apolloClient = getGQlClient();

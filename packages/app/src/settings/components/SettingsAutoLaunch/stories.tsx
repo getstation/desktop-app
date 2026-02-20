@@ -1,10 +1,13 @@
-import * as React from 'react';
-import { storiesOf } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import SettingsAutoLaunch from './SettingsAutoLaunch';
 
-storiesOf('Screens|Settings', module)
-  .add('Settings Auto Launch', () => {
-    return (
-      <SettingsAutoLaunch />
-    );
-  });
+const meta: Meta<typeof SettingsAutoLaunch> = {
+  title: 'Screens/Settings/SettingsAutoLaunch',
+  component: SettingsAutoLaunch,
+};
+
+export default meta;
+
+type Story = StoryObj<typeof SettingsAutoLaunch>;
+
+export const Default: Story = {};

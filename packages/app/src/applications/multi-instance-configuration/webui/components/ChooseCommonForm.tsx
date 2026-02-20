@@ -1,4 +1,3 @@
-import { Button, Size, Style, Tooltip } from '@getstation/theme';
 import * as classNames from 'classnames';
 import * as React from 'react';
 // @ts-ignore: no declaration file
@@ -83,29 +82,19 @@ export default class ChooseCommonForm extends React.PureComponent<Props, State> 
             {this.props.domainSuffix}
           </span>
           {this.props.withNavigationLink &&
-            <Tooltip
-              tooltip={this.props.navigateHint}
-              offset="0, 4"
-              placement="right"
-              alternate={true}
+            <div
+              title={this.props.navigateHint}
+              className={classNames(classes.subContainer, classes.withPointer)}
+              onClick={this.props.onClickNavigate}
             >
-              <div
-                className={classNames(classes.subContainer, classes.withPointer)}
-                onClick={this.props.onClickNavigate}
-              >
-                {`👉${this.props.navigateWording}`}
-              </div>
-            </Tooltip>
+              {`👉${this.props.navigateWording}`}
+            </div>
           }
 
           <div className={classes.subContainer}>
-            <Button
-              btnSize={Size.XSMALL}
-              btnStyle={Style.PRIMARY}
-              type="submit"
-            >
+            <button className={classes.primaryButton} type="submit">
               Let's go!
-            </Button>
+            </button>
           </div>
         </form>
       </div>

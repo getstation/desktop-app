@@ -113,7 +113,7 @@ class AppRequestEdit extends React.PureComponent<Props, IState> {
   }
 
   onSubmit = () => {
-    const { id, category } = this.props.app;
+    const { id } = this.props.app;
     const { name, themeColor, logoURL, signinURL } = this.state;
 
     if (!isValidName(name)) {

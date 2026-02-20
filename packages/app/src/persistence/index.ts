@@ -2,7 +2,6 @@ import * as Immutable from 'immutable';
 import { SingletonStateProxy } from './backend';
 import getLocalDBBackend from './local.backend';
 import { checkSqliteBackend, migrateUmzug } from './migration';
-import encoder from './encoder';
 
 const getLocalBackend = () => {
   const local = getLocalDBBackend();

@@ -1,65 +1,66 @@
-import * as React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
-import OnboardingStepLoginReturn from './OnboardingStepLoginReturn';
-import OnboardingStepOnboardee from './OnboardingStepOnboardee';
-import OnboardeeDescriptionPopup from './OnboardeeDescriptionPopup';
-import { action } from '@storybook/addon-actions';
+import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import { OnboardingDockIcon } from './OnboardingDockIcon';
+import OnboardingStepAppStore from './OnboardingStepAppStore';
 
-const containerStyle: React.CSSProperties = {
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
-  backgroundColor: '#EEE',
-  width: '100vw',
-  height: '100vh',
+const mockApps = [
+  {
+    id: 'slack',
+    name: 'Slack',
+    bxAppManifestURL: 'https://example.com/slack',
+    iconURL: 'https://cdn.getstation.com/logo/slack.png',
+    themeColor: '#4A154B',
+    isChromeExtension: false,
+    recommendedPosition: 1,
+  },
+  {
+    id: 'notion',
+    name: 'Notion',
+    bxAppManifestURL: 'https://example.com/notion',
+    iconURL: 'https://cdn.getstation.com/logo/notion.png',
+    themeColor: '#111111',
+    isChromeExtension: false,
+    recommendedPosition: 2,
+  },
+  {
+    id: 'github',
+    name: 'GitHub',
+    bxAppManifestURL: 'https://example.com/github',
+    iconURL: 'https://cdn.getstation.com/logo/github.png',
+    themeColor: '#24292E',
+    isChromeExtension: false,
+    recommendedPosition: 3,
+  },
+];
+
+const meta: Meta = {
+  title: 'Screens/Onboarding',
 };
 
-storiesOf('Screens|Onboarding', module)
-  .addDecorator(withKnobs)
-  .add('OnboardingStepLoginReturn', () => (
-    <OnboardingStepLoginReturn
-      onClickTryAgain={action('onClickTryAgain')}
-      errorMessage={text('errorMessage', null)}
-    />
-    )
-  )
-  .add('OnboardingStepOnboardee', () => (
-    <OnboardingStepOnboardee
-      onValidSubmit={action('onValidSubmit')}
-      isLoading={boolean('isLoading', false)}
-      active={boolean('active', true)}
-      onboardee={{
-        id: '???',
-        firstname: 'Guillaume',
-        welcomeMessage: text('welcomeMessage', '__Hello__, this is a _simple_ welcome message  :joy::):P:ok::x::v:'),
-        onboarderEmployee: {
-          auth0User: {
-            given_name: 'Guillaume',
-            family_name: 'ARM',
-            picture: 'https://s3.eu-west-2.amazonaws.com/getstation.com/public/assets/logo-station.png',
-          },
-        },
-        assignedApplications: [],
-      }}
-      myOrganization={{
-        name: 'Station',
-        pictureUrl: 'https://s3.eu-west-2.amazonaws.com/getstation.com/public/assets/logo-station.png',
-      } as any}
-    />
-    ), { backgrounds: [] }
-  )
-  .add('OnboardeeDescriptionPopup', () => (
-    <div style={containerStyle}>
-      <OnboardeeDescriptionPopup
-        description={text('Description', 'We use Google Drive for internal' +
-          ' filing in the Marketing Team. If you have any question reachout' +
-          ' Dan.')}
-        companyLogo={text('Company Logo URL', 'https://startupstash.com/wp-content/uploads/2018/07/22.6frontapp_a.png')}
-        onboarderFirstName={text('Onboarder Firstname', 'Alexandre')}
-        onClick={action('onClickGotIt')}
+export default meta;
+
+type Story = StoryObj;
+
+export const DockIcon: Story = {
+  render: () => (
+    <div style={{ padding: 24 }}>
+      <OnboardingDockIcon application={mockApps[0]} indexPosition={0} />
+    </div>
+  ),
+};
+
+export const StepAppStore: Story = {
+  render: () => (
+    <div style={{ width: 720, margin: '0 auto', padding: 24 }}>
+      <OnboardingStepAppStore
+        applications={mockApps}
+        selectedApplications={[mockApps[0], mockApps[1], mockApps[2]]}
+        onHandleApplicationSelect={() => undefined}
+        onValidSubmit={() => undefined}
+        searchInputValue=""
+        handleSearchInputValue={() => undefined}
+        isLoading={false}
       />
     </div>
-    )
-  );
+  ),
+};

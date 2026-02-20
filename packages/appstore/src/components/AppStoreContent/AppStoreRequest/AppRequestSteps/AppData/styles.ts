@@ -2,7 +2,6 @@ import { ThemeTypes } from '@getstation/theme';
 import { IProps } from '@src/components/AppStoreContent/AppStoreRequest/AppRequestSteps/AppData/AppData';
 import { animStylesData } from '@src/shared/constants/constants';
 
-// tslint:disable-next-line:max-line-length
 const StripeImg = 'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAJUlEQVQoU2N89+7dfwY0ICQkxIguxjgUFKI7GsTH5m4M3w1ChQDSWCb4Kwsr/AAAAABJRU5ErkJggg==)';
 
 const styles = (theme: ThemeTypes) => ({

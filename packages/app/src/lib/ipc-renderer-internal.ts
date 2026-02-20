@@ -1,4 +1,3 @@
-// tslint:disable
 /**
  * Make `ipcRendererInternal` available as Electron uses it.
  * @see https://github.com/electron/electron/blob/81e9dab52f6f59a56c3f928156823dd482817539/lib/renderer/ipc-renderer-internal.ts

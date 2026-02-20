@@ -107,7 +107,6 @@ class AppRequestImpl extends React.Component<Props, IState> {
     this.handleInstallApplicationAfterAdd = this.handleInstallApplicationAfterAdd.bind(this);
   }
 
-  // tslint:disable-next-line function-name
   UNSAFE_componentWillUpdate(nexProps: Props, nextState: IState) {
     const { isVisible } = this.state;
 

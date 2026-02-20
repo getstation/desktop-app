@@ -101,7 +101,7 @@ function* sagaSnooze(action: SetSnoozeDurationAction): SagaIterator {
   log.debug('snooze finish');
 }
 
-function* sagaResetSnooze(action: ResetSnoozeDurationAction): SagaIterator {
+function* sagaResetSnooze(_action: ResetSnoozeDurationAction): SagaIterator {
   const { snooze }: DeprecatedSDKProvider = yield call(getProvider);
   snooze.triggerReset();
 

@@ -60,7 +60,7 @@ const AppRequestButton = ({
   const history = useHistory();
 
   // Mutation to activate Add Custom App process
-  const [customAppRequestMode, { data, loading, error }] = useSetCustomAppRequestModeMutation({ variables: {
+  const [customAppRequestMode] = useSetCustomAppRequestModeMutation({ variables: {
     appRequestIsOpen: true,
     currentMode: customAppsMode.createMode,
   }});

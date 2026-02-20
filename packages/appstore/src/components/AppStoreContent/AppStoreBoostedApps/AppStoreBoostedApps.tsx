@@ -1,6 +1,5 @@
 import * as React from 'react';
 import injectSheet from 'react-jss';
-import { flowRight as compose } from 'lodash';
 import AppStorePageHeader from '@src/components/AppStoreContent/AppStorePageHeader/AppStorePageHeader';
 import { boostedApplications, WithBoostedApplicationsProps } from '@src/HOC/withBoostedApplications';
 import AppStoreApplication from '@src/components/AppStoreContent/AppStoreApplicationItem/AppStoreApplication';

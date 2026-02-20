@@ -1,5 +1,5 @@
 import { ipcRenderer } from 'electron';
-import { ElectronIpcRendererDuplex } from 'stream-electron-ipc';
+import { ElectronIpcRendererDuplex } from '../../utils/stream-ipc-proxy';
 import rpcchannel, { RPCChannel } from 'stream-json-rpc';
 
 import { isPackaged } from '../../utils/env';
@@ -45,7 +45,7 @@ export const getWorkerPeerHandler = () => {
   return new ServicePeerHandler(channel, !isPackaged);
 };
 
-const initRenderer = (serviceClass: new(...args: any[]) => any, id: string) => (srvcPeerHandler: ServicePeerHandler) => {
+const initRenderer = (serviceClass: new (...args: any[]) => any, id: string) => (srvcPeerHandler: ServicePeerHandler) => {
   const node = new (getNode(serviceClass))(id);
   srvcPeerHandler.connect(node);
   return node;

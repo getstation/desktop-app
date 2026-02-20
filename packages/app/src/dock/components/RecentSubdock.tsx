@@ -125,7 +125,6 @@ class RecentSubdock extends React.PureComponent<Props> {
     return this.props.cyclingStep(items[index], index, direction, 'subdock', via);
   }
 
-  // tslint:disable-next-line:function-name
   UNSAFE_componentWillMount() {
     this.handleKeyboardShortcuts();
   }

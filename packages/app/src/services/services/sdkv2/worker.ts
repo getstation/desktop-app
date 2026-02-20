@@ -13,7 +13,6 @@ import { ServiceSubscription } from '../../lib/class';
 import { observer } from '../../lib/helpers';
 import { RPC } from '../../lib/types';
 import { SDKv2Actions, SDKv2Selectors, SDKv2Service, SDKv2ServiceObserver } from './interface';
-import { service } from '../../lib/decorator';
 
 const bxAPIAllowedActions = [
   {
@@ -175,20 +174,20 @@ export class SDKv2ServiceImpl extends SDKv2Service implements RPC.Interface<SDKv
   }
 }
 
-const getSenderId = (e: any) => typeof e.senderId === 'number' ? e.senderId :
-  typeof e.sender.id === 'number' ? e.sender.id : 0;
-
 const initPreloadListener = (sdkv2: SDKv2ServiceImpl) => {
-  ipcRenderer.on('bx-api-subscribe', async (event: Electron.Event, channel: SDKv2Selectors) => {
-    const senderId = getSenderId(event);
+  ipcRenderer.on('bx-api-subscribe', async (event: Electron.Event, { senderId }: { senderId: number }, channel: SDKv2Selectors) => {
     try {
       const subscription = await sdkv2.addObserver(channel, observer({
         on(result: any) {
-          // event.sender.send doesn't seem to work for renderer-to-renderer comms
-          ipcRenderer.sendTo(senderId, `bx-api-subscribe-response-${channel}`, result);
+          // Use proxy through main process instead of deprecated sendTo
+          ipcRenderer.send('bx-api-response', senderId, `bx-api-subscribe-response-${channel}`, result);
         },
       }));
 
+      // Listen for destroy event from main proxy if needed, or rely on existing mechanism
+      // For now, keeping existing logic but adapted if possible.
+      // Note: 'wc-destroyed' usually comes from main, we might need to forward that too if used.
+      // Assuming wc-destroyed is still sent via sendTo or similar mechanism from main.
       ipcRenderer.once(`wc-destroyed-${senderId}`, () => {
         subscription && subscription.unsubscribe();
       });
@@ -197,12 +196,13 @@ const initPreloadListener = (sdkv2: SDKv2ServiceImpl) => {
     }
   });
 
-  ipcRenderer.on('bx-api-perform', (event: Electron.Event, channel: SDKv2Selectors, payload?: any) => {
-    const senderId = getSenderId(event);
+  ipcRenderer.on('bx-api-perform', (event: Electron.Event, { senderId }: { senderId: number }, channel: SDKv2Selectors, payload?: any) => {
+    console.log(`[DEBUG] worker.ts: received bx-api-perform from senderId=${senderId}, channel=${channel}`);
     sdkv2.callAction(channel, payload)
       .then(result => {
-        // event.sender.send doesn't seem to work for renderer-to-renderer comms
-        ipcRenderer.sendTo(senderId, `bx-api-perform-response-${channel}`, result);
+        console.log(`[DEBUG] worker.ts: sending response for channel=${channel} to senderId=${senderId}`);
+        // Use proxy through main process instead of deprecated sendTo
+        ipcRenderer.send('bx-api-response', senderId, `bx-api-perform-response-${channel}`, result);
       })
       .catch(handleError());
   });

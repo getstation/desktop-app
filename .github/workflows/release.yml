@@ -1,18 +1,32 @@
 name: Release
 on:
-  push:
-    branches:
-      - release
+  release:
+    types:
+      - published
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing release tag (example: 1.1.0)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
 jobs:
   Linux:
     runs-on: ubuntu-latest
     env:
+      RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.event.release.tag_name }}
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      ELECTRON_DISABLE_SANDBOX: "1"
+      ELECTRON_NO_SANDBOX: "1"
       GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
       GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
+      - uses: actions/checkout@v4
+        with:
+          ref: refs/tags/${{ env.RELEASE_TAG }}
+      - uses: actions/setup-node@v4
         with:
           node-version: "18"
           cache: "yarn"
@@ -24,12 +38,22 @@ jobs:
       #     npm config set node_gyp $(npm prefix -g)/lib/node_modules/node-gyp/bin/node-gyp.js
       - name: Install dependencies
         run: yarn install --immutable
+      - name: Pre-release stability checks
+        run: yarn pre-release:check
       - name: Build and Release
-        run: yarn release
+        run: |
+          if [ -n "${CSC_LINK:-}" ] && [ -n "${CSC_KEY_PASSWORD:-}" ]; then
+            yarn build && yarn workspace station-desktop-app run release:publish
+          else
+            echo "Code signing secrets are missing/invalid; building unsigned macOS artifacts."
+            unset CSC_LINK CSC_KEY_PASSWORD CSC_NAME
+            CSC_IDENTITY_AUTO_DISCOVERY=false yarn build && yarn workspace station-desktop-app run release:publish
+          fi
 
   MacOs:
-    runs-on: macos-13
+    runs-on: macos-latest
     env:
+      RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.event.release.tag_name }}
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
       CSC_LINK: ${{ secrets.CSC_LINK }}
@@ -39,10 +63,12 @@ jobs:
       GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
       GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
+      - uses: actions/checkout@v4
         with:
-          node-version: "18"
+          ref: refs/tags/${{ env.RELEASE_TAG }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
           cache: "yarn"
       - name: Configure Node
         run: |
@@ -53,19 +79,22 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
       - name: Build and Release
-        run: yarn release
+        run: yarn build && yarn workspace station-desktop-app run release:publish
 
   Windows:
     runs-on: windows-2019
     env:
+      RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.event.release.tag_name }}
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
       CSC_LINK: ${{ secrets.CSC_LINK }}
       GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
       GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
+      - uses: actions/checkout@v4
+        with:
+          ref: refs/tags/${{ env.RELEASE_TAG }}
+      - uses: actions/setup-node@v4
         with:
           node-version: "18"
       - name: Configure Node
@@ -78,4 +107,4 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
       - name: Build and Release
-        run: yarn release
+        run: yarn build && yarn workspace station-desktop-app run release:publish

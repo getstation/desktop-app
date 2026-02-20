@@ -1,6 +1,4 @@
 import * as React from 'react';
-// @ts-ignore: no declaration file
-import injectSheet from 'react-jss';
 import ReactDOM = require('react-dom');
 
 import { ActiveTab } from '../../Container';

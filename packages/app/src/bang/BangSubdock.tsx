@@ -5,8 +5,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 // @ts-ignore: no declaration file
 import { updateUI } from 'redux-ui/transpiled/action-reducer';
-// @ts-ignore: no declaration file
-import * as SimpleIcons from 'simple-icons';
 import { withGetActivity } from '../activity/queries@local.gql.generated';
 import { getFocus } from '../app/selectors';
 import { SHORTCUTS } from '../keyboard-shortcuts';
@@ -102,7 +100,6 @@ class BangSubdockImpl extends React.PureComponent<Props> {
     }
   }
 
-  // tslint:disable-next-line:function-name
   UNSAFE_componentWillMount() {
     this.setFlatItems(this.getFlatItems());
   }
@@ -111,7 +108,6 @@ class BangSubdockImpl extends React.PureComponent<Props> {
     this.props.setHighlightedItemId(undefined);
   }
 
-  // tslint:disable-next-line:function-name
   UNSAFE_componentWillReceiveProps(nextProps: Props) {
     const items = this.flatItems;
     const nextItems = this.getFlatItems(nextProps);

@@ -26,7 +26,7 @@ export interface Props {
   markAllRead: () => any,
 }
 
-const styles = (theme: Theme) => ({
+const styles = (_theme: Theme) => ({
   container: {
     padding: [10, 20],
     backgroundColor: 'rgba(255, 255, 255, 0.1)',

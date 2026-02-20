@@ -56,14 +56,13 @@ class AppImpl extends React.Component<Props, IState> {
     };
   }
 
-  // tslint:disable-next-line function-name
   async UNSAFE_componentWillMount() {
     if ('bxApi' in window) {
       // @ts-ignore : bx attached to window
       const bxApi = window.bxApi;
 
       bxApi.theme.addThemeColorsChangeListener((_: any, themeColors: string[]) => {
-        this.setState({ themeColors })
+        this.setState({ themeColors });
       });
 
       if ('applications' in bxApi) {
@@ -138,7 +137,7 @@ class AppImpl extends React.Component<Props, IState> {
 }
 
 const App = connect<{}, {}, IStateProps, IDispatchProps>(
-  (state) => ({
+  (_state) => ({
     foo: 'bar',
   }),
   (dispatch: Dispatch) => bindActionCreators(

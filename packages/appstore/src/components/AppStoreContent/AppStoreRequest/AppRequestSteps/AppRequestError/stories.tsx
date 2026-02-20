@@ -1,22 +1,13 @@
-import * as React from 'react';
-import centered from '@storybook/addon-centered';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
-import { withNotes } from '@storybook/addon-notes';
-import { storiesOf } from '@storybook/react';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import AppRequestError from './AppRequestError';
 
-const story = storiesOf('Components', module)
-  .addDecorator(withKnobs)
-  .addDecorator(centered);
+const meta: Meta<typeof AppRequestError> = {
+  title: 'Components/AppRequestError',
+  component: AppRequestError,
+};
 
-story
-  .add(
-    'AppRequestError',
-    withInfo({ text: '' })(
-      withNotes!('')(
-        () => (
-          <AppRequestError />
-        )
-  )));
+export default meta;
+
+type Story = StoryObj<typeof AppRequestError>;
+
+export const Default: Story = {};

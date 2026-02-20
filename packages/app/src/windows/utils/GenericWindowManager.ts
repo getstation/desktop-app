@@ -103,7 +103,6 @@ export default class GenericWindowManager extends EventEmitter {
     this.windowId = await this.window.getId();
     const webContentsId = await this.window.getWebContentsId();
 
-    /* tslint:disable-next-line no-this-assignment */
     const self = this;
 
     this.window.addObserver(

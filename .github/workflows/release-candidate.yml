@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      ELECTRON_DISABLE_SANDBOX: "1"
+      ELECTRON_NO_SANDBOX: "1"
       GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
       GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
     steps:
@@ -25,11 +27,20 @@ jobs:
       #     npm config set node_gyp $(npm prefix -g)/lib/node_modules/node-gyp/bin/node-gyp.js
       - name: Install dependencies
         run: yarn install --immutable
+      - name: Pre-release stability checks
+        run: yarn pre-release:check
       - name: Build and Release
-        run: yarn release
+        run: |
+          if [ -n "${CSC_LINK:-}" ] && [ -n "${CSC_KEY_PASSWORD:-}" ]; then
+            yarn release
+          else
+            echo "Code signing secrets are missing/invalid; building unsigned macOS artifacts."
+            unset CSC_LINK CSC_KEY_PASSWORD CSC_NAME
+            CSC_IDENTITY_AUTO_DISCOVERY=false yarn release
+          fi
 
   MacOs:
-    runs-on: macos-13
+    runs-on: macos-latest
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}

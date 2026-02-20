@@ -27,12 +27,10 @@ export default class SnoozeDuration extends React.PureComponent<Props, State> {
     this.tick = this.tick.bind(this);
   }
 
-  // tslint:disable-next-line:function-name
   UNSAFE_componentWillReceiveProps(nextProps: Props) {
     this.update(nextProps);
   }
 
-  // tslint:disable-next-line:function-name
   UNSAFE_componentWillMount() {
     this.update(this.props);
   }

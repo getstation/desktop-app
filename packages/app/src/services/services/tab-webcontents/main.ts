@@ -32,7 +32,7 @@ import {
   UrlDispatcherProviderService,
   WebContentsOverrideProviderService,
 } from './interface';
-import { DEFAULT_BROWSER, DEFAULT_BROWSER_BACKGROUND, NEW_WINDOW } from '../../../urlrouter/constants';
+import { DEFAULT_BROWSER, DEFAULT_BROWSER_BACKGROUND } from '../../../urlrouter/constants';
 
 export class TabWebContentsServiceImpl extends TabWebContentsService implements RPC.Interface<TabWebContentsService> {
   protected webviews: Subject<Electron.WebContents>;
@@ -147,7 +147,7 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
     const shared = this.onNewWebviews().pipe(share());
     return new ServiceSubscription([
       this.askAutoLogin.subscribe(async (webContentsId: number) => {
-        const wc = await getWebContentsFromIdOrThrow(webContentsId);
+        await getWebContentsFromIdOrThrow(webContentsId);
 
         // vk: 18.01.2024 FIXME: TypeError: Cannot destructure property 'account' of '(intermediate value)' as it is null.
         // const { account, canAutoSubmit } = await provider.getCredentials(wc.id);
@@ -219,7 +219,7 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
   isNewWindowForUserRequest(details: HandlerDetails): boolean {
 
     if (details.url.startsWith('about:blank')
-        || details.url.startsWith('https://accounts.google.com/o/oauth2/')) {
+      || details.url.startsWith('https://accounts.google.com/o/oauth2/')) {
       return true;
     }
 
@@ -249,8 +249,8 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
           }
         }
       }
-      if (popup 
-          || noLocation && noToolbar && noMenubar) {
+      if (popup
+        || noLocation && noToolbar && noMenubar) {
         return true;
       }
     }
@@ -260,13 +260,13 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
         return true;
       }
     }
-    
+
     return false;
   }
 
   async setUrlDispatcherProvider(provider: RPC.Node<UrlDispatcherProviderService>) {
     return new ServiceSubscription(this.onNewWebviews().subscribe(wc => {
-      
+
       wc.setWindowOpenHandler((details: HandlerDetails) => {
 
         // log.debug('WindowOpen', details, process.type);
@@ -310,7 +310,7 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
         //   }
         // }
 
-        return { 
+        return {
           action: 'allow',
           overrideBrowserWindowOptions: {
             fullscreen: false,
@@ -339,6 +339,10 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
   async addLifeCycleObserver(webContentsId: number, obs: RPC.ObserverNode<TabWebContentsLifeCycleObserver>) {
     const wc = await getWebContentsFromIdOrThrow(webContentsId);
 
+    if (wc.getMaxListeners() < 100) {
+      wc.setMaxListeners(100);
+    }
+
     const sub = new ServiceSubscription([
       addOnDestroyedObserver(wc, obs),
       addOnDomReadyObserver(wc, obs),
@@ -346,6 +350,9 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
       addOnNavigateObserver(wc, obs),
       addOnPreventUnload(wc, obs),
     ], obs);
+
+    // We already have addOnDestroyedObserver(wc, obs) above which calls obs.onDestroyed
+    // Here we just need to ensure the subscription itself is cleaned up
     wc.once('destroyed', () => {
       sub.unsubscribe();
       // Can be leveraged by worker to simply know when a webcontents is destroyed
@@ -356,6 +363,10 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
 
   async addNotificationsObserver(webContentsId: number, obs: RPC.ObserverNode<TabWebContentsNotificationsObserver>) {
     const wc = await getWebContentsFromIdOrThrow(webContentsId);
+
+    if (wc.getMaxListeners() < 100) {
+      wc.setMaxListeners(100);
+    }
 
     const sub = new ServiceSubscription([
       addOnNewNotificationObserver(wc, obs),
@@ -370,6 +381,10 @@ export class TabWebContentsServiceImpl extends TabWebContentsService implements 
   async addPrintObserver(webContentsId: number, obs: RPC.ObserverNode<TabWebContentsPrintObserver>) {
     const wc = await getWebContentsFromIdOrThrow(webContentsId);
     if (!wc) return ServiceSubscription.noop;
+
+    if (wc.getMaxListeners() < 100) {
+      wc.setMaxListeners(100);
+    }
 
     if (obs.onPrint) {
       const sub = new ServiceSubscription(

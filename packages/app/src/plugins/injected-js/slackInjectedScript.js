@@ -116,8 +116,18 @@ const getBadge = (state) => {
 const injectCSS = css => {
   const node = document.createElement('style');
   node.innerHTML = css;
-  document.body.appendChild(node);
+  if (document.body) {
+    document.body.appendChild(node);
+  } else {
+    document.head.appendChild(node);
+  }
 };
+
+const getSlackApiToken = () => {
+  return window.TS.model.api_token;
+};
+
+/* ******************************************* */
 
 /* ************** MAIN SCRIPT **************** */
 const slackInjectionScript = async () => {

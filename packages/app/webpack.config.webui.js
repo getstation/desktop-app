@@ -19,6 +19,7 @@ module.exports = (env, argv) => merge.smart(baseConfig(env, argv), {
   },
 
   plugins: [
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new HtmlWebpackPlugin({
       chunks: ['multiInstanceConfiguration'],
       filename: 'multi-instance-configuration.html',
@@ -47,5 +48,19 @@ module.exports = (env, argv) => merge.smart(baseConfig(env, argv), {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist', 'renderer'),
     chunkFilename: '[name].bundle.js',
+  },
+
+  optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'webui-vendor',
+          enforce: true,
+        },
+      },
+    },
   },
 });

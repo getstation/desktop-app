@@ -70,7 +70,7 @@ class AppStoreMyCustomApps extends React.PureComponent<Props, AppStoreMyCustomAp
     scrollToTop();
   }
 
-  exitFlow = (isShouldRefetchCustomApps: boolean, appName?: string) => {
+  exitFlow = (_isShouldRefetchCustomApps: boolean, _appName?: string) => {
     this.props.mutateSetAppModalStatus({
       variables: {
         isAppModalOpen: false,

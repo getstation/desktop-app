@@ -4,7 +4,6 @@
 
 import * as React from 'react';
 import { createUseStyles } from 'react-jss';
-import { debounce } from 'lodash';
 import { colors } from '@src/theme';
 
 const useStyles = createUseStyles({

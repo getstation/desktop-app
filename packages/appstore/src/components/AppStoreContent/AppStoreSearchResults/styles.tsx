@@ -1,7 +1,7 @@
 import { ThemeTypes } from '@getstation/theme';
 import { colors } from '@src/theme';
 
-const styles = (theme: ThemeTypes) => ({
+const styles = (_theme: ThemeTypes) => ({
   resultsSection: {
     padding: '30px 20px 0 20px',
   },

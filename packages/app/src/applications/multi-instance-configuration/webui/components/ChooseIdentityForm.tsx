@@ -1,4 +1,3 @@
-import { Button, Size, Style } from '@getstation/theme';
 import * as React from 'react';
 // @ts-ignore: no declaration file
 import injectSheet from 'react-jss';
@@ -86,13 +85,9 @@ export default class ChooseIdentityForm extends React.PureComponent<Props, State
           )}
 
           <div className={classes!.subContainer}>
-            <Button
-              btnSize={Size.NORMAL}
-              btnStyle={Style.PRIMARY}
-              onClick={this.onClickRequestSignin}
-            >
+            <button className={classes.primaryButton} onClick={this.onClickRequestSignin}>
               Add a new {instanceTypeWording === 'instance' ? `instance of ${name}` : instanceTypeWording}
-            </Button>
+            </button>
           </div>
         </ul>
       </div>

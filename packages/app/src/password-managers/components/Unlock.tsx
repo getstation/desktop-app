@@ -42,7 +42,6 @@ export default class Unlock extends React.PureComponent<Props, State> {
     this.handleKeyUp = this.handleKeyUp.bind(this);
   }
 
-  // tslint:disable-next-line:function-name
   UNSAFE_componentWillUpdate(nextProps: Readonly<Props>) {
     const { process: { step } } = this.props;
 

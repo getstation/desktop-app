@@ -1,7 +1,7 @@
 import { ThemeTypes } from '@getstation/theme';
 import { colors } from '@src/theme';
 
-const styles = (theme: ThemeTypes) => ({
+const styles = (_theme: ThemeTypes) => ({
   notFoundPage: {
     height: '100%',
     display: 'flex',

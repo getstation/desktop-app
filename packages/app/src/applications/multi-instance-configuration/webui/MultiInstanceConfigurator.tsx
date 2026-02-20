@@ -1,8 +1,6 @@
 import * as React from 'react';
 // @ts-ignore: no declaration file
 import injectSheet from 'react-jss';
-import ApplicationContainer from '../../../common/containers/ApplicationContainer';
-import { interpretedIconUrl } from '../../helpers';
 import { BxAppManifest } from '../../manifest-provider/bxAppManifest';
 import ChooseIdentityForm from './components/ChooseIdentityForm';
 import ChooseCommonForm from './components/ChooseCommonForm';
@@ -20,6 +18,7 @@ const {
 } = Preset;
 
 const isOnlyOnPremise = (presets: Preset[]) => presets.length === 1 && presets[0] === OnPremisePreset;
+const interpretedIconUrl = (manifest: BxAppManifest) => manifest.icon;
 
 const getHostname = (url: string): string => {
   try {
@@ -30,6 +29,10 @@ const getHostname = (url: string): string => {
 };
 
 export interface Classes {
+  page: string,
+  shell: string,
+  iconContainer: string,
+  icon: string,
   container: string,
   remove: string,
   removeCTA: string,
@@ -47,6 +50,47 @@ export interface State {
 }
 
 const styles = {
+  page: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    background: 'linear-gradient(120deg, #2B91BA, #3794C2, #4B99CF, #629FDD)',
+    padding: 10,
+  },
+  shell: {
+    display: 'flex',
+    width: '100%',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(255,255,255,0.1)',
+    borderRadius: 3,
+    height: '100%',
+    color: 'white',
+    fontSize: 14,
+    position: 'relative',
+  },
+  iconContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 80,
+    height: 80,
+    marginBottom: 30,
+    borderRadius: 100,
+    backgroundColor: 'rgba(255, 255, 255, .3)',
+    position: 'relative',
+  },
+  icon: {
+    width: 60,
+    height: 60,
+  },
   container: {
     width: 260,
     textAlign: 'center',
@@ -243,18 +287,23 @@ export default class MultiInstanceConfigurator extends React.Component<Props, St
     if (!manifest) return null;
 
     return (
-      <ApplicationContainer applicationIcon={interpretedIconUrl(manifest)}>
-        <div className={classes!.container}>
-          {this.chooseForm()}
+      <div className={classes.page}>
+        <div className={classes.shell}>
+          <div className={classes.iconContainer}>
+            <img className={classes.icon} src={interpretedIconUrl(manifest)} width={60} height={60} alt="Icon" />
+          </div>
+          <div className={classes!.container}>
+            {this.chooseForm()}
 
-          <p className={classes!.remove}>
-            I don't need this app,
-            <a className={classes!.removeCTA} onClick={this.removeApplication}>
-              remove it
-            </a>.
-          </p>
+            <p className={classes!.remove}>
+              I don't need this app,
+              <a className={classes!.removeCTA} onClick={this.removeApplication}>
+                remove it
+              </a>.
+            </p>
+          </div>
         </div>
-      </ApplicationContainer>
+      </div>
     );
   }
 

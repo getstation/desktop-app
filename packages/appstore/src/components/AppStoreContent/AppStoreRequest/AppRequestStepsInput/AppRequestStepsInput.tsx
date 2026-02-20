@@ -25,7 +25,7 @@ export default class AppRequestStepsInput extends React.PureComponent<AppRequest
   }
 
   render() {
-    const { classes, label, error, ...inputProps } = this.props;
+    const { classes, error, ...inputProps } = this.props;
 
     return (
       <div className={classes!.inputWrapper}>

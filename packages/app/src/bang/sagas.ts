@@ -1,5 +1,5 @@
 // @ts-ignore: no declaration file
-import { search, activity, SDK } from '@getstation/sdk';
+import { search } from '@getstation/sdk';
 import { observeOn, distinctUntilChanged, timestamp } from 'rxjs/operators';
 import * as log from 'electron-log';
 import isEmpty = require('is-empty');

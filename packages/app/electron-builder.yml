@@ -70,9 +70,7 @@ files:
   - from: 'src/static/icon--provider'
     to: 'static/icon--provider'
     filter:
-      - 'icon-provider--gdrive.svg'
-      - 'icon-provider--notion.svg'
-      - 'icon-provider--slack.svg'
+      - '**/*'
   - from: 'src/static/illustrations'
     to: 'static/illustrations'
   - from: 'src/static/logos'
@@ -81,4 +79,3 @@ files:
     to: 'static/social-network'
   - from: 'src/static/animations'
     to: 'static/animations'
-

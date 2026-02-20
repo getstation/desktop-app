@@ -1,27 +1,22 @@
-import { action } from '@storybook/addon-actions';
-import centered from '@storybook/addon-centered';
-import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
-import * as React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import DownloadToast from './components/DownloadToast';
 
-const story = storiesOf('Components|Download Toast', module);
+const meta: Meta<typeof DownloadToast> = {
+  title: 'Components/Download Toast',
+  component: DownloadToast,
+  args: {
+    applicationId: 'slack',
+    failed: false,
+    filename: 'A very long filename',
+    completionPercent: 50,
+    onClickOpen: () => undefined,
+    onClickHide: () => undefined,
+    themeColor: '#EEEEEE',
+  },
+};
 
-story
-  .addDecorator(withKnobs)
-  .addDecorator(centered)
-  .add(
-    'Download Toast',
-      () => (
-        <DownloadToast
-          applicationId={select('applicationId', ['slack', 'unknown'], 'slack')}
-          failed={boolean('failed', false)}
-          key="1"
-          filename={text('filename', 'A very long filename')}
-          completionPercent={number('completionPercent', 50)}
-          onClickOpen={action('onClickOpen')}
-          onClickHide={action('onClickHide')}
-          themeColor="#EEEEEE"
-        />
-      )
-      );
+export default meta;
+
+type Story = StoryObj<typeof DownloadToast>;
+
+export const Default: Story = {};

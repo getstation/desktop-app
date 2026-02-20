@@ -76,7 +76,6 @@ class SettingsMyAppsImpl extends React.PureComponent<Props, State> {
    * Attach the the nodeRef in a memoize way for performance reason
    * in render.
    */
-  // tslint:disable-next-line
   refAttacher = memoize((manifestURL: string) => (node: HTMLDivElement) => {
     this.manifestURLsRef[manifestURL] = node;
   });
@@ -125,7 +124,6 @@ class SettingsMyAppsImpl extends React.PureComponent<Props, State> {
     this.props.setSelectedManifestURL(undefined);
   }
 
-  // tslint:disable-next-line:function-name
   UNSAFE_componentWillReceiveProps(nextProps: Props) {
     const selectedManifestURL = nextProps.selectedManifestURL;
 

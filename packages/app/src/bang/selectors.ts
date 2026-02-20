@@ -1,6 +1,4 @@
 import * as Immutable from 'immutable';
-// @ts-ignore: no declaration file
-import * as isBlank from 'is-blank';
 import { createSelector } from 'reselect';
 
 import { StationState } from '../types';

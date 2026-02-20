@@ -11,6 +11,23 @@ on:
       - "README.md"
       - "CHANGELOG.md"
 jobs:
+  Stability-Baseline:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      ELECTRON_DISABLE_SANDBOX: "1"
+      ELECTRON_NO_SANDBOX: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "yarn"
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: Pre-release stability checks
+        run: yarn pre-release:check
+
   Linux:
     runs-on: ubuntu-latest
     env:

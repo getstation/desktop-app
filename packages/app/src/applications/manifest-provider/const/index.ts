@@ -34,14 +34,14 @@ export const JAVASCRIPT_INJECTIONS = {
   'station-support': ['slackInjectedScript'],
   'gdrive-mu':    ['removeGoogleAccountInjectedScript'],
   'gcalendar-mu': ['removeGoogleAccountInjectedScript'],
-  'google-cloud': ['removeGoogleAccountInjectedScript'],  //vk: FIXME: doesn't work
+  'google-cloud': ['removeGoogleAccountInjectedScript'],  // vk: FIXME: doesn't work
   'google-keep':  ['removeGoogleAccountInjectedScript'],
-  'meet':         ['removeGoogleAccountInjectedScript'],
+  meet:         ['removeGoogleAccountInjectedScript'],
   outlook: ['office365InjectedScript'],
   'office-365': ['office365InjectedScript'],
   'outlook-pro': ['office365InjectedScript'],
   'facebook-messenger': ['messengerInjectedScript'],
-  'whatsapp': ['whatsappInjectedScript'],
+  whatsapp: ['whatsappInjectedScript'],
 };
 
 // Internal Applications

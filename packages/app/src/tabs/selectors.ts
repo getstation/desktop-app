@@ -5,14 +5,13 @@ import * as median from 'median';
 import * as moment from 'moment';
 import createCachedSelector from 're-reselect';
 import { createSelector } from 'reselect';
-import { getApplications, getApplicationsWithoutInternals } from '../applications/selectors';
+import { getApplications } from '../applications/selectors';
 import { removeHashFromURL } from '../tab-webcontents/api';
 import { RecursiveImmutableList, RecursiveImmutableMap, StationState } from '../types';
-import { getLastActivityAt, getTabApplicationId, getTabId, getTabIsApplicationHome, getTabURL, isIgnoredForBackHistory } from './get';
+import { getLastActivityAt, getTabApplicationId, getTabId, getTabIsApplicationHome, getTabURL } from './get';
 import { StationTab, StationTabImmutable, StationTabsImmutable } from './types';
 import { getSubwindows } from '../subwindows/selectors';
 import { hasSubwindowsTabId } from '../subwindows/get';
-import { getApplicationId } from '../applications/get';
 
 export const getTabs = (state: StationState): StationTabsImmutable =>
   state.get('tabs');

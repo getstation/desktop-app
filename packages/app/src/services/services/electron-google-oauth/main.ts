@@ -23,9 +23,9 @@ export class ElectronGoogleOAuthServiceImpl extends ElectronGoogleOAuthService i
           });
 
           const response = await service.people.get({
-              resourceName: 'people/me',
-              personFields: 'names,emailAddresses,photos',
-              sources: ['READ_SOURCE_TYPE_PROFILE'],
+            resourceName: 'people/me',
+            personFields: 'names,emailAddresses,photos',
+            sources: ['READ_SOURCE_TYPE_PROFILE'],
           });
 
           return { tokens, profile: response.data as people_v1.Schema$Person };
@@ -33,7 +33,7 @@ export class ElectronGoogleOAuthServiceImpl extends ElectronGoogleOAuthService i
         catch (err) {
           log.error(`Google profile request error ${err}`);
           return this.parseToken(tokens);
-       }
+        }
       });
   }
 

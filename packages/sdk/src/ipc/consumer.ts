@@ -11,7 +11,6 @@ export class IpcConsumer extends Consumer implements ipc.IpcConsumer {
   public readonly namespace = 'ipc';
   public subscribe: Subscribable<any>['subscribe'];
 
-  // tslint:disable-next-line
   [Symbol_observable](): Observable<any> {
     return protectedProvidersWeakMap.get(this)!.bxToPluginChannel;
   }

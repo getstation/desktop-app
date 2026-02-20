@@ -3,7 +3,6 @@ import * as React from 'react';
 import injectSheet from 'react-jss';
 import { identitiesStyle } from './styles';
 import { JSSClasses } from '../../../../types';
-import { Tooltip } from '@getstation/theme';
 
 const styles = {
   container: {
@@ -47,21 +46,15 @@ class NormalFlowForm extends React.PureComponent<Props> {
            {`Go to ${appHostname}`}
           </div>
         </li>
-        <Tooltip
-          tooltip={this.props.selfInstanceHint}
-          offset="0, 4"
-          placement="right"
-          alternate={true}
+        <li
+          className={classes!.element}
+          onClick={onClickUseSelfInstance}
+          title={this.props.selfInstanceHint}
         >
-          <li
-            className={classes!.element}
-            onClick={onClickUseSelfInstance}
-          >
-            <div className={classes!.elementDetail}>
-              I use a self-hosted instance
-            </div>
-          </li>
-        </Tooltip>
+          <div className={classes!.elementDetail}>
+            I use a self-hosted instance
+          </div>
+        </li>
       </ul>
     );
   }

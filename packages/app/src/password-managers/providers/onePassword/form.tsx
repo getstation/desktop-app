@@ -98,7 +98,6 @@ export default class OnePasswordForm extends React.PureComponent<Props & Overrid
       }, {});
   }
 
-  // tslint:disable-next-line:function-name
   UNSAFE_componentWillUpdate(nextProps: Readonly<Props>) {
     const { configurationProcess: { step } } = this.props;
 
@@ -108,7 +107,7 @@ export default class OnePasswordForm extends React.PureComponent<Props & Overrid
   }
 
   onSubmitCredentials() {
-    const { errors, ...credentials } = this.state;
+    const { ...credentials } = this.state;
     const cleanCredentials = OnePasswordForm.trimCredentials(credentials);
 
     if (this.isValidFormatCredentials(cleanCredentials)) {
@@ -117,7 +116,6 @@ export default class OnePasswordForm extends React.PureComponent<Props & Overrid
   }
 
   isValidFormatCredentials(credentials: any) {
-    // tslint:disable-next-line:max-line-length
     const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const { domain, email, secretKey, masterPassword } = credentials;
 

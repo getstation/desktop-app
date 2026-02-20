@@ -1,4 +1,4 @@
-import { ElectronIpcRendererDuplex } from 'stream-electron-ipc';
+import { ElectronIpcRendererDuplex } from '../../utils/stream-ipc-proxy';
 import rpcchannel, { RPCChannel } from 'stream-json-rpc';
 import { isPackaged } from '../../utils/env';
 import { servicesDuplexWorkerMainNamespace } from '../api/const';

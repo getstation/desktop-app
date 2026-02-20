@@ -24,7 +24,7 @@ import {
 } from './queries@local.gql.generated';
 
 import { OnboardingType } from '../ui/types';
-import { manifestToMinimalApplication, search } from '../../manifests';
+import { search } from '../../manifests';
 
 export interface DispatchFromProps {
   onClickLogin: typeof startOnboarding,
@@ -237,7 +237,7 @@ const Onboarding = compose(
   }),
   withApollo,
   connect<{}, DispatchFromProps, {}>(
-    (state: Immutable.Map<string, any>) => ({}),
+    (_state: Immutable.Map<string, any>) => ({}),
     dispatch => bindActionCreators(
       {
         onAppStoreStepFinished: appStoreStepFinished,

@@ -1,4 +1,5 @@
 import { ApplicationImmutable } from './types';
+import { normalizeIconUrl } from './helpers';
 
 export const getApplicationManifestURL = (application: ApplicationImmutable) => application.get('manifestURL');
 
@@ -6,7 +7,7 @@ export const getApplicationId = (application: ApplicationImmutable) => applicati
 
 export const getApplicationBadge = (application: ApplicationImmutable) => application.get('badge');
 
-export const getApplicationIconURL = (application: ApplicationImmutable) => application.get('iconURL');
+export const getApplicationIconURL = (application: ApplicationImmutable) => normalizeIconUrl(application.get('iconURL'));
 
 export const getApplicationZoomLevel = (application: ApplicationImmutable) => application.get('zoomLevel');
 

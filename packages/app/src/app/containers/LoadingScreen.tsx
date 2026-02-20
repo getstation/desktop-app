@@ -99,7 +99,7 @@ class LoadingScreenImpl extends React.PureComponent<StateProps & JSSProps, {}> {
               Your Station will be ready soon...
             </p>
           </div>
-          <div className={classes.announcement} dangerouslySetInnerHTML={{ __html: announcementHTML }}/>
+          <div className={classes.announcement} dangerouslySetInnerHTML={{ __html: announcementHTML }} />
         </div>
       </div>
     );

@@ -37,6 +37,8 @@ interface Props {
     opacity: ({ focused, allHover }: Props) => allHover ? 1 : (focused ? 0.5 : 0.2),
     flex: '0 0 auto',
     transition: 'all 100ms ease-out',
+    '-webkit-app-region': 'no-drag',
+    'pointer-events': 'auto',
     '&:hover': {
       opacity: 1,
     },

@@ -19,7 +19,8 @@
     "release": "yarn clean && yarn workspaces foreach --all --topological run release",
     "dev": "yarn workspaces foreach --all --topological run dev",
     "lint": "yarn workspaces foreach --all --topological run lint",
-    "test": "yarn workspaces foreach --all run test"
+    "test": "yarn workspaces foreach --all run test",
+    "pre-release:check": "bash ./scripts/pre-release-check.sh"
   },
   "workspaces": [
     "packages/*"
@@ -28,15 +29,30 @@
     "electron": "./node_modules/.bin/electron"
   },
   "devDependencies": {
-    "rimraf": "^5.0.10"
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^12.0.6",
+    "@semantic-release/release-notes-generator": "^14.1.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "conventional-changelog-conventionalcommits": "^9.1.0",
+    "eslint": "^8.57.1",
+    "rimraf": "^5.0.10",
+    "semantic-release": "^25.0.3",
+    "typescript": "^4.9.5"
   },
-  "devEngines": {
-    "node": ">=18.0.0",
+  "resolutions": {
+    "foreground-child/cross-spawn": "^7.0.6",
+    "rimraf/glob": "^10.5.0"
+  },
+  "engines": {
+    "node": ">=22.0.0",
     "yarn": ">=4.1.0"
   },
   "volta": {
-    "node": "18.14.0",
+    "node": "22.13.1",
     "yarn": "4.1.0"
   },
-  "packageManager": "yarn@4.1.0"
+  "packageManager": "yarn@4.12.0"
 }

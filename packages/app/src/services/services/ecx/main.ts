@@ -1,25 +1,21 @@
 // @ts-ignore : types
-import ECx from 'electron-chrome-extension';
-import { Extension, ExtensionEventMessage } from '../../../chrome-extensions/types';
+// import ECx from 'electron-chrome-extension';
+import { ExtensionEventMessage } from '../../../chrome-extensions/types';
 import { ServiceSubscription } from '../../lib/class';
 import { RPC } from '../../lib/types';
 import { ChromeExtensionsService, ChromeExtensionsServiceObserver } from './interface';
 
 const initConfiguration = () => {
-  const configuration = {
+  const _configuration = {
     fetcher: {
       autoUpdate: true,
     },
   };
 
-  ECx.setConfiguration(configuration);
+  // ECx.setConfiguration(configuration);
 };
 
-const isExtensionLoaded = (extensionId: string): boolean => ECx.isLoaded(extensionId);
-
-const serializeExtension = (extension: any): Extension => ({
-  ...extension, ...{ location: extension.location.path },
-});
+const isExtensionLoaded = (_extensionId: string): boolean => false; // ECx.isLoaded(extensionId);
 
 export class ChromeExtensionsServiceImpl extends ChromeExtensionsService implements RPC.Interface<ChromeExtensionsService> {
   constructor(uuid?: string) {
@@ -32,28 +28,35 @@ export class ChromeExtensionsServiceImpl extends ChromeExtensionsService impleme
       return this.getExtension(extensionId);
     }
 
-    const extension = await ECx.load(extensionId);
-    return serializeExtension(extension);
+    // const extension = await ECx.load(extensionId);
+    // return serializeExtension(extension);
+    console.warn('Chrome extensions disabled in Electron 31+');
+    return null;
   }
 
-  async unloadExtension(extensionId: string) {
-    return ECx.unload(extensionId);
+  async unloadExtension(_extensionId: string) {
+    // return ECx.unload(extensionId);
+    return;
   }
 
-  async isUpToDate(extensionId: string) {
-    return ECx.isUpToDate(extensionId);
+  async isUpToDate(_extensionId: string) {
+    // return ECx.isUpToDate(extensionId);
+    return true;
   }
 
-  async getExtension(extensionId: string) {
-    const extension = await ECx.get(extensionId);
-    return serializeExtension(extension);
+  async getExtension(_extensionId: string) {
+    // const extension = await ECx.get(extensionId);
+    // return serializeExtension(extension);
+    return null;
   }
 
-  async dispatchEvent(event: ExtensionEventMessage) {
-    return ECx.sendEvent(event);
+  async dispatchEvent(_event: ExtensionEventMessage) {
+    // return ECx.sendEvent(event);
+    return;
   }
 
-  async addObserver(obs: RPC.ObserverNode<ChromeExtensionsServiceObserver>) {
+  async addObserver(_obs: RPC.ObserverNode<ChromeExtensionsServiceObserver>) {
+    /*
     if (obs.onExtensionUpdated) {
       return new ServiceSubscription(
         ECx.fetcher.on(
@@ -65,6 +68,7 @@ export class ChromeExtensionsServiceImpl extends ChromeExtensionsService impleme
         obs
       );
     }
+    */
     return ServiceSubscription.noop;
   }
 }

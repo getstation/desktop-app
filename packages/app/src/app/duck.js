@@ -17,6 +17,7 @@ export const MINIMIZE_TO_TRAY = 'browserX/app/MINIMIZE_TO_TRAY';
 export const INCLUDE_BETA_IN_UPDATES = 'browserX/app/INCLUDE_BETA_IN_UPDATES';
 export const SET_INCLUDES_BETA_IN_UPDATES = 'browserX/app/SET_INCLUDES_BETA_IN_UPDATES';
 export const SET_FULL_SCREEN_STATE = 'browserX/app/SET_FULL_SCREEN_STATE';
+export const TOGGLE_FULL_SCREEN = 'browserX/app/TOGGLE_FULL_SCREEN';
 export const TOGGLE_MAXIMIZE = 'browserX/app/TOGGLE_MAXIMIZE';
 export const SET_ONLINE_STATUS = 'browserX/app/SET_ONLINE_STATUS';
 export const MAIN_APP_READY = 'browserX/app/MAIN_APP_READY';
@@ -79,6 +80,11 @@ export const setBetaIncludedInUpdates = included => ({
 export const setFullScreenState = isFullScreen => ({
   type: SET_FULL_SCREEN_STATE,
   isFullScreen
+});
+
+export const toggleFullScreen = (windowId) => ({
+  type: TOGGLE_FULL_SCREEN,
+  windowId
 });
 
 export const setOnlineStatus = isOnline => ({
@@ -163,7 +169,7 @@ export default function app(state = new Map(), action) {
 
     case SET_MINIMIZE_TO_TRAY:
       return state.set('minimizeToTray', action.enabled);
-  
+
     case SET_INCLUDES_BETA_IN_UPDATES:
       return state.set('includesBetaInUpdates', action.included);
 

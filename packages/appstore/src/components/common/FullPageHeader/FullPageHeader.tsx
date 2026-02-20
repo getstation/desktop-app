@@ -4,7 +4,6 @@ import { createUseStyles } from 'react-jss';
 import appStorePageHeaderStyles from '@src/components/AppStoreContent/AppStorePageHeader/styles';
 import { Icon, IconSymbol } from '@getstation/theme';
 import { colors } from '@src/theme';
-import { useHistory } from 'react-router-dom';
 
 const useStyles = createUseStyles({
   extend: appStorePageHeaderStyles,

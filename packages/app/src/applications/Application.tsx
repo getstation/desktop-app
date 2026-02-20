@@ -7,11 +7,7 @@ import { GradientType, withGradient } from '@getstation/theme';
 import ElectronWebview from '../common/components/ElectronWebview';
 import * as classNames from 'classnames';
 import { clipboard } from 'electron';
-// @ts-ignore no declaration file
-import { fetchFavicon, setFetchFaviconTimeout } from '@getstation/fetch-favicon';
 import Maybe from 'graphql/tsutils/Maybe';
-// @ts-ignore
-import * as isBlank from 'is-blank';
 // @ts-ignore
 import * as throttle from 'lodash.throttle';
 import * as path from 'path';
@@ -106,6 +102,7 @@ export interface OwnProps {
   themeColor: Maybe<string>,
   notUseNativeWindowOpen: Maybe<boolean>,
   useDefaultSession: Maybe<boolean>,
+  userAgent: Maybe<string>,
 
   appFocus: Maybe<number>,
   isOnline: Maybe<boolean>,
@@ -200,7 +197,6 @@ class ApplicationImpl extends React.PureComponent {
     return ([-105, -106, -109, -130].includes(this.props.errorCode));
   }
 
-  // tslint:disable-next-line:function-name
   UNSAFE_componentWillReceiveProps(nextProps: Props) {
     if (getTabId(nextProps.tab) !== getTabId(this.props.tab)) {
       this.detachBus(); // bus will be automatically re-attached in the next render
@@ -393,8 +389,22 @@ class ApplicationImpl extends React.PureComponent {
     this.webView = wv;
     if (this.webView && this.webView.view) {
       const webview = this.webView.view;
+      console.log('[App Debug] setWebviewRef for', this.props.legacyServiceId);
+      if (this.props.legacyServiceId === 'slack') {
+        webview.addEventListener('did-attach', () => {
+          console.log('[App Debug] Webview Attached for Slack');
+          webview.openDevTools();
+        });
+
+      }
 
       webview.addEventListener('dom-ready', () => {
+        console.log('[App Debug] DOM Ready for', this.props.legacyServiceId);
+        if (this.props.legacyServiceId === 'slack') {
+          webview.addEventListener('console-message', (e: any) => {
+            console.log('[Slack Console]', e.message);
+          });
+        }
         webview.addEventListener('did-navigate-in-page', (e: any) => this.handleDidNavigateInPage(e));
         webview.addEventListener('did-navigate', (e: any) => this.handleDidNavigate(e));
         webview.addEventListener('ipc-message', (e: any) => this.handleIPCMessage(e));

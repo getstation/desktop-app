@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators, compose, Dispatch } from 'redux';
+import { bindActionCreators, compose } from 'redux';
 import * as Immutable from 'immutable';
 import { oc } from 'ts-optchain';
 

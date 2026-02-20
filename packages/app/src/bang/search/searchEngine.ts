@@ -6,19 +6,19 @@ import {
   pipe,
   filter,
   sortBy,
-  take
+  take,
 } from 'ramda';
 
 import { Transformer } from '../../utils/fp';
 import createComputeScore, {
   Loggers,
   getFrecencyEnv,
-  getTotalScore
+  getTotalScore,
 } from './score';
 import { FrecencyWeightOptions } from './score/frecency';
 import {
   WEIGHT_CONTEXTUAL_FRECENCY_RECENT_SELECTIONS_MATCH,
-  WEIGHT_GLOBAL_FRECENCY_RECENT_SELECTIONS_MATCH
+  WEIGHT_GLOBAL_FRECENCY_RECENT_SELECTIONS_MATCH,
 } from './score/config';
 
 import {
@@ -27,21 +27,21 @@ import {
   SaveGlobalSelectionFunction,
   SaveContextualSelectionFunction,
   SearchEngine,
-  SearchEngineEnv
+  SearchEngineEnv,
 } from './types';
 
 const defaultLoggers: Loggers = {
   fuseLogger: identity,
   contextualFrecencyLogger: identity,
-  globalFrecencyLogger: identity
+  globalFrecencyLogger: identity,
 };
 
 const contextualFrecencyOptions: FrecencyWeightOptions = {
-  recentSelectionsMatchWeight: WEIGHT_CONTEXTUAL_FRECENCY_RECENT_SELECTIONS_MATCH
+  recentSelectionsMatchWeight: WEIGHT_CONTEXTUAL_FRECENCY_RECENT_SELECTIONS_MATCH,
 };
 
 const globalFrecencyOptions: FrecencyWeightOptions = {
-  recentSelectionsMatchWeight: WEIGHT_GLOBAL_FRECENCY_RECENT_SELECTIONS_MATCH
+  recentSelectionsMatchWeight: WEIGHT_GLOBAL_FRECENCY_RECENT_SELECTIONS_MATCH,
 };
 
 const hasPositiveScore = (scoredItem: ScoredItem) =>
@@ -96,7 +96,7 @@ export const createSearchEngine = (
     return global.frecencyEngine.save({
       searchQuery: '',
       selectedId,
-      dateSelection
+      dateSelection,
     });
   };
 

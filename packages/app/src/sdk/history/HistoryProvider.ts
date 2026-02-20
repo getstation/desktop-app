@@ -1,7 +1,7 @@
 import { history } from '@getstation/sdk';
 import { combineLatest, BehaviorSubject, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
-import {  } from "rxjs/index";
+import {  } from 'rxjs/index';
 import { AbstractProvider } from '../common';
 
 export default class HistoryProvider extends AbstractProvider<history.HistoryConsumer> {

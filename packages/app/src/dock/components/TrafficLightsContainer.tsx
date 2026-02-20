@@ -1,8 +1,16 @@
 import * as remote from '@electron/remote';
 import * as React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators, Dispatch } from 'redux';
+// @ts-ignore
+import { toggleFullScreen } from '../../app/duck';
 import TrafficLights from './TrafficLights';
 
-interface Props {
+interface DispatchProps {
+  onToggleFullScreen: () => void;
+}
+
+interface OwnProps {
   onClose: () => any,
 }
 
@@ -10,11 +18,11 @@ interface State {
   focused: boolean
 }
 
-export default class TrafficLightsContainer extends React.PureComponent<Props, State> {
+class TrafficLightsContainer extends React.PureComponent<any, State> {
 
   public win: Electron.BrowserWindow;
 
-  constructor(props: Props) {
+  constructor(props: any) {
     super(props);
 
     this.win = remote.getCurrentWindow();
@@ -28,9 +36,9 @@ export default class TrafficLightsContainer extends React.PureComponent<Props, S
     this.handleExpand = this.handleExpand.bind(this);
   }
 
-  onFocus() {}
+  onFocus() { }
 
-  onBlur() {}
+  onBlur() { }
 
   componentDidMount() {
     this.onFocus = () => {
@@ -59,6 +67,7 @@ export default class TrafficLightsContainer extends React.PureComponent<Props, S
   }
 
   handleExpand() {
+    this.win.focus();
     this.win.setFullScreen(!this.win.isFullScreen());
   }
 
@@ -73,3 +82,10 @@ export default class TrafficLightsContainer extends React.PureComponent<Props, S
     );
   }
 }
+
+export default connect<{}, DispatchProps, OwnProps>(
+  null,
+  (dispatch: Dispatch) => bindActionCreators({
+    onToggleFullScreen: toggleFullScreen,
+  }, dispatch)
+)(TrafficLightsContainer);

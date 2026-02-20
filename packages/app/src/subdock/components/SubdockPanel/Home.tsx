@@ -18,8 +18,6 @@ export type OwnProps = SubdockActionsProps & {
 };
 
 const Home = ({
-  classes,
-  className,
   application,
   item,
   activeTab,

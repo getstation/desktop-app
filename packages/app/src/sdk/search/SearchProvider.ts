@@ -1,7 +1,7 @@
 import { search } from '@getstation/sdk';
 import * as Immutable from 'immutable';
 import { combineLatest, BehaviorSubject, Subject, Subscription } from 'rxjs';
-import { debounceTime, map } from 'rxjs/operators'
+import { debounceTime, map } from 'rxjs/operators';
 import { AbstractProvider } from '../common';
 import { SearchSection } from './types';
 
@@ -73,7 +73,7 @@ export default class SearchProvider extends AbstractProvider<search.SearchConsum
 
   protected refreshResultsSubscription() {
     if (this.resultsSubscription) this.resultsSubscription.unsubscribe();
-    this.resultsSubscription = 
+    this.resultsSubscription =
       // Keep only the last values of each of the consumers
       combineLatest(this._consumers.map(c => c.results))
         .pipe(

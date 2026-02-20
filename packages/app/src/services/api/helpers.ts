@@ -1,5 +1,5 @@
 import log from 'electron-log';
-import { filter } from 'rxjs/operators'
+import { filter } from 'rxjs/operators';
 import { mergeAll } from 'ramda';
 import { logger } from '../../api/logger';
 import { fromEvent } from 'rxjs';

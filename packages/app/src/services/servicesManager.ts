@@ -1,5 +1,5 @@
 import { map } from 'ramda';
-import { firstConnectionHandler } from 'stream-electron-ipc';
+import { firstConnectionHandler } from '../utils/stream-ipc-proxy';
 import { servicesDuplexWorkerMainNamespace } from './api/const';
 import { LazyDuplex } from './api/lazyduplex';
 import { observeNewClients } from './common';
@@ -21,6 +21,7 @@ class ServicesManager {
   protected handlers: Set<ServicePeerHandler>;
 
   constructor() {
+    console.log('[DEBUG] ServicesManager: Constructor called');
     this.handlers = new Set();
   }
 
@@ -42,17 +43,20 @@ class ServicesManager {
   }
 
   protected initWorker(): GlobalServices {
+    console.log('[DEBUG] ServicesManager: initWorker called');
     const { getMainPeerHandler, mainServices, workerServices } = require('./worker');
 
     // connections to the main process
     const mainPeerHandler = getMainPeerHandler();
     this.handlers.add(mainPeerHandler);
+    mainPeerHandler.on('close', () => this.handlers.delete(mainPeerHandler));
     const mainServicesConnected = mapObject(mainServices, mainPeerHandler);
 
     // impl
     const workerServicesConnected = mapObject(workerServices);
     observeNewClients().subscribe((client: ServicePeerHandler) => {
       this.handlers.add(client);
+      client.on('close', () => this.handlers.delete(client));
       map(s => client.connect(s), workerServicesConnected as any);
     });
 
@@ -63,6 +67,7 @@ class ServicesManager {
   }
 
   protected initRenderer(): GlobalServices {
+    console.log('[DEBUG] ServicesManager: initRenderer called');
     const { workerServices, mainServices, getMainPeerHandler, getWorkerPeerHandler } = require('./renderer');
     const mainPeerHandler = getMainPeerHandler();
     const workerPeerHandler = getWorkerPeerHandler();
@@ -86,6 +91,7 @@ class ServicesManager {
     // connections to the worker process
     const handler = getWorkerPeerHandler(mainWorkerDuplex);
     this.handlers.add(handler);
+    handler.on('close', () => this.handlers.delete(handler));
     const workerServicesConnected = mapObject(workerServices, handler);
 
     // Lazy connection between the worker and main process
@@ -98,6 +104,7 @@ class ServicesManager {
     map(s => handler.connect(s), mainServicesConnected as any);
     observeNewClients().subscribe((client: ServicePeerHandler) => {
       this.handlers.add(client);
+      client.on('close', () => this.handlers.delete(client));
       map(s => client.connect(s), mainServicesConnected as any);
     });
 

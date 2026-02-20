@@ -7,7 +7,7 @@ import { Credentials } from 'google-auth-library';
 export type ElectronGoogleSignInResponse = {
   tokens: Credentials,
   profile: people_v1.Schema$Person,
-}
+};
 
 @service('electron-google-oauth')
 export class ElectronGoogleOAuthService extends ServiceBase implements RPC.Interface<ElectronGoogleOAuthService> {

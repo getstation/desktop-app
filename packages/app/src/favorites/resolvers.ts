@@ -74,7 +74,6 @@ const resolvers: Resolvers = {
       { store },
     ) => {
       const state = store.getState();
-      // tslint:disable-next-line: prefer-const : We need matchingTab to be updatable
       let { favorite, matchingTab } = getFavoriteAndMatchingTab(state, id);
 
       // If not matching tab, create one new and get it
@@ -94,7 +93,6 @@ const resolvers: Resolvers = {
       { id },
       { store },
     ) => {
-      // tslint:disable-next-line: prefer-const : We need matchingTab to be updatable
       let { favorite, matchingTab } = getFavoriteAndMatchingTab(store.getState(), id);
 
       // If not matching tab, create one new and get it

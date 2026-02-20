@@ -35,24 +35,36 @@ const maybeSetServicePeer = (sph: ServicePeerHandler, srvc: ServiceBase, peer: R
     });
   }
   // Destroy peer if service emits `destroyed` event
-  srvc.emitter.once('destroyed', () => {
+  const onDestroyed = () => {
     if (!peer.closed) {
       peer.destroy();
     }
+  };
+  srvc.emitter.once('destroyed', onDestroyed);
+
+  eos(peer, () => {
+    srvc.emitter.removeListener('destroyed', onDestroyed);
   });
 };
 
-export class ServicePeerHandler {
+export class ServicePeerHandler extends EventEmitter {
   public channel: RPCChannel;
   public debug: Debugger | undefined;
   public connectedServices: Map<string, RPCChannelPeer>;
 
   constructor(channel: RPCChannel, debug?: boolean) {
+    super();
     this.channel = channel;
     this.connectedServices = new Map();
     if (debug) {
       this.debug = new Debugger(this);
     }
+  }
+
+  public destroy() {
+    this.connectedServices.forEach(peer => peer.destroy());
+    this.connectedServices.clear();
+    this.emit('close');
   }
 
   public connect(srvc: ServiceBase, constructor?: Function): RPCChannelPeer {
@@ -174,6 +186,7 @@ export abstract class ServiceBase implements IServiceBase {
     this.uuid = `${prefix}${uuid || uuidv4()}`;
     this.ready$ = new BehaviorSubject(false);
     this.emitter = new EventEmitter();
+    this.emitter.setMaxListeners(0); // Allow unlimited listeners as services are singletons connected by many peers
     this.destroyedEmitted = false;
 
     const isAlreadyReady = !options || options.ready === undefined || options.ready;
@@ -227,7 +240,7 @@ const unsubscribeOne = (sub: SubscriptionConstructorParam) => {
 
 @service(bxsubscription, { observer: true })
 export class ServiceSubscription extends ServiceBase implements RPC.Subscription {
-  public static noop = new ServiceSubscription(() => {});
+  public static noop = new ServiceSubscription(() => { });
 
   protected sub: SubscriptionConstructorParam | SubscriptionConstructorParam[];
 

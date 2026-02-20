@@ -33,6 +33,7 @@ module.exports = (env = {}) => {
   const envConfig = require('./' + (isDev ? 'development' : 'production') + '.config.js');
 
   return {
+    mode: isBuild ? 'production' : 'development',
     cache: true,
     devtool: isDev ? 'eval-source-map' : false,
     devServer: DEV_SERVER,
@@ -74,7 +75,7 @@ module.exports = (env = {}) => {
               transpileOnly: true,
               compilerOptions: {
                 'sourceMap': isSourceMap,
-                'target': isDev ? 'es2015' : 'es5',
+                'target': 'es2019',
                 'isolatedModules': true,
                 'noEmitOnError': false,
               },
@@ -122,15 +123,17 @@ module.exports = (env = {}) => {
                   ecma: undefined,
                   warnings: false,
                   parse: {},
-                  compress: false,
+                  compress: {
+                    passes: 2,
+                  },
                   mangle: true,
                   module: false,
                   output: { comments: false },
                   toplevel: false,
                   nameCache: null,
                   ie8: false,
-                  keep_classnames: true,
-                  keep_fnames: true,
+                  keep_classnames: false,
+                  keep_fnames: false,
                   safari10: false,
                 },
                 sourceMap: true,
@@ -152,6 +155,7 @@ module.exports = (env = {}) => {
       },
     },
     plugins: [
+      new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
       new webpack.DefinePlugin(envConfig),
       new CopyWebPackPlugin([
         { context: './src/static/', from: './**/*', to: 'static' }

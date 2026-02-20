@@ -22,11 +22,13 @@ export default class MainWindowManager extends GenericWindowManager {
     }
 
     await super.create({
-      show: false,
+      show: true,
       frame: !isDarwin,
       icon: getResourceIconPath(),
       acceptFirstMouse: true,
       savePosition: 'main-window',
+      fullscreenable: true,
+      simpleFullscreen: false,
     });
 
     this.on('minimize', async () => {

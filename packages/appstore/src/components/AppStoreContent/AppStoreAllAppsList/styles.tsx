@@ -1,5 +1,4 @@
 import { colors } from '@src/theme';
-import { block } from 'csstips';
 
 const styles = {
   container: {

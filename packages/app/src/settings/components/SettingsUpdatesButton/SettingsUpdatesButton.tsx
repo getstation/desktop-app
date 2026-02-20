@@ -68,7 +68,6 @@ class SettingsUpdatesButton extends React.PureComponent<Props, State> {
     };
   }
 
-  // tslint:disable-next-line:function-name
   UNSAFE_componentWillReceiveProps(newProps: any) {
     if (this.props.isCheckingUpdate && !newProps.isCheckingUpdate) {
       this.setState({ justCheckedForUpdate: true });

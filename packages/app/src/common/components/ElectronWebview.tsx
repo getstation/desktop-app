@@ -355,7 +355,6 @@ class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
     }
   };
 
-  // tslint:disable-next-line:function-name
   UNSAFE_componentWillReceiveProps(nextProps: ElectronWebviewProps) {
     if (this.props.hidden !== nextProps.hidden) {
       this.updateClassName(nextProps);

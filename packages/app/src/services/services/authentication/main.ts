@@ -69,7 +69,7 @@ export class AuthenticationServiceImpl extends AuthenticationService implements 
     return this.triggerNewAuthorizationFlow(this.authService.generateAuthUrl(true));
   }
 
-  protected async triggerNewAuthorizationFlow(urlToLoad: string, silent: boolean = false): Promise<OAuthResponseBody> {
+  protected async triggerNewAuthorizationFlow(urlToLoad: string, _silent: boolean = false): Promise<OAuthResponseBody> {
     if (this.server) {
       // if a server is already running, we close it so that we free the port
       // and restart the process

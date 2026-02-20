@@ -51,7 +51,7 @@ export const getWebcontentsMountedAt = (webcontent: Immutable.Map<string, any>):
 export const isWebcontentsWaitingToAttach = (webcontent: Immutable.Map<string, any>): boolean =>
   webcontent.get('mountState') === 'waitingToAttach';
 
-export const isWebcontentsDetaching = (webcontent: Immutable.Map<string, any>):boolean =>
+export const isWebcontentsDetaching = (webcontent: Immutable.Map<string, any>): boolean =>
   webcontent.get('mountState') === 'detaching';
 
 export const isWebcontentsMounted = (webcontent: Immutable.Map<string, any>): boolean =>
@@ -76,3 +76,8 @@ export const getWebcontentsAuthState = (webcontent: Immutable.Map<string, any>):
 
 export const getWebcontentsAuthInfo = (webcontent: Immutable.Map<string, any>): RecursiveImmutableMap<Electron.AuthInfo> =>
   webcontent && webcontent.get('basicAuthInfo');
+
+export const hasAnyMountedTab = createSelector(
+  getTabWebcontents,
+  (tabWebcontents) => tabWebcontents.some(twc => isWebcontentsMounted(twc))
+);

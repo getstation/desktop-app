@@ -6,7 +6,6 @@ import { compose } from 'redux';
 import { oc } from 'ts-optchain';
 import { withGetApplication } from '../queries@local.gql.generated';
 import AppIcon from '../../dock/components/AppIcon';
-import { number } from '@storybook/addon-knobs';
 
 export interface Classes {
   container: string,

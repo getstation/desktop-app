@@ -28,14 +28,24 @@ export const styles = {
   subContainer: {
     marginTop: 20,
   },
-  withPointer: {
+  withPointer: {
     cursor: 'pointer',
+  },
+  primaryButton: {
+    width: '100%',
+    padding: '10px 12px',
+    border: 0,
+    borderRadius: 4,
+    cursor: 'pointer',
+    color: '#fff',
+    fontWeight: 600,
+    background: 'linear-gradient(120deg, #2B91BA, #4B99CF)',
   },
 };
 
 export const identitiesStyle = {
   ...styles,
-  accountContainer: {
+  accountContainer: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

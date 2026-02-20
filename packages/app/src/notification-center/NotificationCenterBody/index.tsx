@@ -24,7 +24,7 @@ const illuSVG = require('../components/resources/illustration--no-notif.svg');
 const NoNotificationMessage = () => (
   <div className="l-empty">
     <div className="l-empty__content">
-      <img src={ illuSVG } width="117" height="138" alt="no notifications" />
+      <img src={illuSVG} width="117" height="138" alt="no notifications" />
       <strong>You have no notification</strong>
       <p>Congratulations, you did a great job catching up with all the news.</p>
     </div>

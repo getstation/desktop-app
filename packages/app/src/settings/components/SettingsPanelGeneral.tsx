@@ -81,9 +81,9 @@ class SettingsPanelGeneralImpl extends React.PureComponent<Props, {}> {
 
         <SettingsAutoLaunch />
 
-        { !isDarwin && <SettingsHideMainMenu /> }
+        {!isDarwin && <SettingsHideMainMenu />}
 
-        { isWindows && <SettingsMinimizeToTray /> }
+        {isWindows && <SettingsMinimizeToTray />}
 
         <SettingsDownloadFolder
           currentDownloadFolder={this.props.downloadFolder}

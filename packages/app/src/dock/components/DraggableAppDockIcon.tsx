@@ -8,7 +8,6 @@ import { oc } from 'ts-optchain';
 import { withGetApplication, GetApplicationQuery } from '../queries@local.gql.generated';
 
 import AppDockIcon from './ConnectedAppDockIcon';
-import { on } from 'events';
 
 interface AppDockIconProps {
   applicationId: string,
@@ -59,7 +58,6 @@ const dockAppSource = {
     };
   },
   endDrag(props: Props, monitor: DragSourceMonitor) {
-    const item = monitor.getItem();
     const dropResult: DropResult = monitor.getDropResult();
 
     if (!dropResult) return;

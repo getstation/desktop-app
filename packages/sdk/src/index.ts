@@ -1,4 +1,3 @@
-// tslint:disable-next-line:no-import-side-effect
 import 'rxjs';
 
 import { ActivityConsumer } from './activity/consumer';
@@ -72,6 +71,7 @@ export default function sdk(options: SDKOptions, provider: Provider): SDK {
   const ipc = new IpcConsumer(options.id);
   const react = new ReactConsumer(options.id);
   const activity = new ActivityConsumer(options.id);
+  const history = new HistoryConsumer(options.id);
   const config = new ConfigConsumer(options.id);
   const resources = new ResourcesConsumer(options.id);
   provider.register(search);
@@ -81,6 +81,7 @@ export default function sdk(options: SDKOptions, provider: Provider): SDK {
   provider.register(ipc);
   provider.register(react);
   provider.register(activity);
+  provider.register(history);
   provider.register(config);
   provider.register(resources);
   const bxsdk = {
@@ -91,17 +92,16 @@ export default function sdk(options: SDKOptions, provider: Provider): SDK {
     ipc,
     react,
     activity,
+    history,
     config,
     resources,
     register(consumer: Consumers) {
       provider.register(consumer);
-      // tslint:disable-next-line:no-invalid-this
-      this[consumer.namespace] = consumer;
+      (this as any)[consumer.namespace] = consumer;
     },
     unregister(consumer: Consumers) {
       provider.unregister(consumer);
-      // tslint:disable-next-line:no-invalid-this
-      delete this[consumer.namespace];
+      delete (this as any)[consumer.namespace];
     },
     close() {
       provider.unregister(search);
@@ -111,6 +111,7 @@ export default function sdk(options: SDKOptions, provider: Provider): SDK {
       provider.unregister(ipc);
       provider.unregister(react);
       provider.unregister(activity);
+      provider.unregister(history);
       provider.unregister(config);
       provider.unregister(resources);
     },

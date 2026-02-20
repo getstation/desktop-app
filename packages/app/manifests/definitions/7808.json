@@ -9,6 +9,5 @@
     }
   ],
   "theme_color": "#093cf1",
-  "scope": "https://news.google.com/",
-  "bx_override_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36 Edge/80.0.361.62"
+  "scope": "https://news.google.com/"
 }

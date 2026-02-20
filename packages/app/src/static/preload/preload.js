@@ -114,7 +114,15 @@ if (typeof chrome === 'undefined') {
 // Some apps like Qonto determine if browser is Chrome by checking if window.chrome.webstore exists
 window.chrome = Object.assign({ webstore: true }, window.chrome);
 if (!process.env.STATION_DISABLE_ECX) {
-  require('electron-chrome-extension/preload');
+  try {
+    // Ojo: el nombre del módulo va en una variable para que webpack
+    // no intente resolverlo estáticamente.
+    const ecxModuleName = 'electron-chrome-extension/preload';
+    // eslint-disable-next-line global-require
+    require(ecxModuleName);
+  } catch (e) {
+    console.warn('[preload] electron-chrome-extension/preload no disponible, se omite');
+  }
 }
 require('./window-open');
 
@@ -158,11 +166,11 @@ if (!window.chrome.runtime) {
         connect: () => {
           return {
             onMessage: {
-              addListener: () => {},
-              removeListener: () => {}
+              addListener: () => { },
+              removeListener: () => { }
             },
-            postMessage: () => {},
-            disconnect: () => {}
+            postMessage: () => { },
+            disconnect: () => { }
           };
         },
         sendMessage: (

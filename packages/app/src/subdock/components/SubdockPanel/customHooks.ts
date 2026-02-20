@@ -1,6 +1,4 @@
 import * as React from 'react';
-// @ts-ignore: no declaration file
-import { useThrottleCallback } from '@react-hook/throttle';
 import { tap, compose } from 'ramda';
 import Maybe from 'graphql/tsutils/Maybe';
 

@@ -4,9 +4,9 @@ import { service } from '../../lib/decorator';
 import { RPC } from '../../lib/types';
 
 // Menu
-export type IMenuServiceSetMenuItemBooleanParam = { 
-  menuItemId: string, 
-  value: boolean 
+export type IMenuServiceSetMenuItemBooleanParam = {
+  menuItemId: string,
+  value: boolean,
 };
 
 @service('menu')

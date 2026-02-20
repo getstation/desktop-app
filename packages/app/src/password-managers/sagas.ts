@@ -6,7 +6,6 @@ import { FRONT_ACTIVE_TAB_CHANGE } from '../tab-webcontents/duck';
 import { getWebcontentsIdForTabId } from '../tab-webcontents/selectors';
 import { callService, takeEveryWitness } from '../utils/sagas';
 import { getApplicationById } from '../applications/selectors';
-import { getApplicationManifestURL } from '../applications/get';
 import {
   accounts,
   AccountsStep,
@@ -69,8 +68,7 @@ export function* getCredentialsForWebContents(webContentsId: number): SagaIterat
     const passwordManager = yield select(getPasswordManager);
     const applicationId = link.get('applicationId');
 
-    const application = yield select(getApplicationById, applicationId);
-    const manifestURL = getApplicationManifestURL(application);
+    yield select(getApplicationById, applicationId);
 
     if (runtime.hasValidSession()) {
       try {

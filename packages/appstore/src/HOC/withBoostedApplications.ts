@@ -1,4 +1,3 @@
-import { graphql } from 'react-apollo';
 // import { applicationsLimit, boostedTypes } from '../shared/constants/constants';
 // import { QUERY_GET_BOOSTED_APPLICATIONS } from '../graphql/schemes/boostedApplications';
 import { ALL_MOCKED_APPS } from '@src/applications/mockedAllAppsTemp';

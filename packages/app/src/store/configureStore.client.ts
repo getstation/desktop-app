@@ -9,7 +9,7 @@ import { observe } from 'redux-observers';
 import thunk from 'redux-thunk';
 // @ts-ignore: no declaration file
 import { client } from 'shared-redux';
-import { ElectronIpcRendererDuplex } from 'stream-electron-ipc';
+import { ElectronIpcRendererDuplex } from '../utils/stream-ipc-proxy';
 import observers from '../observers/index.renderer';
 import rootReducer from '../reducers';
 import { StationState } from '../types';
@@ -19,21 +19,41 @@ import { createActionsBusMiddleware, ActionsEmitter } from './actionsBus';
 
 export default async function configureStore(actionsEmitter?: ActionsEmitter): Promise<Store> {
   const workerWebContentsId = remote.getGlobal('worker').webContentsId;
+  console.log(`[DEBUG] configureStore.client: Creating duplex to worker wcId=${workerWebContentsId}, namespace=${namespace}`);
   const duplex = new ElectronIpcRendererDuplex(workerWebContentsId, namespace);
 
   const { forwardToServer, getInitialStateClient, replayActionClient } = client(duplex, namespace);
 
-  const initialState = await getInitialStateClient();
+  // Add timeout for initial state to prevent infinite loading
+  const timeoutMs = 30000; // 30 seconds
+  const initialStatePromise = getInitialStateClient();
+  const timeoutPromise = new Promise((_, reject) => {
+    setTimeout(() => {
+      reject(new Error(`Timeout waiting for initial state after ${timeoutMs}ms. Worker may not be ready.`));
+    }, timeoutMs);
+  });
+
+  let initialState;
+  try {
+    initialState = await Promise.race([initialStatePromise, timeoutPromise]);
+  } catch (error) {
+    console.error('Failed to get initial state:', error);
+    // Retry once after a short delay
+    console.log('Retrying initial state fetch...');
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    initialState = await getInitialStateClient();
+  }
 
   let composeEnhancers = compose;
   if (!isPackaged) {
-    const { composeWithDevTools } = require('remote-redux-devtools'); // eslint-disable-line global-require
-    composeEnhancers = composeWithDevTools({
-      realtime: true,
-      trace: true,
-      name: `renderer webContentsId=${remote.getCurrentWebContents().id}`,
-      port: 8000,
-    });
+    // const { composeWithDevTools } = require('remote-redux-devtools'); // eslint-disable-line global-require
+    // composeEnhancers = composeWithDevTools({
+    //   realtime: true,
+    //   trace: true,
+    //   name: `renderer webContentsId=${remote.getCurrentWebContents().id}`,
+    //   port: 8000,
+    // });
+    composeEnhancers = compose;
   }
 
   const middlewares = compact([

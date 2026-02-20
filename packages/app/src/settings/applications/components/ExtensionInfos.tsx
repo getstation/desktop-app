@@ -71,7 +71,6 @@ class ExtensionInfos extends React.PureComponent<Props, State> {
     this.updateWording(this.props);
   }
 
-  // tslint:disable-next-line:function-name
   UNSAFE_componentWillReceiveProps(nextProps: Props) {
     this.updateWording(nextProps);
   }

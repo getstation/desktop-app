@@ -9,7 +9,6 @@ import { CLOSE_CURRENT_TAB, ignoreForBackHistory, closeTab, AfterCloseTabNavigat
 import { navigateToApplicationTab } from '../../applications/duck';
 import { takeEveryWitness, callService, tryCatch } from '../../utils/sagas';
 import { getFocusedTabId } from '../../app/selectors';
-import { BrowserXAppWorker } from '../../app-worker';
 import { StationTabImmutable } from '../../tabs/types';
 import { observe } from '../../utils/sagas/observe';
 
@@ -62,11 +61,7 @@ function* navigateToPreviousTabFromApplicationHome(tab: StationTabImmutable): Sa
   }
 }
 
-function* closeCurrentTab(via: 'click' | 'keyboard-shortcut'): SagaIterator {
-  const {
-    manifestProvider,
-  }: BrowserXAppWorker = yield getContext('bxApp');
-
+function* closeCurrentTab(_via: 'click' | 'keyboard-shortcut'): SagaIterator {
   const windowClosed = yield call(closeWindowIfNotMain);
 
   if (windowClosed) return;

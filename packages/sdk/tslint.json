@@ -1,9 +1,0 @@
-{
-  "extends": [
-    "tslint-config-station"
-  ],
-  "rules": {
-    "jsx-no-multiline-js": false,
-    "import-blacklist": false
-  }
-}

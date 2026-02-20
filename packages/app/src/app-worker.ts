@@ -1,6 +1,5 @@
 // It is used as a global to know that we are in the worker process
 process.worker = true;
-// tslint:disable:no-import-side-effect
 import './dotenv';
 import { ipcRenderer } from 'electron';
 import * as remote from '@electron/remote';
@@ -284,7 +283,6 @@ export class BrowserXAppWorker {
 
   initContextMenu() {
     const handleMenuItemClick = this.handleMenuItemClick.bind(this);
-    /* tslint:disable-next-line no-this-assignment */
     const { store } = this;
 
     services.tabWebContents.addGlobalObserver(observer({

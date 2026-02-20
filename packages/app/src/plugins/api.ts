@@ -2,7 +2,6 @@ import { SDK } from '@getstation/sdk';
 import { evolve } from 'ramda';
 import { Observable } from 'rxjs';
 import { BxAppManifest } from '../applications/manifest-provider/bxAppManifest';
-import { service } from '../services/lib/decorator';
 
 import { Transformer } from '../utils/fp';
 import { SDKConsumer } from './SDKProvider';
@@ -60,7 +59,7 @@ export const getServiceRuntime = async (manifest: BxAppManifest): Promise<Servic
  * a dummy runtime that does nothing.
  * FIXME migrate this to use manifest
  */
-export const getServiceRuntimeRenderer = async (serviceId?: string): Promise<ServiceRuntime | void> => {
+export const getServiceRuntimeRenderer = async (_serviceId?: string): Promise<ServiceRuntime | void> => {
   return;
   /*if (!manifest || !manifest.main) return;
 

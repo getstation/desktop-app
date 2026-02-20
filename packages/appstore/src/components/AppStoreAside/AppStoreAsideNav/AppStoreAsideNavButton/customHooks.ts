@@ -14,12 +14,12 @@ export const useAppStoreAsideNavButtonOnClick = () => {
   return React.useCallback(async () => {
     await Promise.all([
       setSearchString({
-        variables: { searchString: '', searchStringAfterEnterPress: '', isEnterPressed: false },
+        variables: { searchString: '', searchStringAfterEnterPress: '', isEnterPressed: false },
       }),
       setCustomAppRequestMode({
         variables: { appRequestIsOpen: false, currentMode: '' },
       }),
-      setBurgerStatus({ variables: { isBurgerOpen: false } }),
+      setBurgerStatus({ variables: { isBurgerOpen: false } }),
     ]);
   }, [setSearchString, setCustomAppRequestMode, setBurgerStatus]);
 };

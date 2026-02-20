@@ -141,7 +141,7 @@ export function* focusActiveTab({ applicationId, tabId }: SetActiveTabAction) {
  * successively.
  * Only the `installContext` is kept between the previous and the new application.
  */
-export function* onResetApplication({ applicationId, via }: ResetApplicationAction) {
+export function* onResetApplication({ applicationId }: ResetApplicationAction) {
   yield put(updateUI('confirmResetApplicationModal', 'isVisible', false));
 
   const application: ApplicationImmutable = yield select(getApplicationById, applicationId);
@@ -187,7 +187,7 @@ function* sagaNavigateToApplicationTabAutomatically({ tabId, via, silent }: Navi
   return yield put(navigateToApplicationTab(applicationId, tabId, via, silent));
 }
 
-function* sagaChangeSelectedApp({ applicationId, via, markAsActiveTab }: ChangeSelectedAppAction): SagaIterator {
+function* sagaChangeSelectedApp({ applicationId, markAsActiveTab }: ChangeSelectedAppAction): SagaIterator {
   const tabs = yield select(getTabsForApplication, applicationId);
   if (tabs.size === 1) {
     const tabId = getTabId(tabs.first());
@@ -209,7 +209,7 @@ function* sagaChangeSelectedApp({ applicationId, via, markAsActiveTab }: ChangeS
   }
 }
 
-export default function* main(bxApp: BrowserXAppWorker) {
+export default function* main() {
   yield all([
     fork(watchLifecyleActions),
     takeEveryWitness([ZOOM_IN, ZOOM_OUT, RESET_ZOOM], interceptZoomActions),

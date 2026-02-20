@@ -13,7 +13,7 @@ function* handleAppRequest(request: SubmitAppRequestAction): SagaIterator {
   if (request.visibility === Visibility.Public) {
     yield put(setApiResponse(ApiResponse.Done));
   } else {
-    const { type, ...appRequestData } = request;
+    const { ...appRequestData } = request;
 
     const applicationRecipe = {
       name: appRequestData.name,

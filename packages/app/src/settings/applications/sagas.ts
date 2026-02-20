@@ -1,5 +1,5 @@
 import { SagaIterator } from 'redux-saga';
-import { all, call, put } from 'redux-saga/effects';
+import { all, put } from 'redux-saga/effects';
 // @ts-ignore: no declaration file
 import { updateUI } from 'redux-ui/transpiled/action-reducer';
 

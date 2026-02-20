@@ -1,27 +1,17 @@
-import * as React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withNotes } from '@storybook/addon-notes';
-import { withKnobs, text } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
-import { action } from '@storybook/addon-actions';
-import centered from '@storybook/addon-centered';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import Search from './Search';
 
-const story = storiesOf('Common | Search', module)
-  .addDecorator(withNotes)
-  .addDecorator(withKnobs)
-  .addDecorator(centered);
+const meta: Meta<typeof Search> = {
+  title: 'Common/Search/Search',
+  component: Search,
+  args: {
+    query: 'notion',
+    onQueryChange: () => undefined,
+  },
+};
 
-story
-.add(
-  'Search',
-  withInfo({ text: '' })(
-    withNotes('')(
-      () => (
-        <Search
-          query={text('query', 'notion')}
-          onQueryChange={action('onQueryChange')}
-        />
-      )
-    )));
+export default meta;
+
+type Story = StoryObj<typeof Search>;
+
+export const Default: Story = {};

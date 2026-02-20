@@ -20,10 +20,7 @@ import { setCursorIcon } from '../ui/duck';
 import { getCursorIcon } from '../ui/selectors';
 import { callService, takeEveryWitness, tryCatch } from '../utils/sagas';
 import { ApplicationItem, URLRouterAction, URLRouterActionAndDestination } from './types';
-import { BrowserWindowService } from '../services/services/browser-window/interface';
 import services from '../services/servicesManager';
-import { RPC } from '../services/lib/types';
-import { service } from '../services/lib/decorator';
 
 export type DispatchUrlOptions = {
   afterFollowingRedirects?: boolean,
@@ -101,10 +98,9 @@ function* triggerCorrespondingAction(
 ) {
   if (process.env.NODE_ENV === 'test') return;
 
-  let originApplicationManifestURL = null;
   if (origin && origin.applicationId) {
     const application = yield select(getApplicationById, origin.applicationId);
-    originApplicationManifestURL = getApplicationManifestURL(application);
+    getApplicationManifestURL(application);
   }
 
   switch (action) {
@@ -113,7 +109,7 @@ function* triggerCorrespondingAction(
       break;
     case URLRouterAction.DEFAULT_BROWSER:
       if (!options || !options.loadInBackground) {
-        remote.shell.openExternal(url)
+        remote.shell.openExternal(url);
       }
       else {
         services.browserWindow.getFocusedWindow()
@@ -122,10 +118,10 @@ function* triggerCorrespondingAction(
               lastFocusedWindow.setAlwaysOnTop(true)
                 .then(() => remote.shell.openExternal(url)
                   .then(() => setTimeout(() => {
-                      lastFocusedWindow.show();
-                      lastFocusedWindow.setAlwaysOnTop(false);
-                    }, 
-                    100) //vk: I can't explain why, but without this timeout, open in background doesn't work
+                    lastFocusedWindow.show();
+                    lastFocusedWindow.setAlwaysOnTop(false);
+                  },
+                    100) // vk: I can't explain why, but without this timeout, open in background doesn't work
                   )
                 );
             }

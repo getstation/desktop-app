@@ -9,10 +9,8 @@ const originalHandleKey = Mousetrap.prototype.handleKey;
 const createHandleKey = (getKeyAboveTab: () => string) =>
   function (this: any, character: string, modifiers: any, e: any) {
     if (e.key === getKeyAboveTab()) {
-      /* tslint:disable-next-line no-invalid-this */
       return originalHandleKey.call(this, 'KeyAboveTab', modifiers, e);
     }
-    /* tslint:disable-next-line no-invalid-this */
     return originalHandleKey.call(this, character, modifiers, e);
   };
 
@@ -83,7 +81,6 @@ export default class KeyboardShortcuts extends React.PureComponent<Props, State>
     Mousetrap.prototype.handleKey = createHandleKey(() => this.props.keyAboveTab);
   }
 
-  // tslint:disable-next-line:function-name
   UNSAFE_componentWillUnmount() {
     this.unwatchCtrl();
     this.unwatchMod();
