@@ -83,9 +83,32 @@ const mutateAlias = config => {
 };
 
 /**
+ * electron-webpack injects every `@babel/plugin-*` devDependency into
+ * babel-loader without options. Recent Babel versions refuse the decorators
+ * plugin without an explicit `version`/`legacy` option, so pass the same
+ * options as in .babelrc.
+ * @param config {webpack.Configuration}
+ */
+const mutateFixBabelDecorators = config => {
+  const decorators = require('@babel/plugin-proposal-decorators').default;
+
+  config.module.rules.forEach(rule => {
+    const uses = [].concat(rule.use || rule.loader || []);
+    uses.forEach(use => {
+      if (!use || use.loader !== 'babel-loader' || !use.options) return;
+      use.options.plugins = (use.options.plugins || []).map(plugin => {
+        const fn = Array.isArray(plugin) ? plugin[0] : plugin;
+        return fn === decorators ? [decorators, { legacy: true }] : plugin;
+      });
+    });
+  });
+};
+
+/**
  * @param config {webpack.Configuration}
  */
 const mutateWebpackConfig = config => {
+  mutateFixBabelDecorators(config);
   mutateStats(config);
   mutateFixTsLoader(config);
   mutateFixTerser(config);
