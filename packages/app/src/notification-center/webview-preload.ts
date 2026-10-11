@@ -61,7 +61,7 @@ export class BxNotification extends EventTarget('click', 'error', 'close', 'show
 
     Object.keys(properties).forEach(key => {
       Object.defineProperty(this, key, {
-        value: properties[key],
+        value: (properties as Record<string, any>)[key],
         writable: false,
       });
     });

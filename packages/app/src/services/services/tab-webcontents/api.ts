@@ -78,8 +78,8 @@ export const addOnNavigateObserver = (wc: Electron.WebContents, obs: RPC.Observe
     );
     return allEvents.subscribe(() => {
       obs.onNavigate!({
-        canGoBack: wc.canGoBack(),
-        canGoForward: wc.canGoForward(),
+        canGoBack: wc.navigationHistory.canGoBack(),
+        canGoForward: wc.navigationHistory.canGoForward(),
       });
     });
   }

@@ -172,7 +172,7 @@ export default class BangList extends React.PureComponent<Props, State> {
       collapseSections: this.props.items.reduce((state, item) => {
         state[item.sectionName] = { collapsed: true };
         return state;
-      }, {}),
+      }, {} as CollapseSections),
     });
   }
 
@@ -195,7 +195,7 @@ export default class BangList extends React.PureComponent<Props, State> {
         collapseSectionsNewState[item.sectionName] = { collapsed: true };
         return collapseSectionsNewState;
       },
-      {},
+      {} as CollapseSections,
     );
 
     this.updateCollapsedSections(nextCollapseSectionsState);

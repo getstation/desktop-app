@@ -68,9 +68,9 @@ const graphQLResolverProxyHandler = (dynamicFetchFn: () => Promise<BxResource>):
     get: (obj, prop) => {
       if (!(prop in obj)) {
         // We can have an async getter here because it is used by GraphQL resolvers
-        return promiseOnce(newObj => Object.assign(obj, newObj)).then(() => obj[prop]);
+        return promiseOnce(newObj => Object.assign(obj, newObj)).then(() => (obj as any)[prop]);
       }
-      return obj[prop];
+      return (obj as any)[prop];
     },
   };
 };

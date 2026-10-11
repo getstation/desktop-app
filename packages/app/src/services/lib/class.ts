@@ -150,6 +150,7 @@ export class ServicePeerHandler {
     const requestMethod = getRequestMethod(peer, methodInfos, this);
     d('defining a new request', methodInfos.type, methodInfos.getId());
     Object.defineProperty(srvc, methodName, {
+      // tslint:disable-next-line:only-arrow-functions
       value: function (this: ServiceBase, ...params: any[]) {
         try {
           return requestMethod(...params);

@@ -48,5 +48,5 @@ export const observer = <T>(object: T, prefix?: string): RPC.Node<T> & ServiceBa
 };
 
 export const serviceFullURI = (srvc: ServiceBase) => {
-  return `${srvc.constructor[namespace]}:${srvc.uuid}`;
+  return `${(srvc.constructor as any)[namespace]}:${srvc.uuid}`;
 };

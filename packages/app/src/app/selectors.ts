@@ -128,7 +128,7 @@ export const getKeyAboveTab = (state: StationState): string => {
   const windowsCommonKeymap = {};
   const linuxCommonKeymap = {};
 
-  const keymap = { ...appleCommonKeymap, ...windowsCommonKeymap, ...linuxCommonKeymap };
+  const keymap: Record<string, string> = { ...appleCommonKeymap, ...windowsCommonKeymap, ...linuxCommonKeymap };
   return keymap[getKeyboardLayout(state)] || '';
 };
 

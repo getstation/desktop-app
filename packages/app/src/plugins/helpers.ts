@@ -6,7 +6,7 @@ import { JAVASCRIPT_INJECTIONS } from '../applications/manifest-provider/const';
 export const injectJS = memoize(
   async (legacyServiceId: Maybe<string>): Promise<string | undefined> => {
     if (!legacyServiceId) return;
-    const scriptsFiles: string[] = JAVASCRIPT_INJECTIONS[legacyServiceId];
+    const scriptsFiles: string[] = (JAVASCRIPT_INJECTIONS as Record<string, string[]>)[legacyServiceId];
 
     if (scriptsFiles) {
       return scriptsFiles.map(

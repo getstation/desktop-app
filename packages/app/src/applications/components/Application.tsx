@@ -23,7 +23,7 @@ interface OwnProps {
   getIconRef?: boolean,
 }
 
-const ApplicationActionButtonIconMap = {
+const ApplicationActionButtonIconMap: Record<ApplicationActionType, IconSymbol> = {
   [ApplicationActionType.Add]: IconSymbol.PLUS,
   [ApplicationActionType.Settings]: IconSymbol.COG,
   [ApplicationActionType.Remove]: IconSymbol.CROSS,
@@ -143,7 +143,7 @@ class ApplicationImpl extends React.PureComponent<Props, {}> {
 
         {actionType &&
           <Icon
-            symbolId={ApplicationActionButtonIconMap[actionType]}
+            symbolId={ApplicationActionButtonIconMap[actionType as ApplicationActionType]}
             size={24}
             className={classes!.action}
             onClick={this.handleAddApplication}

@@ -1,6 +1,6 @@
-@import "../common/variables";
-@import "../base/mixins";
-@import "../common/typography";
+@use "../common/variables";
+@use "../base/mixins";
+@use "../common/typography";
 
 // Subdock
 // —————————————————————————————————
@@ -16,10 +16,10 @@ $favicon-size: 16px;
   border-left: 2px solid transparent;
   display: none;
   flex-direction: column;
-  left: $app-size;
+  left: variables.$app-size;
   overflow: hidden;
   width: $subdock-size;
-  z-index: $zindex-huge;
+  z-index: variables.$zindex-huge;
 
   //== Variants
   &.l-subdock--visible { display: flex }
@@ -31,7 +31,7 @@ $favicon-size: 16px;
   display: flex;
   flex: 0 0 auto;
   min-height: 69px;
-  padding: 17px ($gutter * 2) 18px;
+  padding: 17px (variables.$gutter * 2) 18px;
   position: relative;
 
   //== Children
@@ -40,19 +40,19 @@ $favicon-size: 16px;
     flex: 1 0 100%;
     display: block;
     line-height: 1.1em;
-    @include font(14px, 500);
+    @include typography.font(14px, 500);
   }
   small {
     color: rgba(#fff, 0.6);
     display: block;
     flex: 1 0 100%;
-    @include font(11px);
+    @include typography.font(11px);
   }
   strong + small { margin-top: 5px }
 
   //== Variants
   &.l-subdock__head--active {
-    strong { @include font(14px, 600) }
+    strong { @include typography.font(14px, 600) }
   }
   .l-subdock--notification & {
     align-items: center;
@@ -80,7 +80,7 @@ $favicon-size: 16px;
 .l-subdock__actions {
   display: flex;
   flex: 0 0 auto;
-  margin-left: $gutter;
+  margin-left: variables.$gutter;
 }
 .l-subdock__actions--active {
   opacity: .3 !important;
@@ -89,7 +89,7 @@ $favicon-size: 16px;
   background-position: center;
   background-repeat: no-repeat;
   border: 1px solid rgba(#fff, 0.3);
-  border-radius: $border-radius;
+  border-radius: variables.$border-radius;
   flex: 0 0 auto;
   height: 24px;
 
@@ -100,7 +100,7 @@ $favicon-size: 16px;
   }
 
   //== Variants
-  & + .l-subdock__btn { margin-left: $gutter }
+  & + .l-subdock__btn { margin-left: variables.$gutter }
   &.l-subdock__btn--square {
     padding: 0;
     width: 24px;
@@ -110,7 +110,7 @@ $favicon-size: 16px;
     color: #fff;
     line-height: 22px;
     padding: 0 10px 0 28px;
-    @include font(11px, 600)
+    @include typography.font(11px, 600)
   }
 }
 .l-subdock__panels {
@@ -133,10 +133,10 @@ $favicon-size: 16px;
 }
 .l-subdock__content {
   flex: 1 1 auto;
-  padding: 0 0 0 ($gutter * 2);
+  padding: 0 0 0 (variables.$gutter * 2);
   width: 100%;
   height: calc(100% - 60px);
-  @include scrolling();
+  @include mixins.scrolling();
 }
 .l-subdock__subtitle {
   align-items: center;
@@ -144,14 +144,14 @@ $favicon-size: 16px;
   display: flex;
   height: 40px;
   line-height: 40px;
-  margin-left: -($gutter * 2);
-  padding: 0 ($gutter * 2);
+  margin-left: -(variables.$gutter * 2);
+  padding: 0 (variables.$gutter * 2);
 
   //== Children
   img {
     flex: 0 0 auto;
-    margin-right: $gutter;
-    @include avatar(20px, 2px);
+    margin-right: variables.$gutter;
+    @include mixins.avatar(20px, 2px);
   }
   div {
     display: flex;
@@ -160,11 +160,11 @@ $favicon-size: 16px;
   }
   strong {
     color: #fff;
-    @include font(11px, 600);
+    @include typography.font(11px, 600);
   }
   small {
     color: rgba(#fff, 0.4);
-    @include font(11px);
+    @include typography.font(11px);
   }
 }
 
@@ -177,7 +177,7 @@ $favicon-size: 16px;
   height: 16px;
   flex: 0 0 auto;
   opacity: 0.4;
-  margin-right: $gutter;
+  margin-right: variables.$gutter;
   width: 16px;
 
   &:hover { opacity: 1 }

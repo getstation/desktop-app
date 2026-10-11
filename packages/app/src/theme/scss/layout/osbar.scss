@@ -1,12 +1,12 @@
-@import "../common/variables";
-@import "../base/mixins";
-@import "../common/typography";
+@use "../common/variables";
+@use "../base/mixins";
+@use "../common/typography";
 // OS Bar
 // —————————————————————————————————
 
 .l-osbar {
   align-items: center;
-  flex: 0 0 $osbar-height;
+  flex: 0 0 variables.$osbar-height;
   display: flex;
 
   // enable window dragging
@@ -27,7 +27,7 @@
   background-position: center;
   background-repeat: no-repeat;
   border: 1px solid rgba(#fff, 0.3);
-  border-radius: $border-radius;
+  border-radius: variables.$border-radius;
   flex: 0 0 auto;
   height: 24px;
   opacity: 0.8;
@@ -40,7 +40,7 @@
   }
 
   //== Variants
-  & + .l-subdock__btn { margin-left: $gutter }
+  & + .l-subdock__btn { margin-left: variables.$gutter }
   &.l-osbar__btn--square {
     padding: 0;
     width: 24px;
@@ -50,6 +50,6 @@
     color: #fff;
     line-height: 22px;
     padding: 0 10px 0 16px;
-    @include font(14px, 600)
+    @include typography.font(14px, 600)
   }
 }

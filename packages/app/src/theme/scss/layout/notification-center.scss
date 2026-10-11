@@ -1,6 +1,6 @@
-@import "../common/variables";
-@import "../base/mixins";
-@import "../common/typography";
+@use "../common/variables";
+@use "../base/mixins";
+@use "../common/typography";
 
 // Notification Center
 // —————————————————————————————————
@@ -14,8 +14,8 @@
   flex-direction: column;
   width: 280px;
   color: white;
-  @include coverer-fixed(0, $app-size, 0, 0);
-  z-index: $zindex-large;
+  @include mixins.coverer-fixed(0, variables.$app-size, 0, 0);
+  z-index: variables.$zindex-large;
   transform: translateX(-280px);
   transition: 600ms cubic-bezier(0.36, 0.26, 0, 1.01);
 }
@@ -57,13 +57,13 @@
   padding: 0;
   background-color: rgb(1, 29, 53);
   border-radius: 5px;
-  z-index: $zindex-small;
+  z-index: variables.$zindex-small;
 }
 
 .l-notification-center__snooze-item {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin-left: ($gutter * 2);
-  margin-right: ($gutter * 2);
+  margin-left: (variables.$gutter * 2);
+  margin-right: (variables.$gutter * 2);
 
   &:last-of-type {
     border-bottom: 0;
@@ -72,7 +72,7 @@
 
 .l-notification-center__snooze-panel-text {
   font-weight: normal;
-  margin: $gutter $gutter 0 $gutter;
+  margin: variables.$gutter variables.$gutter 0 variables.$gutter;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.5);
 }
@@ -94,7 +94,7 @@
 .l-notification-center__body {
   position: relative;
   height: calc(100% - 109px);
-  @include scrolling();
+  @include mixins.scrolling();
 }
 
 .l-notification-center__empty {

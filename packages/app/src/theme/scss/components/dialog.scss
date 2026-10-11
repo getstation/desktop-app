@@ -1,6 +1,6 @@
-@import "../common/variables";
-@import "../base/mixins";
-@import "../common/typography";
+@use "../common/variables";
+@use "../base/mixins";
+@use "../common/typography";
 
 // Dialogs
 // —————————————————————————————————
@@ -9,5 +9,5 @@
   position: fixed;
   width: 100%;
   bottom: 20px;
-  z-index: $zindex-ultime;
+  z-index: variables.$zindex-ultime;
 }

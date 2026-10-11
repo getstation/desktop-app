@@ -52,7 +52,7 @@ export default class ContextMenu extends EventEmitter {
 
     const editFlags = props.editFlags;
     const hasText = props.selectionText.trim().length > 0;
-    const can = (type: string) => editFlags[`can${type}`] && hasText;
+    const can = (type: string) => (editFlags as Record<string, any>)[`can${type}`] && hasText;
 
     let menuTpl: MenuItemConstructorOptions[] = [
       {

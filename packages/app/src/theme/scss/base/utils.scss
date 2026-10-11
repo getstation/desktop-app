@@ -1,4 +1,4 @@
-@import "../base/mixins";
+@use "../base/mixins";
 // Utils
 // —————————————————————————————————
 
@@ -114,4 +114,4 @@
 .u-4-6 { width: calc((100% / 6) * 4) }
 .u-5-6 { width: calc((100% / 6) * 5) }
 
-.u-scroll { @include scrolling() }
+.u-scroll { @include mixins.scrolling() }

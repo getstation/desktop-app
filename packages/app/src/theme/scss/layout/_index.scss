@@ -1,12 +1,12 @@
 // Layout imports
 // —————————————————————————————————
 
-@import "base";
+@use "base";
 
-@import "dock";
-@import "empty";
-@import "osbar";
-@import "notification-center";
-@import "subdock";
-@import "subview";
-@import "webview";
+@use "dock";
+@use "empty";
+@use "osbar";
+@use "notification-center";
+@use "subdock";
+@use "subview";
+@use "webview";

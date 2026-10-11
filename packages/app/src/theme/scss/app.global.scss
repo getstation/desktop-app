@@ -1,7 +1,7 @@
 // Imports
 // —————————————————————————————————
 
-@import "base/_index";
-@import "common/_index";
-@import "components/_index";
-@import "layout/_index";
+@use "base/_index" as base;
+@use "common/_index" as common;
+@use "components/_index" as components;
+@use "layout/_index" as layout;

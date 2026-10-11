@@ -36,7 +36,7 @@ function getSearchResults(loadingCategories: Set<string>,
   const allCategories = resultsGroupedByCat.keySeq().toSet().union(Immutable.Set(loadingCategories));
   const sectionsMap: Map<string, SearchSection> = new Map();
   // @ts-ignore: incomplete Immutable declarations
-  for (const category: string of allCategories) {
+  for (const category of allCategories as Iterable<string>) {
     sectionsMap.set(category, {
       sectionName: category,
       loading: loadingCategories.has(category),

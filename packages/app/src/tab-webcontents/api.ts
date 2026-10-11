@@ -70,6 +70,6 @@ export function tabWebcontentsToKill(
   return mountedTabs.subtract(whiteListTabs);
 }
 
-export const hasEmptyHistory = (wc: Electron.WebContents) => !wc.canGoBack();
+export const hasEmptyHistory = (wc: Electron.WebContents) => !wc.navigationHistory.canGoBack();
 
 export const removeHashFromURL = (url: string) => url.split('#')[0];

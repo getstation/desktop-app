@@ -226,7 +226,7 @@ export function callService<
     M extends keyof GlobalServices[K],
     P extends Parameters<IsFunctionWithArgs<GlobalServices[K][M]>>,
   >(service: K, method: M, ...params: P) {
-  return call([services[service], services[service][method as string]], ...params);
+  return call([services[service], (services[service] as Record<string, any>)[method as string]], ...params);
 }
 
 type NodeWithObserver<T extends RPC.ObserverNode<T>, M extends string> = {

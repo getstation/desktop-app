@@ -1,11 +1,11 @@
-@import "../common/variables";
-@import "../base/mixins";
-@import "../common/typography";
+@use "../common/variables";
+@use "../base/mixins";
+@use "../common/typography";
 
 .c-toaster__wrapper {
-  bottom: $gutter;
+  bottom: variables.$gutter;
   position: fixed;
-  right: $gutter;
+  right: variables.$gutter;
   z-index: 999;
 }
 .c-toaster {
@@ -13,10 +13,10 @@
   p {
     color: rgba(#000, 0.8);
     line-height: 1.4em;
-    @include font(11px)
+    @include typography.font(11px)
   }
   p a {
-    @include font(11px, 600);
+    @include typography.font(11px, 600);
   }
 }
 .c-toaster__btn {
@@ -28,8 +28,8 @@
   flex: 0 0 50%;
   line-height: 1.1em;
   outline: none;
-  padding: $gutter;
+  padding: variables.$gutter;
   text-align: center;
   cursor: pointer;
-  @include font(11px, 600);
+  @include typography.font(11px, 600);
 }

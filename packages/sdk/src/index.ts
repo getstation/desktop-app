@@ -96,12 +96,12 @@ export default function sdk(options: SDKOptions, provider: Provider): SDK {
     register(consumer: Consumers) {
       provider.register(consumer);
       // tslint:disable-next-line:no-invalid-this
-      this[consumer.namespace] = consumer;
+      (this as Record<string, any>)[consumer.namespace] = consumer;
     },
     unregister(consumer: Consumers) {
       provider.unregister(consumer);
       // tslint:disable-next-line:no-invalid-this
-      delete this[consumer.namespace];
+      delete (this as Record<string, any>)[consumer.namespace];
     },
     close() {
       provider.unregister(search);

@@ -1,14 +1,14 @@
-@import "../base/mixins";
-@import "../common/variables";
+@use "../base/mixins";
+@use "../common/variables";
 // Animation
 // —————————————————————————————————
 
 //== Subview
-@include keyframes(fadeIn) {
+@include mixins.keyframes(fadeIn) {
   0% { opacity: 0 }
   100% { opacity: 1 }
 }
-@include keyframes(showSubViewContent) {
+@include mixins.keyframes(showSubViewContent) {
   0% {
     margin-top: 100%;
     opacity: 0;
@@ -22,7 +22,7 @@
 }
 
 //== Loader
-@include keyframes(loader) {
+@include mixins.keyframes(loader) {
   0% {
     opacity: 0;
     transform: scale(0.6);
@@ -32,21 +32,21 @@
 }
 
 //== Header color picker
-@include keyframes(pulse) {
+@include mixins.keyframes(pulse) {
   0%, 20% { transform: scale(1) }
   10% { transform: scale(1.04) }
 }
 
 
 //== Modal loader
-@include keyframes(modalLoader) {
+@include mixins.keyframes(modalLoader) {
   from { transform: rotate(0) }
   to { transform: rotate(360deg) }
 }
 
 
 //== Grid loader
-@include keyframes(gridLoading) {
+@include mixins.keyframes(gridLoading) {
   from { transform: rotate(0) }
   to { transform: rotate(360deg) }
 }

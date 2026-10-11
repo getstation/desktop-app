@@ -1,3 +1,7 @@
+@use "../base/mixins";
+@use "../common/typography";
+@use "../common/variables";
+
 
 
 .l-empty {
@@ -8,11 +12,11 @@
   right: 0;
   top: 0;
   height: 100%;
-  @include scrolling();
+  @include mixins.scrolling();
 }
 .l-empty__content {
   margin: auto;
-  padding: 0 ($gutter * 2);
+  padding: 0 (variables.$gutter * 2);
   text-align: center;
 
   //== Children
@@ -20,11 +24,11 @@
     color: #fff;
     display: block;
     margin-bottom: 5px;
-    @include font(13px, 600);
+    @include typography.font(13px, 600);
   }
   p {
     color: rgba(#fff, 0.4);
     line-height: 1.5em;
-    @include font(12px);
+    @include typography.font(12px);
   }
 }

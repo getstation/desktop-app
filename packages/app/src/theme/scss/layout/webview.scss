@@ -1,6 +1,6 @@
-@import "../base/mixins";
-@import "../common/variables";
-@import "../common/typography";
+@use "../base/mixins";
+@use "../common/variables";
+@use "../common/typography";
 // Webview
 // —————————————————————————————————
 
@@ -21,7 +21,7 @@
   left: 0;
   width: 100%;
   height: 3px;
-  z-index: $zindex-ultime;
+  z-index: variables.$zindex-ultime;
   opacity: 0;
   transition: 700ms ease-in-out all;
 }
@@ -41,13 +41,13 @@
 .l-webview__tab {
   overflow: hidden;
   z-index: 2;
-  @include coverer();
+  @include mixins.coverer();
 }
 
 .l-webview__tab--visible {
   background-color: #fff;
-  z-index: $zindex-ultra;
-  @include scrolling();
+  z-index: variables.$zindex-ultra;
+  @include mixins.scrolling();
 }
 
 .l-webview__tab > div,
@@ -71,8 +71,8 @@
   line-height: 1.6em;
   text-align: center;
   z-index: 1;
-  @include coverer();
-  @include font(14px);
+  @include mixins.coverer();
+  @include typography.font(14px);
 
   span {
     margin: auto
@@ -80,7 +80,7 @@
 
   a {
     color: #fff;
-    @include font(14px, 600);
+    @include typography.font(14px, 600);
   }
 }
 

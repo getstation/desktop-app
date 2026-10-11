@@ -40,7 +40,7 @@ export function allApplicationsDictionary(): Record<string, Manifest> {
   return ids.reduce((acc, id) => {
     acc[id] = getApplicationById(id);
     return acc;
-  }, {});
+  }, {} as Record<string, Manifest>);
 }
 
 export function listMostPopularApplications(): PopularApps {

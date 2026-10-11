@@ -95,7 +95,7 @@ export default class OnePasswordForm extends React.PureComponent<Props & Overrid
       .reduce((result, [k, v]) => {
         result[k] = v;
         return result;
-      }, {});
+      }, {} as Record<string, any>);
   }
 
   // tslint:disable-next-line:function-name

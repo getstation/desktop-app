@@ -233,11 +233,13 @@ class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
   componentDidMount() {
     const container = ReactDOM.findDOMNode(this.ref);
 
+    const props = this.props as Record<string, any>;
+
     let propString = '';
     Object.keys(this.props).forEach((propName) => {
       // Waiting for a fix https://github.com/electron/electron/issues/9618
-      if (this.props[propName] !== undefined && typeof this.props[propName] !== 'function') {
-        propString += getPropString(propName, this.props[propName]);
+      if (props[propName] !== undefined && typeof props[propName] !== 'function') {
+        propString += getPropString(propName, props[propName]);
       }
     });
     if (this.props.className) {
@@ -265,8 +267,8 @@ class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
       this.ready = true;
       events.forEach((event) => {
         const propName = camelCase(`on-${event}`);
-        if (this.props[propName]) {
-          this.view.addEventListener(event, this.props[propName], false);
+        if (props[propName]) {
+          this.view.addEventListener(event, props[propName], false);
         }
       });
       if (this.props.onDidAttach) this.props.onDidAttach(...attachArgs);
@@ -279,12 +281,13 @@ class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
       this.view.focus();
     });
 
+    const self = this as Record<string, any>;
     methods.forEach((method) => {
-      if (this[method]) return;
-      this[method] = (...args: any[]) => {
+      if (self[method]) return;
+      self[method] = (...args: any[]) => {
         if (!this.ready) return;
         try {
-          return this.view[method](...args);
+          return (this.view as Record<string, any>)[method](...args);
         } catch (e) {
           logger.notify(e);
         }
@@ -338,10 +341,13 @@ class ElectronWebview extends React.Component<ElectronWebviewProps, {}> {
   }
 
   componentDidUpdate(prevProps: ElectronWebviewProps) {
+    const props = this.props as Record<string, any>;
+    const previousProps = prevProps as Record<string, any>;
+    const self = this as Record<string, any>;
     Object.keys(changableProps).forEach((propName) => {
-      const propValue = this.props[propName];
-      if (propValue !== prevProps[propName]) {
-        this[changableProps[propName]](propValue);
+      const propValue = props[propName];
+      if (propValue !== previousProps[propName]) {
+        self[(changableProps as Record<string, any>)[propName]](propValue);
       }
     });
   }

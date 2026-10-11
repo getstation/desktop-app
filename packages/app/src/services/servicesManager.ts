@@ -12,7 +12,7 @@ function mapObject(...args: any[]): any {
   const services: GlobalServices = {} as any;
   const [initializer, handler] = args;
   for (const key of Object.keys(initializer)) {
-    services[key] = handler ? initializer[key](handler) : initializer[key]();
+    (services as Record<string, any>)[key] = handler ? initializer[key](handler) : initializer[key]();
   }
   return services;
 }

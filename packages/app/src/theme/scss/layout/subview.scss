@@ -1,21 +1,23 @@
-@import "../common/variables";
-@import "../base/mixins";
-@import "../common/typography";
+@use "../common/variables";
+@use "../base/mixins";
+@use "../common/typography";
+@use "subdock";
+
 // Subview
 // —————————————————————————————————
 
 //== Variables
 $title-height: 36px;
-$favicon-size: 20px;
+subdock.$favicon-size: 20px;
 
 .l-subview {
   bottom: 0;
-  left: $app-size + ($gutter * 3);
+  left: variables.$app-size + (variables.$gutter * 3);
   position: fixed;
   right: 0;
   top: 0;
   transform-origin: center bottom;
-  @include animation(fadeIn 300ms 1 ease-in-out);
+  @include mixins.animation(fadeIn 300ms 1 ease-in-out);
 
   //== Children
   .modal-content {
@@ -25,7 +27,7 @@ $favicon-size: 20px;
   }
   //== Variants
   &.l-subview--show {
-    z-index: $zindex-huge;
+    z-index: variables.$zindex-huge;
   }
   &.l-subview--fullscreen {
     bottom: 30px;
@@ -39,16 +41,16 @@ $favicon-size: 20px;
   line-height: $title-height;
   position: relative;
   text-align: center;
-  z-index: $zindex-medium;
-  @include font(12px, 600);
+  z-index: variables.$zindex-medium;
+  @include typography.font(12px, 600);
 }
 .l-subview__title__favicon {
   background-size: cover;
   display: inline-block;
-  margin-right: ($gutter * 0.5);
+  margin-right: (variables.$gutter * 0.5);
   position: relative;
   top: 6px;
-  @include avatar($favicon-size);
+  @include mixins.avatar(subdock.$favicon-size);
 }
 .l-subview__content {
   background-color: #fff;
@@ -56,9 +58,9 @@ $favicon-size: 20px;
   //border-radius: $border-radius $border-radius 0 0;
   flex: 1 1 auto;
   position: relative;
-  z-index: $zindex-medium;
-  @include animation(showSubViewContent 800ms 1 cubic-bezier(0.19, 1, 0.22, 1));
-  @include scrolling();
+  z-index: variables.$zindex-medium;
+  @include mixins.animation(showSubViewContent 800ms 1 cubic-bezier(0.19, 1, 0.22, 1));
+  @include mixins.scrolling();
 
   //== Children
   & > div,
@@ -68,31 +70,31 @@ $favicon-size: 20px;
   webview {
     position: relative;
     z-index: 2;
-    @include animation(fadeIn 1500ms 1 linear 800ms);
+    @include mixins.animation(fadeIn 1500ms 1 linear 800ms);
   }
 }
 .l-subview__overlay {
   background-color: rgba(#000, 0.8);
-  z-index: $zindex-small;
-  @include coverer();
+  z-index: variables.$zindex-small;
+  @include mixins.coverer();
 }
 .l-subview__reduce,
 .l-subview__copy_link,
 .l-subview__open {
   cursor: pointer;
-  margin-top: -($favicon-size * 0.5);
+  margin-top: -(subdock.$favicon-size * 0.5);
   position: absolute;
   top: 50%;
-  @include avatar($favicon-size, 0);
+  @include mixins.avatar(subdock.$favicon-size, 0);
 }
 .l-subview__reduce {
-  right: $gutter;
+  right: variables.$gutter;
 }
 .l-subview__open {
-  right: $gutter + $favicon-size + $gutter;
+  right: variables.$gutter + subdock.$favicon-size + variables.$gutter;
 }
 .l-subview__copy_link {
-  right: $gutter + $favicon-size + $gutter + $favicon-size + $gutter;
+  right: variables.$gutter + subdock.$favicon-size + variables.$gutter + subdock.$favicon-size + variables.$gutter;
 }
 .l-subview__reduce__border {
   opacity: 0.3;
@@ -107,12 +109,12 @@ $favicon-size: 20px;
 .l-subview__loading {
   display: flex;
   z-index: 1;
-  @include coverer();
+  @include mixins.coverer();
 
   //== Children
   span {
     color: rgba(#000, 0.5);
     margin: auto;
-    @include font(16px, 600);
+    @include typography.font(16px, 600);
   }
 }

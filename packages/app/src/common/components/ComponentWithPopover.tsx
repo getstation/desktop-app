@@ -72,7 +72,7 @@ export default class ComponentWithPopover extends React.PureComponent<Props, Sta
   getChild(indice: number) {
     const { children } = this.props;
     const { showPopper } = this.state;
-    const child = children![indice];
+    const child = (children as any)[indice];
 
     if (typeof child === 'function') {
       return child({

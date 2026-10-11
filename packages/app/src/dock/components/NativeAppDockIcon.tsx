@@ -142,7 +142,7 @@ export default class NativeAppDockIcon extends React.PureComponent<Props, State>
     if (active) {
       return (
         <g fill="none" fillRule="evenodd" mask={`url(#${this.maskId})`}>
-          <rect {...sizeProps[size!]} className={classes!.activeInner} />
+          <rect {...(sizeProps as Record<string, any>)[size!]} className={classes!.activeInner} />
         </g>
       );
     }
