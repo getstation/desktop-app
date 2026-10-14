@@ -59,7 +59,7 @@ jobs:
       - name: Package
         run: yarn workspace station-desktop-app exec cross-env NODE_ENV=production electron-builder --publish never
       - name: Attach artifacts to the release
-        run: ./scripts/upload-release-assets.sh "$RC_TAG"
+        run: bash scripts/upload-release-assets.sh "$RC_TAG"
 
   MacOs:
     needs: Prepare
@@ -88,7 +88,7 @@ jobs:
       - name: Package
         run: yarn workspace station-desktop-app exec cross-env NODE_ENV=production electron-builder --publish never
       - name: Attach artifacts to the release
-        run: ./scripts/upload-release-assets.sh "$RC_TAG"
+        run: bash scripts/upload-release-assets.sh "$RC_TAG"
 
   Windows:
     needs: Prepare
@@ -114,7 +114,7 @@ jobs:
         run: yarn workspace station-desktop-app exec cross-env NODE_ENV=production electron-builder --publish never
       - name: Attach artifacts to the release
         shell: bash
-        run: ./scripts/upload-release-assets.sh "$RC_TAG"
+        run: bash scripts/upload-release-assets.sh "$RC_TAG"
 
   # The build number identifies the candidate, so it is bumped only once every
   # platform has published its artifacts.
@@ -131,7 +131,7 @@ jobs:
       - name: Increment the build number
         run: |
           current=$(grep -m1 '"version"' package.json | sed -E 's/.*"version": "(.*)".*/\1/')
-          next=$(./scripts/increment_version.sh build "$current")
+          next=$(bash scripts/increment_version.sh build "$current")
           echo "$current -> $next"
           for manifest in package.json packages/app/package.json; do
             sed -i -E "0,/\"version\":/s/\"version\": \".*\"/\"version\": \"$next\"/" "$manifest"
