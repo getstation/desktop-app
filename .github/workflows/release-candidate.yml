@@ -1,11 +1,41 @@
 name: Release Candidate
 on:
-  push: 
-    tags:
-      - 'v*-b*'
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# One release candidate at a time: a newer commit on main supersedes the build in
+# flight, which would otherwise overwrite its assets in an undefined order.
+concurrency:
+  group: release-candidate
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+env:
+  RC_TAG: release-candidate
 
 jobs:
+  # The rolling release is (re)created once, before any platform uploads to it.
+  Prepare:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@master
+      - name: Recreate the Release Candidate release
+        run: |
+          gh release delete "$RC_TAG" --yes --cleanup-tag || true
+          gh release create "$RC_TAG" \
+            --target "$GITHUB_SHA" \
+            --title "Release Candidate" \
+            --prerelease \
+            --notes "Automated build of \`main\` (${GITHUB_SHA::7}), $(date -u '+%Y-%m-%d %H:%M UTC')."
+
   Linux:
+    needs: Prepare
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -17,12 +47,6 @@ jobs:
         with:
           node-version: "24"
           cache: "yarn"
-      # See https://github.com/nodejs/node-gyp/blob/main/docs/Force-npm-to-use-global-node-gyp.md
-      # https://github.com/nodejs/node-gyp/blob/main/docs/Updating-npm-bundled-node-gyp.md
-      # - name: Update node-gyp
-      #   run: |
-      #     npm install --global node-gyp@8.x
-      #     npm config set node_gyp $(npm prefix -g)/lib/node_modules/node-gyp/bin/node-gyp.js
       - name: Install dependencies
         run: yarn install --immutable
       # Since Electron 42 the `electron` package no longer downloads its binary in a
@@ -30,10 +54,15 @@ jobs:
       # download failure is reported here instead of mid-build.
       - name: Download Electron binary
         run: yarn workspace station-desktop-app exec install-electron
-      - name: Build and Release
-        run: yarn release
+      - name: Build
+        run: yarn build
+      - name: Package
+        run: yarn workspace station-desktop-app exec cross-env NODE_ENV=production electron-builder --publish never
+      - name: Attach artifacts to the release
+        run: ./scripts/upload-release-assets.sh "$RC_TAG"
 
   MacOs:
+    needs: Prepare
     runs-on: macos-latest
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -54,10 +83,15 @@ jobs:
         run: yarn install --immutable
       - name: Download Electron binary
         run: yarn workspace station-desktop-app exec install-electron
-      - name: Build and Release
-        run: yarn release
+      - name: Build
+        run: yarn build
+      - name: Package
+        run: yarn workspace station-desktop-app exec cross-env NODE_ENV=production electron-builder --publish never
+      - name: Attach artifacts to the release
+        run: ./scripts/upload-release-assets.sh "$RC_TAG"
 
   Windows:
+    needs: Prepare
     runs-on: windows-2025
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -74,5 +108,43 @@ jobs:
         run: yarn install --immutable
       - name: Download Electron binary
         run: yarn workspace station-desktop-app exec install-electron
-      - name: Build and Release
-        run: yarn release
+      - name: Build
+        run: yarn build
+      - name: Package
+        run: yarn workspace station-desktop-app exec cross-env NODE_ENV=production electron-builder --publish never
+      - name: Attach artifacts to the release
+        shell: bash
+        run: ./scripts/upload-release-assets.sh "$RC_TAG"
+
+  # The build number identifies the candidate, so it is bumped only once every
+  # platform has published its artifacts.
+  Bump:
+    needs:
+      - Linux
+      - MacOs
+      - Windows
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        with:
+          ref: main
+      - name: Increment the build number
+        run: |
+          current=$(grep -m1 '"version"' package.json | sed -E 's/.*"version": "(.*)".*/\1/')
+          next=$(./scripts/increment_version.sh build "$current")
+          echo "$current -> $next"
+          for manifest in package.json packages/app/package.json; do
+            sed -i -E "0,/\"version\":/s/\"version\": \".*\"/\"version\": \"$next\"/" "$manifest"
+          done
+          echo "NEXT_VERSION=$next" >> "$GITHUB_ENV"
+      - name: Commit and push
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add package.json packages/app/package.json
+          # Nothing to do when the build number already matches (e.g. a re-run).
+          git diff --cached --quiet && exit 0
+          # `[skip ci]` keeps this commit from starting another release candidate.
+          git commit -m "chore: bump build to ${NEXT_VERSION} [skip ci]"
+          git pull --rebase
+          git push
