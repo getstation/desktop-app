@@ -36,7 +36,17 @@ jobs:
 
   Linux:
     needs: Prepare
-    runs-on: ubuntu-latest
+    # Native runners per architecture: the app ships native modules, and
+    # cross-compiling them from x64 would package x64 binaries into the arm64 app.
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: x64
+            runner: ubuntu-latest
+          - arch: arm64
+            runner: ubuntu-24.04-arm
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
@@ -56,8 +66,13 @@ jobs:
         run: yarn workspace station-desktop-app exec install-electron
       - name: Build
         run: yarn build
+      # electron-builder only ships a prebuilt fpm for linux-x86_64; on an arm64
+      # host it falls back to `fpm` from PATH, which the deb and rpm targets need.
+      - name: Install fpm
+        if: matrix.arch != 'x64'
+        run: sudo gem install fpm --no-document
       - name: Package
-        run: yarn workspace station-desktop-app exec cross-env NODE_ENV=production electron-builder --publish never
+        run: yarn workspace station-desktop-app exec cross-env NODE_ENV=production electron-builder --${{ matrix.arch }} --publish never
       - name: Attach artifacts to the release
         run: bash scripts/upload-release-assets.sh "$RC_TAG"
 
