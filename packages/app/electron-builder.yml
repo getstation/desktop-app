@@ -39,7 +39,7 @@ mac:
     - target: zip
       arch:
         - arm64
-  artifactName: ${productName}.${ext}
+  artifactName: ${productName}-v${version}-${os}-${arch}.${ext}
   hardenedRuntime: true
   gatekeeperAssess: false
   category: public.app-category.tools
@@ -49,8 +49,11 @@ mac:
   
 win:
   target:
-    - nsis
-  artifactName: ${productName}-Setup.${ext}
+    - target: nsis
+      arch:
+        - x64
+        - arm64
+  artifactName: ${productName}-v${version}-${os}-${arch}.${ext}
   verifyUpdateCodeSignature: false
 
 linux:
@@ -59,7 +62,7 @@ linux:
     - deb
     - rpm
   category: Network
-  artifactName: ${productName}-${arch}.${ext}
+  artifactName: ${productName}-v${version}-${os}-${arch}.${ext}
 
 extraResources:
   - from: '../../.env.production'

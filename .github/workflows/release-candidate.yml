@@ -94,6 +94,12 @@ jobs:
   Windows:
     needs: Prepare
     runs-on: windows-2025
+    strategy:
+      fail-fast: false
+      matrix:
+        arch:
+          - x64
+          - arm64
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
@@ -113,7 +119,14 @@ jobs:
       - name: Build
         run: yarn build
       - name: Package
-        run: yarn workspace station-desktop-app exec cross-env NODE_ENV=production electron-builder --publish never
+        run: yarn workspace station-desktop-app exec cross-env NODE_ENV=production electron-builder --${{ matrix.arch }} --publish never
+      # Both architectures write their own `latest.yml`, and the release holds one.
+      # electron-updater has no per-architecture channel on Windows, so the x64
+      # feed is the one published and arm64 drops its copy before uploading.
+      - name: Drop the arm64 update feed
+        if: matrix.arch != 'x64'
+        shell: bash
+        run: rm -f release/latest.yml
       - name: Attach artifacts to the release
         shell: bash
         run: bash scripts/upload-release-assets.sh "$RC_TAG"
