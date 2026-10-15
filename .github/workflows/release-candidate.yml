@@ -105,6 +105,7 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: "24"
+          cache: "yarn"
       - name: Install dependencies
         run: yarn install --immutable
       - name: Download Electron binary
