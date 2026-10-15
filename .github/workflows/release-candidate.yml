@@ -62,6 +62,7 @@ jobs:
         run: bash scripts/upload-release-assets.sh "$RC_TAG"
 
   MacOs:
+    if: false
     needs: Prepare
     runs-on: macos-latest
     env:
