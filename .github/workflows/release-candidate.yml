@@ -34,113 +34,34 @@ jobs:
             --prerelease \
             --notes "Automated build of \`main\` (${GITHUB_SHA::7}), $(date -u '+%Y-%m-%d %H:%M UTC')."
 
-  Linux:
+  Build:
     needs: Prepare
-    runs-on: ubuntu-latest
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-    steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
-        with:
-          node-version: "24"
-          cache: "yarn"
-      - name: Install dependencies
-        run: yarn install --immutable
-      # Since Electron 42 the `electron` package no longer downloads its binary in a
-      # `postinstall` script; it does so lazily on first use. Prefetch it explicitly so a
-      # download failure is reported here instead of mid-build.
-      - name: Download Electron binary
-        run: yarn workspace station-desktop-app exec install-electron
-      - name: Build
-        run: yarn build
-      - name: Package
-        run: yarn workspace station-desktop-app exec cross-env NODE_ENV=production electron-builder --publish never
-      - name: Attach artifacts to the release
-        run: bash scripts/upload-release-assets.sh "$RC_TAG"
-
-  MacOs:
-    if: false
-    needs: Prepare
-    runs-on: macos-latest
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
-      CSC_LINK: ${{ secrets.CSC_LINK }}
-      AC_USERNAME: ${{ secrets.AC_USERNAME }}
-      AC_PASSWORD: ${{ secrets.AC_PASSWORD }}
-      AC_TEAM_ID: ${{ secrets.AC_TEAM_ID }}
-      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-    steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
-        with:
-          node-version: "24"
-          cache: "yarn"
-      - name: Install dependencies
-        run: yarn install --immutable
-      - name: Download Electron binary
-        run: yarn workspace station-desktop-app exec install-electron
-      - name: Build
-        run: yarn build
-      - name: Package
-        run: yarn workspace station-desktop-app exec cross-env NODE_ENV=production electron-builder --publish never
-      - name: Attach artifacts to the release
-        run: bash scripts/upload-release-assets.sh "$RC_TAG"
-
-  Windows:
-    needs: Prepare
-    # One x64 job builds both architectures; the arch list in electron-builder.yml
-    # drives it, so there is no matrix here and no `--x64` / `--arm64` flag below.
-    runs-on: windows-2025
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
-      CSC_LINK: ${{ secrets.CSC_LINK }}
-      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-    steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
-        with:
-          node-version: "24"
-          cache: "yarn"
-      - name: Install dependencies
-        run: yarn install --immutable
-      - name: Download Electron binary
-        run: yarn workspace station-desktop-app exec install-electron
-      - name: Build
-        run: yarn build
-      - name: Package
-        run: yarn workspace station-desktop-app exec cross-env NODE_ENV=production electron-builder --publish never
-      - name: Attach artifacts to the release
-        shell: bash
-        run: bash scripts/upload-release-assets.sh "$RC_TAG"
+    uses: ./.github/workflows/build-platforms.yml
+    with:
+      ref: ${{ github.sha }}
+      release-tag: release-candidate
+      # macOS is not built for release candidates.
+      macos: false
+    secrets: inherit
 
   # The build number identifies the candidate, so it is bumped only once every
   # platform has published its artifacts.
   Bump:
-    needs:
-      - Linux
-      # - MacOs
-      - Windows
+    needs: Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
         with:
           ref: main
-      - name: Increment the build number
+      - name: Compute the next build number
         run: |
           current=$(grep -m1 '"version"' package.json | sed -E 's/.*"version": "(.*)".*/\1/')
           next=$(bash scripts/increment_version.sh build "$current")
           echo "$current -> $next"
-          for manifest in package.json packages/app/package.json; do
-            sed -i -E "0,/\"version\":/s/\"version\": \".*\"/\"version\": \"$next\"/" "$manifest"
-          done
           echo "NEXT_VERSION=$next" >> "$GITHUB_ENV"
+      - uses: ./.github/actions/set-version
+        with:
+          version: ${{ env.NEXT_VERSION }}
       - name: Commit and push
         run: |
           git config user.name 'github-actions[bot]'
