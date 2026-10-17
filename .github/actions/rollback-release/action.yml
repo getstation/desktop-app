@@ -1,0 +1,34 @@
+name: Rollback release
+description: Delete the release and its tag and revert the release commit on main.
+inputs:
+  version:
+    description: "Released version, e.g. 1.2.3"
+    required: true
+  commit:
+    description: "SHA of the release commit; empty when the release did not need one"
+    required: false
+  token:
+    description: "Token with contents write permission"
+    required: true
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        VERSION: ${{ inputs.version }}
+        COMMIT: ${{ inputs.commit }}
+        GH_TOKEN: ${{ inputs.token }}
+      run: |
+        git config user.name 'github-actions[bot]'
+        git config user.email 'github-actions[bot]@users.noreply.github.com'
+        # Draft release first, then whatever is left of the tag.
+        gh release delete "v${VERSION}" --yes --cleanup-tag || true
+        git push origin ":refs/tags/v${VERSION}" || true
+        if [[ -n "$COMMIT" ]]; then
+          git checkout main
+          git pull --rebase
+          git revert --no-commit "$COMMIT"
+          # `[skip ci]` keeps the revert from starting a release candidate.
+          git commit -m "Revert release ${VERSION} [skip ci]"
+          git push
+        fi

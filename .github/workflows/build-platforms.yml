@@ -1,0 +1,104 @@
+name: Build Platforms
+on:
+  workflow_call:
+    inputs:
+      ref:
+        description: "Git ref to build"
+        type: string
+        required: true
+      release-tag:
+        description: "Existing GitHub release to attach the installers to"
+        type: string
+        required: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  Linux:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+    steps:
+      - uses: actions/checkout@master
+        with:
+          ref: ${{ inputs.ref }}
+      - uses: actions/setup-node@master
+        with:
+          node-version: "24"
+          cache: "yarn"
+      - name: Install dependencies
+        run: yarn install --immutable
+      # Since Electron 42 the `electron` package no longer downloads its binary in a
+      # `postinstall` script; it does so lazily on first use. Prefetch it explicitly so a
+      # download failure is reported here instead of mid-build.
+      - name: Download Electron binary
+        run: yarn workspace station-desktop-app exec install-electron
+      - name: Build
+        run: yarn build
+      - name: Package
+        run: yarn workspace station-desktop-app exec cross-env NODE_ENV=production electron-builder --publish never
+      - name: Attach artifacts to the release
+        run: bash scripts/upload-release-assets.sh "${{ inputs.release-tag }}"
+
+  MacOs:
+    runs-on: macos-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
+      CSC_LINK: ${{ secrets.CSC_LINK }}
+      AC_USERNAME: ${{ secrets.AC_USERNAME }}
+      AC_PASSWORD: ${{ secrets.AC_PASSWORD }}
+      AC_TEAM_ID: ${{ secrets.AC_TEAM_ID }}
+      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+    steps:
+      - uses: actions/checkout@master
+        with:
+          ref: ${{ inputs.ref }}
+      - uses: actions/setup-node@master
+        with:
+          node-version: "24"
+          cache: "yarn"
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: Download Electron binary
+        run: yarn workspace station-desktop-app exec install-electron
+      - name: Build
+        run: yarn build
+      - name: Package
+        run: yarn workspace station-desktop-app exec cross-env NODE_ENV=production electron-builder --publish never
+      - name: Attach artifacts to the release
+        run: bash scripts/upload-release-assets.sh "${{ inputs.release-tag }}"
+
+  Windows:
+    # One x64 job builds both architectures; the arch list in electron-builder.yml
+    # drives it, so there is no matrix here and no `--x64` / `--arm64` flag below.
+    runs-on: windows-2025
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
+      CSC_LINK: ${{ secrets.CSC_LINK }}
+      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+    steps:
+      - uses: actions/checkout@master
+        with:
+          ref: ${{ inputs.ref }}
+      - uses: actions/setup-node@master
+        with:
+          node-version: "24"
+          cache: "yarn"
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: Download Electron binary
+        run: yarn workspace station-desktop-app exec install-electron
+      - name: Build
+        run: yarn build
+      - name: Package
+        run: yarn workspace station-desktop-app exec cross-env NODE_ENV=production electron-builder --publish never
+      - name: Attach artifacts to the release
+        run: bash scripts/upload-release-assets.sh "${{ inputs.release-tag }}"

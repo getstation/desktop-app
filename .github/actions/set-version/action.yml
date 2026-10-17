@@ -1,0 +1,16 @@
+name: Set version
+description: Write a version into the root and app package.json manifests.
+inputs:
+  version:
+    description: "Version to write, e.g. 1.2.3 or 1.2.3-b1"
+    required: true
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        VERSION: ${{ inputs.version }}
+      run: |
+        for manifest in package.json packages/app/package.json; do
+          sed -i -E "0,/\"version\":/s/\"version\": \".*\"/\"version\": \"$VERSION\"/" "$manifest"
+        done

@@ -71,3 +71,15 @@ jobs:
         run: yarn run build
       - name: Tests
         run: yarn run test
+
+  # Last step on main: publish the release candidate once every platform passes.
+  ReleaseCandidate:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs:
+      - Linux
+      - MacOs
+      - Windows
+    permissions:
+      contents: write
+    uses: ./.github/workflows/release-candidate.yml
+    secrets: inherit
