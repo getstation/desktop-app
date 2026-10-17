@@ -28,10 +28,14 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       tag: ${{ steps.release.outputs.tag }}
+      version: ${{ steps.release.outputs.version }}
+      commit: ${{ steps.commit.outputs.sha }}
     steps:
       - uses: actions/checkout@master
         with:
           ref: main
+          # The rollback reverts the release commit, which needs its parent.
+          fetch-depth: 0
       - name: Compute the release version
         id: release
         run: |
@@ -46,19 +50,26 @@ jobs:
           echo "::notice title=Release::New version is $next"
           echo "### New version is $next" >> "$GITHUB_STEP_SUMMARY"
           echo "tag=v$next" >> "$GITHUB_OUTPUT"
+          echo "version=$next" >> "$GITHUB_OUTPUT"
           echo "VERSION=$next" >> "$GITHUB_ENV"
       - uses: ./.github/actions/set-version
         with:
           version: ${{ env.VERSION }}
-      - name: Commit, tag and push
+      - name: Commit and tag
+        id: commit
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git add package.json packages/app/package.json
           # Nothing to commit when the version is already final (`current` on a clean version).
-          git diff --cached --quiet || git commit -m "Release ${VERSION} [skip ci]"
+          if ! git diff --cached --quiet; then
+            git commit -m "Release ${VERSION} [skip ci]"
+            echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          fi
           git tag "v${VERSION}"
-          git push origin main "v${VERSION}"
+      - name: Push the commit and tag
+        id: push
+        run: git push origin main "v${VERSION}"
       - name: Create the draft release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -68,6 +79,14 @@ jobs:
             --draft \
             --title "v${VERSION}" \
             --generate-notes
+      # Undo the push when the draft release could not be created.
+      - name: Roll back
+        if: failure() && steps.push.outcome == 'success'
+        uses: ./.github/actions/rollback-release
+        with:
+          version: ${{ env.VERSION }}
+          commit: ${{ steps.commit.outputs.sha }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
   Build:
     needs: Version
@@ -76,6 +95,24 @@ jobs:
       ref: ${{ needs.Version.outputs.tag }}
       release-tag: ${{ needs.Version.outputs.tag }}
     secrets: inherit
+
+  # Undo the version step when the build did not complete.
+  Rollback:
+    needs:
+      - Version
+      - Build
+    if: always() && needs.Version.result == 'success' && needs.Build.result != 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: ./.github/actions/rollback-release
+        with:
+          version: ${{ needs.Version.outputs.version }}
+          commit: ${{ needs.Version.outputs.commit }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
   # Starts the next development cycle once every platform has published.
   Bump:
