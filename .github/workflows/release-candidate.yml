@@ -1,8 +1,6 @@
 name: Release Candidate
 on:
-  push:
-    branches:
-      - main
+  workflow_call:
   workflow_dispatch:
 
 # One release candidate at a time: a newer commit on main supersedes the build in
