@@ -48,11 +48,17 @@ mac:
   singleArchFiles: '*'
   
 win:
-  # No explicit `arch` per target: an arch list in the config wins over the
-  # `--x64` / `--arm64` CLI flag, so every matrix leg would build both.
+  # Both architectures come out of the single x64 job: an arch list here wins
+  # over the `--x64` / `--arm64` CLI flag, so no flag is passed on Windows.
   target:
-    - nsis
-    - zip
+    - target: nsis
+      arch:
+        - x64
+        - arm64
+    - target: zip
+      arch:
+        - x64
+        - arm64
   artifactName: ${productName}-v${version}-${os}-${arch}.${ext}
   verifyUpdateCodeSignature: false
 

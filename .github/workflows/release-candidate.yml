@@ -93,17 +93,9 @@ jobs:
 
   Windows:
     needs: Prepare
-    # Native runners per architecture, as for Linux: cross-building from the x64
-    # host would package x64 native modules into the arm64 app.
-    runs-on: ${{ matrix.runner }}
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - arch: x64
-            runner: windows-2025
-          - arch: arm64
-            runner: windows-11-arm
+    # One x64 job builds both architectures; the arch list in electron-builder.yml
+    # drives it, so there is no matrix here and no `--x64` / `--arm64` flag below.
+    runs-on: windows-2025
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
@@ -123,14 +115,7 @@ jobs:
       - name: Build
         run: yarn build
       - name: Package
-        run: yarn workspace station-desktop-app exec cross-env NODE_ENV=production electron-builder --${{ matrix.arch }} --publish never
-      # Both architectures write their own `latest.yml`, and the release holds one.
-      # electron-updater has no per-architecture channel on Windows, so the x64
-      # feed is the one published and arm64 drops its copy before uploading.
-      - name: Drop the arm64 update feed
-        if: matrix.arch != 'x64'
-        shell: bash
-        run: rm -f release/latest.yml
+        run: yarn workspace station-desktop-app exec cross-env NODE_ENV=production electron-builder --publish never
       - name: Attach artifacts to the release
         shell: bash
         run: bash scripts/upload-release-assets.sh "$RC_TAG"
