@@ -93,13 +93,17 @@ jobs:
 
   Windows:
     needs: Prepare
-    runs-on: windows-2025
+    # Native runners per architecture, as for Linux: cross-building from the x64
+    # host would package x64 native modules into the arm64 app.
+    runs-on: ${{ matrix.runner }}
     strategy:
       fail-fast: false
       matrix:
-        arch:
-          - x64
-          - arm64
+        include:
+          - arch: x64
+            runner: windows-2025
+          - arch: arm64
+            runner: windows-11-arm
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
