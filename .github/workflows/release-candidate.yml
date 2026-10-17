@@ -38,8 +38,6 @@ jobs:
     with:
       ref: ${{ github.sha }}
       release-tag: release-candidate
-      # macOS is not built for release candidates.
-      macos: false
     secrets: inherit
 
   # The build number identifies the candidate, so it is bumped only once every
@@ -68,6 +66,6 @@ jobs:
           # Nothing to do when the build number already matches (e.g. a re-run).
           git diff --cached --quiet && exit 0
           # `[skip ci]` keeps this commit from starting another release candidate.
-          git commit -m "chore: bump build to ${NEXT_VERSION} [skip ci]"
+          git commit -m "Bump build to ${NEXT_VERSION} [skip ci]"
           git pull --rebase
           git push

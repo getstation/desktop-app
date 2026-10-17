@@ -43,6 +43,8 @@ jobs:
             next=$(bash scripts/increment_version.sh "${{ inputs.version }}" "$current")
           fi
           echo "$current -> $next"
+          echo "::notice title=Release::New version is $next"
+          echo "### New version is $next" >> "$GITHUB_STEP_SUMMARY"
           echo "tag=v$next" >> "$GITHUB_OUTPUT"
           echo "VERSION=$next" >> "$GITHUB_ENV"
       - uses: ./.github/actions/set-version
@@ -54,7 +56,7 @@ jobs:
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git add package.json packages/app/package.json
           # Nothing to commit when the version is already final (`current` on a clean version).
-          git diff --cached --quiet || git commit -m "chore: release ${VERSION} [skip ci]"
+          git diff --cached --quiet || git commit -m "Release ${VERSION} [skip ci]"
           git tag "v${VERSION}"
           git push origin main "v${VERSION}"
       - name: Create the draft release
@@ -88,6 +90,8 @@ jobs:
           current=$(grep -m1 '"version"' package.json | sed -E 's/.*"version": "(.*)".*/\1/')
           next="$(bash scripts/increment_version.sh patch "$current")-b1"
           echo "$current -> $next"
+          echo "::notice title=Next development version::Next version is $next"
+          echo "Next development version is $next" >> "$GITHUB_STEP_SUMMARY"
           echo "NEXT_VERSION=$next" >> "$GITHUB_ENV"
       - uses: ./.github/actions/set-version
         with:
@@ -98,6 +102,6 @@ jobs:
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git add package.json packages/app/package.json
           # `[skip ci]` keeps this commit from starting a release candidate.
-          git commit -m "chore: bump version to ${NEXT_VERSION} [skip ci]"
+          git commit -m "Bump version to ${NEXT_VERSION} [skip ci]"
           git pull --rebase
           git push

@@ -10,10 +10,6 @@ on:
         description: "Existing GitHub release to attach the installers to"
         type: string
         required: true
-      macos:
-        description: "Also build the macOS installers"
-        type: boolean
-        default: true
 
 defaults:
   run:
@@ -49,7 +45,7 @@ jobs:
         run: bash scripts/upload-release-assets.sh "${{ inputs.release-tag }}"
 
   MacOs:
-    if: inputs.macos
+    # if: false
     runs-on: macos-latest
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
