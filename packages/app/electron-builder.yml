@@ -39,7 +39,7 @@ mac:
     - target: zip
       arch:
         - arm64
-  artifactName: ${productName}.${ext}
+  artifactName: ${productName}-v${version}-${os}-${arch}.${ext}
   hardenedRuntime: true
   gatekeeperAssess: false
   category: public.app-category.tools
@@ -48,9 +48,18 @@ mac:
   singleArchFiles: '*'
   
 win:
+  # Both architectures come out of the single x64 job: an arch list here wins
+  # over the `--x64` / `--arm64` CLI flag, so no flag is passed on Windows.
   target:
-    - nsis
-  artifactName: ${productName}-Setup.${ext}
+    - target: nsis
+      arch:
+        - x64
+        - arm64
+    - target: zip
+      arch:
+        - x64
+        - arm64
+  artifactName: ${productName}-v${version}-${os}-${arch}.${ext}
   verifyUpdateCodeSignature: false
 
 linux:
@@ -59,7 +68,7 @@ linux:
     - deb
     - rpm
   category: Network
-  artifactName: ${productName}-${arch}.${ext}
+  artifactName: ${productName}-v${version}-${os}-${arch}.${ext}
 
 extraResources:
   - from: '../../.env.production'
