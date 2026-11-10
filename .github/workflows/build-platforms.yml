@@ -45,7 +45,7 @@ jobs:
         run: bash scripts/upload-release-assets.sh "${{ inputs.release-tag }}"
 
   MacOs:
-    runs-on: macos-latest
+    runs-on: macos-15 
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
