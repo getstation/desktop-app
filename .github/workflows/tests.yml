@@ -35,7 +35,7 @@ jobs:
         run: yarn build
 
   MacOs:
-    runs-on: macos-latest
+    runs-on: macos-15
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
