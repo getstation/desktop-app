@@ -1,7 +1,7 @@
 {
   "name": "Google Keep",
   "category": "Communication & Collaboration",
-  "start_url": "https://keep.google.com/{{#if moreThanOneIdentity}}u/{{userIdentity.profileData.email}}{{/if}}",
+  "start_url": "https://keep.google.com/{{#if moreThanOneIdentity}}?authuser={{userIdentity.profileData.email}}{{/if}}",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/8GXSa0qvQUW6xkGEsgcq",
@@ -18,7 +18,7 @@
     ],
     "instance_wording": "account",
     "instance_label_tpl": "{{email}}",
-    "start_url_tpl": "https://keep.google.com/{{#if moreThanOneIdentity}}u/{{userIdentity.profileData.email}}{{/if}}"
+    "start_url_tpl": "https://accounts.google.com/AddSession?passive=true&Email={{userIdentity.profileData.email}}&continue=https://keep.google.com/{{#if moreThanOneIdentity}}?authuser={{userIdentity.profileData.email}}{{/if}}"
   },
   "bx_use_default_session": true,
   "recommendedPosition": "14"
