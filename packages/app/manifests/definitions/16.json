@@ -1,7 +1,7 @@
 {
   "name": "Google Drive",
   "category": "Storage & File-sharing",
-  "start_url": "https://accounts.google.com/AddSession?passive=true&Email={{userIdentity.profileData.email}}&continue=https://drive.google.com/drive/{{#if moreThanOneIdentity}}u/{{userIdentity.profileData.email}}{{/if}}",
+  "start_url": "https://drive.google.com/drive{{#if moreThanOneIdentity}}?authuser={{userIdentity.profileData.email}}{{/if}}",
   "icons": [
     {
       "src": "https://cdn.filestackcontent.com/J4MAUo7LRZm2fhyp6X0f",
@@ -22,8 +22,8 @@
     ],
     "instance_wording": "account",
     "instance_label_tpl": "{{email}}",
-    "start_url_tpl": "https://accounts.google.com/AddSession?passive=true&Email={{userIdentity.profileData.email}}&continue=https://drive.google.com/drive/{{#if moreThanOneIdentity}}u/{{userIdentity.profileData.email}}{{/if}}",
-    "new_page_url_tpl": "https://drive.google.com/drive/{{#if moreThanOneIdentity}}u/{{userIdentity.profileData.email}}{{/if}}"
+    "start_url_tpl": "https://accounts.google.com/AddSession?passive=true&Email={{userIdentity.profileData.email}}&continue=https://drive.google.com/drive{{#if moreThanOneIdentity}}?authuser={{userIdentity.profileData.email}}{{/if}}",
+    "new_page_url_tpl": "https://drive.google.com/drive{{#if moreThanOneIdentity}}?authuser={{userIdentity.profileData.email}}{{/if}}"
   },
   "bx_use_default_session": true,
   "recommendedPosition": "3"
