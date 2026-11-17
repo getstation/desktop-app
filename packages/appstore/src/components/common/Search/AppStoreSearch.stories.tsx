@@ -18,7 +18,7 @@ const application = (i: number) => {
     id: String(i),
     name: 'Google Drive',
     categoryName: 'File Provider',
-    iconURL: 'https://cdn.filestackcontent.com/J4MAUo7LRZm2fhyp6X0f',
+    iconURL: '/icons/google-drive.svg',
     themeColor: '#FCCD48',
     isExtension: false,
     shouldDisplayCategory: false,

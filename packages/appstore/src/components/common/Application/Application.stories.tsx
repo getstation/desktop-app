@@ -22,7 +22,7 @@ story
             id={text('ID', '123')}
             name={text('Name', 'Google Drive')}
             categoryName={text('Category Name', 'File Provider')}
-            iconURL={text('Icon URL', 'https://cdn.filestackcontent.com/J4MAUo7LRZm2fhyp6X0f')}
+            iconURL={text('Icon URL', '/icons/google-drive.svg')}
             themeColor={color('Theme Color', '#FCCD48')}
             isExtension={boolean('Is extension', false)}
             shouldDisplayCategory={boolean('Should display category', false)}
