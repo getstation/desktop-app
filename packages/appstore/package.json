@@ -9,10 +9,11 @@
   "author": "Joël Charles <joel@getstation.com>",
   "main": "dist/app.js",
   "scripts": {
-    "build:1": "yarn run clean && yarn run gql-gen && cross-env NODE_OPTIONS=--openssl-legacy-provider DISABLE_V8_COMPILE_CACHE=1 webpack --config configs/webpack.config.js --env.build",
-    "build:2": "cross-env NODE_ENV=storybook NODE_OPTIONS=--openssl-legacy-provider DISABLE_V8_COMPILE_CACHE=1 build-storybook -o dist/__storybook --quiet ",
+    "build:app": "yarn run clean && yarn run gql-gen && cross-env NODE_OPTIONS=--openssl-legacy-provider DISABLE_V8_COMPILE_CACHE=1 webpack --config configs/webpack.config.js --env.build",
+    "build:storybook": "cross-env NODE_ENV=storybook NODE_OPTIONS=--openssl-legacy-provider DISABLE_V8_COMPILE_CACHE=1 build-storybook -s ./src,./.storybook -o dist/__storybook --quiet ",
     "gql-gen": "graphql-codegen --config codegen.yml",
-    "build": "yarn run build:1 && yarn run build:2",
+    "build": "yarn run build:app && yarn run build:storybook",
+    "storybook": "yarn run gql-gen && cross-env NODE_ENV=storybook start-storybook -s ./src,./.storybook -p 6006",
     "clean": "rimraf dist",
     "release": "yarn build",
     "dev": "yarn build",
@@ -20,7 +21,7 @@
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
-    "@getstation/theme": "1.2.0",
+    "@getstation/theme": "workspace:*",
     "apollo-boost": "^0.4.4",
     "apollo-link-context": "^1.0.19",
     "classnames": "^2.2.6",
@@ -33,7 +34,7 @@
     "lodash": "^4.17.21",
     "memoizee": "^0.4.14",
     "moment": "^2.24.0",
-    "mousetrap": "^1.6.1",
+    "mousetrap": "^1.6.5",
     "prop-types": "^15.7.2",
     "ramda": "^0.26.1",
     "react": "^16.14.0",
