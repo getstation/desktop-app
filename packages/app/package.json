@@ -44,7 +44,7 @@
     "@getstation/reactive-graphql": "^3.0.1",
     "@getstation/sdk": "workspace:*",
     "@getstation/slack": "^13.0.0",
-    "@getstation/theme": "^1.2.0",
+    "@getstation/theme": "workspace:*",
     "@mapbox/node-pre-gyp": "1.0.10",
     "apollo-cache-inmemory": "^1.5.1",
     "apollo-client": "^2.6.10",

@@ -21,7 +21,7 @@
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
-    "@getstation/theme": "1.2.0",
+    "@getstation/theme": "workspace:*",
     "apollo-boost": "^0.4.4",
     "apollo-link-context": "^1.0.19",
     "classnames": "^2.2.6",
@@ -34,7 +34,7 @@
     "lodash": "^4.17.21",
     "memoizee": "^0.4.14",
     "moment": "^2.24.0",
-    "mousetrap": "^1.6.1",
+    "mousetrap": "^1.6.5",
     "prop-types": "^15.7.2",
     "ramda": "^0.26.1",
     "react": "^16.14.0",

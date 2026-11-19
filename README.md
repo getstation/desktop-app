@@ -155,7 +155,6 @@ WebStorm and VSCode should be correctly configured by default.
 This repository should be used as a proper monorepo. Packages that should be impacted:
 - appstore (already in this repo but not handled by any monorepo tool yet)
 - @getstation/sdk
-- @getstation/theme
 
 ## Releases
 
